@@ -1,0 +1,14 @@
+---
+layout: astra
+sidebar: sidebar
+permalink: index.html
+lead: Get started with Cloud Manager so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud.
+summary: Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp’s cloud solutions.
+---
+
+= Cloud Manager documentation for getting started
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/

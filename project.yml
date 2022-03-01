@@ -4,4 +4,57 @@ settings:
     pdf_enabled: true
   prod:
     pdf_enabled: true
-sidebar: 
+sidebar:
+  entries:
+    - title: Back to Cloud Manager documentation
+      url: https://docs.netapp.com/us-en/cloud-manager-family
+    - title: Getting started docs
+      url: /index.html
+    - title: Release notes
+      url: /whats-new.html
+    - title: Get started
+      entries:
+        - title: Learn about Cloud Manager
+          url: /concept_overview.html
+        - title: Getting started checklist
+          url: /reference_checklist_cm.html
+        - title: Sign up to Cloud Central
+          url: /task_signing_up.html
+        - title: Log in to Cloud Manager
+          url: /task_logging_in.html
+        - title: Set up a NetApp account
+          entries:
+            - title: Learn about NetApp accounts
+              url: /concept_cloud_central_accounts.html
+            - title: Set up an account
+              url: /task_setting_up_cloud_central_accounts.html
+        - title: Set up a Connector
+          entries:
+            - title: Learn about Connectors
+              url: /concept_connectors.html
+            - title: Networking requirements
+              url: /reference_networking_cloud_manager.html
+            - title: Create a Connector in AWS
+              url: /task_creating_connectors_aws.html
+            - title: Create a Connector in Azure
+              url: /task_creating_connectors_azure.html
+            - title: Create a Connector in GCP
+              url: /task_creating_connectors_gcp.html
+            - title: Install on your own host
+              entries:
+              - title: With internet access
+                url: /task_installing_linux.html
+              - title: On-prem without internet access
+                url: /task-install-connector-onprem-no-internet.html
+            - title: Create from the marketplace
+              entries:
+                - title: AWS Marketplace
+                  url: /task_launching_aws_mktp.html
+                - title: Azure Marketplace
+                  url: /task_launching_azure_mktp.html
+    - title: Where to go next
+      url: /reference_whats_next.html
+    - title: Knowledge and support
+      url: /get-help.html
+    - title: Legal notices
+      url: /legal-notices.html
