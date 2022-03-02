@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_launching_azure_mktp.html
+permalink: task-launching-azure-mktp.html
 keywords: install, installation, installing, marketplace, azure, deploy, virtual machine, permissions, deploy connector in azure, install connector in azure
 summary: It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
 ---
@@ -33,11 +33,11 @@ Note the following as you configure the VM:
 
 * Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
 +
-link:reference_cloud_mgr_reqs.html[Review the VM requirements].
+link:reference-cloud-mgr-reqs.html[Review the VM requirements].
 
 * For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
 +
-link:reference_networking_cloud_manager.html#rules-for-the-connector-in-azure[Learn more about security group rules for the Connector].
+link:reference-networking-cloud-manager.html#rules-for-the-connector-in-azure[Learn more about security group rules for the Connector].
 
 * Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
 +
@@ -54,7 +54,7 @@ http://_ipaddress_:80
 . After you log in, set up the Connector:
 .. Specify the NetApp account to associate with the Connector.
 +
-link:concept_cloud_central_accounts.html[Learn about NetApp accounts].
+link:concept-cloud-central-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 +
 image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a NetApp account and name the system.]
@@ -118,4 +118,4 @@ NOTE: Cloud Manager Operator is the default name provided in the https://mysuppo
 
 .Result
 
-The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task_managing_connectors.html[switch between them].
+The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].

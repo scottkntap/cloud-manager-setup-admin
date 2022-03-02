@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_installing_linux.html
+permalink: task-installing-linux.html
 keywords: install connector, manually install connector, install connector software, installation, installing, linux, installer, software, on prem, on-prem, silent, configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space
 summary: The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
 ---
@@ -15,7 +15,7 @@ summary: The most common way to create a Connector is directly from Cloud Manage
 [.lead]
 The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud. These steps are specific to hosts that have internet access.
 
-link:concept_connectors.html[Learn about other ways to deploy a Connector].
+link:concept-connectors.html[Learn about other ways to deploy a Connector].
 
 NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
 
@@ -61,7 +61,7 @@ Disk space in /opt:: 100 GiB of space must be available
 Disk space in /var:: 20 GiB of space must be available
 
 Outbound internet access::
-Outbound internet access is required to install the Connector and for the Connector to manage resources and processes within your public cloud environment. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for the Connector].
+Outbound internet access is required to install the Connector and for the Connector to manage resources and processes within your public cloud environment. For a list of endpoints, see link:reference-networking-cloud-manager.html[Networking requirements for the Connector].
 
 == Install the Connector
 
@@ -133,7 +133,7 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 . After you log in, set up Cloud Manager:
 .. Specify the NetApp account to associate with the Connector.
 +
-link:concept_cloud_central_accounts.html[Learn about NetApp accounts].
+link:concept-cloud-central-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 +
 image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a NetApp account and name the system.]
@@ -146,8 +146,8 @@ The Connector is now installed and set up with your NetApp account. Cloud Manage
 
 Set up permissions so Cloud Manager can manage resources and processes within your public cloud environment:
 
-* AWS: link:task_adding_aws_accounts.html[Set up an AWS account and then add it to Cloud Manager].
+* AWS: link:task-adding-aws-accounts.html[Set up an AWS account and then add it to Cloud Manager].
 
-* Azure: link:task_adding_azure_accounts.html[Set up an Azure account and then add it to Cloud Manager].
+* Azure: link:task-adding-azure-accounts.html[Set up an Azure account and then add it to Cloud Manager].
 
 * Google Cloud: See step 7 above.

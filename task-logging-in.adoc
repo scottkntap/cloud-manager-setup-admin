@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_logging_in.html
+permalink: task-logging-in.html
 keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login
 summary: The Cloud Manager interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com.
 ---

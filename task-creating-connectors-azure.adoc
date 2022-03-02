@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_creating_connectors_azure.html
+permalink: task-creating-connectors-azure.html
 keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions, create custom role, create azure custom role, azure custom role
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
@@ -13,9 +13,9 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 :imagesdir: ./media/
 
 [.lead]
-An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. link:concept_connectors.html[Learn when a Connector is required].
+An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. link:concept-connectors.html[Learn when a Connector is required].
 
-This page describes how to create a Connector in Azure directly from Cloud Manager. link:concept_connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
+This page describes how to create a Connector in Azure directly from Cloud Manager. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
@@ -37,7 +37,7 @@ You have two options:
 
 == Note about Azure regions
 
-The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task_enabling_private_link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
 
 == Create a Connector using your Azure account
 
@@ -128,7 +128,7 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 +
 Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
 +
-link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
+link:reference-networking-cloud-manager.html[Learn more about networking requirements for the Connector].
 
 . Follow the steps in the wizard to create the Connector:
 
@@ -150,7 +150,7 @@ Note that you can choose the subscriptions associated with this role. Each subsc
 
 * *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
 +
-NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
+NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 * *Review*: Review your selections to verify that your set up is correct.
 
@@ -160,7 +160,7 @@ The virtual machine should be ready in about 7 minutes. You should stay on the p
 
 .After you finish
 
-You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task_setting_up_cloud_central_accounts.html#associating-connectors-with-workspaces[Learn more].
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-cloud-central-accounts.html#associating-connectors-with-workspaces[Learn more].
 
 == Create a Connector using a service principal
 
@@ -355,7 +355,7 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 +
 Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
 +
-link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
+link:reference-networking-cloud-manager.html[Learn more about networking requirements for the Connector].
 
 . Follow the steps in the wizard to create the Connector:
 
@@ -375,7 +375,7 @@ Note that you can choose the subscriptions associated with this role. Each subsc
 
 * *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
 +
-NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
+NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 * *Review*: Review your selections to verify that your set up is correct.
 
@@ -385,4 +385,4 @@ The virtual machine should be ready in about 7 minutes. You should stay on the p
 
 .After you finish
 
-You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task_setting_up_cloud_central_accounts.html#associating-connectors-with-workspaces[Learn more].
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-cloud-central-accounts.html#associating-connectors-with-workspaces[Learn more].

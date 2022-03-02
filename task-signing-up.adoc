@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_signing_up.html
+permalink: task-signing-up.html
 keywords: netapp cloud central, sign up, sign up to cloud central, create account, federated, federation, federated login, federation login
 summary: Sign up to NetApp Cloud Central so you can access NetApp's cloud services.
 ---

@@ -1,5 +1,5 @@
 settings:
-  name: "Product Name"
+  name: cloud-manager-get-started
   internal:
     pdf_enabled: true
   prod:
@@ -15,45 +15,45 @@ sidebar:
     - title: Get started
       entries:
         - title: Learn about Cloud Manager
-          url: /concept_overview.html
+          url: /concept-overview.html
         - title: Getting started checklist
-          url: /reference_checklist_cm.html
+          url: /reference-checklist-cm.html
         - title: Sign up to Cloud Central
-          url: /task_signing_up.html
+          url: /task-signing-up.html
         - title: Log in to Cloud Manager
-          url: /task_logging_in.html
+          url: /task-logging-in.html
         - title: Set up a NetApp account
           entries:
             - title: Learn about NetApp accounts
-              url: /concept_cloud_central_accounts.html
+              url: /concept-cloud-central-accounts.html
             - title: Set up an account
-              url: /task_setting_up_cloud_central_accounts.html
+              url: /task-setting-up-cloud-central-accounts.html
         - title: Set up a Connector
           entries:
             - title: Learn about Connectors
-              url: /concept_connectors.html
+              url: /concept-connectors.html
             - title: Networking requirements
-              url: /reference_networking_cloud_manager.html
+              url: /reference-networking-cloud-manager.html
             - title: Create a Connector in AWS
-              url: /task_creating_connectors_aws.html
+              url: /task-creating-connectors-aws.html
             - title: Create a Connector in Azure
-              url: /task_creating_connectors_azure.html
+              url: /task-creating-connectors-azure.html
             - title: Create a Connector in GCP
-              url: /task_creating_connectors_gcp.html
+              url: /task-creating-connectors-gcp.html
             - title: Install on your own host
               entries:
               - title: With internet access
-                url: /task_installing_linux.html
+                url: /task-installing-linux.html
               - title: On-prem without internet access
                 url: /task-install-connector-onprem-no-internet.html
             - title: Create from the marketplace
               entries:
                 - title: AWS Marketplace
-                  url: /task_launching_aws_mktp.html
+                  url: /task-launching-aws-mktp.html
                 - title: Azure Marketplace
-                  url: /task_launching_azure_mktp.html
+                  url: /task-launching-azure-mktp.html
     - title: Where to go next
-      url: /reference_whats_next.html
+      url: /reference-whats-next.html
     - title: Knowledge and support
       url: /get-help.html
     - title: Legal notices

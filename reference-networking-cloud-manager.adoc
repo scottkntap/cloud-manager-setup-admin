@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: reference_networking_cloud_manager.html
+permalink: reference-networking-cloud-manager.html
 keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, proxy server, vpn, outbound, inbound, connections, jump host, URL, URLs, endpoints, endpoint, ports
 summary: Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
 ---
@@ -17,7 +17,7 @@ Set up your networking so the Connector can manage resources and processes withi
 
 The information on this page is for a typical deployment where the Connector has outbound internet access.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task-configuring-proxy.html[Configuring the Connector to use a proxy server].
 
 == Connection to target networks
 
@@ -27,7 +27,7 @@ For example, if you install a Connector in your corporate network, then you must
 
 == Possible conflict with IP addresses in the 172 range
 
-If your network has a subnet configured in the 172 range, then you might experience connectivity failures from Cloud Manager. link:reference_issues.html[Learn more about this known issue].
+If your network has a subnet configured in the 172 range, then you might experience connectivity failures from Cloud Manager. link:reference-issues.html[Learn more about this known issue].
 
 == Outbound internet access
 
@@ -63,7 +63,7 @@ The host might try to update operating system packages during installation. The 
 
 == Ports and security groups
 
-There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
+There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 === Rules for the Connector in AWS
 

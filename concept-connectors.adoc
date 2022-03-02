@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: concept_connectors.html
+permalink: concept-connectors.html
 keywords: concept, connectors, learn about connectors, service connectors, what are connectors, what is a connector, what's a connector, days, 14 days
 summary: In most cases, you will need to deploy a Connector in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
@@ -54,7 +54,7 @@ A Connector is supported in the following locations:
 
 === Note about Azure deployments
 
-If you deploy the Connector in Azure, it should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task_enabling_private_link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
+If you deploy the Connector in Azure, it should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
 
 === Note about Google Cloud deployments
 
@@ -73,15 +73,15 @@ An Account Admin needs to create a Connector before a Workspace Admin can create
 An Account Admin can create a Connector in a number of ways:
 
 * Directly from Cloud Manager (recommended)
-** link:task_creating_connectors_aws.html[Create in AWS]
-** link:task_creating_connectors_azure.html[Create in Azure]
-** link:task_creating_connectors_gcp.html[Create in GCP]
+** link:task-creating-connectors-aws.html[Create in AWS]
+** link:task-creating-connectors-azure.html[Create in Azure]
+** link:task-creating-connectors-gcp.html[Create in GCP]
 * By manually installing the software on your own Linux host
-** link:task_installing_linux.html[On a host that has internet access]
+** link:task-installing-linux.html[On a host that has internet access]
 ** link:task-install-connector-onprem-no-internet.html[On an on-prem host that doesn't have internet access]
 * From your cloud provider's marketplace
-** link:task_launching_aws_mktp.html[AWS Marketplace]
-** link:task_launching_azure_mktp.html[Azure Marketplace]
+** link:task-launching-aws-mktp.html[AWS Marketplace]
+** link:task-launching-azure-mktp.html[Azure Marketplace]
 
 Cloud Manager will prompt you to create a Connector if one is needed to complete an action.
 
@@ -104,9 +104,9 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
 * https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
-* link:reference_permissions.html[Learn how Cloud Manager uses cloud provider permissions]
+* link:reference-permissions.html[Learn how Cloud Manager uses cloud provider permissions]
 
-TIP: After you create a Connector in AWS, you can add an additional set of AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. link:task_adding_aws_accounts.html[Learn how to manage AWS credentials and subscriptions].
+TIP: After you create a Connector in AWS, you can add an additional set of AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. link:task-adding-aws-accounts.html[Learn how to manage AWS credentials and subscriptions].
 
 == Number of working environments per Connector
 
@@ -130,12 +130,12 @@ You can manage a working environment with multiple Connectors at the same time f
 
 To set up this configuration:
 
-. link:task_managing_connectors.html[Switch to another Connector]
+. link:task-managing-connectors.html[Switch to another Connector]
 . Discover the existing working environment.
 +
-* link:task_adding_ontap_cloud.html[Adding existing Cloud Volumes ONTAP systems to Cloud Manager]
-* link:task_discovering_ontap.html[Discovering ONTAP clusters]
-. Set the link:concept_storage_management.html#capacity-management[Capacity Management Mode] to *Manual* on any additional Connectors.
+* link:task-adding-ontap-cloud.html[Adding existing Cloud Volumes ONTAP systems to Cloud Manager]
+* link:task-discovering-ontap.html[Discovering ONTAP clusters]
+. Set the link:concept-storage-management.html#capacity-management[Capacity Management Mode] to *Manual* on any additional Connectors.
 +
 Only the main Connector should be set to *Automatic Mode*. If you switch to another Connector for DR purposes, then you can change the Capacity Management Mode as needed.
 
@@ -143,18 +143,18 @@ Only the main Connector should be set to *Automatic Mode*. If you switch to anot
 
 When you create your first Connector, Cloud Manager automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you'll need to switch between them to see the working environments that are specific to each Connector.
 
-link:task_managing_connectors.html#switch-between-connectors[Learn how to switch between Connectors].
+link:task-managing-connectors.html#switch-between-connectors[Learn how to switch between Connectors].
 
 == The local user interface
 
 While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
 
-* link:task_configuring_proxy.html[Setting a proxy server]
+* link:task-configuring-proxy.html[Setting a proxy server]
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 
-link:task_managing_connectors.html#accessing-the-local-ui[Learn how to access the local UI].
+link:task-managing-connectors.html#accessing-the-local-ui[Learn how to access the local UI].
 
 == Connector upgrades
 
-The Connector automatically updates its software to the latest version, as long as it has link:reference_networking_cloud_manager.html[outbound internet access] to obtain the software update.
+The Connector automatically updates its software to the latest version, as long as it has link:reference-networking-cloud-manager.html[outbound internet access] to obtain the software update.

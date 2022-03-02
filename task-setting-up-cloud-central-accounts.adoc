@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_setting_up_cloud_central_accounts.html
+permalink: task-setting-up-cloud-central-accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
 summary: When you log in to Cloud Manager for the first time, you're prompted to create a NetApp account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
 ---
@@ -15,7 +15,7 @@ summary: When you log in to Cloud Manager for the first time, you're prompted to
 [.lead]
 When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
-link:concept_cloud_central_accounts.html[Learn more about how NetApp accounts work].
+link:concept-cloud-central-accounts.html[Learn more about how NetApp accounts work].
 
 Set up your NetApp account so users can access Cloud Manager and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
 
@@ -102,7 +102,7 @@ You need to associate a Connector with workspaces so Workspace Admins can use th
 
 If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
 
-link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
+link:concept-cloud-central-accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
 
 .Steps
 
@@ -122,4 +122,4 @@ Workspace Admins can now use those Connectors to create Cloud Volumes ONTAP syst
 
 == What's next?
 
-Now that you've set up your account, you can manage it any time by removing users, managing workspaces, Connectors, and subscriptions. link:task_managing_cloud_central_accounts.html[Learn more].
+Now that you've set up your account, you can manage it any time by removing users, managing workspaces, Connectors, and subscriptions. link:task-managing-cloud-central-accounts.html[Learn more].
