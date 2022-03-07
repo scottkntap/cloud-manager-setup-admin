@@ -1,7 +1,90 @@
 settings:
-  name: "Product Name"
+  name: Getting started
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: true
-sidebar: 
+sidebar:
+  entries:
+    - title: Back to Cloud Manager documentation
+      url: https://docs.netapp.com/us-en/cloud-manager-family
+    - title: Getting started docs
+      url: /index.html
+    - title: Release notes
+      url: /whats-new.html
+    - title: Get started
+      entries:
+        - title: Learn about Cloud Manager
+          url: /concept-overview.html
+        - title: Getting started checklist
+          url: /reference-checklist-cm.html
+        - title: Sign up to Cloud Central
+          url: /task-signing-up.html
+        - title: Log in to Cloud Manager
+          url: /task-logging-in.html
+        - title: Set up a NetApp account
+          entries:
+            - title: Learn about NetApp accounts
+              url: /concept-cloud-central-accounts.html
+            - title: Set up an account
+              url: /task-setting-up-cloud-central-accounts.html
+        - title: Set up a Connector
+          entries:
+            - title: Learn about Connectors
+              url: /concept-connectors.html
+            - title: Networking requirements
+              url: /reference-networking-cloud-manager.html
+            - title: Create a Connector in AWS
+              url: /task-creating-connectors-aws.html
+            - title: Create a Connector in Azure
+              url: /task-creating-connectors-azure.html
+            - title: Create a Connector in GCP
+              url: /task-creating-connectors-gcp.html
+            - title: Install on your own host
+              entries:
+              - title: With internet access
+                url: /task-installing-linux.html
+              - title: On-prem without internet access
+                url: /task-install-connector-onprem-no-internet.html
+            - title: Create from the marketplace
+              entries:
+                - title: AWS Marketplace
+                  url: /task-launching-aws-mktp.html
+                - title: Azure Marketplace
+                  url: /task-launching-azure-mktp.html
+    - title: Where to go next
+      url: /reference-whats-next.html
+    - title: Knowledge and support
+      entries:
+        - title: Register for support
+          url: /task-support-registration.html
+        - title: Get help
+          url: /task-get-help.html
+    - title: Legal notices
+      url: /legal-notices.html
+homepage:
+  tiles:
+    - title: Get started
+      links:
+        - title: title
+          url: page.html
+        - title: title
+          url: page.html
+        - title: title
+          url: page.html
+    - title: tile name
+      links:
+        - title: title
+          url: page.html
+        - title: title
+          url: page.html
+        - title: title
+          url: page.html
+    - title: Blogs & community
+      links:
+        - title: NetApp Community
+          url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+        - title: Cloud Central blog
+          url: https://cloud.netapp.com/blog
+        - title: Cloud webinars
+          url: https://cloud.netapp.com/events
