@@ -1,5 +1,5 @@
 settings:
-  name: "Product Name"
+  name: Getting started
   internal:
     pdf_enabled: true
   prod:
@@ -66,20 +66,20 @@ homepage:
   tiles:
     - title: Get started
       links:
-        - title: <title>
-          url: <page.html>
-        - title: <title>
-          url: <page.html>
-        - title: <title>
-          url: <page.html>
-    - title: <tile name>
+        - title: title
+          url: page.html
+        - title: title
+          url: page.html
+        - title: title
+          url: page.html
+    - title: tile name
       links:
-        - title: <title>
-          url: <page.html>
-        - title: <title>
-          url: <page.html>
-        - title: <title>
-          url: <page.html>
+        - title: title
+          url: page.html
+        - title: title
+          url: page.html
+        - title: title
+          url: page.html
     - title: Blogs & community
       links:
         - title: NetApp Community
