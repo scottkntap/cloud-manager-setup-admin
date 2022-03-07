@@ -60,6 +60,8 @@ sidebar:
           url: /task-support-registration.html
         - title: Get help
           url: /task-get-help.html
+    - title: Legal notices
+      url: /legal-notices.html
 homepage:
   tiles:
     - title: Get started
