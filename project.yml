@@ -1,5 +1,5 @@
 settings:
-  name: cloud-manager-get-started
+  name: "Product Name"
   internal:
     pdf_enabled: true
   prod:
