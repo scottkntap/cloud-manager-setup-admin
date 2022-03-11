@@ -75,4 +75,4 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Con
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[switch between them^].

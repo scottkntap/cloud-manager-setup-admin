@@ -146,7 +146,7 @@ The Connector is now installed and set up with your NetApp account. Cloud Manage
 
 Set up permissions so Cloud Manager can manage resources and processes within your public cloud environment:
 
-* AWS: link:task-adding-aws-accounts.html[Set up an AWS account and then add it to Cloud Manager].
+* AWS: https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Set up an AWS account and then add it to Cloud Manager^].
 
 * Azure: link:task-adding-azure-accounts.html[Set up an Azure account and then add it to Cloud Manager].
 

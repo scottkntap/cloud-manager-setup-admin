@@ -54,7 +54,7 @@ A Connector is supported in the following locations:
 
 === Note about Azure deployments
 
-If you deploy the Connector in Azure, it should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
+If you deploy the Connector in Azure, it should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link^].
 
 === Note about Google Cloud deployments
 
@@ -106,7 +106,7 @@ If you create the Connector yourself from the AWS Marketplace, the Azure Marketp
 * https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
 * link:reference-permissions.html[Learn how Cloud Manager uses cloud provider permissions]
 
-TIP: After you create a Connector in AWS, you can add an additional set of AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. link:task-adding-aws-accounts.html[Learn how to manage AWS credentials and subscriptions].
+TIP: After you create a Connector in AWS, you can add an additional set of AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Learn how to manage AWS credentials and subscriptions^].
 
 == Number of working environments per Connector
 
@@ -149,7 +149,7 @@ link:task-managing-connectors.html#switch-between-connectors[Learn how to switch
 
 While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
 
-* link:task-configuring-proxy.html[Setting a proxy server]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Setting a proxy server^]
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 

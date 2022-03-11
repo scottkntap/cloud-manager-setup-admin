@@ -118,4 +118,4 @@ NOTE: Cloud Manager Operator is the default name provided in the https://mysuppo
 
 .Result
 
-The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[switch between them^].
