@@ -130,11 +130,11 @@ You can manage a working environment with multiple Connectors at the same time f
 
 To set up this configuration:
 
-. link:task-managing-connectors.html[Switch to another Connector]
+. https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switch to another Connector^]
 . Discover the existing working environment.
 +
-* link:task-adding-ontap-cloud.html[Adding existing Cloud Volumes ONTAP systems to Cloud Manager]
-* link:task-discovering-ontap.html[Discovering ONTAP clusters]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-ontap-cloud.html[Adding existing Cloud Volumes ONTAP systems to Cloud Manager^]
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discovering ONTAP clusters^]
 . Set the link:concept-storage-management.html#capacity-management[Capacity Management Mode] to *Manual* on any additional Connectors.
 +
 Only the main Connector should be set to *Automatic Mode*. If you switch to another Connector for DR purposes, then you can change the Capacity Management Mode as needed.
