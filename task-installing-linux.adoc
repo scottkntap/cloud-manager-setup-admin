@@ -148,6 +148,6 @@ Set up permissions so Cloud Manager can manage resources and processes within yo
 
 * AWS: https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Set up an AWS account and then add it to Cloud Manager^].
 
-* Azure: link:task-adding-azure-accounts.html[Set up an Azure account and then add it to Cloud Manager].
+* Azure: https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-azure-accounts.html[Set up an Azure account and then add it to Cloud Manager^].
 
 * Google Cloud: See step 7 above.

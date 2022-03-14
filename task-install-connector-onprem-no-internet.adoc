@@ -115,4 +115,4 @@ The Connector is now installed and you can start using the Cloud Manager feature
 // * link:task-backup-onprem-private-cloud.html[Back up volume data to StorageGRID using Cloud Backup]
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Scan volume data using Cloud Data Sense^]
 
-When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task-managing-connectors.html#upgrading-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].
+When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Learn how to upgrade the Connector^]

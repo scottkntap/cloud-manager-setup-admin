@@ -22,7 +22,7 @@ Now that you've logged in and set up Cloud Manager, users can start creating and
 * https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/task-getting-started-fsx.html[Set up Amazon FSx for ONTAP^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-service-aws/task-manage-cvs-aws.html[Set up Cloud Volumes Service for AWS^]
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover an on-premises ONTAP cluster^]
-* link:task-viewing-amazon-s3.html[Discover your Amazon S3 buckets]
+* https://docs.netapp.com/us-en/cloud-manager-get-started/task-viewing-amazon-s3.html[Discover your Amazon S3 buckets^]
 
 If you're an administrator, you can manage Cloud Manager settings after you create your first Connector.
 

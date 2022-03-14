@@ -45,7 +45,7 @@ These steps describe how to launch the instance from the EC2 Console because the
 
 * *Choose Instance Type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
 +
-link:reference-cloud-mgr-reqs.html[Review the instance requirements].
+https://docs.netapp.com/us-en/cloud-manager-connector/task_installing_linux.html[Review the instance requirements^]
 
 * *Configure Instance*: Select a VPC and subnet, choose the IAM role that you created in step 1, enable termination protection (recommended), and choose any other configuration options that meet your requirements.
 +

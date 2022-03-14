@@ -104,7 +104,7 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
 * https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
-* link:reference-permissions.html[Learn how Cloud Manager uses cloud provider permissions]
+* https://docs.netapp.com/us-en/cloud-manager-get-started/reference-permissions.html[What Cloud Manager does with permissions^]
 
 TIP: After you create a Connector in AWS, you can add an additional set of AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Learn how to manage AWS credentials and subscriptions^].
 
@@ -143,7 +143,7 @@ Only the main Connector should be set to *Automatic Mode*. If you switch to anot
 
 When you create your first Connector, Cloud Manager automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you'll need to switch between them to see the working environments that are specific to each Connector.
 
-link:task-managing-connectors.html#switch-between-connectors[Learn how to switch between Connectors].
+https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Learn how to switch between Connectors^].
 
 == The local user interface
 
@@ -153,7 +153,7 @@ While you should perform almost all tasks from the https://cloudmanager.netapp.c
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 
-link:task-managing-connectors.html#accessing-the-local-ui[Learn how to access the local UI].
+https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Learn how to access the local UI^].
 
 == Connector upgrades
 

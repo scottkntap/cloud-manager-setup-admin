@@ -27,7 +27,7 @@ For example, if you install a Connector in your corporate network, then you must
 
 == Possible conflict with IP addresses in the 172 range
 
-If your network has a subnet configured in the 172 range, then you might experience connectivity failures from Cloud Manager. link:reference-issues.html[Learn more about this known issue].
+If your network has a subnet configured in the 172 range, then you might experience connectivity failures from Cloud Manager.
 
 == Outbound internet access
 
