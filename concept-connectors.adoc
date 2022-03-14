@@ -135,7 +135,7 @@ To set up this configuration:
 +
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-ontap-cloud.html[Adding existing Cloud Volumes ONTAP systems to Cloud Manager^]
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discovering ONTAP clusters^]
-. Set the link:concept-storage-management.html#capacity-management[Capacity Management Mode] to *Manual* on any additional Connectors.
+. Set the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html[Capacity Management Mode^]
 +
 Only the main Connector should be set to *Automatic Mode*. If you switch to another Connector for DR purposes, then you can change the Capacity Management Mode as needed.
 
