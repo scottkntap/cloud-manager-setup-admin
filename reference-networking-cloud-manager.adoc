@@ -17,7 +17,7 @@ Set up your networking so the Connector can manage resources and processes withi
 
 The information on this page is for a typical deployment where the Connector has outbound internet access.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task-configuring-proxy.html[Configuring the Connector to use a proxy server].
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Configuring the Connector to use a proxy server^].
 
 == Connection to target networks
 
@@ -27,7 +27,7 @@ For example, if you install a Connector in your corporate network, then you must
 
 == Possible conflict with IP addresses in the 172 range
 
-If your network has a subnet configured in the 172 range, then you might experience connectivity failures from Cloud Manager. link:reference-issues.html[Learn more about this known issue].
+If your network has a subnet configured in the 172 range, then you might experience connectivity failures from Cloud Manager.
 
 == Outbound internet access
 

@@ -15,17 +15,17 @@ summary: Now that you've logged in and set up Cloud Manager, users can start cre
 [.lead]
 Now that you've logged in and set up Cloud Manager, users can start creating and discovering working environments.
 
-* link:task-getting-started-aws.html[Get started with Cloud Volumes ONTAP for AWS]
-* link:task-getting-started-azure.html[Get started with Cloud Volumes ONTAP for Azure]
-* link:task-getting-started-gcp.html[Get started with Cloud Volumes ONTAP for Google Cloud]
-* link:task-manage-anf.html[Set up Azure NetApp Files]
-* link:task-getting-started-fsx.html[Set up Amazon FSx for ONTAP]
-* link:task-manage-cvs-aws.html[Set up Cloud Volumes Service for AWS]
-* link:task-discovering-ontap.html[Discover an on-premises ONTAP cluster]
-* link:task-viewing-amazon-s3.html[Discover your Amazon S3 buckets]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[Get started with Cloud Volumes ONTAP for AWS^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[Get started with Cloud Volumes ONTAP for Azure^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[Get started with Cloud Volumes ONTAP for Google Cloud^]
+* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf.html[Set up Azure NetApp Files^]
+* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/task-getting-started-fsx.html[Set up Amazon FSx for ONTAP^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-service-aws/task-manage-cvs-aws.html[Set up Cloud Volumes Service for AWS^]
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover an on-premises ONTAP cluster^]
+* https://docs.netapp.com/us-en/cloud-manager-get-started/task-viewing-amazon-s3.html[Discover your Amazon S3 buckets^]
 
 If you're an administrator, you can manage Cloud Manager settings after you create your first Connector.
 
 * link:concept-connectors.html[Learn about Connectors]
-* link:task-installing-https-cert.html[Manage an HTTPS certificate for secure access]
-* link:task-configuring-proxy.html[Configure proxy settings]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-installing-https-cert.html[Manage an HTTPS certificate for secure access^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Configure proxy settings^]
