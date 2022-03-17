@@ -1,5 +1,5 @@
 settings:
-  name: Setup and administration
+  name: Set up and administration
   platform: cloud
   internal:
     pdf_enabled: true
@@ -9,7 +9,7 @@ sidebar:
   entries:
     - title: Back to Cloud Manager documentation
       url: https://docs.netapp.com/us-en/cloud-manager-family
-    - title: Setup and administration
+    - title: Set up and administration
       url: /index.html
     - title: Release notes
       entries:
@@ -39,29 +39,29 @@ sidebar:
               url: /concept-connectors.html
             - title: Set up your networking
               url: /reference-networking-cloud-manager.html
-            - title: Create a Connector in AWS
+            - title: Amazon Web Services
               entries:
-                - title: Required AWS permissions
+                - title: Required permissions
                   url: /reference-permissions-aws.html
                 - title: Create from Cloud Manager
                   url: /task-creating-connectors-aws.html
                 - title: Create from the AWS Marketplace
                   url: /task-launching-aws-mktp.html
-            - title: Create a Connector in Azure
+            - title: Google Cloud
               entries:
-                - title: Required Azure permissions
+                - title: Required permissions
+                  url: /reference-permissions-gcp.html
+                - title: Create a Connector
+                  url: /task-creating-connectors-gcp.html
+            - title: Microsoft Azure
+              entries:
+                - title: Required permissions
                   url: /reference-permissions-azure.html
                 - title: Create from Cloud Manager
                   url: /task-creating-connectors-azure.html
                 - title: Create from the Azure Marketplace
                   url: /task-launching-azure-mktp.html
-            - title: Create a Connector in Google Cloud
-              entries:
-                - title: Required Google Cloud permissions
-                  url: /reference-permissions-gcp.html
-                - title: Create a Connector
-                  url: /task-creating-connectors-gcp.html
-            - title: Install the Connector on your own host
+            - title: Installation on your own host
               entries:
               - title: With internet access
                 url: /task-installing-linux.html
@@ -97,19 +97,19 @@ sidebar:
           entries:
             - title: Overview
               url: /concept-accounts-aws.html
-            - title: Manage AWS credentials and subscriptions
+            - title: Manage credentials and subscriptions
               url: /task-adding-aws-accounts.html
         - title: Azure credentials
           entries:
             - title: Overview
               url: /concept-accounts-azure.html
-            - title: Manage Azure credentials and subscriptions
+            - title: Manage credentials and subscriptions
               url: /task-adding-azure-accounts.html
         - title: Google Cloud credentials
           entries:
             - title: Overview
               url: /concept-accounts-gcp.html
-            - title: Manage Google Cloud credentials and subscriptions
+            - title: Manage credentials and subscriptions
               url: /task-adding-gcp-accounts.html
         - title: NetApp Support Site accounts
           url: /task-adding-nss-accounts.html
