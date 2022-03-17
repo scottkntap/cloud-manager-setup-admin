@@ -2,11 +2,11 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: Get started with Cloud Manager so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud.
-summary: Get started with Cloud Manager so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud.
+lead: Get started with Cloud Manager so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud. After set up is complete, you can administer your NetApp accounts, Connectors, cloud provider accounts, and more.
+summary: Get started with Cloud Manager so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud. After set up is complete, you can administer your NetApp accounts, Connectors, cloud provider accounts, and more.
 ---
 
-= Cloud Manager documentation for getting started
+= Set up and administer Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
