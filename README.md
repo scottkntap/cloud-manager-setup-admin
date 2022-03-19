@@ -1,1 +1,1 @@
-# cloud-manager-get-started
+# cloud-manager-setup-admin
