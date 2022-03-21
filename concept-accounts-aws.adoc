@@ -37,7 +37,7 @@ You would then link:task-adding-aws-accounts.html#adding-aws-accounts-to-cloud-m
 
 After you add another set of credentials, you can switch to them when creating a new working environment:
 
-image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
 == What about Marketplace deployments and on-prem deployments?
 
