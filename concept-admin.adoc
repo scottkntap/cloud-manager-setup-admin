@@ -1,0 +1,15 @@
+---
+sidebar: sidebar
+permalink: concept-admin.html
+keywords:
+summary:
+---
+
+= Administration overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+Coming soon.
