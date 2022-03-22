@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: Learn about new features related to Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
+summary: Learn about new features related to Cloud Manager's administration features, including NetApp accounts, Connectors, cloud provider credentials, and more.
 ---
 
 = What's new
