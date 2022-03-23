@@ -103,10 +103,7 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
-* https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
-* https://docs.netapp.com/us-en/cloud-manager-get-started/reference-permissions.html[What Cloud Manager does with permissions^]
-
-TIP: After you create a Connector in AWS, you can add an additional set of AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Learn how to manage AWS credentials and subscriptions^].
+https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
 
 == Number of working environments per Connector
 
@@ -130,11 +127,11 @@ You can manage a working environment with multiple Connectors at the same time f
 
 To set up this configuration:
 
-. https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switch to another Connector^]
+. link:task-managing-connectors.html[Switch to another Connector]
 . Discover the existing working environment.
 +
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-ontap-cloud.html[Adding existing Cloud Volumes ONTAP systems to Cloud Manager^]
-* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discovering ONTAP clusters^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-ontap-cloud.html[Add existing Cloud Volumes ONTAP systems to Cloud Manager^]
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover ONTAP clusters^]
 . Set the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html[Capacity Management Mode^]
 +
 Only the main Connector should be set to *Automatic Mode*. If you switch to another Connector for DR purposes, then you can change the Capacity Management Mode as needed.
@@ -143,17 +140,17 @@ Only the main Connector should be set to *Automatic Mode*. If you switch to anot
 
 When you create your first Connector, Cloud Manager automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you'll need to switch between them to see the working environments that are specific to each Connector.
 
-https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Learn how to switch between Connectors^].
+link:task-managing-connectors.html[Learn how to switch between Connectors].
 
 == The local user interface
 
 While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
 
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Setting a proxy server^]
+* link:task-configuring-proxy.html[Setting a proxy server]
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 
-https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Learn how to access the local UI^].
+link:task-managing-connectors.html[Learn how to access the local UI^].
 
 == Connector upgrades
 

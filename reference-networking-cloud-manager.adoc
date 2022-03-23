@@ -5,7 +5,7 @@ keywords: networking, network, requirements, connection, connections, vpc, secur
 summary: Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
 ---
 
-= Networking requirements for the Connector
+= Set up networking for the Connector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,7 +17,7 @@ Set up your networking so the Connector can manage resources and processes withi
 
 The information on this page is for a typical deployment where the Connector has outbound internet access.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Configuring the Connector to use a proxy server^].
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task-configuring-proxy.html[Configuring the Connector to use a proxy server].
 
 == Connection to target networks
 
@@ -27,7 +27,11 @@ For example, if you install a Connector in your corporate network, then you must
 
 == Possible conflict with IP addresses in the 172 range
 
-If your network has a subnet configured in the 172 range, then you might experience connectivity failures from Cloud Manager.
+Cloud Manager deploys the Connector with two interfaces that have IP addresses in the 172.17.0.0/16 and 172.18.0.0/16 ranges.
+
+If your network has a subnet configured with either of these ranges, then you might experience connectivity failures from Cloud Manager. For example, discovering on-prem ONTAP clusters in Cloud Manager might fail.
+
+The workaround is to change the IP addresses of the Connector's interfaces. Contact NetApp Support for help.
 
 == Outbound internet access
 

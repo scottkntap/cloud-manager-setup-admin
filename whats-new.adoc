@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: Learn about new features related to Cloud Manager's administration features, including NetApp accounts, Connectors, cloud provider credentials, and more.
+summary: Learn about what's new with Cloud Manager's administration features, including NetApp accounts, Connectors, cloud provider credentials, and more.
 ---
 
 = What's new
@@ -13,7 +13,7 @@ summary: Learn about new features related to Cloud Manager's administration feat
 :imagesdir: ./media/
 
 [.lead]
-Learn about new features related to Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
+Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
 == 27 Feb 2022
@@ -24,7 +24,7 @@ When you create a new Connector in Google Cloud, Cloud Manager will now display 
 
 == 30 Jan 2022
 
-=== Update to NetApp Support Site accounts
+=== Reminder about NetApp Support Site accounts
 
 As a reminder, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the NetApp Support Site (NSS) credentials for any existing accounts that you previously added.
 
@@ -56,7 +56,7 @@ image:screenshot-nss-display-email.png[A screenshot that shows the action menu f
 
 == 28 Nov 2021
 
-=== Update to NetApp Support Site accounts
+=== Update required for NetApp Support Site accounts
 
 Starting in December 2021, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the credentials for any existing NetApp Support Site accounts that you previously added.
 
@@ -103,11 +103,11 @@ The Notification service has been introduced so you can view the status of Cloud
 
 == 1 Aug 2021
 
-=== RHEL 7.9 support for the Connector
+=== RHEL 7.9 support with the Connector
 
 The Connector is now supported on a host that's running Red Hat Enterprise Linux 7.9.
 
-link:reference-cloud-mgr-reqs.html[View system requirements for the Connector].
+link:task-installing-linux.html[View system requirements for the Connector].
 
 == 7 July 2021
 
@@ -123,6 +123,8 @@ We redesigned the *Add Connector* wizard to add new options and to make it easie
 
 NetApp Support Site (NSS) accounts are now managed from the Support Dashboard, rather than from the Settings menu. This change makes it easier to find and manage all support-related information from a single location.
 
+link:task-adding-nss-accounts.html[Learn how to manage NSS accounts].
+
 image:screenshot_nss_management.png[A screenshot of the NSS Management tab in the Support Dashboard where you can add NSS accounts.]
 
 == 5 May 2021
@@ -131,7 +133,7 @@ image:screenshot_nss_management.png[A screenshot of the NSS Management tab in th
 
 The Timeline in Cloud Manager now shows actions and events related to account management. The actions include things like associating users, creating workspaces, and creating Connectors. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
 
-link:task-managing-cloud-central-accounts.html[Learn how to filter the Timeline to the Tenancy service].
+link:task-managing-netapp-accounts.html[Learn how to filter the Timeline to the Tenancy service].
 
 == 11 Apr 2021
 
@@ -147,17 +149,19 @@ You can now create a service account user.
 
 A service account acts as a "user" that can make authorized API calls to Cloud Manager for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. And if you're using federation, you can create a token without generating a refresh token from the cloud.
 
-link:task-managing-cloud-central-accounts.html#creating-and-managing-service-accounts[Learn more about using service accounts].
+link:task-managing-netapp-accounts.html#creating-and-managing-service-accounts[Learn more about using service accounts].
 
 === Private previews
 
 You can now allow private previews in your account to get access to new NetApp cloud services as they are made available as a preview in Cloud Manager.
 
+link:task-managing-netapp-accounts.html#allowing-private-previews[Learn more about this option].
+
 === Third-party services
 
 You can also allow third-party services in your account to get access to third-party services that are available in Cloud Manager.
 
-link:task-managing-cloud-central-accounts.html#allowing-private-previews[Learn more about these options].
+link:task-managing-netapp-accounts.html#allowing-third-party-services[Learn more about this option].
 
 == 9 Feb 2021
 

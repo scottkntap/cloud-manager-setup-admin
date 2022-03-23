@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-adding-gcp-accounts.html
 keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp marketplace, subscribe, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys
-summary: You can manage two types of Google Cloud Platform credentials from Cloud Manager the credentials that are associated with the Connector VM instance and storage access keys used with a Cloud Volumes ONTAP 9.6 system for data tiering.
+summary: You can manage the credentials that are associated with the Connector VM instance.
 ---
 
 = Managing GCP credentials and subscriptions for Cloud Manager
@@ -13,7 +13,7 @@ summary: You can manage two types of Google Cloud Platform credentials from Clou
 :imagesdir: ./media/
 
 [.lead]
-You can manage two types of Google Cloud Platform credentials from Cloud Manager: the credentials that are associated with the Connector VM instance and storage access keys used with a Cloud Volumes ONTAP 9.6 system for link:concept-data-tiering.html[data tiering].
+You can manage the credentials that are associated with the Connector VM instance.
 
 == Associating a Marketplace subscription with GCP credentials
 
@@ -75,7 +75,7 @@ NOTE: If someone from your organization has already subscribed to the NetApp Clo
 +
 image:screenshot_gcp_associate.gif[A screenshot of the subscription assignment page.]
 
-=== Troubleshooting the Marketplace subscription process
+== Troubleshooting the Marketplace subscription process
 
 Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to NetApp Cloud Central. If this happens, use the following steps to complete the subscription process.
 
@@ -92,67 +92,3 @@ image:screenshot_gcp_green_marketplace.png[A screenshot of an accepted entitleme
 .. If the order shows a clock and *Pending* status, go back to the marketplace page and choose *Manage on Provider* to complete the process as documented above.
 +
 image:screenshot_gcp_pending_marketplace.png[A screenshot of a pending marketplace entitlement.]
-
-== Setting up and adding GCP accounts for data tiering with Cloud Volumes ONTAP 9.6
-
-If you want to enable a Cloud Volumes ONTAP 9.6 system for link:concept-data-tiering.html[data tiering], you need to provide Cloud Manager with a storage access key for a service account that has Storage Admin permissions. Cloud Manager uses the access keys to set up and manage a Cloud Storage bucket for data tiering.
-
-TIP: If you want to use data tiering with Cloud Volumes ONTAP 9.7 or later, then follow step 4 in link:task-getting-started-gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
-
-=== Setting up a service account and access keys for Google Cloud Storage
-
-A service account enables Cloud Manager to authenticate and access Cloud Storage buckets used for data tiering. The keys are required so that Google Cloud Storage knows who is making the request.
-
-.Steps
-
-. Open the GCP IAM console and https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role[create a service account that has the Storage Admin role^].
-+
-image:screenshot_gcp_service_account_role.gif[A screenshot of the GCP IAM console that shows the selection of the Storage Admin role for a service account.]
-
-. Go to https://console.cloud.google.com/storage/settings[GCP Storage Settings^].
-
-. If you're prompted, select a project.
-
-. Click the *Interoperability* tab.
-
-. If you haven't already done so, click *Enable interoperability access*.
-
-. Under *Access keys for service accounts*, click *Create a key for a service account*.
-
-. Select the service account that you created in step 1.
-+
-image:screenshot_gcp_access_key.gif[A screenshot of the GCP storage console that shows a selected service account for a new access key.]
-
-. Click *Create Key*.
-
-. Copy the access key and secret.
-+
-You'll need to enter this information in Cloud Manager when you add the GCP account for data tiering.
-
-=== Adding a GCP account to Cloud Manager
-
-Now that you have an access key for a service account, you can add it to Cloud Manager.
-
-.What you'll need
-
-You need to create a Connector before you can change Cloud Manager settings. link:concept-connectors.html#how-to-create-a-connector[Learn how].
-
-.Steps
-
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
-+
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
-
-. Click *Add Credentials* and select *Google Cloud*.
-
-. Enter the access key and secret for the service account.
-+
-The keys enable Cloud Manager to set up a Cloud Storage bucket for data tiering.
-
-. Confirm that the policy requirements have been met and then click *Create Account*.
-
-.What's next?
-
-You can now enable data tiering on individual volumes on a Cloud Volumes ONTAP 9.6 system when you create, modify, or replicate them. For details, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
-
-But before you do, be sure that the subnet in which Cloud Volumes ONTAP resides is configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].

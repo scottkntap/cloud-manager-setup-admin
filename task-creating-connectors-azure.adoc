@@ -5,7 +5,7 @@ keywords: create connector in azure, launch connector in azure, deploy connector
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
-= Creating a Connector in Azure from Cloud Manager
+= Create a Connector in Azure from Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -160,7 +160,7 @@ The virtual machine should be ready in about 7 minutes. You should stay on the p
 
 .After you finish
 
-You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-cloud-central-accounts.html#associating-connectors-with-workspaces[Learn more].
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].
 
 == Create a Connector using a service principal
 
@@ -385,4 +385,4 @@ The virtual machine should be ready in about 7 minutes. You should stay on the p
 
 .After you finish
 
-You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-cloud-central-accounts.html#associating-connectors-with-workspaces[Learn more].
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].

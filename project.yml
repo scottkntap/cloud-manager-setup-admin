@@ -30,9 +30,9 @@ sidebar:
         - title: Set up a NetApp account
           entries:
             - title: Learn about NetApp accounts
-              url: /concept-cloud-central-accounts.html
-            - title: Set up an account
-              url: /task-setting-up-cloud-central-accounts.html
+              url: /concept-netapp-accounts.html
+            - title: Set up workspaces and users
+              url: /task-setting-up-netapp-accounts.html
         - title: Set up a Connector
           entries:
             - title: Learn about Connectors
@@ -74,7 +74,7 @@ sidebar:
         - title: NetApp accounts
           entries:
             - title: Manage your account
-              url: /task-managing-cloud-central-accounts.html
+              url: /task-managing-netapp-accounts.html
             - title: Monitor operations in your account
               url: /task-monitor-cm-operations.html
             - title: User roles
