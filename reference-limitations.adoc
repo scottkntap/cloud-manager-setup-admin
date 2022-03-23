@@ -15,48 +15,31 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
-== Only an HTTP proxy server is supported
+These limitations are specific to Cloud Manager set up and administration: the Connector, the SaaS platform, and more.
+
+== Connector limitations
+
+=== Only an HTTP proxy server is supported
 
 If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
 
 Cloud Manager doesn't support using an HTTPS proxy with the Connector.
 
-== SSL decryption isn't supported
+=== SSL decryption isn't supported
 
 Cloud Manager doesn't support firewall configurations that have SSL decryption enabled. If SSL decryption is enabled, error messages appear in Cloud Manager and the Connector instance displays as inactive.
 
 For enhanced security, you have the option to https://docs.netapp.com/us-en/occm/task_installing_https_cert.html[install an HTTPS certificate signed by a certificate authority (CA)].
 
-== Blank page when loading the local UI
+=== Blank page when loading the local UI
 
 If you load the local user interface for a Connector, the UI might fail to display sometimes, and you just get a blank page.
 
 This issue is related to a caching problem. The workaround is to use an incognito or private web browser session.
 
-== Pay-as-you-go not available for Azure and Google Cloud partners
+== SaaS limitations
 
-If you are a Microsoft Cloud Solution Provider (CSP) partner or a Google Cloud partner, NetApp pay-as-you-go subscriptions are not available. You must purchase a license and deploy NetApp cloud solutions with a BYOL license.
-
-Pay-as-you-go subscriptions are not available for the following NetApp cloud services:
-
-*	Cloud Volumes ONTAP
-*	Cloud Tiering
-*	Cloud Backup
-*	Cloud Data Sense
-
-== Only one HA pair in an Azure resource group
-
-You must use a dedicated resource group for each Cloud Volumes ONTAP HA pair that you deploy in Azure. Only one HA pair is supported in a resource group.
-
-Cloud Manager experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
-
-== Connectors should remain running
-
-A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
-
-For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP PAYGO systems. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.
-
-== SaaS platform is disabled for Government regions
+=== SaaS platform is disabled for Government regions
 
 If you deploy a Connector in an AWS GovCloud region, an Azure Gov region, or an Azure DoD region, access to Cloud Manager is available only through a Connector's host IP address. Access to the SaaS platform is disabled for the entire account.
 
@@ -73,18 +56,15 @@ The SaaS platform is required to use these services.
 
 NOTE: Cloud Backup, Cloud Data Sense, and the Monitoring service are supported and available in Government regions.
 
-== Cloud Manager doesn't support downgrades of Cloud Volumes ONTAP
+== Marketplace limitations
 
-Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous version. Contact NetApp technical support for help with downgrades.
+== Pay-as-you-go not available for Azure and Google Cloud partners
 
-== Shared Linux hosts are not supported
+If you are a Microsoft Cloud Solution Provider (CSP) partner or a Google Cloud partner, NetApp pay-as-you-go subscriptions are not available. You must purchase a license and deploy NetApp cloud solutions with a BYOL license.
 
-The Connector isn't supported on a host that is shared with other applications. The host must be a dedicated host.
+Pay-as-you-go subscriptions are not available for the following NetApp cloud services:
 
-== Cloud Manager doesn't support FlexGroup volumes
-
-While Cloud Volumes ONTAP supports FlexGroup volumes, Cloud Manager does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set Cloud Manager's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
-
-== Cloud Manager doesn't support ONTAP S3
-
-While Cloud Volumes ONTAP in Azure supports objects using S3, Cloud Manager doesn't provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html[S3 Configuration Power Guide^].
+*	Cloud Volumes ONTAP
+*	Cloud Tiering
+*	Cloud Backup
+*	Cloud Data Sense
