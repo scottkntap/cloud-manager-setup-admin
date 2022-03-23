@@ -126,20 +126,16 @@ homepage:
   tiles:
     - title: Get started
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-    - title: tile name
+        - title: Learn about Cloud Manager
+          url: concept-overview.html
+        - title: Getting started checklist
+          url: reference-checklist-cm.html
+    - title: Administer Cloud Manager
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
+        - title: Manage your NetApp account
+          url: task-manage-netapp-accounts.html
+        - title: Manage Connectors
+          url: task-manage-connectors.html
     - title: Blogs & community
       links:
         - title: NetApp Community

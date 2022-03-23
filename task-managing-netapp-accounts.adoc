@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-managing-cloud-central-accounts.html
+permalink: task-managing-netapp-accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, member, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
 summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
 ---
 
-= Managing your account
+= Managing your NetApp account
 :hardbreaks:
 :nofooter:
 :icons: font
