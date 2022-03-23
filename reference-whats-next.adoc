@@ -27,5 +27,5 @@ Now that you've logged in and set up Cloud Manager, users can start creating and
 If you're an administrator, you can manage Cloud Manager settings after you create your first Connector.
 
 * link:concept-connectors.html[Learn about Connectors]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-installing-https-cert.html[Manage an HTTPS certificate for secure access^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Configure proxy settings^]
+* link:task-installing-https-cert.html[Manage an HTTPS certificate for secure access]
+* link:task-configuring-proxy.html[Configure proxy settings]
