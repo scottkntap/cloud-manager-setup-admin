@@ -133,9 +133,9 @@ homepage:
     - title: Administer Cloud Manager
       links:
         - title: Manage your NetApp account
-          url: task-manage-netapp-accounts.html
+          url: task-managing-netapp-accounts.html
         - title: Manage Connectors
-          url: task-manage-connectors.html
+          url: task-managing-connectors.html
     - title: Blogs & community
       links:
         - title: NetApp Community
