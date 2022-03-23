@@ -71,8 +71,6 @@ sidebar:
           url: /reference-whats-next.html
     - title: Administer Cloud Manager
       entries:
-        - title: Overview
-          url: /concept-admin.html
         - title: NetApp accounts
           entries:
             - title: Manage your account
