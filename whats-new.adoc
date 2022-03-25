@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: whats-new.html
-keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes
-summary: Learn what's new in <service>.
+keywords: what's new, features, new, release notes, enhancements, fixes
+summary: Learn about what's new with Cloud Manager's administration features, including NetApp accounts, Connectors, cloud provider credentials, and more.
 ---
 
-= What's new with <service>
+= What's new
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,46 +13,158 @@ summary: Learn what's new in <service>.
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new in <service>.
+Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
-tag::whats-new[]
-== <date of release in the format dd month year like 28 Nov 2021>
+//tag::whats-new[]
+== 27 Feb 2022
 
-=== <feature title>
+=== Connector enhancement in Google Cloud
 
-<description>
+When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
 
-=== <feature title>
+== 30 Jan 2022
 
-<description>
+=== Reminder about NetApp Support Site accounts
 
-== <date of release in the format dd month year like 28 Nov 2021>
+As a reminder, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the NetApp Support Site (NSS) credentials for any existing accounts that you previously added.
 
-=== <feature title>
+If you haven't yet migrated your NSS account to IDaaS, you first need to migrate the account and then update your credentials in Cloud Manager.
 
-<description>
+* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^]
+* link:task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method]
 
-=== <feature title>
+== 2 Jan 2022
 
-<description>
+=== Reduced endpoints for the Connector
 
-== <date of release in the format dd month year like 28 Nov 2021>
+We reduced the number of endpoints that a Connector needs to contact in order to manage resources and processes within your public cloud environment.
 
-=== <feature title>
+link:reference-networking-cloud-manager.html#outbound-internet-access[View the list of required endpoints].
 
-<description>
+=== EBS disk encryption for the Connector
 
-=== <feature title>
+When you deploy a new Connector in AWS from Cloud Manager, you can now choose to encrypt the Connector's EBS disks using the default master key or a managed key.
 
-<description>
-end::whats-new[]
+image:screenshot-connector-disk-encryption.png[A screenshot that shows the disk encryption option when creating a Connector in AWS.]
 
-== <date of release in the format dd month year like 28 Nov 2021>
+=== Email address for NSS accounts
 
-=== <feature title>
+Cloud Manager can now display the email address that's associated with a NetApp Support Site account.
 
-<description>
+image:screenshot-nss-display-email.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to display the email address.]
+//end::whats-new[]
 
-=== <feature title>
+== 28 Nov 2021
 
-<description>
+=== Update required for NetApp Support Site accounts
+
+Starting in December 2021, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the credentials for any existing NetApp Support Site accounts that you previously added.
+
+* link:task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method].
+* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^]
+
+=== Change NSS accounts for Cloud Volumes ONTAP
+
+If your organization has multiple NetApp Support Site accounts, you can now change which account is associated with a Cloud Volumes ONTAP system.
+
+link:task-adding-nss-accounts.html#attach-a-working-environment-to-a-different-nss-account[Learn how to attach a working environment to a different NSS account].
+
+== 4 Nov 2021
+
+=== SOC 2 Type 2 certification
+
+An independent certified public accountant firm and services auditor examined Cloud Manager, Cloud Sync, Cloud Tiering, Cloud Data Sense, and Cloud Backup (Cloud Manager platform), and affirmed that they have achieved SOC 2 Type 2 reports based on the applicable Trust Services criteria.
+
+https://www.netapp.com/company/trust-center/compliance/soc-2/[View NetApp's SOC 2 reports^].
+
+=== Connector no longer supported as a proxy
+
+You can no longer use the Cloud Manager Connector as a proxy server to send AutoSupport messages from Cloud Volumes ONTAP. This functionality has been removed and is no longer supported. You will need to provide AutoSupport connectivity through a NAT instance or your environment’s proxy services.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-ontap-cloud.html[Learn more about configuring AutoSupport with Cloud Volumes ONTAP^]
+
+== 31 Oct 2021
+
+=== Authentication with service principal
+
+When you create a new Connector in Microsoft Azure, you can now authenticate with an Azure service principal, rather than with Azure account credentials.
+
+link:task-creating-connectors-azure.html#create-a-connector-using-a-service-principal[Learn how to authenticate with an Azure service principal].
+
+=== Credentials enhancement
+
+We redesigned the Credentials page for ease of use and to match the current look and feel of the Cloud Manager interface.
+
+== 2 Sept 2021
+
+=== A new Notification Service has been added
+
+The Notification service has been introduced so you can view the status of Cloud Manager operations that you have initiated during your current login session. You can verify whether the operation was successful, or if it failed. link:task-monitor-cm-operations.html[See how to monitor operations in your account].
+
+== 1 Aug 2021
+
+=== RHEL 7.9 support with the Connector
+
+The Connector is now supported on a host that's running Red Hat Enterprise Linux 7.9.
+
+link:task-installing-linux.html[View system requirements for the Connector].
+
+== 7 July 2021
+
+=== Enhancements to Add Connector wizard
+
+We redesigned the *Add Connector* wizard to add new options and to make it easier to use. You can now add tags, specify a role (for AWS or Azure), upload a root certificate for a proxy server, view code for Terraform automation, view progress details, and more.
+
+* link:task-creating-connectors-aws.html[Create a Connector in AWS]
+* link:task-creating-connectors-azure.html[Create a Connector in Azure]
+* link:task-creating-connectors-gcp.html[Create a Connector in GCP]
+
+=== NSS account management from Support Dashboard
+
+NetApp Support Site (NSS) accounts are now managed from the Support Dashboard, rather than from the Settings menu. This change makes it easier to find and manage all support-related information from a single location.
+
+link:task-adding-nss-accounts.html[Learn how to manage NSS accounts].
+
+image:screenshot_nss_management.png[A screenshot of the NSS Management tab in the Support Dashboard where you can add NSS accounts.]
+
+== 5 May 2021
+
+=== Accounts in the Timeline
+
+The Timeline in Cloud Manager now shows actions and events related to account management. The actions include things like associating users, creating workspaces, and creating Connectors. Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
+
+link:task-managing-netapp-accounts.html[Learn how to filter the Timeline to the Tenancy service].
+
+== 11 Apr 2021
+
+=== API calls directly to Cloud Manager
+
+If you configured a proxy server, you can now enable an option to send API calls directly to Cloud Manager without going through the proxy. This option is supported with Connectors that are running in AWS or in Google Cloud.
+
+link:task-configuring-proxy.html[Learn more about this setting].
+
+=== Service account users
+
+You can now create a service account user.
+
+A service account acts as a "user" that can make authorized API calls to Cloud Manager for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. And if you're using federation, you can create a token without generating a refresh token from the cloud.
+
+link:task-managing-netapp-accounts.html#creating-and-managing-service-accounts[Learn more about using service accounts].
+
+=== Private previews
+
+You can now allow private previews in your account to get access to new NetApp cloud services as they are made available as a preview in Cloud Manager.
+
+link:task-managing-netapp-accounts.html#allowing-private-previews[Learn more about this option].
+
+=== Third-party services
+
+You can also allow third-party services in your account to get access to third-party services that are available in Cloud Manager.
+
+link:task-managing-netapp-accounts.html#allowing-third-party-services[Learn more about this option].
+
+== 9 Feb 2021
+
+=== Support Dashboard improvements
+
+We've updated the Support Dashboard by enabling you to add your NetApp Support Site credentials, which registers you for support. You can also initiate a NetApp Support case directly from the dashboard. Just click the Help icon and then *Support*.

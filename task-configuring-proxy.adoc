@@ -25,7 +25,7 @@ Note that this operation restarts the Connector. Ensure that the Connector isnâ€
 
 .Steps
 
-. https://docs.netapp.com/us-en/occm/task_logging_in.html[Log in to the Cloud Manager SaaS interface^] from a machine that has a network connection to the Connector instance.
+. link:task-logging-in.html[Log in to the Cloud Manager SaaS interface^] from a machine that has a network connection to the Connector instance.
 +
 If the Connector doesn't have a public IP address, you'll need a VPN connection or you'll need to connect from a jump host that's in the same network as the Connector.
 

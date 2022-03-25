@@ -30,9 +30,9 @@ sidebar:
         - title: Set up a NetApp account
           entries:
             - title: Learn about NetApp accounts
-              url: /concept-cloud-central-accounts.html
-            - title: Set up an account
-              url: /task-setting-up-cloud-central-accounts.html
+              url: /concept-netapp-accounts.html
+            - title: Set up workspaces and users
+              url: /task-setting-up-netapp-accounts.html
         - title: Set up a Connector
           entries:
             - title: Learn about Connectors
@@ -71,12 +71,10 @@ sidebar:
           url: /reference-whats-next.html
     - title: Administer Cloud Manager
       entries:
-        - title: Overview
-          url: /concept-admin.html
         - title: NetApp accounts
           entries:
             - title: Manage your account
-              url: /task-managing-cloud-central-accounts.html
+              url: /task-managing-netapp-accounts.html
             - title: Monitor operations in your account
               url: /task-monitor-cm-operations.html
             - title: User roles
@@ -128,20 +126,16 @@ homepage:
   tiles:
     - title: Get started
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-    - title: tile name
+        - title: Learn about Cloud Manager
+          url: concept-overview.html
+        - title: Getting started checklist
+          url: reference-checklist-cm.html
+    - title: Administer Cloud Manager
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
+        - title: Manage your NetApp account
+          url: task-managing-netapp-accounts.html
+        - title: Manage Connectors
+          url: task-managing-connectors.html
     - title: Blogs & community
       links:
         - title: NetApp Community

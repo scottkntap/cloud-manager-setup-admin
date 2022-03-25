@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-managing-cloud-central-accounts.html
+permalink: task-managing-netapp-accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, member, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
 summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
 ---
 
-= Managing your account
+= Managing your NetApp account
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,15 +13,15 @@ summary: After you perform initial setup, you can administer your account settin
 :imagesdir: ./media/
 
 [.lead]
-link:task-setting-up-cloud-central-accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
+link:task-setting-up-netapp-accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
 
-link:concept-cloud-central-accounts.html[Learn more about how NetApp accounts work].
+link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
 
 == Managing your account with the Tenancy API
 
-If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the Cloud Manager API, which you use to create and manage working environments.
+If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the Cloud Manager API, which you use to create and manage Cloud Volumes ONTAP working environments.
 
-https://cloudmanager.cloud.netapp.com/tenancy/api-docs/static/index.html[View endpoints for the Tenancy API^].
+https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html[View endpoints for the Tenancy API^]
 
 == Creating and managing users
 
@@ -140,7 +140,7 @@ The client secret is visible only once and is not stored anywhere by Cloud Manag
 
 === Obtaining a bearer token for a service account
 
-In order to make API calls to the https://cloudmanager.cloud.netapp.com/tenancy/api-docs/static/index.html[Tenancy API^], you'll need to obtain a bearer token for a service account.
+In order to make API calls to the https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html[Tenancy API^], you'll need to obtain a bearer token for a service account.
 
 [source,curl]
 curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token' \
@@ -222,7 +222,7 @@ You need to associate the Connector with workspaces so Workspace Admins can acce
 
 If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
 
-link:concept-cloud-central-accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
+link:concept-netapp-accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
 
 .Steps
 
@@ -240,7 +240,7 @@ After you subscribe from a cloud provider's marketplace, each subscription is av
 
 For example, let's say that you have two accounts and each is billed through separate subscriptions. You might disassociate a subscription from one of the accounts so the users in that account don't accidentally choose the wrong subscription when creating a Cloud Volume ONTAP working environment.
 
-link:concept-cloud-central-accounts.html[Learn more about subscriptions].
+link:concept-netapp-accounts.html[Learn more about subscriptions].
 
 .Steps
 

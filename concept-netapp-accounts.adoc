@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: concept-cloud-central-accounts.html
+permalink: concept-netapp-accounts.html
 keywords: accounts, workspaces, Connector, users, cloud central, admin, Account Admin, Workspace Admin, account settings, workspaces, users, members, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces
 summary: A NetApp account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
 ---
 
-= Account settings: users, workspaces, Connectors, and subscriptions
+= Learn about NetApp accounts
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: A NetApp account provides multi-tenancy and enables you to organize use
 :imagesdir: ./media/
 
 [.lead]
-A _NetApp account_ (formerly Cloud Central account) provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
+A _NetApp account_ provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
 
 For example, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called _workspaces_. These workspaces are invisible to other users, unless they are shared.
 
@@ -25,9 +25,9 @@ Account Admins can then modify the settings for this account by managing users (
 
 image:screenshot_account_settings.gif["A screenshot that shows the Manage Account widget from which you can manage users, workspaces, and Connectors."]
 
-For step-by-step instructions, see link:task-setting-up-cloud-central-accounts.html[Setting up the NetApp account].
+For step-by-step instructions, see link:task-setting-up-netapp-accounts.html[Setting up the NetApp account].
 
-== Max Cloud Volumes ONTAP systems per account
+== Max Cloud Volumes ONTAP systems
 
 The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
 
@@ -54,7 +54,7 @@ When you associate a user, you assign them a role:
 * _Compliance Viewer_: Can only view Cloud Data Sense compliance information and generate reports for systems that they have permission to access.
 * _SnapCenter Admin_: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. _This service is currently in Beta._
 
-https://docs.netapp.com/us-en/cloud-manager-accounts/reference-user-roles.html[Learn more about these roles^].
+link:reference-user-roles.html[Learn more about these roles].
 
 == Workspaces
 
@@ -66,7 +66,7 @@ A working environment represents a storage system:
 * An on-premises ONTAP cluster in your network
 * An ONTAP cluster in a NetApp Private Storage configuration
 
-link:task-setting-up-cloud-central-accounts.html[Learn how to add a workspace].
+link:task-setting-up-netapp-accounts.html[Learn how to add a workspace].
 
 == Connectors
 
@@ -88,7 +88,7 @@ You have the option to rename a subscription and to disassociate the subscriptio
 
 For example, let's say that you have two accounts and each is billed through separate subscriptions. You might disassociate a subscription from one of the accounts so the users in that account don't accidentally choose the wrong subscription when creating a Cloud Volume ONTAP working environment.
 
-https://docs.netapp.com/us-en/cloud-manager-accounts/task-managing-cloud-central-accounts.html[Learn how to manage subscriptions^].
+link:task-managing-netapp-accounts.html[Learn how to manage subscriptions].
 
 == Examples
 

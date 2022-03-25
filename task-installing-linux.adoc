@@ -133,7 +133,7 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 . After you log in, set up Cloud Manager:
 .. Specify the NetApp account to associate with the Connector.
 +
-link:concept-cloud-central-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 +
 image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a NetApp account and name the system.]
@@ -146,8 +146,8 @@ The Connector is now installed and set up with your NetApp account. Cloud Manage
 
 Set up permissions so Cloud Manager can manage resources and processes within your public cloud environment:
 
-* AWS: https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Set up an AWS account and then add it to Cloud Manager^].
+* AWS: link:task-adding-aws-accounts.html[Set up an AWS account and then add it to Cloud Manager]
 
-* Azure: https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-azure-accounts.html[Set up an Azure account and then add it to Cloud Manager^].
+* Azure: link:task-adding-azure-accounts.html[Set up an Azure account and then add it to Cloud Manager]
 
-* Google Cloud: See step 7 above.
+* Google Cloud: See step 7 above

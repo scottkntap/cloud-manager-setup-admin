@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-setting-up-cloud-central-accounts.html
+permalink: task-setting-up-netapp-accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
 summary: When you log in to Cloud Manager for the first time, you're prompted to create a NetApp account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
 ---
 
-= Setting up workspaces and users in your NetApp account
+= Set up workspaces and users in your NetApp account
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,11 +15,11 @@ summary: When you log in to Cloud Manager for the first time, you're prompted to
 [.lead]
 When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
-link:concept-cloud-central-accounts.html[Learn more about how NetApp accounts work].
+link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
 
 Set up your NetApp account so users can access Cloud Manager and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
 
-== Adding workspaces
+== Add workspaces
 
 In Cloud Manager, workspaces enable you to isolate a set of working environments from other working environments and from other users. For example, you can create two workspaces and associate separate users with each workspace.
 
@@ -43,7 +43,7 @@ image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage 
 
 If a Workspace Admin needs access to this workspace, then you'll need to associate the user. You'll also need to associate Connectors with the workspace so Workspace Admins can use those Connectors.
 
-== Adding users
+== Add users
 
 Associate Cloud Central users with the NetApp account so those users can create and manage working environments in Cloud Manager.
 
@@ -74,7 +74,7 @@ image:screenshot_associate_user.gif[A screenshot that shows how to associate a u
 
 The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
 
-== Associating Workspace Admins with workspaces
+== Associate Workspace Admins with workspaces
 
 You can associate Workspace Admins with additional workspaces at any time. Associating the user enables them to create and view the working environments in that workspace.
 
@@ -96,13 +96,13 @@ image:screenshot_associate_user_workspace.png[A screenshot that shows the action
 
 The user can now access those workspaces from Cloud Manager, as long as the Connector was also associated with the workspaces.
 
-== Associating Connectors with workspaces
+== Associate Connectors with workspaces
 
 You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems.
 
 If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
 
-link:concept-cloud-central-accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
+link:concept-netapp-accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
 
 .Steps
 
@@ -122,4 +122,4 @@ Workspace Admins can now use those Connectors to create Cloud Volumes ONTAP syst
 
 == What's next?
 
-Now that you've set up your account, you can manage it any time by removing users, managing workspaces, Connectors, and subscriptions. https://docs.netapp.com/us-en/cloud-manager-accounts/task-managing-cloud-central-accounts.html[Learn more^].
+Now that you've set up your account, you can manage it any time by removing users, managing workspaces, Connectors, and subscriptions. link:task-managing-netapp-accounts.html[Learn how to manage your account].

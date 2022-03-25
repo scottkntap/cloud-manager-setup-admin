@@ -5,7 +5,7 @@ keywords: create connector in gcp, launch connector in gcp, deploy connector in 
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
-= Creating a Connector in GCP from Cloud Manager
+= Create a Connector in Google Cloud from Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -234,7 +234,7 @@ http://_ipaddress_:80
 
 .. Specify the NetApp account to associate with the Connector.
 +
-link:concept-cloud-central-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
 
 .. Enter a name for the system.
 +
@@ -247,4 +247,4 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Con
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[switch between them^].
+The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].

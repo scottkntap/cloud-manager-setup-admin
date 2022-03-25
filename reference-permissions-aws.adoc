@@ -5,7 +5,7 @@ keywords: permissions, actions, aws, aws permissions
 summary: Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
 ---
 
-= AWS permissions for the Connector
+= Required permissions for the Connector in AWS
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -64,11 +64,10 @@ Note the following requirements for the account:
 
 Users can now select the account when creating new Cloud Volumes ONTAP systems, when registering existing Cloud Volumes ONTAP systems, and when viewing data in Active IQ.
 
-* link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
-* link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
-* link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in GCP]
-* link:task-registering.html[Registering pay-as-you-go systems]
-* link:concept-licensing.html[Learn how Cloud Manager manages license files]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html[Launching Cloud Volumes ONTAP in GCP^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html[Registering pay-as-you-go systems^]
 
 == Update an NSS account for the new authentication method
 
