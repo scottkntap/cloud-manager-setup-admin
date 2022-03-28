@@ -81,7 +81,7 @@ https://www.netapp.com/company/trust-center/compliance/soc-2/[View NetApp's SOC 
 
 You can no longer use the Cloud Manager Connector as a proxy server to send AutoSupport messages from Cloud Volumes ONTAP. This functionality has been removed and is no longer supported. You will need to provide AutoSupport connectivity through a NAT instance or your environment’s proxy services.
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-ontap-cloud.html[Learn more about configuring AutoSupport with Cloud Volumes ONTAP^]
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html[Learn more about verifying AutoSupport with Cloud Volumes ONTAP^]
 
 == 31 Oct 2021
 
