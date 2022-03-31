@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="at-element-marker">
+  <title>Learn about Connectors | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Learn about Connectors | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" />
+	<meta property="og:description" content="In most cases, you will need to deploy a Connector in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processe..." />
+  <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="In most cases, you will need to deploy a Connector in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processe...">
+  <meta name="keywords" content=" concept, connectors, learn about connectors, service connectors, what are connectors, what is a connector, what's a connector, days, 14 days"><!-- Icons -->
+  <link rel="icon" href="/us-en/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-setup-admin/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/us-en/cloud-manager-setup-admin/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/us-en/cloud-manager-setup-admin/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/us-en/cloud-manager-setup-admin/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/us-en/cloud-manager-setup-admin/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/us-en/cloud-manager-setup-admin/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/us-en/cloud-manager-setup-admin/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/us-en/cloud-manager-setup-admin/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/us-en/cloud-manager-setup-admin/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/us-en/cloud-manager-setup-admin/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/us-en/cloud-manager-setup-admin/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/cloud-manager-setup-admin/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/cloud-manager-setup-admin/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/us-en/cloud-manager-setup-admin/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/us-en/cloud-manager-setup-admin/css/tabbed-blocks.css" type="text/css">
+  <link rel='stylesheet' href='/us-en/cloud-manager-setup-admin/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><link rel="stylesheet" href='/us-en/cloud-manager-setup-admin/css/product-family.css' type="text/css">
+  <script src='/us-en/cloud-manager-setup-admin/js/product-family.js'></script><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/cloud-manager-setup-admin/js/na-search.js'></script><script src='/us-en/cloud-manager-setup-admin/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/cloud-manager-setup-admin/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/cloud-manager-setup-admin/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/us-en/cloud-manager-setup-admin/js/na-utility.js'></script>
+  <script src='/us-en/cloud-manager-setup-admin/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/us-en/cloud-manager-setup-admin/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/us-en/cloud-manager-setup-admin/js/toc.js'></script>
+  <script src='/us-en/cloud-manager-setup-admin/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/us-en/cloud-manager-setup-admin/js/version-dropdown.js'></script>
+  <script src='/us-en/cloud-manager-setup-admin/js/FileSaver.min.js'></script>
+  <script src='/us-en/cloud-manager-setup-admin/js/jszip-utils.min.js'></script>
+  <script src='/us-en/cloud-manager-setup-admin/js/jszip.min.js'></script>
+  <script src='/us-en/cloud-manager-setup-admin/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Learn about Connectors](https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/concept-connectors.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Product and Solutions</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support and Training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/us-en/cloud-manager-setup-admin/search.html"
+          data-type="widget" 
+          data-placeholder="Search Documentation" 
+          data-no-results-found="No results were found for {query}" 
+          data-did-you-mean="Search for {suggestion}." 
+          data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
+          data-results-found="{hitCount} results found"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>Available PDFs<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/us-en/cloud-manager-setup-admin/pdfs/fullsite-sidebar/Set_up_and_administer_Cloud_Manager.pdf" >
+          <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Release_notes.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Release notes
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Get_started.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Get started
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Set_up_a_NetApp_account.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Set up a NetApp account
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Set_up_a_Connector.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Set up a Connector
+          </a>
+          
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/us-en/cloud-manager-setup-admin/pdfs/pages/concept-connectors.pdf" >
+    <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Amazon_Web_Services.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Amazon Web Services
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Google Cloud
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Microsoft_Azure.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Microsoft Azure
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Installation_on_your_own_host.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Installation on your own host
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Administer_Cloud_Manager.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Administer Cloud Manager
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/NetApp_accounts.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            NetApp accounts
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Connectors.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Connectors
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/AWS_credentials.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            AWS credentials
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Azure_credentials.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Azure credentials
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Google_Cloud_credentials.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Google Cloud credentials
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Knowledge_and_support.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>
+            Knowledge and support
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/us-en/cloud-manager-setup-admin/images/pdf-zip.png" width="16" height="16"/>
+      <pre>Collection of separate PDF docs<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
+        All Cloud Manager documentation
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/index.html">
+        Set up and administration docs
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Release notes</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/whats-new.html">
+        What's new
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-limitations.html">
+        Limitations
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-overview.html">
+        Learn about Cloud Manager
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-checklist-cm.html">
+        Getting started checklist
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-signing-up.html">
+        Sign up to Cloud Central
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-logging-in.html">
+        Log in to Cloud Manager
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up a NetApp account</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html">
+        Learn about NetApp accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html">
+        Set up workspaces and users
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up a Connector</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-connectors.html">
+        Learn about Connectors
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html">
+        Set up your networking
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Amazon Web Services</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
+        Required permissions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html">
+        Create from Cloud Manager
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html">
+        Create from the marketplace
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html">
+        Required permissions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html">
+        Create a Connector
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Microsoft Azure</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
+        Required permissions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html">
+        Create from Cloud Manager
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html">
+        Create from the marketplace
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Installation on your own host</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-installing-linux.html">
+        With internet access
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html">
+        On-prem without internet access
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-whats-next.html">
+        Where to go next
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Administer Cloud Manager</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp accounts</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html">
+        Manage your account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html">
+        Monitor operations in your account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-user-roles.html">
+        User roles
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Connectors</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-finding-system-id.html">
+        Find the system ID for a Connector
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-managing-connectors.html">
+        Manage existing Connectors
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-installing-https-cert.html">
+        Install an HTTPS certificate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-configuring-proxy.html">
+        Configure proxy settings
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-connector-default-config.html">
+        Default configuration
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> AWS credentials</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-aws.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html">
+        Manage credentials and subscriptions
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure credentials</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-azure.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html">
+        Manage credentials and subscriptions
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Google Cloud credentials</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-gcp.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html">
+        Manage credentials and subscriptions
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html">
+        NetApp Support Site accounts
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Knowledge and support</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-support-registration.html">
+        Register for support
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-get-help.html">
+        Get help
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/legal-notices.html">
+        Legal notices
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Cloud Docs</a>
+        </li>
+        
+
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/us-en/cloud-manager-setup-admin/">Set&nbsp;up&nbsp;and&nbsp;administration</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Learn about Connectors</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-03-28 16:37:34 +0000">03/28/2022</time>
+    
+  
+
+<span>Contributors
+  <a target="_blank" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>In most cases, an Account Admin will need to deploy a <em>Connector</em> in your cloud or on-premises network. The Connector is a crucial component for the day-to-day use of Cloud Manager. The Connector enables Cloud Manager to manage the resources and processes within your public cloud environment.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="when-a-connector-is-required">When a Connector is required</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Connector is required to use many of the features and services in Cloud Manager.</p>
+</div>
+<div class="sect2">
+<h3 id="services">Services</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon FSx for ONTAP management features</p>
+</li>
+<li>
+<p>Amazon S3 bucket discovery</p>
+</li>
+<li>
+<p>Cloud Backup</p>
+</li>
+<li>
+<p>Cloud Data Sense</p>
+</li>
+<li>
+<p>Cloud Tiering</p>
+</li>
+<li>
+<p>Cloud Volumes ONTAP</p>
+</li>
+<li>
+<p>Global File Cache</p>
+</li>
+<li>
+<p>Kubernetes clusters</p>
+</li>
+<li>
+<p>Monitoring</p>
+</li>
+<li>
+<p>On-premises ONTAP clusters</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A Connector is <strong><em>not</em></strong> required for the following services:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Active IQ Digital Advisor</p>
+</li>
+<li>
+<p>Amazon FSx for ONTAP working environment creation<br>
+While a Connector isn&#8217;t required to create a working environment, it is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.</p>
+</li>
+<li>
+<p>Azure NetApp Files</p>
+<div class="paragraph">
+<p>While a Connector isn&#8217;t required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.</p>
+</div>
+</li>
+<li>
+<p>Cloud Volumes Service for Google Cloud</p>
+</li>
+<li>
+<p>Cloud Sync</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="digital-wallet">Digital Wallet</h3>
+<div class="paragraph">
+<p>In almost all cases, you can add a license to the Digital Wallet without a Connector.</p>
+</div>
+<div class="paragraph">
+<p>The only time that a Connector is required to add a license to the Digital Wallet is for Cloud Volumes ONTAP <em>node-based</em> licenses. A Connector is required in this case because the data is taken from the licenses installed on Cloud Volumes ONTAP systems.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="supported-locations">Supported locations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Connector is supported in the following locations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon Web Services</p>
+</li>
+<li>
+<p>Microsoft Azure</p>
+</li>
+<li>
+<p>Google Cloud</p>
+</li>
+<li>
+<p>On your premises</p>
+</li>
+<li>
+<p>On your premises, without internet access</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="note-about-azure-deployments">Note about Azure deployments</h3>
+<div class="paragraph">
+<p>If you deploy the Connector in Azure, it should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the <a href="https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies" target="_blank" rel="noopener">Azure region pair</a> for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_blank" rel="noopener">Learn how Cloud Volumes ONTAP uses an Azure Private Link</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="note-about-google-cloud-deployments">Note about Google Cloud deployments</h3>
+<div class="paragraph">
+<p>If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that&#8217;s running in Google Cloud as well. You can&#8217;t use a Connector that&#8217;s running in AWS, Azure, or on-prem.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="shared-linux-hosts-are-not-supported">Shared Linux hosts are not supported</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector isn&#8217;t supported on a VM that is shared with other applications. The VM must be dedicated to the Connector software.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3rd-party-agents-and-extensions">3rd-party agents and extensions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>3rd-party agents or VM extensions are not supported on the Connector VM.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="connectors-should-remain-running">Connectors should remain running</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Connector should remain running at all times. It&#8217;s important for the continued health and operation of the services that you enable.</p>
+</div>
+<div class="paragraph">
+<p>For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP PAYGO systems. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-create-a-connector">How to create a Connector</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other features listed above.</p>
+</div>
+<div class="paragraph">
+<p>An Account Admin can create a Connector in a number of ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Directly from Cloud Manager (recommended)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="task-creating-connectors-aws.html">Create in AWS</a></p>
+</li>
+<li>
+<p><a href="task-creating-connectors-azure.html">Create in Azure</a></p>
+</li>
+<li>
+<p><a href="task-creating-connectors-gcp.html">Create in GCP</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>By manually installing the software on your own Linux host</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="task-installing-linux.html">On a host that has internet access</a></p>
+</li>
+<li>
+<p><a href="task-install-connector-onprem-no-internet.html">On an on-prem host that doesn&#8217;t have internet access</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>From your cloud provider&#8217;s marketplace</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="task-launching-aws-mktp.html">AWS Marketplace</a></p>
+</li>
+<li>
+<p><a href="task-launching-azure-mktp.html">Azure Marketplace</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cloud Manager will prompt you to create a Connector if one is needed to complete an action.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="permissions">Permissions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Specific permissions are needed to create the Connector and another set of permissions are needed for the Connector instance itself.</p>
+</div>
+<div class="sect2">
+<h3 id="permissions-to-create-a-connector">Permissions to create a Connector</h3>
+<div class="paragraph">
+<p>The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in your cloud provider of choice. Cloud Manager will remind you of the permissions requirements when you create a Connector.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">View policies for each cloud provider</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="permissions-for-the-connector-instance">Permissions for the Connector instance</h3>
+<div class="paragraph">
+<p>The Connector needs specific cloud provider permissions to perform operations on your behalf. For example, to deploy and manage Cloud Volumes ONTAP.</p>
+</div>
+<div class="paragraph">
+<p>When you create a Connector directly from Cloud Manager, Cloud Manager creates the Connector with the permissions that it needs. There&#8217;s nothing that you need to do.</p>
+</div>
+<div class="paragraph">
+<p>If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you&#8217;ll need to make sure that the right permissions are in place.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">View policies for each cloud provider</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="number-of-working-environments-per-connector">Number of working environments per Connector</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Connector can manage multiple working environments in Cloud Manager. The maximum number of working environments that a single Connector should manage varies. It depends on the type of working environments, the number of volumes, the amount of capacity being managed, and the number of users.</p>
+</div>
+<div class="paragraph">
+<p>If you have a large-scale deployment, work with your NetApp representative to size your environment. If you experience any issues along the way, reach out to us by using the in-product chat.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="when-to-use-multiple-connectors">When to use multiple Connectors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In some cases, you might only need one Connector, but you might find yourself needing two or more Connectors.</p>
+</div>
+<div class="paragraph">
+<p>Here are a few examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You&#8217;re using a multi-cloud environment (AWS and Azure), so you have one Connector in AWS and another in Azure. Each manages the Cloud Volumes ONTAP systems running in those environments.</p>
+</li>
+<li>
+<p>A service provider might use one NetApp account to provide services for their customers, while using another account to provide disaster recovery for one of their business units. Each account would have separate Connectors.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-multiple-connectors-with-the-same-working-environment">Using multiple Connectors with the same working environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can manage a working environment with multiple Connectors at the same time for disaster recovery purposes. If one Connector goes down, you can switch to the other Connector to immediately manage the working environment.</p>
+</div>
+<div class="paragraph">
+<p>To set up this configuration:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="task-managing-connectors.html">Switch to another Connector</a></p>
+</li>
+<li>
+<p>Discover the existing working environment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html" target="_blank" rel="noopener">Add existing Cloud Volumes ONTAP systems to Cloud Manager</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">Discover ONTAP clusters</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Set the <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html" target="_blank" rel="noopener">Capacity Management Mode</a></p>
+<div class="paragraph">
+<p>Only the main Connector should be set to <strong>Automatic Mode</strong>. If you switch to another Connector for DR purposes, then you can change the Capacity Management Mode as needed.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="when-to-switch-between-connectors">When to switch between Connectors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you create your first Connector, Cloud Manager automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you&#8217;ll need to switch between them to see the working environments that are specific to each Connector.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-managing-connectors.html">Learn how to switch between Connectors</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-local-user-interface">The local user interface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While you should perform almost all tasks from the <a href="https://cloudmanager.netapp.com" target="_blank" rel="noopener">SaaS user interface</a>, a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn&#8217;t have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="task-configuring-proxy.html">Setting a proxy server</a></p>
+</li>
+<li>
+<p>Installing a patch (you&#8217;ll typically work with NetApp personnel to install a patch)</p>
+</li>
+<li>
+<p>Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="task-managing-connectors.html" target="_blank" rel="noopener">Learn how to access the local UI</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="connector-upgrades">Connector upgrades</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector automatically updates its software to the latest version, as long as it has <a href="reference-networking-cloud-manager.html">outbound internet access</a> to obtain the software update.</p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-setup-admin/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
+  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/us-en/cloud-manager-setup-admin/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/us-en/cloud-manager-setup-admin/js/prism.js'></script>
+      <script type="text/javascript" src='/us-en/cloud-manager-setup-admin/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/us-en/cloud-manager-setup-admin/js/www-ntap.js'></script>
+    <script src='/us-en/cloud-manager-setup-admin/js/tabbed-blocks.js'></script>
+  </body></html>
