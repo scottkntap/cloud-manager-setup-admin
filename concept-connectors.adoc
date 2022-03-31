@@ -1,0 +1,172 @@
+---
+sidebar: sidebar
+permalink: concept-connectors.html
+keywords: concept, connectors, learn about connectors, service connectors, what are connectors, what is a connector, what's a connector, days, 14 days
+summary: In most cases, you will need to deploy a Connector in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+---
+
+= Learn about Connectors
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+In most cases, an Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector is a crucial component for the day-to-day use of Cloud Manager. The Connector enables Cloud Manager to manage the resources and processes within your public cloud environment.
+
+== When a Connector is required
+
+A Connector is required to use many of the features and services in Cloud Manager.
+
+=== Services
+
+* Amazon FSx for ONTAP management features
+* Amazon S3 bucket discovery
+* Cloud Backup
+* Cloud Data Sense
+* Cloud Tiering
+* Cloud Volumes ONTAP
+* Global File Cache
+* Kubernetes clusters
+* Monitoring
+* On-premises ONTAP clusters
+
+A Connector is *_not_* required for the following services:
+
+* Active IQ Digital Advisor
+* Amazon FSx for ONTAP working environment creation
+While a Connector isn't required to create a working environment, it is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
+* Azure NetApp Files
++
+While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
+* Cloud Volumes Service for Google Cloud
+* Cloud Sync
+
+=== Digital Wallet
+
+In almost all cases, you can add a license to the Digital Wallet without a Connector.
+
+The only time that a Connector is required to add a license to the Digital Wallet is for Cloud Volumes ONTAP _node-based_ licenses. A Connector is required in this case because the data is taken from the licenses installed on Cloud Volumes ONTAP systems.
+
+== Supported locations
+
+A Connector is supported in the following locations:
+
+* Amazon Web Services
+* Microsoft Azure
+* Google Cloud
+* On your premises
+* On your premises, without internet access
+
+=== Note about Azure deployments
+
+If you deploy the Connector in Azure, it should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link^].
+
+=== Note about Google Cloud deployments
+
+If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
+
+== Shared Linux hosts are not supported
+
+The Connector isn't supported on a VM that is shared with other applications. The VM must be dedicated to the Connector software.
+
+== 3rd-party agents and extensions
+
+3rd-party agents or VM extensions are not supported on the Connector VM.
+
+== Connectors should remain running
+
+A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
+
+For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP PAYGO systems. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.
+
+== How to create a Connector
+
+An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other features listed above.
+
+An Account Admin can create a Connector in a number of ways:
+
+* Directly from Cloud Manager (recommended)
+** link:task-creating-connectors-aws.html[Create in AWS]
+** link:task-creating-connectors-azure.html[Create in Azure]
+** link:task-creating-connectors-gcp.html[Create in GCP]
+* By manually installing the software on your own Linux host
+** link:task-installing-linux.html[On a host that has internet access]
+** link:task-install-connector-onprem-no-internet.html[On an on-prem host that doesn't have internet access]
+* From your cloud provider's marketplace
+** link:task-launching-aws-mktp.html[AWS Marketplace]
+** link:task-launching-azure-mktp.html[Azure Marketplace]
+
+Cloud Manager will prompt you to create a Connector if one is needed to complete an action.
+
+== Permissions
+
+Specific permissions are needed to create the Connector and another set of permissions are needed for the Connector instance itself.
+
+=== Permissions to create a Connector
+
+The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in your cloud provider of choice. Cloud Manager will remind you of the permissions requirements when you create a Connector.
+
+https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^].
+
+=== Permissions for the Connector instance
+
+The Connector needs specific cloud provider permissions to perform operations on your behalf. For example, to deploy and manage Cloud Volumes ONTAP.
+
+When you create a Connector directly from Cloud Manager, Cloud Manager creates the Connector with the permissions that it needs. There's nothing that you need to do.
+
+If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
+
+https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
+
+== Number of working environments per Connector
+
+A Connector can manage multiple working environments in Cloud Manager. The maximum number of working environments that a single Connector should manage varies. It depends on the type of working environments, the number of volumes, the amount of capacity being managed, and the number of users.
+
+If you have a large-scale deployment, work with your NetApp representative to size your environment. If you experience any issues along the way, reach out to us by using the in-product chat.
+
+== When to use multiple Connectors
+
+In some cases, you might only need one Connector, but you might find yourself needing two or more Connectors.
+
+Here are a few examples:
+
+* You're using a multi-cloud environment (AWS and Azure), so you have one Connector in AWS and another in Azure. Each manages the Cloud Volumes ONTAP systems running in those environments.
+
+* A service provider might use one NetApp account to provide services for their customers, while using another account to provide disaster recovery for one of their business units. Each account would have separate Connectors.
+
+== Using multiple Connectors with the same working environment
+
+You can manage a working environment with multiple Connectors at the same time for disaster recovery purposes. If one Connector goes down, you can switch to the other Connector to immediately manage the working environment.
+
+To set up this configuration:
+
+. link:task-managing-connectors.html[Switch to another Connector]
+. Discover the existing working environment.
++
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html[Add existing Cloud Volumes ONTAP systems to Cloud Manager^]
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover ONTAP clusters^]
+. Set the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html[Capacity Management Mode^]
++
+Only the main Connector should be set to *Automatic Mode*. If you switch to another Connector for DR purposes, then you can change the Capacity Management Mode as needed.
+
+== When to switch between Connectors
+
+When you create your first Connector, Cloud Manager automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you'll need to switch between them to see the working environments that are specific to each Connector.
+
+link:task-managing-connectors.html[Learn how to switch between Connectors].
+
+== The local user interface
+
+While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
+
+* link:task-configuring-proxy.html[Setting a proxy server]
+* Installing a patch (you'll typically work with NetApp personnel to install a patch)
+* Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
+
+link:task-managing-connectors.html[Learn how to access the local UI^].
+
+== Connector upgrades
+
+The Connector automatically updates its software to the latest version, as long as it has link:reference-networking-cloud-manager.html[outbound internet access] to obtain the software update.

@@ -1,0 +1,70 @@
+---
+sidebar: sidebar
+permalink: reference-limitations.html
+keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, cloud manager, Cloud Volumes ONTAP, days, 14 days, running, Connectors should remain running
+summary: Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
+---
+
+= Known limitations
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
+
+These limitations are specific to Cloud Manager set up and administration: the Connector, the SaaS platform, and more.
+
+== Connector limitations
+
+=== Only an HTTP proxy server is supported
+
+If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
+
+Cloud Manager doesn't support using an HTTPS proxy with the Connector.
+
+=== SSL decryption isn't supported
+
+Cloud Manager doesn't support firewall configurations that have SSL decryption enabled. If SSL decryption is enabled, error messages appear in Cloud Manager and the Connector instance displays as inactive.
+
+For enhanced security, you have the option to link:task-installing-https-cert.html[install an HTTPS certificate signed by a certificate authority (CA)].
+
+=== Blank page when loading the local UI
+
+If you load the local user interface for a Connector, the UI might fail to display sometimes, and you just get a blank page.
+
+This issue is related to a caching problem. The workaround is to use an incognito or private web browser session.
+
+== SaaS limitations
+
+=== SaaS platform is disabled for Government regions
+
+If you deploy a Connector in an AWS GovCloud region, an Azure Gov region, or an Azure DoD region, access to Cloud Manager is available only through a Connector's host IP address. Access to the SaaS platform is disabled for the entire account.
+
+This means that only privileged users who can access the end-user internal VPC/VNet can use Cloud Manager's UI or API.
+
+It also means that the following services aren't available from Cloud Manager:
+
+* Cloud Data Sense
+* Kubernetes
+* Cloud Tiering
+* Global File Cache
+
+The SaaS platform is required to use these services.
+
+NOTE: Cloud Backup, Cloud Data Sense, and the Monitoring service are supported and available in Government regions.
+
+== Marketplace limitations
+
+== Pay-as-you-go not available for Azure and Google Cloud partners
+
+If you are a Microsoft Cloud Solution Provider (CSP) partner or a Google Cloud partner, NetApp pay-as-you-go subscriptions are not available. You must purchase a license and deploy NetApp cloud solutions with a BYOL license.
+
+Pay-as-you-go subscriptions are not available for the following NetApp cloud services:
+
+*	Cloud Volumes ONTAP
+*	Cloud Tiering
+*	Cloud Backup
+*	Cloud Data Sense

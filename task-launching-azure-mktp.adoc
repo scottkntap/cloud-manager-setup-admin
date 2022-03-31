@@ -1,0 +1,121 @@
+---
+sidebar: sidebar
+permalink: task-launching-azure-mktp.html
+keywords: install, installation, installing, marketplace, azure, deploy, virtual machine, permissions, deploy connector in azure, install connector in azure
+summary: It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
+---
+
+= Create a Connector from the Azure Marketplace
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
+
+== Creating a Connector in Azure
+
+Deploy the Connector in Azure using the image in the Azure Marketplace and then log in to the Connector to specify your NetApp account.
+
+.Steps
+
+. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager[Go to the Azure Marketplace page for Cloud Manager^].
+
+. Click *Get it now* and then click *Continue*.
+
+. From the Azure portal, click *Create* and follow the steps to configure the virtual machine.
++
+Note the following as you configure the VM:
+
+* Cloud Manager can perform optimally with either HDD or SSD disks.
+
+* Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
++
+link:task-installing-linux.html[Review the VM requirements].
+
+* For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
++
+link:reference-networking-cloud-manager.html#rules-for-the-connector-in-azure[Learn more about security group rules for the Connector].
+
+* Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
++
+This setting is important because a managed identity allows the Connector virtual machine to identify itself to Azure Active Directory without providing any credentials. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[Learn more about managed identities for Azure resources^].
+
+. On the *Review + create* page, review your selections and click *Create* to start the deployment.
++
+Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
+
+. Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
++
+http://_ipaddress_:80
+
+. After you log in, set up the Connector:
+.. Specify the NetApp account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
+.. Enter a name for the system.
++
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a NetApp account and name the system.]
+
+.Result
+
+The Connector is now installed and set up. You must grant Azure permissions before users can deploy Cloud Volumes ONTAP in Azure.
+
+== Granting Azure permissions
+
+When you deployed the Connector in Azure, you should have enabled a https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[system-assigned managed identity^]. You must now grant the required Azure permissions by creating a custom role and then by assigning the role to the Connector virtual machine for one or more subscriptions.
+
+.Steps
+
+. Create a custom role using the Cloud Manager policy:
+
+.. Download the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Azure policy^].
+
+.. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
++
+You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
++
+*Example*
++
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+
+.. Use the JSON file to create a custom role in Azure.
++
+The following example shows how to create a custom role using the Azure CLI 2.0:
++
+`az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.9.8.json`
++
+You should now have a custom role called Cloud Manager Operator that you can assign to the Connector virtual machine.
+
+. Assign the role to the Connector virtual machine for one or more subscriptions:
+
+.. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+
+.. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+
+.. In the *Role* tab, select the *Cloud Manager Operator* role and click *Next*.
++
+NOTE: Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+
+.. In the *Members* tab, complete the following steps:
+
+* Assign access to a *Managed identity*.
+
+* Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
+
+* Click *Select*.
+
+* Click *Next*.
+
+.. Click *Review + assign*.
+
+.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+
+.Result
+
+The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].

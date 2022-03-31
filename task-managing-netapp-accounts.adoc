@@ -1,0 +1,312 @@
+---
+sidebar: sidebar
+permalink: task-managing-netapp-accounts.html
+keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, member, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
+summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
+---
+
+= Managing your NetApp account
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+link:task-setting-up-netapp-accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
+
+link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
+
+== Managing your account with the Tenancy API
+
+If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the Cloud Manager API, which you use to create and manage Cloud Volumes ONTAP working environments.
+
+https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html[View endpoints for the Tenancy API^]
+
+== Creating and managing users
+
+The user's in your account can access the manage the resources in your account's workspaces.
+
+=== Adding users
+
+Associate Cloud Central users with the NetApp account so those users can create and manage working environments in Cloud Manager.
+
+.Steps
+
+. If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up.
+
+. From the top of Cloud Manager, click the *Account* drop-down.
++
+image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
+
+. Click *Manage Account* next to the currently selected account.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+
+. From the Members tab, click *Associate User*.
+
+. Enter the user's email address and select a role for the user:
++
+* *Account Admin*: Can perform any action in Cloud Manager.
+* *Workspace Admin*: Can create and manage resources in assigned workspaces.
+* *Compliance Viewer*: Can only view Cloud Data Sense compliance information and generate reports for workspaces that they have permission to access.
+* *SnapCenter Admin*: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. _This service is currently in Beta._
+
+. If you selected Workspace Admin or Compliance Viewer, select one or more workspaces to associate with that user.
++
+image:screenshot_associate_user.gif[A screenshot that shows how to associate a user by selecting a role and the associated workspaces.]
+
+. Click *Associate*.
+
+.Result
+
+The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
+
+=== Removing users
+
+Disassociating a user makes it so they can no longer access the resources in a NetApp account.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+
+. From the Members tab, click the action menu in the row that corresponds to the user.
++
+image:screenshot_associate_user_workspace.png[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Disassociate User* and click *Disassociate* to confirm.
+
+.Result
+
+The user can no longer access the resources in this NetApp account.
+
+=== Managing a Workspace Admin's workspaces
+
+You can associate and disassociate Workspace Admins with workspaces at any time. Associating the user enables them to create and view the working environments in that workspace.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+
+. From the Members tab, click the action menu in the row that corresponds to the user.
++
+image:screenshot_associate_user_workspace.png[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Manage Workspaces*.
+
+. Select the workspaces to associate with the user and click *Apply*.
+
+.Result
+
+The user can now access those workspaces from Cloud Manager, as long as the Connector was also associated with the workspaces.
+
+== Creating and managing service accounts
+
+A service account acts as a "user" that can make authorized API calls to Cloud Manager for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. And if you're using federation, you can create a token without generating a refresh token from the cloud.
+
+You give permissions to a service account by assigning it a role, just like any other Cloud Manager user. You can also associate the service account with specific workspaces in order to control the working environments (resources) that the service can access.
+
+When you create the service account, Cloud Manager enables you to copy or download a client ID and client secret for the service account. This key pair is used for authentication with Cloud Manager.
+
+=== Creating a service account
+
+Create as many service accounts as you need to manage the resources in your working environments.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down.
++
+image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
+
+. Click *Manage Account* next to the currently selected account.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+
+. From the Members tab, click *Create Service Account*.
+
+. Enter a name and select a role. If you chose a role other than Account Admin, choose the workspace to associate with this service account.
+
+. Click *Create*.
+
+. Copy or download the client ID and client secret.
++
+The client secret is visible only once and is not stored anywhere by Cloud Manager. Copy or download the secret and store it safely.
+
+. Click *Close*.
+
+=== Obtaining a bearer token for a service account
+
+In order to make API calls to the https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html[Tenancy API^], you'll need to obtain a bearer token for a service account.
+
+[source,curl]
+curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "grant_type": "client_credentials",
+    "client_secret": "<client secret>",
+    "audience": "https://api.cloud.netapp.com",
+    "client_id": "<client id>"
+}'
+
+=== Copying the client ID
+
+You can copy a service account's client ID at any time.
+
+.Steps
+
+. From the Members tab, click the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Client ID*.
+
+. The ID is copied to your clipboard.
+
+=== Recreating keys
+
+Recreating the key will delete the existing key for this service account and then create a new key. You won’t be able to use the previous key.
+
+.Steps
+
+. From the Members tab, click the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Recreate Key*.
+
+. Click *Recreate* to confirm.
+
+. Copy or download the client ID and client secret.
++
+The client secret is visible only once and is not stored anywhere by Cloud Manager. Copy or download the secret and store it safely.
+
+. Click *Close*.
+
+=== Deleting a service account
+
+Delete a service account if you no longer need to use it.
+
+.Steps
+
+. From the Members tab, click the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Delete*.
+
+. Click *Delete* again to confirm.
+
+== Managing workspaces
+
+Manage your workspaces by creating, renaming, and deleting them. Note that you can't delete a workspace if it contains any resources. It must be empty.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. Click *Workspaces*.
+
+. Choose one of the following options:
++
+* Click *Add New Workspace* to create a new workspace.
+* Click *Rename* to rename the workspace.
+* Click *Delete* to delete the workspace.
+
+== Managing a Connector's workspaces
+
+You need to associate the Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
+
+If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
+
+link:concept-netapp-accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. Click *Connector*.
+
+. Click *Manage Workspaces* for the Connector that you want to associate.
+
+. Select the workspaces to associate with the Connector and click *Apply*.
+
+== Managing subscriptions
+
+After you subscribe from a cloud provider's marketplace, each subscription is available from the Account Settings widget. You have the option to rename a subscription and to disassociate the subscription from one or more accounts.
+
+For example, let's say that you have two accounts and each is billed through separate subscriptions. You might disassociate a subscription from one of the accounts so the users in that account don't accidentally choose the wrong subscription when creating a Cloud Volume ONTAP working environment.
+
+link:concept-netapp-accounts.html[Learn more about subscriptions].
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. Click *Subscriptions*.
++
+You'll only see the subscriptions that are associated with the account that you're currently viewing.
+
+. Click the action menu in the row that corresponds to the subscription that you want to manage.
++
+image:screenshot_subscription_menu.gif[A screenshot of the action menu for a subscription.]
+
+. Choose to rename the subscription or to manage the accounts that are associated with the subscription.
+
+== Changing your account name
+
+Change you account name at any time to change it to something meaningful for you.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the *Overview* tab, click the edit icon next to the account name.
+
+. Type a new account name and click *Save*.
+
+== Allowing private previews
+
+Allow private previews in your account to get access to new NetApp cloud services that are made available as a preview in Cloud Manager.
+
+Services in private preview are not guaranteed to behave as expected and might sustain outages and be missing functionality.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the *Overview* tab, enable the *Allow Private Preview* setting.
+
+== Allowing third-party services
+
+Allow third-party services in your account to get access to third-party services that are available in Cloud Manager. Third-party services are cloud services similar to the services that NetApp offers, but they're managed and supported by third-party companies.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the *Overview* tab, enable the *Allow Third Party Services* setting.
+
+== Disabling the SaaS platform
+
+We don't recommend disabling the SaaS platform unless you need to in order to comply with your company’s security policies. Disabling the SaaS platform limits your ability to use NetApp’s integrated cloud services.
+
+The following services aren't available from Cloud Manager if you disable the SaaS platform:
+
+*	Cloud Data Sense
+*	Kubernetes
+*	Cloud Tiering
+*	Global File Cache
+
+If you do disable the SaaS platform, you'll need to perform all tasks from link:task-managing-connectors.html#accessing-the-local-ui[the local user interface that is available on a Connector].
+
+CAUTION: This is an irreversible action that will prevent you from using the Cloud Manager SaaS platform. You'll need to perform actions from the local Connector. You won't have the ability to use many of NetApp's integrated cloud services, and re-enabling the SaaS platform will require the help of NetApp support.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the Overview tab, toggle the option to disable use of the SaaS platform.

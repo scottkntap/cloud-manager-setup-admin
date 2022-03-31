@@ -1,0 +1,231 @@
+---
+sidebar: sidebar
+permalink: reference-permissions-gcp.html
+keywords: permissions, gcp, gcp permissions
+summary: Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
+---
+
+= Required permissions for the Connector in Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^]. You might want to understand what Cloud Manager does with these permissions.
+
+The Cloud Manager policy for GCP includes the permissions that Cloud Manager needs to deploy and manage Cloud Volumes ONTAP.
+
+[cols=2*,options="header",cols="50,50"]
+|===
+
+| Actions
+| Purpose
+
+|
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+
+| To create and manage disks for Cloud Volumes ONTAP.
+
+|
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+
+| To create firewall rules for Cloud Volumes ONTAP.
+
+|
+- compute.globalOperations.get
+
+| To get the status of operations.
+
+|
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+
+| To get images for VM instances.
+
+|
+- compute.instances.attachDisk
+- compute.instances.detachDisk
+
+| To attach and detach disks to Cloud Volumes ONTAP.
+
+|
+- compute.instances.create
+- compute.instances.delete
+
+| To create and delete Cloud Volumes ONTAP VM instances.
+
+|
+- compute.instances.get
+
+| To list VM instances.
+
+|
+- compute.instances.getSerialPortOutput
+
+| To get console logs.
+
+|
+- compute.instances.list
+
+| To retrieve the list of instances in a zone.
+
+|
+- compute.instances.setDeletionProtection
+
+| To set deletion protection on the instance.
+
+|
+- compute.instances.setLabels
+
+| To add labels.
+
+|
+- compute.instances.setMachineType
+- compute.instances.setMinCpuPlatform
+
+| To change the machine type for Cloud Volumes ONTAP.
+
+|
+- compute.instances.setMetadata
+
+| To add metadata.
+
+|
+- compute.instances.setTags
+
+| To add tags for firewall rules.
+
+|
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+
+| To start and stop Cloud Volumes ONTAP.
+
+|
+- compute.machineTypes.get
+
+| To get the numbers of cores to check qoutas.
+
+|
+- compute.projects.get
+
+| To support multi-projects.
+
+|
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+
+| To create and manage persistent disk snapshots.
+
+|
+- compute.networks.get
+- compute.networks.list
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+
+| To get the networking information needed to create a new Cloud Volumes ONTAP virtual machine instance.
+
+|
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+
+| To deploy the Cloud Volumes ONTAP virtual machine instance using Google Cloud Deployment Manager.
+
+|
+-	logging.logEntries.list
+-	logging.privateLogEntries.list
+
+| To get stack log drives.
+
+|
+- resourcemanager.projects.get
+
+| To support multi-projects.
+
+|
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- storage.buckets.update
+
+| To create and manage a Google Cloud Storage bucket for data tiering.
+
+|
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+
+| To use customer-managed encryption keys from the Cloud Key Management Service with Cloud Volumes ONTAP.
+
+|
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.actAs
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list
+
+| To set a service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket.
+
+|
+- compute.addresses.list
+- compute.backendServices.create
+- compute.networks.updatePolicy
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+
+| To deploy HA pairs.
+
+|
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.instances.addAccessConfig
+
+| To enable Cloud Data Sense.
+
+|
+- container.clusters.get
+- container.clusters.list
+
+| To discover Kubernetes clusters running in Google Kubernetes Engine.
+
+|===

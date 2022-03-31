@@ -1,0 +1,97 @@
+---
+sidebar: sidebar
+permalink: reference-connector-default-config.html
+keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux
+summary: If you need to troubleshoot the Connector, it might help to understand how it's configured.
+---
+
+= Default configuration for the Connector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you need to troubleshoot the Connector, it might help to understand how it's configured.
+
+== Default configuration with internet access
+
+* If you deployed the Connector from Cloud Manager (or directly from a cloud provider's marketplace), note the following:
+
+** In AWS, the user name for the EC2 Linux instance is ec2-user.
+
+** The operating system for the image is as follows:
+*** AWS: Red Hat Enterprise Linux 7.6 (HVM)
+*** Azure: CentOS 7.6
+*** GCP: CentOS 7.9
++
+The operating system does not include a GUI. You must use a terminal to access the system.
+
+* When deployed from Cloud Manager, the default system disk is as follows:
+
+** AWS: 50 GiB gp2 disk
+** Azure: 100 GiB premium SSD disk
+** Google Cloud: 100 GiB SSD persistent disk
+
+* The Connector installation folder resides in the following location:
++
+/opt/application/netapp/cloudmanager
+
+* Log files are contained in the following folders:
++
+** /opt/application/netapp/cloudmanager/log
++
+The logs in this folder provide details about the Connector and docker images.
+
+** /opt/application/netapp/cloudmanager/docker_occm/data/log
++
+The logs in this folder provide details about cloud services and the Cloud Manager service that runs on the Connector.
+
+* The Cloud Manager service is named occm.
+
+* The occm service is dependent on the MySQL service.
++
+If the MySQL service is down, then the occm service is down too.
+
+* Cloud Manager installs the following packages on the Linux host, if they are not already installed:
+** 7Zip
+** AWSCLI
+** Docker
+** Java
+** Kubectl
+** MySQL
+** Tridentctl
+** Pull
+** Wget
+
+* The Connector uses the following ports on the Linux host:
+** 80 for HTTP access
+** 443 for HTTPS access
+** 3306 for the Cloud Manager database
+** 8080 for the Cloud Manager API proxy
+** 8666 for the Service Manager API
+** 8777 for the Health-Checker Container Service API
+
+== Default configuration without internet access
+
+The following configuration applies if you manually installed the Connector on an on-premises Linux host that doesn't have internet access. link:task-install-connector-onprem-no-internet.html[Learn more about this installation option].
+
+* The Connector installation folder resides in the following location:
++
+/opt/application/netapp/ds
+
+* Log files are contained in the following folders:
++
+/var/lib/docker/volumes/ds_occmdata/_data/log
++
+The logs in this folder provide details about the Connector and docker images.
+
+* All services are running inside docker containers
++
+The services are dependent on the docker runtime service running
+
+* The Connector uses the following ports on the Linux host:
+
+** 80 for HTTP access
+** 443 for HTTPS access

@@ -1,0 +1,68 @@
+---
+sidebar: sidebar
+permalink: reference-user-roles.html
+keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin, Cloud Compliance Viewer, Cloud Data Sense, SnapCenter Admin
+summary: The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter Admin roles provide specific permissions to users.
+---
+
+= Roles
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Account Admin, Workspace Admin, Compliance Viewer, and SnapCenter Admin roles provide specific permissions to users.
+
+The Compliance Viewer role is for read-only Cloud Data Sense access.
+
+[cols=5*,options="header",cols="24,19,19,19,19"]
+|===
+
+| Task
+| Account Admin
+| Workspace Admin
+| Compliance Viewer
+| SnapCenter Admin
+
+| Manage working environments |	Yes |	Yes | No | No
+
+| Enable services on working environments | Yes | Yes | No | No
+
+| View data replication status | Yes |	Yes | No | No
+
+| View the timeline |	Yes |	Yes | No | No
+
+| Switch between workspaces | Yes | Yes | Yes | No
+
+| View Data Sense scan results | Yes | Yes | Yes | No
+
+| Delete working environments | Yes | No | No | No
+
+| Connect Kubernetes clusters to working environments | Yes | No | No | No
+
+| Receive the Cloud Volumes ONTAP report | Yes | No | No | No
+
+| Create Connectors | Yes | No | No | No
+
+| Manage NetApp accounts |	Yes |	No | No | No
+
+| Manage credentials | Yes | No | No | No
+
+| Modify Cloud Manager settings |	Yes |	No | No | No
+
+| View and manage the Support Dashboard |	Yes |	No | No | No
+
+| Remove working environments from Cloud Manager | Yes |	No | No | No
+
+| Install an HTTPS certificate | Yes |	No | No | No
+
+| Use the SnapCenter Service | Yes | Yes | No | Yes
+
+|===
+
+.Related links
+
+* link:task-setting-up-netapp-accounts.html[Setting up workspaces and users in the NetApp account]
+* link:task-managing-netapp-accounts.html[Managing workspaces and users in the NetApp account]
