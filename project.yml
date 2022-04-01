@@ -59,7 +59,7 @@ sidebar:
               url: /reference-user-roles.html
         - title: Connectors
           entries:
-            - title: Advanced deployment options
+            - title: Advanced deployment
               entries:
                 - title: Create from the AWS Marketplace
                   url: /task-launching-aws-mktp.html
@@ -67,7 +67,7 @@ sidebar:
                   url: /task-launching-azure-mktp.html
                 - title: Install on your own host with internet
                   url: /task-installing-linux.html
-                - title: install on-prem without internet
+                - title: Install on-prem without internet
                   url: /task-install-connector-onprem-no-internet.html
             - title: Find the system ID for a Connector
               url: /task-finding-system-id.html
