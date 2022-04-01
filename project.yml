@@ -39,24 +39,12 @@ sidebar:
               url: /concept-connectors.html
             - title: Set up your networking
               url: /reference-networking-cloud-manager.html
-            - title: Amazon Web Services
-              entries:
-                - title: Create a Connector
-                  url: /task-creating-connectors-aws.html
-                - title: Required permissions
-                  url: /reference-permissions-aws.html
-            - title: Google Cloud
-              entries:
-                - title: Create a Connector
-                  url: /task-creating-connectors-gcp.html
-                - title: Required permissions
-                  url: /reference-permissions-gcp.html
-            - title: Microsoft Azure
-              entries:
-                - title: Create a Connector
-                  url: /task-creating-connectors-azure.html
-                - title: Required permissions
-                  url: /reference-permissions-azure.html
+            - title: Create a Connector in AWS
+              url: /task-creating-connectors-aws.html
+            - title: Create a Connector in Azure
+              url: /task-creating-connectors-azure.html
+            - title: Create a Connector in Google Cloud
+              url: /task-creating-connectors-gcp.html
         - title: Where to go next
           url: /reference-whats-next.html
     - title: Administer Cloud Manager
@@ -79,8 +67,8 @@ sidebar:
                   url: /task-launching-azure-mktp.html
                 - title: Install on your own host with internet
                   url: /task-installing-linux.html
-               - title: install on-prem without internet
-                 url: /task-install-connector-onprem-no-internet.html
+                - title: install on-prem without internet
+                  url: /task-install-connector-onprem-no-internet.html
             - title: Find the system ID for a Connector
               url: /task-finding-system-id.html
             - title: Manage existing Connectors
@@ -111,6 +99,14 @@ sidebar:
               url: /task-adding-gcp-accounts.html
         - title: NetApp Support Site accounts
           url: /task-adding-nss-accounts.html
+    - title: Reference
+      entries:
+        - title: AWS permissions for the Connector
+          url: /reference-permissions-aws.html
+        - title: Azure permissions for the Connector
+          url: /reference-permissions-azure.html
+        - title: Google Cloud permissions for the Connector
+          url: /reference-permissions-gcp.html
     - title: Knowledge and support
       entries:
         - title: Register for support
