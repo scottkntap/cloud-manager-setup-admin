@@ -39,34 +39,12 @@ sidebar:
               url: /concept-connectors.html
             - title: Set up your networking
               url: /reference-networking-cloud-manager.html
-            - title: Amazon Web Services
-              entries:
-                - title: Required permissions
-                  url: /reference-permissions-aws.html
-                - title: Create from Cloud Manager
-                  url: /task-creating-connectors-aws.html
-                - title: Create from the marketplace
-                  url: /task-launching-aws-mktp.html
-            - title: Google Cloud
-              entries:
-                - title: Required permissions
-                  url: /reference-permissions-gcp.html
-                - title: Create a Connector
-                  url: /task-creating-connectors-gcp.html
-            - title: Microsoft Azure
-              entries:
-                - title: Required permissions
-                  url: /reference-permissions-azure.html
-                - title: Create from Cloud Manager
-                  url: /task-creating-connectors-azure.html
-                - title: Create from the marketplace
-                  url: /task-launching-azure-mktp.html
-            - title: Installation on your own host
-              entries:
-              - title: With internet access
-                url: /task-installing-linux.html
-              - title: On-prem without internet access
-                url: /task-install-connector-onprem-no-internet.html
+            - title: Create a Connector in AWS
+              url: /task-creating-connectors-aws.html
+            - title: Create a Connector in Azure
+              url: /task-creating-connectors-azure.html
+            - title: Create a Connector in Google Cloud
+              url: /task-creating-connectors-gcp.html
         - title: Where to go next
           url: /reference-whats-next.html
     - title: Administer Cloud Manager
@@ -81,6 +59,16 @@ sidebar:
               url: /reference-user-roles.html
         - title: Connectors
           entries:
+            - title: Advanced deployment
+              entries:
+                - title: Create from the AWS Marketplace
+                  url: /task-launching-aws-mktp.html
+                - title: Create from the Azure Marketplace
+                  url: /task-launching-azure-mktp.html
+                - title: Install on your own host with internet
+                  url: /task-installing-linux.html
+                - title: Install on-prem without internet
+                  url: /task-install-connector-onprem-no-internet.html
             - title: Find the system ID for a Connector
               url: /task-finding-system-id.html
             - title: Manage existing Connectors
@@ -111,6 +99,14 @@ sidebar:
               url: /task-adding-gcp-accounts.html
         - title: NetApp Support Site accounts
           url: /task-adding-nss-accounts.html
+    - title: Reference
+      entries:
+        - title: AWS permissions for the Connector
+          url: /reference-permissions-aws.html
+        - title: Azure permissions for the Connector
+          url: /reference-permissions-azure.html
+        - title: Google Cloud permissions for the Connector
+          url: /reference-permissions-gcp.html
     - title: Knowledge and support
       entries:
         - title: Register for support
