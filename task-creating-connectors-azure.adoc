@@ -255,7 +255,7 @@ You should now have a custom role called _Azure SetupAsService_.
 
 .. Click *Access control (IAM) > Add > Add role assignment*.
 
-.. In the *Role* tab, select the *Cloud Manager Operator* role and click *Next*.
+.. In the *Role* tab, select the *Azure SetupAsService* role and click *Next*.
 
 .. In the *Members* tab, complete the following steps:
 
