@@ -78,7 +78,7 @@ AWS services (amazonaws.com):
 | For in-product chat that enables you to talk to NetApp cloud experts.
 
 | The Connector’s IP address
-a| In most cases, you should work with Cloud Manager from the SaaS UI, but link:concept-connectors.html#using-multiple-connectors-with-the-same-working-environment[if you use the local UI], then you must enter the host’s IP address from a web browser.
+a| In most cases, you should work with Cloud Manager from the SaaS UI, but link:concept-connectors.html#the-local-user-interface[if you use the local UI], then you must enter the host’s IP address from a web browser.
 
 Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:
 
@@ -165,21 +165,7 @@ Now that your setup is complete, you're ready to start using the services availa
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html[Cloud Volumes ONTAP for Azure^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html[Cloud Volumes ONTAP for GCP^]
 * https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Data replication between ONTAP systems^]
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-cloud-compliance.html[Deploying Cloud Data Sense^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-getting-started-compliance.html[Cloud Data Sense for Cloud Volumes ONTAP and on-premises ONTAP^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-anf.html[Cloud Data Sense for Azure NetApp Files^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-fsx.html[Cloud Data Sense for Amazon FSx for ONTAP^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-s3.html[Cloud Data Sense for Amazon S3^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-file-shares.html[Cloud Data Sense for non-NetApp NFS or CIFS file shares^]
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/index.html[Deploying Cloud Data Sense^]
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[On-prem ONTAP clusters^]
-* https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html[Cloud Tiering^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html[Data tiering from ONTAP clusters to Amazon S3^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-azure.html[Data tiering from ONTAP clusters to Azure Blob storage^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-gcp.html[Data tiering from ONTAP clusters to Google Cloud Storage^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-storagegrid.html[Data tiering from ONTAP clusters to StorageGRID^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html[Data tiering from ONTAP clusters to generic S3 object storage^]
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Cloud Backup^]
-** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-aws.html[Data backup from ONTAP clusters to Amazon S3^]
-** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-azure.html[Data backup from ONTAP clusters to Azure Blob storage^]
-** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html[Data backup from ONTAP clusters to Google Cloud Storage^]
-** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Data backup from ONTAP clusters to StorageGRID^]
+* https://docs.netapp.com/us-en/cloud-manager-tiering/index.html[Cloud Tiering^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/index.html[Cloud Backup^]

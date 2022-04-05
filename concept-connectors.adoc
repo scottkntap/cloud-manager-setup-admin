@@ -165,7 +165,7 @@ While you should perform almost all tasks from the https://cloudmanager.netapp.c
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 
-link:task-managing-connectors.html[Learn how to access the local UI^].
+link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI].
 
 == Connector upgrades
 
