@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-adding-aws-accounts.html
 keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam, credentials, adding credentials, add credentials
-summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
+summary: Add and manage AWS credentials so that Cloud Manager has the permissions that it needs to deploy and manage cloud resources in your AWS accounts. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
 ---
 
 = Manage AWS credentials and subscriptions for Cloud Manager
@@ -25,7 +25,7 @@ Adding new AWS credentials to an existing Connector enables you to deploy Cloud 
 
 * Add AWS credentials directly to Cloud Manager
 +
-Adding new AWS credentials to Cloud Manager enable you to create an FSx for ONTAP working environment. <<Add credentials to Cloud Manager,Learn how to add AWS credentials to Cloud Manager>>.
+Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create and manage an FSx for ONTAP working environment or to create a Connector. <<Add credentials to Cloud Manager,Learn how to add AWS credentials to Cloud Manager>>.
 
 == How to rotate credentials
 
@@ -37,7 +37,7 @@ If you provide Cloud Manager with AWS access keys, you should rotate the keys by
 
 == Add credentials to a Connector
 
-Add AWS credentials to enable the Connector to deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in another account or provide AWS access keys.
+Add AWS credentials to a Connector so that it can deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in another account or provide AWS access keys.
 
 === Grant permissions
 
@@ -129,7 +129,9 @@ image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting betwe
 
 == Add credentials to Cloud Manager
 
-Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create an FSx for ONTAP working environment.
+Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create an FSx for ONTAP working environment or to create a Connector.
+
+You can use the credentials when creating an FSx for ONTAP working environment or when creating a new Connector.
 
 === Set up the IAM role
 
@@ -145,27 +147,10 @@ Be sure to do the following:
 
 * Under *Trusted entity type*, select *AWS account*.
 * Select *Another AWS account* and enter the ID of the Cloud Manager SaaS: 952013314444
-* Create a policy that includes the following permissions:
+* Create a policy that includes the permissions required to create an FSx for ONTAP working environment or to create a Connector.
 +
-[source,json]
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "fsx:*",
-                "ec2:Describe*",
-                "ec2:CreateTags",
-                "kms:Describe*",
-                "kms:List*",
-                "iam:CreateServiceLinkedRole"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html[View the permissions needed for FSx for ONTAP^]
+** View the Connector deployment policy from the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Policies page^]
 
 . Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager in the next step.
 
@@ -197,7 +182,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .Result
 
-You can now use the credentials when creating an FSx for ONTAP working environment.
+You can now use the credentials when creating an FSx for ONTAP working environment or when creating a new Connector.
 
 == Associate an AWS subscription
 
