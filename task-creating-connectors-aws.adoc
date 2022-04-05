@@ -21,39 +21,74 @@ These steps must be completed by a user who has the Account Admin role. A Worksp
 
 TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
 
-== Setting up AWS permissions to create a Connector
+== Set up AWS authentication
 
-Before you can deploy a Connector from Cloud Manager, you need to ensure that your AWS account has the correct permissions.
+Cloud Manager needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
+
+* Let Cloud Manager assume an IAM role
+* Provide an AWS access key and secret key for an IAM user
+
+The authentication method that you use must have the required permissions to deploy the Connector instance in AWS.
+
+=== Set up an IAM role
+
+Set up an IAM role that Cloud Manager can assume in order to deploy the Connector in AWS.
 
 .Steps
 
-. Download the Connector IAM policy from the following location:
+. Download the Connector IAM policy from the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Policies page^].
 +
-https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
+This policy includes the permissions needed to create a Connector in AWS. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance.
+
+. Go to the AWS IAM console in the target account.
+
+. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
 +
-TIP: For IAM user permissions for Amazon FSx for ONTAP, see https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/task-creating-fsx-working-environment.html[Create an FSx for ONTAP working environment^].
+Be sure to do the following:
+
+* Under *Trusted entity type*, select *AWS account*.
+* Select *Another AWS account* and enter the ID of the Cloud Manager SaaS account: 952013314444
+* Create a policy that includes the permissions shown in the Connector IAM policy that you previously downloaded.
+
+. Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager when you create the Connector.
+
+.Result
+
+The IAM role now has the required permissions.
+
+=== Set up permissions for an IAM user
+
+When you create a Connector, you can provide an AWS access key and secret key for an IAM user who has the required permissions to deploy the Connector instance.
+
+.Steps
+
+. Download the Connector deployment policy from the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Policies page^].
++
+This IAM policy includes the permissions needed to create a Connector in AWS. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance.
 
 . From the AWS IAM console, create your own policy by copying and pasting the text from the Connector IAM policy.
 
 . Attach the policy that you created in the previous step to the IAM user who will create the Connector from Cloud Manager.
 
+. Ensure that you have access to an access key and secret key for the IAM user.
+
 .Result
 
 The AWS user now has the permissions required to create the Connector from Cloud Manager. You'll need to specify AWS access keys for this user when you're prompted by Cloud Manager.
 
-== Creating a Connector in AWS
+== Create a Connector
 
 Cloud Manager enables you to create a Connector in AWS directly from its user interface.
 
 .What you'll need
 
-* An AWS access key and secret key for an IAM user who has the https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] to create a Connector.
+* An AWS authentication method: either the ARN of an IAM role that Cloud Manager can assume, or an AWS access key and secret key for an IAM user.
 
 * A VPC, subnet, and keypair in your AWS region of choice.
 
 * If you don't want Cloud Manager to automatically create an IAM role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json[using this policy^].
 +
-These permissions are for the Connector instance. It's a different set of permissions than what's provided in the first bullet above.
+These are the permissions that the Connector needs to manage resources in your public cloud environment. It's a different set of permissions than what you provided to create the Connector instance.
 
 .Steps
 
@@ -71,7 +106,9 @@ link:reference-networking-cloud-manager.html[Learn more about networking require
 
 * *Get Ready*: Review what you'll need.
 
-* *AWS Credentials*: Specify the AWS access key and secret key that meet permissions requirements and then select your region.
+* *AWS Credentials*: Specify your AWS region and then choose an authentication method, which is either an IAM role that Cloud Manager can assume or an AWS access key and secret key.
++
+TIP: If you choose *Assume Role*, you can create the first set of credentials from the Connector deployment wizard. Any additional set of credentials must be created from the Credentials page. They will then be available from the wizard in a drop-down list. link:task-adding-aws-accounts.html[Learn how to add additional credentials].
 
 * *Details*: Provide details about the Connector.
 +
