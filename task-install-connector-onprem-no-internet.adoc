@@ -77,12 +77,12 @@ sudo sysctl enable docker && sudo sysctl start docker
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x /path/cloud-manager-connector-offline-v3.9.14
+chmod +x /path/cloud-manager-connector-offline-v3.9.16
 
 . Run the installation script:
 +
 [source,cli]
-sudo /path/cloud-manager-connector-offline-v3.9.14
+sudo /path/cloud-manager-connector-offline-v3.9.16
 
 . Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
 +
