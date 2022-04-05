@@ -52,7 +52,6 @@ image:screenshot_notification_full.png[A screenshot showing the a list of curren
 By default you'll see all notifications. You can filter the notifications that you see in the Notification Center to show only those notifications that are important to you. You can filter by Cloud Manager "Service" and by notification "Type".
 
 image:screenshot_notification_filters.png[A screenshot showing the two types of filters available in the Notification Center.]
-//Get screenshot from drive for more filters
 
 For example, if you want to see only "Error" and "Warning" notifications for Cloud Manager operations, select those entries and you'll see only those types of notifications.
 
