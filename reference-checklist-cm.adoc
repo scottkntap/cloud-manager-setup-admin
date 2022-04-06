@@ -136,8 +136,8 @@ NOTE: There are alternate ways to create a Connector: you can create a Connector
 | AWS
 a|
 . Use a JSON file that includes the required permissions to create an IAM policy in AWS.
-. Attach the policy to the IAM user who will create the Connector from Cloud Manager.
-. When you create the Connector, provide Cloud Manager with the AWS access key and secret key for the IAM user that has the required permissions.
+. Attach the policy to an IAM role or IAM user.
+. When you create the Connector, provide Cloud Manager with the ARN of the IAM role or the AWS access key and secret key for the IAM user.
 | link:task-creating-connectors-aws.html[Click here to view detailed steps].
 
 | Azure
