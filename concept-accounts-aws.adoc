@@ -17,9 +17,9 @@ Cloud Manager enables you to choose the AWS credentials to use when deploying Cl
 
 == Initial AWS credentials
 
-When you deploy a Connector from Cloud Manager, you need to use an AWS account that has permissions to launch the Connector instance. The required permissions are listed in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for AWS^].
+When you deploy a Connector from Cloud Manager, you need to provide the ARN of an IAM role or access keys for an IAM user. The authentication method that you use must have the required permissions to deploy the Connector instance in AWS. The required permissions are listed in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for AWS^].
 
-When Cloud Manager launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides Cloud Manager with permissions to manage resources and processes within that AWS account. link:reference-permissions-aws.html[Review how Cloud Manager uses the permissions].
+When Cloud Manager launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides the Connector with permissions to manage resources and processes within that AWS account. link:reference-permissions-aws.html[Review how Cloud Manager uses the permissions].
 
 image:diagram_permissions_initial_aws.png["A conceptual image that shows Cloud Central deploying Cloud Manager in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the Cloud Manager instance."]
 
@@ -28,6 +28,10 @@ Cloud Manager selects these AWS credentials by default when you create a new wor
 image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
 
 == Additional AWS credentials
+
+There are two ways to add additional AWS credentials.
+
+=== Add AWS credentials to an existing Connector
 
 If you want to launch Cloud Volumes ONTAP in different AWS accounts, then you can either link:task-adding-aws-accounts.html[provide AWS keys for an IAM user or the ARN of a role in a trusted account]. The following image shows two additional accounts, one providing permissions through an IAM role in a trusted account and another through the AWS keys of an IAM user:
 
@@ -38,6 +42,10 @@ You would then link:task-adding-aws-accounts.html#adding-aws-accounts-to-cloud-m
 After you add another set of credentials, you can switch to them when creating a new working environment:
 
 image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+
+=== Add AWS credentials directly to Cloud Manager
+
+Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create and manage an FSx for ONTAP working environment or to create a Connector.
 
 == What about Marketplace deployments and on-prem deployments?
 
