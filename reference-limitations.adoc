@@ -58,7 +58,7 @@ NOTE: Cloud Backup, Cloud Data Sense, and the Monitoring service are supported a
 
 == Marketplace limitations
 
-== Pay-as-you-go not available for Azure and Google Cloud partners
+=== Pay-as-you-go not available for Azure and Google Cloud partners
 
 If you are a Microsoft Cloud Solution Provider (CSP) partner or a Google Cloud partner, NetApp pay-as-you-go subscriptions are not available. You must purchase a license and deploy NetApp cloud solutions with a BYOL license.
 
