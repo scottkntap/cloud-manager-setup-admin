@@ -987,7 +987,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:01:55 +0000">04/14/2022</time>
+    <time datetime="2022-04-18 14:23:56 +0000">04/18/2022</time>
     
   
 
@@ -997,6 +997,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-tonacki">
+    <img  class="avatar avatar-small"
+          alt="netapp-tonacki"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/38222299?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1151,12 +1159,12 @@ https://*.blob.core.windows.net</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTP access from client web browsers to the local user interface and connections from Cloud Data Sense</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTP access from client web browsers to the local user interface</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface, and connections from the Cloud Data Sense instance</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
@@ -1270,13 +1278,6 @@ The source IP address is the Connector host.
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used for DNS resolve by Cloud Manager</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Data Sense</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Data Sense instance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Data Sense for Cloud Volumes ONTAP</p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1297,26 +1298,31 @@ The source IP address is the Connector host.
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">Protocol</th>
+<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provides SSH access to the Connector host</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTP access from client web browsers to the local user interface</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface, and connections from the Cloud Data Sense instance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9060</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides the ability to enable and use Cloud Data Sense (required only for Government Cloud deployments)</p></td>
 </tr>
 </tbody>
 </table>
@@ -1339,20 +1345,20 @@ The source IP address is the Connector host.
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">Protocol</th>
+<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All UDP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
 </tr>
 </tbody>
@@ -1386,8 +1392,8 @@ The source IP address is the Connector host.
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Service</th>
-<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">Protocol</th>
+<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">Destination</th>
 <th class="tableblock halign-left valign-top">Purpose</th>
 </tr>
@@ -1395,15 +1401,15 @@ The source IP address is the Connector host.
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">API calls and AutoSupport</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outbound internet and ONTAP cluster management LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used for DNS resolve by Cloud Manager</p></td>
 </tr>
