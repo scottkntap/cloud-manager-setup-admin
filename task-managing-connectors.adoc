@@ -109,6 +109,28 @@ service service-manager stop
 yum -y update –-security
 service service-manager start
 
+== Change the IP address for a Connector
+
+If it's required for your business, you can change the internal IP address and public IP address of the Connector instance that is automatically assigned by your cloud provider.
+
+.Steps
+
+. Follow the instructions from your cloud provider to change the local IP address or public IP address (or both) for the Connector instance.
+
+. If you changed the public IP address and you need to connect to the local user interface running on the Connector, restart the Connector instance to register the new IP address with Cloud Manager.
+
+. If you changed the private IP address, update the backup location for Cloud Volumes ONTAP configuration files so that the backups are being sent to the new private IP address on the Connector.
+
+.. Run the following command from the Cloud Volumes ONTAP CLI to remove the current backup target:
+[source,cli]
+system configuration backup settings modify -destination ""
+
+.. Go to Cloud Manager and open the working environment.
+
+.. Click the menu and select *Advanced > Configuration Backups*.
+
+.. Click *Set Backup Target*.
+
 == Edit a Connector's URIs
 
 Add and remove the URIs for a Connector.
