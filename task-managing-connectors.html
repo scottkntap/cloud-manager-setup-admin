@@ -987,7 +987,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-25 23:53:03 +0000">03/25/2022</time>
+    <time datetime="2022-04-18 18:34:13 +0000">04/18/2022</time>
     
   
 
@@ -1175,6 +1175,49 @@ service service-manager stop
 yum -y update –-security
 service service-manager start</code></pre>
 </div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="change-the-ip-address-for-a-connector">Change the IP address for a Connector</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If it&#8217;s required for your business, you can change the internal IP address and public IP address of the Connector instance that is automatically assigned by your cloud provider.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Follow the instructions from your cloud provider to change the local IP address or public IP address (or both) for the Connector instance.</p>
+</li>
+<li>
+<p>If you changed the public IP address and you need to connect to the local user interface running on the Connector, restart the Connector instance to register the new IP address with Cloud Manager.</p>
+</li>
+<li>
+<p>If you changed the private IP address, update the backup location for Cloud Volumes ONTAP configuration files so that the backups are being sent to the new private IP address on the Connector.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Run the following command from the Cloud Volumes ONTAP CLI to remove the current backup target:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">system configuration backup settings modify -destination ""</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Go to Cloud Manager and open the working environment.</p>
+</li>
+<li>
+<p>Click the menu and select <strong>Advanced &gt; Configuration Backups</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Set Backup Target</strong>.</p>
+</li>
+</ol>
 </div>
 </li>
 </ol>
