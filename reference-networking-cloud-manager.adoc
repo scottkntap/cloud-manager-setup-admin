@@ -83,8 +83,8 @@ The security group for the Connector requires both inbound and outbound rules.
 | Purpose
 
 | SSH | 22 | Provides SSH access to the Connector host
-| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface and connections from Cloud Data Sense
-| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
+| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface, and connections from the Cloud Data Sense instance
 | TCP | 3128 | Provides the Cloud Data Sense instance with internet access, if your AWS network doesn’t use a NAT or proxy
 | TCP | 9060 | Provides the ability to enable and use Cloud Data Sense (required only for GovCloud deployments)
 
@@ -129,7 +129,7 @@ NOTE: The source IP address is the Connector host.
 .2+| API calls | TCP | 3000 | ONTAP HA mediator | Communication with the ONTAP HA mediator
 | TCP | 8088 | Backup to S3 | API calls to Backup to S3
 | DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
-| Cloud Data Sense | HTTP | 80 | Cloud Data Sense instance | Cloud Data Sense for Cloud Volumes ONTAP
+
 |===
 
 === Rules for the Connector in Azure
@@ -141,13 +141,14 @@ The security group for the Connector requires both inbound and outbound rules.
 [cols=3*,options="header,autowidth"]
 |===
 
-| Port
 | Protocol
+| Port
 | Purpose
 
-| 22 | SSH | Provides SSH access to the Connector host
-| 80 | HTTP |	Provides HTTP access from client web browsers to the local user interface
-| 443 |	HTTPS | Provides HTTPS access from client web browsers to the local user interface
+| SSH | 22 | Provides SSH access to the Connector host
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
+| HTTPS |	443 | Provides HTTPS access from client web browsers to the local user interface, and connections from the Cloud Data Sense instance
+| TCP | 9060 | Provides the ability to enable and use Cloud Data Sense (required only for Government Cloud deployments)
 
 |===
 
@@ -162,12 +163,12 @@ The predefined security group for the Connector includes the following outbound 
 [cols=3*,options="header,autowidth"]
 |===
 
-| Port
 | Protocol
+| Port
 | Purpose
 
-| All | All TCP | All outbound traffic
-| All |	All UDP | All outbound traffic
+| All TCP | All | All outbound traffic
+| All UDP |	All | All outbound traffic
 
 |===
 
@@ -181,13 +182,13 @@ NOTE: The source IP address is the Connector host.
 |===
 
 | Service
-| Port
 | Protocol
+| Port
 | Destination
 | Purpose
 
-| API calls and AutoSupport | 443 | HTTPS | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
-| DNS | 53 | UDP	| DNS | Used for DNS resolve by Cloud Manager
+| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
+| DNS | UDP | 53	| DNS | Used for DNS resolve by Cloud Manager
 
 |===
 
