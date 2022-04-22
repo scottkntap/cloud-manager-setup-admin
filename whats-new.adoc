@@ -16,6 +16,22 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 1 May 2022
+
+=== Connector enhancements (3.9.18)
+
+* The Connector is now supported in the AWS Jakarta region (ap-southeast-3).
+* The Connector is now supported in the Google Cloud Delhi region (asia-south2).
+* When you select the Google Cloud service account to use with the Connector, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
+
+=== Log in with NetApp credentials
+
+When new users sign up to Cloud Central, they can now select the *Log in with NetApp* option to log in with their NetApp Support Site credentials. This is an alternative to entering an email address and password.
+
+NOTE: Existing logins that use an email address and password need to keep using that login method. The Log in with NetApp option is available for new users who sign up.
+
 == 27 February 2022
 
 === Connector enhancement in Google Cloud
@@ -32,6 +48,7 @@ If you haven't yet migrated your NSS account to IDaaS, you first need to migrate
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method]
+//end::whats-new[]
 
 == 2 January 2022
 
@@ -52,7 +69,6 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 Cloud Manager can now display the email address that's associated with a NetApp Support Site account.
 
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-nss-display-email.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to display the email address.]
-//end::whats-new[]
 
 == 28 November 2021
 
