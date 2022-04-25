@@ -67,14 +67,6 @@ If you deploy the Connector in Azure, it should be deployed in the same Azure re
 
 If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
 
-== Shared Linux hosts are not supported
-
-The Connector isn't supported on a VM that is shared with other applications. The VM must be dedicated to the Connector software.
-
-== 3rd-party agents and extensions
-
-3rd-party agents or VM extensions are not supported on the Connector VM.
-
 == Connectors should remain running
 
 A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
@@ -83,7 +75,7 @@ For example, a Connector is a key component in the health and operation of Cloud
 
 == How to create a Connector
 
-An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other features listed above.
+An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other services listed above.
 
 An Account Admin can create a Connector in a number of ways:
 
@@ -119,6 +111,12 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
 https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
+
+== Connector upgrades
+
+We typically update the Connector software each month to introduce new features and to provide stability improvements. While most of the services and features in the Cloud Manager platform are offered through SaaS-based software, a few features and functionalities are dependent on the version of the Connector. That includes Cloud Volumes ONTAP management, on-prem ONTAP cluster management, settings, and help.
+
+The Connector automatically updates its software to the latest version, as long as it has link:reference-networking-cloud-manager.html[outbound internet access] to obtain the software update.
 
 == Number of working environments per Connector
 
@@ -166,7 +164,3 @@ While you should perform almost all tasks from the https://cloudmanager.netapp.c
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 
 link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI].
-
-== Connector upgrades
-
-The Connector automatically updates its software to the latest version, as long as it has link:reference-networking-cloud-manager.html[outbound internet access] to obtain the software update.
