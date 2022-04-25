@@ -19,6 +19,14 @@ These limitations are specific to Cloud Manager set up and administration: the C
 
 == Connector limitations
 
+=== Possible conflict with IP addresses in the 172 range
+
+Cloud Manager deploys the Connector with two interfaces that have IP addresses in the 172.17.0.0/16 and 172.18.0.0/16 ranges.
+
+If your network has a subnet configured with either of these ranges, then you might experience connectivity failures from Cloud Manager. For example, discovering on-prem ONTAP clusters in Cloud Manager might fail.
+
+The workaround is to change the IP addresses of the Connector's interfaces. Contact NetApp Support for help.
+
 === Only an HTTP proxy server is supported
 
 If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
@@ -36,6 +44,14 @@ For enhanced security, you have the option to link:task-installing-https-cert.ht
 If you load the local user interface for a Connector, the UI might fail to display sometimes, and you just get a blank page.
 
 This issue is related to a caching problem. The workaround is to use an incognito or private web browser session.
+
+=== Shared Linux hosts are not supported
+
+The Connector isn't supported on a VM that is shared with other applications. The VM must be dedicated to the Connector software.
+
+=== 3rd-party agents and extensions
+
+3rd-party agents or VM extensions are not supported on the Connector VM.
 
 == SaaS limitations
 
