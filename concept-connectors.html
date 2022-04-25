@@ -987,7 +987,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-05 21:50:17 +0000">04/05/2022</time>
+    <time datetime="2022-04-25 20:15:54 +0000">04/25/2022</time>
     
   
 
@@ -1132,22 +1132,6 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 </div>
 </div>
 <div class="sect1">
-<h2 id="shared-linux-hosts-are-not-supported">Shared Linux hosts are not supported</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Connector isn&#8217;t supported on a VM that is shared with other applications. The VM must be dedicated to the Connector software.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="3rd-party-agents-and-extensions">3rd-party agents and extensions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>3rd-party agents or VM extensions are not supported on the Connector VM.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="connectors-should-remain-running">Connectors should remain running</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1162,7 +1146,7 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 <h2 id="how-to-create-a-connector">How to create a Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other features listed above.</p>
+<p>An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other services listed above.</p>
 </div>
 <div class="paragraph">
 <p>An Account Admin can create a Connector in a number of ways:</p>
@@ -1247,6 +1231,17 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 <div class="paragraph">
 <p><a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">View policies for each cloud provider</a></p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="connector-upgrades">Connector upgrades</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We typically update the Connector software each month to introduce new features and to provide stability improvements. While most of the services and features in the Cloud Manager platform are offered through SaaS-based software, a few features and functionalities are dependent on the version of the Connector. That includes Cloud Volumes ONTAP management, on-prem ONTAP cluster management, settings, and help.</p>
+</div>
+<div class="paragraph">
+<p>The Connector automatically updates its software to the latest version, as long as it has <a href="reference-networking-cloud-manager.html">outbound internet access</a> to obtain the software update.</p>
 </div>
 </div>
 </div>
@@ -1351,14 +1346,6 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 </div>
 <div class="paragraph">
 <p><a href="task-managing-connectors.html#access-the-local-ui">Learn how to access the local UI</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="connector-upgrades">Connector upgrades</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Connector automatically updates its software to the latest version, as long as it has <a href="reference-networking-cloud-manager.html">outbound internet access</a> to obtain the software update.</p>
 </div>
 </div>
 </div>
