@@ -18,7 +18,7 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 //tag::whats-new[]
 == 1 May 2022
 
-=== Connector enhancements (3.9.18)
+=== Connector 3.9.18
 
 * The Connector is now supported in the AWS Jakarta region (ap-southeast-3).
 
@@ -26,9 +26,13 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 
 * When you select the Google Cloud service account to use with the Connector, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
+image:screenshot-google-cloud-service-account.png[A screenshot of the service account field]
+//+
+//image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
 
 * We have certified the Connector in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html[Learn about those enhancements]
 
 == 27 February 2022
 
