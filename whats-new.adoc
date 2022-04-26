@@ -28,6 +28,8 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 +
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
 
+* We have certified the Connector in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]
+
 == 27 February 2022
 
 === Connector enhancement in Google Cloud
