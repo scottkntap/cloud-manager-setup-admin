@@ -225,8 +225,14 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 |
 "eks:ListClusters",
 "eks:DescribeCluster",
-"iam:GetInstanceProfile"
+"iam:GetInstanceProfile",
 
 | Enables discovery of Amazon EKS clusters.
+
+|
+"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",
+
+| Creates an AWS spread placement group for an HA pair that's deployed in a single Availability Zone (AZ).
 
 |===

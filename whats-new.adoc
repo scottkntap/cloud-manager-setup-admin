@@ -38,6 +38,18 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-may-2022[Learn about those enhancements^]
 
+* New AWS permissions are required for the Connector to deploy Cloud Volumes ONTAP.
++
+The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):
++
+[source,json]
+"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",
++
+These permissions are now required to optimize how Cloud Manager creates the placement group.
++
+Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+
 == 3 April 2022
 
 === Connector 3.9.17
