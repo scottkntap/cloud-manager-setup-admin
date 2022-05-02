@@ -16,22 +16,64 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 2 May 2022
+
+=== Connector 3.9.18
+
+* The Connector is now supported in the following Google Cloud regions:
+
+** Delhi (asia-south2)
+** Melbourne (australia-southeast2)
+** Milan (europe-west8)
+** Santiago (southamerica-west1)
+
++
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+
+* When you select the Google Cloud service account to use with the Connector, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
+
+* We have certified the Connector in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-may-2022[Learn about those enhancements^]
+
+* New AWS permissions are required for the Connector to deploy Cloud Volumes ONTAP.
++
+The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):
++
+[source,json]
+"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",
++
+These permissions are now required to optimize how Cloud Manager creates the placement group.
++
+Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+
+== 3 April 2022
+
+=== Connector 3.9.17
+
+* You can now create a Connector by letting Cloud Manager assume an IAM role that you set up in your environment. This authentication method is more secure than sharing an AWS access key and secret key.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Learn how to create a Connector using an IAM role].
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#3-april-2022[Learn about those enhancements^]
+
 == 27 February 2022
 
-=== Connector enhancement in Google Cloud
+=== Connector 3.9.16
 
-When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
+* When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#27-february-2022[Learn about those enhancements^]
+//end::whats-new[]
 
 == 30 January 2022
 
-=== Reminder about NetApp Support Site accounts
+=== Connector 3.9.15
 
-As a reminder, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the NetApp Support Site (NSS) credentials for any existing accounts that you previously added.
-
-If you haven't yet migrated your NSS account to IDaaS, you first need to migrate the account and then update your credentials in Cloud Manager.
-
-* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method]
+This release of the Connector includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#30-january-2022[Learn about those enhancements^]
 
 == 2 January 2022
 
@@ -52,13 +94,14 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 Cloud Manager can now display the email address that's associated with a NetApp Support Site account.
 
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-nss-display-email.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to display the email address.]
-//end::whats-new[]
 
 == 28 November 2021
 
 === Update required for NetApp Support Site accounts
 
 Starting in December 2021, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the credentials for any existing NetApp Support Site accounts that you previously added.
+
+If you haven't yet migrated your NSS account to IDaaS, you first need to migrate the account and then update your credentials in Cloud Manager.
 
 * link:task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method[Learn how to update an NSS account to the new authentication method].
 * https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[Learn more about NetApp's use of Microsoft Azure AD for identity management^]
