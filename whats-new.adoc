@@ -20,8 +20,6 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 
 === Connector 3.9.18
 
-* The Connector is now supported in the AWS Jakarta region (ap-southeast-3).
-
 * The Connector is now supported in the Google Cloud Delhi region (asia-south2).
 
 * When you select the Google Cloud service account to use with the Connector, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
