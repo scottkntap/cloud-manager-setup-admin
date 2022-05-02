@@ -296,9 +296,9 @@
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -987,7 +987,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-05 21:50:17 +0000">04/05/2022</time>
+    <time datetime="2022-04-26 12:54:53 +0000">04/26/2022</time>
     
   
 
@@ -1049,15 +1049,18 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you mus
 </dd>
 <dt class="hdlist1">AWS EC2 instance type</dt>
 <dd>
-<p>An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge and use that instance type when you deploy the Connector directly from Cloud Manager.</p>
+<p>An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.</p>
 </dd>
 <dt class="hdlist1">Azure VM size</dt>
 <dd>
-<p>An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2 and use that VM size when you deploy the Connector directly from Cloud Manager.</p>
+<p>An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.</p>
 </dd>
 <dt class="hdlist1">GCP machine type</dt>
 <dd>
-<p>An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4  and use that machine type when you deploy the Connector directly from Cloud Manager.</p>
+<p>An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4.</p>
+<div class="paragraph">
+<p>The Connector is supported in Google Cloud on a VM instance with an OS that supports <a href="https://cloud.google.com/compute/shielded-vm/docs/shielded-vm" target="_blank" rel="noopener">Shielded VM features</a></p>
+</div>
 </dd>
 <dt class="hdlist1">Supported operating systems</dt>
 <dd>
