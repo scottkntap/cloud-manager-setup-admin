@@ -43,6 +43,8 @@ Cloud Manager software is free of charge from NetApp.
 
 For most tasks, Cloud Manager prompts you to deploy a Connector in your cloud network, which results in charges from your cloud provider for the compute instance and associated storage. You do have the option to run the Connector software on your premises.
 
+link:reference-connector-default-config.html[Learn about the default configuration for the Connector].
+
 == How Cloud Manager works
 
 Cloud Manager includes a SaaS-based interface that is integrated with NetApp Cloud Central, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
