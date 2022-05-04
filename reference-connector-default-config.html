@@ -989,7 +989,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-21 18:58:02 +0000">03/21/2022</time>
+    <time datetime="2022-05-04 14:18:03 +0000">05/04/2022</time>
     
   
 
@@ -1010,68 +1010,99 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>If you need to troubleshoot the Connector, it might help to understand how it&#8217;s configured.</p>
+<p>You might want to learn more about the Connector before you deploy it, or if you need to troubleshoot any issues.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="default-configuration-with-internet-access">Default configuration with internet access</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The following configuration details apply if you deployed the Connector from Cloud Manager, from your cloud provider&#8217;s marketplace, or if you manually installed the Connector on an on-premises Linux host that has internet access.</p>
+</div>
+<div class="sect2">
+<h3 id="aws-details">AWS details</h3>
+<div class="paragraph">
+<p>If you deployed the Connector from Cloud Manager or from the cloud provider&#8217;s marketplace, note the following:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you deployed the Connector from Cloud Manager (or directly from a cloud provider&#8217;s marketplace), note the following:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>In AWS, the user name for the EC2 Linux instance is ec2-user.</p>
+<p>The EC2 instance type is t3.xlarge.</p>
 </li>
 <li>
-<p>The operating system for the image is as follows:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>AWS: Red Hat Enterprise Linux 7.6 (HVM)</p>
-</li>
-<li>
-<p>Azure: CentOS 7.6</p>
-</li>
-<li>
-<p>GCP: CentOS 7.9</p>
+<p>The operating system for the image is Red Hat Enterprise Linux 7.6 (HVM).</p>
 <div class="paragraph">
 <p>The operating system does not include a GUI. You must use a terminal to access the system.</p>
 </div>
 </li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<li>
+<p>The user name for the EC2 Linux instance is ec2-user.</p>
 </li>
 <li>
-<p>When deployed from Cloud Manager, the default system disk is as follows:</p>
+<p>The default system disk is a 50 GiB gp2 disk.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-details">Azure details</h3>
+<div class="paragraph">
+<p>If you deployed the Connector from Cloud Manager or from the cloud provider&#8217;s marketplace, note the following:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>AWS: 50 GiB gp2 disk</p>
+<p>The VM type is DS3 v2.</p>
 </li>
 <li>
-<p>Azure: 100 GiB premium SSD disk</p>
+<p>The operating system for the image is CentOS 7.6.</p>
+<div class="paragraph">
+<p>The operating system does not include a GUI. You must use a terminal to access the system.</p>
+</div>
 </li>
 <li>
-<p>Google Cloud: 100 GiB SSD persistent disk</p>
+<p>The default system disk is a 100 GiB premium SSD disk.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="google-cloud-details">Google Cloud details</h3>
+<div class="paragraph">
+<p>If you deployed the Connector from Cloud Manager or from the cloud provider&#8217;s marketplace, note the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The VM instance is n1-standard-4.</p>
 </li>
 <li>
-<p>The Connector installation folder resides in the following location:</p>
+<p>The operating system for the image is CentOS 7.9.</p>
 <div class="paragraph">
-<p>/opt/application/netapp/cloudmanager</p>
+<p>The operating system does not include a GUI. You must use a terminal to access the system.</p>
 </div>
 </li>
 <li>
+<p>The default system disk is a 100 GiB SSD persistent disk.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-folder">Installation folder</h3>
+<div class="paragraph">
+<p>The Connector installation folder resides in the following location:</p>
+</div>
+<div class="paragraph">
+<p>/opt/application/netapp/cloudmanager</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="log-files">Log files</h3>
+<div class="paragraph">
 <p>Log files are contained in the following folders:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1088,7 +1119,11 @@
 </li>
 </ul>
 </div>
-</li>
+</div>
+<div class="sect2">
+<h3 id="connector-service">Connector service</h3>
+<div class="ulist">
+<ul>
 <li>
 <p>The Cloud Manager service is named occm.</p>
 </li>
@@ -1098,8 +1133,14 @@
 <p>If the MySQL service is down, then the occm service is down too.</p>
 </div>
 </li>
-<li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="packages">Packages</h3>
+<div class="paragraph">
 <p>Cloud Manager installs the following packages on the Linux host, if they are not already installed:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1131,9 +1172,12 @@
 </li>
 </ul>
 </div>
-</li>
-<li>
+</div>
+<div class="sect2">
+<h3 id="ports">Ports</h3>
+<div class="paragraph">
 <p>The Connector uses the following ports on the Linux host:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1156,8 +1200,6 @@
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>
