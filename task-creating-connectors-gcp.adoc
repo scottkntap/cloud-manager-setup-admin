@@ -15,7 +15,7 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 [.lead]
 An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept-connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-This page describes how to create a Connector in GCP directly from Cloud Manager. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
+This page describes how to create a Connector in Google Cloud directly from Cloud Manager. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
@@ -23,11 +23,11 @@ TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud M
 
 == Setting up permissions
 
-Before you can deploy a Connector, you need to ensure that your GCP account has the correct permissions and that a service account is set up for the Connector VM.
+Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions and that a service account is set up for the Connector VM.
 
 .Steps
 
-. Ensure that the GCP user who deploys the Connector has the permissions in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[Connector deployment policy for GCP^].
+. Ensure that the Google Cloud user who deploys the Connector has the permissions in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[Connector deployment policy for Google Cloud^].
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[You can create a custom role using the YAML file^] and then attach it to the user. You'll need to use the gcloud command line to create the role.
 
@@ -35,17 +35,17 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 +
 You'll associate this service account with the Connector VM when you create it.
 
-.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[Cloud Manager policy for GCP^]. Again, you'll need to use the gcloud command line.
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[Cloud Manager policy for Google Cloud^]. Again, you'll need to use the gcloud command line.
 +
 The permissions contained in this YAML file are different than the permissions in step 1.
 
-.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^].
 
 .. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
 
 .Result
 
-The GCP user now has the permissions required to create the Connector and the service account for the Connector VM is set up.
+The Google Cloud user now has the permissions required to create the Connector and the service account for the Connector VM is set up.
 
 === Shared VPC permissions
 
@@ -54,33 +54,41 @@ If you are using a shared VPC to deploy resources into a service project, then t
 [cols="10,10,10,20,20,30",width=100%,options="header"]
 |===
 
-| Service Account
+| Identity
 | Creator
 | Hosted in
 | Service project permissions
 | Host project permissions
 | Purpose
 
-| Cloud Manager service account | Custom | Service project a|
+| Google account used to deploy the Connector | Custom | Organization
+a| * https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[The permissions found in this .yaml file^]
+a| * compute.networkUser
+| Deploying the Connector in the service project
+
+| Connector service account | Custom | Service project a|
 * https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[The permissions found in this .yaml file^]
 a|
 * compute.networkUser
 * deploymentmanager.editor
 | Deploying and maintaining Cloud Volumes ONTAP and services in the service project
+
 | Cloud Volumes ONTAP service account | Custom | Service project a|
 * storage.admin
 * member: Cloud Manager service account as serviceAccount.user
 | N/A | (Optional) For data tiering and Cloud Backup
-| Google APIs service agent | GCP | Service project a|
+
+| Google APIs service agent | Google Cloud | Service project a|
 * (Default) Editor
 a|
 * compute.networkUser
-| Interacts with GCP APIs on behalf of deployment. Allows Cloud Manager to use the shared network.
-| Google Compute Engine default service account | GCP | Service project a|
+| Interacts with Google Cloud APIs on behalf of deployment. Allows Cloud Manager to use the shared network.
+
+| Google Compute Engine default service account | Google Cloud | Service project a|
 * (Default) Editor
 a|
 * compute.networkUser
-| Deploys GCP instances and compute infrastructure on behalf of deployment. Allows Cloud Manager to use the shared network.
+| Deploys Google Cloud instances and compute infrastructure on behalf of deployment. Allows Cloud Manager to use the shared network.
 
 |===
 
@@ -106,7 +114,7 @@ Several APIs are required to deploy the Connector and Cloud Volumes ONTAP.
 * Compute Engine API
 * Identity and Access Management (IAM) API
 
-== Creating a Connector in GCP
+== Creating a Connector in Google Cloud
 
 Create a Connector in Google Cloud directly from the Cloud Manager user interface or by using gcloud.
 
@@ -168,7 +176,7 @@ The instance should be ready in about 7 minutes. You should stay on the page unt
 
 . Log in to the gcloud SDK using your preferred methodology.
 +
-In our examples, we'll use a local shell with the gcloud SDK installed, but you could use the native Google Cloud Shell in the GCP console.
+In our examples, we'll use a local shell with the gcloud SDK installed, but you could use the native Google Cloud Shell in the Google Cloud console.
 +
 For more information about the Google Cloud SDK, visit the link:https://cloud.google.com/sdk[Google Cloud SDK documentation page^].
 
