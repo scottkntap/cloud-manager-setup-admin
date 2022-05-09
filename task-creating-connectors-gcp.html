@@ -989,7 +989,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-28 16:37:34 +0000">03/28/2022</time>
+    <time datetime="2022-05-09 14:00:57 +0000">05/09/2022</time>
     
   
 
@@ -1013,7 +1013,7 @@
 <p>An Account Admin needs to deploy a <em>Connector</em> before you can use most Cloud Manager features. <a href="concept-connectors.html">Learn when a Connector is required</a>. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.</p>
 </div>
 <div class="paragraph">
-<p>This page describes how to create a Connector in GCP directly from Cloud Manager. <a href="concept-connectors.html#how-to-create-a-connector">Learn about other ways to deploy a Connector</a>.</p>
+<p>This page describes how to create a Connector in Google Cloud directly from Cloud Manager. <a href="concept-connectors.html#how-to-create-a-connector">Learn about other ways to deploy a Connector</a>.</p>
 </div>
 <div class="paragraph">
 <p>These steps must be completed by a user who has the Account Admin role. A Workspace Admin can&#8217;t create a Connector.</p>
@@ -1036,13 +1036,13 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 <h2 id="setting-up-permissions">Setting up permissions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before you can deploy a Connector, you need to ensure that your GCP account has the correct permissions and that a service account is set up for the Connector VM.</p>
+<p>Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions and that a service account is set up for the Connector VM.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Ensure that the GCP user who deploys the Connector has the permissions in the <a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">Connector deployment policy for GCP</a>.</p>
+<p>Ensure that the Google Cloud user who deploys the Connector has the permissions in the <a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">Connector deployment policy for Google Cloud</a>.</p>
 <div class="paragraph">
 <p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">You can create a custom role using the YAML file</a> and then attach it to the user. You&#8217;ll need to use the gcloud command line to create the role.</p>
 </div>
@@ -1055,13 +1055,13 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">Create a role in GCP</a> that includes the permissions defined in the <a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">Cloud Manager policy for GCP</a>. Again, you&#8217;ll need to use the gcloud command line.</p>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">Create a role in GCP</a> that includes the permissions defined in the <a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">Cloud Manager policy for Google Cloud</a>. Again, you&#8217;ll need to use the gcloud command line.</p>
 <div class="paragraph">
 <p>The permissions contained in this YAML file are different than the permissions in step 1.</p>
 </div>
 </li>
 <li>
-<p><a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account" target="_blank" rel="noopener">Create a GCP service account and apply the custom role that you just created</a>.</p>
+<p><a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account" target="_blank" rel="noopener">Create a Google Cloud service account and apply the custom role that you just created</a>.</p>
 </li>
 <li>
 <p>If you want to deploy Cloud Volumes ONTAP in other projects, <a href="https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console" target="_blank" rel="noopener">grant access by adding the service account with the Cloud Manager role to that project</a>. You&#8217;ll need to repeat this step for each project.</p>
@@ -1073,7 +1073,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>The GCP user now has the permissions required to create the Connector and the service account for the Connector VM is set up.</p>
+<p>The Google Cloud user now has the permissions required to create the Connector and the service account for the Connector VM is set up.</p>
 </div>
 <div class="sect2">
 <h3 id="shared-vpc-permissions">Shared VPC permissions</h3>
@@ -1091,7 +1091,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Service Account</th>
+<th class="tableblock halign-left valign-top">Identity</th>
 <th class="tableblock halign-left valign-top">Creator</th>
 <th class="tableblock halign-left valign-top">Hosted in</th>
 <th class="tableblock halign-left valign-top">Service project permissions</th>
@@ -1101,7 +1101,27 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager service account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google account used to deploy the Connector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Project</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">The permissions found in this .yaml file</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>compute.networkUser</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deploying the Connector in the service project</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connector service account</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Custom</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Service project</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -1142,7 +1162,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Google APIs service agent</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Service project</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1158,11 +1178,11 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interacts with GCP APIs on behalf of deployment. Allows Cloud Manager to use the shared network.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interacts with Google Cloud APIs on behalf of deployment. Allows Cloud Manager to use the shared network.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Google Compute Engine default service account</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Service project</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1178,7 +1198,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deploys GCP instances and compute infrastructure on behalf of deployment. Allows Cloud Manager to use the shared network.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deploys Google Cloud instances and compute infrastructure on behalf of deployment. Allows Cloud Manager to use the shared network.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1237,7 +1257,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-a-connector-in-gcp">Creating a Connector in GCP</h2>
+<h2 id="creating-a-connector-in-google-cloud">Creating a Connector in Google Cloud</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Create a Connector in Google Cloud directly from the Cloud Manager user interface or by using gcloud.</p>
@@ -1342,7 +1362,7 @@ There&#8217;s no incoming traffic to the Connector, unless you initiate it. HTTP
 <li>
 <p>Log in to the gcloud SDK using your preferred methodology.</p>
 <div class="paragraph">
-<p>In our examples, we&#8217;ll use a local shell with the gcloud SDK installed, but you could use the native Google Cloud Shell in the GCP console.</p>
+<p>In our examples, we&#8217;ll use a local shell with the gcloud SDK installed, but you could use the native Google Cloud Shell in the Google Cloud console.</p>
 </div>
 <div class="paragraph">
 <p>For more information about the Google Cloud SDK, visit the <a href="https://cloud.google.com/sdk" target="_blank" rel="noopener">Google Cloud SDK documentation page</a>.</p>
