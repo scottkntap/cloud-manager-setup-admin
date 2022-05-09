@@ -61,7 +61,7 @@ If you are using a shared VPC to deploy resources into a service project, then t
 | Host project permissions
 | Purpose
 
-| Google account used to deploy the Connector | Custom | Organization
+| Google account used to deploy the Connector | Custom | Service Project
 a| * https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[The permissions found in this .yaml file^]
 a| * compute.networkUser
 | Deploying the Connector in the service project
