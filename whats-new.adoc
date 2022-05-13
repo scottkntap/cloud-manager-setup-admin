@@ -16,6 +16,12 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 12 May 2022
+
+=== Connector 3.9.18 patch
+
+We updated the Connector to introduce bug fixes. The most notable fix is to an issue that affects Cloud Volumes ONTAP deployment in Google Cloud when the Connector is in a shared VPC.
+
 == 2 May 2022
 
 === Connector 3.9.18
@@ -59,6 +65,7 @@ Be sure to provide these permissions to each set of AWS credentials that you've 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Learn how to create a Connector using an IAM role].
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#3-april-2022[Learn about those enhancements^]
+//end::whats-new[]
 
 == 27 February 2022
 
@@ -67,7 +74,6 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors
 * When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn't display any policies that didn't have a target tag.
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#27-february-2022[Learn about those enhancements^]
-//end::whats-new[]
 
 == 30 January 2022
 
