@@ -235,4 +235,10 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 
 | Creates an AWS spread placement group for an HA pair that's deployed in a single Availability Zone (AZ).
 
+|
+"ec2:DescribeVolumesModifications",
+"ec2:ModifyVolume",
+
+| Enables set up and management of Cloud Volumes ONTAP aggregates that support the Amazon EBS Elastic Volumes feature.
+
 |===
