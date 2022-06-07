@@ -16,7 +16,7 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
-== 6 June 2022
+== 7 June 2022
 
 === Connector 3.9.19
 
