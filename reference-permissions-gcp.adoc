@@ -228,4 +228,10 @@ The Cloud Manager policy for GCP includes the permissions that Cloud Manager nee
 
 | To discover Kubernetes clusters running in Google Kubernetes Engine.
 
+|
+- compute.instanceGroups.get
+- compute.addresses.get
+
+| To create and manage storage VMs on HA pairs.
+
 |===
