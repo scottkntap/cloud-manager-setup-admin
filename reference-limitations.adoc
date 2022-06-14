@@ -27,8 +27,6 @@ If your network has a subnet configured with either of these ranges, then you mi
 
 See Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/Cloud_Manager_shows_inactive_as_Connector_IP_range_in_172.x.x.x_conflict_with_docker_network[Cloud Manager Connector IP conflict with existing network] for instructions on how to change the IP address of the Connector’s interfaces.
 
-//Reference link:https://jira.ngage.netapp.com/browse/KDA-1546[KDA JIRA-1546]
-
 === Only an HTTP proxy server is supported
 
 If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.

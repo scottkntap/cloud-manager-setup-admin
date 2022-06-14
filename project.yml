@@ -5,6 +5,7 @@ settings:
     pdf_enabled: true
   prod:
     pdf_enabled: true
+    harmony_enabled: true
 sidebar:
   entries:
     - title: Set up and administration docs
@@ -157,3 +158,4 @@ homepage:
           url: https://cloud.netapp.com/blog/topic/cloud-manager
         - title: Cloud webinars
           url: https://cloud.netapp.com/events
+
