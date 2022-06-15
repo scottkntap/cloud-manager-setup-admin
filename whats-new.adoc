@@ -72,6 +72,8 @@ These permissions are now required to optimize how Cloud Manager creates the pla
 +
 Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
 
+//end::whats-new[]
+
 == 3 April 2022
 
 === Connector 3.9.17
@@ -81,7 +83,6 @@ Be sure to provide these permissions to each set of AWS credentials that you've 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Learn how to create a Connector using an IAM role].
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#3-april-2022[Learn about those enhancements^]
-//end::whats-new[]
 
 == 27 February 2022
 
