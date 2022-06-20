@@ -15,6 +15,8 @@ summary: The Cloud Manager interface is accessible through a SaaS-based user int
 [.lead]
 The Cloud Manager interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com.
 
+If you're accessing Cloud Manager from a Government region or a site that doesn't have outbound internet access, then you need to log in to the local user interface running on the Connector. link:task-managing-connectors.html#access-the-local-ui[Learn how to access the UI on the Connector].
+
 TIP: You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Cloud Central Help Center^] and then click *Cloud Central sign-in options*.
 
 .Steps
