@@ -979,7 +979,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 18:34:13 +0000">04/18/2022</time>
+    <time datetime="2022-06-20 19:33:34 +0000">06/20/2022</time>
     
   
 
@@ -1033,38 +1033,22 @@
 <h2 id="access-the-local-ui">Access the local UI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="task-configuring-proxy.html">Setting a proxy server</a></p>
-</li>
-<li>
-<p>Installing a patch (you&#8217;ll typically work with NetApp personnel to install a patch)</p>
-</li>
-<li>
-<p>Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)</p>
-</li>
-</ul>
+<p>While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. If you&#8217;re accessing Cloud Manager from a Government region or a site that doesn&#8217;t have outbound internet access, then you need to use the local user interface running on the Connector.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p><a href="task-logging-in.html" target="_blank" rel="noopener">Log in to the Cloud Manager SaaS interface</a> from a machine that has a network connection to the Connector instance.</p>
+<p>Open a web browser and enter the following URL:</p>
 <div class="paragraph">
-<p>If the Connector doesn&#8217;t have a public IP address, you&#8217;ll need a VPN connection or you&#8217;ll need to connect from a jump host that&#8217;s in the same network as the Connector.</p>
+<p>https://<em>ipaddress</em></p>
+</div>
+<div class="paragraph">
+<p><em>ipaddress</em> can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.</p>
 </div>
 </li>
 <li>
-<p>Click the <strong>Connector</strong> drop-down and then click <strong>Go to Local UI</strong>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_connector_local_ui.gif" alt="A screenshot that shows the Connector icon in the header and the Go to local UI action."></span></p>
-</div>
-<div class="paragraph">
-<p>The Cloud Manager interface running on the Connector loads in a new browser tab.</p>
-</div>
+<p>Enter your user name and password to log in.</p>
 </li>
 </ol>
 </div>
