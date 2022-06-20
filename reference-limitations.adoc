@@ -61,15 +61,9 @@ If you deploy a Connector in an AWS GovCloud region, an Azure Gov region, or an 
 
 This means that only privileged users who can access the end-user internal VPC/VNet can use Cloud Manager's UI or API.
 
-It also means that the following services aren't available from Cloud Manager:
+Note that the only services supported in these regions are Cloud Volumes ONTAP, Cloud Backup, Cloud Data Sense, and Replication. No other NetApp services are supported in Government regions.
 
-* Kubernetes
-* Cloud Tiering
-* Global File Cache
-
-The SaaS platform is required to use those services.
-
-NOTE: Cloud Backup, Cloud Data Sense, and the Monitoring service are supported and available in Government regions.
+link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI on the Connector].
 
 == Marketplace limitations
 

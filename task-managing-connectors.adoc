@@ -31,23 +31,17 @@ Cloud Manager refreshes and shows the Working Environments associated with the s
 
 == Access the local UI
 
-While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:
-
-* link:task-configuring-proxy.html[Setting a proxy server]
-* Installing a patch (you'll typically work with NetApp personnel to install a patch)
-* Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
+While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. If you're accessing Cloud Manager from a Government region or a site that doesn't have outbound internet access, then you need to use the local user interface running on the Connector.
 
 .Steps
 
-. link:task-logging-in.html[Log in to the Cloud Manager SaaS interface^] from a machine that has a network connection to the Connector instance.
+. Open a web browser and enter the following URL:
 +
-If the Connector doesn't have a public IP address, you'll need a VPN connection or you'll need to connect from a jump host that's in the same network as the Connector.
+https://_ipaddress_
++
+_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
 
-. Click the *Connector* drop-down and then click *Go to Local UI*.
-+
-image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector icon in the header and the Go to local UI action.]
-+
-The Cloud Manager interface running on the Connector loads in a new browser tab.
+. Enter your user name and password to log in.
 
 == Download or send an AutoSupport message
 
