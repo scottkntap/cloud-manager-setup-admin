@@ -16,6 +16,14 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 27 June 2022
+
+=== Log in with NetApp credentials
+
+When new users sign up to Cloud Central, they can now select the *Log in with NetApp* option to log in with their NetApp Support Site credentials. This is an alternative to entering an email address and password.
+
+NOTE: Existing logins that use an email address and password need to keep using that login method. The Log in with NetApp option is available for new users who sign up.
+
 == 7 June 2022
 
 === Connector 3.9.19
@@ -37,6 +45,7 @@ https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supp
 === Connector 3.9.18 patch
 
 We updated the Connector to introduce bug fixes. The most notable fix is to an issue that affects Cloud Volumes ONTAP deployment in Google Cloud when the Connector is in a shared VPC.
+//end::whats-new[]
 
 == 2 May 2022
 
@@ -71,8 +80,6 @@ The following permissions are now required to create an AWS spread placement gro
 These permissions are now required to optimize how Cloud Manager creates the placement group.
 +
 Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
-
-//end::whats-new[]
 
 == 3 April 2022
 
