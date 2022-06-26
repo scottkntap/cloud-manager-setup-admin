@@ -42,7 +42,7 @@ You can display the notifications by clicking the notification bell (image:icon_
 
 image:screenshot_notification_full.png[A screenshot showing the a list of current notifications in the Notification Center.]
 
-You can also configure Cloud Manager to send notifications by email so you can be informed of important system activity even when you're not logged into the system. Emails can be sent to any Cloud Central users who are part of your NetApp Cloud Account, or to any other recipients who need to be aware of certain types of system activity.
+You can also configure Cloud Manager to send notifications by email so you can be informed of important system activity even when you're not logged into the system. Emails can be sent to any Cloud Central users who are part of your NetApp Cloud Account, or to any other recipients who need to be aware of certain types of system activity. See <<Setting email notification settings,Setting email notification settings>> below.
 
 === Notification types
 
@@ -100,7 +100,7 @@ image:screenshot_notification_dismiss1.png[A screenshot showing the how to dismi
 
 You can send specific types notifications by email so you can be informed of important system activity even when you're not logged into Cloud Manager. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
 
-You must be an Account Admin to customize the notifications settings. By default, Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients will not be configured to receive any notification emails.
+You must be an Account Admin to customize the notifications settings. By default, Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
 
 .Steps
 
@@ -108,20 +108,25 @@ You must be an Account Admin to customize the notifications settings. By default
 +
 image:screenshot-settings-notifications.png[A screenshot showing how to display the Alerts and Notifications Settings page.]
 
-. Select a user, or multiple users, from either the _Account Users_ tab or the _Additional Emails Recipients_ tab, and choose the type of notifications to be sent:
+. Select a user, or multiple users, from either the _Account Users_ tab or the _Additional Recipients_ tab, and choose the type of notifications to be sent:
 
-* To make changes for a single user, click the menu in the Notifications column, check the types of Notifications to be sent, and click *Apply*.
-* To make changes for multiple users, check the box for each user, click *Manage Emails*, check the types of Notifications to be sent, and click *Apply*.
+* To make changes for a single user, click the menu in the Notifications column for that user, check the types of Notifications to be sent, and click *Apply*.
+* To make changes for multiple users, check the box for each user, click *Manage Email Notifications*, check the types of Notifications to be sent, and click *Apply*.
+
++
+image:screenshot-change-notifications.png[A screenshot showing how to change notifications for multiple users.]
 
 === Adding additional email recipients
 
-The users who appear in the _Account Users_ tab are populated automatically from the users in your NetApp Account (from the link:task-managing-netapp-accounts.html#creating-and-managing-users[Manage Account page]). You can add email addresses in the _Additional Emails Recipients_ tab for other people, or groups, who do not have access to Cloud Manager, but who need to be notified about certain types of alerts and notifications.
+The users who appear in the _Account Users_ tab are populated automatically from the users in your NetApp Account (from the link:task-managing-netapp-accounts.html#creating-and-managing-users[Manage Account page]). You can add email addresses in the _Additional Recipients_ tab for other people, or groups, who do not have access to Cloud Manager, but who need to be notified about certain types of alerts and notifications.
 
 .Steps
 
 . From the Alerts and Notifications Settings page, click *Add New Recipient*.
++
+image:screenshot-add-email-recipient.png[A screenshot showing how to add new email recipients for alerts and notifications.]
 
-. Enter the name, email address, and select the types of Notifications that recipient will receive, and click *Add*.
+. Enter the name, email address, and select the types of Notifications that recipient will receive, and click *Add New Recipient*.
 
 == Auditing user activity in your account
 
