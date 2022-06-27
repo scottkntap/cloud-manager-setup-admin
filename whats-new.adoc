@@ -22,7 +22,7 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 
 * We've introduced a new way to navigate to the growing list of features in the Cloud Manager interface. All the familiar Cloud Manager capabilities can now be easily found by hovering over the left panel.
 +
-image:screenshot-navigation.png["A screenshot that shows the new left-hand navigation menu in Cloud Manager."]
+image:screenshot-navigation.png["A screenshot that shows the new left navigation menu in Cloud Manager."]
 
 * The Connector is now supported in the following Google Cloud regions:
 ** Madrid (europe-southwest1)
