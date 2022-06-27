@@ -5,7 +5,7 @@ keywords: permissions, azure, azure permissions
 summary: Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
 ---
 
-= Required permissions for the Connector in Azure
+= Azure permissions for the Connector
 :hardbreaks:
 :nofooter:
 :icons: font
