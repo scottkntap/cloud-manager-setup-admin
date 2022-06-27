@@ -46,7 +46,7 @@ Be sure to do the following:
 * Select *Another AWS account* and enter the ID of the Cloud Manager SaaS account: 952013314444
 * Create a policy that includes the following permissions:
 +
-NOTE: These are the permissions required to create a Connector in AWS. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
+NOTE: This policy contains only the permissions needed to launch the Connector instance in AWS from Cloud Manager. Don't use this policy for other situations. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
 +
 [source,json]
 {
@@ -131,7 +131,7 @@ When you create a Connector, you can provide an AWS access key and secret key fo
 
 . From the AWS IAM console, create a policy that includes the following permissions:
 +
-NOTE: These are the permissions required to create a Connector in AWS. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
+NOTE: This policy contains only the permissions needed to launch the Connector instance in AWS from Cloud Manager. Don't use this policy for other situations. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
 +
 [source,json]
 {
@@ -220,7 +220,7 @@ Cloud Manager enables you to create a Connector in AWS directly from its user in
 
 * A VPC, subnet, and keypair in your AWS region of choice.
 
-* If you don't want Cloud Manager to automatically create an IAM role for the Connector, then you'll need to create your own https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json[using this policy^].
+* If you don't want Cloud Manager to automatically create an IAM role for the Connector, then you'll need to create your own link:reference-permissions-aws.html[using the policy on this page].
 +
 These are the permissions that the Connector needs to manage resources in your public cloud environment. It's a different set of permissions than what you provided to create the Connector instance.
 
@@ -248,7 +248,7 @@ TIP: If you choose *Assume Role*, you can create the first set of credentials fr
 +
 ** Enter a name for the instance.
 ** Add custom tags (metadata) to the instance.
-** Choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json[the required permissions^].
+** Choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-aws.html[the required permissions].
 ** Choose whether you want to encrypt the Connector's EBS disks. You have the option to use the default encryption key or to use a custom key.
 
 * *Network*: Specify a VPC, subnet, and key pair for the instance, choose whether to enable a public IP address, and optionally specify a proxy configuration.

@@ -101,8 +101,8 @@ Specific permissions are needed to create the Connector and another set of permi
 The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in your cloud provider of choice. Cloud Manager will remind you of the permissions requirements when you create a Connector.
 
 * link:task-creating-connectors-aws.html[View the required AWS permissions]
-* https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[View the required Azure permissions^]
-* https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[View the required Google Cloud permissions^]
+* link:task-creating-connectors-azure.html[View the required Azure permissions^]
+* link:task-creating-connectors-gcp.html[View the required Google Cloud permissions^]
 
 === Permissions for the Connector instance
 
