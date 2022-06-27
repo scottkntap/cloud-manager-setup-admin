@@ -28,18 +28,14 @@ In order to use the features and services in Cloud Manager, you'll need to provi
 | link:task-creating-connectors-aws.html[Create a Connector in AWS from Cloud Manager]
 
 | Connector operation
-a| When Cloud Manager launches the Connector, it attaches a policy to the instance that provides the permissions required to manage resources and processes within the AWS account.
+| When Cloud Manager launches the Connector, it attaches a policy to the instance that provides the permissions required to manage resources and processes in your AWS account.
 
-a| link:reference-permissions-aws.html[AWS permissions for the Connector]
+You need to set up the policy yourself if you link:task-launching-aws-mktp.html[launch a Connector from the marketplace] or if you link:task-adding-aws-accounts.html#add-credentials-to-a-connector[add more AWS credentials to a Connector].
 
-There are two cases where you might need to create this IAM policy yourself:
-
-* link:task-launching-aws-mktp.html[You're creating a Connector directly from the AWS Marketplace]
-
-* link:task-adding-aws-accounts.html#add-credentials-to-a-connector[You're adding an additional set of AWS credentials to a Connector]
+| link:reference-permissions-aws.html[AWS permissions for the Connector]
 
 | Cloud Volumes ONTAP operation
-| An IAM role with the required permissions must be attached to each Cloud Volumes ONTAP node in AWS. The same is true for the HA mediator. The default option is to let Cloud Manager create the IAM roles for you, but you can use your own roles.
+| An IAM role must be attached to each Cloud Volumes ONTAP node in AWS. The same is true for the HA mediator. The default option is to let Cloud Manager create the IAM roles for you, but you can use your own.
 | https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html[Learn how to set up the IAM roles yourself^]
 
 |===
@@ -53,19 +49,15 @@ There are two cases where you might need to create this IAM policy yourself:
 | Link
 
 | Connector deployment
-| When you deploy a Connector from Cloud Manager, you need to use an Azure account or service principal that has permissions to deploy the Connector virtual machine in Azure.
+| When you deploy a Connector from Cloud Manager, you need to use an Azure account or service principal that has permissions to deploy the Connector VM in Azure.
 | link:task-creating-connectors-azure.html[Create a Connector in Azure from Cloud Manager]
 
 | Connector operation
 a| When Cloud Manager deploys the Connector VM in Azure, it creates a custom role that provides the permissions required to manage resources and processes within that Azure subscription.
 
+You need to set up the custom role yourself if you link:task-launching-azure-mktp.html[launch a Connector from the marketplace] or if you link:task-adding-azure-accounts.html#adding-additional-azure-credentials-to-cloud-manager[add more Azure credentials to a Connector].
+
 a| link:reference-permissions-azure.html[Azure permissions for the Connector]
-
-There are a few cases where you might need to create this custom role yourself:
-
-* link:task-launching-azure-mktp.html[You're creating a Connector directly from the Azure Marketplace].
-
-* link:task-adding-azure-accounts.html#adding-additional-azure-credentials-to-cloud-manager[You're adding an additional set of Azure credentials to a Connector].
 
 |===
 
