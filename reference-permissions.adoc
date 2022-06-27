@@ -5,7 +5,7 @@ keywords: permissions, actions
 summary: In order to use the features and services in Cloud Manager, you'll need to provide permissions so that Cloud Manager can perform operations in your cloud environment. Use the links on this page to quickly access the permissions that are required in Cloud Manager.
 ---
 
-= Permissions required for Cloud Manager
+= Permissions summary for Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
