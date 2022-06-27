@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: reference-permissions.html
-keywords: permissions, actions, aws, aws permissions
-summary: When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service, and more.
+keywords: permissions, actions
+summary: In order to use the features and services in Cloud Manager, you'll need to provide permissions so that Cloud Manager can perform operations in your cloud environment. Use the links on this page to quickly access the permissions that are required in Cloud Manager.
 ---
 
-= Permissions required in Cloud Manager
+= Permissions required for Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,15 +15,15 @@ summary: When Cloud Manager launches the Connector instance in AWS, it attaches 
 [.lead]
 In order to use the features and services in Cloud Manager, you'll need to provide permissions so that Cloud Manager can perform operations in your cloud environment. Use the links on this page to quickly access the permissions that are required in Cloud Manager.
 
-== AWS
+== AWS permissions
 
-=== Permissions for Connector deployment
+=== Connector deployment
 
 The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in AWS.
 
 link:task-creating-connectors-aws.html[View the required AWS permissions to deploy a Connector].
 
-=== Permissions for the Connector
+=== Connector permissions
 
 The Connector requires specific permissions for day-to-day operations. When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account.
 
@@ -34,21 +34,21 @@ There are a few cases where you might need to create this IAM policy yourself:
 
 link:reference-permissions-aws.html[View the required AWS permissions for the Connector].
 
-=== Permissions for Cloud Volumes ONTAP
+=== Cloud Volumes ONTAP permissions
 
 An IAM role with the required permissions must be attached to each Cloud Volumes ONTAP node. The same is true for the HA mediator. It's easiest to let Cloud Manager create the IAM roles for you, but you can use your own roles. Using your own IAM role is required in the AWS Commercial Cloud Services Environment.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html[View the required AWS permissions for Cloud Volumes ONTAP^]
 
-== Azure
+== Azure permissions
 
-=== Permissions for Connector deployment
+=== Connector deployment
 
 When you deploy a Connector from Cloud Manager, you need to use an Azure account or service principal that has permissions to deploy the Connector virtual machine.
 
 link:task-creating-connectors-azure.html[View the required Azure permissions to deploy a Connector].
 
-=== Permissions for the Connector
+=== Connector permissions
 
 When Cloud Manager deploys the Connector virtual machine in Azure, it creates a custom role that provides Cloud Manager with permissions to manage resources and processes within that Azure subscription.
 
@@ -59,15 +59,15 @@ There are a few cases where you might need to create this IAM policy yourself:
 
 link:reference-permissions-azure.html[View the required Azure permissions for the Connector].
 
-== Google Cloud
+== Google Cloud permissions
 
-=== Permissions for Connector deployment
+=== Connector deployment
 
 The Google Cloud user who deploys a Connector from Cloud Manager needs specific permissions to deploy the Connector in Google Cloud.
 
 link:task-creating-connectors-gcp.html[View the required Google Cloud permissions to deploy a Connector].
 
-=== Permissions for the Connector VM instance
+=== Connector permissions
 
 The service account for the Connector VM instance must have specific permissions for day-to-day operations. You need to associate the service account with the Connector when you deploy it from Cloud Manager.
 
