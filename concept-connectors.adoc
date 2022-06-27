@@ -100,7 +100,9 @@ Specific permissions are needed to create the Connector and another set of permi
 
 The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in your cloud provider of choice. Cloud Manager will remind you of the permissions requirements when you create a Connector.
 
-https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^].
+* link:task-creating-connectors-aws.html[View the required AWS permissions]
+* https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[View the required Azure permissions^]
+* https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[View the required Google Cloud permissions^]
 
 === Permissions for the Connector instance
 
@@ -110,7 +112,9 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
-https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^]
+* link:reference-permissions-aws.html[Learn how the Connector uses AWS permissions]
+* link:reference-permissions-azure.html[Learn how the Connector uses Azure permissions]
+* link:reference-permissions-gcp.html[Learn how the Connector uses Google Cloud permissions]
 
 == Connector upgrades
 

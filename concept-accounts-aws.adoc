@@ -17,7 +17,7 @@ Cloud Manager enables you to choose the AWS credentials to use when deploying Cl
 
 == Initial AWS credentials
 
-When you deploy a Connector from Cloud Manager, you need to provide the ARN of an IAM role or access keys for an IAM user. The authentication method that you use must have the required permissions to deploy the Connector instance in AWS. The required permissions are listed in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for AWS^].
+When you deploy a Connector from Cloud Manager, you need to provide the ARN of an IAM role or access keys for an IAM user. The authentication method that you use must have the required permissions to deploy the Connector instance in AWS. The required permissions are listed in the link:task-creating-connectors-aws.html[Connector deployment policy for AWS].
 
 When Cloud Manager launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides the Connector with permissions to manage resources and processes within that AWS account. link:reference-permissions-aws.html[Review how Cloud Manager uses the permissions].
 
