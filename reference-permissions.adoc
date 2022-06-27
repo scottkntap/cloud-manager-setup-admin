@@ -24,7 +24,7 @@ In order to use the features and services in Cloud Manager, you'll need to provi
 | Link
 
 | Connector deployment
-| The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in AWS
+| The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in AWS.
 | link:task-creating-connectors-aws.html[Create a Connector in AWS from Cloud Manager]
 
 | Connector operation
