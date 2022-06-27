@@ -21,7 +21,6 @@ It's best to create a Connector directly from Cloud Manager, but you can launch 
 
 .. From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
 +
-// start tabbed area
 [role="tabbed-block"]
 ====
 .Standard regions
