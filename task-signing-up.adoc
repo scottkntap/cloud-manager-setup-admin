@@ -27,7 +27,7 @@ TIP: You can use single sign-on to log in using credentials from your corporate 
 
 .. Fill out the form and click *Sign Up*.
 +
-image:screenshot_cloud_central_signup.gif["A screenshot of the sign up form for Cloud Central where you enter your email address, password, company, name, and phone number."]
+image:screenshot-cloud-central-signup.png["A screenshot of the sign up form for Cloud Central where you enter your email address, password, company, name, and phone number."]
 
 .. If you have a registered NetApp Support Site account, click *Log in with NetApp* and then enter your NetApp Support Site credentials.
 +
