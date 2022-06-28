@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-monitor-cm-operations.html
 keywords: administer, monitor, account, timeline, notifications, alerts, events, notification center, email
-summary: You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center or in the Timeline.
+summary: You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center, in the Timeline, or have notifications sent to your email.
 ---
 
 = Monitoring operations in your account
@@ -13,7 +13,7 @@ summary: You can monitor the status of the operations that Cloud Manager is perf
 :imagesdir: ./media/
 
 [.lead]
-You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center or in the Timeline.
+You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center, in the Timeline, or have notifications sent to your email.
 
 This table provides a comparison of the Notification Center and the Timeline so you can understand what each has to offer.
 
@@ -48,7 +48,7 @@ You can also configure Cloud Manager to send notifications by email so you can b
 
 Notifications are classified in the following categories:
 
-[cols=2*,options="header",cols="35,45",width="90%"]
+[cols=2*,options="header",cols="25,55",width="90%"]
 |===
 
 | Notification type
@@ -86,21 +86,13 @@ For example, if you want to see only "Error" and "Warning" notifications for Clo
 // * Show notifications for the current account or for all accounts.
 // * Show notifications for just your user login, or for all users in the account.
 
-=== Dismissing notifications
-
-You can remove notifications from the page if you no longer need to see them. You can dismiss all notifications at once, or you can dismiss individual notifications.
-
-To dismiss all notifications, in the Notification Center, click image:button_3_vert_dots.png[] and select *Dismiss All*.
-image:screenshot_notification_menu.png[A screenshot showing the Notifications menu to select settings and dismiss all options.]
-
-To dismiss individual notifications, hover your cursor over the notification and click *Dismiss*.
-image:screenshot_notification_dismiss1.png[A screenshot showing the how to dismiss a single notification.]
-
 === Setting email notification settings
 
-You can send specific types notifications by email so you can be informed of important system activity even when you're not logged into Cloud Manager. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
+You can send specific types of notifications by email so you can be informed of important system activity even when you're not logged into Cloud Manager. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
 
-You must be an Account Admin to customize the notifications settings. By default, Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
+By default, Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
+
+You must be an Account Admin to customize the notifications settings.
 
 .Steps
 
@@ -122,11 +114,21 @@ The users who appear in the _Account Users_ tab are populated automatically from
 
 .Steps
 
-. From the Alerts and Notifications Settings page, click *Add New Recipient*.
+. From the Alerts and Notifications Settings page, click *Add New Recipients*.
 +
 image:screenshot-add-email-recipient.png[A screenshot showing how to add new email recipients for alerts and notifications.]
 
 . Enter the name, email address, and select the types of Notifications that recipient will receive, and click *Add New Recipient*.
+
+=== Dismissing notifications
+
+You can remove notifications from the page if you no longer need to see them. You can dismiss all notifications at once, or you can dismiss individual notifications.
+
+To dismiss all notifications, in the Notification Center, click image:button_3_vert_dots.png[] and select *Dismiss All*.
+image:screenshot_notification_menu.png[A screenshot showing the Notifications menu to select settings and dismiss all options.]
+
+To dismiss individual notifications, hover your cursor over the notification and click *Dismiss*.
+image:screenshot_notification_dismiss1.png[A screenshot showing the how to dismiss a single notification.]
 
 == Auditing user activity in your account
 
