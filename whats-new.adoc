@@ -24,6 +24,14 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 +
 image:screenshot-navigation.png["A screenshot that shows the new left-hand navigation menu in Cloud Manager."]
 
+* After you install a Connector in Azure or Google Cloud, Cloud Manager automatically discovers information about Azure Blob storage in your Azure subscription or the Google Cloud Storage in the project where the Connector is installed. Cloud Manager displays the object storage as a working environment that you can open to view more detailed information.
++
+This is similar to support that's already available in AWS.
++
+Here's an example of an Azure Blob working environment:
++
+image:screenshot-azure-blob.png[A screenshot that shows an Azure Blob working environment where you can view a high level overview and then detailed information about the storage accounts.]
+
 * The Connector is now supported in the following Google Cloud regions:
 ** Madrid (europe-southwest1)
 ** Paris (europe-west9)
