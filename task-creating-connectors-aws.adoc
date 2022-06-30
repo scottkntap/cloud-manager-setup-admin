@@ -13,15 +13,11 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 :imagesdir: ./media/
 
 [.lead]
-An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
-
-link:concept-connectors.html[Learn when a Connector is required].
+An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. link:concept-connectors.html[Learn when a Connector is required].
 
 This page describes how to create a Connector in AWS directly from Cloud Manager. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
-
-TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
 
 == Set up AWS authentication
 
@@ -29,6 +25,103 @@ Cloud Manager needs to authenticate with AWS before it can deploy the Connector 
 
 * Let Cloud Manager assume an IAM role that has the required permissions
 * Provide an AWS access key and secret key for an IAM user who has the required permissions
+
+With either option, you first need to start by creating an IAM policy that includes the required permissions.
+
+=== Create an IAM policy
+
+This policy contains only the permissions needed to launch the Connector instance in AWS from Cloud Manager. Don't use this policy for other situations.
+
+When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
+
+.Steps
+
+. Go to the AWS IAM console.
+
+. Click *Policies > Create policy*.
+
+. Click *JSON*.
+
+. Copy and paste the following policy:
++
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:PutRolePolicy",
+                "iam:CreateInstanceProfile",
+                "iam:DeleteRolePolicy",
+                "iam:AddRoleToInstanceProfile",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "iam:PassRole",
+                "ec2:DescribeInstanceStatus",
+                "ec2:RunInstances",
+                "ec2:ModifyInstanceAttribute",
+                "ec2:CreateSecurityGroup",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DescribeSecurityGroups",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeDhcpOptions",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeRegions",
+                "ec2:DescribeInstances",
+                "ec2:CreateTags",
+                "ec2:DescribeImages",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:ValidateTemplate",
+                "ec2:AssociateIamInstanceProfile",
+                "ec2:DescribeIamInstanceProfileAssociations",
+                "ec2:DisassociateIamInstanceProfile",
+                "iam:GetRole",
+                "iam:TagRole",
+                "iam:ListRoles",
+                "kms:ListAliases"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:TerminateInstances"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/OCCMInstance": "*"
+                }
+            },
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ]
+        }
+    ]
+}
+
+. Click *Next* and add tags, if needed.
+
+. Click *Next* and enter a name and description.
+
+. Click *Create policy*.
+
+.What's next?
+
+Either attach the policy to an IAM role that Cloud Manager can assume or to an IAM user.
 
 === Set up an IAM role
 
@@ -44,80 +137,9 @@ Be sure to do the following:
 
 * Under *Trusted entity type*, select *AWS account*.
 * Select *Another AWS account* and enter the ID of the Cloud Manager SaaS account: 952013314444
-* Create a policy that includes the following permissions:
-+
-NOTE: This policy contains only the permissions needed to launch the Connector instance in AWS from Cloud Manager. Don't use this policy for other situations. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
-+
-[source,json]
-{
-    "Version": "2012-10-17",
-    "Statement": [{
-            "Effect": "Allow",
-            "Action": [
-                "iam:CreateRole",
-                "iam:DeleteRole",
-                "iam:PutRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:DeleteRolePolicy",
-                "iam:AddRoleToInstanceProfile",
-                "iam:RemoveRoleFromInstanceProfile",
-                "iam:DeleteInstanceProfile",
-                "iam:PassRole",
-                "ec2:DescribeInstanceStatus",
-                "ec2:RunInstances",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:CreateSecurityGroup",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DescribeSecurityGroups",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:CreateNetworkInterface",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:DeleteNetworkInterface",
-                "ec2:ModifyNetworkInterfaceAttribute",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeVpcs",
-                "ec2:DescribeDhcpOptions",
-                "ec2:DescribeKeyPairs",
-                "ec2:DescribeRegions",
-                "ec2:DescribeInstances",
-                "ec2:CreateTags",
-                "ec2:DescribeImages",
-                "cloudformation:CreateStack",
-                "cloudformation:DeleteStack",
-                "cloudformation:DescribeStacks",
-                "cloudformation:DescribeStackEvents",
-                "cloudformation:ValidateTemplate",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:DescribeIamInstanceProfileAssociations",
-                "ec2:DisassociateIamInstanceProfile",
-                "iam:GetRole",
-                "iam:TagRole",
-                "iam:ListRoles",
-                "kms:ListAliases"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:TerminateInstances"
-            ],
-            "Condition": {
-                "StringLike": {
-                    "ec2:ResourceTag/OCCMInstance": "*"
-                }
-            },
-            "Resource": [
-                "arn:aws:ec2:*:*:instance/*"
-            ]
-        }
-    ]
-}
+* Select the policy that you created in the previous section.
 
-. Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager when you create the Connector.
+. After you create the role, copy the Role ARN so that you can paste it in Cloud Manager when you create the Connector.
 
 .Result
 
@@ -129,80 +151,13 @@ When you create a Connector, you can provide an AWS access key and secret key fo
 
 .Steps
 
-. From the AWS IAM console, create a policy that includes the following permissions:
-+
-NOTE: This policy contains only the permissions needed to launch the Connector instance in AWS from Cloud Manager. Don't use this policy for other situations. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
-+
-[source,json]
-{
-    "Version": "2012-10-17",
-    "Statement": [{
-            "Effect": "Allow",
-            "Action": [
-                "iam:CreateRole",
-                "iam:DeleteRole",
-                "iam:PutRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:DeleteRolePolicy",
-                "iam:AddRoleToInstanceProfile",
-                "iam:RemoveRoleFromInstanceProfile",
-                "iam:DeleteInstanceProfile",
-                "iam:PassRole",
-                "ec2:DescribeInstanceStatus",
-                "ec2:RunInstances",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:CreateSecurityGroup",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DescribeSecurityGroups",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:CreateNetworkInterface",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:DeleteNetworkInterface",
-                "ec2:ModifyNetworkInterfaceAttribute",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeVpcs",
-                "ec2:DescribeDhcpOptions",
-                "ec2:DescribeKeyPairs",
-                "ec2:DescribeRegions",
-                "ec2:DescribeInstances",
-                "ec2:CreateTags",
-                "ec2:DescribeImages",
-                "cloudformation:CreateStack",
-                "cloudformation:DeleteStack",
-                "cloudformation:DescribeStacks",
-                "cloudformation:DescribeStackEvents",
-                "cloudformation:ValidateTemplate",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:DescribeIamInstanceProfileAssociations",
-                "ec2:DisassociateIamInstanceProfile",
-                "iam:GetRole",
-                "iam:TagRole",
-                "iam:ListRoles",
-                "kms:ListAliases"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:TerminateInstances"
-            ],
-            "Condition": {
-                "StringLike": {
-                    "ec2:ResourceTag/OCCMInstance": "*"
-                }
-            },
-            "Resource": [
-                "arn:aws:ec2:*:*:instance/*"
-            ]
-        }
-    ]
-}
+. From the AWS IAM console, click *Users* and then select the user name.
 
-. Attach the policy to the IAM user who will create the Connector from Cloud Manager.
+. Click *Add permissions > Attach existing policies directly*.
+
+. Select the policy that you created.
+
+. Click *Next* and then click *Add permissions*.
 
 . Ensure that you have access to an access key and secret key for the IAM user.
 

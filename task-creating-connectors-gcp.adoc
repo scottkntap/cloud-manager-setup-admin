@@ -109,7 +109,7 @@ The permissions for the service account are different than the permissions that 
 +
 [source,yaml]
 title: NetApp Cloud Manager
-description: Permissions for the service account associated with the Cloud Manager instance. Enables management of Cloud Volumes ONTAP.
+description: Permissions for the service account associated with the Connector instance.
 stage: GA
 includedPermissions:
 - iam.serviceAccounts.actAs
@@ -211,7 +211,7 @@ includedPermissions:
 
 The service account for the Connector VM is set up.
 
-=== Shared VPC permissions
+== Shared VPC permissions
 
 If you are using a shared VPC to deploy resources into a service project, then the following permissions are required. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
 

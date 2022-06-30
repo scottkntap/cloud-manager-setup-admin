@@ -126,132 +126,9 @@ You must bind the service principal to one or more Azure subscriptions and assig
 
 . Create a custom role:
 
-.. Copy the required permissions for a new custom role in Azure and save them in a JSON file.
-+
-{
-    "Name": "Cloud Manager Operator",
-    "Actions": [
-       "Microsoft.Compute/disks/delete",
-                        "Microsoft.Compute/disks/read",
-                        "Microsoft.Compute/disks/write",
-                        "Microsoft.Compute/locations/operations/read",
-                        "Microsoft.Compute/locations/vmSizes/read",
-                        "Microsoft.Resources/subscriptions/locations/read",
-                        "Microsoft.Compute/operations/read",
-                        "Microsoft.Compute/virtualMachines/instanceView/read",
-                        "Microsoft.Compute/virtualMachines/powerOff/action",
-                        "Microsoft.Compute/virtualMachines/read",
-                        "Microsoft.Compute/virtualMachines/restart/action",
-                        "Microsoft.Compute/virtualMachines/deallocate/action",
-                        "Microsoft.Compute/virtualMachines/start/action",
-                        "Microsoft.Compute/virtualMachines/vmSizes/read",
-                        "Microsoft.Compute/virtualMachines/write",
-                        "Microsoft.Compute/images/write",
-                        "Microsoft.Compute/images/read",
-                        "Microsoft.Network/locations/operationResults/read",
-                        "Microsoft.Network/locations/operations/read",
-                        "Microsoft.Network/networkInterfaces/read",
-                        "Microsoft.Network/networkInterfaces/write",
-                        "Microsoft.Network/networkInterfaces/join/action",
-                        "Microsoft.Network/networkSecurityGroups/read",
-                        "Microsoft.Network/networkSecurityGroups/write",
-                        "Microsoft.Network/networkSecurityGroups/join/action",
-                        "Microsoft.Network/virtualNetworks/read",
-                        "Microsoft.Network/virtualNetworks/checkIpAddressAvailability/read",
-                        "Microsoft.Network/virtualNetworks/subnets/read",
-                        "Microsoft.Network/virtualNetworks/subnets/write",
-                        "Microsoft.Network/virtualNetworks/subnets/virtualMachines/read",
-                        "Microsoft.Network/virtualNetworks/virtualMachines/read",
-                        "Microsoft.Network/virtualNetworks/subnets/join/action",
-                        "Microsoft.Resources/deployments/operations/read",
-                        "Microsoft.Resources/deployments/read",
-                        "Microsoft.Resources/deployments/write",
-                        "Microsoft.Resources/resources/read",
-                        "Microsoft.Resources/subscriptions/operationresults/read",
-                        "Microsoft.Resources/subscriptions/resourceGroups/delete",
-                        "Microsoft.Resources/subscriptions/resourceGroups/read",
-                        "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
-                        "Microsoft.Resources/subscriptions/resourceGroups/write",
-                        "Microsoft.Storage/checknameavailability/read",
-                        "Microsoft.Storage/operations/read",
-                        "Microsoft.Storage/storageAccounts/listkeys/action",
-                        "Microsoft.Storage/storageAccounts/read",
-                        "Microsoft.Storage/storageAccounts/delete",
-                        "Microsoft.Storage/storageAccounts/regeneratekey/action",
-                        "Microsoft.Storage/storageAccounts/write",
-                        "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-                        "Microsoft.Storage/usages/read",
-                        "Microsoft.Compute/snapshots/write",
-                        "Microsoft.Compute/snapshots/read",
-                        "Microsoft.Compute/availabilitySets/write",
-                        "Microsoft.Compute/availabilitySets/read",
-                        "Microsoft.Compute/disks/beginGetAccess/action",
-                        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",
-                        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write",
-                        "Microsoft.Network/loadBalancers/read",
-                        "Microsoft.Network/loadBalancers/write",
-                        "Microsoft.Network/loadBalancers/delete",
-                        "Microsoft.Network/loadBalancers/backendAddressPools/read",
-                        "Microsoft.Network/loadBalancers/backendAddressPools/join/action",
-                        "Microsoft.Network/loadBalancers/frontendIPConfigurations/read",
-                        "Microsoft.Network/loadBalancers/loadBalancingRules/read",
-                        "Microsoft.Network/loadBalancers/probes/read",
-                        "Microsoft.Network/loadBalancers/probes/join/action",
-                        "Microsoft.Authorization/locks/*",
-                        "Microsoft.Network/routeTables/join/action",
-                        "Microsoft.NetApp/netAppAccounts/read",
-                        "Microsoft.NetApp/netAppAccounts/capacityPools/read",
-                        "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
-                        "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read",
-                        "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",
-                        "Microsoft.Network/privateEndpoints/write",
-                        "Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",
-                        "Microsoft.Storage/storageAccounts/privateEndpointConnections/read",
-                        "Microsoft.Storage/storageAccounts/managementPolicies/read",
-                        "Microsoft.Storage/storageAccounts/managementPolicies/write",
-                        "Microsoft.Network/privateEndpoints/read",
-                        "Microsoft.Network/privateDnsZones/write",
-                        "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
-                        "Microsoft.Network/virtualNetworks/join/action",
-                        "Microsoft.Network/privateDnsZones/A/write",
-                        "Microsoft.Network/privateDnsZones/read",
-                        "Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
-                        "Microsoft.Resources/deployments/operationStatuses/read",
-                        "Microsoft.Insights/Metrics/Read",
-                        "Microsoft.Compute/virtualMachines/extensions/write",
-                        "Microsoft.Compute/virtualMachines/extensions/delete",
-                        "Microsoft.Compute/virtualMachines/extensions/read",
-                        "Microsoft.Compute/virtualMachines/delete",
-                        "Microsoft.Network/networkInterfaces/delete",
-                        "Microsoft.Network/networkSecurityGroups/delete",
-                        "Microsoft.Resources/deployments/delete",
-                        "Microsoft.Compute/diskEncryptionSets/read",
-                        "Microsoft.Compute/snapshots/delete",
-                        "Microsoft.Network/privateEndpoints/delete",
-                        "Microsoft.Compute/availabilitySets/delete",
-                        "Microsoft.Network/loadBalancers/delete",
-                        "Microsoft.KeyVault/vaults/read",
-                        "Microsoft.KeyVault/vaults/accessPolicies/write",
-                        "Microsoft.Compute/diskEncryptionSets/write",
-                        "Microsoft.KeyVault/vaults/deploy/action",
-                        "Microsoft.Compute/diskEncryptionSets/delete",
-                        "Microsoft.Resources/tags/read",
-                        "Microsoft.Resources/tags/write",
-                        "Microsoft.Resources/tags/delete",
-                        "Microsoft.Network/applicationSecurityGroups/write",
-                        "Microsoft.Network/applicationSecurityGroups/read",
-                        "Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action",
-                        "Microsoft.Network/networkSecurityGroups/securityRules/write",
-                        "Microsoft.Network/applicationSecurityGroups/delete",
-                        "Microsoft.Network/networkSecurityGroups/securityRules/delete"
-    ],
-    "NotActions": [],
-    "AssignableScopes": [],
-    "Description": "Cloud Manager Permissions",
-    "IsCustom": "true"
-}
+.. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
 
-. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
+.. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
 You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
 +
@@ -263,23 +140,22 @@ You should add the ID for each Azure subscription from which users will create C
 "/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
 "/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
 
-. Use the JSON file to create a custom role in Azure.
+.. Use the JSON file to create a custom role in Azure.
 +
 The following steps describe how to create the role by using Bash in Azure Cloud Shell.
++
+* Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
 
-.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
-
-.. Upload the JSON file.
+* Upload the JSON file.
 +
 image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
 
-.. Enter the following Azure CLI command:
+* Enter the following Azure CLI command:
 +
 [source,azurecli]
-az role definition create --role-definition Policy_for_cloud_Manager_Azure_3.9.8.json
-
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
 +
-You should now have a custom role called _Cloud Manager Operator_.
+You should now have a custom role called Cloud Manager Operator that you can assign to the Connector virtual machine.
 
 . Assign the application to the role:
 

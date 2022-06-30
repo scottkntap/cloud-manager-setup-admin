@@ -25,7 +25,7 @@ You also need to ensure that the role is up to date as new permissions are added
 
 [source,yaml]
 title: NetApp Cloud Manager
-description: Permissions for the service account associated with the Cloud Manager instance. Enables management of Cloud Volumes ONTAP.
+description: Permissions for the service account associated with the Connector instance.
 stage: GA
 includedPermissions:
 - iam.serviceAccounts.actAs

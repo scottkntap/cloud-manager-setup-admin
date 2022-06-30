@@ -16,28 +16,6 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
-== 2 July 2022
-
-=== Connector 3.9.20
-
-* We've introduced a new way to navigate to the growing list of features in the Cloud Manager interface. All the familiar Cloud Manager capabilities can now be easily found by hovering over the left panel.
-+
-image:screenshot-navigation.png["A screenshot that shows the new left-hand navigation menu in Cloud Manager."]
-
-* The Connector is now supported in the following Google Cloud regions:
-** Madrid (europe-southwest1)
-** Paris (europe-west9)
-** Warsaw (europe-central2)
-
-* The Connector is now supported in the Azure West US 3 region.
-
-+
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
-
-* This release of the Connector also includes Cloud Volumes ONTAP enhancements.
-+
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-july-2022[Learn about Cloud Volumes ONTAP enhancements^]
-
 == 7 June 2022
 
 === Connector 3.9.19

@@ -19,8 +19,6 @@ This page describes how to create a Connector in Azure directly from Cloud Manag
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
-TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
-
 == Overview
 
 To deploy a Connector, you need to provide Cloud Manager with a login that has the required permissions to create the Connector VM in Azure.
@@ -477,7 +475,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 * A VNet and subnet in your Azure region of choice.
 
-* * If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own link:reference-permissions-azure.html[using the policy on this page].
+* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own link:reference-permissions-azure.html[using the policy on this page].
 +
 These permissions are for the Connector instance itself. It's a different set of permissions than what you previously set up to simply deploy the Connector.
 
@@ -497,9 +495,9 @@ link:reference-networking-cloud-manager.html[Learn more about networking require
 
 * *Get Ready*: Click *Azure AD service principal* and enter information about the Azure Active Directory service principal that grants the required permissions:
 +
-* Application (client) ID: See <<Get the application ID and directory ID>>.
-* Directory (tenant) ID: See <<Get the application ID and directory ID>>.
-* Client Secret: See <<Create a client secret>>.
+** Application (client) ID: See <<Get the application ID and directory ID>>.
+** Directory (tenant) ID: See <<Get the application ID and directory ID>>.
+** Client Secret: See <<Create a client secret>>.
 
 * *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
 

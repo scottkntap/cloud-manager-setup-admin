@@ -148,7 +148,7 @@ Be sure to do the following:
 * Create a policy that includes the permissions required to create an FSx for ONTAP working environment or to create a Connector.
 +
 ** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html[View the permissions needed for FSx for ONTAP^]
-** link:task-creating-connectors-aws.html[View the Connector deployment policy]
+** link:task-creating-connectors-aws.html#create-an-iam-policy[View the Connector deployment policy]
 
 . Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager in the next step.
 
