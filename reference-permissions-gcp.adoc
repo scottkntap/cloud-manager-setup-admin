@@ -15,7 +15,7 @@ summary: Cloud Manager requires permissions to perform actions in your cloud pro
 [.lead]
 Cloud Manager requires permissions to perform actions in Google Cloud. These permissions are included in a custom role provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
 
-== Custom role permissions
+== Service account permissions
 
 The custom role shown below provides the permissions that a Connector needs to manage resources and processes within your Google Cloud network.
 
