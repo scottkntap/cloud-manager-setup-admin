@@ -21,15 +21,15 @@ You can add AWS credentials to an existing Connector or directly to Cloud Manage
 
 * Add additional AWS credentials to an existing Connector
 +
-Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <<Add credentials to a Connector,Learn how to add AWS credentials to a Connector>>.
+Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <<Add additional credentials to a Connector,Learn how to add AWS credentials to a Connector>>.
 
-* Add credentials to Cloud Manager for creating a Connector
+* Add AWS credentials to Cloud Manager for creating a Connector
 +
-Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create a Connector. <<Add credentials to Cloud Manager,Learn how to add AWS credentials to Cloud Manager>>.
+Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create a Connector. <<Add credentials to Cloud Manager for creating a Connector,Learn how to add AWS credentials to Cloud Manager>>.
 
 * Add AWS credentials to Cloud Manager for FSx for ONTAP
 +
-Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create and manage FSx for ONTAP. https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html#set-up-the-iam-role[Learn how to set up permissions for FSx for ONTAP^]
+Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create and manage FSx for ONTAP. https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html[Learn how to set up permissions for FSx for ONTAP^]
 
 == How to rotate credentials
 
