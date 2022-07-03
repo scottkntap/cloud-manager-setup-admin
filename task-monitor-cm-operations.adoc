@@ -138,7 +138,7 @@ Checking the Timeline can be helpful if you need to identify who performed a spe
 
 .Steps
 
-. From the Cloud Manager menu bar, click *Settings > Timeline*.
+. From the left navigation menu, select *Timeline*.
 
 . Under the Filters, click *Service*, enable *Tenancy*, and click *Apply*.
 
