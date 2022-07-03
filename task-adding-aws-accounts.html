@@ -945,7 +945,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-05 13:47:48 +0000">04/05/2022</time>
+    <time datetime="2022-07-01 13:59:58 +0000">07/01/2022</time>
     
   
 
@@ -979,15 +979,21 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Add AWS credentials to an existing Connector</p>
+<p>Add additional AWS credentials to an existing Connector</p>
 <div class="paragraph">
-<p>Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <a href="#add-credentials-to-a-connector">Learn how to add AWS credentials to a Connector</a>.</p>
+<p>Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <a href="#add-additional-credentials-to-a-connector">Learn how to add AWS credentials to a Connector</a>.</p>
 </div>
 </li>
 <li>
-<p>Add AWS credentials directly to Cloud Manager</p>
+<p>Add AWS credentials to Cloud Manager for creating a Connector</p>
 <div class="paragraph">
-<p>Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create and manage an FSx for ONTAP working environment or to create a Connector. <a href="#add-credentials-to-cloud-manager">Learn how to add AWS credentials to Cloud Manager</a>.</p>
+<p>Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create a Connector. <a href="#add-credentials-to-cloud-manager-for-creating-a-connector">Learn how to add AWS credentials to Cloud Manager</a>.</p>
+</div>
+</li>
+<li>
+<p>Add AWS credentials to Cloud Manager for FSx for ONTAP</p>
+<div class="paragraph">
+<p>Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create and manage FSx for ONTAP. <a href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html" target="_blank" rel="noopener">Learn how to set up permissions for FSx for ONTAP</a></p>
 </div>
 </li>
 </ul>
@@ -1009,7 +1015,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="add-credentials-to-a-connector">Add credentials to a Connector</h2>
+<h2 id="add-additional-credentials-to-a-connector">Add additional credentials to a Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Add AWS credentials to a Connector so that it can deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in another account or provide AWS access keys.</p>
@@ -1178,13 +1184,10 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 </div>
 </div>
 <div class="sect1">
-<h2 id="add-credentials-to-cloud-manager">Add credentials to Cloud Manager</h2>
+<h2 id="add-credentials-to-cloud-manager-for-creating-a-connector">Add credentials to Cloud Manager for creating a Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create an FSx for ONTAP working environment or to create a Connector.</p>
-</div>
-<div class="paragraph">
-<p>You can use the credentials when creating an FSx for ONTAP working environment or when creating a new Connector.</p>
+<p>Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create a Connector. You can choose these credentials when creating a new Connector.</p>
 </div>
 <div class="sect2">
 <h3 id="set-up-the-iam-role">Set up the IAM role</h3>
@@ -1211,16 +1214,9 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 <p>Select <strong>Another AWS account</strong> and enter the ID of the Cloud Manager SaaS: 952013314444</p>
 </li>
 <li>
-<p>Create a policy that includes the permissions required to create an FSx for ONTAP working environment or to create a Connector.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html" target="_blank" rel="noopener">View the permissions needed for FSx for ONTAP</a></p>
-</li>
-<li>
+<p>Create a policy that includes the permissions required to create a Connector.</p>
+<div class="paragraph">
 <p>View the Connector deployment policy from the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager Policies page</a></p>
-</li>
-</ul>
 </div>
 </li>
 </ul>
@@ -1274,7 +1270,7 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>You can now use the credentials when creating an FSx for ONTAP working environment or when creating a new Connector.</p>
+<p>You can now use the credentials when creating a new Connector.</p>
 </div>
 </div>
 </div>

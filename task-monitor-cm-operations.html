@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the statu...">
-  <meta name="keywords" content=" administer, monitor, account, timeline, notifications, alerts, events, notification center"><!-- Icons -->
+  <meta name="keywords" content=" administer, monitor, account, timeline, notifications, alerts, events, notification center, email"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-setup-admin/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -945,24 +945,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-05 22:04:03 +0000">04/05/2022</time>
+    <time datetime="2022-07-03 15:24:52 +0000">07/03/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-tonacki">
-    <img  class="avatar avatar-small"
-          alt="netapp-tonacki"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/38222299?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
     <img  class="avatar avatar-small"
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-tonacki">
+    <img  class="avatar avatar-small"
+          alt="netapp-tonacki"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/38222299?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -974,7 +974,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center or in the Timeline.</p>
+<p>You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center, in the Timeline, or have notifications sent to your email.</p>
 </div>
 <div class="paragraph">
 <p>This table provides a comparison of the Notification Center and the Timeline so you can understand what each has to offer.</p>
@@ -997,7 +997,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shows status for the current login session - the information won&#8217;t appear in the Notification Center after you log off</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retains status for up to the last month</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retains status for the last month</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shows only actions initiated in the user interface</p></td>
@@ -1011,37 +1011,72 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filter results by importance</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filter by service, action, user, status, and more</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides the ability to email notifications to Account users and to others</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No email capability</p></td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="monitoring-operations-status-using-the-notification-center">Monitoring operations status using the Notification Center</h2>
+<h2 id="monitoring-activities-using-the-notification-center">Monitoring activities using the Notification Center</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Notifications are like events where they track the progress of operations that you&#8217;ve initiated in Cloud Manager so you can verify whether the operation was successful, or if it failed. They enable you to view the status for Cloud Manager operations (and cloud services operations in the future) that you initiated during your current login session.</p>
+<p>Notifications track the progress of operations that you&#8217;ve initiated in Cloud Manager so you can verify whether the operation was successful or not. They enable you to view the status for many Cloud Manager operations that you initiated during your current login session.</p>
 </div>
 <div class="paragraph">
-<p>At this time, only notifications for creating and deleting the following Cloud Volumes ONTAP objects are supported:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>working environments</p>
-</li>
-<li>
-<p>aggregates</p>
-</li>
-<li>
-<p>volumes</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You display the notifications by clicking the notification bell (<span class="image"><img src="./media/icon_bell.png" alt="notification bell"></span>) in the menu bar. The color of the little bubble in the bell indicates the highest level severity notification that is active. So if you see a red bubble, it means there&#8217;s an important notification that you should look at.</p>
+<p>You can display the notifications by clicking the notification bell (<span class="image"><img src="./media/icon_bell.png" alt="notification bell"></span>) in the menu bar. The color of the little bubble in the bell indicates the highest level severity notification that is active. So if you see a red bubble, it means there&#8217;s an important notification that you should look at.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_notification_full.png" alt="A screenshot showing the a list of current notifications in the Notification Center."></span></p>
+</div>
+<div class="paragraph">
+<p>You can also configure Cloud Manager to send notifications by email so you can be informed of important system activity even when you&#8217;re not logged into the system. Emails can be sent to any Cloud Central users who are part of your NetApp Cloud Account, or to any other recipients who need to be aware of certain types of system activity. See <a href="#setting-email-notification-settings">Setting email notification settings</a> below.</p>
+</div>
+<div class="sect2">
+<h3 id="notification-types">Notification types</h3>
+<div class="paragraph">
+<p>Notifications are classified in the following categories:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 31.25%;">
+<col style="width: 68.75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Notification type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Critical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A problem occurred that might lead to service disruption if corrective action is not taken immediately.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An action or process ended with failure, or could lead to failure if corrective action is not taken.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An issue that you should be aware of to make sure it does not reach the critical severity. Notifications of this severity do not cause service disruption, and immediate corrective action might not be required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recommendation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A system recommendation for you to take an action to improve the system or a certain service; for example: costs saving, suggestion for new services, recommended security configuration, etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message that provides additional information about an action or process.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An action or process completed successfully.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="filtering-notifications">Filtering notifications</h3>
@@ -1053,6 +1088,65 @@
 </div>
 <div class="paragraph">
 <p>For example, if you want to see only "Error" and "Warning" notifications for Cloud Manager operations, select those entries and you&#8217;ll see only those types of notifications.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-email-notification-settings">Setting email notification settings</h3>
+<div class="paragraph">
+<p>You can send specific types of notifications by email so you can be informed of important system activity even when you&#8217;re not logged into Cloud Manager. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.</p>
+</div>
+<div class="paragraph">
+<p>By default, Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.</p>
+</div>
+<div class="paragraph">
+<p>You must be an Account Admin to customize the notifications settings.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the Cloud Manager menu bar, click <strong>Settings &gt; Alerts and Notifications Settings</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-settings-notifications.png" alt="A screenshot showing how to display the Alerts and Notifications Settings page."></span></p>
+</div>
+</li>
+<li>
+<p>Select a user, or multiple users, from either the <em>Account Users</em> tab or the <em>Additional Recipients</em> tab, and choose the type of notifications to be sent:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To make changes for a single user, click the menu in the Notifications column for that user, check the types of Notifications to be sent, and click <strong>Apply</strong>.</p>
+</li>
+<li>
+<p>To make changes for multiple users, check the box for each user, click <strong>Manage Email Notifications</strong>, check the types of Notifications to be sent, and click <strong>Apply</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-change-notifications.png" alt="A screenshot showing how to change notifications for multiple users."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-additional-email-recipients">Adding additional email recipients</h3>
+<div class="paragraph">
+<p>The users who appear in the <em>Account Users</em> tab are populated automatically from the users in your NetApp Account (from the <a href="task-managing-netapp-accounts.html#creating-and-managing-users">Manage Account page</a>). You can add email addresses in the <em>Additional Recipients</em> tab for other people, or groups, who do not have access to Cloud Manager, but who need to be notified about certain types of alerts and notifications.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the Alerts and Notifications Settings page, click <strong>Add New Recipients</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-add-email-recipient.png" alt="A screenshot showing how to add new email recipients for alerts and notifications."></span></p>
+</div>
+</li>
+<li>
+<p>Enter the name, email address, and select the types of Notifications that recipient will receive, and click <strong>Add New Recipient</strong>.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -1084,7 +1178,7 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Click <strong>All Services &gt; Timeline</strong>.</p>
+<p>From the left navigation menu, select <strong>Timeline</strong>.</p>
 </li>
 <li>
 <p>Under the Filters, click <strong>Service</strong>, enable <strong>Tenancy</strong>, and click <strong>Apply</strong>.</p>

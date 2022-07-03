@@ -945,7 +945,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-06 21:03:08 +0000">06/06/2022</time>
+    <time datetime="2022-07-01 11:35:39 +0000">07/01/2022</time>
     
   
 
@@ -963,224 +963,1039 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">the policies provided by NetApp</a>. You might want to understand what Cloud Manager does with these permissions.</p>
 </div>
 <div class="paragraph">
-<p>Cloud Manager uses an AWS account to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Security Token Service (STS), and the Key Management Service (KMS).</p>
+<p>The following sections describe how the permissions are used for each NetApp cloud service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apptemplate-tags">AppTemplate tags</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector makes the following API requests to manage tags on AWS resources when you use the AppTemplate Tagging service:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ec2:CreateTags</p>
+</li>
+<li>
+<p>ec2:DeleteTags</p>
+</li>
+<li>
+<p>ec2:DescribeTags</p>
+</li>
+<li>
+<p>tag:getResources</p>
+</li>
+<li>
+<p>tag:getTagKeys</p>
+</li>
+<li>
+<p>tag:getTagValues</p>
+</li>
+<li>
+<p>tag:TagResources</p>
+</li>
+<li>
+<p>tag:UntagResources</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-backup">Cloud Backup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector makes the following API requests to deploy the restore instance for Cloud Backup:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ec2:StartInstances</p>
+</li>
+<li>
+<p>ec2:StopInstances</p>
+</li>
+<li>
+<p>ec2:DescribeInstances</p>
+</li>
+<li>
+<p>ec2:DescribeInstanceStatus</p>
+</li>
+<li>
+<p>ec2:RunInstances</p>
+</li>
+<li>
+<p>ec2:TerminateInstances</p>
+</li>
+<li>
+<p>ec2:DescribeInstanceAttribute</p>
+</li>
+<li>
+<p>ec2:DescribeImages</p>
+</li>
+<li>
+<p>ec2:CreateTags</p>
+</li>
+<li>
+<p>ec2:CreateVolume</p>
+</li>
+<li>
+<p>ec2:CreateSecurityGroup</p>
+</li>
+<li>
+<p>ec2:DescribeSubnets</p>
+</li>
+<li>
+<p>ec2:DescribeVpcs</p>
+</li>
+<li>
+<p>ec2:DescribeRegions</p>
+</li>
+<li>
+<p>cloudformation:CreateStack</p>
+</li>
+<li>
+<p>cloudformation:DeleteStack</p>
+</li>
+<li>
+<p>cloudformation:DescribeStacks</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Connector makes the following API requests to manage backups in Amazon S3:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>s3:GetBucketLocation</p>
+</li>
+<li>
+<p>s3:ListAllMyBuckets</p>
+</li>
+<li>
+<p>s3:ListBucket</p>
+</li>
+<li>
+<p>s3:CreateBucket</p>
+</li>
+<li>
+<p>s3:GetLifecycleConfiguration</p>
+</li>
+<li>
+<p>s3:PutLifecycleConfiguration</p>
+</li>
+<li>
+<p>s3:PutBucketTagging</p>
+</li>
+<li>
+<p>s3:ListBucketVersions</p>
+</li>
+<li>
+<p>s3:GetBucketAcl</p>
+</li>
+<li>
+<p>s3:PutBucketPublicAccessBlock</p>
+</li>
+<li>
+<p>kms:List*</p>
+</li>
+<li>
+<p>kms:Describe*</p>
+</li>
+<li>
+<p>s3:GetObject</p>
+</li>
+<li>
+<p>ec2:describeVpcEndpoints</p>
+</li>
+<li>
+<p>kms:ListAliases</p>
+</li>
+<li>
+<p>s3:PutEncryptionConfiguration</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Connector makes the following API requests when you use the Search &amp; Restore method to restore volumes and files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>s3:CreateBucket</p>
+</li>
+<li>
+<p>s3:DeleteObject</p>
+</li>
+<li>
+<p>s3:DeleteObjectVersion</p>
+</li>
+<li>
+<p>s3:GetBucketAcl</p>
+</li>
+<li>
+<p>s3:ListBucket</p>
+</li>
+<li>
+<p>s3:ListBucketVersions</p>
+</li>
+<li>
+<p>s3:ListBucketMultipartUploads</p>
+</li>
+<li>
+<p>s3:PutObject</p>
+</li>
+<li>
+<p>s3:PutBucketAcl</p>
+</li>
+<li>
+<p>s3:PutLifecycleConfiguration</p>
+</li>
+<li>
+<p>s3:PutBucketPublicAccessBlock</p>
+</li>
+<li>
+<p>s3:AbortMultipartUpload</p>
+</li>
+<li>
+<p>s3:ListMultipartUploadParts</p>
+</li>
+<li>
+<p>athena:StartQueryExecutionc</p>
+</li>
+<li>
+<p>athena:GetQueryResults</p>
+</li>
+<li>
+<p>athena:GetQueryExecution</p>
+</li>
+<li>
+<p>athena:StopQueryExecution</p>
+</li>
+<li>
+<p>glue:CreateDatabase</p>
+</li>
+<li>
+<p>glue:CreateTable</p>
+</li>
+<li>
+<p>glue:BatchDeletePartition</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-data-sense">Cloud Data Sense</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector makes the following API requests to deploy the Cloud Data Sense instance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ec2:DescribeInstances</p>
+</li>
+<li>
+<p>ec2:DescribeInstanceStatus</p>
+</li>
+<li>
+<p>ec2:RunInstances</p>
+</li>
+<li>
+<p>ec2:TerminateInstances</p>
+</li>
+<li>
+<p>ec2:CreateTags</p>
+</li>
+<li>
+<p>ec2:CreateVolume</p>
+</li>
+<li>
+<p>ec2:AttachVolume</p>
+</li>
+<li>
+<p>ec2:CreateSecurityGroup</p>
+</li>
+<li>
+<p>ec2:DeleteSecurityGroup</p>
+</li>
+<li>
+<p>ec2:DescribeSecurityGroups</p>
+</li>
+<li>
+<p>ec2:CreateNetworkInterface</p>
+</li>
+<li>
+<p>ec2:DescribeNetworkInterfaces</p>
+</li>
+<li>
+<p>ec2:DeleteNetworkInterface</p>
+</li>
+<li>
+<p>ec2:DescribeSubnets</p>
+</li>
+<li>
+<p>ec2:DescribeVpcs</p>
+</li>
+<li>
+<p>ec2:CreateSnapshot</p>
+</li>
+<li>
+<p>ec2:DescribeRegions</p>
+</li>
+<li>
+<p>cloudformation:CreateStack</p>
+</li>
+<li>
+<p>cloudformation:DeleteStack</p>
+</li>
+<li>
+<p>cloudformation:DescribeStacks</p>
+</li>
+<li>
+<p>cloudformation:DescribeStackEvents</p>
+</li>
+<li>
+<p>iam:AddRoleToInstanceProfile</p>
+</li>
+<li>
+<p>ec2:AssociateIamInstanceProfile</p>
+</li>
+<li>
+<p>ec2:DescribeIamInstanceProfileAssociations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Connector makes the following API requests to scan S3 buckets when you use Cloud Data Sense:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>iam:AddRoleToInstanceProfile</p>
+</li>
+<li>
+<p>ec2:AssociateIamInstanceProfile</p>
+</li>
+<li>
+<p>ec2:DescribeIamInstanceProfileAssociations</p>
+</li>
+<li>
+<p>s3:GetBucketTagging</p>
+</li>
+<li>
+<p>s3:GetBucketLocation</p>
+</li>
+<li>
+<p>s3:ListAllMyBuckets</p>
+</li>
+<li>
+<p>s3:ListBucket</p>
+</li>
+<li>
+<p>s3:GetBucketPolicyStatus</p>
+</li>
+<li>
+<p>s3:GetBucketPolicy</p>
+</li>
+<li>
+<p>s3:GetBucketAcl</p>
+</li>
+<li>
+<p>s3:GetObject</p>
+</li>
+<li>
+<p>iam:GetRole</p>
+</li>
+<li>
+<p>s3:DeleteObject</p>
+</li>
+<li>
+<p>s3:DeleteObjectVersion</p>
+</li>
+<li>
+<p>s3:PutObject</p>
+</li>
+<li>
+<p>sts:AssumeRole</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-tiering">Cloud Tiering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector makes the following API requests to tier data to Amazon S3 when you use Cloud Tiering.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Actions</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Used for set up?</th>
+<th class="tableblock halign-left valign-top">Used for daily operations?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:StartInstances",<br>
-"ec2:StopInstances",<br>
-"ec2:DescribeInstances",<br>
-"ec2:DescribeInstanceStatus",<br>
-"ec2:RunInstances",<br>
-"ec2:TerminateInstances",<br>
-"ec2:ModifyInstanceAttribute",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Launches a Cloud Volumes ONTAP instance and stops, starts, and monitors the instance.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:CreateBucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribeInstanceAttribute",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Verifies that enhanced networking is enabled for supported instance types.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:PutLifecycleConfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribeRouteTables",<br>
-"ec2:DescribeImages",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Launches a Cloud Volumes ONTAP HA configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:GetLifecycleConfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:CreateTags",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tags every resource that Cloud Manager creates with the "WorkingEnvironment" and "WorkingEnvironmentId" tags. Cloud Manager uses these tags for maintenance and cost allocation.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:CreateVolume",<br>
-"ec2:DescribeVolumes",<br>
-"ec2:ModifyVolumeAttribute",<br>
-"ec2:AttachVolume",<br>
-"ec2:DeleteVolume",<br>
-"ec2:DetachVolume",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manages the EBS volumes that Cloud Volumes ONTAP uses as back-end storage.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:CreateSecurityGroup",<br>
-"ec2:DeleteSecurityGroup",<br>
-"ec2:DescribeSecurityGroups",<br>
-"ec2:RevokeSecurityGroupEgress",<br>
-"ec2:AuthorizeSecurityGroupEgress",<br>
-"ec2:AuthorizeSecurityGroupIngress",<br>
-"ec2:RevokeSecurityGroupIngress",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates predefined security groups for Cloud Volumes ONTAP.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:CreateNetworkInterface",<br>
-"ec2:DescribeNetworkInterfaces",<br>
-"ec2:DeleteNetworkInterface",<br>
-"ec2:ModifyNetworkInterfaceAttribute",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates and manages network interfaces for Cloud Volumes ONTAP in the target subnet.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribeSubnets",<br>
-"ec2:DescribeVpcs",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gets the list of destination subnets and security groups, which is needed when creating a new working environment for Cloud Volumes ONTAP.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribeDhcpOptions",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Determines DNS servers and the default domain name when launching Cloud Volumes ONTAP instances.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:CreateSnapshot",<br>
-"ec2:DeleteSnapshot",<br>
-"ec2:DescribeSnapshots",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Takes snapshots of EBS volumes during initial setup and whenever a Cloud Volumes ONTAP instance is stopped.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:GetConsoleOutput",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Captures the Cloud Volumes ONTAP console, which is attached to AutoSupport messages.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribeKeyPairs",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Obtains the list of available key pairs when launching instances.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribeRegions",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gets a list of available AWS regions.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DeleteTags",<br>
-"ec2:DescribeTags",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manages tags for resources associated with Cloud Volumes ONTAP instances.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"cloudformation:CreateStack",<br>
-"cloudformation:DeleteStack",<br>
-"cloudformation:DescribeStacks",<br>
-"cloudformation:DescribeStackEvents",<br>
-"cloudformation:ValidateTemplate",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Launches Cloud Volumes ONTAP instances.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"iam:PassRole",<br>
-"iam:CreateRole",<br>
-"iam:DeleteRole",<br>
-"iam:PutRolePolicy",<br>
-"iam:CreateInstanceProfile",<br>
-"iam:DeleteRolePolicy",<br>
-"iam:AddRoleToInstanceProfile",<br>
-"iam:RemoveRoleFromInstanceProfile",<br>
-"iam:DeleteInstanceProfile",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Launches a Cloud Volumes ONTAP HA configuration.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"iam:ListInstanceProfiles",<br>
-"sts:DecodeAuthorizationMessage",<br>
-"ec2:AssociateIamInstanceProfile",<br>
-"ec2:DescribeIamInstanceProfileAssociations",<br>
-"ec2:DisassociateIamInstanceProfile",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manages instance profiles for Cloud Volumes ONTAP instances.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"s3:GetBucketTagging",<br>
-"s3:GetBucketLocation",<br>
-"s3:ListAllMyBuckets",<br>
-"s3:ListBucket"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Obtains information about AWS S3 buckets so Cloud Manager can integrate with the NetApp Data Fabric Cloud Sync service.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"s3:CreateBucket",<br>
-"s3:DeleteBucket",<br>
-"s3:GetLifecycleConfiguration",<br>
-"s3:PutLifecycleConfiguration",<br>
-"s3:PutBucketTagging",<br>
-"s3:ListBucketVersions",<br>
-"s3:GetBucketPolicyStatus",<br>
-"s3:GetBucketPublicAccessBlock",<br>
-"s3:GetBucketAcl",<br>
-"s3:GetBucketPolicy",<br>
-"s3:PutBucketPublicAccessBlock"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manages the S3 bucket that a Cloud Volumes ONTAP system uses as a capacity tier for data tiering.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"kms:List*",<br>
-"kms:ReEncrypt*",<br>
-"kms:Describe*",<br>
-"kms:CreateGrant",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables data encryption of Cloud Volumes ONTAP using the AWS Key Management Service (KMS).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ce:GetReservationUtilization",<br>
-"ce:GetDimensionValues",<br>
-"ce:GetCostAndUsage",<br>
-"ce:GetTags"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Obtains AWS cost data for Cloud Volumes ONTAP.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:CreatePlacementGroup",<br>
-"ec2:DeletePlacementGroup"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When you deploy an HA configuration in a single AWS Availability Zone, Cloud Manager launches the two HA nodes and the mediator in an AWS spread placement group.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribeReservedInstancesOfferings"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager uses the permission as part of Cloud Data Sense deployment to choose which instance type to use.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:CreateTags",<br>
-"ec2:DeleteTags",<br>
-"ec2:DescribeTags",<br>
-"tag:getResources",<br>
-"tag:getTagKeys",<br>
-"tag:getTagValues",<br>
-"tag:TagResources",<br>
-"tag:UntagResources"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables you to manage tags on your AWS resources using the Cloud Manager Tagging service.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"s3:DeleteBucket",<br>
-"s3:GetLifecycleConfiguration",<br>
-"s3:PutLifecycleConfiguration",<br>
-"s3:PutBucketTagging",<br>
-"s3:ListBucketVersions",<br>
-"s3:GetObject",<br>
-"s3:ListBucket",<br>
-"s3:ListAllMyBuckets",<br>
-"s3:GetBucketTagging",<br>
-"s3:GetBucketLocation"<br>
-"s3:GetBucketPolicyStatus",<br>
-"s3:GetBucketPublicAccessBlock",<br>
-"s3:GetBucketAcl",<br>
-"s3:GetBucketPolicy",<br>
-"s3:PutBucketPublicAccessBlock"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager uses these permissions when you enable the Backup to S3 service.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"eks:ListClusters",<br>
-"eks:DescribeCluster",<br>
-"iam:GetInstanceProfile",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables discovery of Amazon EKS clusters.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribePlacementGroups",<br>
-"iam:GetRolePolicy",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates an AWS spread placement group for an HA pair that&#8217;s deployed in a single Availability Zone (AZ).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"ec2:DescribeVolumesModifications",<br>
-"ec2:ModifyVolume",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables set up and management of Cloud Volumes ONTAP aggregates that support the Amazon EBS Elastic Volumes feature.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeRegions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-volumes-ontap">Cloud Volumes ONTAP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector makes the following API requests to deploy and manage Cloud Volumes ONTAP in AWS.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Used for deployment?</th>
+<th class="tableblock halign-left valign-top">Used for daily operations?</th>
+<th class="tableblock halign-left valign-top">Used for deletion?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="13"><p class="tableblock">Create and manage IAM roles and instance profiles for Cloud Volumes ONTAP instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:ListInstanceProfiles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:CreateRole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:DeleteRole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:PutRolePolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:CreateInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:DeleteRolePolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:AddRoleToInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:RemoveRoleFromInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:DeleteInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iam:PassRole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:AssociateIamInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeIamInstanceProfileAssociations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DisassociateIamInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decode authorization status messages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sts:DecodeAuthorizationMessage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describe the specified images (AMIs) available to the account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeImages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describe the route tables in a VPC (required for HA pairs only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeRouteTables</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">Stop, start, and monitor instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:StartInstances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:StopInstances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeInstances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeInstanceStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:RunInstances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:TerminateInstances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:ModifyInstanceAttribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verify that enhanced networking is enabled for supported instance types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeInstanceAttribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag resources with the "WorkingEnvironment" and "WorkingEnvironmentId" tags which are used for maintenance and cost allocation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:CreateTags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock">Manage EBS volumes that Cloud Volumes ONTAP uses as back-end storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:CreateVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeVolumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:ModifyVolumeAttribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:AttachVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DeleteVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DetachVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">Create and manage security groups for Cloud Volumes ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:CreateSecurityGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DeleteSecurityGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeSecurityGroups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:RevokeSecurityGroupEgress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:AuthorizeSecurityGroupEgress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:AuthorizeSecurityGroupIngress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:RevokeSecurityGroupIngress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Create and manage network interfaces for Cloud Volumes ONTAP in the target subnet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:CreateNetworkInterface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeNetworkInterfaces</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DeleteNetworkInterface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:ModifyNetworkInterfaceAttribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Get the list of destination subnets and security groups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeSubnets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeVpcs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get DNS servers and the default domain name for Cloud Volumes ONTAP instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeDhcpOptions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Take snapshots of EBS volumes for Cloud Volumes ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:CreateSnapshot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DeleteSnapshot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeSnapshots</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Capture the Cloud Volumes ONTAP console, which is attached to AutoSupport messages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:GetConsoleOutput</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get the list of available key pairs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeKeyPairs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get the list of available AWS regions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeRegions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Manage tags for resources associated with Cloud Volumes ONTAP instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DeleteTags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeTags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Create and manage stacks for AWS CloudFormation templates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cloudformation:CreateStack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cloudformation:DeleteStack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cloudformation:DescribeStacks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cloudformation:DescribeStackEvents</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cloudformation:ValidateTemplate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="15"><p class="tableblock">Create and manage an S3 bucket that a Cloud Volumes ONTAP system uses as a capacity tier for data tiering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:CreateBucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:DeleteBucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:GetLifecycleConfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:PutLifecycleConfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:PutBucketTagging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:ListBucketVersions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:GetBucketPolicyStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:GetBucketPublicAccessBlock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:GetBucketAcl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:GetBucketPolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:PutBucketPublicAccessBlock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:GetBucketTagging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:GetBucketLocation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:ListAllMyBuckets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s3:ListBucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Enable data encryption of Cloud Volumes ONTAP using the AWS Key Management Service (KMS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kms:List*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kms:ReEncrypt*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kms:Describe*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kms:CreateGrant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Obtain AWS cost data for Cloud Volumes ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ce:GetReservationUtilization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ce:GetDimensionValues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ce:GetCostAndUsage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ce:GetTags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Create and manage an AWS spread placement group for two HA nodes and the mediator in a single AWS Availability Zone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:CreatePlacementGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DeletePlacementGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Create reports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fsx:Describe*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fsx:List*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Create and manage aggregates that support the Amazon EBS Elastic Volumes feature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:DescribeVolumesModifications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2:ModifyVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="global-file-cache">Global File Cache</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector makes the following API requests to deploy Global File Cache instances during deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>cloudformation:DescribeStacks</p>
+</li>
+<li>
+<p>cloudwatch:GetMetricStatistics</p>
+</li>
+<li>
+<p>cloudformation:ListStacks</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kubernetes">Kubernetes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Connector makes the following API requests to discover and manage Amazon EKS clusters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ec2:DescribeRegions</p>
+</li>
+<li>
+<p>eks:ListClusters</p>
+</li>
+<li>
+<p>eks:DescribeCluster</p>
+</li>
+<li>
+<p>iam:GetInstanceProfile</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 
     </article>
     <!-- Page Container -->

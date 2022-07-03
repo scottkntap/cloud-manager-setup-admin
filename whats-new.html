@@ -945,7 +945,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-28 19:11:23 +0000">06/28/2022</time>
+    <time datetime="2022-07-03 15:35:26 +0000">07/03/2022</time>
     
   
 
@@ -967,6 +967,73 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Learn about what&#8217;s new with Cloud Manager&#8217;s administration features: NetApp accounts, Connectors, cloud provider credentials, and more.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-july-2022">3 July 2022</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="connector-3-9-20">Connector 3.9.20</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We&#8217;ve introduced a new way to navigate to the growing list of features in the Cloud Manager interface. All the familiar Cloud Manager capabilities can now be easily found by hovering over the left panel.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-navigation.png" alt="A screenshot that shows the new left-hand navigation menu in Cloud Manager."></span></p>
+</div>
+</li>
+<li>
+<p>You can now configure Cloud Manager to send notifications by email so you can be informed of important system activity even when you&#8217;re not logged into the system.</p>
+<div class="paragraph">
+<p><a href="task-monitor-cm-operations.html">Learn more about monitoring operations in your account</a>.</p>
+</div>
+</li>
+<li>
+<p>Cloud Manager now supports Azure Blob storage and Google Cloud Storage as working environments, similar to Amazon S3 support.</p>
+<div class="paragraph">
+<p>After you install a Connector in Azure or Google Cloud, Cloud Manager now automatically discovers information about Azure Blob storage in your Azure subscription or the Google Cloud Storage in the project where the Connector is installed. Cloud Manager displays the object storage as a working environment that you can open to view more detailed information.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of an Azure Blob working environment:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-azure-blob.png" alt="A screenshot that shows an Azure Blob working environment where you can view a high level overview and then detailed information about the storage accounts."></span></p>
+</div>
+</li>
+<li>
+<p>We redesigned the resources page for an Amazon S3 working environment by providing more detailed information about S3 buckets, such as capacity, encryption details, and more.</p>
+</li>
+<li>
+<p>The Connector is now supported in the following Google Cloud regions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Madrid (europe-southwest1)</p>
+</li>
+<li>
+<p>Paris (europe-west9)</p>
+</li>
+<li>
+<p>Warsaw (europe-central2)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The Connector is now supported in the Azure West US 3 region.</p>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions</a></p>
+</div>
+</li>
+<li>
+<p>This release of the Connector also includes Cloud Volumes ONTAP enhancements.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-july-2022" target="_blank" rel="noopener">Learn about Cloud Volumes ONTAP enhancements</a></p>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
