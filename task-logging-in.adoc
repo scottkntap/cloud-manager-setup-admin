@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-logging-in.html
-keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login
+keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp
 summary: The Cloud Manager interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com.
 ---
 
@@ -23,9 +23,14 @@ TIP: You can use single sign-on to log in using credentials from your corporate 
 
 . Open a web browser and go to https://cloudmanager.netapp.com.
 
-. Log in using your NetApp Cloud Central credentials.
+. Log in by entering your NetApp Cloud Central credentials or by clicking *Log in with NetApp* and entering your NetApp Support Site credentials.
 +
-image:screenshot_login.gif[The log in screen for Cloud Central.]
+You need to choose the option that you used when you signed up to Cloud Central.
++
+* If you signed up by entering your email and password, then you need to enter those credentials each time that you log in.
+* If you registered by logging in with your NetApp Support Site credentials, then you need to use that log in option each time.
++
+image:screenshot-login.png[The log in screen for Cloud Central.]
 
 .Result
 
