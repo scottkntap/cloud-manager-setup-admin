@@ -16,6 +16,46 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 3 July 2022
+
+=== Connector 3.9.20
+
+* We've introduced a new way to navigate to the growing list of features in the Cloud Manager interface. All the familiar Cloud Manager capabilities can now be easily found by hovering over the left panel.
++
+image:screenshot-navigation.png["A screenshot that shows the new left-hand navigation menu in Cloud Manager."]
+
+* Cloud Manager now supports Azure Blob storage and Google Cloud Storage as working environments, similar to Amazon S3 support.
++
+After you install a Connector in Azure or Google Cloud, Cloud Manager now automatically discovers information about Azure Blob storage in your Azure subscription or the Google Cloud Storage in the project where the Connector is installed. Cloud Manager displays the object storage as a working environment that you can open to view more detailed information.
++
+Here's an example of an Azure Blob working environment:
++
+image:screenshot-azure-blob.png[A screenshot that shows an Azure Blob working environment where you can view a high level overview and then detailed information about the storage accounts.]
+
+* We redesigned the resources page for an Amazon S3 working environment by providing more detailed information about S3 buckets, such as capacity, encryption details, and more.
+
+* The Connector is now supported in the following Google Cloud regions:
+** Madrid (europe-southwest1)
+** Paris (europe-west9)
+** Warsaw (europe-central2)
+
+* The Connector is now supported in the Azure West US 3 region.
+
++
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-july-2022[Learn about Cloud Volumes ONTAP enhancements^]
+
+== 28 June 2022
+
+=== Log in with NetApp credentials
+
+When new users sign up to Cloud Central, they can now select the *Log in with NetApp* option to log in with their NetApp Support Site credentials. This is an alternative to entering an email address and password.
+
+NOTE: Existing logins that use an email address and password need to keep using that login method. The Log in with NetApp option is available for new users who sign up.
+
 == 7 June 2022
 
 === Connector 3.9.19
@@ -31,6 +71,7 @@ https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supp
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#7-june-2022[Learn about Cloud Volumes ONTAP enhancements^]
 
 ** https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/whats-new.html#7-june-2022[Learn about ONTAP on-prem cluster enhancements^]
+//end::whats-new[]
 
 == 12 May 2022
 
@@ -71,8 +112,6 @@ The following permissions are now required to create an AWS spread placement gro
 These permissions are now required to optimize how Cloud Manager creates the placement group.
 +
 Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
-
-//end::whats-new[]
 
 == 3 April 2022
 
