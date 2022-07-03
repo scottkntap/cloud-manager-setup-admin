@@ -27,11 +27,11 @@ In Cloud Manager, workspaces enable you to isolate a set of working environments
 
 . From the top of https://cloudmanager.netapp.com[Cloud Manager^], click the *Account* drop-down.
 +
-image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
+image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
 
 . Click *Manage Account* next to the currently selected account.
 +
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
 . Click *Workspaces*.
 
@@ -53,7 +53,7 @@ Associate Cloud Central users with the NetApp account so those users can create 
 
 . From the top of https://cloudmanager.netapp.com[Cloud Manager^], click the *Account* drop-down and click *Manage Account*.
 +
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
 . From the Members tab, click *Associate User*.
 
@@ -82,7 +82,7 @@ You can associate Workspace Admins with additional workspaces at any time. Assoc
 
 . From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
 +
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
 . From the Members tab, click the action menu in the row that corresponds to the user.
 +
@@ -108,7 +108,7 @@ link:concept-netapp-accounts.html#users-workspaces-and-service-connectors[Learn 
 
 . From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
 +
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
 . Click *Connector*.
 
