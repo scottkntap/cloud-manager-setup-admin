@@ -24,6 +24,10 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 +
 image:screenshot-navigation.png["A screenshot that shows the new left-hand navigation menu in Cloud Manager."]
 
+* You can now configure Cloud Manager to send notifications by email so you can be informed of important system activity even when you're not logged into the system.
++
+link:task-monitor-cm-operations.html[Learn more about monitoring operations in your account].
+
 * Cloud Manager now supports Azure Blob storage and Google Cloud Storage as working environments, similar to Amazon S3 support.
 +
 After you install a Connector in Azure or Google Cloud, Cloud Manager now automatically discovers information about Azure Blob storage in your Azure subscription or the Google Cloud Storage in the project where the Connector is installed. Cloud Manager displays the object storage as a working environment that you can open to view more detailed information.
