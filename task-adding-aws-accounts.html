@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
+        Permissions summary
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
@@ -947,7 +951,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-01 13:59:58 +0000">07/01/2022</time>
+    <time datetime="2022-07-13 19:07:25 +0000">07/13/2022</time>
     
   
 
@@ -1077,7 +1081,7 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 <p>Select <strong>Another AWS account</strong> and enter the ID of the account where the Connector instance resides.</p>
 </li>
 <li>
-<p>Create a policy using the Cloud Manager IAM policy, which is available from the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager Policies page</a>.</p>
+<p>Create a policy by copying and pasting the contents of <a href="reference-permissions-aws.html">the IAM policy for the Connector</a>.</p>
 </li>
 </ul>
 </div>
@@ -1101,10 +1105,7 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Download the Cloud Manager IAM policy from the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager Policies page</a>.</p>
-</li>
-<li>
-<p>From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.</p>
+<p>From the IAM console, create a policy by copying and pasting the contents of <a href="reference-permissions-aws.html">the IAM policy for the Connector</a>.</p>
 <div class="paragraph">
 <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html" target="_blank" rel="noopener">AWS Documentation: Creating IAM Policies</a></p>
 </div>
@@ -1217,8 +1218,15 @@ When you deployed a Connector from Cloud Manager, Cloud Manager automatically ad
 </li>
 <li>
 <p>Create a policy that includes the permissions required to create a Connector.</p>
-<div class="paragraph">
-<p>View the Connector deployment policy from the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager Policies page</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html" target="_blank" rel="noopener">View the permissions needed for FSx for ONTAP</a></p>
+</li>
+<li>
+<p><a href="task-creating-connectors-aws.html#create-an-iam-policy">View the Connector deployment policy</a></p>
+</li>
+</ul>
 </div>
 </li>
 </ul>

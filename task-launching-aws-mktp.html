@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
+        Permissions summary
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
@@ -947,7 +951,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-23 18:45:31 +0000">03/23/2022</time>
+    <time datetime="2022-06-27 18:26:25 +0000">06/27/2022</time>
     
   
 
@@ -972,17 +976,11 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Create an IAM policy and role for the EC2 instance:</p>
+<p>Set up permissions in AWS:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Download the Cloud Manager IAM policy from the following location:</p>
-<div class="paragraph">
-<p><a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">NetApp Cloud Manager: AWS, Azure, and GCP Policies</a></p>
-</div>
-</li>
-<li>
-<p>From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.</p>
+<p>From the IAM console, create your own policy by copying and pasting the contents of <a href="reference-permissions-aws.html">the IAM policy for the Connector</a>.</p>
 </li>
 <li>
 <p>Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.</p>

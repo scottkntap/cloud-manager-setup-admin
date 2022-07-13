@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
+        Permissions summary
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
@@ -947,7 +951,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-23 18:45:31 +0000">03/23/2022</time>
+    <time datetime="2022-06-30 13:53:05 +0000">06/30/2022</time>
     
   
 
@@ -1021,7 +1025,7 @@
 <img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Cloud Manager Operator is the default name provided in the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies">Cloud Manager policy</a>. If you chose a different name for the role, then select that name instead.
+Cloud Manager Operator is the default name provided in the Connector policy. If you chose a different name for the role, then select that name instead.
 </td>
 </tr>
 </table>
@@ -1171,19 +1175,11 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Download the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager Azure policy</a>.</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-setup-admin/images/tip.svg" alt="Tip">
-</td>
-<td class="content">
-Right-click the link and click <strong>Save link as&#8230;&#8203;</strong> to download the file.
-</td>
-</tr>
-</table>
-</div>
+<p>Create a custom role:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Copy the contents of the <a href="reference-permissions-azure.html">custom role permissions for the Connector</a> and save them in a JSON file.</p>
 </li>
 <li>
 <p>Modify the JSON file by adding Azure subscription IDs to the assignable scope.</p>
@@ -1207,8 +1203,8 @@ Right-click the link and click <strong>Save link as&#8230;&#8203;</strong> to do
 <div class="paragraph">
 <p>The following steps describe how to create the role by using Bash in Azure Cloud Shell.</p>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="ulist">
+<ul>
 <li>
 <p>Start <a href="https://docs.microsoft.com/en-us/azure/cloud-shell/overview" target="_blank" rel="noopener">Azure Cloud Shell</a> and choose the Bash environment.</p>
 </li>
@@ -1222,14 +1218,17 @@ Right-click the link and click <strong>Save link as&#8230;&#8203;</strong> to do
 <p>Enter the following Azure CLI command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az role definition create --role-definition Policy_for_cloud_Manager_Azure_3.9.8.json</code></pre>
+<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>You should now have a custom role called Cloud Manager Operator that you can assign to the Connector virtual machine.</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>You should now have a custom role called <em>Cloud Manager Operator</em>.</p>
 </div>
 </li>
 <li>

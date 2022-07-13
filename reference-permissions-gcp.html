@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Required permissions for the Connector in Google Cloud | NetApp Documentation</title>
+  <title>Google Cloud permissions for the Connector | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Required permissions for the Connector in Google Cloud | NetApp Documentation" />
+  <meta property="og:title" content="Google Cloud permissions for the Connector | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html" />
 	<meta property="og:description" content="Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might wa..." />
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Required permissions for the Connector in Google Cloud](https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-permissions-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Google Cloud permissions for the Connector](https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-permissions-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -695,6 +695,8 @@
 
 
 
+
+
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
+        Permissions summary
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
@@ -940,14 +944,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Required permissions for the Connector in Google Cloud</h1>
+  <h1 class="n-doc__component-detail-heading">Google Cloud permissions for the Connector</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-06-06 21:03:08 +0000">06/06/2022</time>
+    <time datetime="2022-06-30 16:11:10 +0000">06/30/2022</time>
     
   
 
@@ -965,12 +969,128 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">the policies provided by NetApp</a>. You might want to understand what Cloud Manager does with these permissions.</p>
+<p>Cloud Manager requires permissions to perform actions in Google Cloud. These permissions are included in a custom role provided by NetApp. You might want to understand what Cloud Manager does with these permissions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="service-account-permissions">Service account permissions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The custom role shown below provides the permissions that a Connector needs to manage resources and processes within your Google Cloud network.</p>
 </div>
 <div class="paragraph">
-<p>The Cloud Manager policy for GCP includes the permissions that Cloud Manager needs to deploy and manage Cloud Volumes ONTAP.</p>
+<p>You&#8217;ll need to apply this custom role to a service account that gets attached to the Connector VM. <a href="task-creating-connectors-gcp.html">View step-by-step instructions</a>.</p>
 </div>
+<div class="paragraph">
+<p>You also need to ensure that the role is up to date as new permissions are added in subsequent releases.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: NetApp Cloud Manager
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-google-cloud-permissions-are-used">How Google Cloud permissions are used</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -1167,6 +1287,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 
     </article>
     <!-- Page Container -->

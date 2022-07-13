@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Required permissions for the Connector in AWS | NetApp Documentation</title>
+  <title>AWS permissions for the Connector | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Required permissions for the Connector in AWS | NetApp Documentation" />
+  <meta property="og:title" content="AWS permissions for the Connector | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" />
-	<meta property="og:description" content="Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might wa..." />
+	<meta property="og:description" content="When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resour..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might wa...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resour...">
   <meta name="keywords" content=" permissions, actions, aws, aws permissions"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
 
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Required permissions for the Connector in AWS](https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-permissions-aws.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[AWS permissions for the Connector](https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-permissions-aws.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -691,6 +691,8 @@
             Reference
           </a>
           
+
+
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
+        Permissions summary
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
@@ -940,14 +944,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Required permissions for the Connector in AWS</h1>
+  <h1 class="n-doc__component-detail-heading">AWS permissions for the Connector</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-07-01 11:35:39 +0000">07/01/2022</time>
+    <time datetime="2022-07-13 19:09:07 +0000">07/13/2022</time>
     
   
 
@@ -968,16 +972,641 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">the policies provided by NetApp</a>. You might want to understand what Cloud Manager does with these permissions.</p>
-</div>
-<div class="paragraph">
-<p>The following sections describe how the permissions are used for each NetApp cloud service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.</p>
+<p>When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service (KMS), and more.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apptemplate-tags">AppTemplate tags</h2>
+<h2 id="iam-policy">IAM policy</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The IAM policy shown below provides the permissions that a Connector needs to manage resources and processes within your public cloud environment based on your AWS region.</p>
+</div>
+<div class="paragraph">
+<p>When you create a Connector directly from Cloud Manager, Cloud Manager automatically applies this policy to the Connector.</p>
+</div>
+<div class="paragraph">
+<p>If you deploy the Connector from the AWS Marketplace or if you manually install the Connector on a Linux host, then you&#8217;ll need to set up the policy yourself.</p>
+</div>
+<div class="paragraph">
+<p>You also need to ensure that the policy is up to date as new permissions are added in subsequent releases.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Standard regions</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "cvoServicePolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceStatus",
+        "ec2:RunInstances",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeImages",
+        "ec2:CreateTags",
+        "ec2:CreateVolume",
+        "ec2:DescribeVolumes",
+        "ec2:ModifyVolumeAttribute",
+        "ec2:CreateSecurityGroup",
+        "ec2:DescribeSecurityGroups",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:CreateNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeDhcpOptions",
+        "ec2:CreateSnapshot",
+        "ec2:DescribeSnapshots",
+        "ec2:GetConsoleOutput",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeRegions",
+        "ec2:DescribeTags",
+        "cloudformation:CreateStack",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:ValidateTemplate",
+        "iam:PassRole",
+        "iam:CreateRole",
+        "iam:PutRolePolicy",
+        "iam:CreateInstanceProfile",
+        "iam:AddRoleToInstanceProfile",
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:ListInstanceProfiles",
+        "sts:DecodeAuthorizationMessage",
+        "ec2:AssociateIamInstanceProfile",
+        "ec2:DescribeIamInstanceProfileAssociations",
+        "ec2:DisassociateIamInstanceProfile",
+        "s3:GetBucketTagging",
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:CreateBucket",
+        "s3:GetLifecycleConfiguration",
+        "s3:ListBucketVersions",
+        "s3:GetBucketPolicyStatus",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetBucketPolicy",
+        "s3:GetBucketAcl",
+        "kms:List*",
+        "kms:ReEncrypt*",
+        "kms:Describe*",
+        "kms:CreateGrant",
+        "ce:GetReservationUtilization",
+        "ce:GetDimensionValues",
+        "ce:GetCostAndUsage",
+        "ce:GetTags",
+        "ec2:CreatePlacementGroup",
+        "ec2:DescribeReservedInstancesOfferings",
+        "sts:AssumeRole",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:CreateRoute",
+        "ec2:DescribeVpcs",
+        "ec2:ReplaceRoute",
+        "ec2:UnassignPrivateIpAddresses",
+        "s3:PutObjectTagging",
+        "s3:GetObjectTagging",
+        "fsx:Describe*",
+        "fsx:List*",
+        "ec2:DeleteSecurityGroup",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteSnapshot",
+        "ec2:DeleteTags",
+        "ec2:DeleteRoute",
+        "ec2:DeletePlacementGroup",
+        "iam:DeleteRole",
+        "iam:DeleteRolePolicy",
+        "iam:DeleteInstanceProfile",
+        "cloudformation:DeleteStack",
+        "ec2:DescribePlacementGroups",
+        "iam:GetRolePolicy",
+		"s3:ListAllMyBuckets",
+        "s3:GetObject",
+        "iam:GetRole",
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion",
+        "s3:PutObject",
+		"ec2:ModifyVolume",
+        "ec2:DescribeVolumesModifications"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "backupPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceStatus",
+        "ec2:RunInstances",
+        "ec2:TerminateInstances",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeImages",
+        "ec2:CreateTags",
+        "ec2:CreateVolume",
+        "ec2:CreateSecurityGroup",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeRegions",
+        "cloudformation:CreateStack",
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks",
+        "kms:List*",
+        "kms:Describe*",
+        "ec2:describeVpcEndpoints",
+        "kms:ListAliases",
+        "athena:StartQueryExecution",
+        "athena:GetQueryResults",
+        "athena:GetQueryExecution",
+        "athena:StopQueryExecution",
+        "glue:CreateDatabase",
+        "glue:CreateTable",
+        "glue:BatchDeletePartition"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "backupS3Policy",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket",
+        "s3:CreateBucket",
+        "s3:GetLifecycleConfiguration",
+        "s3:PutLifecycleConfiguration",
+        "s3:PutBucketTagging",
+        "s3:ListBucketVersions",
+        "s3:GetBucketAcl",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:GetObject",
+        "s3:PutEncryptionConfiguration",
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion",
+        "s3:ListBucketMultipartUploads",
+        "s3:PutObject",
+        "s3:PutBucketAcl",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts",
+        "s3:DeleteBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::netapp-backup-*"
+      ]
+    },
+    {
+      "Sid": "tagServicePolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags",
+        "ec2:DescribeTags",
+        "tag:getResources",
+        "tag:getTagKeys",
+        "tag:getTagValues",
+        "tag:TagResources",
+        "tag:UntagResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "fabricPoolS3Policy",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:GetLifecycleConfiguration",
+        "s3:PutLifecycleConfiguration",
+        "s3:PutBucketTagging",
+        "s3:ListBucketVersions",
+        "s3:GetBucketPolicyStatus",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetBucketAcl",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:DeleteBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::fabric-pool*"
+      ]
+    },
+    {
+      "Sid": "fabricPoolPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeRegions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/netapp-adc-manager": "*"
+        }
+      },
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:TerminateInstances",
+        "ec2:AttachVolume",
+        "ec2:DetachVolume"
+      ],
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/GFCInstance": "*"
+        }
+      },
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:TerminateInstances",
+        "ec2:AttachVolume",
+        "ec2:DetachVolume",
+        "ec2:StopInstances",
+        "ec2:DeleteVolume"
+      ],
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/WorkingEnvironment": "*"
+        }
+      },
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachVolume",
+        "ec2:DetachVolume"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:volume/*"
+      ]
+    },
+	{
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVolume"
+      ],
+	  "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/WorkingEnvironment": "*"
+        }
+      },
+      "Resource": [
+        "arn:aws:ec2:*:*:volume/*"
+      ]
+    },
+    {
+      "Sid": "K8sServicePolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeRegions",
+        "iam:ListInstanceProfiles",
+        "eks:ListClusters",
+        "eks:DescribeCluster"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "GFCservicePolicy",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudwatch:GetMetricStatistics",
+        "cloudformation:ListStacks"
+      ],
+      "Resource": "*"
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">GovCloud (US) regions</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListInstanceProfiles",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:PutRolePolicy",
+                "iam:CreateInstanceProfile",
+                "iam:DeleteRolePolicy",
+                "iam:AddRoleToInstanceProfile",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "ec2:ModifyVolumeAttribute",
+                "sts:DecodeAuthorizationMessage",
+                "ec2:DescribeImages",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeInstances",
+                "iam:PassRole",
+                "ec2:DescribeInstanceStatus",
+                "ec2:RunInstances",
+                "ec2:ModifyInstanceAttribute",
+                "ec2:CreateTags",
+                "ec2:CreateVolume",
+                "ec2:DescribeVolumes",
+                "ec2:DeleteVolume",
+                "ec2:CreateSecurityGroup",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DescribeSecurityGroups",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeDhcpOptions",
+                "ec2:CreateSnapshot",
+                "ec2:DeleteSnapshot",
+                "ec2:DescribeSnapshots",
+                "ec2:StopInstances",
+                "ec2:GetConsoleOutput",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeRegions",
+                "ec2:DeleteTags",
+                "ec2:DescribeTags",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:ValidateTemplate",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation",
+                "s3:CreateBucket",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "kms:List*",
+                "kms:ReEncrypt*",
+                "kms:Describe*",
+                "kms:CreateGrant",
+                "ec2:AssociateIamInstanceProfile",
+                "ec2:DescribeIamInstanceProfileAssociations",
+                "ec2:DisassociateIamInstanceProfile",
+                "ec2:DescribeInstanceAttribute",
+                "ce:GetReservationUtilization",
+                "ce:GetDimensionValues",
+                "ce:GetCostAndUsage",
+                "ce:GetTags",
+                "ec2:CreatePlacementGroup",
+                "ec2:DeletePlacementGroup"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "fabricPoolPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "s3:PutBucketPublicAccessBlock"
+            ],
+            "Resource": [
+                "arn:aws-us-gov:s3:::fabric-pool*"
+            ]
+        },
+        {
+            "Sid": "backupPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "s3:PutBucketPublicAccessBlock"
+            ],
+            "Resource": [
+                "arn:aws-us-gov:s3:::netapp-backup-*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:TerminateInstances",
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/WorkingEnvironment": "*"
+                }
+            },
+            "Resource": [
+                "arn:aws-us-gov:ec2:*:*:instance/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Resource": [
+                "arn:aws-us-gov:ec2:*:*:volume/*"
+            ]
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">C2S environment</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "Version": "2012-10-17",
+    "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:DescribeInstanceStatus",
+                "ec2:RunInstances",
+                "ec2:ModifyInstanceAttribute",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeImages",
+                "ec2:CreateTags",
+                "ec2:CreateVolume",
+                "ec2:DescribeVolumes",
+                "ec2:ModifyVolumeAttribute",
+                "ec2:DeleteVolume",
+                "ec2:CreateSecurityGroup",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DescribeSecurityGroups",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeDhcpOptions",
+                "ec2:CreateSnapshot",
+                "ec2:DeleteSnapshot",
+                "ec2:DescribeSnapshots",
+                "ec2:GetConsoleOutput",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeRegions",
+                "ec2:DeleteTags",
+                "ec2:DescribeTags",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:ValidateTemplate",
+                "iam:PassRole",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:PutRolePolicy",
+                "iam:CreateInstanceProfile",
+                "iam:DeleteRolePolicy",
+                "iam:AddRoleToInstanceProfile",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation",
+                "s3:ListAllMyBuckets",
+                "kms:List*",
+                "kms:Describe*",
+                "ec2:AssociateIamInstanceProfile",
+                "ec2:DescribeIamInstanceProfileAssociations",
+                "ec2:DisassociateIamInstanceProfile",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:CreatePlacementGroup",
+                "ec2:DeletePlacementGroup",
+                "iam:ListinstanceProfiles"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "fabricPoolPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions"
+            ],
+            "Resource": [
+                "arn:aws-iso:s3:::fabric-pool*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:TerminateInstances",
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/WorkingEnvironment": "*"
+                }
+            },
+            "Resource": [
+                "arn:aws-iso:ec2:*:*:instance/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Resource": [
+                "arn:aws-iso:ec2:*:*:volume/*"
+            ]
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>== How the AWS permissions are used</p>
+</div>
+<div class="paragraph">
+<p>The following sections describe how the permissions are used for each NetApp cloud service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.</p>
+</div>
+<div class="paragraph">
+<p>=== AppTemplate tags</p>
+</div>
 <div class="paragraph">
 <p>The Connector makes the following API requests to manage tags on AWS resources when you use the AppTemplate Tagging service:</p>
 </div>
@@ -1009,11 +1638,9 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>=== Cloud Backup</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="cloud-backup">Cloud Backup</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The Connector makes the following API requests to deploy the restore instance for Cloud Backup:</p>
 </div>
@@ -1194,11 +1821,9 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>=== Cloud Data Sense</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="cloud-data-sense">Cloud Data Sense</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The Connector makes the following API requests to deploy the Cloud Data Sense instance:</p>
 </div>
@@ -1333,11 +1958,9 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>=== Cloud Tiering</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="cloud-tiering">Cloud Tiering</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The Connector makes the following API requests to tier data to Amazon S3 when you use Cloud Tiering.</p>
 </div>
@@ -1377,11 +2000,9 @@
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>=== Cloud Volumes ONTAP</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="cloud-volumes-ontap">Cloud Volumes ONTAP</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The Connector makes the following API requests to deploy and manage Cloud Volumes ONTAP in AWS.</p>
 </div>
@@ -1951,11 +2572,9 @@
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>=== Global File Cache</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="global-file-cache">Global File Cache</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The Connector makes the following API requests to deploy Global File Cache instances during deployment:</p>
 </div>
@@ -1972,11 +2591,9 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>=== Kubernetes</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="kubernetes">Kubernetes</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The Connector makes the following API requests to discover and manage Amazon EKS clusters:</p>
 </div>
@@ -1995,6 +2612,8 @@
 <p>iam:GetInstanceProfile</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 </div>

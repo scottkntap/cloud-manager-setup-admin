@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
+        Permissions summary
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
@@ -947,7 +951,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 14:00:57 +0000">05/09/2022</time>
+    <time datetime="2022-06-30 13:53:05 +0000">06/30/2022</time>
     
   
 
@@ -991,31 +995,203 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up-permissions">Setting up permissions</h2>
+<h2 id="set-up-permissions-to-deploy-the-connector">Set up permissions to deploy the Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions and that a service account is set up for the Connector VM.</p>
+<p>Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Ensure that the Google Cloud user who deploys the Connector has the permissions in the <a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">Connector deployment policy for Google Cloud</a>.</p>
-<div class="paragraph">
-<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">You can create a custom role using the YAML file</a> and then attach it to the user. You&#8217;ll need to use the gcloud command line to create the role.</p>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">Create a custom role</a> that includes the following permissions:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: Connector deployment policy
+description: Permissions for the user who deploys the Connector from Cloud Manager
+stage: GA
+includedPermissions:
+- compute.disks.create
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.get
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.networks.updatePolicy
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- resourcemanager.projects.get
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.list</code></pre>
+</div>
 </div>
 </li>
 <li>
-<p>Set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems in projects.</p>
-<div class="paragraph">
-<p>You&#8217;ll associate this service account with the Connector VM when you create it.</p>
+<p>Attach the custom role to the user who will deploy the Connector from Cloud Manager.</p>
+</li>
+</ol>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">Create a role in GCP</a> that includes the permissions defined in the <a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">Cloud Manager policy for Google Cloud</a>. Again, you&#8217;ll need to use the gcloud command line.</p>
 <div class="paragraph">
-<p>The permissions contained in this YAML file are different than the permissions in step 1.</p>
+<div class="title">Result</div>
+<p>The Google Cloud user now has the permissions required to create the Connector.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set-up-a-service-account-for-the-connector">Set up a service account for the Connector</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A service account is required to provide the Connector with the permission that it needs to manage resources in Google Cloud. You&#8217;ll associate this service account with the Connector VM when you create it.</p>
+</div>
+<div class="paragraph">
+<p>The permissions for the service account are different than the permissions that you set up in the previous section.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">Create a custom role</a> that includes the following permissions:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: NetApp Cloud Manager
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list</code></pre>
+</div>
 </div>
 </li>
 <li>
@@ -1026,15 +1202,15 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </li>
 </ol>
 </div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>The Google Cloud user now has the permissions required to create the Connector and the service account for the Connector VM is set up.</p>
+<p>The service account for the Connector VM is set up.</p>
 </div>
-<div class="sect2">
-<h3 id="shared-vpc-permissions">Shared VPC permissions</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="shared-vpc-permissions">Shared VPC permissions</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>If you are using a shared VPC to deploy resources into a service project, then the following permissions are required. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.</p>
 </div>
@@ -1065,7 +1241,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">The permissions found in this .yaml file</a></p>
+<p><a href="task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector">The permissions found in this section above</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -1085,7 +1261,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">The permissions found in this .yaml file</a></p>
+<p><a href="task-creating-connectors-gcp.html#set-up-permissions-for-the-connector">The permissions found in this section above</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -1178,7 +1354,6 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
 <h2 id="enabling-google-cloud-apis">Enabling Google Cloud APIs</h2>
 <div class="sectionbody">
@@ -1224,7 +1399,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 <div class="title">What you&#8217;ll need</div>
 <ul>
 <li>
-<p>The <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">required permissions</a> for your Google Cloud account, as described in the first section of this page.</p>
+<p>The required permissions for your Google Cloud account, as described in the first section of this page.</p>
 </li>
 <li>
 <p>A Google Cloud project.</p>
