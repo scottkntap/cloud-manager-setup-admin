@@ -100,6 +100,8 @@ sidebar:
           url: /task-adding-nss-accounts.html
     - title: Reference
       entries:
+        - title: Permissions summary
+          url: /reference-permissions.html
         - title: AWS permissions for the Connector
           url: /reference-permissions-aws.html
         - title: Azure permissions for the Connector

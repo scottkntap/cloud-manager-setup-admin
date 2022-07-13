@@ -72,9 +72,9 @@ When you deployed the Connector in Azure, you should have enabled a https://docs
 
 .Steps
 
-. Create a custom role using the Cloud Manager policy:
+. Create a custom role:
 
-.. Download the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Azure policy^].
+.. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
 
 .. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
@@ -82,6 +82,7 @@ You should add the ID for each Azure subscription from which users will create C
 +
 *Example*
 +
+[source,json]
 "AssignableScopes": [
 "/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
 "/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
@@ -89,9 +90,18 @@ You should add the ID for each Azure subscription from which users will create C
 
 .. Use the JSON file to create a custom role in Azure.
 +
-The following example shows how to create a custom role using the Azure CLI 2.0:
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
 +
-`az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.9.8.json`
+* Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+* Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+* Enter the following Azure CLI command:
++
+[source,azurecli]
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
 +
 You should now have a custom role called Cloud Manager Operator that you can assign to the Connector virtual machine.
 
@@ -103,7 +113,7 @@ You should now have a custom role called Cloud Manager Operator that you can ass
 
 .. In the *Role* tab, select the *Cloud Manager Operator* role and click *Next*.
 +
-NOTE: Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+NOTE: Cloud Manager Operator is the default name provided in the Cloud Manager policy. If you chose a different name for the role, then select that name instead.
 
 .. In the *Members* tab, complete the following steps:
 
