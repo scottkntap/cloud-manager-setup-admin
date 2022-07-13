@@ -947,24 +947,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-03 15:24:52 +0000">07/03/2022</time>
+    <time datetime="2022-07-13 18:54:06 +0000">07/13/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-tonacki">
     <img  class="avatar avatar-small"
           alt="netapp-tonacki"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/38222299?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1025,7 +1025,7 @@
 <h2 id="monitoring-activities-using-the-notification-center">Monitoring activities using the Notification Center</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Notifications track the progress of operations that you&#8217;ve initiated in Cloud Manager so you can verify whether the operation was successful or not. They enable you to view the status for many Cloud Manager operations that you initiated during your current login session.</p>
+<p>Notifications track the progress of operations that you&#8217;ve initiated in Cloud Manager so you can verify whether the operation was successful or not. They enable you to view the status for many Cloud Manager operations that you initiated during your current login session. Not all services report information into the Notification Center at this time.</p>
 </div>
 <div class="paragraph">
 <p>You can display the notifications by clicking the notification bell (<span class="image"><img src="./media/icon_bell.png" alt="notification bell"></span>) in the menu bar. The color of the little bubble in the bell indicates the highest level severity notification that is active. So if you see a red bubble, it means there&#8217;s an important notification that you should look at.</p>
@@ -1041,10 +1041,10 @@
 <div class="paragraph">
 <p>Notifications are classified in the following categories:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 90%;">
+<table class="tableblock frame-all grid-all" style="width: 85%;">
 <colgroup>
-<col style="width: 31.25%;">
-<col style="width: 68.75%;">
+<col style="width: 27.5%;">
+<col style="width: 72.5%;">
 </colgroup>
 <thead>
 <tr>
@@ -1096,6 +1096,9 @@
 <h3 id="setting-email-notification-settings">Setting email notification settings</h3>
 <div class="paragraph">
 <p>You can send specific types of notifications by email so you can be informed of important system activity even when you&#8217;re not logged into Cloud Manager. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> Sending email notifications is not supported when the Connector is installed in a site without internet access.</p>
 </div>
 <div class="paragraph">
 <p>By default, Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.</p>
@@ -1180,7 +1183,7 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From the left navigation menu, select <strong>Timeline</strong>.</p>
+<p>From the Cloud Manager menu bar, click <strong>Settings &gt; Timeline</strong>.</p>
 </li>
 <li>
 <p>Under the Filters, click <strong>Service</strong>, enable <strong>Tenancy</strong>, and click <strong>Apply</strong>.</p>
