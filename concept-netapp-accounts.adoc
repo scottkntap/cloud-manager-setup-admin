@@ -101,7 +101,3 @@ Here's another example that shows the highest level of multi-tenancy by using tw
 Note that account 2 includes two separate Connectors. This might happen if you have systems in separate regions or in separate cloud providers.
 
 image:diagram_cloud_central_accounts_two.png["A diagram that shows two NetApp accounts, each with several workspaces and their associated Workspace Admins."]
-
-== Max Cloud Volumes ONTAP systems
-
-Each NetApp account is limited to a maximum number of Cloud Volumes ONTAP systems. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#max-number-of-systems[Learn more about this limit^]
