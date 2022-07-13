@@ -35,7 +35,7 @@ This table provides a comparison of the Notification Center and the Timeline so 
 
 == Monitoring activities using the Notification Center
 
-Notifications track the progress of operations that you've initiated in Cloud Manager so you can verify whether the operation was successful or not. They enable you to view the status for many Cloud Manager operations that you initiated during your current login session.
+Notifications track the progress of operations that you've initiated in Cloud Manager so you can verify whether the operation was successful or not. They enable you to view the status for many Cloud Manager operations that you initiated during your current login session. Not all services report information into the Notification Center at this time.
 // Notifications can even prompt you to retry a failed operation.
 
 You can display the notifications by clicking the notification bell (image:icon_bell.png[notification bell]) in the menu bar. The color of the little bubble in the bell indicates the highest level severity notification that is active. So if you see a red bubble, it means there's an important notification that you should look at.
@@ -48,7 +48,7 @@ You can also configure Cloud Manager to send notifications by email so you can b
 
 Notifications are classified in the following categories:
 
-[cols=2*,options="header",cols="25,55",width="90%"]
+[cols=2*,options="header",cols="22,58",width="85%"]
 |===
 
 | Notification type
@@ -89,6 +89,8 @@ For example, if you want to see only "Error" and "Warning" notifications for Clo
 === Setting email notification settings
 
 You can send specific types of notifications by email so you can be informed of important system activity even when you're not logged into Cloud Manager. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
+
+*Note:* Sending email notifications is not supported when the Connector is installed in a site without internet access.
 
 By default, Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
 
@@ -138,7 +140,7 @@ Checking the Timeline can be helpful if you need to identify who performed a spe
 
 .Steps
 
-. From the left navigation menu, select *Timeline*.
+. From the Cloud Manager menu bar, click *Settings > Timeline*.
 
 . Under the Filters, click *Service*, enable *Tenancy*, and click *Apply*.
 
