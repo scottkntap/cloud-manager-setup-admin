@@ -1,0 +1,82 @@
+---
+sidebar: sidebar
+permalink: reference-permissions.html
+keywords: permissions, actions
+summary: In order to use the features and services in Cloud Manager, you'll need to provide permissions so that Cloud Manager can perform operations in your cloud environment. Use the links on this page to quickly access the permissions that are required in Cloud Manager.
+---
+
+= Permissions summary for Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+In order to use the features and services in Cloud Manager, you'll need to provide permissions so that Cloud Manager can perform operations in your cloud environment. Use the links on this page to quickly access the permissions that you need based on your goal.
+
+== AWS permissions
+
+[cols=3*,options="header",cols="25,60,40"]
+|===
+| Purpose
+| Description
+| Link
+
+| Connector deployment
+| The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in AWS.
+| link:task-creating-connectors-aws.html[Create a Connector in AWS from Cloud Manager]
+
+| Connector operation
+| When Cloud Manager launches the Connector, it attaches a policy to the instance that provides the permissions required to manage resources and processes in your AWS account.
+
+You need to set up the policy yourself if you link:task-launching-aws-mktp.html[launch a Connector from the marketplace] or if you link:task-adding-aws-accounts.html#add-credentials-to-a-connector[add more AWS credentials to a Connector].
+
+You also need to ensure that the policy is up to date as new permissions are added in subsequent releases.
+| link:reference-permissions-aws.html[AWS permissions for the Connector]
+
+| Cloud Volumes ONTAP operation
+| An IAM role must be attached to each Cloud Volumes ONTAP node in AWS. The same is true for the HA mediator. The default option is to let Cloud Manager create the IAM roles for you, but you can use your own.
+| https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html[Learn how to set up the IAM roles yourself^]
+
+|===
+
+== Azure permissions
+
+[cols=3*,options="header",cols="25,60,40"]
+|===
+| Purpose
+| Description
+| Link
+
+| Connector deployment
+| When you deploy a Connector from Cloud Manager, you need to use an Azure account or service principal that has permissions to deploy the Connector VM in Azure.
+| link:task-creating-connectors-azure.html[Create a Connector in Azure from Cloud Manager]
+
+| Connector operation
+a| When Cloud Manager deploys the Connector VM in Azure, it creates a custom role that provides the permissions required to manage resources and processes within that Azure subscription.
+
+You need to set up the custom role yourself if you link:task-launching-azure-mktp.html[launch a Connector from the marketplace] or if you link:task-adding-azure-accounts.html#adding-additional-azure-credentials-to-cloud-manager[add more Azure credentials to a Connector].
+
+You also need to ensure that the policy is up to date as new permissions are added in subsequent releases.
+a| link:reference-permissions-azure.html[Azure permissions for the Connector]
+
+|===
+
+== Google Cloud permissions
+
+[cols=3*,options="header",cols="25,60,40"]
+|===
+| Purpose
+| Description
+| Link
+
+| Connector deployment | The Google Cloud user who deploys a Connector from Cloud Manager needs specific permissions to deploy the Connector in Google Cloud.
+| link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector[Set up permissions to deploy the Connector]
+
+| Connector operation | The service account for the Connector VM instance must have specific permissions for day-to-day operations. You need to associate the service account with the Connector when you deploy it from Cloud Manager.
+
+You also need to ensure that the policy is up to date as new permissions are added in subsequent releases.
+| link:task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector[Set up a service account for the Connector]
+
+|===

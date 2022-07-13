@@ -17,13 +17,9 @@ It's best to create a Connector directly from Cloud Manager, but you can launch 
 
 .Steps
 
-. Create an IAM policy and role for the EC2 instance:
+. Set up permissions in AWS:
 
-.. Download the Cloud Manager IAM policy from the following location:
-+
-https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
-
-.. From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
+.. From the IAM console, create your own policy by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policy for the Connector].
 
 .. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
