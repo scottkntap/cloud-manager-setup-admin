@@ -13,6 +13,7 @@ summary: When Cloud Manager launches the Connector instance in AWS, it attaches 
 :imagesdir: ./media/
 
 [.lead]
+
 When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service (KMS), and more.
 
 == IAM policy

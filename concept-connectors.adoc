@@ -77,7 +77,7 @@ For example, a Connector is a key component in the health and operation of Cloud
 
 == How to create a Connector
 
-An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other services listed above. An Account Admin can create a Connector in a number of ways:
+An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other services listed above. An admin can create a Connector in a number of ways:
 
 * Directly from Cloud Manager (recommended)
 ** link:task-creating-connectors-aws.html[Create in AWS]
