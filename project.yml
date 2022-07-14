@@ -77,6 +77,14 @@ sidebar:
               url: /task-configuring-proxy.html
             - title: Default configuration
               url: /reference-connector-default-config.html
+        - title: Discovered Cloud Storage
+          entries:
+            - title: View your Amazon S3 buckets
+              url: /task-viewing-amazon-s3.html
+            - title: View your Azure Blob accounts
+              url: /task-viewing-azure-blob.html
+            - title: View your Google Cloud Storage buckets
+              url: /task-viewing-gcp-storage.html
         - title: AWS credentials
           entries:
             - title: Overview
