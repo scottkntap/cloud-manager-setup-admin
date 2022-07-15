@@ -228,6 +228,8 @@ The virtual machine should be ready in about 7 minutes. You should stay on the p
 
 You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].
 
+If you have Azure Blob storage in the same Azure account where you created the Connector, you'll see an Azure Blob working environment appear on the Canvas automatically. link:task-viewing-azure-blob.html[Learn more about what you can do with this working environment].
+
 == Create a Connector using a service principal
 
 Rather than logging in with you Azure account, you also have the option to provide Cloud Manager with the credentials for an Azure service principal that has the required permissions.
@@ -520,3 +522,5 @@ The virtual machine should be ready in about 7 minutes. You should stay on the p
 .After you finish
 
 You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].
+
+If you have Azure Blob storage in the same Azure account where you created the Connector, you'll see an Azure Blob working environment appear on the Canvas automatically. link:task-viewing-azure-blob.html[Learn more about what you can do with this working environment].
