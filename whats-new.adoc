@@ -16,6 +16,12 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 15 July 2022
+
+We updated the documentation by adding the Cloud Manager policies directly inside the docs. This means you can now view the required permissions for the Connector and Cloud Volumes ONTAP as you read the pages in the documentation that describe how to set them up. link:task-creating-connectors-aws.html#create-an-iam-policy[View an example that shows IAM role permissions used to create a Connector].
+
+We have also created a page that provides links to each of the policies. link:reference-permissions.html[View the permissions summary for Cloud Manager].
+
 == 3 July 2022
 
 === Connector 3.9.20
@@ -60,6 +66,8 @@ When new users sign up to Cloud Central, they can now select the *Log in with Ne
 
 NOTE: Existing logins that use an email address and password need to keep using that login method. The Log in with NetApp option is available for new users who sign up.
 
+//end::whats-new[]
+
 == 7 June 2022
 
 === Connector 3.9.19
@@ -75,7 +83,6 @@ https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supp
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#7-june-2022[Learn about Cloud Volumes ONTAP enhancements^]
 
 ** https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/whats-new.html#7-june-2022[Learn about ONTAP on-prem cluster enhancements^]
-//end::whats-new[]
 
 == 12 May 2022
 
