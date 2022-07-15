@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-viewing-amazon-s3.html
 keywords: s3 buckets, s3 storage, s3 working environment, amazon s3 buckets, amazon s3 working environment
-summary: After you install a Connector in AWS, Cloud Manager can automatically discover information about the Amazon S3 buckets that reside in the AWS account where it's installed.
+summary: After you install a Connector in AWS, Cloud Manager can automatically discover information about the Amazon S3 buckets that reside in the AWS account where the Connector is installed. An Amazon S3 working environment is added to the Canvas so you can view this information.
 ---
 
 = Viewing your Amazon S3 buckets
@@ -13,9 +13,9 @@ summary: After you install a Connector in AWS, Cloud Manager can automatically d
 :imagesdir: ./media/
 
 [.lead]
-After you install a Connector in AWS, Cloud Manager can automatically discover information about the Amazon S3 buckets that reside in the AWS account where it's installed.
+After you install a Connector in AWS, Cloud Manager can automatically discover information about the Amazon S3 buckets that reside in the AWS account where the Connector is installed. An Amazon S3 working environment is added to the Canvas so you can view this information.
 
-You can see details about your S3 buckets, including the region, access level, storage class, and whether the bucket is used with Cloud Volumes ONTAP for backups or data tiering. And you can scan the S3 buckets with Cloud Data Sense.
+You can see details about your S3 buckets, including the region, access policy, account, total and used capacity, and more. These buckets can be used as destinations for Cloud Backup, Cloud Tiering, or Cloud Sync operations. Additionally, you can use Cloud Data Sense to scan these buckets.
 
 .Steps
 
@@ -27,12 +27,12 @@ image:screenshot_s3_we.gif[A screenshot of an Amazon S3 working environment.]
 
 . Click the working environment and select an action from the right pane.
 +
-image:screenshot_s3_actions.gif[A screenshot that shows the actions pane after you select an Amazon S3 working environment. The pane shows information about S3: the number of buckets and regions. The pane also has two actions: Enable Compliance and View Buckets.]
+image:screenshot_s3_actions.gif["A screenshot that shows the actions pane after you select an Amazon S3 working environment. The pane shows information about S3: the number of buckets and the available services."]
 
-. Click *Enable Compliance* to scan the S3 buckets for personal and sensitive data.
+. Click *Enable* if you want Cloud Data Sense to scan the S3 buckets for personal and sensitive data.
 +
 For more details, see https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-s3.html[Getting started with Cloud Data Sense for Amazon S3^].
 +
-. Click *View Buckets* to view details about the S3 buckets in your AWS account.
+. Click *Enter Working Environment* to view details about the S3 buckets in your AWS account.
 +
-image:screenshot_amazon_s3.gif[A screenshot that shows the details of an Amazon S3 working environment: the total number of buckets and total number of regions, the number of buckets with active services, and then a table that shows details about each S3 bucket.]
+image:screenshot_amazon_s3.gif["A screenshot that shows the details of an Amazon S3 working environment: the total number of buckets and total number of regions, and then a table that shows details about each S3 bucket."]
