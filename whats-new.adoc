@@ -18,9 +18,13 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 //tag::whats-new[]
 == 15 July 2022
 
-We updated the documentation by adding the Cloud Manager policies directly inside the docs. This means you can now view the required permissions for the Connector and Cloud Volumes ONTAP as you read the pages in the documentation that describe how to set them up. link:task-creating-connectors-aws.html#create-an-iam-policy[View an example that shows IAM role permissions used to create a Connector].
+=== Policy changes
 
-We have also created a page that provides links to each of the policies. link:reference-permissions.html[View the permissions summary for Cloud Manager].
+We updated the documentation by adding the Cloud Manager policies directly inside the docs. This means you can now view the required permissions for the Connector and Cloud Volumes ONTAP as you read the pages in the documentation that describe how to set them up. These policies were previously accessible from a page on the NetApp Support Site.
+
+link:task-creating-connectors-aws.html#create-an-iam-policy[Here's an example that shows AWS IAM role permissions used to create a Connector].
+
+We also created a page that provides links to each of the policies. link:reference-permissions.html[View the permissions summary for Cloud Manager].
 
 == 3 July 2022
 
