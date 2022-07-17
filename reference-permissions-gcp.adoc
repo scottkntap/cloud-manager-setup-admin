@@ -118,6 +118,8 @@ includedPermissions:
 - iam.serviceAccounts.list
 - storage.objects.get
 - storage.objects.list
+- monitoring.timeSeries.list
+- storage.buckets.getIamPolicy
 
 == How Google Cloud permissions are used
 
@@ -337,5 +339,11 @@ includedPermissions:
 - compute.addresses.get
 
 | To create and manage storage VMs on HA pairs.
+
+|
+- monitoring.timeSeries.list
+- storage.buckets.getIamPolicy
+
+| To discover information about Google Cloud Storage buckets.
 
 |===
