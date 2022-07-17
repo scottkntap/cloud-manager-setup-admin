@@ -989,7 +989,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-30 16:11:10 +0000">06/30/2022</time>
+    <time datetime="2022-07-17 18:38:41 +0000">07/17/2022</time>
     
   
 
@@ -1121,7 +1121,9 @@ includedPermissions:
 - iam.serviceAccounts.getIamPolicy
 - iam.serviceAccounts.list
 - storage.objects.get
-- storage.objects.list</code></pre>
+- storage.objects.list
+- monitoring.timeSeries.list
+- storage.buckets.getIamPolicy</code></pre>
 </div>
 </div>
 </div>
@@ -1322,6 +1324,11 @@ includedPermissions:
 <td class="tableblock halign-left valign-top"><p class="tableblock">- compute.instanceGroups.get<br>
 - compute.addresses.get</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To create and manage storage VMs on HA pairs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- monitoring.timeSeries.list<br>
+- storage.buckets.getIamPolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To discover information about Google Cloud Storage buckets.</p></td>
 </tr>
 </tbody>
 </table>
