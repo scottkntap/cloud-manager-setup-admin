@@ -16,6 +16,16 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 31 July 2022
+
+=== My Opportunities
+
+We've introduced a new way to discover the existing cloud resources that you're not yet managing in Cloud Manager. On the Canvas, the *My Opportunities* tab provides a centralized location to discover existing resources that you can add to Cloud Manager for consistent data services and operations across your hybrid multicloud.
+
+In this initial release, you can discover existing FSx for ONTAP file systems in your AWS account.
+
+https://rdocs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html#discover-using-my-opportunities[Learn how to discover FSx for ONTAP using My Opportunities^]
+
 == 15 July 2022
 
 === Policy changes
