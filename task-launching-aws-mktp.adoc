@@ -77,6 +77,8 @@ If you have Amazon S3 buckets in the same AWS account where you created the Conn
 
 .After you finish
 
-If an outbound internet connection isn't available for Cloud Volumes ONTAP to send AutoSupport messages, Cloud Manager automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
+If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then Cloud Manager automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
 
 The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
+
+If you use the default security group for Cloud Volumes ONTAP, then no changes are needed to its security group. But if you plan to define strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.

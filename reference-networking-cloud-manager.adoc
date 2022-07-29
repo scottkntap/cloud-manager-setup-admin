@@ -93,7 +93,7 @@ The security group for the Connector requires both inbound and outbound rules.
 | SSH | 22 | Provides SSH access to the Connector host
 | HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
 | HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface, and connections from the Cloud Data Sense instance
-| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <<Proxy server for AutoSupport messsages,Learn more about the Connector's proxy server>>.
+| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <<Proxy server for AutoSupport messages,Learn more about the Connector's proxy server>>.
 | TCP | 9060 | Provides the ability to enable and use Cloud Data Sense (required only for GovCloud deployments)
 
 |===
@@ -156,7 +156,7 @@ The security group for the Connector requires both inbound and outbound rules.
 | SSH | 22 | Provides SSH access to the Connector host
 | HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
 | HTTPS |	443 | Provides HTTPS access from client web browsers to the local user interface, and connections from the Cloud Data Sense instance
-| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <<Proxy server for AutoSupport messsages,Learn more about the Connector's proxy server>>.
+| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <<Proxy server for AutoSupport messages,Learn more about the Connector's proxy server>>.
 | TCP | 9060 | Provides the ability to enable and use Cloud Data Sense (required only for Government Cloud deployments)
 
 |===
@@ -217,7 +217,7 @@ The firewall rules for the Connector requires both inbound and outbound rules.
 | SSH | 22 | Provides SSH access to the Connector host
 | HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
 | HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
-| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <<Proxy server for AutoSupport messsages,Learn more about the Connector's proxy server>>.
+| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <<Proxy server for AutoSupport messages,Learn more about the Connector's proxy server>>.
 
 |===
 

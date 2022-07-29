@@ -13,9 +13,13 @@ summary: If your corporate policies require you to use a proxy server for all HT
 :imagesdir: ./media/
 
 [.lead]
-If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
+If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use an HTTP proxy server. The proxy server can be in the cloud or in your network.
 
-Cloud Manager doesn't support using an HTTPS proxy with the Connector.
+NOTE: Cloud Manager doesn't support using an HTTPS proxy with the Connector.
+
+Configuring the Connector to use an HTTP proxy server provides outbound internet access if a public IP address or a NAT gateway isn't available. This proxy server provides only the Connector with an outbound connection. It doesn't provide any connectivity for Cloud Volumes ONTAP systems.
+
+If Cloud Volumes ONTAP systems don't have an outbound internet connection to send AutoSupport messages, Cloud Manager automatically configures those Cloud Volumes ONTAP systems to use a proxy service that's included with the Connector. link:reference-networking-cloud-manager.html[Learn more about using a proxy server to send AutoSupport messages].
 
 == Enable a proxy on a Connector
 
@@ -49,10 +53,6 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 .. Click *Save*.
 +
 NOTE: Cloud Manager doesn't support passwords that include the @ character.
-
-.Result
-
-After you specify the proxy server, new Cloud Volumes ONTAP systems are automatically configured to use the proxy server when sending AutoSupport messages. If you didn't specify the proxy server before users create Cloud Volumes ONTAP systems, then they must use System Manager to manually set the proxy server in the AutoSupport options for each system.
 
 == Enable direct API traffic
 
