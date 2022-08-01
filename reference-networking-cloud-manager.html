@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -914,6 +916,8 @@
         Manage credentials and subscriptions
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html">
         NetApp Support Site accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-my-opportunities.html">
+        Discovery using My Opportunities
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
@@ -989,7 +993,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-02 16:06:14 +0000">06/02/2022</time>
+    <time datetime="2022-07-29 11:03:32 +0000">07/29/2022</time>
     
   
 
@@ -1130,7 +1134,19 @@ https://*.blob.core.windows.net</p></td>
 <h2 id="ports-and-security-groups">Ports and security groups</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There&#8217;s no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the <a href="concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.</p>
+<p>There&#8217;s no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the <a href="concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.</p>
+</div>
+<div class="sect2">
+<h3 id="proxy-server-for-autosupport-messages">Proxy server for AutoSupport messages</h3>
+<div class="paragraph">
+<p>If an outbound internet connection isn&#8217;t available for Cloud Volumes ONTAP to send AutoSupport messages, Cloud Manager automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.</p>
+</div>
+<div class="paragraph">
+<p>The only requirement is to ensure that the Connector&#8217;s security group allows <em>inbound</em> connections over port 3128. You&#8217;ll need to open this port after you deploy the Connector.</p>
+</div>
+<div class="paragraph">
+<p>If you defined strict outbound rules for Cloud Volumes ONTAP, then you&#8217;ll also need to ensure that the Cloud Volumes ONTAP security group allows <em>outbound</em> connections over port 3128.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="rules-for-the-connector-in-aws">Rules for the Connector in AWS</h3>
@@ -1171,7 +1187,7 @@ https://*.blob.core.windows.net</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3128</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides the Cloud Data Sense instance with internet access, if your AWS network doesn’t use a NAT or proxy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <a href="#proxy-server-for-autosupport-messages">Learn more about the Connector&#8217;s proxy server</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
@@ -1323,6 +1339,11 @@ The source IP address is the Connector host.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3128</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <a href="#proxy-server-for-autosupport-messages">Learn more about the Connector&#8217;s proxy server</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9060</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provides the ability to enable and use Cloud Data Sense (required only for Government Cloud deployments)</p></td>
 </tr>
@@ -1455,6 +1476,11 @@ The source IP address is the Connector host.
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3128</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <a href="#proxy-server-for-autosupport-messages">Learn more about the Connector&#8217;s proxy server</a>.</p></td>
 </tr>
 </tbody>
 </table>

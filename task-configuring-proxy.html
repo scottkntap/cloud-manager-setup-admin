@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -914,6 +916,8 @@
         Manage credentials and subscriptions
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html">
         NetApp Support Site accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-my-opportunities.html">
+        Discovery using My Opportunities
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
@@ -989,7 +993,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-23 18:45:31 +0000">03/23/2022</time>
+    <time datetime="2022-07-29 11:13:07 +0000">07/29/2022</time>
     
   
 
@@ -1010,10 +1014,25 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.</p>
+<p>If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use an HTTP proxy server. The proxy server can be in the cloud or in your network.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Cloud Manager doesn&#8217;t support using an HTTPS proxy with the Connector.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Cloud Manager doesn&#8217;t support using an HTTPS proxy with the Connector.</p>
+<p>Configuring the Connector to use an HTTP proxy server provides outbound internet access if a public IP address or a NAT gateway isn&#8217;t available. This proxy server provides only the Connector with an outbound connection. It doesn&#8217;t provide any connectivity for Cloud Volumes ONTAP systems.</p>
+</div>
+<div class="paragraph">
+<p>If Cloud Volumes ONTAP systems don&#8217;t have an outbound internet connection to send AutoSupport messages, Cloud Manager automatically configures those Cloud Volumes ONTAP systems to use a proxy server that&#8217;s included with the Connector. <a href="reference-networking-cloud-manager.html#proxy-server-for-autosupport-messages">Learn more about using a proxy server to send AutoSupport messages</a>.</p>
 </div>
 </div>
 </div>
@@ -1085,10 +1104,6 @@ Cloud Manager doesn&#8217;t support passwords that include the @ character.
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<div class="title">Result</div>
-<p>After you specify the proxy server, new Cloud Volumes ONTAP systems are automatically configured to use the proxy server when sending AutoSupport messages. If you didn&#8217;t specify the proxy server before users create Cloud Volumes ONTAP systems, then they must use System Manager to manually set the proxy server in the AutoSupport options for each system.</p>
 </div>
 </div>
 </div>
