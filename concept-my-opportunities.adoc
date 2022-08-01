@@ -1,0 +1,20 @@
+---
+sidebar: sidebar
+permalink: concept-my-opportunities.html
+keywords: discover, discovering fsx, discover fsx, discovering, my opportunities, opportunities
+summary: On the Canvas, the My Opportunities tab provides a centralized location to discover existing resources that you can add to Cloud Manager for consistent data services and operations across your hybrid multicloud.
+---
+
+= My Opportunities
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+On the Canvas, the *My Opportunities* tab provides a centralized location to discover existing resources that you can add to Cloud Manager for consistent data services and operations across your hybrid multicloud.
+
+Currently, My Opportunities enables you to discover existing FSx for ONTAP file systems in your AWS account.
+
+https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html#discover-using-my-opportunities[Learn how to discover FSx for ONTAP using My Opportunities^]
