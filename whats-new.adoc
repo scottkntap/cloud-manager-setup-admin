@@ -16,6 +16,22 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 31 July 2022
+
+=== Connector 3.9.21
+
+* We've introduced a new way to discover the existing cloud resources that you're not yet managing in Cloud Manager.
++
+On the Canvas, the *My Opportunities* tab provides a centralized location to discover existing resources that you can add to Cloud Manager for consistent data services and operations across your hybrid multicloud.
++
+In this initial release, My Opportunities enables you to discover existing FSx for ONTAP file systems in your AWS account.
++
+https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html#discover-using-my-opportunities[Learn how to discover FSx for ONTAP using My Opportunities^]
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#31-july-2022[Learn about Cloud Volumes ONTAP enhancements^]
+
 == 15 July 2022
 
 === Policy changes
@@ -62,6 +78,8 @@ https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supp
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-july-2022[Learn about Cloud Volumes ONTAP enhancements^]
 
+//end::whats-new[]
+
 == 28 June 2022
 
 === Log in with NetApp credentials
@@ -69,8 +87,6 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2
 When new users sign up to Cloud Central, they can now select the *Log in with NetApp* option to log in with their NetApp Support Site credentials. This is an alternative to entering an email address and password.
 
 NOTE: Existing logins that use an email address and password need to keep using that login method. The Log in with NetApp option is available for new users who sign up.
-
-//end::whats-new[]
 
 == 7 June 2022
 

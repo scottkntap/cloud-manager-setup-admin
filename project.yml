@@ -106,6 +106,8 @@ sidebar:
               url: /task-adding-gcp-accounts.html
         - title: NetApp Support Site accounts
           url: /task-adding-nss-accounts.html
+        - title: Discovery using My Opportunities
+          url: /concept-my-opportunities.html
     - title: Reference
       entries:
         - title: Permissions summary

@@ -631,6 +631,7 @@ The following sections describe how the permissions are used for each NetApp clo
 
 The Connector makes the following API requests to manage tags on AWS resources when you use the AppTemplate Tagging service:
 
+//tag::app-template-permissions[]
 * ec2:CreateTags
 * ec2:DeleteTags
 * ec2:DescribeTags
@@ -639,11 +640,13 @@ The Connector makes the following API requests to manage tags on AWS resources w
 * tag:getTagValues
 * tag:TagResources
 * tag:UntagResources
+//end::app-template-permissions[]
 
 === Cloud Backup
 
 The Connector makes the following API requests to deploy the restore instance for Cloud Backup:
 
+//tag::backup-permissions-restore[]
 * ec2:StartInstances
 * ec2:StopInstances
 * ec2:DescribeInstances
@@ -661,9 +664,11 @@ The Connector makes the following API requests to deploy the restore instance fo
 * cloudformation:CreateStack
 * cloudformation:DeleteStack
 * cloudformation:DescribeStacks
+//end::backup-permissions-restore[]
 
 The Connector makes the following API requests to manage backups in Amazon S3:
 
+//tag::backup-permissions[]
 * s3:GetBucketLocation
 * s3:ListAllMyBuckets
 * s3:ListBucket
@@ -680,9 +685,11 @@ The Connector makes the following API requests to manage backups in Amazon S3:
 * ec2:describeVpcEndpoints
 * kms:ListAliases
 * s3:PutEncryptionConfiguration
+//end::backup-permissions[]
 
 The Connector makes the following API requests when you use the Search & Restore method to restore volumes and files:
 
+//tag::backup-permissions-search-restore[]
 * s3:CreateBucket
 * s3:DeleteObject
 * s3:DeleteObjectVersion
@@ -703,11 +710,13 @@ The Connector makes the following API requests when you use the Search & Restore
 * glue:CreateDatabase
 * glue:CreateTable
 * glue:BatchDeletePartition
+//end::backup-permissions-search-restore[]
 
 === Cloud Data Sense
 
 The Connector makes the following API requests to deploy the Cloud Data Sense instance:
 
+//tag::data-sense-instance-permissions[]
 * ec2:DescribeInstances
 * ec2:DescribeInstanceStatus
 * ec2:RunInstances
@@ -732,9 +741,11 @@ The Connector makes the following API requests to deploy the Cloud Data Sense in
 * iam:AddRoleToInstanceProfile
 * ec2:AssociateIamInstanceProfile
 * ec2:DescribeIamInstanceProfileAssociations
+//end::data-sense-instance-permissions[]
 
 The Connector makes the following API requests to scan S3 buckets when you use Cloud Data Sense:
 
+//tag::data-sense-permissions[]
 * iam:AddRoleToInstanceProfile
 * ec2:AssociateIamInstanceProfile
 * ec2:DescribeIamInstanceProfileAssociations
@@ -751,11 +762,13 @@ The Connector makes the following API requests to scan S3 buckets when you use C
 * s3:DeleteObjectVersion
 * s3:PutObject
 * sts:AssumeRole
+//end::data-sense-permissions[]
 
 === Cloud Tiering
 
 The Connector makes the following API requests to tier data to Amazon S3 when you use Cloud Tiering.
 
+//tag::tiering-permissions[]
 [cols=3*,options="header"]
 |===
 
@@ -769,6 +782,7 @@ The Connector makes the following API requests to tier data to Amazon S3 when yo
 | ec2:DescribeRegions | Yes | Yes
 
 |===
+//end::tiering-permissions[]
 
 === Cloud Volumes ONTAP
 
@@ -924,15 +938,19 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 
 The Connector makes the following API requests to deploy Global File Cache instances during deployment:
 
+//tag::gfc-permissions[]
 * cloudformation:DescribeStacks
 * cloudwatch:GetMetricStatistics
 * cloudformation:ListStacks
+//end::gfc-permissions[]
 
 === Kubernetes
 
 The Connector makes the following API requests to discover and manage Amazon EKS clusters:
 
+//tag::kubernetes-permissions[]
 * ec2:DescribeRegions
 * eks:ListClusters
 * eks:DescribeCluster
 * iam:GetInstanceProfile
+//end::kubernetes-permissions[]
