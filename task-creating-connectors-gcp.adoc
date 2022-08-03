@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-creating-connectors-gcp.html
 keywords: create connector in gcp, launch connector in gcp, deploy connector in gcp, gcp connector, connector gcp, connector permissions
-summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+summary: A Cloud Manager Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
 = Create a Connector in Google Cloud from Cloud Manager
@@ -13,7 +13,7 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 :imagesdir: ./media/
 
 [.lead]
-An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept-connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+A Cloud Manager Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept-connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
 This page describes how to create a Connector in Google Cloud directly from Cloud Manager. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 

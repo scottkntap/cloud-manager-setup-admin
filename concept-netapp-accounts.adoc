@@ -21,7 +21,7 @@ When you first access Cloud Manager, you're prompted to select or create a NetAp
 
 image:screenshot_account_selection.gif[A screenshot of the Cloud Manager setup wizard that prompts you for the NetApp account in which you want to create Cloud Manager.]
 
-Account Admins can then modify the settings for this account by managing users (members), workspaces, Connectors, and subscriptions:
+Cloud Manager Account Admins can then modify the settings for this account by managing users (members), workspaces, Connectors, and subscriptions:
 
 image:screenshot_account_settings.gif["A screenshot that shows the Manage Account widget from which you can manage users, workspaces, and Connectors."]
 
