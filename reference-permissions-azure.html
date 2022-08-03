@@ -993,7 +993,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-27 21:01:08 +0000">06/27/2022</time>
+    <time datetime="2022-08-03 17:42:24 +0000">08/03/2022</time>
     
   
 
@@ -1136,7 +1136,6 @@
                         "Microsoft.Compute/snapshots/delete",
                         "Microsoft.Network/privateEndpoints/delete",
                         "Microsoft.Compute/availabilitySets/delete",
-                        "Microsoft.Network/loadBalancers/delete",
                         "Microsoft.KeyVault/vaults/read",
                         "Microsoft.KeyVault/vaults/accessPolicies/write",
                         "Microsoft.Compute/diskEncryptionSets/write",
@@ -1150,7 +1149,11 @@
                         "Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action",
                         "Microsoft.Network/networkSecurityGroups/securityRules/write",
                         "Microsoft.Network/applicationSecurityGroups/delete",
-                        "Microsoft.Network/networkSecurityGroups/securityRules/delete"
+                        "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+                        "Microsoft.Network/publicIPAddresses/delete",
+                        "Microsoft.Storage/storageAccounts/blobServices/containers/write",
+                        "Microsoft.ContainerService/managedClusters/read",
+                        "Microsoft.ContainerService/managedClusters/listClusterUserCredential/action"
     ],
     "NotActions": [],
     "AssignableScopes": [],
@@ -1164,20 +1167,84 @@
 <div class="sect1">
 <h2 id="how-azure-permissions-are-used">How Azure permissions are used</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Actions</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Compute/locations/operations/read",<br>
+<div class="paragraph">
+<p>The following sections describe how the permissions are used for each NetApp cloud service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.</p>
+</div>
+<div class="sect2">
+<h3 id="apptemplate-tags">AppTemplate tags</h3>
+<div class="paragraph">
+<p>The Connector makes the following API requests to manage tags on Azure resources when you use the AppTemplate Tagging service:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Microsoft.Resources/resources/read",<br>
+"Microsoft.Resources/subscriptions/operationresults/read",<br>
+"Microsoft.Resources/subscriptions/resourceGroups/read",<br>
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",<br>
+"Microsoft.Resources/tags/read",<br>
+"Microsoft.Resources/tags/write",</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-backup">Cloud Backup</h3>
+<div class="paragraph">
+<p>The Connector makes the following API requests to deploy the restore instance for Cloud Backup:</p>
+</div>
+<div class="paragraph">
+<p>"Microsoft.Compute/virtualMachines/read",<br>
+"Microsoft.Compute/virtualMachines/start/action",<br>
+"Microsoft.Compute/virtualMachines/deallocate/action",<br>
+"Microsoft.Storage/storageAccounts/listkeys/action",<br>
+"Microsoft.Storage/storageAccounts/read",<br>
+"Microsoft.Storage/storageAccounts/write"<br>
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",<br>
+"Microsoft.KeyVault/vaults/read",<br>
+"Microsoft.KeyVault/vaults/accessPolicies/write"<br>
+"Microsoft.Network/networkInterfaces/read",<br>
+"Microsoft.Resources/subscriptions/locations/read",<br>
+"Microsoft.Network/virtualNetworks/read",<br>
+"Microsoft.Network/virtualNetworks/subnets/read",<br>
+"Microsoft.Resources/deployments/read",<br>
+"Microsoft.Resources/deployments/write",<br>
+"Microsoft.Resources/subscriptions/operationresults/read",<br>
+"Microsoft.Resources/subscriptions/resourceGroups/read",<br>
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",<br>
+"Microsoft.Resources/subscriptions/resourceGroups/write",<br>
+"Microsoft.Authorization/locks/*",<br>
+"Microsoft.Network/privateEndpoints/write",<br>
+"Microsoft.Network/privateEndpoints/read",<br>
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",<br>
+"Microsoft.Network/virtualNetworks/join/action",<br>
+"Microsoft.Network/privateDnsZones/A/write",<br>
+"Microsoft.Network/privateDnsZones/read",<br>
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",<br>
+"Microsoft.Compute/virtualMachines/extensions/delete",<br>
+"Microsoft.Compute/virtualMachines/delete",<br>
+"Microsoft.Network/networkInterfaces/delete",<br>
+"Microsoft.Network/networkSecurityGroups/delete",<br>
+"Microsoft.Resources/deployments/delete",<br>
+"Microsoft.Resources/tags/read",<br>
+"Microsoft.Resources/tags/write",<br>
+"Microsoft.Network/publicIPAddresses/delete"<br>
+"Microsoft.Storage/storageAccounts/blobServices/containers/write"</p>
+</div>
+<div class="paragraph">
+<p>The Connector makes the following API requests to manage backups in Amazon S3:</p>
+</div>
+<div class="paragraph">
+<p>???</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-data-sense">Cloud Data Sense</h3>
+<div class="paragraph">
+<p>The Connector makes the following API requests to deploy the Cloud Data Sense instance:</p>
+</div>
+<div class="paragraph">
+<p>"Microsoft.Compute/locations/operations/read",<br>
 "Microsoft.Compute/locations/vmSizes/read",<br>
 "Microsoft.Compute/operations/read",<br>
 "Microsoft.Compute/virtualMachines/instanceView/read",<br>
@@ -1185,50 +1252,23 @@
 "Microsoft.Compute/virtualMachines/read",<br>
 "Microsoft.Compute/virtualMachines/restart/action",<br>
 "Microsoft.Compute/virtualMachines/start/action",<br>
-"Microsoft.Compute/virtualMachines/deallocate/action",<br>
-"Microsoft.Compute/virtualMachines/vmSizes/read",<br>
-"Microsoft.Compute/virtualMachines/write",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates Cloud Volumes ONTAP and stops, starts, deletes, and obtains the status of the system.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Compute/images/write",<br>
-"Microsoft.Compute/images/read",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables Cloud Volumes ONTAP deployment from a VHD.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Compute/disks/delete",<br>
+"Microsoft.Compute/virtualMachines/write",<br>
+"Microsoft.Compute/images/read",<br>
+"Microsoft.Compute/disks/delete",<br>
 "Microsoft.Compute/disks/read",<br>
 "Microsoft.Compute/disks/write",<br>
 "Microsoft.Storage/checknameavailability/read",<br>
 "Microsoft.Storage/operations/read",<br>
 "Microsoft.Storage/storageAccounts/listkeys/action",<br>
 "Microsoft.Storage/storageAccounts/read",<br>
-"Microsoft.Storage/storageAccounts/regeneratekey/action",<br>
 "Microsoft.Storage/storageAccounts/write"<br>
-"Microsoft.Storage/storageAccounts/delete",<br>
-"Microsoft.Storage/usages/read",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manages Azure storage accounts and disks, and attaches the disks to Cloud Volumes ONTAP.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Storage/storageAccounts/blobServices/containers/read",<br>
-"Microsoft.KeyVault/vaults/read",<br>
-"Microsoft.KeyVault/vaults/accessPolicies/write"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables backups to Azure Blob storage and encryption of storage accounts</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Network/networkInterfaces/read",<br>
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",<br>
+"Microsoft.Network/networkInterfaces/read",<br>
 "Microsoft.Network/networkInterfaces/write",<br>
-"Microsoft.Network/networkInterfaces/join/action",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates and manages network interfaces for Cloud Volumes ONTAP in the target subnet.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Network/networkSecurityGroups/read",<br>
+"Microsoft.Network/networkInterfaces/join/action",<br>
+"Microsoft.Network/networkSecurityGroups/read",<br>
 "Microsoft.Network/networkSecurityGroups/write",<br>
-"Microsoft.Network/networkSecurityGroups/join/action",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates predefined network security groups for Cloud Volumes ONTAP.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Resources/subscriptions/locations/read",<br>
+"Microsoft.Resources/subscriptions/locations/read",<br>
 "Microsoft.Network/locations/operationResults/read",<br>
 "Microsoft.Network/locations/operations/read",<br>
 "Microsoft.Network/virtualNetworks/read",<br>
@@ -1236,22 +1276,10 @@
 "Microsoft.Network/virtualNetworks/subnets/read",<br>
 "Microsoft.Network/virtualNetworks/subnets/virtualMachines/read",<br>
 "Microsoft.Network/virtualNetworks/virtualMachines/read",<br>
-"Microsoft.Network/virtualNetworks/subnets/join/action",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gets network information about regions, the target VNet and subnet, and adds Cloud Volumes ONTAP to VNets.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Network/virtualNetworks/subnets/write",<br>
-"Microsoft.Network/routeTables/join/action",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables VNet service endpoints for data tiering.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Resources/deployments/operations/read",<br>
-"Microsoft.Resources/deployments/read",<br>
-"Microsoft.Resources/deployments/write",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deploys Cloud Volumes ONTAP from a template.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Resources/deployments/operations/read",<br>
+"Microsoft.Network/virtualNetworks/subnets/join/action",<br>
+"Microsoft.Network/virtualNetworks/subnets/write",<br>
+"Microsoft.Network/routeTables/join/action",<br>
+"Microsoft.Resources/deployments/operations/read",<br>
 "Microsoft.Resources/deployments/read",<br>
 "Microsoft.Resources/deployments/write",<br>
 "Microsoft.Resources/resources/read",<br>
@@ -1259,71 +1287,525 @@
 "Microsoft.Resources/subscriptions/resourceGroups/delete",<br>
 "Microsoft.Resources/subscriptions/resourceGroups/read",<br>
 "Microsoft.Resources/subscriptions/resourcegroups/resources/read",<br>
+"Microsoft.Resources/subscriptions/resourceGroups/write",</p>
+</div>
+<div class="paragraph">
+<p>The Connector makes the following API requests to scan Azure Blob storage when you use Cloud Data Sense:</p>
+</div>
+<div class="paragraph">
+<p>???</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering">Cloud Tiering</h3>
+<div class="paragraph">
+<p>The Connector makes the following API requests to tier data to Azure Blob storage when you use Cloud Tiering.</p>
+</div>
+<div class="paragraph">
+<p>"Microsoft.Storage/storageAccounts/listkeys/action",<br>
+"Microsoft.Storage/storageAccounts/read",<br>
+"Microsoft.Storage/storageAccounts/write"<br>
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",<br>
+"Microsoft.Resources/subscriptions/locations/read",<br>
+"Microsoft.Resources/subscriptions/operationresults/read",<br>
+"Microsoft.Resources/subscriptions/resourceGroups/read",<br>
+"Microsoft.Resources/subscriptions/resourceGroups/write",<br>
+"Microsoft.Storage/storageAccounts/managementPolicies/read"<br>
+"Microsoft.Storage/storageAccounts/managementPolicies/write"<br>
+"Microsoft.Storage/storageAccounts/blobServices/containers/write"</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-volumes-ontap">Cloud Volumes ONTAP</h3>
+<div class="paragraph">
+<p>The Connector makes the following API requests to deploy and manage Cloud Volumes ONTAP in AWS.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Used for deployment?</th>
+<th class="tableblock halign-left valign-top">Used for daily operations?</th>
+<th class="tableblock halign-left valign-top">Used for deletion?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="11"><p class="tableblock">Create Cloud Volumes ONTAP and stop, start, delete, and obtain the status of the system.<br>
+"Microsoft.Compute/locations/operations/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/locations/vmSizes/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Resources/subscriptions/locations/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/operations/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/virtualMachines/instanceView/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/virtualMachines/powerOff/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/virtualMachines/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/virtualMachines/restart/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/virtualMachines/start/action",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/virtualMachines/deallocate/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/virtualMachines/vmSizes/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/virtualMachines/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Enable Cloud Volumes ONTAP deployment from a VHD.<br>
+"Microsoft.Compute/images/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/images/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Create and manage network interfaces for Cloud Volumes ONTAP in the target subnet<br>
+"Microsoft.Network/networkInterfaces/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/networkInterfaces/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/networkInterfaces/join/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Create predefined network security groups for Cloud Volumes ONTAP<br>
+"Microsoft.Network/networkSecurityGroups/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/networkSecurityGroups/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/networkSecurityGroups/join/action",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock">Get network information about regions, the target VNet and subnet, and add Cloud Volumes ONTAP to VNets<br>
+"Microsoft.Network/locations/operationResults/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/locations/operations/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/virtualNetworks/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/virtualNetworks/checkIpAddressAvailability/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/virtualNetworks/subnets/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/virtualNetworks/subnets/virtualMachines/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/virtualNetworks/virtualMachines/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/virtualNetworks/subnets/join/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock">Create and manage resource groups for Cloud Volumes ONTAP<br>
+"Microsoft.Resources/deployments/operations/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Resources/deployments/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Resources/deployments/write",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Resources/resources/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Resources/subscriptions/operationresults/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Resources/subscriptions/resourceGroups/delete",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Resources/subscriptions/resourceGroups/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
 "Microsoft.Resources/subscriptions/resourceGroups/write",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates and manages resource groups for Cloud Volumes ONTAP.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Compute/snapshots/write",<br>
-"Microsoft.Compute/snapshots/read",<br>
-"Microsoft.Compute/snapshots/delete",<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="11"><p class="tableblock">Manage Azure storage accounts and disks and attach the disks to Cloud Volumes ONTAP<br>
+"Microsoft.Compute/disks/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/disks/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/disks/delete",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/checknameavailability/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/operations/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/storageAccounts/listkeys/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/storageAccounts/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/storageAccounts/delete",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/storageAccounts/regeneratekey/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/storageAccounts/write"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/usages/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Enable backups to Azure Blob storage and encryption of storage accounts<br>
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.KeyVault/vaults/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.KeyVault/vaults/accessPolicies/write"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Enable VNet service endpoints for data tiering<br>
+"Microsoft.Network/virtualNetworks/subnets/write",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/routeTables/join/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Create and manage Azure managed snapshots<br>
+"Microsoft.Compute/snapshots/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/snapshots/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/snapshots/delete",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
 "Microsoft.Compute/disks/beginGetAccess/action",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates and manages Azure managed snapshots.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Compute/availabilitySets/write",<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Create and manage availability sets for Cloud Volumes ONTAP<br>
+"Microsoft.Compute/availabilitySets/write",<br>
 "Microsoft.Compute/availabilitySets/read",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Creates and manages availability sets for Cloud Volumes ONTAP.</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Enable programmatic deployments from the Azure Marketplace.<br>
+"Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
 "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables programmatic deployments from the Azure Marketplace.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Network/loadBalancers/read",<br>
-"Microsoft.Network/loadBalancers/write",<br>
-"Microsoft.Network/loadBalancers/delete",<br>
-"Microsoft.Network/loadBalancers/backendAddressPools/read",<br>
-"Microsoft.Network/loadBalancers/backendAddressPools/join/action",<br>
-"Microsoft.Network/loadBalancers/frontendIPConfigurations/read",<br>
-"Microsoft.Network/loadBalancers/loadBalancingRules/read",<br>
-"Microsoft.Network/loadBalancers/probes/read",<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock">Manage an Azure load balancer for HA pairs<br>
+"Microsoft.Network/loadBalancers/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/delete",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/backendAddressPools/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/backendAddressPools/join/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/frontendIPConfigurations/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/loadBalancingRules/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/probes/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
 "Microsoft.Network/loadBalancers/probes/join/action",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manages an Azure load balancer for HA pairs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enable management of locks on Azure disks</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Authorization/locks/*",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables management of locks on Azure disks.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Authorization/roleDefinitions/write",<br>
-"Microsoft.Authorization/roleAssignments/write",<br>
-"Microsoft.Web/sites/*"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manages failover for HA pairs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="10"><p class="tableblock">Enable the management of private endpoints when connectivity isn&#8217;t provided to outside the subnet. Cloud Manager creates the storage account for HA with only internal connectivity within the subnet.<br>
+"Microsoft.Network/privateEndpoints/write",</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Network/privateEndpoints/write",<br>
-"Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",<br>
-"Microsoft.Storage/storageAccounts/privateEndpointConnections/read",<br>
-"Microsoft.Network/privateEndpoints/read",<br>
-"Microsoft.Network/privateDnsZones/write",<br>
-"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",<br>
-"Microsoft.Network/virtualNetworks/join/action",<br>
-"Microsoft.Network/privateDnsZones/A/write",<br>
-"Microsoft.Network/privateDnsZones/read",<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/storageAccounts/privateEndpointConnections/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/privateEndpoints/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/privateDnsZones/write",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/virtualNetworks/join/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/privateDnsZones/A/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/privateDnsZones/read",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
 "Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables the management of private endpoints. Private endpoints are used when connectivity isn&#8217;t provided to outside the subnet. Cloud Manager creates the storage account for HA with only internal connectivity within the subnet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables Cloud Manager to delete volumes for Azure NetApp Files.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Resources/deployments/operationStatuses/read"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Azure requires this permission for some virtual machine deployments (it depends on the underlying physical hardware that&#8217;s used during deployment).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Resources/deployments/operationStatuses/read"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Resources/deployments/operationStatuses/read",<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables you to use Global File Cache.<br>
 "Microsoft.Insights/Metrics/Read",<br>
 "Microsoft.Compute/virtualMachines/extensions/write",<br>
 "Microsoft.Compute/virtualMachines/extensions/read",<br>
@@ -1332,39 +1814,146 @@
 "Microsoft.Network/networkInterfaces/delete",<br>
 "Microsoft.Network/networkSecurityGroups/delete",<br>
 "Microsoft.Resources/deployments/delete",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables you to use Global File Cache.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Network/privateEndpoints/delete",<br>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Remove resources from a resource group that belongs to Cloud Volumes ONTAP in case of deployment failure or deletion<br>
+"Microsoft.Network/privateEndpoints/delete",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
 "Microsoft.Compute/availabilitySets/delete",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables Cloud Manager to remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Compute/diskEncryptionSets/read"<br>
-"Microsoft.Compute/diskEncryptionSets/write",<br>
-"Microsoft.Compute/diskEncryptionSets/delete"<br>
-"Microsoft.KeyVault/vaults/deploy/action",<br>
-"Microsoft.KeyVault/vaults/read",<br>
-"Microsoft.KeyVault/vaults/accessPolicies/write",</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables use of customer-managed encryption keys with Cloud Volumes ONTAP. This feature is supported using APIs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Enable the use of customer-managed encryption keys with Cloud Volumes ONTAP using the Cloud Manager API<br>
+"Microsoft.Compute/diskEncryptionSets/read"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Resources/tags/read",<br>
-"Microsoft.Resources/tags/write",<br>
-"Microsoft.Resources/tags/delete"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables you to manage tags on your Azure resources using the Cloud Manager Tagging service.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/diskEncryptionSets/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Microsoft.Network/applicationSecurityGroups/write",<br>
-"Microsoft.Network/applicationSecurityGroups/read",<br>
-"Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action",<br>
-"Microsoft.Network/networkSecurityGroups/securityRules/write",<br>
-"Microsoft.Network/applicationSecurityGroups/delete",<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.KeyVault/vaults/deploy/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Compute/diskEncryptionSets/delete"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables Cloud Manager to configure an application security group for an HA pair, which isolates the HA interconnect and cluster network NICs.<br>
+"Microsoft.Network/applicationSecurityGroups/write",</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/applicationSecurityGroups/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes<br>
+"Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/networkSecurityGroups/securityRules/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/applicationSecurityGroups/delete",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
 "Microsoft.Network/networkSecurityGroups/securityRules/delete"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables Cloud Manager to configure an application security group for an HA pair, which isolates the HA interconnect and cluster network NICs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes<br>
+<br>
+<br>
+<br>
+<br>
+<strong>* Listed in Excel but for CVO when I have them for the tagging service </strong>*<br>
+<br>
+Manage tags on your Azure resources using the Cloud Manager Tagging service.<br>
+"Microsoft.Resources/tags/read",<br>
+"Microsoft.Resources/tags/write",<br>
+"Microsoft.Resources/tags/delete"<br>
+<br>
+<strong>* Missing from Excel. I have them listed as for using customer-managed encryption keys</strong>*<br>
+<br>
+"Microsoft.KeyVault/vaults/read",<br>
+"Microsoft.KeyVault/vaults/accessPolicies/write",<br>
+<br>
+<strong>* Used for ANF, but listed under CVO in the Excel file </strong>*<br>
+<br>
+"Microsoft.NetApp/netAppAccounts/read",<br>
+"Microsoft.NetApp/netAppAccounts/capacityPools/read",<br>
+"Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",<br>
+"Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read",<br>
+"Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",<br>
+<br>
+<strong>* Listed as No for deployment, operation, and deletion, but they&#8217;re in the policy, so they must be used during some phase, right? </strong>*<br>
+<br>
+"Microsoft.Compute/images/write",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Storage/storageAccounts/regeneratekey/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/backendAddressPools/join/action",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+"Microsoft.Network/loadBalancers/frontendIPConfigurations/read",</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No<br>
+<br>
+<strong>* Question mark listed under deployment </strong>*<br>
+<br>
+"Microsoft.Network/networkSecurityGroups/join/action",<br>
+<br>
+<strong>* Only two permissions listed as required for deletion. Is that correct? </strong>*</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="kubernetes">Kubernetes</h3>
+<div class="paragraph">
+<p>The Connector makes the following API requests to discover and manage clusters running in Azure Kubernetes Service (AKS):</p>
+</div>
+<div class="paragraph">
+<p>"Microsoft.Compute/virtualMachines/read",<br>
+"Microsoft.Resources/subscriptions/locations/read",<br>
+"Microsoft.Resources/subscriptions/operationresults/read",<br>
+"Microsoft.Resources/subscriptions/resourceGroups/read",<br>
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",<br>
+"Microsoft.ContainerService/managedClusters/read"<br>
+Microsoft.ContainerService/managedClusters/listClusterUserCredential/action</p>
+</div>
+</div>
 </div>
 </div>
 
