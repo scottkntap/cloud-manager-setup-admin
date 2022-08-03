@@ -92,7 +92,7 @@ You can send specific types of notifications by email so you can be informed of 
 
 *Note:* Sending email notifications is not supported when the Connector is installed in a site without internet access.
 
-By default, Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
+By default, Cloud Manager Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
 
 You must be an Account Admin to customize the notifications settings.
 
