@@ -28,7 +28,7 @@ If you deployed the Connector from Cloud Manager or from the cloud provider's ma
 +
 The operating system does not include a GUI. You must use a terminal to access the system.
 * The user name for the EC2 Linux instance is ec2-user.
-* The default system disk is a 50 GiB gp2 disk.
+* The default system disk is a 100 GiB gp2 disk.
 
 === Azure details
 
