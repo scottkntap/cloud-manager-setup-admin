@@ -29,6 +29,10 @@ image:screenshot_s3_we.gif[A screenshot of an Amazon S3 working environment.]
 +
 image:screenshot_s3_actions.gif["A screenshot that shows the actions pane after you select an Amazon S3 working environment. The pane shows information about S3: the number of buckets and the available services."]
 
+. Click *Sync data* to synchronize data to or from S3 buckets.
++
+For more details, see https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html[the overview for the Cloud Sync service^].
+
 . Click *Enable* if you want Cloud Data Sense to scan the S3 buckets for personal and sensitive data.
 +
 For more details, see https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-s3.html[Getting started with Cloud Data Sense for Amazon S3^].
