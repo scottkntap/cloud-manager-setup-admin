@@ -1,1 +1,1 @@
-# cloud-manager-setup-admin-internal
+# cloud-manager-setup-admin
