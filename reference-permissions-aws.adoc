@@ -323,7 +323,7 @@ You also need to ensure that the policy is up to date as new permissions are add
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeRegions",
-        "iam:ListInstanceProfiles",
+        "iam:GetInstanceProfile",
         "eks:ListClusters",
         "eks:DescribeCluster"
       ],
