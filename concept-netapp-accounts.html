@@ -53,11 +53,34 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-setup-admin/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
   <link rel='stylesheet' href='/us-en/cloud-manager-setup-admin/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
-    if (document.location.hostname === "docs.netapp.com") {
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
       var head = document.getElementsByTagName('head')[0];
       var onetrustConsent = document.createElement("script");
       onetrustConsent.type = "text/javascript";
-      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
       head.appendChild(onetrustConsent);
 
       var onetrustScript = document.createElement("script");
@@ -65,30 +88,11 @@
       onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
       onetrustScript.charset = "UTF-8";
       onetrustScript.dataset.documentLanguage = "true";
-      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      onetrustScript.dataset.domainScript = consentId;
       head.appendChild(onetrustScript);
-    }
-
-    function OptanonWrapper() { }
-
-    if (document.location.hostname === "docs.netapp.com") {
-      var adobe = document.createElement("script");
-      adobe.type = "text/plain";
-      adobe.className = "optanon-category-C0002";
-      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-      head.appendChild(adobe);
-
-      var google = document.createElement("script");
-      google.type = "text/plain";
-      google.className = "optanon-category-C0002";
-      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
-      head.appendChild(google);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-81697994-3');
-    }
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -169,7 +173,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Learn about NetApp accounts](https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/concept-netapp-accounts.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Learn about NetApp accounts](https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/concept-netapp-accounts.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -341,6 +345,7 @@
   <!-- Sidebar Column -->
   
   <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/us-en/cloud-manager-setup-admin/images/collapse.png" alt="Collapse navigation panel"></button>
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
     <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>Available PDFs<span>
@@ -806,137 +811,446 @@
 </script><div class="prod-nav" id="product-nav">
   <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-setup-admin/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/index.html">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up and administration docs"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/index.html">
         Set up and administration docs
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Release notes"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Release notes</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/whats-new.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="What's new"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/whats-new.html">
         What's new
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-limitations.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Limitations"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-limitations.html">
         Limitations
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-overview.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Learn about Cloud Manager"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-overview.html">
         Learn about Cloud Manager
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-checklist-cm.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Getting started checklist"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-checklist-cm.html">
         Getting started checklist
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-signing-up.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sign up to Cloud Central"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-signing-up.html">
         Sign up to Cloud Central
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-logging-in.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Log in to Cloud Manager"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-logging-in.html">
         Log in to Cloud Manager
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up a NetApp account"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Set up a NetApp account</div>
       </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Learn about NetApp accounts"
+      data-li-level="3#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html">
         Learn about NetApp accounts
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up workspaces and users"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html">
         Set up workspaces and users
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up a Connector"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Set up a Connector</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-connectors.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Learn about Connectors"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-connectors.html">
         Learn about Connectors
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up your networking"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html">
         Set up your networking
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create a Connector in AWS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html">
         Create a Connector in AWS
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create a Connector in Azure"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html">
         Create a Connector in Azure
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create a Connector in Google Cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html">
         Create a Connector in Google Cloud
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-whats-next.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Where to go next"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-whats-next.html">
         Where to go next
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Administer Cloud Manager"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Administer Cloud Manager</div>
       </a>
-      <ul><li class="subfolders "><a href="#">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp accounts"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> NetApp accounts</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage your account"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html">
         Manage your account
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitor operations in your account"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html">
         Monitor operations in your account
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-user-roles.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="User roles"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-user-roles.html">
         User roles
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Connectors"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Connectors</div>
       </a>
-      <ul><li class="subfolders "><a href="#">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Advanced deployment"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Advanced deployment</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create from the AWS Marketplace"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html">
         Create from the AWS Marketplace
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create from the Azure Marketplace"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html">
         Create from the Azure Marketplace
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-installing-linux.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Install on your own host with internet"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-installing-linux.html">
         Install on your own host with internet
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Install on-prem without internet"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html">
         Install on-prem without internet
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-finding-system-id.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Find the system ID for a Connector"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-finding-system-id.html">
         Find the system ID for a Connector
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-managing-connectors.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage existing Connectors"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-managing-connectors.html">
         Manage existing Connectors
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-installing-https-cert.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Install an HTTPS certificate"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-installing-https-cert.html">
         Install an HTTPS certificate
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-configuring-proxy.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configure proxy settings"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-configuring-proxy.html">
         Configure proxy settings
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-connector-default-config.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Default configuration"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-connector-default-config.html">
         Default configuration
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Discovered cloud storage"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Discovered cloud storage</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-viewing-amazon-s3.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="View your Amazon S3 buckets"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-viewing-amazon-s3.html">
         View your Amazon S3 buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-viewing-azure-blob.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="View your Azure Blob accounts"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-viewing-azure-blob.html">
         View your Azure Blob accounts
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-viewing-gcp-storage.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="View your Google Cloud Storage buckets"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-viewing-gcp-storage.html">
         View your Google Cloud Storage buckets
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="AWS credentials"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> AWS credentials</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-aws.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Overview"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-aws.html">
         Overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage credentials and subscriptions"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html">
         Manage credentials and subscriptions
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure credentials"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Azure credentials</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-azure.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Overview"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-azure.html">
         Overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage credentials and subscriptions"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html">
         Manage credentials and subscriptions
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Google Cloud credentials"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Google Cloud credentials</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-gcp.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Overview"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-accounts-gcp.html">
         Overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage credentials and subscriptions"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html">
         Manage credentials and subscriptions
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Support Site accounts"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html">
         NetApp Support Site accounts
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-my-opportunities.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Discovery using My Opportunities"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-my-opportunities.html">
         Discovery using My Opportunities
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Reference"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Permissions summary"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
         Permissions summary
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="AWS permissions for the Connector"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure permissions for the Connector"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Google Cloud permissions for the Connector"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html">
         Google Cloud permissions for the Connector
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Knowledge and support"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-support-registration.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Register for support"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-support-registration.html">
         Register for support
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-get-help.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get help"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-get-help.html">
         Get help
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/legal-notices.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Legal notices"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/legal-notices.html">
         Legal notices
       </a></li></ul>
 </div>
@@ -955,8 +1269,9 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container --><article class="page-content">
+    <!-- Begin of page container --><article class="page-content" id="main">
       <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/us-en/cloud-manager-setup-admin/images/expand.png" alt="Expand navigation panel"></button>
   <div class="ie-menu">
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
