@@ -37,7 +37,7 @@ image:screenshot-cloud-central-signup.png["A screenshot of the sign up form for 
 +
 Each time that you log in, you'll need to use the option that you chose during this sign up process.
 +
-NOTE: When you log in with NetApp, your NetApp Support Site credentials are not added to Cloud Manager in the Support Dashboard.
+NOTE: When you use the Log in with NetApp option, your NetApp Support Site (NSS) credentials are not added to Cloud Manager in the Support Dashboard. Adding your NSS credentials to Cloud Manager is required to enable key workflows for Cloud Volumes ONTAP and to enable predictive analytics and proactive support through Active IQ. link:task-adding-nss-accounts.html[Learn how to add your NSS credentials to Cloud Manager].
 
 . Wait for an email from NetApp Cloud Central.
 
