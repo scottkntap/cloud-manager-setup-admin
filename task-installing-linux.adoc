@@ -37,7 +37,7 @@ Azure VM size::
 An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
 
 GCP machine type::
-An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4.
+An instance type that meets the CPU and RAM requirements above. We recommend n2-standard-4.
 +
 The Connector is supported in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]
 
