@@ -124,14 +124,15 @@ You also need to ensure that the policy is up to date as new permissions are add
         "cloudformation:DeleteStack",
         "ec2:DescribePlacementGroups",
         "iam:GetRolePolicy",
-		"s3:ListAllMyBuckets",
+		    "s3:ListAllMyBuckets",
         "s3:GetObject",
         "iam:GetRole",
         "s3:DeleteObject",
         "s3:DeleteObjectVersion",
         "s3:PutObject",
-		"ec2:ModifyVolume",
-        "ec2:DescribeVolumesModifications"
+		    "ec2:ModifyVolume",
+        "ec2:DescribeVolumesModifications",
+		    "s3:GetEncryptionConfiguration"
       ],
       "Resource": "*"
     },
@@ -141,7 +142,7 @@ You also need to ensure that the policy is up to date as new permissions are add
       "Action": [
         "ec2:StartInstances",
         "ec2:StopInstances",
-        "ec2:DescribeInstances",
+		    "ec2:DescribeInstances",
         "ec2:DescribeInstanceStatus",
         "ec2:RunInstances",
         "ec2:TerminateInstances",
@@ -193,7 +194,21 @@ You also need to ensure that the policy is up to date as new permissions are add
         "s3:PutBucketAcl",
         "s3:AbortMultipartUpload",
         "s3:ListMultipartUploadParts",
-        "s3:DeleteBucket"
+        "s3:DeleteBucket",
+		    "s3:GetObjectVersionTagging",
+			  "s3:GetObjectVersionAcl",
+	   		"s3:GetObjectRetention",
+	   		"s3:GetObjectTagging",
+	   		"s3:GetObjectVersion",
+	   		"s3:PutObjectVersionTagging",
+	   		"s3:PutObjectRetention",
+	   		"s3:DeleteObjectTagging",
+	   		"s3:DeleteObjectVersionTagging",
+	   		"s3:GetBucketObjectLockConfiguration",
+	   		"s3:GetBucketVersioning",
+	   		"s3:PutBucketObjectLockConfiguration",
+	   		"s3:PutBucketVersioning",
+	   		"s3:BypassGovernanceRetention"
       ],
       "Resource": [
         "arn:aws:s3:::netapp-backup-*"
@@ -323,9 +338,9 @@ You also need to ensure that the policy is up to date as new permissions are add
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeRegions",
-        "iam:GetInstanceProfile",
         "eks:ListClusters",
-        "eks:DescribeCluster"
+        "eks:DescribeCluster",
+		    "iam:GetInstanceProfiles"
       ],
       "Resource": "*"
     },
@@ -712,6 +727,38 @@ The Connector makes the following API requests when you use the Search & Restore
 * glue:BatchDeletePartition
 //end::backup-permissions-search-restore[]
 
+The Connector makes the following API requests when you use DataLock and Ransomware protection for your volume backups:
+
+//tag::backup-permissions-datalock[]
+* s3:GetObjectVersionTagging
+* s3:GetBucketObjectLockConfiguration
+* s3:GetObjectVersionAcl
+* s3:PutObjectTagging
+* s3:DeleteObject
+* s3:DeleteObjectTagging
+* s3:GetObjectRetention
+* s3:DeleteObjectVersionTagging
+* s3:PutObject
+* s3:GetObject
+* s3:PutBucketObjectLockConfiguration
+* s3:GetLifecycleConfiguration
+* s3:ListBucketByTags
+* s3:GetBucketTagging
+* s3:DeleteObjectVersion
+* s3:ListBucketVersions
+* s3:ListBucket
+* s3:PutBucketTagging
+* s3:GetObjectTagging
+* s3:PutBucketVersioning
+* s3:PutObjectVersionTagging
+* s3:GetBucketVersioning
+* s3:GetBucketAcl
+* s3:BypassGovernanceRetention
+* s3:PutObjectRetention
+* s3:GetBucketLocation
+* s3:GetObjectVersion
+//end::backup-permissions-datalock[]
+
 === Cloud Data Sense
 
 The Connector makes the following API requests to deploy the Cloud Data Sense instance:
@@ -944,6 +991,39 @@ The Connector makes the following API requests to deploy Global File Cache insta
 * cloudformation:ListStacks
 //end::gfc-permissions[]
 
+=== FSx for ONTAP
+
+The Connector makes the following API requests to discover and manage FSx for ONTAP:
+
+* ec2:DescribeInstances
+* ec2:DescribeInstanceStatus
+* ec2:DescribeInstanceAttribute
+* ec2:DescribeRouteTables
+* ec2:DescribeImages
+* ec2:CreateTags
+* ec2:DescribeVolumes
+* ec2:DescribeSecurityGroups
+* ec2:DescribeNetworkInterfaces
+* ec2:DescribeSubnets
+* ec2:DescribeVpcs
+* ec2:DescribeDhcpOptions
+* ec2:DescribeSnapshots
+* ec2:DescribeKeyPairs
+* ec2:DescribeRegions
+* ec2:DescribeTags
+* ec2:DescribeIamInstanceProfileAssociations
+* ec2:DescribeReservedInstancesOfferings
+* ec2:describeVpcEndpoints
+* ec2:DescribeVpcs
+* ec2:DescribeVolumesModifications
+* ec2:DescribePlacementGroups
+* kms:List*
+* kms:Describe*
+* kms:CreateGrant
+* kms:ListAliases
+* fsx:Describe*
+* fsx:List*
+
 === Kubernetes
 
 The Connector makes the following API requests to discover and manage Amazon EKS clusters:
@@ -954,3 +1034,9 @@ The Connector makes the following API requests to discover and manage Amazon EKS
 * eks:DescribeCluster
 * iam:GetInstanceProfile
 //end::kubernetes-permissions[]
+
+=== S3 bucket discovery
+
+The Connector makes the following API request to discover Amazon S3 buckets:
+
+s3:GetEncryptionConfiguration
