@@ -1308,7 +1308,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-30 18:54:31 +0000">08/30/2022</time>
+    <time datetime="2022-09-11 22:04:22 +0000">09/11/2022</time>
     
   
 
@@ -1448,14 +1448,15 @@
         "cloudformation:DeleteStack",
         "ec2:DescribePlacementGroups",
         "iam:GetRolePolicy",
-		"s3:ListAllMyBuckets",
+		    "s3:ListAllMyBuckets",
         "s3:GetObject",
         "iam:GetRole",
         "s3:DeleteObject",
         "s3:DeleteObjectVersion",
         "s3:PutObject",
-		"ec2:ModifyVolume",
-        "ec2:DescribeVolumesModifications"
+		    "ec2:ModifyVolume",
+        "ec2:DescribeVolumesModifications",
+		    "s3:GetEncryptionConfiguration"
       ],
       "Resource": "*"
     },
@@ -1465,7 +1466,7 @@
       "Action": [
         "ec2:StartInstances",
         "ec2:StopInstances",
-        "ec2:DescribeInstances",
+		    "ec2:DescribeInstances",
         "ec2:DescribeInstanceStatus",
         "ec2:RunInstances",
         "ec2:TerminateInstances",
@@ -1517,7 +1518,21 @@
         "s3:PutBucketAcl",
         "s3:AbortMultipartUpload",
         "s3:ListMultipartUploadParts",
-        "s3:DeleteBucket"
+        "s3:DeleteBucket",
+		    "s3:GetObjectVersionTagging",
+			  "s3:GetObjectVersionAcl",
+	   		"s3:GetObjectRetention",
+	   		"s3:GetObjectTagging",
+	   		"s3:GetObjectVersion",
+	   		"s3:PutObjectVersionTagging",
+	   		"s3:PutObjectRetention",
+	   		"s3:DeleteObjectTagging",
+	   		"s3:DeleteObjectVersionTagging",
+	   		"s3:GetBucketObjectLockConfiguration",
+	   		"s3:GetBucketVersioning",
+	   		"s3:PutBucketObjectLockConfiguration",
+	   		"s3:PutBucketVersioning",
+	   		"s3:BypassGovernanceRetention"
       ],
       "Resource": [
         "arn:aws:s3:::netapp-backup-*"
@@ -1647,9 +1662,9 @@
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeRegions",
-        "iam:GetInstanceProfile",
         "eks:ListClusters",
-        "eks:DescribeCluster"
+        "eks:DescribeCluster",
+		    "iam:GetInstanceProfiles"
       ],
       "Resource": "*"
     },
@@ -2178,6 +2193,94 @@
 </li>
 <li>
 <p>glue:BatchDeletePartition</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Connector makes the following API requests when you use DataLock and Ransomware protection for your volume backups:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>s3:GetObjectVersionTagging</p>
+</li>
+<li>
+<p>s3:GetBucketObjectLockConfiguration</p>
+</li>
+<li>
+<p>s3:GetObjectVersionAcl</p>
+</li>
+<li>
+<p>s3:PutObjectTagging</p>
+</li>
+<li>
+<p>s3:DeleteObject</p>
+</li>
+<li>
+<p>s3:DeleteObjectTagging</p>
+</li>
+<li>
+<p>s3:GetObjectRetention</p>
+</li>
+<li>
+<p>s3:DeleteObjectVersionTagging</p>
+</li>
+<li>
+<p>s3:PutObject</p>
+</li>
+<li>
+<p>s3:GetObject</p>
+</li>
+<li>
+<p>s3:PutBucketObjectLockConfiguration</p>
+</li>
+<li>
+<p>s3:GetLifecycleConfiguration</p>
+</li>
+<li>
+<p>s3:ListBucketByTags</p>
+</li>
+<li>
+<p>s3:GetBucketTagging</p>
+</li>
+<li>
+<p>s3:DeleteObjectVersion</p>
+</li>
+<li>
+<p>s3:ListBucketVersions</p>
+</li>
+<li>
+<p>s3:ListBucket</p>
+</li>
+<li>
+<p>s3:PutBucketTagging</p>
+</li>
+<li>
+<p>s3:GetObjectTagging</p>
+</li>
+<li>
+<p>s3:PutBucketVersioning</p>
+</li>
+<li>
+<p>s3:PutObjectVersionTagging</p>
+</li>
+<li>
+<p>s3:GetBucketVersioning</p>
+</li>
+<li>
+<p>s3:GetBucketAcl</p>
+</li>
+<li>
+<p>s3:BypassGovernanceRetention</p>
+</li>
+<li>
+<p>s3:PutObjectRetention</p>
+</li>
+<li>
+<p>s3:GetBucketLocation</p>
+</li>
+<li>
+<p>s3:GetObjectVersion</p>
 </li>
 </ul>
 </div>
@@ -2953,6 +3056,100 @@
 </div>
 </div>
 <div class="sect2">
+<h3 id="fsx-for-ontap">FSx for ONTAP</h3>
+<div class="paragraph">
+<p>The Connector makes the following API requests to discover and manage FSx for ONTAP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ec2:DescribeInstances</p>
+</li>
+<li>
+<p>ec2:DescribeInstanceStatus</p>
+</li>
+<li>
+<p>ec2:DescribeInstanceAttribute</p>
+</li>
+<li>
+<p>ec2:DescribeRouteTables</p>
+</li>
+<li>
+<p>ec2:DescribeImages</p>
+</li>
+<li>
+<p>ec2:CreateTags</p>
+</li>
+<li>
+<p>ec2:DescribeVolumes</p>
+</li>
+<li>
+<p>ec2:DescribeSecurityGroups</p>
+</li>
+<li>
+<p>ec2:DescribeNetworkInterfaces</p>
+</li>
+<li>
+<p>ec2:DescribeSubnets</p>
+</li>
+<li>
+<p>ec2:DescribeVpcs</p>
+</li>
+<li>
+<p>ec2:DescribeDhcpOptions</p>
+</li>
+<li>
+<p>ec2:DescribeSnapshots</p>
+</li>
+<li>
+<p>ec2:DescribeKeyPairs</p>
+</li>
+<li>
+<p>ec2:DescribeRegions</p>
+</li>
+<li>
+<p>ec2:DescribeTags</p>
+</li>
+<li>
+<p>ec2:DescribeIamInstanceProfileAssociations</p>
+</li>
+<li>
+<p>ec2:DescribeReservedInstancesOfferings</p>
+</li>
+<li>
+<p>ec2:describeVpcEndpoints</p>
+</li>
+<li>
+<p>ec2:DescribeVpcs</p>
+</li>
+<li>
+<p>ec2:DescribeVolumesModifications</p>
+</li>
+<li>
+<p>ec2:DescribePlacementGroups</p>
+</li>
+<li>
+<p>kms:List*</p>
+</li>
+<li>
+<p>kms:Describe*</p>
+</li>
+<li>
+<p>kms:CreateGrant</p>
+</li>
+<li>
+<p>kms:ListAliases</p>
+</li>
+<li>
+<p>fsx:Describe*</p>
+</li>
+<li>
+<p>fsx:List*</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="kubernetes">Kubernetes</h3>
 <div class="paragraph">
 <p>The Connector makes the following API requests to discover and manage Amazon EKS clusters:</p>
@@ -2972,6 +3169,15 @@
 <p>iam:GetInstanceProfile</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s3-bucket-discovery">S3 bucket discovery</h3>
+<div class="paragraph">
+<p>The Connector makes the following API request to discover Amazon S3 buckets:</p>
+</div>
+<div class="paragraph">
+<p>s3:GetEncryptionConfiguration</p>
 </div>
 </div>
 </div>
