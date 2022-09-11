@@ -993,7 +993,7 @@ The Connector makes the following API requests to deploy Global File Cache insta
 
 === FSx for ONTAP
 
-The Connector makes the following API requests to discover and manage FSx for ONTAP:
+The Connector makes the following API requests to manage FSx for ONTAP:
 
 * ec2:DescribeInstances
 * ec2:DescribeInstanceStatus
