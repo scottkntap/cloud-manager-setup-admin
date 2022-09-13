@@ -16,6 +16,18 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 18 September 2022
+
+=== Connector 3.9.22
+
+* We enhanced the Connector deployment wizard by adding an _in-product guide_ that provides steps to meet the minimum requirements for Connector installation: permissions, authentication, and networking.
+
+* You can now create a NetApp support case directly from Cloud Manager in the *Support Dashboard*.
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#18-september-2022[Learn about Cloud Volumes ONTAP enhancements^]
+
 == 31 July 2022
 
 === Connector 3.9.21
