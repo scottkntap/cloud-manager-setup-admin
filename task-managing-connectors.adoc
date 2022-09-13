@@ -63,7 +63,7 @@ image:screenshot-help-support.png[A screenshot of the Help menu where Support is
 .. Click *Send AutoSupport* to directly send the message to NetApp Support.
 
 +
-image:screenshot-connector-autosupport.png[]
+image:screenshot-connector-autosupport.png[A screenshot of the Support Dashboard showing where users can click to download and send AutoSupport messages.]
 
 == Connect to the Linux VM
 
