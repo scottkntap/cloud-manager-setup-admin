@@ -29,7 +29,7 @@ We have set up two YAML files that include the required permissions for the user
 
 The following image depicts the permission requirements described in numbers 1 and 2 above:
 
-image:diagram_permissions_gcp.png[explanation]
+image:diagram_permissions_gcp.png[A conceptual image depicting the permissions requirements for google and service accounts to deploy Cloud Volumes ONTAP.]
 
 == Project for Cloud Volumes ONTAP
 
