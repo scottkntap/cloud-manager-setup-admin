@@ -28,26 +28,26 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up permissions
 
 [role="quick-margin-para"]
-Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions.
+Ensure that your Google Cloud account has the correct permissions by creating and attaching a custom role.
 
 [role="quick-margin-para"]
-<<Set up permissions,View the custom role and follow step-by-step instructions>>.
+<<Set up permissions,View the custom role>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up a service account
 
 [role="quick-margin-para"]
-When you create the Connector VM, you need to associate it with a service account that provides permissions to manage resources in Google Cloud.
+When you create the Connector VM, you need to associate it with a service account that is associated with a custom role that has permissions to manage resources in Google Cloud.
 
 [role="quick-margin-para"]
-<<Set up a service account,View the custom role and follow step-by-step instructions>>.
+<<Set up a service account,View the custom role>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up networking
 
 [role="quick-margin-para"]
-You'll need a VPC and subnet with outbound internet access to specific endpoints.
+You'll need a VPC and subnet with outbound internet access to specific endpoints. If an HTTP proxy is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
 
 [role="quick-margin-para"]
-<<Set up networking,Follow step-by-step instructions>>.
+<<Set up networking,View networking requirements>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Enable Google Cloud APIs
 
@@ -383,28 +383,26 @@ Create a Connector in Google Cloud directly from the Cloud Manager user interfac
 image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
 
 . Choose *Google Cloud Platform* as your cloud provider.
-+
-Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
-+
-link:reference-networking-cloud-manager.html[Learn more about networking requirements for the Connector].
+
+. On the *Deploying a Connector* page, review the details about what you'll need. You have two options:
+
+.. Click *Continue* to prepare for deployment by using the in-product guide. Each step include information contained on this page of the documentation.
+
+.. Click *Skip to Deployment* if you already prepared by following the steps on this page.
 
 . Follow the steps in the wizard to create the Connector:
-
-* *Get Ready*: Review what you'll need.
 
 * If you're prompted, log in to your Google account, which should have the required permissions to create the virtual machine instance.
 +
 The form is owned and hosted by Google. Your credentials are not provided to NetApp.
 
-* *Basic Settings*: Enter a name for the virtual machine instance, specify tags, select a project, and then select the service account that has the required permissions (refer to the section above for details).
+* *Details*: Enter a name for the virtual machine instance, specify tags, select a project, and then select the service account that has the required permissions (refer to the section above for details).
 
 * *Location*: Specify a region, zone, VPC, and subnet for the instance.
 
 * *Network*: Choose whether to enable a public IP address and optionally specify a proxy configuration.
 
 * *Firewall Policy*: Choose whether to create a new firewall policy or whether to select an existing firewall policy that allows inbound HTTP, HTTPS, and SSH access.
-+
-NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 * *Review*: Review your selections to verify that your set up is correct.
 
