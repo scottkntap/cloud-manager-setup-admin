@@ -122,7 +122,7 @@ If you create the Connector yourself from the AWS Marketplace, the Azure Marketp
 
 We typically update the Connector software each month to introduce new features and to provide stability improvements. While most of the services and features in the Cloud Manager platform are offered through SaaS-based software, a few features and functionalities are dependent on the version of the Connector. That includes Cloud Volumes ONTAP management, on-prem ONTAP cluster management, settings, and help.
 
-The Connector automatically updates its software to the latest version, as long as it has link:reference-networking-cloud-manager.html[outbound internet access] to obtain the software update.
+The Connector automatically updates its software to the latest version, as long as it has outbound internet access to obtain the software update.
 
 == Number of working environments per Connector
 

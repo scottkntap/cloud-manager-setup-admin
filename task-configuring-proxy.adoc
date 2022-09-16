@@ -19,7 +19,7 @@ NOTE: Cloud Manager doesn't support using an HTTPS proxy with the Connector.
 
 Configuring the Connector to use an HTTP proxy server provides outbound internet access if a public IP address or a NAT gateway isn't available. This proxy server provides only the Connector with an outbound connection. It doesn't provide any connectivity for Cloud Volumes ONTAP systems.
 
-If Cloud Volumes ONTAP systems don't have an outbound internet connection to send AutoSupport messages, Cloud Manager automatically configures those Cloud Volumes ONTAP systems to use a proxy server that's included with the Connector. link:reference-networking-cloud-manager.html#proxy-server-for-autosupport-messages[Learn more about using a proxy server to send AutoSupport messages].
+If Cloud Volumes ONTAP systems don't have an outbound internet connection to send AutoSupport messages, Cloud Manager automatically configures those Cloud Volumes ONTAP systems to use a proxy server that's included with the Connector. The only requirement is to ensure that the Connector's security group allows inbound connections over port 3128. You’ll need to open this port after you deploy the Connector.
 
 == Enable a proxy on a Connector
 

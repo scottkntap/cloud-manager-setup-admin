@@ -36,7 +36,7 @@ Ensure that your Google Cloud account has the correct permissions by creating an
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up a service account
 
 [role="quick-margin-para"]
-When you create the Connector VM, you need to associate it with a service account that is associated with a custom role that has permissions to manage resources in Google Cloud.
+When you create the Connector VM, you need to associate it with a service account. This service account must have a custom role that has permissions to manage resources in Google Cloud.
 
 [role="quick-margin-para"]
 <<Set up a service account,View the custom role>>.
@@ -352,6 +352,10 @@ Notes:
 
 . For data tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project level. Currently if you assign serviceAccount.user at the project level, the permissions don't show when you query the service account with getIAMPolicy.
 
+=== IP address limitation
+
+There's a possible conflict with IP addresses in the 172 range. link:reference-limitations.html[Learn more about this limitation].
+
 == Enable Google Cloud APIs
 
 Several APIs are required to deploy the Connector and Cloud Volumes ONTAP.
@@ -386,7 +390,7 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 
 . On the *Deploying a Connector* page, review the details about what you'll need. You have two options:
 
-.. Click *Continue* to prepare for deployment by using the in-product guide. Each step include information contained on this page of the documentation.
+.. Click *Continue* to prepare for deployment by using the in-product guide. Each step in the in-product guide includes the information that's contained on this page of the documentation.
 
 .. Click *Skip to Deployment* if you already prepared by following the steps on this page.
 

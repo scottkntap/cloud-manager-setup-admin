@@ -40,7 +40,7 @@ link:task-installing-linux.html[Review the VM requirements].
 
 * For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
 +
-link:reference-networking-cloud-manager.html#rules-for-the-connector-in-azure[Learn more about security group rules for the Connector].
+link:reference-ports-azure.html[Learn more about security group rules for the Connector].
 
 * Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
 +

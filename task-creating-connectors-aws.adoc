@@ -233,6 +233,10 @@ If your organization requires deployment of an HTTP proxy for all outgoing inter
 
 There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the link:concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
+=== IP address limitation
+
+There's a possible conflict with IP addresses in the 172 range. link:reference-limitations.html[Learn more about this limitation].
+
 == Create a Connector
 
 Cloud Manager enables you to create a Connector in AWS directly from its user interface.
@@ -247,7 +251,7 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 
 . On the *Deploying a Connector* page, review the details about what you'll need. You have two options:
 
-.. Click *Continue* to prepare for deployment by using the in-product guide. Each step include information contained on this page of the documentation.
+.. Click *Continue* to prepare for deployment by using the in-product guide. Each step in the in-product guide includes the information that's contained on this page of the documentation.
 
 .. Click *Skip to Deployment* if you already prepared by following the steps on this page.
 
@@ -271,8 +275,6 @@ TIP: If you choose *Assume Role*, you can create the first set of credentials fr
 Make sure that you have the correct key pair to use with the Connector. Without a key pair, you will not be able to access the Connector virtual machine.
 
 * *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
-+
-NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 * *Review*: Review your selections to verify that your set up is correct.
 
