@@ -19,7 +19,26 @@ This page describes how to create a Connector in AWS directly from Cloud Manager
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
-== Set up AWS authentication
+== Quick start
+
+Get started quickly by following these steps, or scroll down to the remaining sections for full details.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up authentication and permissions
+
+[role="quick-margin-para"]
+Some words and a link.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
+
+[role="quick-margin-para"]
+Some words and a link.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create the Connector
+
+[role="quick-margin-para"]
+Some words and a link.
+
+== Set up AWS permissions and authentication
 
 Cloud Manager needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
 
@@ -165,19 +184,49 @@ When you create a Connector, you can provide an AWS access key and secret key fo
 
 The AWS user now has the permissions required to create the Connector from Cloud Manager. You'll need to specify AWS access keys for this user when you're prompted by Cloud Manager.
 
+== Set up networking for the Connector
+
+Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a VPC and subnet for the Connector, you'll need to ensure that the following requirements are met.
+
+=== Connection to target networks
+
+A Connector requires a network connection to the type of working environment that you’re creating and the services that you’re planning to enable.
+
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC in which you launch Cloud Volumes ONTAP.
+
+=== Outbound internet access
+
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+
+=== Proxy server
+
+If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+=== Security group
+
+There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the link:concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
+
 == Create a Connector
 
 Cloud Manager enables you to create a Connector in AWS directly from its user interface.
-
-.What you'll need
-
-* An AWS authentication method: either the ARN of an IAM role that Cloud Manager can assume, or an AWS access key and secret key for an IAM user.
-
-* A VPC, subnet, and keypair in your AWS region of choice.
-
-* If you don't want Cloud Manager to automatically create an IAM role for the Connector, then you'll need to create your own link:reference-permissions-aws.html[using the policy on this page].
-+
-These are the permissions that the Connector needs to manage resources in your public cloud environment. It's a different set of permissions than what you provided to create the Connector instance.
 
 .Steps
 
@@ -207,6 +256,8 @@ TIP: If you choose *Assume Role*, you can create the first set of credentials fr
 ** Choose whether you want to encrypt the Connector's EBS disks. You have the option to use the default encryption key or to use a custom key.
 
 * *Network*: Specify a VPC, subnet, and key pair for the instance, choose whether to enable a public IP address, and optionally specify a proxy configuration.
++
+Make sure that you have the correct key pair to use with the Connector. Without a key pair, you will not be able to access the Connector virtual machine.
 
 * *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
 +
@@ -219,8 +270,6 @@ NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP
 The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
 
 .After you finish
-
-You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].
 
 If you have Amazon S3 buckets in the same AWS account where you created the Connector, you'll see an Amazon S3 working environment appear on the Canvas automatically. link:task-viewing-amazon-s3.html[Learn more about what you can do with this working environment].
 
