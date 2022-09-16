@@ -476,6 +476,14 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 * An Azure subscription.
 
 * A VNet and subnet in your Azure region of choice.
++
+link:reference-networking-cloud-manager.html[Learn more about networking requirements].
+
+* Details about an HTTP proxy, if your organization requires a proxy for all outgoing internet traffic:
+
+** IP address
+** Credentials
+** HTTPS certificate
 
 * If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own link:reference-permissions-azure.html[using the policy on this page].
 +

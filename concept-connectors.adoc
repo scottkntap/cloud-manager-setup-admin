@@ -28,11 +28,13 @@ A Connector is required to use many of the features and services in Cloud Manage
 * Cloud Data Sense
 * Cloud Tiering
 * Cloud Volumes ONTAP
+* E-Series systems
 * Global File Cache
 * Google Cloud Storage discovery
 * Kubernetes clusters
 * Monitoring
 * On-premises ONTAP clusters
+* StorageGRID
 
 A Connector is *_not_* required for the following services:
 
