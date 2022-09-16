@@ -186,7 +186,7 @@ This release of the Connector includes Cloud Volumes ONTAP enhancements. https:/
 
 We reduced the number of endpoints that a Connector needs to contact in order to manage resources and processes within your public cloud environment.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html#outbound-internet-access[View the list of required endpoints].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html[View the list of required endpoints]
 
 === EBS disk encryption for the Connector
 
