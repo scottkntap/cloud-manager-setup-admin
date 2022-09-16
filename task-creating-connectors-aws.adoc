@@ -23,22 +23,31 @@ These steps must be completed by a user who has the Account Admin role. A Worksp
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up authentication and permissions
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up authentication
 
 [role="quick-margin-para"]
-Some words and a link.
+To launch the Connector in AWS, Cloud Manager needs to authenticate with AWS by either assuming an IAM role or by using AWS access keys. With either option, an IAM policy is required.
+
+[role="quick-margin-para"]
+<<Set up AWS authentication,Follow step-by-step instructions>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
 
 [role="quick-margin-para"]
-Some words and a link.
+You'll need a VPC and subnet with outbound internet access to specific endpoints.
+
+[role="quick-margin-para"]
+<<Set up networking,Follow step-by-step instructions>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create the Connector
 
 [role="quick-margin-para"]
-Some words and a link.
+Click the Connector drop-down, select *Add Connector* and follow the prompts.
 
-== Set up AWS permissions and authentication
+[role="quick-margin-para"]
+<<Create a Connector,Follow step-by-step instructions>>.
+
+== Set up AWS authentication
 
 Cloud Manager needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
 
@@ -184,7 +193,7 @@ When you create a Connector, you can provide an AWS access key and secret key fo
 
 The AWS user now has the permissions required to create the Connector from Cloud Manager. You'll need to specify AWS access keys for this user when you're prompted by Cloud Manager.
 
-== Set up networking for the Connector
+== Set up networking
 
 Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a VPC and subnet for the Connector, you'll need to ensure that the following requirements are met.
 
