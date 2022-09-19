@@ -36,8 +36,6 @@ sidebar:
           entries:
             - title: Learn about Connectors
               url: /concept-connectors.html
-            - title: Set up your networking
-              url: /reference-networking-cloud-manager.html
             - title: Create a Connector in AWS
               url: /task-creating-connectors-aws.html
             - title: Create a Connector in Azure
@@ -110,14 +108,26 @@ sidebar:
           url: /concept-my-opportunities.html
     - title: Reference
       entries:
-        - title: Permissions summary
-          url: /reference-permissions.html
-        - title: AWS permissions for the Connector
-          url: /reference-permissions-aws.html
-        - title: Azure permissions for the Connector
-          url: /reference-permissions-azure.html
-        - title: Google Cloud permissions for the Connector
-          url: /reference-permissions-gcp.html
+        - title: Permissions
+          entries:
+            - title: Permissions summary
+              url: /reference-permissions.html
+            - title: AWS permissions for the Connector
+              url: /reference-permissions-aws.html
+            - title: Azure permissions for the Connector
+              url: /reference-permissions-azure.html
+            - title: Google Cloud permissions for the Connector
+              url: /reference-permissions-gcp.html
+        - title: Ports
+          entries:
+            - title: Security group rules in AWS
+              url: /reference-ports-aws.html
+            - title: Security group rules in Azure
+              url: /reference-ports-azure.html
+            - title: Firewall rules in Google Cloud
+              url: /reference-ports-gcp.html
+            - title: Ports for the on-prem Connector
+              url: /reference-ports-on-prem.html
     - title: Knowledge and support
       entries:
         - title: Register for support
@@ -142,8 +152,6 @@ homepage:
       links:
         - title: Learn about Connectors
           url: concept-connectors.html
-        - title: Set up your networking
-          url: reference-networking-cloud-manager.html
         - title: Manage Connectors
           url: task-managing-connectors.html
     - title: NetApp accounts

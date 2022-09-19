@@ -184,7 +184,7 @@ sudo /path/cloud-manager-connector-offline-v3.9.14
 
 .What about software upgrades on hosts that have internet access?
 ****
-The Connector automatically updates its software to the latest version, as long as it has link:reference-networking-cloud-manager.html[outbound internet access] to obtain the software update.
+The Connector automatically updates its software to the latest version, as long as it has outbound internet access to obtain the software update.
 ****
 
 == Remove Connectors from Cloud Manager
