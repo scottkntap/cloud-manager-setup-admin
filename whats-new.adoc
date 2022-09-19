@@ -23,6 +23,8 @@ Learn about what's new with Cloud Manager's administration features: NetApp acco
 * We enhanced the Connector deployment wizard by adding an _in-product guide_ that provides steps to meet the minimum requirements for Connector installation: permissions, authentication, and networking.
 
 * You can now create a NetApp support case directly from Cloud Manager in the *Support Dashboard*.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-get-help.html#netapp-support[Learn how to create a case].
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements.
 +
