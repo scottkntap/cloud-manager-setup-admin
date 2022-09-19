@@ -55,6 +55,7 @@ We updated the documentation by adding the Cloud Manager policies directly insid
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#create-an-iam-policy[Here's an example that shows the AWS IAM role permissions used to create a Connector].
 
 We also created a page that provides links to each of the policies. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html[View the permissions summary for Cloud Manager].
+//end::whats-new[]
 
 == 3 July 2022
 
@@ -91,8 +92,6 @@ https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supp
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements.
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-july-2022[Learn about Cloud Volumes ONTAP enhancements^]
-
-//end::whats-new[]
 
 == 28 June 2022
 
