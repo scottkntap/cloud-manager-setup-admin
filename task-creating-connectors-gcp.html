@@ -461,8 +461,6 @@
 
 
 
-
-
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
@@ -730,11 +728,65 @@
           </a>
           
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Permissions.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Permissions
+          </a>
+          
 
 
 
 
 
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Ports.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Ports
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
 
 
         </li>
@@ -917,13 +969,6 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-connectors.html">
         Learn about Connectors
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Set up your networking"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html">
-        Set up your networking
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create a Connector in AWS"
@@ -1196,33 +1241,79 @@
       <ul>
         <li 
       data-pdf-exists="true" 
+      data-pdf-filename="Permissions"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Permissions</div>
+      </a>
+      <ul>
+        <li 
+      data-pdf-exists="true" 
       data-pdf-filename="Permissions summary"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
         Permissions summary
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="AWS permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Azure permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Google Cloud permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html">
         Google Cloud permissions for the Connector
       </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ports"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Ports</div>
+      </a>
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security group rules in AWS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-aws.html">
+        Security group rules in AWS
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security group rules in Azure"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-azure.html">
+        Security group rules in Azure
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Firewall rules in Google Cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-gcp.html">
+        Firewall rules in Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ports for the on-prem Connector"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-on-prem.html">
+        Ports for the on-prem Connector
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Knowledge and support"
       data-li-level="1" 
@@ -1308,7 +1399,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-01 13:26:56 +0000">09/01/2022</time>
+    <time datetime="2022-09-16 17:21:16 +0000">09/16/2022</time>
     
   
 
@@ -1360,7 +1451,63 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </div>
 </div>
 <div class="sect1">
-<h2 id="set-up-permissions-to-deploy-the-connector">Set up permissions to deploy the Connector</h2>
+<h2 id="quick-start">Quick start</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get started quickly by following these steps, or scroll down to the remaining sections for full details.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="One"></span> Set up permissions</div>
+<p>Ensure that your Google Cloud account has the correct permissions by creating and attaching a custom role.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#set-up-permissions">View the custom role</a>.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Two"></span> Set up a service account</div>
+<p>When you create the Connector VM, you need to associate it with a service account. This service account must have a custom role that has permissions to manage resources in Google Cloud.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#set-up-a-service-account">View the custom role</a>.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Three"></span> Set up networking</div>
+<p>You&#8217;ll need a VPC and subnet with outbound internet access to specific endpoints. If an HTTP proxy is required for outbound internet, then you&#8217;ll need the IP address, credentials, and HTTPS certificate.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#set-up-networking">View networking requirements</a>.</p>
+</div>
+<div class="ulist quick-margin-list">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Four"></span> Enable Google Cloud APIs</div>
+<ul>
+<li>
+<p>Cloud Deployment Manager V2 API</p>
+</li>
+<li>
+<p>Cloud Logging API</p>
+</li>
+<li>
+<p>Cloud Resource Manager API</p>
+</li>
+<li>
+<p>Compute Engine API</p>
+</li>
+<li>
+<p>Identity and Access Management (IAM) API</p>
+</li>
+</ul>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="Five"></span> Create the Connector</div>
+<p>Click the Connector drop-down, select <strong>Add Connector</strong> and follow the prompts.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#create-a-connector">Follow step-by-step instructions</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set-up-permissions">Set up permissions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions.</p>
@@ -1447,7 +1594,7 @@ includedPermissions:
 </div>
 </div>
 <div class="sect1">
-<h2 id="set-up-a-service-account-for-the-connector">Set up a service account for the Connector</h2>
+<h2 id="set-up-a-service-account">Set up a service account</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A service account is required to provide the Connector with the permission that it needs to manage resources in Google Cloud. You&#8217;ll associate this service account with the Connector VM when you create it.</p>
@@ -1576,8 +1723,81 @@ includedPermissions:
 </div>
 </div>
 <div class="sect1">
-<h2 id="shared-vpc-permissions">Shared VPC permissions</h2>
+<h2 id="set-up-networking">Set up networking</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a VPC and subnet for the Connector, you&#8217;ll need to ensure that the following requirements are met.</p>
+</div>
+<div class="sect2">
+<h3 id="connection-to-target-networks">Connection to target networks</h3>
+<div class="paragraph">
+<p>A Connector requires a network connection to the type of working environment that you’re creating and the services that you’re planning to enable.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC in which you launch Cloud Volumes ONTAP.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="outbound-internet-access">Outbound internet access</h3>
+<div class="paragraph">
+<p>The Connector requires outbound internet access to manage resources and processes within your public cloud environment.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Endpoints</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://*.cloudmanager.cloud.netapp.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide SaaS features and services within Cloud Manager.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
+<br>
+https://*.blob.core.windows.net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To upgrade the Connector and its Docker components.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="proxy-server">Proxy server</h3>
+<div class="paragraph">
+<p>If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IP address</p>
+</li>
+<li>
+<p>Credentials</p>
+</li>
+<li>
+<p>HTTPS certificate</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="security-group">Security group</h3>
+<div class="paragraph">
+<p>There&#8217;s no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the <a href="concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="shared-vpc-permissions">Shared VPC permissions</h3>
 <div class="paragraph">
 <p>If you are using a shared VPC to deploy resources into a service project, then the following permissions are required. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.</p>
 </div>
@@ -1720,9 +1940,16 @@ includedPermissions:
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="ip-address-limitation">IP address limitation</h3>
+<div class="paragraph">
+<p>There&#8217;s a possible conflict with IP addresses in the 172 range. <a href="reference-limitations.html">Learn more about this limitation</a>.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
-<h2 id="enabling-google-cloud-apis">Enabling Google Cloud APIs</h2>
+<h2 id="enable-google-cloud-apis">Enable Google Cloud APIs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Several APIs are required to deploy the Connector and Cloud Volumes ONTAP.</p>
@@ -1757,27 +1984,10 @@ includedPermissions:
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-a-connector-in-google-cloud">Creating a Connector in Google Cloud</h2>
+<h2 id="create-a-connector">Create a Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Create a Connector in Google Cloud directly from the Cloud Manager user interface or by using gcloud.</p>
-</div>
-<div class="ulist">
-<div class="title">What you&#8217;ll need</div>
-<ul>
-<li>
-<p>The required permissions for your Google Cloud account, as described in the first section of this page.</p>
-</li>
-<li>
-<p>A Google Cloud project.</p>
-</li>
-<li>
-<p>A service account that has the required permissions to create and manage Cloud Volumes ONTAP, as described in the first section of this page.</p>
-</li>
-<li>
-<p>A VPC and subnet in your Google Cloud region of choice.</p>
-</li>
-</ul>
 </div>
 <div class="exampleblock tabbed-block">
 <div class="content">
@@ -1794,11 +2004,18 @@ includedPermissions:
 </li>
 <li>
 <p>Choose <strong>Google Cloud Platform</strong> as your cloud provider.</p>
-<div class="paragraph">
-<p>Remember that the Connector must have a network connection to the type of working environment that you&#8217;re creating and the services that you&#8217;re planning to enable.</p>
-</div>
-<div class="paragraph">
-<p><a href="reference-networking-cloud-manager.html">Learn more about networking requirements for the Connector</a>.</p>
+</li>
+<li>
+<p>On the <strong>Deploying a Connector</strong> page, review the details about what you&#8217;ll need. You have two options:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <strong>Continue</strong> to prepare for deployment by using the in-product guide. Each step in the in-product guide includes the information that&#8217;s contained on this page of the documentation.</p>
+</li>
+<li>
+<p>Click <strong>Skip to Deployment</strong> if you already prepared by following the steps on this page.</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
@@ -1806,16 +2023,13 @@ includedPermissions:
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Get Ready</strong>: Review what you&#8217;ll need.</p>
-</li>
-<li>
 <p>If you&#8217;re prompted, log in to your Google account, which should have the required permissions to create the virtual machine instance.</p>
 <div class="paragraph">
 <p>The form is owned and hosted by Google. Your credentials are not provided to NetApp.</p>
 </div>
 </li>
 <li>
-<p><strong>Basic Settings</strong>: Enter a name for the virtual machine instance, specify tags, select a project, and then select the service account that has the required permissions (refer to the section above for details).</p>
+<p><strong>Details</strong>: Enter a name for the virtual machine instance, specify tags, select a project, and then select the service account that has the required permissions (refer to the section above for details).</p>
 </li>
 <li>
 <p><strong>Location</strong>: Specify a region, zone, VPC, and subnet for the instance.</p>
@@ -1825,18 +2039,6 @@ includedPermissions:
 </li>
 <li>
 <p><strong>Firewall Policy</strong>: Choose whether to create a new firewall policy or whether to select an existing firewall policy that allows inbound HTTP, HTTPS, and SSH access.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
-</td>
-<td class="content">
-There&#8217;s no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the <a href="concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
-</td>
-</tr>
-</table>
-</div>
 </li>
 <li>
 <p><strong>Review</strong>: Review your selections to verify that your set up is correct.</p>

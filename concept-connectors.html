@@ -465,8 +465,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -730,11 +728,65 @@
           </a>
           
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Permissions.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Permissions
+          </a>
+          
 
 
 
 
 
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Ports.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Ports
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
 
 
         </li>
@@ -917,13 +969,6 @@
       class="  active "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-connectors.html">
         Learn about Connectors
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Set up your networking"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html">
-        Set up your networking
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create a Connector in AWS"
@@ -1196,33 +1241,79 @@
       <ul>
         <li 
       data-pdf-exists="true" 
+      data-pdf-filename="Permissions"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Permissions</div>
+      </a>
+      <ul>
+        <li 
+      data-pdf-exists="true" 
       data-pdf-filename="Permissions summary"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
         Permissions summary
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="AWS permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Azure permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Google Cloud permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html">
         Google Cloud permissions for the Connector
       </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ports"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Ports</div>
+      </a>
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security group rules in AWS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-aws.html">
+        Security group rules in AWS
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security group rules in Azure"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-azure.html">
+        Security group rules in Azure
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Firewall rules in Google Cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-gcp.html">
+        Firewall rules in Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ports for the on-prem Connector"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-on-prem.html">
+        Ports for the on-prem Connector
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Knowledge and support"
       data-li-level="1" 
@@ -1308,7 +1399,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-03 17:42:24 +0000">08/03/2022</time>
+    <time datetime="2022-09-16 17:21:16 +0000">09/16/2022</time>
     
   
 
@@ -1365,6 +1456,9 @@
 <p>Cloud Volumes ONTAP</p>
 </li>
 <li>
+<p>E-Series systems</p>
+</li>
+<li>
 <p>Global File Cache</p>
 </li>
 <li>
@@ -1378,6 +1472,9 @@
 </li>
 <li>
 <p>On-premises ONTAP clusters</p>
+</li>
+<li>
+<p>StorageGRID</p>
 </li>
 </ul>
 </div>
@@ -1585,7 +1682,7 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 <p>We typically update the Connector software each month to introduce new features and to provide stability improvements. While most of the services and features in the Cloud Manager platform are offered through SaaS-based software, a few features and functionalities are dependent on the version of the Connector. That includes Cloud Volumes ONTAP management, on-prem ONTAP cluster management, settings, and help.</p>
 </div>
 <div class="paragraph">
-<p>The Connector automatically updates its software to the latest version, as long as it has <a href="reference-networking-cloud-manager.html">outbound internet access</a> to obtain the software update.</p>
+<p>The Connector automatically updates its software to the latest version, as long as it has outbound internet access to obtain the software update.</p>
 </div>
 </div>
 </div>

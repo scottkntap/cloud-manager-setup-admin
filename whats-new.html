@@ -465,8 +465,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -730,11 +728,65 @@
           </a>
           
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Permissions.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Permissions
+          </a>
+          
 
 
 
 
 
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Ports.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Ports
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
 
 
         </li>
@@ -917,13 +969,6 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-connectors.html">
         Learn about Connectors
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Set up your networking"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html">
-        Set up your networking
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create a Connector in AWS"
@@ -1196,33 +1241,79 @@
       <ul>
         <li 
       data-pdf-exists="true" 
+      data-pdf-filename="Permissions"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Permissions</div>
+      </a>
+      <ul>
+        <li 
+      data-pdf-exists="true" 
       data-pdf-filename="Permissions summary"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions.html">
         Permissions summary
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="AWS permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-aws.html">
         AWS permissions for the Connector
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Azure permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-azure.html">
         Azure permissions for the Connector
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Google Cloud permissions for the Connector"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html">
         Google Cloud permissions for the Connector
       </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ports"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Ports</div>
+      </a>
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security group rules in AWS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-aws.html">
+        Security group rules in AWS
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security group rules in Azure"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-azure.html">
+        Security group rules in Azure
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Firewall rules in Google Cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-gcp.html">
+        Firewall rules in Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ports for the on-prem Connector"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-on-prem.html">
+        Ports for the on-prem Connector
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Knowledge and support"
       data-li-level="1" 
@@ -1308,7 +1399,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-29 11:03:32 +0000">07/29/2022</time>
+    <time datetime="2022-09-16 17:35:02 +0000">09/16/2022</time>
     
   
 
@@ -1340,6 +1431,30 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Learn about what&#8217;s new with Cloud Manager&#8217;s administration features: NetApp accounts, Connectors, cloud provider credentials, and more.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="18-september-2022">18 September 2022</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="connector-3-9-22">Connector 3.9.22</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We enhanced the Connector deployment wizard by adding an <em>in-product guide</em> that provides steps to meet the minimum requirements for Connector installation: permissions, authentication, and networking.</p>
+</li>
+<li>
+<p>You can now create a NetApp support case directly from Cloud Manager in the <strong>Support Dashboard</strong>.</p>
+</li>
+<li>
+<p>This release of the Connector also includes Cloud Volumes ONTAP enhancements.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#18-september-2022" target="_blank" rel="noopener">Learn about Cloud Volumes ONTAP enhancements</a></p>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1648,7 +1763,7 @@ Existing logins that use an email address and password need to keep using that l
 <p>We reduced the number of endpoints that a Connector needs to contact in order to manage resources and processes within your public cloud environment.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html#outbound-internet-access">View the list of required endpoints</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html">View the list of required endpoints</a></p>
 </div>
 </div>
 <div class="sect2">
