@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-create-connectors-gov.html
 keywords: government region, gov, govcloud, connector
-summary: If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by using the manual installation method. You can't deploy the Connector directly from Cloud Manager.
+summary: If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by using the manual installation method. You can't deploy the Connector in a Government region from Cloud Manager's SaaS website.
 ---
 
 = Create a Connector in a Government region
@@ -13,7 +13,7 @@ summary: If you are operating in a Government region, you need to deploy a Conne
 :imagesdir: ./media/
 
 [.lead]
-If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector directly from Cloud Manager.
+If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector in a Government region from Cloud Manager's SaaS website.
 
 * link:task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region[Create a Connector from the AWS Marketplace]
 * link:task-launching-azure-mktp.html[Create a Connector from the Azure Marketplace]

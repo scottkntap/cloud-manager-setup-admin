@@ -13,7 +13,7 @@ summary: It's best to create a Connector directly from Cloud Manager, but you ca
 :imagesdir: ./media/
 
 [.lead]
-For an AWS commercial region, it's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the AWS Marketplace, if you prefer. For AWS Government regions, you can't deploy a Connector directly from Cloud Manager, so the next best option is to do so from the AWS Marketplace.
+For an AWS commercial region, it's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the AWS Marketplace, if you prefer. For AWS Government regions, you can't deploy the Connector in a Government region from Cloud Manager's SaaS website, so the next best option is to do so from the AWS Marketplace.
 
 TIP: You can also download and install the Connector software on an existing Linux host in your network or in the cloud. link:task-installing-linux.html[Learn how to install the Connector on an existing Linux host].
 

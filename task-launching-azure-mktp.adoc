@@ -13,7 +13,7 @@ summary: It's best to create a Connector directly from Cloud Manager, but you ca
 :imagesdir: ./media/
 
 [.lead]
-It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
+For an Azure commercial region, it's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can't deploy the Connector in a Government region from Cloud Manager's SaaS website, so the next best option is to do so from the Azure Marketplace.
 
 TIP: You can also download and install the Connector software on an existing Linux host in your network or in the cloud. link:task-installing-linux.html[Learn how to install the Connector on an existing Linux host].
 
