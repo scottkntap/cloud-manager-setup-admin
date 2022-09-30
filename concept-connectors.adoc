@@ -163,7 +163,7 @@ link:task-managing-connectors.html[Learn how to switch between Connectors].
 
 == The local user interface
 
-While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
+While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access (like a Government region), and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
 
 * link:task-configuring-proxy.html[Setting a proxy server]
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
