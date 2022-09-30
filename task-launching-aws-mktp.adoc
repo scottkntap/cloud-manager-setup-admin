@@ -21,6 +21,10 @@ TIP: You can also download and install the Connector software on an existing Lin
 
 You can launch the Connector instance in an AWS commercial region directly from the AWS Marketplace offering for Cloud Manager.
 
+.Before you get started
+
+The IAM user who creates the Connector must have AWS Marketplace permissions to subscribe and unsubscribe.
+
 .Steps
 
 . Set up permissions in AWS:
@@ -29,9 +33,7 @@ You can launch the Connector instance in an AWS commercial region directly from 
 
 .. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
-. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[Cloud Manager page on the AWS Marketplace^] to deploy Cloud Manager from an AMI.
-+
-The IAM user must have AWS Marketplace permissions to subscribe and unsubscribe.
+. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[Cloud Manager page on the AWS Marketplace^] to deploy Cloud Manager from an AMI:
 
 . On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
 +
@@ -57,8 +59,8 @@ link:task-installing-linux.html[Review the instance requirements].
 
 * *Network settings*: Edit the network settings as needed:
 +
-** Choose the desired VPC and subnet
-** Specify whether the instance should have a public IP address
+** Choose the desired VPC and subnet.
+** Specify whether the instance should have a public IP address.
 ** Specify firewall settings that enable the required connection methods for the Connector instance: SSH, HTTP, and HTTPS.
 
 * *Configure storage*: Keep the default storage options.

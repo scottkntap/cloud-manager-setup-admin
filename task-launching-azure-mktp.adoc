@@ -15,6 +15,8 @@ summary: It's best to create a Connector directly from Cloud Manager, but you ca
 [.lead]
 It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
 
+TIP: You can also download and install the Connector software on an existing Linux host in your network or in the cloud. link:task-installing-linux.html[Learn how to install the Connector on an existing Linux host].
+
 == Creating a Connector in Azure
 
 Deploy the Connector in Azure using the image in the Azure Marketplace and then log in to the Connector to specify your NetApp account.
