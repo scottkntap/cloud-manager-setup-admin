@@ -42,6 +42,8 @@ sidebar:
               url: /task-creating-connectors-azure.html
             - title: Create a Connector in Google Cloud
               url: /task-creating-connectors-gcp.html
+            - title: Create a Connector in a Government region
+              url: /task-create-connectors-gov.html
         - title: Where to go next
           url: /reference-whats-next.html
     - title: Administer Cloud Manager

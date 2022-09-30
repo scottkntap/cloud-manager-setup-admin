@@ -75,11 +75,11 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you mus
 
 A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
 
-For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems with node-based licensing will shut down after losing communication with a Connector for longer than 14 days.
+For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.
 
 == How to create a Connector
 
-A Cloud Manager Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other services listed above. An admin can create a Connector in a number of ways:
+A Cloud Manager Account Admin can create a Connector in a number of ways:
 
 * Directly from Cloud Manager (recommended)
 ** link:task-creating-connectors-aws.html[Create in AWS]
@@ -92,7 +92,7 @@ A Cloud Manager Account Admin needs to create a Connector before a Workspace Adm
 ** link:task-launching-aws-mktp.html[AWS Marketplace]
 ** link:task-launching-azure-mktp.html[Azure Marketplace]
 
-Cloud Manager will prompt you to create a Connector if one is needed to complete an action.
+If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector in a Government region from Cloud Manager's SaaS website.
 
 == Permissions
 
@@ -163,7 +163,7 @@ link:task-managing-connectors.html[Learn how to switch between Connectors].
 
 == The local user interface
 
-While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
+While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access (like a Government region), and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
 
 * link:task-configuring-proxy.html[Setting a proxy server]
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
