@@ -90,7 +90,7 @@ In either case, secure network access by ensuring that security group rules allo
 |===
 
 Outbound networking for a Connector::
-After logging in to Cloud Manager, a Cloud Manager Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. A Connector isn't required for Azure NetApp Files, Cloud Volumes Service, or Cloud Sync, but it is required for all other services and features in Cloud Manager. link:concept-connectors.html[Learn more about Connectors and how they work].
+After logging in to Cloud Manager, a Cloud Manager Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. Note that a Connector is required for most, but not all services and features in Cloud Manager. link:concept-connectors.html[Learn more about Connectors and how they work].
 +
 * The network location where you deploy the Connector must have an outbound internet connection.
 +
