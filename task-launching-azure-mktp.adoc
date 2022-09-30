@@ -65,7 +65,13 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Clo
 
 .Result
 
-The Connector is now installed and set up. You must grant Azure permissions before users can deploy Cloud Volumes ONTAP in Azure.
+The Connector is now installed and set up with your NetApp account.
+
+If the Connector is in an Azure commercial region, open a web browser and go to https://cloudmanager.netapp.com to start using the Connector with Cloud Manager.
+
+If the Connector is in an Azure Government region, you can use Cloud Manager by opening your web browser and connecting to the IP address of the Connector instance: http://_ipaddress_:80
+
+Since the Connector was deployed in a Government region, it's not accessible from https://cloudmanager.netapp.com.
 
 == Granting Azure permissions
 
