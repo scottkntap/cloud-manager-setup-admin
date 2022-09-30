@@ -257,6 +257,8 @@
       </div>
 
       
+      
+      
       <div class="search-property-bar">
         <div id="search-demo-container" class="searchbox n-property-bar__search">
           <div id="react-search" 
@@ -457,6 +459,8 @@
           
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
+
+
 
 
 
@@ -990,6 +994,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html">
         Create a Connector in Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create a Connector in a Government region"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-create-connectors-gov.html">
+        Create a Connector in a Government region
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Where to go next"
@@ -1399,7 +1410,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-16 17:21:16 +0000">09/16/2022</time>
+    <time datetime="2022-09-30 16:44:36 +0000">09/30/2022</time>
     
   
 
@@ -1562,7 +1573,7 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 <p>A Connector should remain running at all times. It&#8217;s important for the continued health and operation of the services that you enable.</p>
 </div>
 <div class="paragraph">
-<p>For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems with node-based licensing will shut down after losing communication with a Connector for longer than 14 days.</p>
+<p>For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.</p>
 </div>
 </div>
 </div>
@@ -1570,7 +1581,7 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 <h2 id="how-to-create-a-connector">How to create a Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A Cloud Manager Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other services listed above. An admin can create a Connector in a number of ways:</p>
+<p>A Cloud Manager Account Admin can create a Connector in a number of ways:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1619,7 +1630,7 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 </ul>
 </div>
 <div class="paragraph">
-<p>Cloud Manager will prompt you to create a Connector if one is needed to complete an action.</p>
+<p>If you are operating in a Government region, you need to deploy a Connector from your cloud provider&#8217;s marketplace or by manually installing the Connector software on an existing Linux host. You can&#8217;t deploy the Connector in a Government region from Cloud Manager&#8217;s SaaS website.</p>
 </div>
 </div>
 </div>
@@ -1770,7 +1781,7 @@ While a Connector isn&#8217;t required to create a working environment, it is re
 <h2 id="the-local-user-interface">The local user interface</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While you should perform almost all tasks from the <a href="https://cloudmanager.netapp.com" target="_blank" rel="noopener">SaaS user interface</a>, a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn&#8217;t have internet access, and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:</p>
+<p>While you should perform almost all tasks from the <a href="https://cloudmanager.netapp.com" target="_blank" rel="noopener">SaaS user interface</a>, a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn&#8217;t have internet access (like a Government region), and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1827,11 +1838,7 @@ While a Connector isn&#8217;t required to create a working environment, it is re
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <span class="n-footer__fine-print">Have feedback for our website?</span>
-              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
-            </li>
-            <li class="n-footer__copyright-link">
-              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+              <a target="_self" href="javascript:netapp_mailto()">Send feedback about this page</a>
             </li>
           </ul>
         </div>

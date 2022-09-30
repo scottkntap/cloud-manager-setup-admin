@@ -257,6 +257,8 @@
       </div>
 
       
+      
+      
       <div class="search-property-bar">
         <div id="search-demo-container" class="searchbox n-property-bar__search">
           <div id="react-search" 
@@ -455,6 +457,8 @@
             Set up a Connector
           </a>
           
+
+
 
 
 
@@ -990,6 +994,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html">
         Create a Connector in Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create a Connector in a Government region"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-create-connectors-gov.html">
+        Create a Connector in a Government region
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Where to go next"
@@ -1399,7 +1410,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-16 17:21:16 +0000">09/16/2022</time>
+    <time datetime="2022-09-30 16:44:36 +0000">09/30/2022</time>
     
   
 
@@ -1428,7 +1439,19 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>It&#8217;s best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.</p>
+<p>For an Azure commercial region, it&#8217;s best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can&#8217;t deploy the Connector in a Government region from Cloud Manager&#8217;s SaaS website, so the next best option is to do so from the Azure Marketplace.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-setup-admin/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+You can also download and install the Connector software on an existing Linux host in your network or in the cloud. <a href="task-installing-linux.html">Learn how to install the Connector on an existing Linux host</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1523,7 +1546,16 @@
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>The Connector is now installed and set up. You must grant Azure permissions before users can deploy Cloud Volumes ONTAP in Azure.</p>
+<p>The Connector is now installed and set up with your NetApp account.</p>
+</div>
+<div class="paragraph">
+<p>If the Connector is in an Azure commercial region, open a web browser and go to <a href="https://cloudmanager.netapp.com" class="bare">https://cloudmanager.netapp.com</a> to start using the Connector with Cloud Manager.</p>
+</div>
+<div class="paragraph">
+<p>If the Connector is in an Azure Government region, you can use Cloud Manager by opening your web browser and connecting to the IP address of the Connector instance: http://<em>ipaddress</em>:80</p>
+</div>
+<div class="paragraph">
+<p>Since the Connector was deployed in a Government region, it&#8217;s not accessible from <a href="https://cloudmanager.netapp.com" class="bare">https://cloudmanager.netapp.com</a>.</p>
 </div>
 </div>
 </div>
@@ -1708,11 +1740,7 @@ Cloud Manager Operator is the default name provided in the Cloud Manager policy.
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <span class="n-footer__fine-print">Have feedback for our website?</span>
-              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
-            </li>
-            <li class="n-footer__copyright-link">
-              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+              <a target="_self" href="javascript:netapp_mailto()">Send feedback about this page</a>
             </li>
           </ul>
         </div>
