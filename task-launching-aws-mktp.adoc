@@ -73,7 +73,7 @@ AWS launches the software with the specified settings. The Connector instance an
 
 . Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
 +
-http://_ipaddress_:80
+http://_ipaddress_
 
 . After you log in, set up the Connector:
 .. Specify the NetApp account to associate with the Connector.
@@ -138,7 +138,7 @@ AWS launches the software with the specified settings. The Connector instance an
 
 . Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
 +
-http://_ipaddress_:80
+http://_ipaddress_
 
 . After you log in, set up the Connector:
 .. Specify the NetApp account to associate with the Connector.
@@ -152,7 +152,7 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Con
 
 The Connector is now installed and set up with your NetApp account.
 
-Any time that you want to use Cloud Manager, open your web browser and connect to the IP address of the Connector instance: http://_ipaddress_:80
+Any time that you want to use Cloud Manager, open your web browser and connect to the IP address of the Connector instance: http://_ipaddress_
 
 Since the Connector was deployed in a Government region, it's not accessible from https://cloudmanager.netapp.com.
 
