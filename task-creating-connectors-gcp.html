@@ -1410,7 +1410,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-03 18:04:50 +0000">10/03/2022</time>
+    <time datetime="2022-10-03 20:11:10 +0000">10/03/2022</time>
     
   
 
@@ -1467,29 +1467,32 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 <div class="paragraph">
 <p>Get started quickly by following these steps, or scroll down to the remaining sections for full details.</p>
 </div>
-<div class="paragraph quick-margin-para">
+<div class="ulist quick-margin-list">
 <div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="One"></span> Set up permissions</div>
+<ul>
+<li>
 <p>Ensure that your Google Cloud account has the correct permissions by creating and attaching a custom role.</p>
+<div class="paragraph">
+<p><a href="#set-up-permissions-to-deploy-the-connector">View the custom role</a>.</p>
 </div>
-<div class="paragraph quick-margin-para">
-<p><a href="#set-up-permissions">View the custom role</a>.</p>
-</div>
-<div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Two"></span> Set up a service account</div>
+</li>
+<li>
 <p>When you create the Connector VM, you need to associate it with a service account. This service account must have a custom role that has permissions to manage resources in Google Cloud.</p>
+<div class="paragraph">
+<p><a href="#set-up-a-service-account-for-the-connector">View the custom role</a>.</p>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph quick-margin-para">
-<p><a href="#set-up-a-service-account">View the custom role</a>.</p>
-</div>
-<div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Three"></span> Set up networking</div>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Two"></span> Set up networking</div>
 <p>You&#8217;ll need a VPC and subnet with outbound internet access to specific endpoints. If an HTTP proxy is required for outbound internet, then you&#8217;ll need the IP address, credentials, and HTTPS certificate.</p>
 </div>
 <div class="paragraph quick-margin-para">
 <p><a href="#set-up-networking">View networking requirements</a>.</p>
 </div>
 <div class="ulist quick-margin-list">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Four"></span> Enable Google Cloud APIs</div>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Three"></span> Enable Google Cloud APIs</div>
 <ul>
 <li>
 <p>Cloud Deployment Manager V2 API</p>
@@ -1509,7 +1512,7 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 </ul>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="Five"></span> Create the Connector</div>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Four"></span> Create the Connector</div>
 <p>Click the Connector drop-down, select <strong>Add Connector</strong> and follow the prompts.</p>
 </div>
 <div class="paragraph quick-margin-para">
@@ -1520,6 +1523,24 @@ When you create your first Cloud Volumes ONTAP working environment, Cloud Manage
 <div class="sect1">
 <h2 id="set-up-permissions">Set up permissions</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Permissions are required for the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user who will deploy the Connector VM</p>
+</li>
+<li>
+<p>A service account that you need to attach to the Connector VM during deployment</p>
+</li>
+<li>
+<p>Shared VPC permissions, if you are using a shared VPC to deploy resources into a service project</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="set-up-permissions-to-deploy-the-connector">Set up permissions to deploy the Connector</h3>
 <div class="paragraph">
 <p>Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions.</p>
 </div>
@@ -1603,10 +1624,8 @@ includedPermissions:
 <p>The Google Cloud user now has the permissions required to create the Connector.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="set-up-a-service-account">Set up a service account</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="set-up-a-service-account-for-the-connector">Set up a service account for the Connector</h3>
 <div class="paragraph">
 <p>A service account is required to provide the Connector with the permission that it needs to manage resources in Google Cloud. You&#8217;ll associate this service account with the Connector VM when you create it.</p>
 </div>
@@ -1732,83 +1751,8 @@ includedPermissions:
 <p>The service account for the Connector VM is set up.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="set-up-networking">Set up networking</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a VPC and subnet for the Connector, you&#8217;ll need to ensure that the following requirements are met.</p>
-</div>
 <div class="sect2">
-<h3 id="connection-to-target-networks">Connection to target networks</h3>
-<div class="paragraph">
-<p>A Connector requires a network connection to the type of working environment that you’re creating and the services that you’re planning to enable.</p>
-</div>
-<div class="paragraph">
-<p>For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC in which you launch Cloud Volumes ONTAP.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="outbound-internet-access">Outbound internet access</h3>
-<div class="paragraph">
-<p>The Connector requires outbound internet access to manage resources and processes within your public cloud environment.</p>
-</div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Endpoints</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://*.cloudmanager.cloud.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To provide SaaS features and services within Cloud Manager.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
-<br>
-https://*.blob.core.windows.net</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To upgrade the Connector and its Docker components.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="proxy-server">Proxy server</h3>
-<div class="paragraph">
-<p>If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>IP address</p>
-</li>
-<li>
-<p>Credentials</p>
-</li>
-<li>
-<p>HTTPS certificate</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="security-group">Security group</h3>
-<div class="paragraph">
-<p>There&#8217;s no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the <a href="concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="shared-vpc-permissions">Shared VPC permissions</h3>
+<h3 id="set-up-shared-vpc-permissions">Set up shared VPC permissions</h3>
 <div class="paragraph">
 <p>If you are using a shared VPC to deploy resources into a service project, then the following permissions are required. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.</p>
 </div>
@@ -1859,7 +1803,7 @@ https://*.blob.core.windows.net</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="task-creating-connectors-gcp.html#set-up-permissions-for-the-connector">The permissions found in this section above</a></p>
+<p><a href="task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector">The permissions found in this section above</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -1949,6 +1893,82 @@ https://*.blob.core.windows.net</p></td>
 <p>For data tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project level. Currently if you assign serviceAccount.user at the project level, the permissions don&#8217;t show when you query the service account with getIAMPolicy.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set-up-networking">Set up networking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a VPC and subnet for the Connector, you&#8217;ll need to ensure that the following requirements are met.</p>
+</div>
+<div class="sect2">
+<h3 id="connection-to-target-networks">Connection to target networks</h3>
+<div class="paragraph">
+<p>A Connector requires a network connection to the type of working environment that you’re creating and the services that you’re planning to enable.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC in which you launch Cloud Volumes ONTAP.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="outbound-internet-access">Outbound internet access</h3>
+<div class="paragraph">
+<p>The Connector requires outbound internet access to manage resources and processes within your public cloud environment.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Endpoints</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://*.cloudmanager.cloud.netapp.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide SaaS features and services within Cloud Manager.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
+<br>
+https://*.blob.core.windows.net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To upgrade the Connector and its Docker components.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="proxy-server">Proxy server</h3>
+<div class="paragraph">
+<p>If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IP address</p>
+</li>
+<li>
+<p>Credentials</p>
+</li>
+<li>
+<p>HTTPS certificate</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="security-group">Security group</h3>
+<div class="paragraph">
+<p>There&#8217;s no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the <a href="concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.</p>
 </div>
 </div>
 <div class="sect2">
