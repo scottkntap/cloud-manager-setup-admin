@@ -480,7 +480,7 @@ Running the command deploys the Connector using the NetApp golden image. The Con
 
 . Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
 +
-http://_ipaddress_
+https://_ipaddress_
 
 . After you log in, set up the Connector:
 
