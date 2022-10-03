@@ -27,21 +27,16 @@ Get started quickly by following these steps, or scroll down to the remaining se
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up permissions
 
-[role="quick-margin-para"]
-Ensure that your Google Cloud account has the correct permissions by creating and attaching a custom role.
-
-[role="quick-margin-para"]
+[role="quick-margin-list"]
+* Ensure that your Google Cloud account has the correct permissions by creating and attaching a custom role.
++
 <<Set up permissions,View the custom role>>.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up a service account
-
-[role="quick-margin-para"]
-When you create the Connector VM, you need to associate it with a service account. This service account must have a custom role that has permissions to manage resources in Google Cloud.
-
-[role="quick-margin-para"]
+* When you create the Connector VM, you need to associate it with a service account. This service account must have a custom role that has permissions to manage resources in Google Cloud.
++
 <<Set up a service account,View the custom role>>.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up networking
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
 
 [role="quick-margin-para"]
 You'll need a VPC and subnet with outbound internet access to specific endpoints. If an HTTP proxy is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
@@ -49,7 +44,7 @@ You'll need a VPC and subnet with outbound internet access to specific endpoints
 [role="quick-margin-para"]
 <<Set up networking,View networking requirements>>.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Enable Google Cloud APIs
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable Google Cloud APIs
 
 [role="quick-margin-list"]
 * Cloud Deployment Manager V2 API
@@ -58,7 +53,7 @@ You'll need a VPC and subnet with outbound internet access to specific endpoints
 * Compute Engine API
 * Identity and Access Management (IAM) API
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create the Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create the Connector
 
 [role="quick-margin-para"]
 Click the Connector drop-down, select *Add Connector* and follow the prompts.
