@@ -66,8 +66,15 @@ Click the Connector drop-down, select *Add Connector* and follow the prompts.
 [role="quick-margin-para"]
 <<Create a Connector,Follow step-by-step instructions>>.
 
-
 == Set up permissions
+
+Permissions are required for the following:
+
+* The user who will deploy the Connector VM
+* A service account that you need to attach to the Connector VM during deployment
+* Shared VPC permissions, if you are using a shared VPC to deploy resources into a service project
+
+=== Set up permissions to deploy the Connector
 
 Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions.
 
@@ -143,7 +150,7 @@ includedPermissions:
 
 The Google Cloud user now has the permissions required to create the Connector.
 
-== Set up a service account
+=== Set up a service account for the Connector
 
 A service account is required to provide the Connector with the permission that it needs to manage resources in Google Cloud. You'll associate this service account with the Connector VM when you create it.
 
@@ -259,6 +266,59 @@ includedPermissions:
 
 The service account for the Connector VM is set up.
 
+=== Set up shared VPC permissions
+
+If you are using a shared VPC to deploy resources into a service project, then the following permissions are required. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
+
+[cols="10,10,10,20,20,30",width=100%,options="header"]
+|===
+
+| Identity
+| Creator
+| Hosted in
+| Service project permissions
+| Host project permissions
+| Purpose
+
+| Google account used to deploy the Connector | Custom | Service Project
+a| * link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector[The permissions found in this section above]
+a| * compute.networkUser
+| Deploying the Connector in the service project
+
+| Connector service account | Custom | Service project a|
+* link:task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector[The permissions found in this section above]
+a|
+* compute.networkUser
+* deploymentmanager.editor
+| Deploying and maintaining Cloud Volumes ONTAP and services in the service project
+
+| Cloud Volumes ONTAP service account | Custom | Service project a|
+* storage.admin
+* member: Cloud Manager service account as serviceAccount.user
+| N/A | (Optional) For data tiering and Cloud Backup
+
+| Google APIs service agent | Google Cloud | Service project a|
+* (Default) Editor
+a|
+* compute.networkUser
+| Interacts with Google Cloud APIs on behalf of deployment. Allows Cloud Manager to use the shared network.
+
+| Google Compute Engine default service account | Google Cloud | Service project a|
+* (Default) Editor
+a|
+* compute.networkUser
+| Deploys Google Cloud instances and compute infrastructure on behalf of deployment. Allows Cloud Manager to use the shared network.
+
+|===
+
+Notes:
+
+. deploymentmanager.editor is only required at the host project if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you. Cloud Manager will create a deployment in the host project which contains the VPC0 firewall rule if no rule is specified.
+
+. firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you. These permissions reside in the Cloud Manager service account .yaml file. If you are deploying an HA pair using a shared VPC, these permissions will be used to create the firewall rules for VPC1, 2 and 3. For all other deployments, these permissions will also be used to create rules for VPC0.
+
+. For data tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project level. Currently if you assign serviceAccount.user at the project level, the permissions don't show when you query the service account with getIAMPolicy.
+
 == Set up networking
 
 Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a VPC and subnet for the Connector, you'll need to ensure that the following requirements are met.
@@ -298,59 +358,6 @@ If your organization requires deployment of an HTTP proxy for all outgoing inter
 === Security group
 
 There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the link:concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
-
-=== Shared VPC permissions
-
-If you are using a shared VPC to deploy resources into a service project, then the following permissions are required. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
-
-[cols="10,10,10,20,20,30",width=100%,options="header"]
-|===
-
-| Identity
-| Creator
-| Hosted in
-| Service project permissions
-| Host project permissions
-| Purpose
-
-| Google account used to deploy the Connector | Custom | Service Project
-a| * link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector[The permissions found in this section above]
-a| * compute.networkUser
-| Deploying the Connector in the service project
-
-| Connector service account | Custom | Service project a|
-* link:task-creating-connectors-gcp.html#set-up-permissions-for-the-connector[The permissions found in this section above]
-a|
-* compute.networkUser
-* deploymentmanager.editor
-| Deploying and maintaining Cloud Volumes ONTAP and services in the service project
-
-| Cloud Volumes ONTAP service account | Custom | Service project a|
-* storage.admin
-* member: Cloud Manager service account as serviceAccount.user
-| N/A | (Optional) For data tiering and Cloud Backup
-
-| Google APIs service agent | Google Cloud | Service project a|
-* (Default) Editor
-a|
-* compute.networkUser
-| Interacts with Google Cloud APIs on behalf of deployment. Allows Cloud Manager to use the shared network.
-
-| Google Compute Engine default service account | Google Cloud | Service project a|
-* (Default) Editor
-a|
-* compute.networkUser
-| Deploys Google Cloud instances and compute infrastructure on behalf of deployment. Allows Cloud Manager to use the shared network.
-
-|===
-
-Notes:
-
-. deploymentmanager.editor is only required at the host project if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you. Cloud Manager will create a deployment in the host project which contains the VPC0 firewall rule if no rule is specified.
-
-. firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you. These permissions reside in the Cloud Manager service account .yaml file. If you are deploying an HA pair using a shared VPC, these permissions will be used to create the firewall rules for VPC1, 2 and 3. For all other deployments, these permissions will also be used to create rules for VPC0.
-
-. For data tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project level. Currently if you assign serviceAccount.user at the project level, the permissions don't show when you query the service account with getIAMPolicy.
 
 === IP address limitation
 
