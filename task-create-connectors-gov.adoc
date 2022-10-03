@@ -24,6 +24,6 @@ Use one of the following links to view instructions for creating a Connector:
 +
 For manual installations on your own Linux host, you must use the "online" installer to install the Connector on a host that has internet access. A separate "offline" installer is available for Cloud Manager, but it's only supported with on-prem sites that don't have internet access. It's not supported with Government regions.
 
-After you deploy the Connector, you can access Cloud Manager by opening your web browser and connecting to the IP address of the Connector instance: http://_ipaddress_
+After you deploy the Connector, you can access Cloud Manager by opening your web browser and connecting to the IP address of the Connector instance: https://_ipaddress_
 
 Since the Connector was deployed in a Government region, it's not accessible from https://cloudmanager.netapp.com.
