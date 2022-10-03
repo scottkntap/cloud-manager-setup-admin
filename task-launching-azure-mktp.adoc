@@ -55,7 +55,7 @@ Azure deploys the virtual machine with the specified settings. The virtual machi
 
 . Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
 +
-http://_ipaddress_:80
+http://_ipaddress_
 
 . After you log in, set up the Connector:
 .. Specify the NetApp account to associate with the Connector.
@@ -71,7 +71,7 @@ The Connector is now installed and set up with your NetApp account.
 
 If the Connector is in an Azure commercial region, open a web browser and go to https://cloudmanager.netapp.com to start using the Connector with Cloud Manager.
 
-If the Connector is in an Azure Government region, you can use Cloud Manager by opening your web browser and connecting to the IP address of the Connector instance: http://_ipaddress_:80
+If the Connector is in an Azure Government region, you can use Cloud Manager by opening your web browser and connecting to the IP address of the Connector instance: http://_ipaddress_
 
 Since the Connector was deployed in a Government region, it's not accessible from https://cloudmanager.netapp.com.
 
