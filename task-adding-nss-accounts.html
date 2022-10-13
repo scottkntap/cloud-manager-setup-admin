@@ -1410,7 +1410,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-23 18:45:31 +0000">03/23/2022</time>
+    <time datetime="2022-10-13 18:46:20 +0000">10/13/2022</time>
     
   
 
@@ -1469,18 +1469,25 @@
 <h2 id="add-an-nss-account">Add an NSS account</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Support Dashboard enables you to add and manage all of your NetApp Support Site accounts from a single location.</p>
+<p>The Support Dashboard enables you to add and manage your NetApp Support Site accounts for use with Cloud Manager.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have a customer-level account, you can add one or more NSS accounts.</p>
+</li>
+<li>
+<p>If you have a partner or reseller account, you can add one or more NSS accounts, but they can’t be added alongside customer-level accounts.</p>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>If you don&#8217;t have a NetApp Support Site account yet, <a href="https://register.netapp.com/register/start" target="_blank" rel="noopener">register for one</a>.</p>
-</li>
-<li>
 <p>In the upper right of the Cloud Manager console, click the Help icon, and select <strong>Support</strong>.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-help-support.png" alt="A screenshot of the Help menu where Support is the first option listed"></span></p>
+<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-help-support.png" alt="A screenshot of the Help menu where Support is the first option listed"></span></p>
 </div>
 </li>
 <li>
@@ -1495,10 +1502,10 @@
 <li>
 <p>At the login page, provide your NetApp Support Site registered email address and password to perform the authentication process.</p>
 <div class="paragraph">
-<p>This action enables Cloud Manager to use your NSS account.</p>
+<p>These actions enable Cloud Manager to use your NSS account for things like license downloads, software upgrade verification, and future support registrations.</p>
 </div>
 <div class="paragraph">
-<p>Note the following requirements for the account:</p>
+<p>Note the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1506,17 +1513,10 @@
 <p>The account must be a customer-level account (not a guest or temp account).</p>
 </li>
 <li>
-<p>If you plan to deploy a node-based BYOL system:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The account must be authorized to access the serial numbers of the BYOL systems.</p>
+<p>Upon successful login, NetApp will store the NSS user name. This is a system generated ID that maps to your email. On the <strong>NSS Management</strong> page, you can display your email from the <span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png" alt="An icon of three horizontal dots"></span> menu.</p>
 </li>
 <li>
-<p>If you purchased a secure BYOL subscription, then a secure NSS account is required.</p>
-</li>
-</ul>
-</div>
+<p>If you ever need to refresh your login credential tokens, there is also an <strong>Update Credentials</strong> option in the <span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png" alt="An icon of three horizontal dots"></span> menu. Using this option prompts you to log in again.</p>
 </li>
 </ul>
 </div>
