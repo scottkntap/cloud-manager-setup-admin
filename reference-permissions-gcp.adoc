@@ -313,13 +313,21 @@ includedPermissions:
 
 |
 - compute.addresses.list
+
+| To retrieve the addresses in a region when deploying an HA pair.
+
+|
 - compute.backendServices.create
-- compute.networks.updatePolicy
 - compute.regionBackendServices.create
 - compute.regionBackendServices.get
 - compute.regionBackendServices.list
 
-| To deploy HA pairs.
+| To configure a backend service for distributing traffic in an HA pair.
+
+|
+- compute.networks.updatePolicy
+
+| To apply firewall rules on the VPCs and subnets for an HA pair.
 
 |
 - compute.subnetworks.use
