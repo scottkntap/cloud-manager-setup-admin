@@ -33,15 +33,17 @@ Providing your NSS account is required to activate support for your system and t
 
 == Add an NSS account
 
-The Support Dashboard enables you to add and manage all of your NetApp Support Site accounts from a single location.
+The Support Dashboard enables you to add and manage your NetApp Support Site accounts for use with Cloud Manager.
+
+*	If you have a customer-level account, you can add one or more NSS accounts.
+
+*	If you have a partner or reseller account, you can add one or more NSS accounts, but they can’t be added alongside customer-level accounts.
 
 .Steps
 
-. If you don't have a NetApp Support Site account yet, https://register.netapp.com/register/start[register for one^].
-
 . In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
 +
-image:screenshot-help-support.png[A screenshot of the Help menu where Support is the first option listed]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-help-support.png[A screenshot of the Help menu where Support is the first option listed]
 
 . Click *NSS Management > Add NSS Account*.
 
@@ -51,14 +53,15 @@ NetApp uses Microsoft Azure Active Directory as the identity provider for authen
 
 . At the login page, provide your NetApp Support Site registered email address and password to perform the authentication process.
 +
-This action enables Cloud Manager to use your NSS account.
+These actions enable Cloud Manager to use your NSS account for things like license downloads, software upgrade verification, and future support registrations.
 +
-Note the following requirements for the account:
+Note the following:
 +
-* The account must be a customer-level account (not a guest or temp account).
-* If you plan to deploy a node-based BYOL system:
-** The account must be authorized to access the serial numbers of the BYOL systems.
-** If you purchased a secure BYOL subscription, then a secure NSS account is required.
+*	The account must be a customer-level account (not a guest or temp account).
+
+*	Upon successful login, NetApp will store the NSS user name. This is a system generated ID that maps to your email. On the *NSS Management* page, you can display your email from the image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png[An icon of three horizontal dots] menu.
+
+*	If you ever need to refresh your login credential tokens, there is also an *Update Credentials* option in the image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png[An icon of three horizontal dots] menu. Using this option prompts you to log in again.
 
 .What's next?
 
