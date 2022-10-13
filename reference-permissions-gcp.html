@@ -1410,7 +1410,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-17 18:38:41 +0000">07/17/2022</time>
+    <time datetime="2022-10-13 14:00:54 +0000">10/13/2022</time>
     
   
 
@@ -1722,13 +1722,19 @@ includedPermissions:
 <td class="tableblock halign-left valign-top"><p class="tableblock">To set a service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">- compute.addresses.list<br>
-- compute.backendServices.create<br>
-- compute.networks.updatePolicy<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- compute.addresses.list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To retrieve the addresses in a region when deploying an HA pair.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- compute.backendServices.create<br>
 - compute.regionBackendServices.create<br>
 - compute.regionBackendServices.get<br>
 - compute.regionBackendServices.list</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To deploy HA pairs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To configure a backend service for distributing traffic in an HA pair.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- compute.networks.updatePolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To apply firewall rules on the VPCs and subnets for an HA pair.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">- compute.subnetworks.use<br>
