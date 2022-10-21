@@ -143,6 +143,17 @@
               $("#mysidebar").navgoco('toggle', true);
           });
 
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/us-en/cloud-manager-setup-admin"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
       });
 
   </script>
@@ -841,7 +852,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Release notes</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="What's new"
@@ -864,7 +875,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Learn about Cloud Manager"
@@ -901,7 +912,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Set up a NetApp account</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Learn about NetApp accounts"
@@ -924,7 +935,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Set up a Connector</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Learn about Connectors"
@@ -975,7 +986,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Administer Cloud Manager</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="NetApp accounts"
@@ -984,7 +995,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> NetApp accounts</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Manage your account"
@@ -1014,7 +1025,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Connectors</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Advanced deployment"
@@ -1023,7 +1034,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Advanced deployment</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create from the AWS Marketplace"
@@ -1095,7 +1106,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Discovered cloud storage</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="View your Amazon S3 buckets"
@@ -1125,7 +1136,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> AWS credentials</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -1148,7 +1159,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Azure credentials</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -1171,7 +1182,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Google Cloud credentials</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -1208,7 +1219,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Reference</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Permissions"
@@ -1217,7 +1228,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Permissions</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Permissions summary"
@@ -1254,7 +1265,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Ports</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Security group rules in AWS"
@@ -1291,7 +1302,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Register for support"
@@ -1324,6 +1335,7 @@
 </script>
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
 
 
   </div>
