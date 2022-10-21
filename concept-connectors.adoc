@@ -75,7 +75,9 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you mus
 
 A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
 
-For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.
+For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems and capacity-based BYOL systems shut down after losing communication with a Connector for longer than 14 days. This happens because the Connector refreshes licensing on the system each day.
+
+NOTE: If your Cloud Volumes ONTAP system has a node-based BYOL license, the system remains running after 14 days because the license is installed on the Cloud Volumes ONTAP system.
 
 == How to create a Connector
 

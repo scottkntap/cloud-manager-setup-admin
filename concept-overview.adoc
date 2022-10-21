@@ -67,10 +67,6 @@ When you log in to Cloud Manager for the first time, you're prompted to create a
 
 In most cases, a Cloud Manager Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
-
-For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.
-
 link:concept-connectors.html[Learn more about when Connectors are required and how they work].
 
 == SOC 2 Type 2 certification
