@@ -28,7 +28,7 @@ The Connector is not supported on a host that is shared with other applications.
 
 CPU:: 4 cores or 4 vCPUs
 
-RAM:: 16 GB
+RAM:: 14 GB
 
 AWS EC2 instance type::
 An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.
