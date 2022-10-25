@@ -90,7 +90,11 @@ For example, if you want to see only "Error" and "Warning" notifications for Clo
 
 You can send specific types of notifications by email so you can be informed of important system activity even when you're not logged into Cloud Manager. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
 
-*Note:* Sending email notifications is not supported when the Connector is installed in a site without internet access.
+[Note]
+====
+* At this time, only Cloud Sync is sending notifications by email. Additional services will be added in future releases.
+* Sending email notifications is not supported when the Connector is installed in a site without internet access.
+====
 
 By default, Cloud Manager Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
 
