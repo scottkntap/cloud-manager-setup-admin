@@ -45,11 +45,11 @@ If a Workspace Admin needs access to this workspace, then you'll need to associa
 
 == Add users
 
-Associate Cloud Central users with the NetApp account so those users can create and manage working environments in BlueXP.
+Associate users with your NetApp account so those users can create and manage working environments in BlueXP.
 
 .Steps
 
-. If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up.
+. If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp BlueXP website^] and sign up.
 
 . From the top of https://cloudmanager.netapp.com[BlueXP^], click the *Account* drop-down and click *Manage Account*.
 +
@@ -72,7 +72,7 @@ image:screenshot_associate_user.gif[A screenshot that shows how to associate a u
 
 .Result
 
-The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access BlueXP.
+The user should receive an email from NetApp BlueXP website titled "Account Association." The email includes the information needed to access BlueXP.
 
 == Associate Workspace Admins with workspaces
 

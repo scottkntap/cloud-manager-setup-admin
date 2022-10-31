@@ -13,11 +13,13 @@ summary: Provide the credentials for your NetApp Support Site (NSS) accounts to 
 :imagesdir: ./media/
 
 [.lead]
-Provide the credentials for your NetApp Support Site (NSS) accounts to enable key workflows for Cloud Volumes ONTAP and to enable predictive analytics and proactive support through Active IQ.
+Provide the credentials for your NetApp Support Site (NSS) accounts to register for support, enable key workflows for Cloud Volumes ONTAP, and more.
 
 == Overview
 
 Adding your NetApp Support Site account to BlueXP is required to enable the following tasks:
+
+* To register for support
 
 * To deploy Cloud Volumes ONTAP when you bring your own license (BYOL)
 +
@@ -29,15 +31,43 @@ Providing your NSS account is required to activate support for your system and t
 
 * To upgrade Cloud Volumes ONTAP software to the latest release
 
-* To use Active IQ Digital Advisor from within BlueXP
+You'll also need to enter your NSS credentials to use Digital Advisor (formerly Active IQ) from within BlueXP. These credentials are associated directly with your user account and are for use with Digital Advisor only. Review more details in the section that follows.
+
+== Manage an NSS account associated with Digital Advisor
+
+When you access Digital Advisor in BlueXP, you're prompted to log in to Digital Advisor by entering your NSS credentials. After you enter your NSS credentials, you'll see this NSS account listed at the top of the NSS Management page. You can then manage those credentials as needed.
+
+Note the following about this NSS account:
+
+* The account is managed at the user level, which means it isn't viewable by other users who log in.
+* The account can't be used with any other BlueXP feature: not with Cloud Volumes ONTAP creation, licensing, or support.
+* There can be only one NSS account associated with Digital Advisor, per user.
+
+.Steps
+
+. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-help-support.png[A screenshot of the Help menu where Support is the first option listed]
+
+. Click *NSS Management*.
+
+. Under *Your NSS Credentials*, click *Action* and choose any of the following options:
+
+* *Associate NSS user*: Add credentials for a NetApp Support Site account so that you can access Digital Advisor in BlueXP.
+* *Update existing credentials*: Update the credentials for your NetApp Support Site account.
+* *Delete*: Remove the account associated with Digital Advisor.
+
+.Result
+
+BlueXP updates the NSS account associated with Digital Advisor.
 
 == Add an NSS account
 
-The Support Dashboard enables you to add and manage your NetApp Support Site accounts for use with BlueXP.
+The Support Dashboard enables you to add and manage your NetApp Support Site accounts for use with BlueXP at the NetApp account level.
 
-*	If you have a customer-level account, you can add one or more NSS accounts.
+* If you have a customer-level account, you can add one or more NSS accounts.
 
-*	If you have a partner or reseller account, you can add one or more NSS accounts, but they can’t be added alongside customer-level accounts.
+* If you have a partner or reseller account, you can add one or more NSS accounts, but they can’t be added alongside customer-level accounts.
 
 .Steps
 
@@ -65,7 +95,7 @@ Note the following:
 
 .What's next?
 
-Users can now select the account when creating new Cloud Volumes ONTAP systems, when registering existing Cloud Volumes ONTAP systems, and when viewing data in Active IQ.
+Users can now select the account when creating new Cloud Volumes ONTAP systems, when registering existing Cloud Volumes ONTAP systems, and when registering for support.
 
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure^]
@@ -102,7 +132,10 @@ After the process is complete, the account that you updated should now be listed
 
 == Update NSS credentials
 
-Whenever you change the credentials for your NSS account, you'll need to update them in BlueXP.
+You'll need to update the credentials for your NSS accounts in BlueXP when either of the following happens:
+
+* You change the credentials for the account
+* The refresh token associated with your account expires after 3 months
 
 .Steps
 

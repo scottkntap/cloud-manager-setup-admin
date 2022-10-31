@@ -23,11 +23,11 @@ You can log in to BlueXP using one of the following options:
 
 * Your existing NetApp Support Site (NSS) credentials
 +
-When you use this option, your NetApp Support Site (NSS) credentials are not added to BlueXP in the Support Dashboard. Adding your NSS credentials to BlueXP is required to enable key workflows for Cloud Volumes ONTAP and to enable predictive analytics and proactive support through Active IQ. link:task-adding-nss-accounts.html[Learn how to add your NSS credentials to BlueXP].
+When you use this option, your NetApp Support Site (NSS) credentials are not added to BlueXP in the Support Dashboard. Adding your NSS credentials to BlueXP is required to enable key workflows for Cloud Volumes ONTAP. link:task-adding-nss-accounts.html[Learn how to add your NSS credentials to BlueXP].
 
 * A NetApp cloud login using your email address and a password
 +
-This option supports federated connections. You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Cloud Central Help Center^] and then click *Cloud Central sign-in options*.
+This option supports federated connections. You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then click *sign-in options*.
 
 Each time that you log in, you'll need to use the same option that you chose when you logged in for the first time.
 

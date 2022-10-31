@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-netapp-accounts.html
-keywords: accounts, workspaces, Connector, users, cloud central, admin, Account Admin, Workspace Admin, account settings, workspaces, users, members, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces
+keywords: accounts, workspaces, Connector, users, BlueXP website, admin, Account Admin, Workspace Admin, account settings, workspaces, users, members, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces
 summary: A NetApp account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within BlueXP.
 ---
 
@@ -37,7 +37,7 @@ The Overview page shows the Account Name and the Account ID. You may need to pro
 
 == Members
 
-The members are NetApp Cloud Central users that you associate with your NetApp account. Associating a user with an account and one or more workspaces in that account enables those users to create and manage working environments in BlueXP.
+The members are BlueXP users that you associate with your NetApp account. Associating a user with an account and one or more workspaces in that account enables those users to create and manage working environments in BlueXP.
 
 When you associate a user, you assign them a role:
 
@@ -72,7 +72,7 @@ link:concept-connectors.html[Learn more about Connectors].
 
 These are the NetApp subscriptions associated with the selected account.
 
-When you subscribe to BlueXP from a cloud provider's marketplace, you're redirected to Cloud Central where you need to save your subscription and associate it with specific accounts.
+When you subscribe to BlueXP from a cloud provider's marketplace, you're redirected to the BlueXP website where you need to save your subscription and associate it with specific accounts.
 
 After you've subscribed, each subscription is available from the Manage Account widget. You'll only see the subscriptions that are associated with the account that you're currently viewing.
 

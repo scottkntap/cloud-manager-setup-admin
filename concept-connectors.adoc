@@ -38,7 +38,7 @@ A Connector is required to use many of the features and services in BlueXP.
 
 A Connector is *_not_* required for the following services:
 
-* Active IQ Digital Advisor
+* Digital Advisor
 * Amazon FSx for ONTAP working environment creation
 While a Connector isn't required to create a working environment, it is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
 * Azure NetApp Files
