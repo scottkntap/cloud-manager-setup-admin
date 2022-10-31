@@ -43,8 +43,6 @@ The NetApp BlueXP login page displays.
 image:screenshot-login.png[The log in page for BlueXP.]
 
 . Choose one of the login options:
-
-NSS credentials | Existing cloud credentials | 
 +
 * If you previously created NetApp cloud credentials, log in using your email and password.
 
