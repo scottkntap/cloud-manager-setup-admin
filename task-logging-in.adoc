@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-logging-in.html
-keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp
-summary: The Cloud Manager interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com.
+keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp, sign up, create account
+summary: The BlueXP interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com.
 ---
 
-= Logging in to Cloud Manager
+= Log in to BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,25 +13,49 @@ summary: The Cloud Manager interface is accessible through a SaaS-based user int
 :imagesdir: ./media/
 
 [.lead]
-The Cloud Manager interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com.
+BlueXP is accessible from your web browser through a SaaS-based user interface.
 
-If you're accessing Cloud Manager from a Government region or a site that doesn't have outbound internet access, then you need to log in to the local user interface after you create a Connector. link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI on the Connector].
+If you're accessing BlueXP from a Government region or a site that doesn't have outbound internet access, then you need to log in to the BlueXP user interface that runs locally on the Connector. link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI on the Connector].
 
-TIP: You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Cloud Central Help Center^] and then click *Cloud Central sign-in options*.
+.Login options
+
+You can log in to BlueXP using one of the following options:
+
+* Your existing NetApp Support Site (NSS) credentials
++
+When you use this option, your NetApp Support Site (NSS) credentials are not added to BlueXP in the Support Dashboard. Adding your NSS credentials to BlueXP is required to enable key workflows for Cloud Volumes ONTAP and to enable predictive analytics and proactive support through Active IQ. link:task-adding-nss-accounts.html[Learn how to add your NSS credentials to BlueXP].
+
+* A NetApp cloud login using your email address and a password
++
+This option supports federated connections. You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Cloud Central Help Center^] and then click *Cloud Central sign-in options*.
+
+Each time that you log in, you'll need to use the same option that you chose when you logged in for the first time.
+
+* If you registered by logging in with your NetApp Support Site credentials, then you need to use that log in option each time.
+* If you signed up by entering your email and password, then you need to enter those credentials each time that you log in.
 
 .Steps
 
-. Open a web browser and go to https://cloudmanager.netapp.com.
+. Open a web browser and go to the https://cloudmanager.netapp.com[BlueXP console^]
++
+The NetApp BlueXP login page displays.
++
+image:screenshot-login.png[The log in page for BlueXP.]
 
-. Log in by entering your NetApp Cloud Central credentials or by clicking *Log in with NetApp* and entering your NetApp Support Site credentials.
+. Choose one of the login options:
+
+NSS credentials | Existing cloud credentials | 
 +
-You need to choose the option that you used when you signed up to Cloud Central.
+* If you previously created NetApp cloud credentials, log in using your email and password.
+
+* If you don't have cloud credentials, but you have an existing NetApp Support Site (NSS) account, select *Log in with your NetApp Support Site credentials*.
+
+* If you don't have an NSS account and you haven't created NetApp cloud credentials, click *Sign Up* to create a NetApp cloud login.
 +
-* If you signed up by entering your email and password, then you need to enter those credentials each time that you log in.
-* If you registered by logging in with your NetApp Support Site credentials, then you need to use that log in option each time.
+Note that only English characters are allowed in the sign up form.
 +
-image:screenshot-login.png[The log in screen for Cloud Central.]
+After you sign up, you'll receive an email from NetApp. Click the link in the email to verify your email address and then log in.
 
 .Result
 
-You're now logged in and can start using Cloud Manager to manage your hybrid multi-cloud infrastructure.
+You're now logged in and can start using BlueXP to manage your hybrid multi-cloud infrastructure.

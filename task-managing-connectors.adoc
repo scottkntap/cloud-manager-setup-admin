@@ -27,11 +27,11 @@ For example, let's say that you're working in a multi-cloud environment. You mig
 +
 image:screenshot_connector_switch.gif[A screenshot that shows the Connector icon in the header and the Switch action.]
 +
-Cloud Manager refreshes and shows the Working Environments associated with the selected Connector.
+BlueXP refreshes and shows the Working Environments associated with the selected Connector.
 
 == Access the local UI
 
-While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. If you're accessing Cloud Manager from a Government region or a site that doesn't have outbound internet access, then you need to use the local user interface running on the Connector.
+While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. If you're accessing BlueXP from a Government region or a site that doesn't have outbound internet access, then you need to use the local user interface running on the Connector.
 
 .Steps
 
@@ -51,7 +51,7 @@ If you're having problems, NetApp personnel might ask you to send an AutoSupport
 
 . Connect to the Connector local UI, as described in the section above.
 
-. In the upper right of the Cloud Manager console, click the Help icon, and select *Support*.
+. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
 +
 image:screenshot-help-support.png[A screenshot of the Help menu where Support is the first option listed]
 
@@ -111,7 +111,7 @@ If it's required for your business, you can change the internal IP address and p
 
 . Follow the instructions from your cloud provider to change the local IP address or public IP address (or both) for the Connector instance.
 
-. If you changed the public IP address and you need to connect to the local user interface running on the Connector, restart the Connector instance to register the new IP address with Cloud Manager.
+. If you changed the public IP address and you need to connect to the local user interface running on the Connector, restart the Connector instance to register the new IP address with BlueXP.
 
 . If you changed the private IP address, update the backup location for Cloud Volumes ONTAP configuration files so that the backups are being sent to the new private IP address on the Connector.
 
@@ -119,7 +119,7 @@ If it's required for your business, you can change the internal IP address and p
 [source,cli]
 system configuration backup settings modify -destination ""
 
-.. Go to Cloud Manager and open the working environment.
+.. Go to BlueXP and open the working environment.
 
 .. Click the menu and select *Advanced > Configuration Backups*.
 
@@ -131,7 +131,7 @@ Add and remove the URIs for a Connector.
 
 .Steps
 
-. Click the *Connector* drop-down from the Cloud Manager header.
+. Click the *Connector* drop-down from the BlueXP header.
 
 . Click *Manage Connectors*.
 
@@ -141,7 +141,7 @@ Add and remove the URIs for a Connector.
 
 == Fix download failures when using a Google Cloud NAT gateway
 
-The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the Cloud Manager API.
+The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the BlueXP API.
 
 .Step
 
@@ -166,7 +166,7 @@ The Connector needs to restart during the upgrade process so the user interface 
 
 .Steps
 
-. Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].
 
 . Copy the installer to the Linux host.
 
@@ -187,18 +187,18 @@ sudo /path/cloud-manager-connector-offline-v3.9.14
 The Connector automatically updates its software to the latest version, as long as it has outbound internet access to obtain the software update.
 ****
 
-== Remove Connectors from Cloud Manager
+== Remove Connectors from BlueXP
 
-If a Connector is inactive, you can remove it from the list of Connectors in Cloud Manager. You might do this if you deleted the Connector virtual machine or if you uninstalled the Connector software.
+If a Connector is inactive, you can remove it from the list of Connectors in BlueXP. You might do this if you deleted the Connector virtual machine or if you uninstalled the Connector software.
 
 Note the following about removing a Connector:
 
 * This action doesn't delete the virtual machine.
-* This action can't be reverted--once you remove a Connector from Cloud Manager, you can't add it back to Cloud Manager.
+* This action can't be reverted--once you remove a Connector from BlueXP, you can't add it back to Cloud MBlueXP
 
 .Steps
 
-. Click the *Connector* drop-down from the Cloud Manager header.
+. Click the *Connector* drop-down from the BlueXP header.
 
 . Click *Manage Connectors*.
 
@@ -210,7 +210,7 @@ image:screenshot_connector_remove.gif[A screenshot of the Connector widget where
 
 .Result
 
-Cloud Manager removes the Connector from its records.
+BlueXP removes the Connector from its records.
 
 == Uninstall the Connector software
 

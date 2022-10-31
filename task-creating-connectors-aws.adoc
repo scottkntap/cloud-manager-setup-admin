@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-creating-connectors-aws.html
 keywords: fsx for ontap, iam, user role, create connector in aws, launch connector in aws, deploy connector in aws, aws connector, connector aws, connector permissions
-summary: A Cloud Manager Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+summary: A BlueXP Account Admin needs to deploy a Connector before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
 ---
 
-= Create a Connector in AWS from Cloud Manager
+= Create a Connector in AWS from BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,9 @@ summary: A Cloud Manager Account Admin needs to deploy a Connector before you ca
 :imagesdir: ./media/
 
 [.lead]
-A Cloud Manager Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. link:concept-connectors.html[Learn when a Connector is required].
+A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment. link:concept-connectors.html[Learn when a Connector is required].
 
-This page describes how to create a Connector in AWS directly from Cloud Manager. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
+This page describes how to create a Connector in AWS directly from BlueXP. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
@@ -26,7 +26,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up authentication
 
 [role="quick-margin-para"]
-To launch the Connector in AWS, Cloud Manager needs to authenticate with AWS by either assuming an IAM role or by using AWS access keys. With either option, an IAM policy is required.
+To launch the Connector in AWS, BlueXP needs to authenticate with AWS by either assuming an IAM role or by using AWS access keys. With either option, an IAM policy is required.
 
 [role="quick-margin-para"]
 <<Create an IAM policy,View the IAM role>> or <<Set up AWS authentication,follow step-by-step instructions>>.
@@ -49,18 +49,18 @@ Click the Connector drop-down, select *Add Connector* and follow the prompts.
 
 == Set up AWS authentication
 
-Cloud Manager needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
+BlueXP needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
 
-* Let Cloud Manager assume an IAM role that has the required permissions
+* Let BlueXP assume an IAM role that has the required permissions
 * Provide an AWS access key and secret key for an IAM user who has the required permissions
 
 With either option, you first need to start by creating an IAM policy that includes the required permissions.
 
 === Create an IAM policy
 
-This policy contains only the permissions needed to launch the Connector instance in AWS from Cloud Manager. Don't use this policy for other situations.
+This policy contains only the permissions needed to launch the Connector instance in AWS from BlueXP. Don't use this policy for other situations.
 
-When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
+When BlueXP creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
 
 .Steps
 
@@ -149,11 +149,11 @@ When Cloud Manager creates the Connector, it applies a new set of permissions to
 
 .What's next?
 
-Either attach the policy to an IAM role that Cloud Manager can assume or to an IAM user.
+Either attach the policy to an IAM role that BlueXP can assume or to an IAM user.
 
 === Set up an IAM role
 
-Set up an IAM role that Cloud Manager can assume in order to deploy the Connector in AWS.
+Set up an IAM role that BlueXP can assume in order to deploy the Connector in AWS.
 
 .Steps
 
@@ -164,10 +164,10 @@ Set up an IAM role that Cloud Manager can assume in order to deploy the Connecto
 Be sure to do the following:
 
 * Under *Trusted entity type*, select *AWS account*.
-* Select *Another AWS account* and enter the ID of the Cloud Manager SaaS account: 952013314444
+* Select *Another AWS account* and enter the ID of the BlueXP SaaS account: 952013314444
 * Select the policy that you created in the previous section.
 
-. After you create the role, copy the Role ARN so that you can paste it in Cloud Manager when you create the Connector.
+. After you create the role, copy the Role ARN so that you can paste it in BlueXP when you create the Connector.
 
 .Result
 
@@ -191,7 +191,7 @@ When you create a Connector, you can provide an AWS access key and secret key fo
 
 .Result
 
-The AWS user now has the permissions required to create the Connector from Cloud Manager. You'll need to specify AWS access keys for this user when you're prompted by Cloud Manager.
+The AWS user now has the permissions required to create the Connector from BlueXP. You'll need to specify AWS access keys for this user when you're prompted by Cloud MBlueXP
 
 == Set up networking
 
@@ -215,7 +215,7 @@ The Connector requires outbound internet access to manage resources and processe
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com
 
-\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within BlueXP.
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net
@@ -241,7 +241,7 @@ There's a possible conflict with IP addresses in the 172 range. link:reference-l
 
 == Create a Connector
 
-Cloud Manager enables you to create a Connector in AWS directly from its user interface.
+BlueXP enables you to create a Connector in AWS directly from its user interface.
 
 .Steps
 
@@ -261,7 +261,7 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 
 * *Get Ready*: Review what you'll need.
 
-* *AWS Credentials*: Specify your AWS region and then choose an authentication method, which is either an IAM role that Cloud Manager can assume or an AWS access key and secret key.
+* *AWS Credentials*: Specify your AWS region and then choose an authentication method, which is either an IAM role that BlueXP can assume or an AWS access key and secret key.
 +
 TIP: If you choose *Assume Role*, you can create the first set of credentials from the Connector deployment wizard. Any additional set of credentials must be created from the Credentials page. They will then be available from the wizard in a drop-down list. link:task-adding-aws-accounts.html[Learn how to add additional credentials].
 
@@ -269,7 +269,7 @@ TIP: If you choose *Assume Role*, you can create the first set of credentials fr
 +
 ** Enter a name for the instance.
 ** Add custom tags (metadata) to the instance.
-** Choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-aws.html[the required permissions].
+** Choose whether you want BlueXP to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-aws.html[the required permissions].
 ** Choose whether you want to encrypt the Connector's EBS disks. You have the option to use the default encryption key or to use a custom key.
 
 * *Network*: Specify a VPC, subnet, and key pair for the instance, choose whether to enable a public IP address, and optionally specify a proxy configuration.
@@ -290,7 +290,7 @@ If you have Amazon S3 buckets in the same AWS account where you created the Conn
 
 == Open port 3128 for AutoSupport messages
 
-If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then Cloud Manager automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
+If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then BlueXP automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
 
 The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 

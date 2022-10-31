@@ -17,11 +17,11 @@ You might want to learn more about the Connector before you deploy it, or if you
 
 == Default configuration with internet access
 
-The following configuration details apply if you deployed the Connector from Cloud Manager, from your cloud provider's marketplace, or if you manually installed the Connector on an on-premises Linux host that has internet access.
+The following configuration details apply if you deployed the Connector from BlueXP, from your cloud provider's marketplace, or if you manually installed the Connector on an on-premises Linux host that has internet access.
 
 === AWS details
 
-If you deployed the Connector from Cloud Manager or from the cloud provider's marketplace, note the following:
+If you deployed the Connector from BlueXP or from the cloud provider's marketplace, note the following:
 
 * The EC2 instance type is t3.xlarge.
 * The operating system for the image is Red Hat Enterprise Linux 7.6 (HVM).
@@ -32,7 +32,7 @@ The operating system does not include a GUI. You must use a terminal to access t
 
 === Azure details
 
-If you deployed the Connector from Cloud Manager or from the cloud provider's marketplace, note the following:
+If you deployed the Connector from BlueXP or from the cloud provider's marketplace, note the following:
 
 * The VM type is DS3 v2.
 * The operating system for the image is CentOS 7.6.
@@ -42,7 +42,7 @@ The operating system does not include a GUI. You must use a terminal to access t
 
 === Google Cloud details
 
-If you deployed the Connector from Cloud Manager or from the cloud provider's marketplace, note the following:
+If you deployed the Connector from BlueXP or from the cloud provider's marketplace, note the following:
 
 * The VM instance is n2-standard-4.
 * The operating system for the image is CentOS 7.9.
@@ -66,11 +66,11 @@ The logs in this folder provide details about the Connector and docker images.
 
 * /opt/application/netapp/cloudmanager/docker_occm/data/log
 +
-The logs in this folder provide details about cloud services and the Cloud Manager service that runs on the Connector.
+The logs in this folder provide details about cloud services and the BlueXP service that runs on the Connector.
 
 === Connector service
 
-* The Cloud Manager service is named occm.
+* The BlueXP service is named occm.
 
 * The occm service is dependent on the MySQL service.
 +
@@ -78,7 +78,7 @@ If the MySQL service is down, then the occm service is down too.
 
 === Packages
 
-Cloud Manager installs the following packages on the Linux host, if they are not already installed:
+BlueXP installs the following packages on the Linux host, if they are not already installed:
 
 * 7Zip
 * AWSCLI
@@ -96,8 +96,8 @@ The Connector uses the following ports on the Linux host:
 
 * 80 for HTTP access
 * 443 for HTTPS access
-* 3306 for the Cloud Manager database
-* 8080 for the Cloud Manager API proxy
+* 3306 for the BlueXP database
+* 8080 for the BlueXP API proxy
 * 8666 for the Service Manager API
 * 8777 for the Health-Checker Container Service API
 

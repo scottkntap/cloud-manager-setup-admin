@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: Learn about what's new with Cloud Manager's administration features, including NetApp accounts, Connectors, cloud provider credentials, and more.
+summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more."
 ---
 
 = What's new
@@ -13,7 +13,7 @@ summary: Learn about what's new with Cloud Manager's administration features, in
 :imagesdir: ./media/
 
 [.lead]
-Learn about what's new with Cloud Manager's administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
+Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
 == 18 September 2022

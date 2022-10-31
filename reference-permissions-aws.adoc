@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-permissions-aws.html
 keywords: permissions, actions, aws, aws permissions
-summary: When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service, and more.
+summary: When BlueXP launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service, and more.
 ---
 
 = AWS permissions for the Connector
@@ -13,13 +13,13 @@ summary: When Cloud Manager launches the Connector instance in AWS, it attaches 
 :imagesdir: ./media/
 
 [.lead]
-When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service (KMS), and more.
+When BlueXP launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service (KMS), and more.
 
 == IAM policy
 
 The IAM policy shown below provides the permissions that a Connector needs to manage resources and processes within your public cloud environment based on your AWS region.
 
-When you create a Connector directly from Cloud Manager, Cloud Manager automatically applies this policy to the Connector.
+When you create a Connector directly from BlueXP, BlueXP automatically applies this policy to the Connector.
 
 If you deploy the Connector from the AWS Marketplace or if you manually install the Connector on a Linux host, then you'll need to set up the policy yourself.
 

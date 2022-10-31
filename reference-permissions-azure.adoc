@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-permissions-azure.html
 keywords: permissions, azure, azure permissions
-summary: When Cloud Manager launches the Connector VM in Azure, it attaches a custom role to the VM that provides the Connector with permissions to manage resources and processes within that Azure subscription. The Connector uses the permissions to make API calls to several Azure services.
+summary: When BlueXP launches the Connector VM in Azure, it attaches a custom role to the VM that provides the Connector with permissions to manage resources and processes within that Azure subscription. The Connector uses the permissions to make API calls to several Azure services.
 ---
 
 = Azure permissions for the Connector
@@ -13,13 +13,13 @@ summary: When Cloud Manager launches the Connector VM in Azure, it attaches a cu
 :imagesdir: ./media/
 
 [.lead]
-When Cloud Manager launches the Connector VM in Azure, it attaches a custom role to the VM that provides the Connector with permissions to manage resources and processes within that Azure subscription. The Connector uses the permissions to make API calls to several Azure services.
+When BlueXP launches the Connector VM in Azure, it attaches a custom role to the VM that provides the Connector with permissions to manage resources and processes within that Azure subscription. The Connector uses the permissions to make API calls to several Azure services.
 
 == Custom role permissions
 
 The custom role shown below provides the permissions that a Connector needs to manage resources and processes within your Azure network.
 
-When you create a Connector directly from Cloud Manager, Cloud Manager automatically applies this custom role to the Connector.
+When you create a Connector directly from BlueXP, BlueXP automatically applies this custom role to the Connector.
 
 If you deploy the Connector from the Azure Marketplace or if you manually install the Connector on a Linux host, then you'll need to set up the custom role yourself.
 
@@ -27,7 +27,7 @@ You also need to ensure that the role is up to date as new permissions are added
 
 [source,json]
 {
-    "Name": "Cloud Manager Operator",
+    "Name": "BlueXP Operator",
     "Actions": [
        "Microsoft.Compute/disks/delete",
                         "Microsoft.Compute/disks/read",
@@ -145,7 +145,7 @@ You also need to ensure that the role is up to date as new permissions are added
     ],
     "NotActions": [],
     "AssignableScopes": [],
-    "Description": "Cloud Manager Permissions",
+    "Description": "BlueXP Permissions",
     "IsCustom": "true"
 }
 
@@ -309,11 +309,11 @@ You also need to ensure that the role is up to date as new permissions are added
 "Microsoft.Network/privateDnsZones/read",
 "Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
 
-| Enables the management of private endpoints. Private endpoints are used when connectivity isn't provided to outside the subnet. Cloud Manager creates the storage account for HA with only internal connectivity within the subnet.
+| Enables the management of private endpoints. Private endpoints are used when connectivity isn't provided to outside the subnet. BlueXP creates the storage account for HA with only internal connectivity within the subnet.
 
 | "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",
 
-| Enables Cloud Manager to delete volumes for Azure NetApp Files.
+| Enables BlueXP to delete volumes for Azure NetApp Files.
 
 | "Microsoft.Resources/deployments/operationStatuses/read"
 
@@ -336,7 +336,7 @@ You also need to ensure that the role is up to date as new permissions are added
 "Microsoft.Network/privateEndpoints/delete",
 "Microsoft.Compute/availabilitySets/delete",
 
-| Enables Cloud Manager to remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion.
+| Enables BlueXP to remove resources from a resource group that belong to Cloud Volumes ONTAP in case of deployment failure or deletion.
 
 |
 "Microsoft.Compute/diskEncryptionSets/read"
@@ -353,7 +353,7 @@ You also need to ensure that the role is up to date as new permissions are added
 "Microsoft.Resources/tags/write",
 "Microsoft.Resources/tags/delete"
 
-| Enables you to manage tags on your Azure resources using the Cloud Manager Tagging service.
+| Enables you to manage tags on your Azure resources using the BlueXP Tagging service.
 
 |
 "Microsoft.Network/applicationSecurityGroups/write",
@@ -363,6 +363,6 @@ You also need to ensure that the role is up to date as new permissions are added
 "Microsoft.Network/applicationSecurityGroups/delete",
 "Microsoft.Network/networkSecurityGroups/securityRules/delete"
 
-| Enables Cloud Manager to configure an application security group for an HA pair, which isolates the HA interconnect and cluster network NICs.
+| Enables BlueXP to configure an application security group for an HA pair, which isolates the HA interconnect and cluster network NICs.
 
 |===

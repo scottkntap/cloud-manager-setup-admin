@@ -67,6 +67,6 @@ NOTE: The source IP address is the Connector host.
 | Purpose
 
 | API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to GCP and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
-| DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+| DNS | UDP	| 53 | DNS | Used for DNS resolve by BlueXP
 
 |===

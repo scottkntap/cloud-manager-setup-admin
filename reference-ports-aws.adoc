@@ -28,7 +28,7 @@ The AWS security group for the Connector requires both inbound and outbound rule
 | HTTP | 80 | Provides HTTP access from client web browsers to the local user interface
 | HTTPS | 443 | Provides HTTPS access from client web browsers to the local user interface, and connections from the Cloud Data Sense instance
 | TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <<Proxy server for AutoSupport messages,Learn more about the Connector's proxy server>>.
-| TCP | 9060 | Provides the ability to enable and use Cloud Data Sense and Cloud Backup in Government Cloud deployments. This port is also required for Cloud Backup if you disable the SaaS interface in your Cloud Manager account.
+| TCP | 9060 | Provides the ability to enable and use Cloud Data Sense and Cloud Backup in Government Cloud deployments. This port is also required for Cloud Backup if you disable the SaaS interface in your BlueXP account.
 
 |===
 
@@ -70,6 +70,6 @@ NOTE: The source IP address is the Connector host.
 | API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
 .2+| API calls | TCP | 3000 | ONTAP HA mediator | Communication with the ONTAP HA mediator
 | TCP | 8088 | Backup to S3 | API calls to Backup to S3
-| DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+| DNS | UDP	| 53 | DNS | Used for DNS resolve by BlueXP
 
 |===

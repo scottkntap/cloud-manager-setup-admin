@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-viewing-gcp-storage.html
 keywords: google cloud storage buckets, google cloud storage, google cloud storage working environment
-summary: After you install a Connector in Google Cloud, Cloud Manager can automatically discover information about the Google Cloud buckets that reside in the Google account where the Connector is installed. A Google Cloud Storage working environment is added to the Canvas so you can view this information.
+summary: After you install a Connector in Google Cloud, BlueXP can automatically discover information about the Google Cloud buckets that reside in the Google account where the Connector is installed. A Google Cloud Storage working environment is added to the Canvas so you can view this information.
 ---
 
 = Viewing your Google Cloud Storage buckets
@@ -13,7 +13,7 @@ summary: After you install a Connector in Google Cloud, Cloud Manager can automa
 :imagesdir: ./media/
 
 [.lead]
-After you install a Connector in Google Cloud, Cloud Manager can automatically discover information about the Google Cloud Storage buckets that reside in the Google account where the Connector is installed. A Google Cloud Storage working environment is added to the Canvas so you can view this information.
+After you install a Connector in Google Cloud, BlueXP can automatically discover information about the Google Cloud Storage buckets that reside in the Google account where the Connector is installed. A Google Cloud Storage working environment is added to the Canvas so you can view this information.
 
 You can see details about your Google Cloud Storage buckets, including the location, access status, storage class, total and used capacity, and more. These buckets can be used as destinations for Cloud Backup, Cloud Tiering, or Cloud Sync operations.
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-finding-system-id.html
-keywords: system id, id, cloud manager system id, connector system id
+keywords: system id, id, BlueXP system id, connector system id
 summary: To help you get started, your NetApp representative might ask you for the system ID for a Connector. The ID is typically used for licensing and troubleshooting purposes.
 ---
 
@@ -17,7 +17,7 @@ To help you get started, your NetApp representative might ask you for the system
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Help icon.
+. In the upper right of the BlueXP console, click the Help icon.
 
 . Click *Support > Connector*.
 +
@@ -25,4 +25,4 @@ The system ID appears at the top.
 +
 *Example*
 +
-image:screenshot_system_id.gif[A screenshot that shows the System ID for Cloud Manager that appears in the Support Dashboard.]
+image:screenshot_system_id.gif[A screenshot that shows the System ID for BlueXP that appears in the Support Dashboard.]

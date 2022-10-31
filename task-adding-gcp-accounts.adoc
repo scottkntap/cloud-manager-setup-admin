@@ -5,7 +5,7 @@ keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp mar
 summary: You can manage the credentials that are associated with the Connector VM instance.
 ---
 
-= Managing GCP credentials and subscriptions for Cloud Manager
+= Managing GCP credentials and subscriptions for BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,13 +17,13 @@ You can manage the credentials that are associated with the Connector VM instanc
 
 == Associating a Marketplace subscription with GCP credentials
 
-When you deploy a Connector in GCP, Cloud Manager creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that Cloud Manager uses to deploy Cloud Volumes ONTAP.
+When you deploy a Connector in GCP, BlueXP creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that Cloud MBlueXPo deploy Cloud Volumes ONTAP.
 
 At any time, you can change the Marketplace subscription that's associated with these credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 
 . Click the action menu for a set of credentials and then select *Associate Subscription*.
 +
@@ -43,7 +43,7 @@ NOTE: Before you complete the following steps, ensure that you have both Billing
 +
 image:screenshot_gcp_sub_popup.png[A screenshot of a subscription pop-up.]
 
-. After you're redirected to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp Cloud Manager page on the Google Cloud Marketplace^], ensure that the correct project is selected at the top navigation menu.
+. After you're redirected to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp BlueXP page on the Google Cloud Marketplace^], ensure that the correct project is selected at the top navigation menu.
 +
 image:screenshot_gcp_cvo_marketplace.png[A screenshot of the GCP CVO marketplace page.]
 
@@ -69,9 +69,9 @@ The GCP subscription will be linked to all NetApp accounts that your user login 
 +
 image:screenshot_gcp_sub_mapping.png[A screenshot of mapping a GCP subscription to a NetApp account.]
 +
-NOTE: If someone from your organization has already subscribed to the NetApp Cloud Manager subscription from your billing account, then you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on NetApp Cloud Central^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
+NOTE: If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on NetApp Cloud Central^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 
-. Once this process is complete, navigate back to the Credentials page in Cloud Manager and select this new subscription.
+. Once this process is complete, navigate back to the Credentials page in BlueXP and select this new subscription.
 +
 image:screenshot_gcp_associate.gif[A screenshot of the subscription assignment page.]
 
@@ -81,7 +81,7 @@ Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplac
 
 .Steps
 
-. Navigate to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp Cloud Manager page on the Google Cloud Marketplace^] to check on the state of the order. If the page states *Manage on Provider*, scroll down and click *Manage Orders*.
+. Navigate to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp BlueXP page on the Google Cloud Marketplace^] to check on the state of the order. If the page states *Manage on Provider*, scroll down and click *Manage Orders*.
 +
 image:screenshot_gcp_manage_orders.png[A screenshot of the marketplace page post subscription.]
 

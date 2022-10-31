@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-connectors.html
 keywords: concept, connectors, learn about connectors, service connectors, what are connectors, what is a connector, what's a connector, days, 14 days
-summary: In most cases, you will need to deploy a Connector in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+summary: In most cases, you will need to deploy a Connector in your cloud or on-premises network. The Connector is a crucial component for the day-to-day use of BlueXP. It enables BlueXP to manage the resources and processes within your public cloud environment.
 ---
 
 = Learn about Connectors
@@ -13,11 +13,11 @@ summary: In most cases, you will need to deploy a Connector in your cloud or on-
 :imagesdir: ./media/
 
 [.lead]
-In most cases, a Cloud Manager Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector is a crucial component for the day-to-day use of Cloud Manager. The Connector enables Cloud Manager to manage the resources and processes within your public cloud environment.
+In most cases, a BlueXP Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector is a crucial component for the day-to-day use of BlueXP. It enables BlueXP to manage the resources and processes within your public cloud environment.
 
 == When a Connector is required
 
-A Connector is required to use many of the features and services in Cloud Manager.
+A Connector is required to use many of the features and services in BlueXP.
 
 === Services
 
@@ -81,9 +81,9 @@ NOTE: If your Cloud Volumes ONTAP system has a node-based BYOL license, the syst
 
 == How to create a Connector
 
-A Cloud Manager Account Admin can create a Connector in a number of ways:
+A BlueXP Account Admin can create a Connector in a number of ways:
 
-* Directly from Cloud Manager (recommended)
+* Directly from BlueXP (recommended)
 ** link:task-creating-connectors-aws.html[Create in AWS]
 ** link:task-creating-connectors-azure.html[Create in Azure]
 ** link:task-creating-connectors-gcp.html[Create in GCP]
@@ -94,7 +94,7 @@ A Cloud Manager Account Admin can create a Connector in a number of ways:
 ** link:task-launching-aws-mktp.html[AWS Marketplace]
 ** link:task-launching-azure-mktp.html[Azure Marketplace]
 
-If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector in a Government region from Cloud Manager's SaaS website.
+If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector in a Government region from BlueXP's SaaS website.
 
 == Permissions
 
@@ -102,7 +102,7 @@ Specific permissions are needed to create the Connector and another set of permi
 
 === Permissions to create a Connector
 
-The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in your cloud provider of choice. Cloud Manager will remind you of the permissions requirements when you create a Connector.
+The user who creates a Connector from BlueXP needs specific permissions to deploy the instance in your cloud provider of choice. Cloud MBlueXPemind you of the permissions requirements when you create a Connector.
 
 * link:task-creating-connectors-aws.html[View the required AWS permissions]
 * link:task-creating-connectors-azure.html[View the required Azure permissions]
@@ -112,7 +112,7 @@ The user who creates a Connector from Cloud Manager needs specific permissions t
 
 The Connector needs specific cloud provider permissions to perform operations on your behalf. For example, to deploy and manage Cloud Volumes ONTAP.
 
-When you create a Connector directly from Cloud Manager, Cloud Manager creates the Connector with the permissions that it needs. There's nothing that you need to do.
+When you create a Connector directly from BlueXP, Cloud MBlueXPs the Connector with the permissions that it needs. There's nothing that you need to do.
 
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
@@ -122,13 +122,13 @@ If you create the Connector yourself from the AWS Marketplace, the Azure Marketp
 
 == Connector upgrades
 
-We typically update the Connector software each month to introduce new features and to provide stability improvements. While most of the services and features in the Cloud Manager platform are offered through SaaS-based software, a few features and functionalities are dependent on the version of the Connector. That includes Cloud Volumes ONTAP management, on-prem ONTAP cluster management, settings, and help.
+We typically update the Connector software each month to introduce new features and to provide stability improvements. While most of the services and features in the BlueXP platform are offered through SaaS-based software, a few features and functionalities are dependent on the version of the Connector. That includes Cloud Volumes ONTAP management, on-prem ONTAP cluster management, settings, and help.
 
 The Connector automatically updates its software to the latest version, as long as it has outbound internet access to obtain the software update.
 
 == Number of working environments per Connector
 
-A Connector can manage multiple working environments in Cloud Manager. The maximum number of working environments that a single Connector should manage varies. It depends on the type of working environments, the number of volumes, the amount of capacity being managed, and the number of users.
+A Connector can manage multiple working environments in BlueXP. The maximum number of working environments that a single Connector should manage varies. It depends on the type of working environments, the number of volumes, the amount of capacity being managed, and the number of users.
 
 If you have a large-scale deployment, work with your NetApp representative to size your environment. If you experience any issues along the way, reach out to us by using the in-product chat.
 
@@ -151,7 +151,7 @@ To set up this configuration:
 . link:task-managing-connectors.html[Switch to another Connector]
 . Discover the existing working environment.
 +
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html[Add existing Cloud Volumes ONTAP systems to Cloud Manager^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html[Add existing Cloud Volumes ONTAP systems to BlueXP^]
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover ONTAP clusters^]
 . Set the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html[Capacity Management Mode^]
 +
@@ -159,7 +159,7 @@ Only the main Connector should be set to *Automatic Mode*. If you switch to anot
 
 == When to switch between Connectors
 
-When you create your first Connector, Cloud Manager automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you'll need to switch between them to see the working environments that are specific to each Connector.
+When you create your first Connector, BlueXP automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you'll need to switch between them to see the working environments that are specific to each Connector.
 
 link:task-managing-connectors.html[Learn how to switch between Connectors].
 

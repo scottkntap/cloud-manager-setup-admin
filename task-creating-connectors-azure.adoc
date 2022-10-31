@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-creating-connectors-azure.html
 keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions, create custom role, create azure custom role, azure custom role
-summary: A Cloud Manager Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+summary: A BlueXP Account Admin needs to deploy a Connector before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
 ---
 
-= Create a Connector in Azure from Cloud Manager
+= Create a Connector in Azure from BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,15 +13,15 @@ summary: A Cloud Manager Account Admin needs to deploy a Connector before you ca
 :imagesdir: ./media/
 
 [.lead]
-A Cloud Manager Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. link:concept-connectors.html[Learn when a Connector is required].
+A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment. link:concept-connectors.html[Learn when a Connector is required].
 
-This page describes how to create a Connector in Azure directly from Cloud Manager. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
+This page describes how to create a Connector in Azure directly from BlueXP. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
 == Overview
 
-To deploy a Connector, you need to provide Cloud Manager with a login that has the required permissions to create the Connector VM in Azure.
+To deploy a Connector, you need to provide BlueXP with a login that has the required permissions to create the Connector VM in Azure.
 
 You have two options:
 
@@ -61,7 +61,7 @@ The Connector requires outbound internet access to manage resources and processe
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com
 
-\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within BlueXP.
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net
@@ -91,13 +91,13 @@ The default way to create a Connector in Azure is by logging in with your Azure 
 
 === Set up permissions for your Azure account
 
-Before you can deploy a Connector from Cloud Manager, you need to ensure that your Azure account has the correct permissions.
+Before you can deploy a Connector from BlueXP, you need to ensure that your Azure account has the correct permissions.
 
 .Steps
 
 . Copy the required permissions for a new custom role in Azure and save them in a JSON file.
 +
-NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from Cloud Manager. Don't use this policy for other situations. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
+NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When Cloud MBlueXPs the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
 +
 [source,json]
 {
@@ -194,7 +194,7 @@ az role definition create --role-definition Policy_for_Setup_As_Service_Azure.js
 +
 You should now have a custom role called _Azure SetupAsService_.
 
-. Assign the role to the user who will deploy the Connector from Cloud Manager:
+. Assign the role to the user who will deploy the Connector from BlueXP:
 
 .. Open the *Subscriptions* service and select the user's subscription.
 
@@ -216,11 +216,11 @@ NOTE: Azure SetupAsService is the default name provided in the Connector deploym
 
 .Result
 
-The Azure user now has the permissions required to deploy the Connector from Cloud Manager.
+The Azure user now has the permissions required to deploy the Connector from BlueXP.
 
 === Create the Connector by logging in with your Azure account
 
-Cloud Manager enables you to create a Connector in Azure directly from its user interface.
+BlueXP enables you to create a Connector in Azure directly from its user interface.
 
 .What you'll need
 
@@ -228,7 +228,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 * A VNet and subnet in your Azure region of choice.
 
-* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own link:reference-permissions-azure.html[using the policy on this page].
+* If you don't want BlueXP to automatically create an Azure role for the Connector, then you'll need to create your own link:reference-permissions-azure.html[using the policy on this page].
 +
 These permissions are for the Connector instance itself. It's a different set of permissions than what you previously set up to simply deploy the Connector.
 
@@ -252,11 +252,11 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 +
 The form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
 +
-TIP: If you're already logged in to an Azure account, then Cloud Manager will automatically use that account. If you have multiple accounts, then you might need to log out first to ensure that you're using the right account.
+TIP: If you're already logged in to an Azure account, then BlueXP will automatically use that account. If you have multiple accounts, then you might need to log out first to ensure that you're using the right account.
 
 * *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
 
-* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-azure.html[the required permissions].
+* *Details*: Enter a name for the instance, specify tags, and choose whether you want BlueXP to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-azure.html[the required permissions].
 +
 Note that you can choose the subscriptions associated with this role. Each subscription that you choose provides the Connector with permissions to deploy Cloud Volumes ONTAP in those subscriptions.
 
@@ -272,17 +272,17 @@ The virtual machine should be ready in about 7 minutes. You should stay on the p
 
 .After you finish
 
-You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in BlueXP by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].
 
 If you have Azure Blob storage in the same Azure account where you created the Connector, you'll see an Azure Blob working environment appear on the Canvas automatically. link:task-viewing-azure-blob.html[Learn more about what you can do with this working environment].
 
 == Create a Connector using a service principal
 
-Rather than logging in with you Azure account, you also have the option to provide Cloud Manager with the credentials for an Azure service principal that has the required permissions.
+Rather than logging in with you Azure account, you also have the option to provide BlueXP with the credentials for an Azure service principal that has the required permissions.
 
 === Granting Azure permissions using a service principal
 
-Grant the required permissions to deploy a Connector in Azure by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that Cloud Manager needs.
+Grant the required permissions to deploy a Connector in Azure by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that BlueXP needs.
 
 .Steps
 
@@ -298,7 +298,7 @@ Grant the required permissions to deploy a Connector in Azure by creating and se
 
 ==== Create an Azure Active Directory application
 
-Create an Azure Active Directory (AD) application and service principal that Cloud Manager can use to deploy the Connector.
+Create an Azure Active Directory (AD) application and service principal that BlueXP can use to deploy the Connector.
 
 .Before you begin
 
@@ -316,7 +316,7 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 . Specify details about the application:
 
 * *Name*: Enter a name for the application.
-* *Account type*: Select an account type (any will work with Cloud Manager).
+* *Account type*: Select an account type (any will work with BlueXP).
 * *Redirect URI*: You can leave this field blank.
 
 . Click *Register*.
@@ -333,7 +333,7 @@ You must bind the service principal to the Azure subscription in which you plan 
 
 . Copy the required permissions for a new custom role in Azure and save them in a JSON file.
 +
-NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from Cloud Manager. Don't use this policy for other situations. When Cloud Manager creates the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
+NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When Cloud MBlueXPs the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
 +
 [source,json]
 {
@@ -479,7 +479,7 @@ image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure porta
 [[ids]]
 ==== Get the application ID and directory ID
 
-When you create the Connector from Cloud Manager, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud Manager uses the IDs to programmatically sign in.
+When you create the Connector from BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud MBlueXPhe IDs to programmatically sign in.
 
 .Steps
 
@@ -491,7 +491,7 @@ image:screenshot_azure_app_ids.gif[A screenshot that shows the application (clie
 
 ==== Create a client secret
 
-You need to create a client secret and then provide Cloud Manager with the value of the secret so Cloud Manager can use it to authenticate with Azure AD.
+You need to create a client secret and then provide BlueXP with the value of the secret so Cloud MBlueXPe it to authenticate with Azure AD.
 
 .Steps
 
@@ -511,11 +511,11 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 
 .Result
 
-Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in Cloud Manager when you create the Connector.
+Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you create the Connector.
 
 === Create the Connector by logging in with the service principal
 
-Cloud Manager enables you to create a Connector in Azure directly from its user interface.
+BlueXP enables you to create a Connector in Azure directly from its user interface.
 
 .What you'll need
 
@@ -529,7 +529,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 ** Credentials
 ** HTTPS certificate
 
-* If you don't want Cloud Manager to automatically create an Azure role for the Connector, then you'll need to create your own link:reference-permissions-azure.html[using the policy on this page].
+* If you don't want BlueXP to automatically create an Azure role for the Connector, then you'll need to create your own link:reference-permissions-azure.html[using the policy on this page].
 +
 These permissions are for the Connector instance itself. It's a different set of permissions than what you previously set up to simply deploy the Connector.
 
@@ -561,7 +561,7 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 
 * *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
 
-* *Details*: Enter a name for the instance, specify tags, and choose whether you want Cloud Manager to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-azure.html[the required permissions].
+* *Details*: Enter a name for the instance, specify tags, and choose whether you want BlueXP to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-azure.html[the required permissions].
 +
 Note that you can choose the subscriptions associated with this role. Each subscription that you choose provides the Connector with permissions to deploy Cloud Volumes ONTAP in those subscriptions.
 
@@ -577,13 +577,13 @@ The virtual machine should be ready in about 7 minutes. You should stay on the p
 
 .After you finish
 
-You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in BlueXP by default. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces[Learn more].
 
 If you have Azure Blob storage in the same Azure account where you created the Connector, you'll see an Azure Blob working environment appear on the Canvas automatically. link:task-viewing-azure-blob.html[Learn more about what you can do with this working environment].
 
 == Open port 3128 for AutoSupport messages
 
-If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then Cloud Manager automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
+If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then BlueXP automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
 
 The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 

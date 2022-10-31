@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-accounts-aws.html
 keywords: cloud provider accounts, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, json
-summary: Cloud Manager enables you to choose the AWS credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
+summary: BlueXP enables you to choose the AWS credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
 ---
 
 = AWS credentials and permissions
@@ -13,17 +13,17 @@ summary: Cloud Manager enables you to choose the AWS credentials to use when dep
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to choose the AWS credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
+BlueXP enables you to choose the AWS credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
 
 == Initial AWS credentials
 
-When you deploy a Connector from Cloud Manager, you need to provide the ARN of an IAM role or access keys for an IAM user. The authentication method that you use must have the required permissions to deploy the Connector instance in AWS. The required permissions are listed in the link:task-creating-connectors-aws.html[Connector deployment policy for AWS].
+When you deploy a Connector from BlueXP, you need to provide the ARN of an IAM role or access keys for an IAM user. The authentication method that you use must have the required permissions to deploy the Connector instance in AWS. The required permissions are listed in the link:task-creating-connectors-aws.html[Connector deployment policy for AWS].
 
-When Cloud Manager launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides the Connector with permissions to manage resources and processes within that AWS account. link:reference-permissions-aws.html[Review how Cloud Manager uses the permissions].
+When BlueXP launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides the Connector with permissions to manage resources and processes within that AWS account. link:reference-permissions-aws.html[Review how Cloud MBlueXPhe permissions].
 
-image:diagram_permissions_initial_aws.png["A conceptual image that shows Cloud Central deploying Cloud Manager in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the Cloud Manager instance."]
+image:diagram_permissions_initial_aws.png["A conceptual image that shows Cloud Central deploying BlueXP in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the Cloud MBlueXPce."]
 
-Cloud Manager selects these AWS credentials by default when you create a new working environment for Cloud Volumes ONTAP:
+BlueXP selects these AWS credentials by default when you create a new working environment for Cloud Volumes ONTAP:
 
 image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
 
@@ -37,28 +37,28 @@ If you want to launch Cloud Volumes ONTAP in different AWS accounts, then you ca
 
 image:diagram_permissions_multiple_aws.png["A conceptual image that shows two additional accounts. Each has an IAM policy, one is attached to IAM user and the other is attached to an IAM role."]
 
-You would then link:task-adding-aws-accounts.html#adding-aws-accounts-to-cloud-manager[add the account credentials to Cloud Manager] by specifying the Amazon Resource Name (ARN) of the IAM role, or the AWS keys for the IAM user.
+You would then link:task-adding-aws-accounts.html#adding-aws-accounts-to-cloud-manager[add the account credentials to BlueXP] by specifying the Amazon Resource Name (ARN) of the IAM role, or the AWS keys for the IAM user.
 
 After you add another set of credentials, you can switch to them when creating a new working environment:
 
 image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
-=== Add AWS credentials directly to Cloud Manager
+=== Add AWS credentials directly to BlueXP
 
-Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create and manage an FSx for ONTAP working environment or to create a Connector.
+Adding new AWS credentials to BlueXP gives Cloud MBlueXPrmissions needed to create and manage an FSx for ONTAP working environment or to create a Connector.
 
 == What about Marketplace deployments and on-prem deployments?
 
-The sections above describe the recommended deployment method for the Connector, which is from Cloud Manager. You can also deploy a Connector in AWS from the link:task-launching-aws-mktp.html[AWS Marketplace] and you can link:task-installing-linux.html[install the Connector on-premises].
+The sections above describe the recommended deployment method for the Connector, which is from BlueXP. You can also deploy a Connector in AWS from the link:task-launching-aws-mktp.html[AWS Marketplace] and you can link:task-installing-linux.html[install the Connector on-premises].
 
 If you use the Marketplace, permissions are provided in the same way. You just need to manually create and set up the IAM role, and then provide permissions for any additional accounts.
 
-For on-premises deployments, you can't set up an IAM role for the Cloud Manager system, but you can provide permissions just like you would for additional AWS accounts.
+For on-premises deployments, you can't set up an IAM role for the BlueXP system, but you can provide permissions just like you would for additional AWS accounts.
 
 == How can I securely rotate my AWS credentials?
 
-As described above, Cloud Manager enables you to provide AWS credentials in a few ways: an IAM role associated with the Connector instance, by assuming an IAM role in a trusted account, or by providing AWS access keys.
+As described above, BlueXP enables you to provide AWS credentials in a few ways: an IAM role associated with the Connector instance, by assuming an IAM role in a trusted account, or by providing AWS access keys.
 
-With the first two options, Cloud Manager uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice--it's automatic and it's secure.
+With the first two options, BlueXP uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice--it's automatic and it's secure.
 
-If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.
+If you provide BlueXP with AWS access keys, you should rotate the keys by updating them in Cloud MBlueXPegular interval. This is a completely manual process.
