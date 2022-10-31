@@ -20,6 +20,8 @@ You can see details about your Google Cloud Storage buckets, including the locat
 .Steps
 
 . link:task-creating-connectors-gcp.html[Install a Connector] in the Google account where you want to view your Google Cloud Storage buckets.
+
+. From the navigation menu, select *Storage > Canvas*.
 +
 You should automatically see a Google Cloud Storage working environment shortly after.
 +

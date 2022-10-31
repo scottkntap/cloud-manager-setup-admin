@@ -5,7 +5,7 @@ keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp mar
 summary: You can manage the credentials that are associated with the Connector VM instance.
 ---
 
-= Managing GCP credentials and subscriptions for BlueXP
+= Managing Google Cloud credentials and subscriptions for BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -37,7 +37,7 @@ image:screenshot_gcp_associate.gif[A screenshot of a Google Cloud project and su
 
 . If you don't already have a subscription, click *Add Subscription* and follow the steps to create a new subscription below.
 +
-NOTE: Before you complete the following steps, ensure that you have both Billing Admin privileges in your Google Cloud account as well as a NetApp Cloud Central login.
+NOTE: Before you complete the following steps, ensure that you have both Billing Admin privileges in your Google Cloud account as well as a BlueXP login.
 
 . Reivew the subscription steps and click *Continue*.
 +
@@ -57,19 +57,19 @@ image:screenshot_gcp_terms_and_conditions.png[A screenshot of the GCP terms and 
 +
 This step sends your transfer request to NetApp.
 
-. On the pop-up dialog box, click *Register with NetApp, Inc.* to be redirected to NetApp Cloud Central.
+. On the pop-up dialog box, click *Register with NetApp, Inc.* to be redirected to the NetApp BlueXP website.
 +
 image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop-up.]
 +
-NOTE: This step must be completed to link the GCP subscription to your NetApp account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to NetApp Cloud Central.
+NOTE: This step must be completed to link the GCP subscription to your NetApp account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to BlueXP.
 
-. After you're redirected to Cloud Central, log in to NetApp Cloud Central or sign up, and then click *Done* to proceed.
+. After you're redirected to BlueXP, log in or sign up, and then click *Done* to proceed.
 +
 The GCP subscription will be linked to all NetApp accounts that your user login is associated with.
 +
 image:screenshot_gcp_sub_mapping.png[A screenshot of mapping a GCP subscription to a NetApp account.]
 +
-NOTE: If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on NetApp Cloud Central^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
+NOTE: If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on the BlueXP website^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 
 . Once this process is complete, navigate back to the Credentials page in BlueXP and select this new subscription.
 +
@@ -77,7 +77,7 @@ image:screenshot_gcp_associate.gif[A screenshot of the subscription assignment p
 
 == Troubleshooting the Marketplace subscription process
 
-Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to NetApp Cloud Central. If this happens, use the following steps to complete the subscription process.
+Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to the BlueXP website. If this happens, use the following steps to complete the subscription process.
 
 .Steps
 

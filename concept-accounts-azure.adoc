@@ -21,7 +21,7 @@ When you deploy a Connector from BlueXP, you need to use an Azure account or ser
 
 When BlueXP deploys the Connector virtual machine in Azure, it enables a https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[system-assigned managed identity^] on virtual machine, creates a custom role, and assigns it to the virtual machine. The role provides Cloud MBlueXPermissions to manage resources and processes within that Azure subscription. link:reference-permissions-azure.html[Review how BlueXP uses the permissions].
 
-image:diagram_permissions_initial_azure.png[A conceptual image that shows Cloud Central deploying a Connector in an Azure account and subscription. A system-assigned managed identity is enabled and a custom role is assigned to the Connector virtual machine.]
+image:diagram_permissions_initial_azure.png[A conceptual image that shows BlueXP deploying a Connector in an Azure account and subscription. A system-assigned managed identity is enabled and a custom role is assigned to the Connector virtual machine.]
 
 BlueXP selects these Azure credentials by default when you create a new working environment for Cloud Volumes ONTAP:
 
@@ -45,7 +45,7 @@ image:screenshot_accounts_switch_azure.gif["A screenshot that shows selecting be
 
 .What about Marketplace deployments and on-prem deployments?
 ****
-The sections above describe the recommended deployment method for the Connector, which is from NetApp Cloud Central. You can also deploy a Connector in Azure from the link:task-launching-azure-mktp.html[Azure Marketplace], and you can link:task-installing-linux.html[install the Connector on-premises].
+The sections above describe the recommended deployment method for the Connector, which is from BlueXP. You can also deploy a Connector in Azure from the link:task-launching-azure-mktp.html[Azure Marketplace], and you can link:task-installing-linux.html[install the Connector on-premises].
 
 If you use the Marketplace, permissions are provided in the same way. You just need to manually create and set up the managed identity for the Connector, and then provide permissions for any additional accounts.
 

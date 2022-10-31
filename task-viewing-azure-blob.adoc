@@ -20,6 +20,8 @@ You can see details about your Azure storage accounts, including the location, r
 .Steps
 
 . link:task-creating-connectors-azure.html[Install a Connector] in the Azure account where you want to view your Azure storage accounts.
+
+. From the navigation menu, select *Storage > Canvas*.
 +
 You should automatically see an Azure Blob working environment shortly after.
 +

@@ -21,7 +21,7 @@ When you deploy a Connector from BlueXP, you need to provide the ARN of an IAM r
 
 When BlueXP launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides the Connector with permissions to manage resources and processes within that AWS account. link:reference-permissions-aws.html[Review how Cloud MBlueXPhe permissions].
 
-image:diagram_permissions_initial_aws.png["A conceptual image that shows Cloud Central deploying BlueXP in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the Cloud MBlueXPce."]
+image:diagram_permissions_initial_aws.png["A conceptual image that shows BlueXP deploying the Connector in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the BlueXP instance."]
 
 BlueXP selects these AWS credentials by default when you create a new working environment for Cloud Volumes ONTAP:
 

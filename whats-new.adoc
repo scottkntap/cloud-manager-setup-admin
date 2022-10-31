@@ -16,6 +16,10 @@ summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration f
 Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 1 November 2022
+
+Cloud Manager now prompts you to update the credentials associated with your NetApp Support Site accounts when the refresh token associated with your account expires after 3 months. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-nss-credentials[Learn how to manage NSS accounts^]
+
 == 18 September 2022
 
 === Connector 3.9.22

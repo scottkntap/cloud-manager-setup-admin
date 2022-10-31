@@ -47,7 +47,7 @@ link:reference-connector-default-config.html[Learn about the default configurati
 
 == How BlueXP works
 
-BlueXP includes a SaaS-based interface that is integrated with NetApp Cloud Central, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
+BlueXP includes a SaaS-based interface that is integrated with the BlueXP website, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
 
 === Software-as-a-service
 
@@ -55,9 +55,9 @@ BlueXP is accessible through a https://cloudmanager.netapp.com[SaaS-based user i
 
 TIP: If you're operating in an environment where outbound internet access isn't available, you can install the Connector software in that environment and access the local user interface that's available on the Connector. link:concept-connectors.html[Learn more about Connectors].
 
-=== NetApp Cloud Central
+=== BlueXP website
 
-https://cloud.netapp.com[NetApp Cloud Central^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^]. With centralized user authentication, you can use the same set of credentials to access BlueXP and other cloud services like Cloud Insights.
+https://cloud.netapp.com[The BlueXP website^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^]. With centralized user authentication, you can use the same set of credentials to access BlueXP and other cloud services like Cloud Insights.
 
 === NetApp account
 

@@ -20,6 +20,8 @@ You can see details about your S3 buckets, including the region, access policy, 
 .Steps
 
 . link:task-creating-connectors-aws.html[Install a Connector] in the AWS account where you want to view your Amazon S3 buckets.
+
+. From the navigation menu, select *Storage > Canvas*.
 +
 You should automatically see an Amazon S3 working environment shortly after.
 +

@@ -42,7 +42,7 @@ You can display the notifications by clicking the notification bell (image:icon_
 
 image:screenshot_notification_full.png[A screenshot showing the a list of current notifications in the Notification Center.]
 
-You can also configure BlueXP to send notifications by email so you can be informed of important system activity even when you're not logged into the system. Emails can be sent to any Cloud Central users who are part of your NetApp Cloud Account, or to any other recipients who need to be aware of certain types of system activity. See <<Setting email notification settings,Setting email notification settings>> below.
+You can also configure BlueXP to send notifications by email so you can be informed of important system activity even when you're not logged into the system. Emails can be sent to any users who are part of your NetApp Cloud Account, or to any other recipients who need to be aware of certain types of system activity. See <<Setting email notification settings,Setting email notification settings>> below.
 
 === Notification types
 

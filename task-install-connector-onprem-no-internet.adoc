@@ -96,7 +96,7 @@ image:screenshot-onprem-darksite-details.png[A screenshot of the System Details 
 
 * *Create Admin User*: Create the admin user for the system.
 +
-This user account runs locally on the system. There's no connection to NetApp Cloud Central.
+This user account runs locally on the system. There's no connection to the auth0 service available through BlueXP.
 
 * *Review*: Review the details, accept the license agreement, and then click *Set Up*.
 
