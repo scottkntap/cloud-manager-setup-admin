@@ -2,8 +2,8 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: Get started with BlueXP so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud. After set up is complete, you can administer your NetApp accounts, Connectors, cloud provider accounts, and more.
-summary: Get started with BlueXP so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud. After set up is complete, you can administer your NetApp accounts, Connectors, cloud provider accounts, and more.
+lead: Get started with BlueXP (formerly Cloud Manager) so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud. After set up is complete, you can administer your NetApp accounts, Connectors, cloud provider accounts, and more.
+summary: "Get started with BlueXP (formerly Cloud Manager) so that you can start using NetApp's cloud services to manage your data across a hybrid multicloud. After set up is complete, you can administer your NetApp accounts, Connectors, cloud provider accounts, and more."
 ---
 
 = Set up and administer BlueXP

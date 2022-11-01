@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-overview.html
-keywords: overview, concepts, features, use case, days, 14 days
+keywords: overview, concepts, features, use case, cloud manager
 summary: BlueXP enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
 ---
 
@@ -12,7 +12,7 @@ summary: BlueXP enables IT experts and cloud architects to centrally manage thei
 :linkattrs:
 :imagesdir: ./media/
 
-BlueXP enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
+BlueXP (formerly Cloud Manager) enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
 
 == Features
 
