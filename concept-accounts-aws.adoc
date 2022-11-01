@@ -19,7 +19,7 @@ BlueXP enables you to choose the AWS credentials to use when deploying Cloud Vol
 
 When you deploy a Connector from BlueXP, you need to provide the ARN of an IAM role or access keys for an IAM user. The authentication method that you use must have the required permissions to deploy the Connector instance in AWS. The required permissions are listed in the link:task-creating-connectors-aws.html[Connector deployment policy for AWS].
 
-When BlueXP launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides the Connector with permissions to manage resources and processes within that AWS account. link:reference-permissions-aws.html[Review how Cloud MBlueXPhe permissions].
+When BlueXP launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides the Connector with permissions to manage resources and processes within that AWS account. link:reference-permissions-aws.html[Review how BlueXP uses the permissions].
 
 image:diagram_permissions_initial_aws.png["A conceptual image that shows BlueXP deploying the Connector in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the BlueXP instance."]
 
@@ -45,7 +45,7 @@ image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting betwe
 
 === Add AWS credentials directly to BlueXP
 
-Adding new AWS credentials to BlueXP gives Cloud MBlueXPrmissions needed to create and manage an FSx for ONTAP working environment or to create a Connector.
+Adding new AWS credentials to BlueXP provides the permissions needed to create and manage an FSx for ONTAP working environment or to create a Connector.
 
 == What about Marketplace deployments and on-prem deployments?
 
@@ -61,4 +61,4 @@ As described above, BlueXP enables you to provide AWS credentials in a few ways:
 
 With the first two options, BlueXP uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice--it's automatic and it's secure.
 
-If you provide BlueXP with AWS access keys, you should rotate the keys by updating them in Cloud MBlueXPegular interval. This is a completely manual process.
+If you provide BlueXP with AWS access keys, you should rotate the keys by updating them in BlueXP at a regular interval. This is a completely manual process.

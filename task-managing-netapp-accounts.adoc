@@ -110,7 +110,7 @@ A service account acts as a "user" that can make authorized API calls to BlueXP 
 
 You give permissions to a service account by assigning it a role, just like any other BlueXP user. You can also associate the service account with specific workspaces in order to control the working environments (resources) that the service can access.
 
-When you create the service account, BlueXP enables you to copy or download a client ID and client secret for the service account. This key pair is used for authentication with Cloud MBlueXP
+When you create the service account, BlueXP enables you to copy or download a client ID and client secret for the service account. This key pair is used for authentication with BlueXP.
 
 === Creating a service account
 

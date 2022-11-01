@@ -17,7 +17,7 @@ You can manage the credentials that are associated with the Connector VM instanc
 
 == Associating a Marketplace subscription with GCP credentials
 
-When you deploy a Connector in GCP, BlueXP creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that Cloud MBlueXPo deploy Cloud Volumes ONTAP.
+When you deploy a Connector in GCP, BlueXP creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that BlueXP uses to deploy Cloud Volumes ONTAP.
 
 At any time, you can change the Marketplace subscription that's associated with these credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 

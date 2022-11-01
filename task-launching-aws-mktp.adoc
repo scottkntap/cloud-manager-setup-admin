@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-launching-aws-mktp.html
 keywords: install connector, create connector, deploy connector, installation, installing, marketplace, aws, launch, launching, ec2 console, iam role, govcloud, government, aws government, aws govcloud, gov marketplace
-summary: It's best to create a Connector directly from BlueXP, but you can launch a Connector from the AWS Marketplace, if you'd rather not specify AWS access keys. After you create and set up the Connector, Cloud MBlueXPutomatically use it when you create new working environments.
+summary: For an AWS commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the AWS Marketplace, if you prefer. For AWS Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the AWS Marketplace.
 ---
 
 = Create a Connector from the AWS Marketplace
@@ -13,7 +13,7 @@ summary: It's best to create a Connector directly from BlueXP, but you can launc
 :imagesdir: ./media/
 
 [.lead]
-For an AWS commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the AWS Marketplace, if you prefer. For AWS Government regions, you can't deploy the Connector in a Government region from Cloud MBlueXP website, so the next best option is to do so from the AWS Marketplace.
+For an AWS commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the AWS Marketplace, if you prefer. For AWS Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the AWS Marketplace.
 
 TIP: You can also download and install the Connector software on an existing Linux host in your network or in the cloud. link:task-installing-linux.html[Learn how to install the Connector on an existing Linux host].
 

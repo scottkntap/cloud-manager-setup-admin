@@ -90,7 +90,7 @@ If you receive a message that installing the awscli failed, you can safely ignor
 
 .Steps
 
-. Download the BlueXP software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
 For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
 
@@ -119,7 +119,7 @@ _proxypwd_ is the password for the user name that you specified.
 
 . Unless you specified the silent parameter, enter *Y* to continue with the installation.
 +
-BlueXP is now installed. At the end of the installation, the Cloud MBlueXPe (occm) restarts twice if you specified a proxy server.
+The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
 
 . Open a web browser and enter the following URL:
 +

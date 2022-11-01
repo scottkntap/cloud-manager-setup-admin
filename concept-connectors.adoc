@@ -102,7 +102,7 @@ Specific permissions are needed to create the Connector and another set of permi
 
 === Permissions to create a Connector
 
-The user who creates a Connector from BlueXP needs specific permissions to deploy the instance in your cloud provider of choice. Cloud MBlueXPemind you of the permissions requirements when you create a Connector.
+The user who creates a Connector from BlueXP needs specific permissions to deploy the instance in your cloud provider of choice.
 
 * link:task-creating-connectors-aws.html[View the required AWS permissions]
 * link:task-creating-connectors-azure.html[View the required Azure permissions]
@@ -112,7 +112,7 @@ The user who creates a Connector from BlueXP needs specific permissions to deplo
 
 The Connector needs specific cloud provider permissions to perform operations on your behalf. For example, to deploy and manage Cloud Volumes ONTAP.
 
-When you create a Connector directly from BlueXP, Cloud MBlueXPs the Connector with the permissions that it needs. There's nothing that you need to do.
+When you create a Connector directly from BlueXP, BlueXP creates the Connector with the permissions that it needs. There's nothing that you need to do.
 
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 

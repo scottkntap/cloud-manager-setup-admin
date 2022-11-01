@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-launching-azure-mktp.html
 keywords: install, installation, installing, marketplace, azure, deploy, virtual machine, permissions, deploy connector in azure, install connector in azure
-summary: It's best to create a Connector directly from BlueXP, but you can launch a Connector from the Azure Marketplace, if you prefer. After you create and set up the Connector, Cloud MBlueXPutomatically use it when you create new working environments.
+summary: For an Azure commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the Azure Marketplace.
 ---
 
 = Create a Connector from the Azure Marketplace
@@ -13,7 +13,7 @@ summary: It's best to create a Connector directly from BlueXP, but you can launc
 :imagesdir: ./media/
 
 [.lead]
-For an Azure commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can't deploy the Connector in a Government region from Cloud MBlueXP website, so the next best option is to do so from the Azure Marketplace.
+For an Azure commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the Azure Marketplace.
 
 TIP: You can also download and install the Connector software on an existing Linux host in your network or in the cloud. link:task-installing-linux.html[Learn how to install the Connector on an existing Linux host].
 
@@ -122,7 +122,7 @@ You should now have a custom role called BlueXP Operator that you can assign to 
 
 .. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
 +
-NOTE: BlueXP Operator is the default name provided in the Cloud MBlueXP. If you chose a different name for the role, then select that name instead.
+NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
 
 .. In the *Members* tab, complete the following steps:
 

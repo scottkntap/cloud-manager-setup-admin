@@ -191,7 +191,7 @@ When you create a Connector, you can provide an AWS access key and secret key fo
 
 .Result
 
-The AWS user now has the permissions required to create the Connector from BlueXP. You'll need to specify AWS access keys for this user when you're prompted by Cloud MBlueXP
+The AWS user now has the permissions required to create the Connector from BlueXP. You'll need to specify AWS access keys for this user when you're prompted by BlueXP.
 
 == Set up networking
 

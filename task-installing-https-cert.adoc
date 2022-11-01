@@ -58,13 +58,13 @@ The certificate must use the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 f
 
 .Result
 
-BlueXP now uses the CA-signed certificate to provide secure HTTPS access. The following image shows a Cloud MBlueXPt that is configured for secure access:
+BlueXP now uses the CA-signed certificate to provide secure HTTPS access. The following image shows a BlueXP account that is configured for secure access:
 
 image:screenshot_https_cert.gif[Screen shot: Shows the HTTPS Setup page after you install a signed certificate. The page shows the certificate properties and an option to renew the certificate.]
 
 == Renewing the BlueXP HTTPS certificate
 
-You should renew the BlueXP HTTPS certificate before it expires to ensure secure access to the Cloud MBlueXPnsole. If you do not renew the certificate before it expires, a warning appears when users access the web console using HTTPS.
+You should renew the BlueXP HTTPS certificate before it expires to ensure secure access to the BlueXP console. If you don't renew the certificate before it expires, a warning appears when users access the web console using HTTPS.
 
 .Steps
 

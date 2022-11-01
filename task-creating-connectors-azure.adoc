@@ -97,7 +97,7 @@ Before you can deploy a Connector from BlueXP, you need to ensure that your Azur
 
 . Copy the required permissions for a new custom role in Azure and save them in a JSON file.
 +
-NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When Cloud MBlueXPs the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
+NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When BlueXP creates the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
 +
 [source,json]
 {
@@ -333,7 +333,7 @@ You must bind the service principal to the Azure subscription in which you plan 
 
 . Copy the required permissions for a new custom role in Azure and save them in a JSON file.
 +
-NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When Cloud MBlueXPs the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
+NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When BlueXP creates the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
 +
 [source,json]
 {
@@ -479,7 +479,7 @@ image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure porta
 [[ids]]
 ==== Get the application ID and directory ID
 
-When you create the Connector from BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud MBlueXPhe IDs to programmatically sign in.
+When you create the Connector from BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. BlueXP uses the IDs to programmatically sign in.
 
 .Steps
 
@@ -491,7 +491,7 @@ image:screenshot_azure_app_ids.gif[A screenshot that shows the application (clie
 
 ==== Create a client secret
 
-You need to create a client secret and then provide BlueXP with the value of the secret so Cloud MBlueXPe it to authenticate with Azure AD.
+You need to create a client secret and then provide BlueXP with the value of the secret so BlueXP can use it to authenticate with Azure AD.
 
 .Steps
 

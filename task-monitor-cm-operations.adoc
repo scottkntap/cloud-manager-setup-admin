@@ -35,7 +35,7 @@ This table provides a comparison of the Notification Center and the Timeline so 
 
 == Monitoring activities using the Notification Center
 
-Notifications track the progress of operations that you've initiated in BlueXP so you can verify whether the operation was successful or not. They enable you to view the status for many Cloud MBlueXPions that you initiated during your current login session. Not all services report information into the Notification Center at this time.
+Notifications track the progress of operations that you've initiated in BlueXP so you can verify whether the operation was successful or not. They enable you to view the status for many BlueXP actions that you initiated during your current login session. Not all services report information into the Notification Center at this time.
 // Notifications can even prompt you to retry a failed operation.
 
 You can display the notifications by clicking the notification bell (image:icon_bell.png[notification bell]) in the menu bar. The color of the little bubble in the bell indicates the highest level severity notification that is active. So if you see a red bubble, it means there's an important notification that you should look at.
