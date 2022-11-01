@@ -19,7 +19,7 @@ link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
 
 == Managing your account with the Tenancy API
 
-If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the Cloud Manager API, which you use to create and manage Cloud Volumes ONTAP working environments.
+If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the BlueXP API, which you use to create and manage Cloud Volumes ONTAP working environments.
 
 https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html[View endpoints for the Tenancy API^]
 
@@ -29,15 +29,15 @@ The user's in your account can access the manage the resources in your account's
 
 === Adding users
 
-Associate Cloud Central users with the NetApp account so those users can create and manage working environments in Cloud Manager.
+Associate users with your NetApp account so those users can create and manage working environments in BlueXP.
 
 .Steps
 
-. If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up.
+. If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp BlueXP website^] and sign up.
 
-. From the top of Cloud Manager, click the *Account* drop-down.
+. From the top of BlueXP, click the *Account* drop-down.
 +
-image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
+image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of BlueXP.]
 
 . Click *Manage Account* next to the currently selected account.
 +
@@ -47,7 +47,7 @@ image:screenshot-manage-account-settings.png[A screenshot that shows the Manage 
 
 . Enter the user's email address and select a role for the user:
 +
-* *Account Admin*: Can perform any action in Cloud Manager.
+* *Account Admin*: Can perform any action in BlueXP.
 * *Workspace Admin*: Can create and manage resources in assigned workspaces.
 * *Compliance Viewer*: Can only view Cloud Data Sense compliance information and generate reports for workspaces that they have permission to access.
 * *SnapCenter Admin*: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. _This service is currently in Beta._
@@ -60,7 +60,7 @@ image:screenshot_associate_user.gif[A screenshot that shows how to associate a u
 
 .Result
 
-The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
+The user should receive an email from NetApp BlueXP titled "Account Association." The email includes the information needed to access BlueXP.
 
 === Removing users
 
@@ -68,7 +68,7 @@ Disassociating a user makes it so they can no longer access the resources in a N
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -88,7 +88,7 @@ You can associate and disassociate Workspace Admins with workspaces at any time.
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -102,15 +102,15 @@ image:screenshot_associate_user_workspace.png[A screenshot that shows the action
 
 .Result
 
-The user can now access those workspaces from Cloud Manager, as long as the Connector was also associated with the workspaces.
+The user can now access those workspaces from BlueXP, as long as the Connector was also associated with the workspaces.
 
 == Creating and managing service accounts
 
-A service account acts as a "user" that can make authorized API calls to Cloud Manager for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. And if you're using federation, you can create a token without generating a refresh token from the cloud.
+A service account acts as a "user" that can make authorized API calls to BlueXP for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. And if you're using federation, you can create a token without generating a refresh token from the cloud.
 
-You give permissions to a service account by assigning it a role, just like any other Cloud Manager user. You can also associate the service account with specific workspaces in order to control the working environments (resources) that the service can access.
+You give permissions to a service account by assigning it a role, just like any other BlueXP user. You can also associate the service account with specific workspaces in order to control the working environments (resources) that the service can access.
 
-When you create the service account, Cloud Manager enables you to copy or download a client ID and client secret for the service account. This key pair is used for authentication with Cloud Manager.
+When you create the service account, BlueXP enables you to copy or download a client ID and client secret for the service account. This key pair is used for authentication with BlueXP.
 
 === Creating a service account
 
@@ -118,9 +118,9 @@ Create as many service accounts as you need to manage the resources in your work
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down.
+. From the top of BlueXP, click the *Account* drop-down.
 +
-image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
+image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of BlueXP.]
 
 . Click *Manage Account* next to the currently selected account.
 +
@@ -134,7 +134,7 @@ image:screenshot-manage-account-settings.png[A screenshot that shows the Manage 
 
 . Copy or download the client ID and client secret.
 +
-The client secret is visible only once and is not stored anywhere by Cloud Manager. Copy or download the secret and store it safely.
+The client secret is visible only once and is not stored anywhere by BlueXP. Copy or download the secret and store it safely.
 
 . Click *Close*.
 
@@ -182,7 +182,7 @@ image:screenshot_service_account_actions.gif[A screenshot that shows the action 
 
 . Copy or download the client ID and client secret.
 +
-The client secret is visible only once and is not stored anywhere by Cloud Manager. Copy or download the secret and store it safely.
+The client secret is visible only once and is not stored anywhere by BlueXP. Copy or download the secret and store it safely.
 
 . Click *Close*.
 
@@ -206,7 +206,7 @@ Manage your workspaces by creating, renaming, and deleting them. Note that you c
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . Click *Workspaces*.
 
@@ -218,15 +218,15 @@ Manage your workspaces by creating, renaming, and deleting them. Note that you c
 
 == Managing a Connector's workspaces
 
-You need to associate the Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
+You need to associate the Connector with workspaces so Workspace Admins can access those workspaces from BlueXP.
 
-If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
+If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in BlueXP by default.
 
 link:concept-netapp-accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . Click *Connector*.
 
@@ -244,7 +244,7 @@ link:concept-netapp-accounts.html#subscriptions[Learn more about subscriptions].
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . Click *Subscriptions*.
 +
@@ -262,7 +262,7 @@ Change you account name at any time to change it to something meaningful for you
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . In the *Overview* tab, click the edit icon next to the account name.
 
@@ -270,23 +270,23 @@ Change you account name at any time to change it to something meaningful for you
 
 == Allowing private previews
 
-Allow private previews in your account to get access to new NetApp cloud services that are made available as a preview in Cloud Manager.
+Allow private previews in your account to get access to new NetApp cloud services that are made available as a preview in BlueXP.
 
 Services in private preview are not guaranteed to behave as expected and might sustain outages and be missing functionality.
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . In the *Overview* tab, enable the *Allow Private Preview* setting.
 
 == Allowing third-party services
 
-Allow third-party services in your account to get access to third-party services that are available in Cloud Manager. Third-party services are cloud services similar to the services that NetApp offers, but they're managed and supported by third-party companies.
+Allow third-party services in your account to get access to third-party services that are available in BlueXP. Third-party services are cloud services similar to the services that NetApp offers, but they're managed and supported by third-party companies.
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . In the *Overview* tab, enable the *Allow Third Party Services* setting.
 
@@ -294,7 +294,7 @@ Allow third-party services in your account to get access to third-party services
 
 We don't recommend disabling the SaaS platform unless you need to in order to comply with your company’s security policies. Disabling the SaaS platform limits your ability to use NetApp’s integrated cloud services.
 
-The following services aren't available from Cloud Manager if you disable the SaaS platform:
+The following services aren't available from BlueXP if you disable the SaaS platform:
 
 *	Cloud Data Sense
 *	Kubernetes
@@ -303,10 +303,10 @@ The following services aren't available from Cloud Manager if you disable the Sa
 
 If you do disable the SaaS platform, you'll need to perform all tasks from link:task-managing-connectors.html#access-the-local-ui[the local user interface that is available on a Connector].
 
-CAUTION: This is an irreversible action that will prevent you from using the Cloud Manager SaaS platform. You'll need to perform actions from the local Connector. You won't have the ability to use many of NetApp's integrated cloud services, and re-enabling the SaaS platform will require the help of NetApp support.
+CAUTION: This is an irreversible action that will prevent you from using the BlueXP SaaS platform. You'll need to perform actions from the local Connector. You won't have the ability to use many of NetApp's integrated cloud services, and re-enabling the SaaS platform will require the help of NetApp support.
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . In the Overview tab, toggle the option to disable use of the SaaS platform.

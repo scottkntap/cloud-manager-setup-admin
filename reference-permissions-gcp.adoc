@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-permissions-gcp.html
 keywords: permissions, gcp, gcp permissions
-summary: Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
+summary: BlueXP requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might want to understand what BlueXP does with these permissions.
 ---
 
 = Google Cloud permissions for the Connector
@@ -13,7 +13,7 @@ summary: Cloud Manager requires permissions to perform actions in your cloud pro
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager requires permissions to perform actions in Google Cloud. These permissions are included in a custom role provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
+BlueXP requires permissions to perform actions in Google Cloud. These permissions are included in a custom role provided by NetApp. You might want to understand what BlueXP does with these permissions.
 
 == Service account permissions
 
@@ -24,7 +24,7 @@ You'll need to apply this custom role to a service account that gets attached to
 You also need to ensure that the role is up to date as new permissions are added in subsequent releases.
 
 [source,yaml]
-title: NetApp Cloud Manager
+title: NetApp BlueXP
 description: Permissions for the service account associated with the Connector instance.
 stage: GA
 includedPermissions:

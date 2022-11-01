@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-creating-connectors-gcp.html
 keywords: create connector in gcp, launch connector in gcp, deploy connector in gcp, gcp connector, connector gcp, connector permissions
-summary: A Cloud Manager Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+summary: A BlueXP Account Admin needs to deploy a Connector before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
 ---
 
-= Create a Connector in Google Cloud from Cloud Manager
+= Create a Connector in Google Cloud from BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,13 +13,13 @@ summary: A Cloud Manager Account Admin needs to deploy a Connector before you ca
 :imagesdir: ./media/
 
 [.lead]
-A Cloud Manager Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept-connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. link:concept-connectors.html[Learn when a Connector is required]. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
 
-This page describes how to create a Connector in Google Cloud directly from Cloud Manager. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
+This page describes how to create a Connector in Google Cloud directly from BlueXP. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
-TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
+TIP: When you create your first Cloud Volumes ONTAP working environment, BlueXP will prompt you to create a Connector if you don't have one yet.
 
 == Quick start
 
@@ -83,7 +83,7 @@ Before you can deploy a Connector, you need to ensure that your Google Cloud acc
 +
 [source,yaml]
 title: Connector deployment policy
-description: Permissions for the user who deploys the Connector from Cloud Manager
+description: Permissions for the user who deploys the Connector from BlueXP
 stage: GA
 includedPermissions:
 - compute.disks.create
@@ -143,7 +143,7 @@ includedPermissions:
 - compute.instances.setServiceAccount
 - iam.serviceAccounts.list
 
-. Attach the custom role to the user who will deploy the Connector from Cloud Manager.
+. Attach the custom role to the user who will deploy the Connector from BlueXP.
 
 .Result
 
@@ -160,7 +160,7 @@ The permissions for the service account are different than the permissions that 
 . https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a custom role^] that includes the following permissions:
 +
 [source,yaml]
-title: NetApp Cloud Manager
+title: NetApp BlueXP
 description: Permissions for the service account associated with the Connector instance.
 stage: GA
 includedPermissions:
@@ -259,7 +259,7 @@ includedPermissions:
 
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^].
 
-. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
+. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the BlueXP role to that project^]. You'll need to repeat this step for each project.
 
 .Result
 
@@ -293,28 +293,28 @@ a|
 
 | Cloud Volumes ONTAP service account | Custom | Service project a|
 * storage.admin
-* member: Cloud Manager service account as serviceAccount.user
+* member: BlueXP service account as serviceAccount.user
 | N/A | (Optional) For data tiering and Cloud Backup
 
 | Google APIs service agent | Google Cloud | Service project a|
 * (Default) Editor
 a|
 * compute.networkUser
-| Interacts with Google Cloud APIs on behalf of deployment. Allows Cloud Manager to use the shared network.
+| Interacts with Google Cloud APIs on behalf of deployment. Allows BlueXP to use the shared network.
 
 | Google Compute Engine default service account | Google Cloud | Service project a|
 * (Default) Editor
 a|
 * compute.networkUser
-| Deploys Google Cloud instances and compute infrastructure on behalf of deployment. Allows Cloud Manager to use the shared network.
+| Deploys Google Cloud instances and compute infrastructure on behalf of deployment. Allows BlueXP to use the shared network.
 
 |===
 
 Notes:
 
-. deploymentmanager.editor is only required at the host project if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you. Cloud Manager will create a deployment in the host project which contains the VPC0 firewall rule if no rule is specified.
+. deploymentmanager.editor is only required at the host project if you are not passing firewall rules to the deployment and are choosing to let BlueXP create them for you. BlueXP will create a deployment in the host project which contains the VPC0 firewall rule if no rule is specified.
 
-. firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let Cloud Manager create them for you. These permissions reside in the Cloud Manager service account .yaml file. If you are deploying an HA pair using a shared VPC, these permissions will be used to create the firewall rules for VPC1, 2 and 3. For all other deployments, these permissions will also be used to create rules for VPC0.
+. firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let BlueXP create them for you. These permissions reside in the BlueXP account .yaml file. If you are deploying an HA pair using a shared VPC, these permissions will be used to create the firewall rules for VPC1, 2 and 3. For all other deployments, these permissions will also be used to create rules for VPC0.
 
 . For data tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project level. Currently if you assign serviceAccount.user at the project level, the permissions don't show when you query the service account with getIAMPolicy.
 
@@ -340,7 +340,7 @@ The Connector requires outbound internet access to manage resources and processe
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com
 
-\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within BlueXP.
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net
@@ -380,14 +380,14 @@ Several APIs are required to deploy the Connector and Cloud Volumes ONTAP.
 
 == Create a Connector
 
-Create a Connector in Google Cloud directly from the Cloud Manager user interface or by using gcloud.
+Create a Connector in Google Cloud directly from the BlueXP user interface or by using gcloud.
 
 // start tabbed area
 
 [role="tabbed-block"]
 ====
 
-.Cloud Manager
+.BlueXP
 --
 
 . If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
@@ -507,13 +507,13 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Con
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
 
 If you have Google Cloud Storage buckets in the same Google Cloud account where you created the Connector, you'll see a Google Cloud Storage working environment appear on the Canvas automatically. link:task-viewing-gcp-storage.html[Learn more about what you can do with this working environment].
 
 == Open port 3128 for AutoSupport messages
 
-If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then Cloud Manager automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
+If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then BlueXP automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
 
 The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 
