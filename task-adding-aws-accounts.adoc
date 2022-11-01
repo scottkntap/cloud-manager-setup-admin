@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-adding-aws-accounts.html
 keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam, credentials, adding credentials, add credentials
-summary: Add and manage AWS credentials so that Cloud Manager has the permissions that it needs to deploy and manage cloud resources in your AWS accounts. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
+summary: Add and manage AWS credentials so that BlueXP has the permissions that it needs to deploy and manage cloud resources in your AWS accounts. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
 ---
 
-= Manage AWS credentials and subscriptions for Cloud Manager
+= Manage AWS credentials and subscriptions for BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,31 +13,31 @@ summary: Add and manage AWS credentials so that Cloud Manager has the permission
 :imagesdir: ./media/
 
 [.lead]
-Add and manage AWS credentials so that Cloud Manager has the permissions that it needs to deploy and manage cloud resources in your AWS accounts. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
+Add and manage AWS credentials so that BlueXP has the permissions that it needs to deploy and manage cloud resources in your AWS accounts. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
 
 == Overview
 
-You can add AWS credentials to an existing Connector or directly to Cloud Manager:
+You can add AWS credentials to an existing Connector or directly to BlueXP:
 
 * Add additional AWS credentials to an existing Connector
 +
 Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <<Add additional credentials to a Connector,Learn how to add AWS credentials to a Connector>>.
 
-* Add AWS credentials to Cloud Manager for creating a Connector
+* Add AWS credentials to BlueXP for creating a Connector
 +
-Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create a Connector. <<Add credentials to Cloud Manager for creating a Connector,Learn how to add AWS credentials to Cloud Manager>>.
+Adding new AWS credentials to BlueXP gives BlueXP the permissions needed to create a Connector. <<Add credentials to BlueXP for creating a Connector,Learn how to add AWS credentials to BlueXP>>.
 
-* Add AWS credentials to Cloud Manager for FSx for ONTAP
+* Add AWS credentials to BlueXP for FSx for ONTAP
 +
-Adding new AWS credentials to Cloud Manager gives Cloud Manager the permissions needed to create and manage FSx for ONTAP. https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html[Learn how to set up permissions for FSx for ONTAP^]
+Adding new AWS credentials to BlueXP gives BlueXP the permissions needed to create and manage FSx for ONTAP. https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html[Learn how to set up permissions for FSx for ONTAP^]
 
 == How to rotate credentials
 
-Cloud Manager enables you to provide AWS credentials in a few ways: an IAM role associated with the Connector instance, by assuming an IAM role in a trusted account, or by providing AWS access keys. link:concept-accounts-aws.html[Learn more about AWS credentials and permissions].
+BlueXP enables you to provide AWS credentials in a few ways: an IAM role associated with the Connector instance, by assuming an IAM role in a trusted account, or by providing AWS access keys. link:concept-accounts-aws.html[Learn more about AWS credentials and permissions].
 
-With the first two options, Cloud Manager uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice because it's automatic and it's secure.
+With the first two options, BlueXP uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice because it's automatic and it's secure.
 
-If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.
+If you provide BlueXP with AWS access keys, you should rotate the keys by updating them in BlueXP at a regular interval. This is a completely manual process.
 
 == Add additional credentials to a Connector
 
@@ -45,9 +45,9 @@ Add AWS credentials to a Connector so that it can deploy and manage Cloud Volume
 
 === Grant permissions
 
-Before you add additional AWS credentials to a Connector, you need to provide the required permissions. The permissions enable Cloud Manager to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide Cloud Manager with the ARN of a role in a trusted account or AWS keys.
+Before you add additional AWS credentials to a Connector, you need to provide the required permissions. The permissions enable BlueXP to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide BlueXP with the ARN of a role in a trusted account or AWS keys.
 
-NOTE: When you deployed a Connector from Cloud Manager, Cloud Manager automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you manually installed the Connector software on an existing system. link:concept-accounts-aws.html[Learn about AWS credentials and permissions].
+NOTE: When you deployed a Connector from BlueXP, BlueXP automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you manually installed the Connector software on an existing system. link:concept-accounts-aws.html[Learn about AWS credentials and permissions].
 
 *Choices*
 
@@ -56,7 +56,7 @@ NOTE: When you deployed a Connector from Cloud Manager, Cloud Manager automatica
 
 ==== Grant permissions by assuming an IAM role in another account
 
-You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.
+You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide BlueXP with the ARN of the IAM roles from the trusted accounts.
 
 .Steps
 
@@ -70,7 +70,7 @@ Be sure to do the following:
 * Select *Another AWS account* and enter the ID of the account where the Connector instance resides.
 * Create a policy by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policy for the Connector].
 
-. Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager later on.
+. Copy the Role ARN of the IAM role so that you can paste it in BlueXP later on.
 
 .Result
 
@@ -78,7 +78,7 @@ The account now has the required permissions. <<add-the-credentials,You can now 
 
 ==== Grant permissions by providing AWS keys
 
-If you want to provide Cloud Manager with AWS keys for an IAM user, then you need to grant the required permissions to that user. The Cloud Manager IAM policy defines the AWS actions and resources that Cloud Manager is allowed to use.
+If you want to provide BlueXP with AWS keys for an IAM user, then you need to grant the required permissions to that user. The BlueXP IAM policy defines the AWS actions and resources that BlueXP is allowed to use.
 
 .Steps
 
@@ -101,15 +101,15 @@ After you provide an AWS account with the required permissions, you can add the 
 
 .Before you get started
 
-If you just created these credentials in your cloud provider, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to Cloud Manager.
+If you just created these credentials in your cloud provider, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to BlueXP.
 
 .Steps
 
-. Ensure that the correct Connector is currently selected in Cloud Manager.
+. Ensure that the correct Connector is currently selected in BlueXP.
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 +
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
 . Click *Add Credentials* and follow the steps in the wizard.
 
@@ -129,13 +129,13 @@ You can now switch to a different set of credentials from the Details and Creden
 
 image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
-== Add credentials to Cloud Manager for creating a Connector
+== Add credentials to BlueXP for creating a Connector
 
-Add AWS credentials to Cloud Manager by providing the ARN of an IAM role that gives Cloud Manager the permissions needed to create a Connector. You can choose these credentials when creating a new Connector.
+Add AWS credentials to BlueXP by providing the ARN of an IAM role that gives BlueXP the permissions needed to create a Connector. You can choose these credentials when creating a new Connector.
 
 === Set up the IAM role
 
-Set up an IAM role that enables the Cloud Manager SaaS to assume the role.
+Set up an IAM role that enables the BlueXP SaaS to assume the role.
 
 .Steps
 
@@ -146,35 +146,35 @@ Set up an IAM role that enables the Cloud Manager SaaS to assume the role.
 Be sure to do the following:
 
 * Under *Trusted entity type*, select *AWS account*.
-* Select *Another AWS account* and enter the ID of the Cloud Manager SaaS: 952013314444
+* Select *Another AWS account* and enter the ID of the BlueXP SaaS: 952013314444
 * Create a policy that includes the permissions required to create a Connector.
 +
 ** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html[View the permissions needed for FSx for ONTAP^]
 ** link:task-creating-connectors-aws.html#create-an-iam-policy[View the Connector deployment policy]
 
-. Copy the Role ARN of the IAM role so that you can paste it in Cloud Manager in the next step.
+. Copy the Role ARN of the IAM role so that you can paste it in BlueXP in the next step.
 
 .Result
 
-The IAM role now has the required permissions. <<add-the-credentials-2,You can now add it to Cloud Manager>>.
+The IAM role now has the required permissions. <<add-the-credentials-2,You can now add it to BlueXP>>.
 
 === Add the credentials
 
-After you provide the IAM role with the required permissions, add the role ARN to Cloud Manager.
+After you provide the IAM role with the required permissions, add the role ARN to BlueXP.
 
 .Before you get started
 
-If you just created the IAM role, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to Cloud Manager.
+If you just created the IAM role, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to BlueXP.
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 +
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
 . Click *Add Credentials* and follow the steps in the wizard.
 
-.. *Credentials Location*: Select *Amazon Web Services > Cloud Manager*.
+.. *Credentials Location*: Select *Amazon Web Services > BlueXP*.
 
 .. *Define Credentials*: Provide the ARN (Amazon Resource Name) of the IAM role.
 
@@ -186,20 +186,20 @@ You can now use the credentials when creating a new Connector.
 
 == Associate an AWS subscription
 
-After you add your AWS credentials to Cloud Manager, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or using an annual contract, and to use other NetApp cloud services.
+After you add your AWS credentials to BlueXP, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or using an annual contract, and to use other NetApp cloud services.
 
-There are two scenarios in which you might associate an AWS Marketplace subscription after you've already added the credentials to Cloud Manager:
+There are two scenarios in which you might associate an AWS Marketplace subscription after you've already added the credentials to BlueXP:
 
-* You didn't associate a subscription when you initially added the credentials to Cloud Manager.
+* You didn't associate a subscription when you initially added the credentials to BlueXP.
 * You want to replace an existing AWS Marketplace subscription with a new subscription.
 
 .What you'll need
 
-You need to create a Connector before you can change Cloud Manager settings. link:concept-connectors.html#how-to-create-a-connector[Learn how to create a Connector].
+You need to create a Connector before you can change BlueXP settings. link:concept-connectors.html#how-to-create-a-connector[Learn how to create a Connector].
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 
 . Click the action menu for a set of credentials and then select *Associate Subscription*.
 +
@@ -211,13 +211,13 @@ video::video_subscribing_aws.mp4[width=848, height=480]
 
 == Edit credentials
 
-Edit your AWS credentials in Cloud Manager by changing the account type (AWS keys or assume role), by editing the name, or by updating the credentials themselves (the keys or the role ARN).
+Edit your AWS credentials in BlueXP by changing the account type (AWS keys or assume role), by editing the name, or by updating the credentials themselves (the keys or the role ARN).
 
 TIP: You can't edit the credentials for an instance profile that is associated with a Connector instance.
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 
 . Click the action menu for a set of credentials and then select *Edit Credentials*.
 
@@ -225,13 +225,13 @@ TIP: You can't edit the credentials for an instance profile that is associated w
 
 == Deleting credentials
 
-If you no longer need a set of credentials, you can delete them from Cloud Manager. You can only delete credentials that aren't associated with a working environment.
+If you no longer need a set of credentials, you can delete them from BlueXP. You can only delete credentials that aren't associated with a working environment.
 
 TIP: You can't delete the credentials for an instance profile that is associated with a Connector instance.
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 
 . Click the action menu for a set of credentials and then select *Delete Credentials*.
 

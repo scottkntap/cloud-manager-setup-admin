@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-setting-up-netapp-accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
-summary: When you log in to Cloud Manager for the first time, you're prompted to create a NetApp account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
+summary: When you log in to BlueXP for the first time, you're prompted to create a NetApp account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
 ---
 
 = Set up workspaces and users in your NetApp account
@@ -13,21 +13,21 @@ summary: When you log in to Cloud Manager for the first time, you're prompted to
 :imagesdir: ./media/
 
 [.lead]
-When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
+When you log in to BlueXP for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
 link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
 
-Set up your NetApp account so users can access Cloud Manager and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
+Set up your NetApp account so users can access BlueXP and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
 
 == Add workspaces
 
-In Cloud Manager, workspaces enable you to isolate a set of working environments from other working environments and from other users. For example, you can create two workspaces and associate separate users with each workspace.
+In BlueXP, workspaces enable you to isolate a set of working environments from other working environments and from other users. For example, you can create two workspaces and associate separate users with each workspace.
 
 .Steps
 
-. From the top of https://cloudmanager.netapp.com[Cloud Manager^], click the *Account* drop-down.
+. From the top of https://cloudmanager.netapp.com[BlueXP^], click the *Account* drop-down.
 +
-image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
+image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of BlueXP.]
 
 . Click *Manage Account* next to the currently selected account.
 +
@@ -45,13 +45,13 @@ If a Workspace Admin needs access to this workspace, then you'll need to associa
 
 == Add users
 
-Associate Cloud Central users with the NetApp account so those users can create and manage working environments in Cloud Manager.
+Associate users with your NetApp account so those users can create and manage working environments in BlueXP.
 
 .Steps
 
-. If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up.
+. If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp BlueXP website^] and sign up.
 
-. From the top of https://cloudmanager.netapp.com[Cloud Manager^], click the *Account* drop-down and click *Manage Account*.
+. From the top of https://cloudmanager.netapp.com[BlueXP^], click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -59,7 +59,7 @@ image:screenshot-manage-account-settings.png[A screenshot that shows the Manage 
 
 . Enter the user's email address and select a role for the user:
 +
-* *Account Admin*: Can perform any action in Cloud Manager.
+* *Account Admin*: Can perform any action in BlueXP.
 * *Workspace Admin*: Can create and manage resources in assigned workspaces.
 * *Compliance Viewer*: Can only view Cloud Data Sense governance and compliance information and generate reports for workspaces that they have permission to access.
 * *SnapCenter Admin*: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. This service is currently in Beta.
@@ -72,7 +72,7 @@ image:screenshot_associate_user.gif[A screenshot that shows how to associate a u
 
 .Result
 
-The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
+The user should receive an email from NetApp BlueXP website titled "Account Association." The email includes the information needed to access BlueXP.
 
 == Associate Workspace Admins with workspaces
 
@@ -80,7 +80,7 @@ You can associate Workspace Admins with additional workspaces at any time. Assoc
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -94,19 +94,19 @@ image:screenshot_associate_user_workspace.png[A screenshot that shows the action
 
 .Result
 
-The user can now access those workspaces from Cloud Manager, as long as the Connector was also associated with the workspaces.
+The user can now access those workspaces from BlueXP, as long as the Connector was also associated with the workspaces.
 
 == Associate Connectors with workspaces
 
 You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems.
 
-If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
+If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in BlueXP by default.
 
 link:concept-netapp-accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 

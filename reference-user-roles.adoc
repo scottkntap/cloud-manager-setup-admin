@@ -50,11 +50,11 @@ The Compliance Viewer role is for read-only Cloud Data Sense access.
 
 | Manage credentials | Yes | No | No | No
 
-| Modify Cloud Manager settings |	Yes |	No | No | No
+| Modify BlueXP settings |	Yes |	No | No | No
 
 | View and manage the Support Dashboard |	Yes |	No | No | No
 
-| Remove working environments from Cloud Manager | Yes |	No | No | No
+| Remove working environments from BlueXP | Yes |	No | No | No
 
 | Install an HTTPS certificate | Yes |	No | No | No
 
