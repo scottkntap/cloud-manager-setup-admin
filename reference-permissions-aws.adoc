@@ -340,7 +340,7 @@ You also need to ensure that the policy is up to date as new permissions are add
         "ec2:DescribeRegions",
         "eks:ListClusters",
         "eks:DescribeCluster",
-		    "iam:GetInstanceProfiles"
+        "iam:GetInstanceProfile"
       ],
       "Resource": "*"
     },
