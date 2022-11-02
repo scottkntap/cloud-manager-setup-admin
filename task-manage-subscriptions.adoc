@@ -19,19 +19,6 @@ When you subscribe to BlueXP from a cloud provider's marketplace, you're redirec
 
 The Digital Wallet provides details about each PAYGO subscription and annual contract associated with your BlueXP account and with Astra (Astra uses BlueXP's charging service).
 
-Note the following about the details that appear in the Digital Wallet:
-
-Start date::
-The start date is when you successfully associated the subscription with your account and charging started.
-
-N/A::
-If you see N/A in the table, the information isn't available from the cloud provider's API at this time.
-
-Contracts::
-* If you expand the details for a contract, the Digital Wallet shows what's available for your current plan: the contract options and units (capacity or number of nodes).
-* The Digital Wallet will identify the end date and whether the contract will renew soon, end soon, or whether it has already ended.
-* If you have an AWS contract and you changed any of the contract's options after the start date, be sure to validate your contract options in AWS.
-
 .Steps
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
@@ -50,6 +37,20 @@ image:screenshot-subscriptions-expand.png[A screenshot of the Subscriptions tab 
 +
 Note that the Term and Auto Renew columns don't appear by default. The Auto Renew column displays renewal information for Azure contracts only.
 
++
+Note the following about what you see in the table:
+
+Start date::
+The start date is when you successfully associated the subscription with your account and charging started.
+
+N/A::
+If you see N/A in the table, the information isn't available from the cloud provider's API at this time.
+
+Contracts::
+* If you expand the details for a contract, the Digital Wallet shows what's available for your current plan: the contract options and units (capacity or number of nodes).
+* The Digital Wallet will identify the end date and whether the contract will renew soon, end soon, or whether it has already ended.
+* If you have an AWS contract and you changed any of the contract's options after the start date, be sure to validate your contract options from the AWS.
+
 == Manage your subscriptions
 
 You can manage your subscriptions from the Digital Wallet by renaming a subscription and choosing the accounts that are associated with the subscription.
@@ -66,4 +67,4 @@ For example, let's say that you have two accounts and each is billed through sep
 +
 image:screenshot-subscription-menu.png[A screenshot of the action menu for a subscription.]
 
-. Choose to rename the subscription or to manage the accounts that are associated with the subscription.
+. Choose to rename the subscription or to manage the NetApp accounts that are associated with the subscription.
