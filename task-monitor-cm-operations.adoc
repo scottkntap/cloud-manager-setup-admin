@@ -90,9 +90,9 @@ For example, if you want to see only "Error" and "Warning" notifications for Blu
 
 You can send specific types of notifications by email so you can be informed of important system activity even when you're not logged into BlueXP. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
 
-[Note]
+[NOTE]
 ====
-* At this time, only Cloud Sync is sending notifications by email. Additional services will be added in future releases.
+* At this time, only Cloud Sync and Cloud Backup are sending notifications by email. Additional services will be added in future releases.
 * Sending email notifications is not supported when the Connector is installed in a site without internet access.
 ====
 
