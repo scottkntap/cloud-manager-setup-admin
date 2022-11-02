@@ -32,7 +32,6 @@ A Connector is required to use many of the features and services in BlueXP.
 * Global File Cache
 * Google Cloud Storage discovery
 * Kubernetes clusters
-* Monitoring
 * On-premises ONTAP clusters
 * StorageGRID
 
