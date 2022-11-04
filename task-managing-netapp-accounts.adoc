@@ -142,15 +142,7 @@ The client secret is visible only once and is not stored anywhere by BlueXP. Cop
 
 In order to make API calls to the https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html[Tenancy API^], you'll need to obtain a bearer token for a service account.
 
-[source,curl]
-curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "grant_type": "client_credentials",
-    "client_secret": "<client secret>",
-    "audience": "https://api.cloud.netapp.com",
-    "client_id": "<client id>"
-}'
+https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_service_token.html[Learn how to create a service account token^]
 
 === Copying the client ID
 
