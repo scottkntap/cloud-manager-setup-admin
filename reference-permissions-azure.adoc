@@ -336,7 +336,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Used for daily operations?
 | Used for deletion?
 
-.12+| Create Cloud Volumes ONTAP and stop, start, delete, and obtain the status of the system
+.12+| Create VMs, stop, start, delete, and obtain the status of the system
 | Microsoft.Compute/locations/operations/read | Yes | Yes | No
 | Microsoft.Compute/locations/vmSizes/read | Yes | Yes | No
 | Microsoft.Resources/subscriptions/locations/read | Yes | No | No
@@ -350,20 +350,20 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Compute/virtualMachines/vmSizes/read | No | Yes | No
 | Microsoft.Compute/virtualMachines/write | Yes | Yes | No
 
-| Enable Cloud Volumes ONTAP deployment from a VHD
+| Enable deployment from a VHD
 | Microsoft.Compute/images/read | Yes | No | No
 
-.3+| Create and manage network interfaces for Cloud Volumes ONTAP in the target subnet
+.3+| Create and manage network interfaces in the target subnet
 | Microsoft.Network/networkInterfaces/read | Yes | Yes | No
 | Microsoft.Network/networkInterfaces/write | Yes | Yes | No
 | Microsoft.Network/networkInterfaces/join/action | Yes | Yes | No
 
-.3+| Create predefined network security groups for Cloud Volumes ONTAP
+.3+| Create predefined network security groups
 | Microsoft.Network/networkSecurityGroups/read | Yes | Yes | No
 | Microsoft.Network/networkSecurityGroups/write | Yes | Yes | No
 | Microsoft.Network/networkSecurityGroups/join/action | Yes | No | No
 
-.8+| Get network information about regions, the target VNet and subnet, and add Cloud Volumes ONTAP to VNets
+.8+| Get network information about regions, the target VNet and subnet, and add the VMs to VNets
 | Microsoft.Network/locations/operationResults/read | Yes | Yes | No
 | Microsoft.Network/locations/operations/read | Yes | Yes | No
 | Microsoft.Network/virtualNetworks/read | Yes | No | No
@@ -373,7 +373,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Network/virtualNetworks/virtualMachines/read | Yes | Yes | No
 | Microsoft.Network/virtualNetworks/subnets/join/action | Yes | Yes | No
 
-.9+| Create and manage resource groups for Cloud Volumes ONTAP
+.9+| Create and manage resource groups
 | Microsoft.Resources/deployments/operations/read | Yes | Yes | No
 | Microsoft.Resources/deployments/read | Yes | Yes | No
 | Microsoft.Resources/deployments/write | Yes | Yes | No
@@ -384,7 +384,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Resources/subscriptions/resourcegroups/resources/read | Yes | Yes | No
 | Microsoft.Resources/subscriptions/resourceGroups/write | Yes | Yes | No
 
-.10+| Manage Azure storage accounts and disks and attach the disks to Cloud Volumes ONTAP
+.10+| Manage Azure storage accounts and disks
 | Microsoft.Compute/disks/read | Yes | Yes | Yes
 | Microsoft.Compute/disks/write | Yes | Yes | No
 | Microsoft.Compute/disks/delete | Yes | Yes | Yes
@@ -396,7 +396,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Storage/storageAccounts/write | Yes | Yes | No
 | Microsoft.Storage/usages/read | No | Yes | No
 
-.3+| Enable backups to Azure Blob storage and encryption of storage accounts
+.3+| Enable backups to Blob storage and encryption of storage accounts
 | Microsoft.Storage/storageAccounts/blobServices/containers/read | Yes | Yes | No
 | Microsoft.KeyVault/vaults/read | Yes | Yes | No
 | Microsoft.KeyVault/vaults/accessPolicies/write | Yes | Yes | No
@@ -411,15 +411,15 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Compute/snapshots/delete | No | Yes | Yes
 | Microsoft.Compute/disks/beginGetAccess/action | No | Yes | No
 
-.2+| Create and manage availability sets for Cloud Volumes ONTAP
+.2+| Create and manage availability sets
 | Microsoft.Compute/availabilitySets/write | Yes | No | No
 | Microsoft.Compute/availabilitySets/read | Yes | No | No
 
-.2+| Enable programmatic deployments from the Azure Marketplace
+.2+| Enable programmatic deployments from the marketplace
 | Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read | Yes | No | No
 | Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write | Yes | Yes | No
 
-.7+| Manage an Azure load balancer for HA pairs
+.7+| Manage a load balancer for HA pairs
 | Microsoft.Network/loadBalancers/read | Yes | Yes | No
 | Microsoft.Network/loadBalancers/write | Yes | No | No
 | Microsoft.Network/loadBalancers/delete | No | Yes | Yes
@@ -431,7 +431,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Enable management of locks on Azure disks
 | Microsoft.Authorization/locks/* | Yes | Yes | No
 
-.10+| Enable the management of private endpoints for HA pairs when connectivity isn't provided outside of the subnet (Cloud Manager creates the storage account with only internal connectivity within the subnet)
+.10+| Enable private endpoints for HA pairs when there's no connectivity outside the subnet
 | Microsoft.Network/privateEndpoints/write | Yes | Yes | No
 | Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action | Yes | No | No
 | Microsoft.Storage/storageAccounts/privateEndpointConnections/read | Yes | Yes | Yes
@@ -443,20 +443,20 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Network/privateDnsZones/read | Yes | Yes | No
 | Microsoft.Network/privateDnsZones/virtualNetworkLinks/read | Yes | Yes | No
 
-| Azure requires this permission for some virtual machine deployments (it depends on the underlying physical hardware that's used during deployment)
+| Required by Azure for some VM deployments, depending on the underlying physical hardware
 | Microsoft.Resources/deployments/operationStatuses/read | Yes | Yes | No
 
-.2+| Remove resources from a resource group that belongs to Cloud Volumes ONTAP in case of deployment failure or deletion
+.2+| Remove resources from a resource group in case of deployment failure or deletion
 | Microsoft.Network/privateEndpoints/delete | Yes | Yes | No
 | Microsoft.Compute/availabilitySets/delete | Yes | Yes | No
 
-.4+| Enable the use of customer-managed encryption keys with Cloud Volumes ONTAP using the Cloud Manager API
+.4+| Enable the use of customer-managed encryption keys when using the API
 | Microsoft.Compute/diskEncryptionSets/read | Yes | Yes | Yes
 | Microsoft.Compute/diskEncryptionSets/write | Yes | Yes | No
 | Microsoft.KeyVault/vaults/deploy/action | Yes | No | No
 | Microsoft.Compute/diskEncryptionSets/delete | Yes | Yes | Yes
 
-.6+| Enables Cloud Manager to configure an application security group for an HA pair, which isolates the HA interconnect and cluster network NICs
+.6+| Configure an application security group for an HA pair to isolate the HA interconnect and cluster network NICs
 | Microsoft.Network/applicationSecurityGroups/write | No | Yes | No
 | Microsoft.Network/applicationSecurityGroups/read | No | Yes | Yes
 | Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action | No | Yes | No
@@ -464,7 +464,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Network/applicationSecurityGroups/delete | No | Yes | No
 | Microsoft.Network/networkSecurityGroups/securityRules/delete | No | Yes | Yes
 
-.3+| Enables Cloud Manager to read, write, and delete tags associated with Cloud Volumes ONTAP resources.
+.3+| Read, write, and delete tags associated with Cloud Volumes ONTAP resources
 | Microsoft.Resources/tags/read | No | Yes | No
 | Microsoft.Resources/tags/write | Yes | Yes | No
 | Microsoft.Resources/tags/delete | Yes | No | No
