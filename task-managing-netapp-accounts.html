@@ -1413,7 +1413,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-01 14:46:01 +0000">11/01/2022</time>
+    <time datetime="2022-11-04 02:36:33 +0000">11/04/2022</time>
     
   
 
@@ -1642,17 +1642,8 @@
 <div class="paragraph">
 <p>In order to make API calls to the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html" target="_blank" rel="noopener">Tenancy API</a>, you&#8217;ll need to obtain a bearer token for a service account.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "grant_type": "client_credentials",
-    "client_secret": "&lt;client secret&gt;",
-    "audience": "https://api.cloud.netapp.com",
-    "client_id": "&lt;client id&gt;"
-}'</code></pre>
-</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_service_token.html" target="_blank" rel="noopener">Learn how to create a service account token</a></p>
 </div>
 </div>
 <div class="sect2">
