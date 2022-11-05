@@ -1413,7 +1413,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-01 17:12:20 +0000">11/01/2022</time>
+    <time datetime="2022-11-05 21:59:01 +0000">11/05/2022</time>
     
   
 
@@ -1624,20 +1624,22 @@
         "s3:AbortMultipartUpload",
         "s3:ListMultipartUploadParts",
         "s3:DeleteBucket",
-		    "s3:GetObjectVersionTagging",
-			  "s3:GetObjectVersionAcl",
-	   		"s3:GetObjectRetention",
-	   		"s3:GetObjectTagging",
-	   		"s3:GetObjectVersion",
-	   		"s3:PutObjectVersionTagging",
-	   		"s3:PutObjectRetention",
-	   		"s3:DeleteObjectTagging",
-	   		"s3:DeleteObjectVersionTagging",
-	   		"s3:GetBucketObjectLockConfiguration",
-	   		"s3:GetBucketVersioning",
-	   		"s3:PutBucketObjectLockConfiguration",
-	   		"s3:PutBucketVersioning",
-	   		"s3:BypassGovernanceRetention"
+        "s3:GetObjectVersionTagging",
+        "s3:GetObjectVersionAcl",
+        "s3:GetObjectRetention",
+        "s3:GetObjectTagging",
+        "s3:GetObjectVersion",
+        "s3:PutObjectVersionTagging",
+        "s3:PutObjectRetention",
+        "s3:DeleteObjectTagging",
+        "s3:DeleteObjectVersionTagging",
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:GetBucketVersioning",
+        "s3:PutBucketObjectLockConfiguration",
+        "s3:PutBucketVersioning",
+        "s3:BypassGovernanceRetention",
+        "s3:PutBucketPolicy",
+        "s3:PutBucketOwnershipControls"
       ],
       "Resource": [
         "arn:aws:s3:::netapp-backup-*"
@@ -2386,6 +2388,19 @@
 </li>
 <li>
 <p>s3:GetObjectVersion</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Connector makes the following API requests if you use a different AWS account for your Cloud Volumes ONTAP backups than you&#8217;re using for the source volumes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>s3:PutBucketPolicy</p>
+</li>
+<li>
+<p>s3:PutBucketOwnershipControls</p>
 </li>
 </ul>
 </div>
