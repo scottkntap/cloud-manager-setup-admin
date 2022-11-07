@@ -79,6 +79,8 @@ sidebar:
               url: /task-configuring-proxy.html
             - title: Default configuration
               url: /reference-connector-default-config.html
+        - title: Subscriptions
+          url: /task-manage-subscriptions.html
         - title: Discovered cloud storage
           entries:
             - title: View your Amazon S3 buckets

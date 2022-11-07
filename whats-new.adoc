@@ -16,6 +16,18 @@ summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration f
 Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 6 November 2022
+
+=== Connector 3.9.23
+
+* Your PAYGO subscriptions and annual contracts for BlueXP are now available to view and manage from the Digital Wallet.
++
+https://review.docs.netapp.com/us-en/cloud-manager-setup-admin_nov-2022/task-manage-subscriptions.html[Learn how to manage your subscriptions^]
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#6-november-2022[Learn about Cloud Volumes ONTAP enhancements^]
+
 == 1 November 2022
 
 Cloud Manager now prompts you to update the credentials associated with your NetApp Support Site accounts when the refresh token associated with your account expires after 3 months. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-nss-credentials[Learn how to manage NSS accounts^]
@@ -49,6 +61,7 @@ https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-work
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements.
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#31-july-2022[Learn about Cloud Volumes ONTAP enhancements^]
+//end::whats-new[]
 
 == 15 July 2022
 
@@ -59,7 +72,6 @@ We updated the documentation by adding the Cloud Manager policies directly insid
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#create-an-iam-policy[Here's an example that shows the AWS IAM role permissions used to create a Connector].
 
 We also created a page that provides links to each of the policies. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html[View the permissions summary for Cloud Manager].
-//end::whats-new[]
 
 == 3 July 2022
 
