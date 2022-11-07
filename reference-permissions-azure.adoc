@@ -469,6 +469,9 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Resources/tags/write | Yes | Yes | No
 | Microsoft.Resources/tags/delete | Yes | No | No
 
+| Encrypt storage accounts during creation
+| Microsoft.ManagedIdentity/userAssignedIdentities/assign/action | Yes | Yes | No
+
 |===
 
 === Global File Cache
