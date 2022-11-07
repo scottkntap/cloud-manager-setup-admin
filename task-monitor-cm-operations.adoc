@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-monitor-cm-operations.html
 keywords: administer, monitor, account, timeline, notifications, alerts, events, notification center, email
-summary: You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center, in the Timeline, or have notifications sent to your email.
+summary: You can monitor the status of the operations that BlueXP is performing to see if there are any issues that you need to address. You can view the status in the Notification Center, in the Timeline, or have notifications sent to your email.
 ---
 
 = Monitoring operations in your account
@@ -13,7 +13,7 @@ summary: You can monitor the status of the operations that Cloud Manager is perf
 :imagesdir: ./media/
 
 [.lead]
-You can monitor the status of the operations that Cloud Manager is performing to see if there are any issues that you need to address. You can view the status in the Notification Center, in the Timeline, or have notifications sent to your email.
+You can monitor the status of the operations that BlueXP is performing to see if there are any issues that you need to address. You can view the status in the Notification Center, in the Timeline, or have notifications sent to your email.
 
 This table provides a comparison of the Notification Center and the Timeline so you can understand what each has to offer.
 
@@ -35,14 +35,14 @@ This table provides a comparison of the Notification Center and the Timeline so 
 
 == Monitoring activities using the Notification Center
 
-Notifications track the progress of operations that you've initiated in Cloud Manager so you can verify whether the operation was successful or not. They enable you to view the status for many Cloud Manager operations that you initiated during your current login session. Not all services report information into the Notification Center at this time.
+Notifications track the progress of operations that you've initiated in BlueXP so you can verify whether the operation was successful or not. They enable you to view the status for many BlueXP actions that you initiated during your current login session. Not all services report information into the Notification Center at this time.
 // Notifications can even prompt you to retry a failed operation.
 
 You can display the notifications by clicking the notification bell (image:icon_bell.png[notification bell]) in the menu bar. The color of the little bubble in the bell indicates the highest level severity notification that is active. So if you see a red bubble, it means there's an important notification that you should look at.
 
 image:screenshot_notification_full.png[A screenshot showing the a list of current notifications in the Notification Center.]
 
-You can also configure Cloud Manager to send notifications by email so you can be informed of important system activity even when you're not logged into the system. Emails can be sent to any Cloud Central users who are part of your NetApp Cloud Account, or to any other recipients who need to be aware of certain types of system activity. See <<Setting email notification settings,Setting email notification settings>> below.
+You can also configure BlueXP to send notifications by email so you can be informed of important system activity even when you're not logged into the system. Emails can be sent to any users who are part of your NetApp Cloud Account, or to any other recipients who need to be aware of certain types of system activity. See <<Setting email notification settings,Setting email notification settings>> below.
 
 === Notification types
 
@@ -65,11 +65,11 @@ Notifications are classified in the following categories:
 
 === Filtering notifications
 
-By default you'll see all notifications. You can filter the notifications that you see in the Notification Center to show only those notifications that are important to you. You can filter by Cloud Manager "Service" and by notification "Type".
+By default you'll see all notifications. You can filter the notifications that you see in the Notification Center to show only those notifications that are important to you. You can filter by BlueXP "Service" and by notification "Type".
 
 image:screenshot_notification_filters.png[A screenshot showing the two types of filters available in the Notification Center.]
 
-For example, if you want to see only "Error" and "Warning" notifications for Cloud Manager operations, select those entries and you'll see only those types of notifications.
+For example, if you want to see only "Error" and "Warning" notifications for BlueXP operations, select those entries and you'll see only those types of notifications.
 
 // === Selecting which account and which user notifications you will see
 //
@@ -88,21 +88,21 @@ For example, if you want to see only "Error" and "Warning" notifications for Clo
 
 === Setting email notification settings
 
-You can send specific types of notifications by email so you can be informed of important system activity even when you're not logged into Cloud Manager. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
+You can send specific types of notifications by email so you can be informed of important system activity even when you're not logged into BlueXP. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
 
-[Note]
+[NOTE]
 ====
-* At this time, only Cloud Sync is sending notifications by email. Additional services will be added in future releases.
+* At this time, only Cloud Sync and Cloud Backup are sending notifications by email. Additional services will be added in future releases.
 * Sending email notifications is not supported when the Connector is installed in a site without internet access.
 ====
 
-By default, Cloud Manager Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
+By default, BlueXP Account Admins will receive emails for all "Critical" and "Recommendation" notifications. All other users and recipients are configured, by default, not to receive any notification emails.
 
 You must be an Account Admin to customize the notifications settings.
 
 .Steps
 
-. From the Cloud Manager menu bar, click *Settings > Alerts and Notifications Settings*.
+. From the BlueXP menu bar, click *Settings > Alerts and Notifications Settings*.
 +
 image:screenshot-settings-notifications.png[A screenshot showing how to display the Alerts and Notifications Settings page.]
 
@@ -116,7 +116,7 @@ image:screenshot-change-notifications.png[A screenshot showing how to change not
 
 === Adding additional email recipients
 
-The users who appear in the _Account Users_ tab are populated automatically from the users in your NetApp Account (from the link:task-managing-netapp-accounts.html#creating-and-managing-users[Manage Account page]). You can add email addresses in the _Additional Recipients_ tab for other people, or groups, who do not have access to Cloud Manager, but who need to be notified about certain types of alerts and notifications.
+The users who appear in the _Account Users_ tab are populated automatically from the users in your NetApp Account (from the link:task-managing-netapp-accounts.html#creating-and-managing-users[Manage Account page]). You can add email addresses in the _Additional Recipients_ tab for other people, or groups, who do not have access to BlueXP, but who need to be notified about certain types of alerts and notifications.
 
 .Steps
 
@@ -138,13 +138,13 @@ image:screenshot_notification_dismiss1.png[A screenshot showing the how to dismi
 
 == Auditing user activity in your account
 
-The Timeline in Cloud Manager shows the actions that users completed to manage your account. This includes management actions such as associating users, creating workspaces, creating Connectors, and more.
+The Timeline in BlueXP shows the actions that users completed to manage your account. This includes management actions such as associating users, creating workspaces, creating Connectors, and more.
 
 Checking the Timeline can be helpful if you need to identify who performed a specific action, or if you need to identify the status of an action.
 
 .Steps
 
-. From the Cloud Manager menu bar, click *Settings > Timeline*.
+. From the BlueXP menu bar, click *Settings > Timeline*.
 
 . Under the Filters, click *Service*, enable *Tenancy*, and click *Apply*.
 

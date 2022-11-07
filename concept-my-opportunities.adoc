@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-my-opportunities.html
 keywords: discover, discovering fsx, discover fsx, discovering, my opportunities, opportunities
-summary: On the Canvas, the My Opportunities tab provides a centralized location to discover existing resources that you can add to Cloud Manager for consistent data services and operations across your hybrid multicloud.
+summary: On the Canvas, the My Opportunities tab provides a centralized location to discover existing resources that you can add to BlueXP for consistent data services and operations across your hybrid multicloud.
 ---
 
 = My Opportunities
@@ -13,7 +13,7 @@ summary: On the Canvas, the My Opportunities tab provides a centralized location
 :imagesdir: ./media/
 
 [.lead]
-On the Canvas, the *My Opportunities* tab provides a centralized location to discover existing resources that you can add to Cloud Manager for consistent data services and operations across your hybrid multicloud.
+On the Canvas, the *My Opportunities* tab provides a centralized location to discover existing resources that you can add to BlueXP for consistent data services and operations across your hybrid multicloud.
 
 Currently, My Opportunities enables you to discover existing FSx for ONTAP file systems in your AWS account.
 

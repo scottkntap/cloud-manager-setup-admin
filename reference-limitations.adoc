@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference-limitations.html
-keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, cloud manager, Cloud Volumes ONTAP, days, running, Connectors should remain running
+keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, BlueXP, Cloud Volumes ONTAP, days, running, Connectors should remain running
 summary: Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 ---
 
@@ -15,17 +15,17 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
-These limitations are specific to Cloud Manager set up and administration: the Connector, the SaaS platform, and more.
+These limitations are specific to BlueXP set up and administration: the Connector, the SaaS platform, and more.
 
 == Connector limitations
 
 === Possible conflict with IP addresses in the 172 range
 
-Cloud Manager deploys the Connector with two interfaces that have IP addresses in the 172.17.0.0/16 and 172.18.0.0/16 ranges.
+BlueXP deploys the Connector with two interfaces that have IP addresses in the 172.17.0.0/16 and 172.18.0.0/16 ranges.
 
-If your network has a subnet configured with either of these ranges, then you might experience connectivity failures from Cloud Manager. For example, discovering on-prem ONTAP clusters in Cloud Manager might fail.
+If your network has a subnet configured with either of these ranges, then you might experience connectivity failures from BlueXP. For example, discovering on-prem ONTAP clusters in BlueXP might fail.
 
-See Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/Cloud_Manager_shows_inactive_as_Connector_IP_range_in_172.x.x.x_conflict_with_docker_network[Cloud Manager Connector IP conflict with existing network] for instructions on how to change the IP address of the Connector’s interfaces.
+See Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/Cloud_Manager_shows_inactive_as_Connector_IP_range_in_172.x.x.x_conflict_with_docker_network[BlueXP Connector IP conflict with existing network] for instructions on how to change the IP address of the Connector’s interfaces.
 
 //Reference link:https://jira.ngage.netapp.com/browse/KDA-1546[KDA JIRA-1546]
 
@@ -33,11 +33,11 @@ See Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting
 
 If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
 
-Cloud Manager doesn't support using an HTTPS proxy with the Connector.
+BlueXP doesn't support using an HTTPS proxy with the Connector.
 
 === SSL decryption isn't supported
 
-Cloud Manager doesn't support firewall configurations that have SSL decryption enabled. If SSL decryption is enabled, error messages appear in Cloud Manager and the Connector instance displays as inactive.
+BlueXP doesn't support firewall configurations that have SSL decryption enabled. If SSL decryption is enabled, error messages appear in BlueXP and the Connector instance displays as inactive.
 
 For enhanced security, you have the option to link:task-installing-https-cert.html[install an HTTPS certificate signed by a certificate authority (CA)].
 
@@ -59,9 +59,9 @@ The Connector isn't supported on a VM that is shared with other applications. Th
 
 === SaaS platform is disabled for Government regions
 
-If you deploy a Connector in an AWS GovCloud region, an Azure Gov region, or an Azure DoD region, access to Cloud Manager is available only through a Connector's host IP address. Access to the SaaS platform is disabled for the entire account.
+If you deploy a Connector in an AWS GovCloud region, an Azure Gov region, or an Azure DoD region, access to BlueXP is available only through a Connector's host IP address. Access to the SaaS platform is disabled for the entire account.
 
-This means that only privileged users who can access the end-user internal VPC/VNet can use Cloud Manager's UI or API.
+This means that only privileged users who can access the end-user internal VPC/VNet can use BlueXP's UI or API.
 
 Note that the only services supported in these regions are Cloud Volumes ONTAP, Cloud Backup, Cloud Data Sense, and Replication. No other NetApp services are supported in Government regions.
 

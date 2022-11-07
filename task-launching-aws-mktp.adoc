@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-launching-aws-mktp.html
 keywords: install connector, create connector, deploy connector, installation, installing, marketplace, aws, launch, launching, ec2 console, iam role, govcloud, government, aws government, aws govcloud, gov marketplace
-summary: It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the AWS Marketplace, if you'd rather not specify AWS access keys. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
+summary: For an AWS commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the AWS Marketplace, if you prefer. For AWS Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the AWS Marketplace.
 ---
 
 = Create a Connector from the AWS Marketplace
@@ -13,13 +13,13 @@ summary: It's best to create a Connector directly from Cloud Manager, but you ca
 :imagesdir: ./media/
 
 [.lead]
-For an AWS commercial region, it's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the AWS Marketplace, if you prefer. For AWS Government regions, you can't deploy the Connector in a Government region from Cloud Manager's SaaS website, so the next best option is to do so from the AWS Marketplace.
+For an AWS commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the AWS Marketplace, if you prefer. For AWS Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the AWS Marketplace.
 
 TIP: You can also download and install the Connector software on an existing Linux host in your network or in the cloud. link:task-installing-linux.html[Learn how to install the Connector on an existing Linux host].
 
 == Create the Connector in an AWS commercial region
 
-You can launch the Connector instance in an AWS commercial region directly from the AWS Marketplace offering for Cloud Manager.
+You can launch the Connector instance in an AWS commercial region directly from the AWS Marketplace offering for BlueXP.
 
 .Before you get started
 
@@ -33,7 +33,7 @@ The IAM user who creates the Connector must have AWS Marketplace permissions to 
 
 .. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
-. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[Cloud Manager page on the AWS Marketplace^] to deploy Cloud Manager from an AMI:
+. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^] to deploy the Connector from an AMI:
 
 . On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
 +
@@ -43,13 +43,13 @@ image:screenshot_subscribe_cm.gif[A screenshot that shows the Continue to Subscr
 
 . Under *Choose Action*, select *Launch through EC2* and then click *Launch*.
 +
-These steps describe how to launch the instance from the EC2 Console because the console enables you to attach an IAM role to the Cloud Manager instance. This isn't possible using the *Launch from Website* action.
+These steps describe how to launch the instance from the EC2 Console because the console enables you to attach an IAM role to the Connector instance. This isn't possible using the *Launch from Website* action.
 
 . Follow the prompts to configure and deploy the instance:
 
 * *Name and tags*: Enter a name and tags for the instance.
 
-* *Application and OS Image*: Skip this section. The Cloud Manager AMI is already selected.
+* *Application and OS Image*: Skip this section. The Connector AMI is already selected.
 
 * *Instance type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
 +
@@ -65,7 +65,7 @@ link:task-installing-linux.html[Review the instance requirements].
 
 * *Configure storage*: Keep the default storage options.
 
-* *Advanced details*: Under *IAM intance profile*, choose the IAM role that you created in step 1.
+* *Advanced details*: Under *IAM instance profile*, choose the IAM role that you created in step 1.
 
 * *Summary*: Review the summary and click *Launch instance*.
 +
@@ -83,17 +83,17 @@ link:concept-netapp-accounts.html[Learn about NetApp accounts].
 +
 image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Connector screen that enables you to select a NetApp account and name the system.]
 
-. Open a web browser and go to https://cloudmanager.netapp.com to start using the Connector with Cloud Manager.
+. Open a web browser and go to https://cloudmanager.netapp.com to start using the Connector with BlueXP.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
 
 If you have Amazon S3 buckets in the same AWS account where you created the Connector, you'll see an Amazon S3 working environment appear on the Canvas automatically. link:task-viewing-amazon-s3.html[Learn more about what you can do with this working environment].
 
 == Create the Connector in an AWS Government region
 
-To deploy the Connector in an AWS Government region, you need to go to the EC2 service and select the Cloud Manager offering from the AWS Marketplace.
+To deploy the Connector in an AWS Government region, you need to go to the EC2 service and select the BlueXP offering from the AWS Marketplace.
 
 .Steps
 
@@ -103,15 +103,15 @@ To deploy the Connector in an AWS Government region, you need to go to the EC2 s
 
 .. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
-. Go to the Cloud Manager offering in the AWS Marketplace.
+. Go to the BlueXP offering in the AWS Marketplace.
 +
 The IAM user must have AWS Marketplace permissions to subscribe and unsubscribe.
 
 .. Open the EC2 service and select *Launch instance*.
 .. Select *AWS Marketplace*.
-.. Search for Cloud Manager and select the offering.
+.. Search for BlueXP and select the offering.
 +
-image:screenshot-gov-cloud-mktp.png[A screenshot that shows the Cloud Manager offering after searching for it in the AWS Marketplace]
+image:screenshot-gov-cloud-mktp.png[A screenshot that shows the BlueXP offering after searching for it in the AWS Marketplace]
 
 .. Click *Continue*.
 
@@ -152,13 +152,13 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Con
 
 The Connector is now installed and set up with your NetApp account.
 
-Any time that you want to use Cloud Manager, open your web browser and connect to the IP address of the Connector instance: https://_ipaddress_
+Any time that you want to use BlueXP, open your web browser and connect to the IP address of the Connector instance: https://_ipaddress_
 
 Since the Connector was deployed in a Government region, it's not accessible from https://cloudmanager.netapp.com.
 
 == Open port 3128 for AutoSupport messages
 
-If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then Cloud Manager automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
+If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then BlueXP automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
 
 The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 

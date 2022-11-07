@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-launching-azure-mktp.html
 keywords: install, installation, installing, marketplace, azure, deploy, virtual machine, permissions, deploy connector in azure, install connector in azure
-summary: It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
+summary: For an Azure commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the Azure Marketplace.
 ---
 
 = Create a Connector from the Azure Marketplace
@@ -13,7 +13,7 @@ summary: It's best to create a Connector directly from Cloud Manager, but you ca
 :imagesdir: ./media/
 
 [.lead]
-For an Azure commercial region, it's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can't deploy the Connector in a Government region from Cloud Manager's SaaS website, so the next best option is to do so from the Azure Marketplace.
+For an Azure commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the Azure Marketplace.
 
 TIP: You can also download and install the Connector software on an existing Linux host in your network or in the cloud. link:task-installing-linux.html[Learn how to install the Connector on an existing Linux host].
 
@@ -35,7 +35,7 @@ Deploy the Connector in Azure using the image in the Azure Marketplace and then 
 +
 Note the following as you configure the VM:
 
-* Cloud Manager can perform optimally with either HDD or SSD disks.
+* The Connector can perform optimally with either HDD or SSD disks.
 
 * Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
 +
@@ -63,15 +63,15 @@ https://_ipaddress_
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 +
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a NetApp account and name the system.]
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up BlueXP screen that enables you to select a NetApp account and name the system.]
 
 .Result
 
 The Connector is now installed and set up with your NetApp account.
 
-If the Connector is in an Azure commercial region, open a web browser and go to https://cloudmanager.netapp.com to start using the Connector with Cloud Manager.
+If the Connector is in an Azure commercial region, open a web browser and go to https://cloudmanager.netapp.com to start using the Connector with BlueXP.
 
-If the Connector is in an Azure Government region, you can use Cloud Manager by opening your web browser and connecting to the IP address of the Connector instance: https://_ipaddress_
+If the Connector is in an Azure Government region, you can use BlueXP by opening your web browser and connecting to the IP address of the Connector instance: https://_ipaddress_
 
 Since the Connector was deployed in a Government region, it's not accessible from https://cloudmanager.netapp.com.
 
@@ -112,7 +112,7 @@ image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell wh
 [source,azurecli]
 az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
 +
-You should now have a custom role called Cloud Manager Operator that you can assign to the Connector virtual machine.
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 
 . Assign the role to the Connector virtual machine for one or more subscriptions:
 
@@ -120,9 +120,9 @@ You should now have a custom role called Cloud Manager Operator that you can ass
 
 .. Click *Access control (IAM)* > *Add* > *Add role assignment*.
 
-.. In the *Role* tab, select the *Cloud Manager Operator* role and click *Next*.
+.. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
 +
-NOTE: Cloud Manager Operator is the default name provided in the Cloud Manager policy. If you chose a different name for the role, then select that name instead.
+NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
 
 .. In the *Members* tab, complete the following steps:
 
@@ -140,13 +140,13 @@ NOTE: Cloud Manager Operator is the default name provided in the Cloud Manager p
 
 .Result
 
-The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
 
 If you have Azure Blob storage in the same Azure account where you created the Connector, you'll see an Azure Blob working environment appear on the Canvas automatically. link:task-viewing-azure-blob.html[Learn more about what you can do with this working environment].
 
 == Open port 3128 for AutoSupport messages
 
-If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then Cloud Manager automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
+If you plan to deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection won't be available, then BlueXP automatically configures Cloud Volumes ONTAP to use the Connector as a proxy server.
 
 The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-checklist-cm.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: Use this checklist to understand what's needed to get up and running with Cloud Manager in a typical deployment where the Connector has outbound internet access.
+summary: Use this checklist to understand what's needed to get up and running with BlueXP in a typical deployment where the Connector has outbound internet access.
 ---
 
 = Getting started checklist
@@ -13,13 +13,13 @@ summary: Use this checklist to understand what's needed to get up and running wi
 :imagesdir: ./media/
 
 [.lead]
-Use this checklist to understand what's needed to get up and running with Cloud Manager in a typical deployment where the Connector has outbound internet access.
+Use this checklist to understand what's needed to get up and running with BlueXP in a typical deployment where the Connector has outbound internet access.
 
-A NetApp Cloud Central login::
-You need to sign up to https://cloud.netapp.com[NetApp Cloud Central^] so that you can access Cloud Manager and other cloud services.
+A login::
+To log in to BlueXP, you can use your NetApp Support Site credentials or you can sign up for a NetApp cloud login using your email and a password. link:task-logging-in.html[Learn more about logging in].
 
 Network access from a web browser to several endpoints::
-The Cloud Manager user interface is accessible from a web browser. As you use the Cloud Manager user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
+The BlueXP user interface is accessible from a web browser. As you use the BlueXP user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 +
 [cols=2*,options="header,autowidth"]
 |===
@@ -38,33 +38,33 @@ AWS services (amazonaws.com):
 *	Security Token Service (STS)
 *	Simple Storage Service (S3)
 
-| Required to deploy a Connector from Cloud Manager in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
+| Required to deploy a Connector from BlueXP in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
 
 |
 \https://management.azure.com
 
 \https://login.microsoftonline.com
-| Required to deploy a Connector from Cloud Manager in most Azure regions.
+| Required to deploy a Connector from BlueXP in most Azure regions.
 
 |
 \https://management.microsoftazure.de
 
 \https://login.microsoftonline.de
-| Required to deploy a Connector from Cloud Manager in Azure Germany regions.
+| Required to deploy a Connector from BlueXP in Azure Germany regions.
 
 |
 \https://management.usgovcloudapi.net
 
 \https://login.microsoftonline.com
-| Required to deploy a Connector from Cloud Manager in Azure US Gov regions.
+| Required to deploy a Connector from BlueXP in Azure US Gov regions.
 
 |
 \https://www.googleapis.com
 
-| Required to deploy a Connector from Cloud Manager in Google Cloud.
+| Required to deploy a Connector from BlueXP in Google Cloud.
 
 | \https://signin.b2c.netapp.com
-| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to Cloud Manager.
+| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to BlueXP.
 
 |
 \https://netapp-cloud-account.auth0.com
@@ -72,13 +72,13 @@ AWS services (amazonaws.com):
 \https://cdn.auth0.com
 
 \https://services.cloud.netapp.com
-| Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
+| Your web browser connects to these endpoints for centralized user authentication through BlueXP.
 
 | \https://widget.intercom.io
 | For in-product chat that enables you to talk to NetApp cloud experts.
 
 | The Connector’s IP address
-a| In most cases, you should work with Cloud Manager from the SaaS UI, but link:concept-connectors.html#the-local-user-interface[if you use the local UI], then you must enter the host’s IP address from a web browser.
+a| In most cases, you should work with BlueXP from the SaaS UI, but link:concept-connectors.html#the-local-user-interface[if you use the local UI], then you must enter the host’s IP address from a web browser.
 
 Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:
 
@@ -90,7 +90,7 @@ In either case, secure network access by ensuring that security group rules allo
 |===
 
 Outbound networking for a Connector::
-After logging in to Cloud Manager, a Cloud Manager Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. Note that a Connector is required for most, but not all services and features in Cloud Manager. link:concept-connectors.html[Learn more about Connectors and how they work].
+After logging in to BlueXP, a BlueXP Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables BlueXP to manage resources and processes within your public cloud environment. Note that a Connector is required for most, but not all services and features in BlueXP. link:concept-connectors.html[Learn more about Connectors and how they work].
 +
 * The network location where you deploy the Connector must have an outbound internet connection.
 +
@@ -104,7 +104,7 @@ The Connector requires outbound internet access to contact the following endpoin
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 | \https://*.cloudmanager.cloud.netapp.com
 
-\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within BlueXP.
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net
@@ -112,7 +112,7 @@ The Connector requires outbound internet access to contact the following endpoin
 
 |===
 
-* If you choose to manually install the Connector on your own Linux host (and not do so directly from the Cloud Manager interface), the installer for the Connector requires access to the following endpoints during the installation process:
+* If you choose to manually install the Connector on your own Linux host (and not do so directly from the BlueXP interface), the installer for the Connector requires access to the following endpoints during the installation process:
 +
 ** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
@@ -125,7 +125,7 @@ The host might try to update operating system packages during installation. The 
 HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in rare circumstances. SSH (22) is only needed if you need to connect to the host for troubleshooting.
 
 Cloud provider permissions::
-You need an account that has permissions to deploy the Connector in your cloud provider directly from Cloud Manager.
+You need an account that has permissions to deploy the Connector in your cloud provider directly from BlueXP.
 +
 NOTE: There are alternate ways to create a Connector: you can create a Connector from the link:task-launching-aws-mktp.html[AWS Marketplace], the link:task-launching-azure-mktp.html[Azure Marketplace], or you can link:task-installing-linux.html[manually install the software].
 +
@@ -139,20 +139,20 @@ NOTE: There are alternate ways to create a Connector: you can create a Connector
 a|
 . Use a JSON file that includes the required permissions to create an IAM policy in AWS.
 . Attach the policy to an IAM role or IAM user.
-. When you create the Connector, provide Cloud Manager with the ARN of the IAM role or the AWS access key and secret key for the IAM user.
+. When you create the Connector, provide BlueXP with the ARN of the IAM role or the AWS access key and secret key for the IAM user.
 | link:task-creating-connectors-aws.html[Click here to view detailed steps].
 
 | Azure
 a|
 . Use a JSON file that includes the required permissions to create a custom role in Azure.
-. Assign the role to the user who will create the Connector from Cloud Manager.
+. Assign the role to the user who will create the Connector from BlueXP.
 . When you create the Connector, log in with the Microsoft account that has the required permissions (the login prompt that is owned and hosted by Microsoft).
 | link:task-creating-connectors-azure.html[Click here to view detailed steps].
 
 | Google Cloud
 a|
 . Use a YAML file that includes the required permissions to create a custom role in Google Cloud.
-. Attach that role to the user who will create the Connector from Cloud Manager.
+. Attach that role to the user who will create the Connector from BlueXP.
 . If you plan to use Cloud Volumes ONTAP, set up a service account that has the required permissions.
 . Enable Google Cloud APIs.
 . When you create the Connector, log in with the Google account that has the required permissions (the login prompt is owned and hosted by Google).
@@ -161,7 +161,7 @@ a|
 |===
 
 Networking for individual services::
-Now that your setup is complete, you're ready to start using the services available from Cloud Manager. Note that each service has its own networking requirements. Refer to the following pages for more details.
+Now that your setup is complete, you're ready to start using the services available from BlueXP. Note that each service has its own networking requirements. Refer to the following pages for more details.
 +
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html[Cloud Volumes ONTAP for AWS^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html[Cloud Volumes ONTAP for Azure^]

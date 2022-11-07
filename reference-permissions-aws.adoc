@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-permissions-aws.html
 keywords: permissions, actions, aws, aws permissions
-summary: When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service, and more.
+summary: When BlueXP launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service, and more.
 ---
 
 = AWS permissions for the Connector
@@ -13,13 +13,13 @@ summary: When Cloud Manager launches the Connector instance in AWS, it attaches 
 :imagesdir: ./media/
 
 [.lead]
-When Cloud Manager launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service (KMS), and more.
+When BlueXP launches the Connector instance in AWS, it attaches a policy to the instance that provides the Connector with permissions to manage resources and processes within that AWS account. The Connector uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service (KMS), and more.
 
 == IAM policy
 
 The IAM policy shown below provides the permissions that a Connector needs to manage resources and processes within your public cloud environment based on your AWS region.
 
-When you create a Connector directly from Cloud Manager, Cloud Manager automatically applies this policy to the Connector.
+When you create a Connector directly from BlueXP, BlueXP automatically applies this policy to the Connector.
 
 If you deploy the Connector from the AWS Marketplace or if you manually install the Connector on a Linux host, then you'll need to set up the policy yourself.
 
@@ -195,23 +195,25 @@ You also need to ensure that the policy is up to date as new permissions are add
         "s3:AbortMultipartUpload",
         "s3:ListMultipartUploadParts",
         "s3:DeleteBucket",
-		    "s3:GetObjectVersionTagging",
-			  "s3:GetObjectVersionAcl",
-	   		"s3:GetObjectRetention",
-	   		"s3:GetObjectTagging",
-	   		"s3:GetObjectVersion",
-	   		"s3:PutObjectVersionTagging",
-	   		"s3:PutObjectRetention",
-	   		"s3:DeleteObjectTagging",
-	   		"s3:DeleteObjectVersionTagging",
-	   		"s3:GetBucketObjectLockConfiguration",
-	   		"s3:GetBucketVersioning",
-	   		"s3:PutBucketObjectLockConfiguration",
-	   		"s3:PutBucketVersioning",
-	   		"s3:BypassGovernanceRetention"
+        "s3:GetObjectVersionTagging",
+        "s3:GetObjectVersionAcl",
+        "s3:GetObjectRetention",
+        "s3:GetObjectTagging",
+        "s3:GetObjectVersion",
+        "s3:PutObjectVersionTagging",
+        "s3:PutObjectRetention",
+        "s3:DeleteObjectTagging",
+        "s3:DeleteObjectVersionTagging",
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:GetBucketVersioning",
+        "s3:PutBucketObjectLockConfiguration",
+        "s3:PutBucketVersioning",
+        "s3:BypassGovernanceRetention",
+        "s3:PutBucketPolicy",
+        "s3:PutBucketOwnershipControls"
       ],
       "Resource": [
-        "arn:aws:s3:::netapp-backup-*"
+        "arn:aws:s3:::netapp-backup-*"		
       ]
     },
     {
@@ -298,7 +300,7 @@ You also need to ensure that the policy is up to date as new permissions are add
         "ec2:AttachVolume",
         "ec2:DetachVolume",
         "ec2:StopInstances",
-        "ec2:DeleteVolume"
+        "ec2:DeleteVolume"        
       ],
       "Condition": {
         "StringLike": {
@@ -313,7 +315,7 @@ You also need to ensure that the policy is up to date as new permissions are add
       "Effect": "Allow",
       "Action": [
         "ec2:AttachVolume",
-        "ec2:DetachVolume"
+        "ec2:DetachVolume"        
       ],
       "Resource": [
         "arn:aws:ec2:*:*:volume/*"
@@ -321,7 +323,7 @@ You also need to ensure that the policy is up to date as new permissions are add
     },
 	{
       "Effect": "Allow",
-      "Action": [
+      "Action": [        
         "ec2:DeleteVolume"
       ],
 	  "Condition": {
@@ -337,13 +339,13 @@ You also need to ensure that the policy is up to date as new permissions are add
       "Sid": "K8sServicePolicy",
       "Effect": "Allow",
       "Action": [
-        "ec2:DescribeRegions",
+        "ec2:DescribeRegions",     
         "eks:ListClusters",
         "eks:DescribeCluster",
-		    "iam:GetInstanceProfiles"
+        "iam:GetInstanceProfile"
       ],
       "Resource": "*"
-    },
+    },        
     {
       "Sid": "GFCservicePolicy",
       "Effect": "Allow",
@@ -758,6 +760,13 @@ The Connector makes the following API requests when you use DataLock and Ransomw
 * s3:GetBucketLocation
 * s3:GetObjectVersion
 //end::backup-permissions-datalock[]
+
+The Connector makes the following API requests if you use a different AWS account for your Cloud Volumes ONTAP backups than you're using for the source volumes:
+
+//tag::backup-permissions-cross-account[]
+* s3:PutBucketPolicy
+* s3:PutBucketOwnershipControls
+//end::backup-permissions-cross-account[]
 
 === Cloud Data Sense
 

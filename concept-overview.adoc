@@ -1,22 +1,22 @@
 ---
 sidebar: sidebar
 permalink: concept-overview.html
-keywords: overview, concepts, features, use case, days, 14 days
-summary: Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
+keywords: overview, concepts, features, use case, cloud manager
+summary: BlueXP enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
 ---
 
-= Learn about Cloud Manager
+= Learn about BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
-Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
+BlueXP (formerly Cloud Manager) enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
 
 == Features
 
-Cloud Manager is an enterprise-class, SaaS-based management platform that keeps you in control of your data no matter where it is.
+BlueXP is an enterprise-class, SaaS-based management platform that keeps you in control of your data no matter where it is.
 
 * Set up and use https://cloud.netapp.com/ontap-cloud[Cloud Volumes ONTAP^] for efficient, multi-protocol data management across clouds.
 * Set up and use file-storage services:
@@ -31,46 +31,46 @@ Cloud Manager is an enterprise-class, SaaS-based management platform that keeps 
 ** https://cloud.netapp.com/cloud-insights[Cloud Insights^]
 ** https://cloud.netapp.com/cloud-backup-service[Cloud Backup^]
 
-https://cloud.netapp.com/cloud-manager[Learn more about Cloud Manager^].
+https://cloud.netapp.com/cloud-manager[Learn more about BlueXP^].
 
 == Supported object storage providers
 
-Cloud Manager enables you to manage cloud storage and use cloud services in Amazon Web Services, Microsoft Azure, and Google Cloud.
+BlueXP enables you to manage cloud storage and use cloud services in Amazon Web Services, Microsoft Azure, and Google Cloud.
 
 == Cost
 
-Cloud Manager software is free of charge from NetApp.
+BlueXP software is free of charge from NetApp.
 
-For most tasks, Cloud Manager prompts you to deploy a Connector in your cloud network, which results in charges from your cloud provider for the compute instance and associated storage. You do have the option to run the Connector software on your premises.
+For most tasks, BlueXP prompts you to deploy a Connector in your cloud network, which results in charges from your cloud provider for the compute instance and associated storage. You do have the option to run the Connector software on your premises.
 
 link:reference-connector-default-config.html[Learn about the default configuration for the Connector].
 
-== How Cloud Manager works
+== How BlueXP works
 
-Cloud Manager includes a SaaS-based interface that is integrated with NetApp Cloud Central, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
+BlueXP includes a SaaS-based interface that is integrated with the BlueXP website, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
 
 === Software-as-a-service
 
-Cloud Manager is accessible through a https://cloudmanager.netapp.com[SaaS-based user interface^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your NetApp accounts and Connectors.
+BlueXP is accessible through a https://cloudmanager.netapp.com[SaaS-based user interface^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your NetApp accounts and Connectors.
 
 TIP: If you're operating in an environment where outbound internet access isn't available, you can install the Connector software in that environment and access the local user interface that's available on the Connector. link:concept-connectors.html[Learn more about Connectors].
 
-=== NetApp Cloud Central
+=== BlueXP website
 
-https://cloud.netapp.com[NetApp Cloud Central^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^]. With centralized user authentication, you can use the same set of credentials to access Cloud Manager and other cloud services like Cloud Insights.
+https://cloud.netapp.com[The BlueXP website^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^]. With centralized user authentication, you can use the same set of credentials to access BlueXP and other cloud services like Cloud Insights.
 
 === NetApp account
 
-When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
+When you log in to BlueXP for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
 === Connectors
 
-In most cases, a Cloud Manager Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+In most cases, a BlueXP Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
 
 link:concept-connectors.html[Learn more about when Connectors are required and how they work].
 
 == SOC 2 Type 2 certification
 
-An independent certified public accountant firm and services auditor examined Cloud Manager, Cloud Sync, Cloud Tiering, Cloud Data Sense, and Cloud Backup (Cloud Manager platform), and affirmed that they have achieved SOC 2 Type 2 reports based on the applicable Trust Services criteria.
+An independent certified public accountant firm and services auditor examined BlueXP, Cloud Sync, Cloud Tiering, Cloud Data Sense, and Cloud Backup (BlueXP platform), and affirmed that they have achieved SOC 2 Type 2 reports based on the applicable Trust Services criteria.
 
 https://www.netapp.com/company/trust-center/compliance/soc-2/[View NetApp's SOC 2 reports^]

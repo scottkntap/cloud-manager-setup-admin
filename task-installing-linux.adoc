@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-installing-linux.html
 keywords: install connector, manually install connector, install connector software, installation, installing, linux, installer, software, on prem, on-prem, silent, configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space
-summary: The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
+summary: The most common way to create a Connector is directly from BlueXP or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
 ---
 
 = Install the Connector on an existing Linux host that has internet access
@@ -13,7 +13,7 @@ summary: The most common way to create a Connector is directly from Cloud Manage
 :imagesdir: ./media/
 
 [.lead]
-The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud. These steps are specific to hosts that have internet access.
+The most common way to create a Connector is directly from BlueXP or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud. These steps are specific to hosts that have internet access.
 
 link:concept-connectors.html[Learn about other ways to deploy a Connector].
 
@@ -90,7 +90,7 @@ If you receive a message that installing the awscli failed, you can safely ignor
 
 .Steps
 
-. Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
 For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
 
@@ -119,7 +119,7 @@ _proxypwd_ is the password for the user name that you specified.
 
 . Unless you specified the silent parameter, enter *Y* to continue with the installation.
 +
-Cloud Manager is now installed. At the end of the installation, the Cloud Manager service (occm) restarts twice if you specified a proxy server.
+The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
 
 . Open a web browser and enter the following URL:
 +
@@ -127,9 +127,9 @@ https://_ipaddress_
 +
 _ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
 
-. Sign up at NetApp Cloud Central or log in.
+. Sign up or log in.
 
-. If you installed the Connector in Google Cloud, set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems in projects.
+. If you installed the Connector in Google Cloud, set up a service account that has the permissions that BlueXP needs to create and manage Cloud Volumes ONTAP systems in projects.
 
 .. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the link:reference-permissions-gcp.html[Connector policy for GCP].
 
@@ -137,9 +137,9 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 
 .. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate this service account with the Connector VM^].
 
-.. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
+.. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the BlueXP role to that project^]. You'll need to repeat this step for each project.
 
-. After you log in, set up Cloud Manager:
+. After you log in, set up BlueXP:
 .. Specify the NetApp account to associate with the Connector.
 +
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
@@ -149,14 +149,14 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up scr
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. Cloud Manager will automatically use this Connector when you create new working environments.
+The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments.
 
 .After you finish
 
-Set up permissions so Cloud Manager can manage resources and processes within your public cloud environment:
+Set up permissions so BlueXP can manage resources and processes within your public cloud environment:
 
-* AWS: link:task-adding-aws-accounts.html[Set up an AWS account and then add it to Cloud Manager]
+* AWS: link:task-adding-aws-accounts.html[Set up an AWS account and then add it to BlueXP]
 
-* Azure: link:task-adding-azure-accounts.html[Set up an Azure account and then add it to Cloud Manager]
+* Azure: link:task-adding-azure-accounts.html[Set up an Azure account and then add it to BlueXP]
 
 * Google Cloud: See step 7 above
