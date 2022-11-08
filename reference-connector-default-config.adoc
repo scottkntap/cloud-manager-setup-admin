@@ -45,7 +45,7 @@ The operating system does not include a GUI. You must use a terminal to access t
 If you deployed the Connector from BlueXP or from the cloud provider's marketplace, note the following:
 
 * The VM instance is n2-standard-4.
-* The operating system for the image is CentOS 7.9.
+* The operating system for the image is Red Hat Enterprise Linux 8.6.
 +
 The operating system does not include a GUI. You must use a terminal to access the system.
 * The default system disk is a 100 GiB SSD persistent disk.
