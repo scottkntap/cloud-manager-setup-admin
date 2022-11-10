@@ -22,7 +22,7 @@ Learn what's new with BlueXP (formerly Cloud Manager) administration features: N
 
 * Your PAYGO subscriptions and annual contracts for BlueXP are now available to view and manage from the Digital Wallet.
 +
-https://review.docs.netapp.com/us-en/cloud-manager-setup-admin_nov-2022/task-manage-subscriptions.html[Learn how to manage your subscriptions^]
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-manage-subscriptions.html[Learn how to manage your subscriptions^]
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements.
 +
