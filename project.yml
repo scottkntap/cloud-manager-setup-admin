@@ -3,10 +3,8 @@ settings:
   platform: cloud
   internal:
     pdf_enabled: true
-    lipi_enabled: false
   prod:
     pdf_enabled: true
-    lipi_enabled: false
     harmony_enabled: true
   rss_page: "whats-new.html"
 sidebar:

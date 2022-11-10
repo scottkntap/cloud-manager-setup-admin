@@ -12,6 +12,7 @@ summary: BlueXP enables IT experts and cloud architects to centrally manage thei
 :linkattrs:
 :imagesdir: ./media/
 
+[.lead]
 BlueXP (formerly Cloud Manager) enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
 
 == Features
