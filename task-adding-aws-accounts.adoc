@@ -21,7 +21,7 @@ You can add AWS credentials to an existing Connector or directly to BlueXP:
 
 * Add additional AWS credentials to an existing Connector
 +
-Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <<Add additional credentials to a Connector,Learn how to add AWS credentials to a Connector>>.
+Adding AWS credentials to an existing Connector provides the permissions needed to manage resources and processes within your public cloud environment. <<Add credentials to a Connector,Learn how to add AWS credentials to a Connector>>.
 
 * Add AWS credentials to BlueXP for creating a Connector
 +
@@ -39,15 +39,15 @@ With the first two options, BlueXP uses the AWS Security Token Service to obtain
 
 If you provide BlueXP with AWS access keys, you should rotate the keys by updating them in BlueXP at a regular interval. This is a completely manual process.
 
-== Add additional credentials to a Connector
+== Add credentials to a Connector
 
-Add AWS credentials to a Connector so that it can deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in another account or provide AWS access keys.
+Add AWS credentials to a Connector so that it has the permissions needed to manage resources and processes within your public cloud environment. You can either provide the ARN of an IAM role in another account or provide AWS access keys.
 
 === Grant permissions
 
-Before you add additional AWS credentials to a Connector, you need to provide the required permissions. The permissions enable BlueXP to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide BlueXP with the ARN of a role in a trusted account or AWS keys.
+Before you add AWS credentials to a Connector, you need to provide the required permissions. The permissions enable BlueXP to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide BlueXP with the ARN of a role in a trusted account or AWS keys.
 
-NOTE: When you deployed a Connector from BlueXP, BlueXP automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you manually installed the Connector software on an existing system. link:concept-accounts-aws.html[Learn about AWS credentials and permissions].
+NOTE: If you deployed a Connector from BlueXP, BlueXP automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you deployed the Connector from the AWS Marketplace or if you manually installed the Connector software on an existing system. link:concept-accounts-aws.html[Learn about AWS credentials and permissions].
 
 *Choices*
 
@@ -60,7 +60,7 @@ You can set up a trust relationship between the source AWS account in which you 
 
 .Steps
 
-. Go to the IAM console in the target account where you want to deploy Cloud Volumes ONTAP.
+. Go to the IAM console in the target account in which you want to provide the Connector with permissions.
 
 . Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
 +
@@ -68,7 +68,7 @@ Be sure to do the following:
 
 * Under *Trusted entity type*, select *AWS account*.
 * Select *Another AWS account* and enter the ID of the account where the Connector instance resides.
-* Create a policy by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policy for the Connector].
+* Create the required policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
 
 . Copy the Role ARN of the IAM role so that you can paste it in BlueXP later on.
 
@@ -82,11 +82,11 @@ If you want to provide BlueXP with AWS keys for an IAM user, then you need to gr
 
 .Steps
 
-. From the IAM console, create a policy by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policy for the Connector].
+. From the IAM console, create policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
 
-. Attach the policy to an IAM role or an IAM user.
+. Attach the policies to an IAM role or an IAM user.
 +
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies^]
