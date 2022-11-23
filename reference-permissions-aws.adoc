@@ -31,7 +31,22 @@ Select your region to view the policy:
 .Standard regions
 [%collapsible]
 ====
-For standard regions, there are _two_ policies. The first policy provides permissions for Cloud Volumes ONTAP and Cloud Backup. The second policy provides permissions for Global File Cache, Kubernetes, and AppTemplate tagging. Two separate policies are required due to a maximum character size limit for managed policies in AWS.
+For standard regions, the permissions are spread across _two_ policies. Two policies are required due to a maximum character size limit for managed policies in AWS.
+
+The first policy provides permissions for the following services:
+
+* Cloud Backup
+* Cloud Data Sense
+* Cloud Tiering
+* Cloud Volumes ONTAP
+* FSx for ONTAP
+* S3 bucket discovery
+
+ The second policy provides permissions for the following services:
+ 
+* AppTemplate tagging
+* Global File Cache
+* Kubernetes
 
 // start tabbed area
 [role="tabbed-block"]
@@ -318,6 +333,7 @@ For standard regions, there are _two_ policies. The first policy provides permis
 
 .Policy #2
 --
+[source,json]
 {
   "Version": "2012-10-17",
   "Statement": [
