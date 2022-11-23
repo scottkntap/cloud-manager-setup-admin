@@ -114,7 +114,6 @@ The Connector requires outbound internet access to contact the following endpoin
 
 * If you choose to manually install the Connector on your own Linux host (and not do so directly from the BlueXP interface), the installer for the Connector requires access to the following endpoints during the installation process:
 +
-** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 ** \https://*.blob.core.windows.net or \https://hub.docker.com
 +
