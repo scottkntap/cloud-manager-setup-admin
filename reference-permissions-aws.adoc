@@ -314,12 +314,72 @@ For standard regions, there are _two_ policies. The first policy provides permis
         }
     ]
   }
---
 
 .Standard region policy #2
 --
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "K8sServicePolicy",
+      "Effect": "Allow",
+      "Action": [
+          "ec2:DescribeRegions",
+          "eks:ListClusters",
+          "eks:DescribeCluster",
+          "iam:GetInstanceProfile"
+      ],
+      "Resource": "*"
+    },
+    {
+        "Sid": "GFCservicePolicy",
+        "Effect": "Allow",
+        "Action": [
+            "cloudformation:DescribeStacks",
+            "cloudwatch:GetMetricStatistics",
+            "cloudformation:ListStacks"
+        ],
+        "Resource": "*"
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
+            "ec2:StartInstances",
+            "ec2:TerminateInstances",
+            "ec2:AttachVolume",
+            "ec2:DetachVolume"
+        ],
+        "Condition": {
+            "StringLike": {
+                "ec2:ResourceTag/GFCInstance": "*"
+            }
+        },
+        "Resource": [
+            "arn:aws:ec2:*:*:instance/*"
+        ]
+    },
+    {
+        "Sid": "tagServicePolicy",
+        "Effect": "Allow",
+        "Action": [
+            "ec2:CreateTags",
+            "ec2:DeleteTags",
+            "ec2:DescribeTags",
+            "tag:getResources",
+            "tag:getTagKeys",
+            "tag:getTagValues",
+            "tag:TagResources",
+            "tag:UntagResources"
+        ],
+        "Resource": "*"
+    }
+  ]
+}
 
-// Start snippet: collapsible block (open on page load)
+====
+// End collapsible block
+
+// Start snippet: collapsible block (closed on page load)
 .GovCloud (US) regions
 [%collapsible]
 ====
@@ -385,7 +445,7 @@ For standard regions, there are _two_ policies. The first policy provides permis
 ====
 // End snippet
 
-// Start snippet: collapsible block (open on page load)
+// Start snippet: collapsible block (closed on page load)
 .C2S environment
 [%collapsible]
 ====
