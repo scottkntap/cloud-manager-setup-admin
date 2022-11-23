@@ -25,7 +25,13 @@ If you deploy the Connector from the AWS Marketplace or if you manually install 
 
 You also need to ensure that the policies are up to date as new permissions are added in subsequent releases.
 
-TIP: For standard regions, there are _two_ policies. The first policy provides permissions for Cloud Volumes ONTAP and Cloud Backup. The second policy provides permissions for Global File Cache, Kubernetes, and AppTemplate tagging. Two separate policies are required due to a maximum character size limit for managed policies in AWS.
+Select your region to view the policy:
+
+// Start snippet: collapsible block (open on page load)
+.Standard regions
+[%collapsible%open]
+====
+For standard regions, there are _two_ policies. The first policy provides permissions for Cloud Volumes ONTAP and Cloud Backup. The second policy provides permissions for Global File Cache, Kubernetes, and AppTemplate tagging. Two separate policies are required due to a maximum character size limit for managed policies in AWS.
 
 // start tabbed area
 [role="tabbed-block"]
@@ -313,10 +319,10 @@ TIP: For standard regions, there are _two_ policies. The first policy provides p
 .Standard region policy #2
 --
 
---
-
+// Start snippet: collapsible block (open on page load)
 .GovCloud (US) regions
---
+[%collapsible%open]
+====
 [source,json]
 {
   "Version": "2012-10-17",
@@ -376,10 +382,13 @@ TIP: For standard regions, there are _two_ policies. The first policy provides p
     }
   ]
 }
---
+====
+// End snippet
 
+// Start snippet: collapsible block (open on page load)
 .C2S environment
---
+[%collapsible%open]
+====
 [source,json]
 {
     "Version": "2012-10-17",
@@ -494,9 +503,8 @@ TIP: For standard regions, there are _two_ policies. The first policy provides p
         }
     ]
 }
---
 ====
-// end tabbed area
+// End snippet
 
 == How the AWS permissions are used
 
