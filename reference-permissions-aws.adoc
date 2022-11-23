@@ -42,7 +42,7 @@ The first policy provides permissions for the following services:
 * FSx for ONTAP
 * S3 bucket discovery
 
- The second policy provides permissions for the following services:
+The second policy provides permissions for the following services:
  
 * AppTemplate tagging
 * Global File Cache
