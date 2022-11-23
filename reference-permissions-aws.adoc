@@ -29,13 +29,13 @@ Select your region to view the policy:
 
 // Start snippet: collapsible block (open on page load)
 .Standard regions
-[%collapsible%open]
+[%collapsible]
 ====
 For standard regions, there are _two_ policies. The first policy provides permissions for Cloud Volumes ONTAP and Cloud Backup. The second policy provides permissions for Global File Cache, Kubernetes, and AppTemplate tagging. Two separate policies are required due to a maximum character size limit for managed policies in AWS.
 
 // start tabbed area
 [role="tabbed-block"]
-====
+=====
 .Standard region policy #1
 --
 [source,json]
@@ -321,7 +321,7 @@ For standard regions, there are _two_ policies. The first policy provides permis
 
 // Start snippet: collapsible block (open on page load)
 .GovCloud (US) regions
-[%collapsible%open]
+[%collapsible]
 ====
 [source,json]
 {
@@ -387,7 +387,7 @@ For standard regions, there are _two_ policies. The first policy provides permis
 
 // Start snippet: collapsible block (open on page load)
 .C2S environment
-[%collapsible%open]
+[%collapsible]
 ====
 [source,json]
 {
