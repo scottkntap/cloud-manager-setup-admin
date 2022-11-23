@@ -1402,7 +1402,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-31 16:40:10 +0000">10/31/2022</time>
+    <time datetime="2022-11-23 16:43:59 +0000">11/23/2022</time>
     
   
 
@@ -1438,7 +1438,7 @@
 <li>
 <p>Add additional AWS credentials to an existing Connector</p>
 <div class="paragraph">
-<p>Adding new AWS credentials to an existing Connector enables you to deploy Cloud Volumes ONTAP in another AWS account using the same Connector. <a href="#add-additional-credentials-to-a-connector">Learn how to add AWS credentials to a Connector</a>.</p>
+<p>Adding AWS credentials to an existing Connector provides the permissions needed to manage resources and processes within your public cloud environment. <a href="#add-credentials-to-a-connector">Learn how to add AWS credentials to a Connector</a>.</p>
 </div>
 </li>
 <li>
@@ -1472,15 +1472,15 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="add-additional-credentials-to-a-connector">Add additional credentials to a Connector</h2>
+<h2 id="add-credentials-to-a-connector">Add credentials to a Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Add AWS credentials to a Connector so that it can deploy and manage Cloud Volumes ONTAP in other AWS accounts. You can either provide the ARN of an IAM role in another account or provide AWS access keys.</p>
+<p>Add AWS credentials to a Connector so that it has the permissions needed to manage resources and processes within your public cloud environment. You can either provide the ARN of an IAM role in another account or provide AWS access keys.</p>
 </div>
 <div class="sect2">
 <h3 id="grant-permissions">Grant permissions</h3>
 <div class="paragraph">
-<p>Before you add additional AWS credentials to a Connector, you need to provide the required permissions. The permissions enable BlueXP to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide BlueXP with the ARN of a role in a trusted account or AWS keys.</p>
+<p>Before you add AWS credentials to a Connector, you need to provide the required permissions. The permissions enable BlueXP to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide BlueXP with the ARN of a role in a trusted account or AWS keys.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1489,7 +1489,7 @@
 <img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
 </td>
 <td class="content">
-When you deployed a Connector from BlueXP, BlueXP automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you manually installed the Connector software on an existing system. <a href="concept-accounts-aws.html">Learn about AWS credentials and permissions</a>.
+If you deployed a Connector from BlueXP, BlueXP automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you deployed the Connector from the AWS Marketplace or if you manually installed the Connector software on an existing system. <a href="concept-accounts-aws.html">Learn about AWS credentials and permissions</a>.
 </td>
 </tr>
 </table>
@@ -1516,7 +1516,7 @@ When you deployed a Connector from BlueXP, BlueXP automatically added AWS creden
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Go to the IAM console in the target account where you want to deploy Cloud Volumes ONTAP.</p>
+<p>Go to the IAM console in the target account in which you want to provide the Connector with permissions.</p>
 </li>
 <li>
 <p>Under Access Management, click <strong>Roles &gt; Create Role</strong> and follow the steps to create the role.</p>
@@ -1532,7 +1532,7 @@ When you deployed a Connector from BlueXP, BlueXP automatically added AWS creden
 <p>Select <strong>Another AWS account</strong> and enter the ID of the account where the Connector instance resides.</p>
 </li>
 <li>
-<p>Create a policy by copying and pasting the contents of <a href="reference-permissions-aws.html">the IAM policy for the Connector</a>.</p>
+<p>Create the required policies by copying and pasting the contents of <a href="reference-permissions-aws.html">the IAM policies for the Connector</a>.</p>
 </li>
 </ul>
 </div>
@@ -1556,13 +1556,13 @@ When you deployed a Connector from BlueXP, BlueXP automatically added AWS creden
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From the IAM console, create a policy by copying and pasting the contents of <a href="reference-permissions-aws.html">the IAM policy for the Connector</a>.</p>
+<p>From the IAM console, create policies by copying and pasting the contents of <a href="reference-permissions-aws.html">the IAM policies for the Connector</a>.</p>
 <div class="paragraph">
 <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html" target="_blank" rel="noopener">AWS Documentation: Creating IAM Policies</a></p>
 </div>
 </li>
 <li>
-<p>Attach the policy to an IAM role or an IAM user.</p>
+<p>Attach the policies to an IAM role or an IAM user.</p>
 <div class="ulist">
 <ul>
 <li>
