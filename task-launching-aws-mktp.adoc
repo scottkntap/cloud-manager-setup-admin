@@ -83,7 +83,7 @@ link:concept-netapp-accounts.html[Learn about NetApp accounts].
 +
 image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Connector screen that enables you to select a NetApp account and name the system.]
 
-. Open a web browser and go to https://cloudmanager.netapp.com to start using the Connector with BlueXP.
+. Open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
 
 .Result
 
@@ -154,7 +154,7 @@ The Connector is now installed and set up with your NetApp account.
 
 Any time that you want to use BlueXP, open your web browser and connect to the IP address of the Connector instance: https://_ipaddress_
 
-Since the Connector was deployed in a Government region, it's not accessible from https://cloudmanager.netapp.com.
+Since the Connector was deployed in a Government region, it's not accessible from https://console.bluexp.netapp.com.
 
 == Open port 3128 for AutoSupport messages
 

@@ -25,7 +25,7 @@ In BlueXP, workspaces enable you to isolate a set of working environments from o
 
 .Steps
 
-. From the top of https://cloudmanager.netapp.com[BlueXP^], click the *Account* drop-down.
+. From the top of https://console.bluexp.netapp.com[BlueXP^], click the *Account* drop-down.
 +
 image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of BlueXP.]
 
@@ -51,7 +51,7 @@ Associate users with your NetApp account so those users can create and manage wo
 
 . If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp BlueXP website^] and sign up.
 
-. From the top of https://cloudmanager.netapp.com[BlueXP^], click the *Account* drop-down and click *Manage Account*.
+. From the top of https://console.bluexp.netapp.com[BlueXP^], click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 

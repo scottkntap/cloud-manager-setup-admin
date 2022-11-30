@@ -26,4 +26,4 @@ For manual installations on your own Linux host, you must use the "online" insta
 
 After you deploy the Connector, you can access BlueXP by opening your web browser and connecting to the IP address of the Connector instance: https://_ipaddress_
 
-Since the Connector was deployed in a Government region, it's not accessible from https://cloudmanager.netapp.com.
+Since the Connector was deployed in a Government region, it's not accessible from https://console.bluexp.netapp.com.
