@@ -50,6 +50,7 @@ Supported operating systems::
 * Red Hat Enterprise Linux 7.7
 * Red Hat Enterprise Linux 7.8
 * Red Hat Enterprise Linux 7.9
+* Red Hat Enterprise Linux 8.6
 +
 The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
 +
@@ -62,6 +63,8 @@ https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervis
 Disk space in /opt:: 100 GiB of space must be available
 
 Disk space in /var:: 20 GiB of space must be available
+
+Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
 
 Outbound internet access::
 The installer for the Connector must access the following URLs during the installation process:
@@ -89,6 +92,11 @@ If you receive a message that installing the awscli failed, you can safely ignor
 
 .Steps
 
+. Verify that docker is enabled and running.
++
+[source,cli]
+sudo systemctl enable docker && sudo systemctl start docker
+
 . Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
 For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
@@ -96,27 +104,15 @@ For help with connecting and copying the file to an EC2 instance in AWS, see htt
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x OnCommandCloudManager-V3.9.19.sh
+chmod +x OnCommandCloudManager-V3.9.23.sh
 
 . Run the installation script.
 +
 If you have a proxy server, you will need to enter the command parameters as shown below. The installer doesn't prompt you to provide information about a proxy.
 +
 [source,cli]
- ./OnCommandCloudManager-V3.9.19.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+ ./OnCommandCloudManager-V3.9.23.sh --proxy http://occm:password@10.0.0.30:9090/ --cacert /root/rootca.pem
 
-+
-_silent_ runs the installation without prompting you for information.
-+
-_proxy_ is required if the host is behind a proxy server.
-+
-_proxyport_ is the port for the proxy server.
-+
-_proxyuser_ is the user name for the proxy server, if basic authentication is required.
-+
-_proxypwd_ is the password for the user name that you specified.
-
-. Unless you specified the silent parameter, enter *Y* to continue with the installation.
 +
 The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
 
