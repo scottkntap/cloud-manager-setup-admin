@@ -1402,7 +1402,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-23 16:12:28 +0000">11/23/2022</time>
+    <time datetime="2022-12-01 18:36:50 +0000">12/01/2022</time>
     
   
 
@@ -1504,6 +1504,9 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you mus
 </li>
 <li>
 <p>Red Hat Enterprise Linux 7.9</p>
+</li>
+<li>
+<p>Red Hat Enterprise Linux 8.6</p>
 <div class="paragraph">
 <p>The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.</p>
 </div>
@@ -1526,6 +1529,10 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you mus
 <dt class="hdlist1">Disk space in /var</dt>
 <dd>
 <p>20 GiB of space must be available</p>
+</dd>
+<dt class="hdlist1">Docker Engine</dt>
+<dd>
+<p>Docker Engine version 19 or later is required on the host before you install the Connector. <a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener">View installation instructions</a></p>
 </dd>
 <dt class="hdlist1">Outbound internet access</dt>
 <dd>
@@ -1576,6 +1583,14 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you mus
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
+<p>Verify that docker is enabled and running.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">sudo systemctl enable docker &amp;&amp; sudo systemctl start docker</code></pre>
+</div>
+</div>
+</li>
+<li>
 <p>Download the Connector software from the <a href="https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a>, and then copy it to the Linux host.</p>
 <div class="paragraph">
 <p>For help with connecting and copying the file to an EC2 instance in AWS, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html" target="_blank" rel="noopener">AWS Documentation: Connecting to Your Linux Instance Using SSH</a>.</p>
@@ -1585,7 +1600,7 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you mus
 <p>Assign permissions to run the script.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">chmod +x OnCommandCloudManager-V3.9.19.sh</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">chmod +x OnCommandCloudManager-V3.9.23.sh</code></pre>
 </div>
 </div>
 </li>
@@ -1596,27 +1611,9 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you mus
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli"> ./OnCommandCloudManager-V3.9.19.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli"> ./OnCommandCloudManager-V3.9.23.sh --proxy http://occm:password@10.0.0.30:9090/ --cacert /root/rootca.pem</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><em>silent</em> runs the installation without prompting you for information.</p>
-</div>
-<div class="paragraph">
-<p><em>proxy</em> is required if the host is behind a proxy server.</p>
-</div>
-<div class="paragraph">
-<p><em>proxyport</em> is the port for the proxy server.</p>
-</div>
-<div class="paragraph">
-<p><em>proxyuser</em> is the user name for the proxy server, if basic authentication is required.</p>
-</div>
-<div class="paragraph">
-<p><em>proxypwd</em> is the password for the user name that you specified.</p>
-</div>
-</li>
-<li>
-<p>Unless you specified the silent parameter, enter <strong>Y</strong> to continue with the installation.</p>
 <div class="paragraph">
 <p>The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.</p>
 </div>
