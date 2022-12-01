@@ -37,6 +37,7 @@ Supported operating systems::
 * Red Hat Enterprise Linux 7.7
 * Red Hat Enterprise Linux 7.8
 * Red Hat Enterprise Linux 7.9
+* Red Hat Enterprise Linux 8.6
 +
 The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
 +
@@ -51,7 +52,7 @@ Disk space in /opt:: 100 GiB of space must be available
 
 Disk space in /var:: 20 GiB of space must be available
 
-Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^].
+Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
 
 == Install the Connector
 
@@ -63,24 +64,24 @@ Root privileges are required to install the Connector.
 
 .Steps
 
-.	Verify that docker is enabled and running.
+. Verify that docker is enabled and running.
 +
 [source,cli]
 sudo systemctl enable docker && sudo systemctl start docker
 
-. Download the BlueXP software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^].
+. Download the BlueXP software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^]
 
 . Copy the installer to the Linux host.
 
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x /path/cloud-manager-connector-offline-v3.9.19
+chmod +x /path/cloud-manager-connector-offline-v3.9.23
 
 . Run the installation script:
 +
 [source,cli]
-sudo /path/cloud-manager-connector-offline-v3.9.19
+sudo /path/cloud-manager-connector-offline-v3.9.23
 
 . Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
 +
