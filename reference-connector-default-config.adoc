@@ -82,7 +82,6 @@ BlueXP installs the following packages on the Linux host, if they are not alread
 
 * 7Zip
 * AWSCLI
-* Docker
 * Java
 * Kubectl
 * MySQL
