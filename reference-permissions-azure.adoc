@@ -124,7 +124,6 @@ You also need to ensure that the role is up to date as new permissions are added
                     "Microsoft.Compute/snapshots/delete",
                     "Microsoft.Network/privateEndpoints/delete",
                     "Microsoft.Compute/availabilitySets/delete",
-                    "Microsoft.Network/loadBalancers/delete",
                     "Microsoft.KeyVault/vaults/read",
                     "Microsoft.KeyVault/vaults/accessPolicies/write",
                     "Microsoft.Compute/diskEncryptionSets/write",
@@ -150,6 +149,7 @@ You also need to ensure that the role is up to date as new permissions are added
                     "Microsoft.Synapse/workspaces/firewallRules/read",
                     "Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
                     "Microsoft.Synapse/workspaces/operationResults/read",
+                    "Microsoft.Network/publicIPAddresses/delete",
                     "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
     ],
     "NotActions": [],
@@ -506,11 +506,17 @@ As permissions are added and removed, we'll note them in the sections below.
 
 === December 1, 2022
 
-The following permission was added to the JSON policy. It's required for Cloud Backup and Cloud Tiering.
+The following permissions were added to the JSON policy:
 
-Microsoft.Storage/storageAccounts/blobServices/containers/write
+* Microsoft.Storage/storageAccounts/blobServices/containers/write
++
+This permission is required for Cloud Backup and Cloud Tiering.
 
-The following permissions were removed from the JSON policy. They are no longer required.
+* Microsoft.Network/publicIPAddresses/delete
++
+This permissions is required for Cloud Backup.
+
+The following permissions were removed from the JSON policy because they are no longer required:
 
 * Microsoft.Compute/images/write
 * Microsoft.Network/loadBalancers/backendAddressPools/join/action
