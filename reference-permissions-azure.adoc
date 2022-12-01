@@ -44,7 +44,6 @@ You also need to ensure that the role is up to date as new permissions are added
                     "Microsoft.Compute/virtualMachines/start/action",
                     "Microsoft.Compute/virtualMachines/vmSizes/read",
                     "Microsoft.Compute/virtualMachines/write",
-                    "Microsoft.Compute/images/write",
                     "Microsoft.Compute/images/read",
                     "Microsoft.Network/locations/operationResults/read",
                     "Microsoft.Network/locations/operations/read",
@@ -75,9 +74,9 @@ You also need to ensure that the role is up to date as new permissions are added
                     "Microsoft.Storage/storageAccounts/listkeys/action",
                     "Microsoft.Storage/storageAccounts/read",
                     "Microsoft.Storage/storageAccounts/delete",
-                    "Microsoft.Storage/storageAccounts/regeneratekey/action",
                     "Microsoft.Storage/storageAccounts/write",
                     "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+                    "Microsoft.Storage/storageAccounts/blobServices/containers/write",
                     "Microsoft.Storage/usages/read",
                     "Microsoft.Compute/snapshots/write",
                     "Microsoft.Compute/snapshots/read",
@@ -90,8 +89,6 @@ You also need to ensure that the role is up to date as new permissions are added
                     "Microsoft.Network/loadBalancers/write",
                     "Microsoft.Network/loadBalancers/delete",
                     "Microsoft.Network/loadBalancers/backendAddressPools/read",
-                    "Microsoft.Network/loadBalancers/backendAddressPools/join/action",
-                    "Microsoft.Network/loadBalancers/frontendIPConfigurations/read",
                     "Microsoft.Network/loadBalancers/loadBalancingRules/read",
                     "Microsoft.Network/loadBalancers/probes/read",
                     "Microsoft.Network/loadBalancers/probes/join/action",
@@ -502,3 +499,20 @@ The Connector makes the following API requests to discover and manage clusters r
 * Microsoft.ContainerService/managedClusters/read
 * Microsoft.ContainerService/managedClusters/listClusterUserCredential/action
 //end::kubernetes-permissions[]
+
+== Change log
+
+As permissions are added and removed, we'll note them in the sections below.
+
+=== December 1, 2022
+
+The following permission was added to the JSON policy. It's required for Cloud Backup and Cloud Tiering.
+
+Microsoft.Storage/storageAccounts/blobServices/containers/write
+
+The following permissions were removed from the JSON policy. They are no longer required.
+
+* Microsoft.Compute/images/write
+* Microsoft.Network/loadBalancers/backendAddressPools/join/action
+* Microsoft.Network/loadBalancers/frontendIPConfigurations/read
+* Microsoft.Storage/storageAccounts/regeneratekey/action

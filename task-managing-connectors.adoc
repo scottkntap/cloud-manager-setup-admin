@@ -99,9 +99,9 @@ Update the operating system on the Connector to ensure that it's patched with th
 +
 [source,cli]
 sudo -s
-service service-manager stop
+service netapp-service-manager stop
 yum -y update –-security
-service service-manager start
+service netapp-service-manager start
 
 == Change the IP address for a Connector
 
