@@ -506,11 +506,11 @@ As permissions are added and removed, we'll note them in the sections below.
 
 === December 1, 2022
 
-The following permission was added to the JSON policy. It's required for Cloud Backup and Cloud Tiering:
+The following permission was added to the JSON policy. It's required for Cloud Backup and Cloud Tiering.
 
 Microsoft.Storage/storageAccounts/blobServices/containers/write
 
-The following permissions were removed from the JSON policy because they are no longer required:
+The following permissions were removed from the JSON policy. They are no longer required.
 
 * Microsoft.Compute/images/write
 * Microsoft.Network/loadBalancers/backendAddressPools/join/action
