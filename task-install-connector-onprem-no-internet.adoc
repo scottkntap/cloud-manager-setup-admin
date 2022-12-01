@@ -69,7 +69,7 @@ Root privileges are required to install the Connector.
 [source,cli]
 sudo systemctl enable docker && sudo systemctl start docker
 
-. Download the BlueXP software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^]
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^]
 
 . Copy the installer to the Linux host.
 
