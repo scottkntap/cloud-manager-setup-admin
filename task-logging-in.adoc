@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-logging-in.html
 keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp, sign up, create account
-summary: The BlueXP interface is accessible through a SaaS-based user interface by going to https://cloudmanager.netapp.com.
+summary: BlueXP is accessible from your web browser through a SaaS-based user interface.
 ---
 
 = Log in to BlueXP
@@ -36,7 +36,7 @@ Each time that you log in, you'll need to use the same option that you chose whe
 
 .Steps
 
-. Open a web browser and go to the https://cloudmanager.netapp.com[BlueXP console^]
+. Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP console^]
 +
 The NetApp BlueXP login page displays.
 +
