@@ -20,6 +20,8 @@ Learn what's new with BlueXP (formerly Cloud Manager) administration features: N
 
 === Connector 3.9.24
 
+* We've updated the URL for the BlueXP console to https://console.bluexp.netapp.com[^]
+
 * The Connector is now supported in the Google Cloud Israel region.
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements and on-prem ONTAP cluster enhancements.
