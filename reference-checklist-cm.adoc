@@ -26,7 +26,7 @@ The BlueXP user interface is accessible from a web browser. As you use the BlueX
 | Endpoints
 | Purpose
 
-| \http://cloudmanager.netapp.com | Your web browser contacts this URL when using the SaaS UI.
+| \https://console.bluexp.netapp.com | Your web browser contacts this URL when using the SaaS UI.
 
 a|
 AWS services (amazonaws.com):
@@ -102,9 +102,19 @@ The Connector requires outbound internet access to contact the following endpoin
 | Purpose
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-| \https://*.cloudmanager.cloud.netapp.com
 
-\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within BlueXP.
+| \https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net
