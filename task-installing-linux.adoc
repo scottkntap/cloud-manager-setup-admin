@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-installing-linux.html
 keywords: install connector, manually install connector, install connector software, installation, installing, linux, installer, software, on prem, on-prem, silent, configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space
-summary: The most common way to create a Connector is directly from BlueXP or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
+summary: The most common way to create a Connector is directly from BlueXP or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud. These steps are specific to hosts that have internet access.
 ---
 
 = Install the Connector on an existing Linux host that has internet access
@@ -64,7 +64,7 @@ Disk space in /opt:: 100 GiB of space must be available
 
 Disk space in /var:: 20 GiB of space must be available
 
-Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
+Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
 
 Outbound internet access::
 The installer for the Connector must access the following URLs during the installation process:
@@ -78,9 +78,15 @@ The host might try to update operating system packages during installation. The 
 
 After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
 
-.Required privileges
+.What you'll need
 
-Root privileges are required to install the Connector.
+* Root privileges to install the Connector.
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
++
+You have the option to configure a proxy server after installation but doing so requires restarting the Connector.
+
+* A CA-signed certificate, if the proxy server uses HTTPS.
 
 .About this task
 
@@ -99,7 +105,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 
 . Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
-For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
+You should download the Connector installer that's for use use in your network or in the cloud.
 
 . Assign permissions to run the script.
 +
@@ -108,13 +114,35 @@ chmod +x OnCommandCloudManager-V3.9.23.sh
 
 . Run the installation script.
 +
-If you have a proxy server, you will need to enter the command parameters as shown below. The installer doesn't prompt you to provide information about a proxy.
+[source,cli]
+ ./OnCommandCloudManager-V3.9.23.sh --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
++
+Both parameters are optional. If you have a proxy server, you will need to enter the parameters as shown. The installer doesn't prompt you to provide information about a proxy.
++
+Here's an example of the command using both optional parameters:
 +
 [source,cli]
- ./OnCommandCloudManager-V3.9.23.sh --proxy http://occm:password@10.0.0.30:9090/ --cacert /root/rootca.pem
+ ./OnCommandCloudManager-V3.9.23.sh --proxy http://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
++
+--proxy configures the Connector to use an HTTP or HTTPS proxy server using one of the following formats:
++
+* \http://address:port
+* \http://username:password@address:port
+* \https://address:port
+* \https://username:password@address:port
 
 +
+--cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
+
+.Result
+
 The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+== Set up the Connector
+
+Sign up or log in and then set up the Connector to work with your account.
+
+.Steps
 
 . Open a web browser and enter the following URL:
 +
