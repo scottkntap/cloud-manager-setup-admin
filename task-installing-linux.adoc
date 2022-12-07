@@ -117,7 +117,7 @@ chmod +x OnCommandCloudManager-V3.9.23.sh
 [source,cli]
  ./OnCommandCloudManager-V3.9.23.sh --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
 +
-Both parameters are optional. If you have a proxy server, you will need to enter the parameters as shown. The installer doesn't prompt you to provide information about a proxy.
+Both parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
 +
 Here's an example of the command using both optional parameters:
 +
@@ -182,4 +182,4 @@ Set up permissions so BlueXP can manage resources and processes within your publ
 
 * Azure: link:task-adding-azure-accounts.html[Set up an Azure account and then add it to BlueXP]
 
-* Google Cloud: See step 7 above
+* Google Cloud: See step 3 above
