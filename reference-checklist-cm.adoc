@@ -124,12 +124,9 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 |===
 
-* If you choose to manually install the Connector on your own Linux host (and not do so directly from the BlueXP interface), the installer for the Connector requires access to the following endpoints during the installation process:
+* If you choose to manually install the Connector on your own Linux host (and not do so directly from the BlueXP interface), the installer for the Connector requires access to several endpoints during the installation process:
 +
-** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
-** \https://*.blob.core.windows.net or \https://hub.docker.com
-+
-The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+link:task-installing-linux.html[Review the list of endpoints].
 
 * There's no incoming traffic to the Connector, unless you initiate it.
 +
