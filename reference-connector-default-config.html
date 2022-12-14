@@ -1402,7 +1402,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-01 18:28:15 +0000">12/01/2022</time>
+    <time datetime="2022-12-08 12:58:26 +0000">12/08/2022</time>
     
   
 
@@ -1519,9 +1519,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>/opt/application/netapp/cloudmanager/log</p>
+<p>/opt/application/netapp/cloudmanager/log<br>
+or</p>
+</li>
+<li>
+<p>/opt/application/netapp/service-manager-2/logs (starting with new 3.9.23 installations)</p>
 <div class="paragraph">
-<p>The logs in this folder provide details about the Connector and docker images.</p>
+<p>The logs in these folders provide details about the Connector and docker images.</p>
 </div>
 </li>
 <li>
@@ -1550,40 +1554,6 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="packages">Packages</h3>
-<div class="paragraph">
-<p>BlueXP installs the following packages on the Linux host, if they are not already installed:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>7Zip</p>
-</li>
-<li>
-<p>AWSCLI</p>
-</li>
-<li>
-<p>Java</p>
-</li>
-<li>
-<p>Kubectl</p>
-</li>
-<li>
-<p>MySQL</p>
-</li>
-<li>
-<p>Tridentctl</p>
-</li>
-<li>
-<p>Pull</p>
-</li>
-<li>
-<p>Wget</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
 <h3 id="ports">Ports</h3>
 <div class="paragraph">
 <p>The Connector uses the following ports on the Linux host:</p>
@@ -1595,18 +1565,6 @@
 </li>
 <li>
 <p>443 for HTTPS access</p>
-</li>
-<li>
-<p>3306 for the BlueXP database</p>
-</li>
-<li>
-<p>8080 for the BlueXP API proxy</p>
-</li>
-<li>
-<p>8666 for the Service Manager API</p>
-</li>
-<li>
-<p>8777 for the Health-Checker Container Service API</p>
 </li>
 </ul>
 </div>
