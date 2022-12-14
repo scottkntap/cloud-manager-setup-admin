@@ -473,7 +473,7 @@ gcloud compute instances create <instance-name>
   --image-family=cloudmanager
   --scopes=cloud-platform
   --project=<project>
-  --service-account=<<service-account>
+  --service-account=<service-account>
   --zone=<zone>
   --no-address
   --tags <network-tag>
