@@ -69,7 +69,8 @@ Docker Engine:: Docker Engine version 19.3.1 or later is required on the host be
 Outbound internet access::
 The installer for the Connector must access the following URLs during the installation process:
 +
-* \https://support.netapp.com and \https://mysupport.netapp.com
+* \https://support.netapp.com
+* \https://mysupport.netapp.com
 * \https://cloudmanager.cloud.netapp.com/tenancy
 * \https://stream.cloudmanager.cloud.netapp.com
 * \https://cloudmanagerinfraprod.azurecr.io
@@ -122,12 +123,12 @@ chmod +x OnCommandCloudManager-V3.9.23
 [source,cli]
  ./OnCommandCloudManager-V3.9.23 --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
 +
-Both parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
+The --proxy and --cacert parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
 +
 Here's an example of the command using both optional parameters:
 +
 [source,cli]
- ./OnCommandCloudManager-V3.9.23 --proxy http://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+ ./OnCommandCloudManager-V3.9.23 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
 +
 --proxy configures the Connector to use an HTTP or HTTPS proxy server using one of the following formats:
 +
@@ -172,8 +173,6 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 +
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
-+
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a NetApp account and name the system.]
 
 .Result
 
