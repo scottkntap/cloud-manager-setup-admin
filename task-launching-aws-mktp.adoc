@@ -37,7 +37,7 @@ The IAM user who creates the Connector must have AWS Marketplace permissions to 
 
 . On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
 +
-image:screenshot_subscribe_cm.gif[A screenshot that shows the Continue to Subscribe and Continue to Configuration buttons on the AWS Marketplace.]
+image:screenshot-subscribe-aws.png[A screenshot that shows the Continue to Subscribe and Continue to Configuration buttons on the AWS Marketplace.]
 
 . Change any of the default options and click *Continue to Launch*.
 
@@ -80,8 +80,6 @@ https://_ipaddress_
 +
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
-+
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Connector screen that enables you to select a NetApp account and name the system.]
 
 . Open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
 
@@ -145,8 +143,6 @@ https://_ipaddress_
 +
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
-+
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Connector screen that enables you to select a NetApp account and name the system.]
 
 .Result
 

@@ -61,8 +61,6 @@ https://_ipaddress_
 +
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
-+
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up BlueXP screen that enables you to select a NetApp account and name the system.]
 
 .Result
 

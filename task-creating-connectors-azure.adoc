@@ -13,11 +13,12 @@ summary: A BlueXP Account Admin needs to deploy a Connector before you can use m
 :imagesdir: ./media/
 
 [.lead]
-A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment. link:concept-connectors.html[Learn when a Connector is required].
+A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
 
-This page describes how to create a Connector in Azure directly from BlueXP. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
+These steps describe how to create a Connector in an Azure commercial region directly from the BlueXP SaaS website. 
 
-These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
+* link:task-create-connectors-gov.html[Learn how to deploy a Connector in a Government region]
+* link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector]
 
 == Overview
 
