@@ -20,31 +20,35 @@ BlueXP (formerly Cloud Manager) enables IT experts and cloud architects to centr
 BlueXP is an enterprise-class, SaaS-based management platform that keeps you in control of your data no matter where it is.
 
 * Set up and use https://cloud.netapp.com/ontap-cloud[Cloud Volumes ONTAP^] for efficient, multi-protocol data management across clouds.
-* Set up and use file-storage services:
+* Set up and use cloud file-storage services:
 +
-** https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^]
-** https://cloud.netapp.com/fsx-for-ontap[Amazon FSx for ONTAP^]
-** https://cloud.netapp.com/cloud-volumes-service-for-aws[Cloud Volumes Service for AWS^]
-** https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
-* Discover and manage your on-prem ONTAP clusters by creating volumes, backing up to the cloud, replicating data across your hybrid cloud, and tiering cold data to the cloud.
-* Enable integrated cloud services such as:
-** https://cloud.netapp.com/cloud-compliance[Cloud Data Sense^]
-** https://cloud.netapp.com/cloud-insights[Cloud Insights^]
-** https://cloud.netapp.com/cloud-backup-service[Cloud Backup^]
+** https://bluexp.netapp.com/azure-netapp-files[Azure NetApp Files^]
+** https://bluexp.netapp.com/fsx-for-ontap[Amazon FSx for ONTAP^]
+** https://bluexp.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
+* Discover and manage https://bluexp.netapp.com/netapp-on-premises[on-premises storage^]
+** E-Series systems
+** ONTAP clusters
+** StorageGRID systems
+* Use BlueXP's services for data mobility, data protection, and data analysis and control:
+** https://bluexp.netapp.com/cloud-backup[Cloud Backup^]
+** https://bluexp.netapp.com/netapp-cloud-data-sense[Cloud Data Sense^]
+** https://bluexp.netapp.com/cloud-sync-service[Cloud Sync^]
+** https://bluexp.netapp.com/cloud-tiering[Cloud Tiering^]
+** https://bluexp.netapp.com/digital-advisor[Digital Advisor^]
+** https://bluexp.netapp.com/global-file-cache[Global File Cache^]
+** https://bluexp.netapp.com/k8s[Kubernetes^]
+** https://bluexp.netapp.com/ransomware-protection[Ransomware Protection^]
+** https://bluexp.netapp.com/replication[Replication^]
 
-https://cloud.netapp.com/cloud-manager[Learn more about BlueXP^].
+https://cloud.netapp.com/cloud-manager[Learn more about BlueXP^]
 
-== Supported object storage providers
+== Supported cloud providers
 
 BlueXP enables you to manage cloud storage and use cloud services in Amazon Web Services, Microsoft Azure, and Google Cloud.
 
 == Cost
 
-BlueXP software is free of charge from NetApp.
-
-For most tasks, BlueXP prompts you to deploy a Connector in your cloud network, which results in charges from your cloud provider for the compute instance and associated storage. You do have the option to run the Connector software on your premises.
-
-link:reference-connector-default-config.html[Learn about the default configuration for the Connector].
+Pricing for BlueXP depends on the services that you plan to use. https://bluexp.netapp.com/pricing[Learn about BlueXP pricing^].
 
 == How BlueXP works
 

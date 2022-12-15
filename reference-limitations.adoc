@@ -29,12 +29,6 @@ See Knowledge Base article link:https://kb.netapp.com/Advice_and_Troubleshooting
 
 //Reference link:https://jira.ngage.netapp.com/browse/KDA-1546[KDA JIRA-1546]
 
-=== Only an HTTP proxy server is supported
-
-If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
-
-BlueXP doesn't support using an HTTPS proxy with the Connector.
-
 === SSL decryption isn't supported
 
 BlueXP doesn't support firewall configurations that have SSL decryption enabled. If SSL decryption is enabled, error messages appear in BlueXP and the Connector instance displays as inactive.
@@ -66,16 +60,3 @@ This means that only privileged users who can access the end-user internal VPC/V
 Note that the only services supported in these regions are Cloud Volumes ONTAP, Cloud Backup, Cloud Data Sense, and Replication. No other NetApp services are supported in Government regions.
 
 link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI on the Connector].
-
-== Marketplace limitations
-
-=== Pay-as-you-go not available for Azure and Google Cloud partners
-
-If you are a Microsoft Cloud Solution Provider (CSP) partner or a Google Cloud partner, NetApp pay-as-you-go subscriptions are not available. You must purchase a license and deploy NetApp cloud solutions with a BYOL license.
-
-Pay-as-you-go subscriptions are not available for the following NetApp cloud services:
-
-*	Cloud Volumes ONTAP
-*	Cloud Tiering
-*	Cloud Backup
-*	Cloud Data Sense
