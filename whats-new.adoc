@@ -16,6 +16,14 @@ summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration f
 Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 1 January 2023
+
+=== Connector 3.9.25
+
+This release of the Connector includes Cloud Volumes ONTAP enhancements and bug fixes.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#1-january-2023[Learn about Cloud Volumes ONTAP enhancements^]
+
 == 4 December 2022
 
 === Connector 3.9.24
