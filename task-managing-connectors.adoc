@@ -224,7 +224,7 @@ The online Connector includes an uninstallation script that you can use to unins
 
 . From the Linux host, run the uninstallation script:
 +
-*/opt/application/netapp/cloudmanager/bin/uninstall.sh [silent]*
+*/opt/application/netapp/service-manager-2/uninstall.sh [silent]*
 +
 _silent_ runs the script without prompting you for confirmation.
 
