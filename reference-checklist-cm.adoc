@@ -77,8 +77,8 @@ AWS services (amazonaws.com):
 | \https://widget.intercom.io
 | For in-product chat that enables you to talk to NetApp cloud experts.
 
-| The Connector’s IP address
-a| In most cases, you should work with BlueXP from the SaaS UI, but link:concept-connectors.html#the-local-user-interface[if you use the local UI], then you must enter the host’s IP address from a web browser.
+| The Connector's IP address
+a| In most cases, you should work with BlueXP from the SaaS UI, but link:concept-connectors.html#the-local-user-interface[if you use the local UI], then you must enter the host's IP address from a web browser.
 
 Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:
 
@@ -130,7 +130,7 @@ link:task-installing-linux.html[Review the list of endpoints].
 
 * There's no incoming traffic to the Connector, unless you initiate it.
 +
-HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in rare circumstances. SSH (22) is only needed if you need to connect to the host for troubleshooting.
+HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in rare circumstances. SSH (22) is only needed if you need to connect to the host for troubleshooting. Meanwhile, inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
 
 Cloud provider permissions::
 You need an account that has permissions to deploy the Connector in your cloud provider directly from BlueXP.
@@ -169,7 +169,7 @@ a|
 |===
 
 Networking for individual services::
-Now that your setup is complete, you're ready to start using the services available from BlueXP. Note that each service has its own networking requirements. Refer to the following pages for more details.
+After setup is complete, you're ready to start using the services available from BlueXP. Note that each service has its own networking requirements. Refer to the following pages for more details.
 +
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html[Cloud Volumes ONTAP for AWS^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html[Cloud Volumes ONTAP for Azure^]
