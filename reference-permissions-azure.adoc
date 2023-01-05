@@ -29,7 +29,7 @@ You also need to ensure that the role is up to date as new permissions are added
 {
     "Name": "BlueXP Operator",
     "Actions": [
-                   "Microsoft.Compute/disks/delete",
+                    "Microsoft.Compute/disks/delete",
                     "Microsoft.Compute/disks/read",
                     "Microsoft.Compute/disks/write",
                     "Microsoft.Compute/locations/operations/read",
@@ -421,7 +421,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read | Yes | No | No
 | Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write | Yes | Yes | No
 
-.7+| Manage a load balancer for HA pairs
+.8+| Manage a load balancer for HA pairs
 | Microsoft.Network/loadBalancers/read | Yes | Yes | No
 | Microsoft.Network/loadBalancers/write | Yes | No | No
 | Microsoft.Network/loadBalancers/delete | No | Yes | Yes
