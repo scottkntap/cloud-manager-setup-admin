@@ -240,7 +240,7 @@ The Connector makes the following API requests when you use the Search & Restore
 * Microsoft.Synapse/workspaces/firewallRules/read
 * Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action
 * Microsoft.Synapse/workspaces/operationResults/read
-* "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action",
+* Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action
 //end::backup-search-restore-permissions[]
 
 === Cloud Data Sense
