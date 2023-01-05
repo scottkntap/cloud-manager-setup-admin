@@ -77,6 +77,7 @@ You also need to ensure that the role is up to date as new permissions are added
                     "Microsoft.Storage/storageAccounts/write",
                     "Microsoft.Storage/storageAccounts/blobServices/containers/read",
                     "Microsoft.Storage/storageAccounts/blobServices/containers/write",
+                    "Microsoft.Storage/storageAccounts/listAccountSas/action",
                     "Microsoft.Storage/usages/read",
                     "Microsoft.Compute/snapshots/write",
                     "Microsoft.Compute/snapshots/read",
@@ -89,6 +90,7 @@ You also need to ensure that the role is up to date as new permissions are added
                     "Microsoft.Network/loadBalancers/write",
                     "Microsoft.Network/loadBalancers/delete",
                     "Microsoft.Network/loadBalancers/backendAddressPools/read",
+                    "Microsoft.Network/loadBalancers/backendAddressPools/join/action",
                     "Microsoft.Network/loadBalancers/loadBalancingRules/read",
                     "Microsoft.Network/loadBalancers/probes/read",
                     "Microsoft.Network/loadBalancers/probes/join/action",
@@ -150,6 +152,7 @@ You also need to ensure that the role is up to date as new permissions are added
                     "Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
                     "Microsoft.Synapse/workspaces/operationResults/read",
                     "Microsoft.Network/publicIPAddresses/delete",
+                    "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action",
                     "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
     ],
     "NotActions": [],
@@ -197,6 +200,7 @@ The Connector makes the following API requests for backup and restore operations
 * Microsoft.Storage/storageAccounts/read
 * Microsoft.Storage/storageAccounts/write
 * Microsoft.Storage/storageAccounts/blobServices/containers/read
+* Microsoft.Storage/storageAccounts/listAccountSas/action
 * Microsoft.KeyVault/vaults/read
 * Microsoft.KeyVault/vaults/accessPolicies/write
 * Microsoft.Network/networkInterfaces/read
@@ -236,6 +240,7 @@ The Connector makes the following API requests when you use the Search & Restore
 * Microsoft.Synapse/workspaces/firewallRules/read
 * Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action
 * Microsoft.Synapse/workspaces/operationResults/read
+* "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action",
 //end::backup-search-restore-permissions[]
 
 === Cloud Data Sense
@@ -421,6 +426,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Network/loadBalancers/write | Yes | No | No
 | Microsoft.Network/loadBalancers/delete | No | Yes | Yes
 | Microsoft.Network/loadBalancers/backendAddressPools/read | Yes | Yes | No
+| Microsoft.Network/loadBalancers/backendAddressPools/join/action | Yes | No | No
 | Microsoft.Network/loadBalancers/loadBalancingRules/read | Yes | No | No
 | Microsoft.Network/loadBalancers/probes/read | Yes | No | No
 | Microsoft.Network/loadBalancers/probes/join/action | Yes | No | No
@@ -504,7 +510,20 @@ The Connector makes the following API requests to discover and manage clusters r
 
 As permissions are added and removed, we'll note them in the sections below.
 
-=== December 1, 2022
+=== 5 January, 2023
+
+The following permissions were added to the JSON policy:
+
+* Microsoft.Storage/storageAccounts/listAccountSas/action
+* Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action
++
+These permissions are required for Cloud Backup.
+
+* Microsoft.Network/loadBalancers/backendAddressPools/join/action
++
+This permission is required for Cloud Volumes ONTAP deployment.
+
+=== 1 December, 2022
 
 The following permissions were added to the JSON policy:
 
@@ -519,6 +538,5 @@ This permissions is required for Cloud Backup.
 The following permissions were removed from the JSON policy because they are no longer required:
 
 * Microsoft.Compute/images/write
-* Microsoft.Network/loadBalancers/backendAddressPools/join/action
 * Microsoft.Network/loadBalancers/frontendIPConfigurations/read
 * Microsoft.Storage/storageAccounts/regeneratekey/action
