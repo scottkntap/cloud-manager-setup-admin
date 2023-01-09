@@ -17,9 +17,7 @@ In most cases, a BlueXP Account Admin will need to deploy a _Connector_ in your 
 
 == When a Connector is required
 
-A Connector is required to use many of the features and services in BlueXP.
-
-=== Services
+A Connector is required for the following features and services in BlueXP:
 
 * Amazon FSx for ONTAP management features
 * Amazon S3 discovery
@@ -32,25 +30,34 @@ A Connector is required to use many of the features and services in BlueXP.
 * Global File Cache
 * Google Cloud Storage discovery
 * Kubernetes clusters
-* On-premises ONTAP clusters
+* On-premises ONTAP cluster integration with BlueXP data services
 * StorageGRID
 
 A Connector is *_not_* required for the following services:
 
 * Digital Advisor
++
+In almost all cases, you can add a license to the Digital Wallet without a Connector.
++
+The only time that a Connector is required to add a license to the Digital Wallet is for Cloud Volumes ONTAP _node-based_ licenses. A Connector is required in this case because the data is taken from the licenses installed on Cloud Volumes ONTAP systems.
+
 * Amazon FSx for ONTAP working environment creation
++
 While a Connector isn't required to create a working environment, it is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
+
 * Azure NetApp Files
 +
 While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
+
 * Cloud Volumes Service for Google Cloud
+
 * Cloud Sync
 
-=== Digital Wallet
-
-In almost all cases, you can add a license to the Digital Wallet without a Connector.
-
-The only time that a Connector is required to add a license to the Digital Wallet is for Cloud Volumes ONTAP _node-based_ licenses. A Connector is required in this case because the data is taken from the licenses installed on Cloud Volumes ONTAP systems.
+* Direct discovery of on-premises ONTAP clusters
++
+While a Connector isn't required for direct discovery of an on-premises ONTAP cluster, a Connector is required if you want to take advantage of additional BlueXP features. 
++
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn more about discovery and management options for on-prem ONTAP clusters^]
 
 == Supported locations
 
