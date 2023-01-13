@@ -1,0 +1,216 @@
+---
+sidebar: sidebar
+permalink: concept-modes.html
+keywords: dark site, internet, onprem, no internet, supported deployments, govcloud, government access, environments, supported environments, deployment modes, modes
+summary: You can use BlueXP in environments that have full internet access, limited internet access, and no internet access. How you set up and use BlueXP depends on which environment you're using.
+---
+
+= Supported deployment modes
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can use BlueXP in environments that have full internet access, limited internet access, and no internet access. How you set up and use BlueXP depends on which environment you're using.
+
+== Overview
+
+BlueXP is supported in the following types of modes, which are categorized by the level of internet access that is available:
+
+.Standard mode
+
+In this environment, almost all inbound and outbound internet traffic is allowed. This is the most common environment. It provides access to BlueXP's _SaaS experience_ which is available from \https://cloudmanager.netapp.com.
+
+Note that there might be a few exceptions in this environment where you need to grant access to certain outbound endpoints through your firewall.
+
+.Restricted mode
+
+Limited internet access is typical of a _Government region_ in a cloud provider. In Government regions, internet traffic is allowed, but with specific restrictions on some destinations.
+
+.Private mode
+
+No internet access is typical in a _restricted environment_. Examples include a highly restrictive, secret government region in the cloud (for example, AWS C2S or Azure IL6), or in a highly regulated on-premises environment.
+
+The following table provides a high-level comparison of these environments.
+
+[cols="h,d,d,d",options="header,autowidth"]
+|===
+|
+| Standard mode
+| Restricted mode
+| Private mode
+
+| Authentication and authorization
+| auth0 with optional federation
+| auth0 with optional federation
+| Local user management
+
+| User access to BlueXP
+| From the SaaS-based user interface
+| From the local user interface on the Connector
+| From the local user interface on the Connector
+
+| Outbound communication
+| From your virtual network to the SaaS-based UI and other essential components
+| Limited
+| None
+
+| Connector deployment
+| From BlueXP, your cloud provider's marketplace, or a manual installation
+| From BlueXP or your cloud provider's marketplace
+| Marketplace installation or manual installation (depending on the environment)
+
+| Connector upgrades
+| Automated with a monthly cadence
+| Automated with a monthly cadence
+| Manual upgrades at undefined intervals
+
+| Supported NetApp cloud services
+|
+|
+|
+
+| Licensing
+|
+|
+|
+
+|===
+
+The following sections provide more details about these environments.
+
+== Standard mode
+
+BlueXP works as follows when using the SaaS experience (almost all internet access is allowed).
+
+Authentication and authorization::
+Provided through BlueXP's SaaS implementation. Authentication is provided by auth0 with optional federation.
+
+Outbound communication::
+Required from your virtual network to the SaaS-based UI and other essential components for day-to-day operations.
+
+Connector deployment::
+Online deployment through a setup wizard in BlueXP or from your cloud provider's marketplace. An installer is also available that you can run on your own Linux host.
+
+Connector upgrades::
+Automated software upgrades from BlueXP with monthly updates.
+
+Supported NetApp cloud services::
+All NetApp cloud services are accessible when full internet access is available.
+
+Licensing::
+All licensing options are available for each NetApp cloud service.
+
+How to get started::
+link:reference-checklist-cm.html[Getting started checklist for BlueXP]
+
+== Restricted mode
+
+BlueXP works as follows in a Government region with limited internet access.
+
+Authentication and authorization::
+Provided through BlueXP's SaaS implementation. Authentication is provided by auth0 with optional federation.
+
+Outbound communication::
+The computer that accesses the BlueXP interface must have connections to a limited number of endpoints.
+
+Connector deployment::
+Online deployment through a setup wizard in BlueXP or from your cloud provider's marketplace. An installer is also available that you can run on your own Linux host.
+
+Connector upgrades::
+Automated software upgrades from BlueXP with monthly updates.
+
+Supported NetApp cloud services::
+BlueXP supports the following cloud services in Government regions:
++
+[cols=2*,options="header,autowidth"]
+|===
+| Supported services
+| Notes
+
+| Cloud Volumes ONTAP | Full support
+| Cloud Backup | K8s and Apps & VMs protections are not supported
+| Cloud Data Sense | Does not include support One Drive scanning and AIP
+| Replication | ?
+
+|===
+
+Licensing::
+?
+
+How to get started::
+* link:task-launching-aws-mktp.html[Create a Connector from the AWS Marketplace]
+* link:task-launching-azure-mktp.html[Create a Connector from the Azure Marketplace]
+
+== Private mode
+
+BlueXP works as follows When no internet access is available.
+
+Authentication and authorization::
+Local user management and access
+
+Outbound communication::
+None. All packages, dependencies, and essential components are packaged with the Connector and served from the local machine. This includes Cloud Backup, Cloud Data Sense, and Replication.
+
+Connector deployment::
+Manual installation using an installer that's available from the NetApp Support Site.
+
+Connector upgrades::
+Manual software upgrades at undefined intervals.
+
+Supported NetApp cloud services::
+BlueXP supports the following cloud services in locations that don't have internet access:
++
+[cols=2*,options="header,autowidth"]
+|===
+| Supported services
+| Notes
+
+| Cloud Volumes ONTAP
+a| Supported in secret government regions only. Because there's no internet access, the following features aren't available:
+
+* Integration with NetApp Cloud Central
+* Automated software upgrades
+* NetApp AutoSupport
+* AWS cost information for Cloud Volumes ONTAP resources
+* Capacity-based licensing
+
+| Cloud Backup | Supported in on-premises environments only. Only volume level backup and restore are supported. The following features are not supported: single file restore (SFR), K8s, Apps, VMs, and Indexed Catalog.
+
+| Cloud Data Sense | Supported in on-premises environments only. Does not include support for outbound scanning features such as S3, One Drive, AIP, and sending customer files feedback.
+
+| Replication | ?
+
+|===
+
+Licensing::
+The following licensing methods are available when you use BlueXP in a location that doesn't have internet access.
++
+[cols=5*,options="header,autowidth"]
+|===
+| Service
+| AWS C2S
+| AWS SC2S
+| Azure Secret (IL6)
+| On-premises
+
+| Cloud Volumes ONTAP by-node licensing | BYOL or PAYGO | BYOL | BYOL | N/A
+| Cloud Backup | BYOL | BYOL | BYOL | BYOL
+| Cloud Data Sense | BYOL | BYOL | BYOL | BYOL
+
+|===
+
+How to get started::
+* Connector deployment
+** link:task-install-connector-onprem-no-internet.html[Install the Connector on-prem without internet access]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html#install-and-set-up-cloud-manager[Install the Connector in the AWS C2S environment^]
+** SC-C2S
+** IL6
+* Cloud Volumes ONTAP deployment
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Get started with Cloud Volumes ONTAP in the AWS C2S environment^]
+** SC-C2S
+** IL6
+* Cloud Backup
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Deploy Cloud Data Sense on prem without internet access]

@@ -20,6 +20,8 @@ sidebar:
       entries:
         - title: Learn about BlueXP
           url: /concept-overview.html
+        - title: Supported deployment modes
+          url: /concept-modes.html
         - title: Getting started checklist
           url: /reference-checklist-cm.html
         - title: Log in to BlueXP
