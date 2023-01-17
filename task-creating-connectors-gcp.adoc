@@ -37,7 +37,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 <<Set up a service account for the Connector>>.
 
 * If you're deploying Cloud Volumes ONTAP across projects, ensure that the Connector has access to those projects.
-*
++
 <<Set up permissions across projects>>.
 
 * If you're using a shared VPC, set up permissions in the service project and host project.
