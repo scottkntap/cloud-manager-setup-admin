@@ -22,34 +22,66 @@ sidebar:
           url: /concept-overview.html
         - title: Supported deployment modes
           url: /concept-modes.html
-        - title: Getting started checklist
-          url: /reference-checklist-cm.html
+        - title: Get started with Standard mode
+          entries:
+            - title: Getting started checklist
+              url: /reference-checklist-cm.html
+            - title: Sign up and create an account
+              url: /TBD.html
+            - title: Create a Connector
+              entries:
+                - title: Connector overview
+                  url: /concept-connector-standard-mode.html
+                - title: Create a Connector in AWS
+                  url: /task-creating-connectors-aws.html
+                - title: Create a Connector in Azure
+                  url: /task-creating-connectors-azure.html
+                - title: Create a Connector in Google Cloud
+                  url: /task-creating-connectors-gcp.html
+                - title: Create from the AWS Marketplace
+                  url: /task-launching-aws-mktp.html
+                - title: Create from the Azure Marketplace
+                  url: /task-launching-azure-mktp.html
+                - title: Manual installation
+                  url: /task-installing-linux.html
+        - title: Get started with Restricted mode
+          entries:
+            - title: Getting started checklist
+              url: /reference-checklist-cm.html
+            - title: Create a Connector
+              entries:
+                - title: Connector overview
+                  url: /concept-connector-standard-mode.html
+                - title: Create a Connector in a Government region
+                  url: /task-create-connectors-gov.html
+                - title: Create from the AWS Marketplace
+                  url: /task-launching-aws-mktp.html
+                - title: Create from the Azure Marketplace
+                  url: /task-launching-azure-mktp.html
+                - title: Manual installation
+                  url: /task-installing-linux.html
+            - title: Sign up and create an account
+              url: /TBD.html
+        - title: Get started with Private mode
+          entries:
+            - title: Getting started checklist
+              url: /reference-checklist-cm.html
+            - title: Create a Connector
+              url: /TBD.html
+            - title: Sign up and create an account
+              url: /TBD.html
         - title: Log in to BlueXP
           url: /task-logging-in.html
-        - title: Set up a NetApp account
-          entries:
-            - title: Learn about NetApp accounts
-              url: /concept-netapp-accounts.html
-            - title: Set up workspaces and users
-              url: /task-setting-up-netapp-accounts.html
-        - title: Set up a Connector
-          entries:
-            - title: Learn about Connectors
-              url: /concept-connectors.html
-            - title: Create a Connector in AWS
-              url: /task-creating-connectors-aws.html
-            - title: Create a Connector in Azure
-              url: /task-creating-connectors-azure.html
-            - title: Create a Connector in Google Cloud
-              url: /task-creating-connectors-gcp.html
-            - title: Create a Connector in a Government region
-              url: /task-create-connectors-gov.html
         - title: Where to go next
           url: /reference-whats-next.html
     - title: Administer BlueXP
       entries:
         - title: NetApp accounts
           entries:
+            - title: Learn about NetApp accounts
+              url: /concept-netapp-accounts.html
+            - title: Set up workspaces and users
+              url: /task-setting-up-netapp-accounts.html
             - title: Manage your account
               url: /task-managing-netapp-accounts.html
             - title: Monitor operations in your account
@@ -58,16 +90,8 @@ sidebar:
               url: /reference-user-roles.html
         - title: Connectors
           entries:
-            - title: Advanced deployment
-              entries:
-                - title: Create from the AWS Marketplace
-                  url: /task-launching-aws-mktp.html
-                - title: Create from the Azure Marketplace
-                  url: /task-launching-azure-mktp.html
-                - title: Install on your own host with internet
-                  url: /task-installing-linux.html
-                - title: Install on-prem without internet
-                  url: /task-install-connector-onprem-no-internet.html
+            - link: Learn about Connectors
+              url: /concept-connectors.html
             - title: Find the system ID for a Connector
               url: /task-finding-system-id.html
             - title: Manage existing Connectors
@@ -78,8 +102,30 @@ sidebar:
               url: /task-configuring-proxy.html
             - title: Default configuration
               url: /reference-connector-default-config.html
+        - title: Credentials
+          entries:
+            - title: AWS credentials
+              entries:
+                - title: Overview
+                  url: /concept-accounts-aws.html
+                - title: Manage credentials and subscriptions
+                  url: /task-adding-aws-accounts.html
+            - title: Azure credentials
+              entries:
+                - title: Overview
+                  url: /concept-accounts-azure.html
+                - title: Manage credentials and subscriptions
+                  url: /task-adding-azure-accounts.html
+            - title: Google Cloud credentials
+              entries:
+                - title: Overview
+                  url: /concept-accounts-gcp.html
+                - title: Manage credentials and subscriptions
+                  url: /task-adding-gcp-accounts.html
         - title: Subscriptions
           url: /task-manage-subscriptions.html
+        - title: NetApp Support Site accounts
+          url: /task-adding-nss-accounts.html
         - title: Discovered cloud storage
           entries:
             - title: View your Amazon S3 buckets
@@ -88,26 +134,6 @@ sidebar:
               url: /task-viewing-azure-blob.html
             - title: View your Google Cloud Storage buckets
               url: /task-viewing-gcp-storage.html
-        - title: AWS credentials
-          entries:
-            - title: Overview
-              url: /concept-accounts-aws.html
-            - title: Manage credentials and subscriptions
-              url: /task-adding-aws-accounts.html
-        - title: Azure credentials
-          entries:
-            - title: Overview
-              url: /concept-accounts-azure.html
-            - title: Manage credentials and subscriptions
-              url: /task-adding-azure-accounts.html
-        - title: Google Cloud credentials
-          entries:
-            - title: Overview
-              url: /concept-accounts-gcp.html
-            - title: Manage credentials and subscriptions
-              url: /task-adding-gcp-accounts.html
-        - title: NetApp Support Site accounts
-          url: /task-adding-nss-accounts.html
         - title: Discovery using My Opportunities
           url: /concept-my-opportunities.html
     - title: Reference
