@@ -1402,7 +1402,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-15 14:35:59 +0000">12/15/2022</time>
+    <time datetime="2023-01-17 20:32:58 +0000">01/17/2023</time>
     
   
 
@@ -1475,6 +1475,12 @@ When you create your first Cloud Volumes ONTAP working environment, BlueXP will 
 </div>
 </li>
 <li>
+<p>If you&#8217;re deploying Cloud Volumes ONTAP across projects, ensure that the Connector has access to those projects.</p>
+<div class="paragraph">
+<p><a href="#set-up-permissions-across-projects">Set up permissions across projects</a>.</p>
+</div>
+</li>
+<li>
 <p>If you&#8217;re using a shared VPC, set up permissions in the service project and host project.</p>
 <div class="paragraph">
 <p><a href="#set-up-shared-vpc-permissions">Set up shared VPC permissions</a>.</p>
@@ -1532,8 +1538,18 @@ When you create your first Cloud Volumes ONTAP working environment, BlueXP will 
 <li>
 <p>A service account that you need to attach to the Connector VM during deployment</p>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Depending on your configuration, you might need to complete the following steps as well:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>Shared VPC permissions, if you are using a shared VPC to deploy resources into a service project</p>
+<p>Set up permissions across projects</p>
+</li>
+<li>
+<p>Set up permissions for a shared VPC</p>
 </li>
 </ul>
 </div>
@@ -1747,6 +1763,42 @@ includedPermissions:
 <div class="paragraph">
 <div class="title">Result</div>
 <p>The service account for the Connector VM is set up.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-up-permissions-across-projects">Set up permissions across projects</h3>
+<div class="paragraph">
+<p>If you plan to deploy Cloud Volumes ONTAP systems in different projects than the project where the Connector resides, then you&#8217;ll need to provide the Connector&#8217;s service account with access to those projects.</p>
+</div>
+<div class="paragraph">
+<p>For example, let&#8217;s say the Connector is in project 1 and you want to create Cloud Volumes ONTAP systems in project 2. You&#8217;ll need to grant access to the service account in project 2.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Google Cloud console, go to the IAM service and select the project where you want to create Cloud Volumes ONTAP systems.</p>
+</li>
+<li>
+<p>On the <strong>IAM</strong> page, select <strong>Grant Access</strong> and provide the required details.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter the email of the Connector&#8217;s service account.</p>
+</li>
+<li>
+<p>Select the Connector&#8217;s custom role.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For more details, refer to <a href="https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single-role" target="_blank" rel="noopener">Google Cloud documentation</a></p>
 </div>
 </div>
 <div class="sect2">
