@@ -36,6 +36,10 @@ Get started quickly by following these steps, or scroll down to the remaining se
 +
 <<Set up a service account for the Connector>>.
 
+* If you're deploying Cloud Volumes ONTAP across projects, ensure that the Connector has access to those projects.
+*
+<<Set up permissions across projects>>.
+
 * If you're using a shared VPC, set up permissions in the service project and host project.
 +
 <<Set up shared VPC permissions>>.
@@ -71,7 +75,11 @@ Permissions are required for the following:
 
 * The user who will deploy the Connector VM
 * A service account that you need to attach to the Connector VM during deployment
-* Shared VPC permissions, if you are using a shared VPC to deploy resources into a service project
+
+Depending on your configuration, you might need to complete the following steps as well:
+
+* Set up permissions across projects
+* Set up permissions for a shared VPC
 
 === Set up permissions to deploy the Connector
 
@@ -264,6 +272,24 @@ includedPermissions:
 .Result
 
 The service account for the Connector VM is set up.
+
+=== Set up permissions across projects
+
+If you plan to deploy Cloud Volumes ONTAP systems in different projects than the project where the Connector resides, then you'll need to provide the Connector's service account with access to those projects.
+
+For example, let's say the Connector is in project 1 and you want to create Cloud Volumes ONTAP systems in project 2. You'll need to grant access to the service account in project 2.
+
+.Steps
+
+. In the Google Cloud console, go to the IAM service and select the project where you want to create Cloud Volumes ONTAP systems.
+
+. On the *IAM* page, select *Grant Access* and provide the required details.
++
+* Enter the email of the Connector's service account.
+* Select the Connector's custom role.
+* Click *Save*.
+
+For more details, refer to https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single-role[Google Cloud documentation^]
 
 === Set up shared VPC permissions
 
