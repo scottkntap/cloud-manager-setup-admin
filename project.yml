@@ -90,7 +90,7 @@ sidebar:
               url: /reference-user-roles.html
         - title: Connectors
           entries:
-            - link: Learn about Connectors
+            - title: Learn about Connectors
               url: /concept-connectors.html
             - title: Find the system ID for a Connector
               url: /task-finding-system-id.html
