@@ -15,9 +15,9 @@ summary: You can manage the credentials that are associated with the Connector V
 [.lead]
 You can manage the credentials that are associated with the Connector VM instance.
 
-== Associating a Marketplace subscription with GCP credentials
+== Associating a Marketplace subscription with Google Cloud credentials
 
-When you deploy a Connector in GCP, BlueXP creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that BlueXP uses to deploy Cloud Volumes ONTAP.
+When you deploy a Connector in Google Cloud, BlueXP creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that BlueXP uses to deploy Cloud Volumes ONTAP.
 
 At any time, you can change the Marketplace subscription that's associated with these credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 
@@ -61,11 +61,11 @@ This step sends your transfer request to NetApp.
 +
 image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop-up.]
 +
-NOTE: This step must be completed to link the GCP subscription to your NetApp account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to BlueXP.
+NOTE: This step must be completed to link the Google Cloud subscription to your NetApp account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to BlueXP.
 
 . After you're redirected to BlueXP, log in or sign up, and then click *Done* to proceed.
 +
-The GCP subscription will be linked to all NetApp accounts that your user login is associated with.
+The Google Cloud subscription will be linked to all NetApp accounts that your user login is associated with. If you need to limit access to the new subscription, you can manage the NetApp accounts that are associated with the subscription from the Digital Wallet. link:task-manage-subscriptions.html#manage-your-subscriptions[Learn how to manage your subscriptions].
 +
 image:screenshot_gcp_sub_mapping.png[A screenshot of mapping a GCP subscription to a NetApp account.]
 +
