@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-managing-netapp-accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, member, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
-summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
+summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, and Connectors.
 ---
 
 = Managing your NetApp account
@@ -13,7 +13,7 @@ summary: After you perform initial setup, you can administer your account settin
 :imagesdir: ./media/
 
 [.lead]
-link:task-setting-up-netapp-accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
+link:task-setting-up-netapp-accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, and Connectors.
 
 link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
 
