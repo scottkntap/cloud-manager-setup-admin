@@ -23,12 +23,14 @@ Standard mode::
 BlueXP is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-The BlueXP Connector is installed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector. This mode is typically used by state and local governments and regulated companies in specific regions. 
+The BlueXP Connector is installed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector.
++
+This mode is typically used by state and local governments and regulated companies. 
 
 Private mode::
 The BlueXP Connector is installed on-premises or in a cloud region with complete isolation from the internet. There is no connectivity to the BlueXP SaaS backend and no connectivity outside the cloud region or data center. Users access BlueXP locally from the Connector. 
 +
-You can use this mode in a restricted cloud region (like AWS C2S/SC2S or Azure IL6), or in an on-premises environment.
+This mode is available in restricted cloud regions (like AWS C2S/SC2S or Azure IL6) and in on-premises environments.
 
 The following table provides a comparison of these modes.
 
@@ -39,7 +41,7 @@ The following table provides a comparison of these modes.
 | Restricted mode
 | Private mode
 
-| Connectivity to NetApp SaaS
+| Connectivity to BlueXP SaaS
 | Yes
 | Outbound only
 | No
@@ -71,40 +73,30 @@ The following table provides a comparison of these modes.
 
 | Supported BlueXP services
 | All
-a| 
-* Cloud Backup
-* Cloud Data Sense
-* Cloud Volumes ONTAP
-
-a| 
-* Cloud Backup
-* Cloud Data Sense
-* Cloud Volumes ONTAP
+| Cloud Backup, Cloud Data Sense, and Cloud Volumes ONTAP
+| Cloud Backup, Cloud Data Sense, and Cloud Volumes ONTAP
 
 | Licensing options
-a|
-* PAYGO
-* BYOL by capacity
-* BYOL by node
-a|
-* PAYGO
-* BYOL by capacity
-* BYOL by node 
-a| 
-* BYOL by node
+| PAYGO and BYOL
+| PAYGO and BYOL
+| BYOL
 
 |===
 To learn more about these modes, read through the following sections.
 
 == Standard mode
 
+The following image shows how BlueXP works when deployed with standard mode.
+
+image:concept-standard-mode.png[A conceptual image...]
+
 BlueXP works as follows when using standard mode.
 
 Outbound communication::
-Required from your virtual network to the SaaS-based UI and other essential components for day-to-day operations.
+Connectivity is required from your virtual network to the SaaS-based UI and other essential components for day-to-day operations.
 
 Connector installation::
-Online deployment through a setup wizard in BlueXP or from your cloud provider's marketplace. An installer is also available that you can run on your own Linux host.
+You can install the Connector through a setup wizard in BlueXP or from your cloud provider's marketplace. An installer is also available to manually install the Connector on your own Linux host.
 
 Connector upgrades::
 Automated software upgrades from BlueXP with monthly updates. Manual upgrades are available as well.
@@ -113,18 +105,22 @@ User interface and API access::
 The BlueXP Console is accessible to users as a cloud service (SaaS).
 
 Authentication::
-Provided through BlueXP's cloud service. Authentication is provided by auth0 with optional federation.
+Authentication is provided through BlueXP's cloud service using auth0. Identity federation is available.
 
 Supported BlueXP services::
 All BlueXP services are available to users.
 
 Licensing options::
-All licensing options are available for each BlueXP service.
+All supported licensing options are available for each BlueXP service.
 
 How to get started::
 link:reference-checklist-cm.html[Getting started checklist for BlueXP]
 
 == Restricted mode
+
+The following image shows how BlueXP works when deployed with restricted mode.
+
+image:concept-restricted-mode.png[A conceptual image...]
 
 BlueXP works as follows when deployed in restricted mode.
 
@@ -159,9 +155,7 @@ BlueXP supports the following cloud services in Government regions:
 |===
 
 Licensing options::
-* PAYGO
-* BYOL by capacity
-* BYOL by node
+PAYGO and BYOL
 
 How to get started::
 * link:task-launching-aws-mktp.html[Create a Connector from the AWS Marketplace]
@@ -169,7 +163,11 @@ How to get started::
 
 == Private mode
 
-BlueXP works as follows When no internet access is available.
+The following image shows how BlueXP works when deployed with private mode.
+
+image:concept-private-mode.png[A conceptual image...]
+
+BlueXP works as follows when deployed in private mode.
 
 Outbound communication::
 None. All packages, dependencies, and essential components are packaged with the Connector and served from the local machine. This includes Cloud Backup, Cloud Data Sense, and Replication.
@@ -195,12 +193,7 @@ BlueXP supports the following cloud services in locations that don't have intern
 | Notes
 
 | Cloud Volumes ONTAP
-a| Supported in secret government regions only. Because there's no internet access, the following features aren't available:
-
-* Integration with NetApp Cloud Central
-* Automated software upgrades
-* NetApp AutoSupport
-* AWS cost information for Cloud Volumes ONTAP resources
+| Supported in secret government regions only. Because there's no internet access, the following features aren't available: automated software upgrades, AutoSupport, and AWS cost information.
 
 | Cloud Backup | Supported in on-premises environments only. Only volume level backup and restore are supported. The following features are not supported: single file restore (SFR), K8s, Apps, VMs, and Indexed Catalog.
 
@@ -212,7 +205,7 @@ a| Supported in secret government regions only. Because there's no internet acce
 
 Licensing options::
 Only BYOL is supported. For Cloud Volumes ONTAP, only by-node BYOL licensing is supported. Capacity-based licensing is not supported.
-
++
 The following licensing methods are available when you use BlueXP in a location that doesn't have internet access.
 +
 [cols=5*,options="header,autowidth"]
@@ -241,49 +234,3 @@ How to get started::
 ** IL6
 * Cloud Backup
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Deploy Cloud Data Sense on prem without internet access]
-
-==== Old stuff
-
-[cols="h,d,d,d",options="header,autowidth"]
-|===
-|
-| Standard mode
-| Restricted mode
-| Private mode
-
-| Authentication and authorization
-| auth0 with optional federation
-| auth0 with optional federation
-| Local user management
-
-| User access to BlueXP
-| From the SaaS-based user interface
-| From the local user interface on the Connector
-| From the local user interface on the Connector
-
-| Outbound communication
-| From your virtual network to the SaaS-based UI and other essential components
-| Limited
-| None
-
-| Connector deployment
-| From BlueXP, your cloud provider's marketplace, or a manual installation
-| From BlueXP or your cloud provider's marketplace
-| Marketplace installation or manual installation (depending on the environment)
-
-| Connector upgrades
-| Automated with a monthly cadence
-| Automated with a monthly cadence
-| Manual upgrades at undefined intervals
-
-| Supported NetApp cloud services
-|
-|
-|
-
-| Licensing
-|
-|
-|
-
-|===
