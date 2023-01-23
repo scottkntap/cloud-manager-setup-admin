@@ -20,13 +20,15 @@ You can use BlueXP in environments that have full internet access, limited inter
 BlueXP offers the following deployment modes, which support varying levels of connectivity:
 
 Standard mode::
-The BlueXP Console is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
+BlueXP is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-The BlueXP Connector is installed and accessed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. This mode is typically used by state and local governments and regulated companies in specific regions. 
+The BlueXP Connector is installed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector. This mode is typically used by state and local governments and regulated companies in specific regions. 
 
 Private mode::
-The BlueXP Connector is installed and accessed on-premises or in a cloud region with complete isolation from the internet. There is no connectivity to the BlueXP SaaS backend and no connectivity outside the cloud region or data center. You can use this mode in a restricted cloud region (like AWS C2S/SC2S or Azure IL6), or in an on-premises environment.
+The BlueXP Connector is installed on-premises or in a cloud region with complete isolation from the internet. There is no connectivity to the BlueXP SaaS backend and no connectivity outside the cloud region or data center. Users access BlueXP locally from the Connector. 
++
+You can use this mode in a restricted cloud region (like AWS C2S/SC2S or Azure IL6), or in an on-premises environment.
 
 The following table provides a comparison of these modes.
 
@@ -96,27 +98,27 @@ To learn more about these modes, read through the following sections.
 
 == Standard mode
 
-BlueXP works as follows when using the SaaS experience (almost all internet access is allowed).
-
-User interface and API access::
-?
+BlueXP works as follows when using standard mode.
 
 Outbound communication::
 Required from your virtual network to the SaaS-based UI and other essential components for day-to-day operations.
 
-Authentication and authorization::
-Provided through BlueXP's SaaS implementation. Authentication is provided by auth0 with optional federation.
-
-Connector deployment::
+Connector installation::
 Online deployment through a setup wizard in BlueXP or from your cloud provider's marketplace. An installer is also available that you can run on your own Linux host.
 
 Connector upgrades::
 Automated software upgrades from BlueXP with monthly updates. Manual upgrades are available as well.
 
-Supported BlueXP services::
-All BlueXP services are available.
+User interface and API access::
+The BlueXP Console is accessible to users as a cloud service (SaaS).
 
-Licensing::
+Authentication::
+Provided through BlueXP's cloud service. Authentication is provided by auth0 with optional federation.
+
+Supported BlueXP services::
+All BlueXP services are available to users.
+
+Licensing options::
 All licensing options are available for each BlueXP service.
 
 How to get started::
@@ -124,24 +126,24 @@ link:reference-checklist-cm.html[Getting started checklist for BlueXP]
 
 == Restricted mode
 
-BlueXP works as follows in a Government region with limited internet access.
-
-User interface and API access::
-?
+BlueXP works as follows when deployed in restricted mode.
 
 Outbound communication::
 The computer that accesses the BlueXP interface must have connections to a limited number of endpoints.
 
-Authentication and authorization::
-Provided through BlueXP's SaaS implementation. Authentication is provided by auth0 with optional federation.
-
-Connector deployment::
+Connector installation::
 Online deployment through a setup wizard in BlueXP or from your cloud provider's marketplace. An installer is also available that you can run on your own Linux host.
 
 Connector upgrades::
 Automated software upgrades from BlueXP with monthly updates.
 
-Supported NetApp cloud services::
+User interface and API access::
+From the Connector that's deployed in your cloud region.
+
+Authentication::
+Provided through BlueXP's SaaS implementation. Authentication is provided by auth0 with optional federation.
+
+Supported BlueXP services::
 BlueXP supports the following cloud services in Government regions:
 +
 [cols=2*,options="header,autowidth"]
@@ -156,8 +158,10 @@ BlueXP supports the following cloud services in Government regions:
 
 |===
 
-Licensing::
-?
+Licensing options::
+* PAYGO
+* BYOL by capacity
+* BYOL by node
 
 How to get started::
 * link:task-launching-aws-mktp.html[Create a Connector from the AWS Marketplace]
@@ -167,22 +171,22 @@ How to get started::
 
 BlueXP works as follows When no internet access is available.
 
-User interface and API access::
-?
-
 Outbound communication::
 None. All packages, dependencies, and essential components are packaged with the Connector and served from the local machine. This includes Cloud Backup, Cloud Data Sense, and Replication.
 
-Authentication and authorization::
-Local user management and access
-
-Connector deployment::
+Connector installation::
 Manual installation using an installer that's available from the NetApp Support Site.
 
 Connector upgrades::
 Manual software upgrades at undefined intervals.
 
-Supported NetApp cloud services::
+User interface and API access::
+From the Connector that's deployed in your cloud region or on-premises.
+
+Authentication::
+Local user management and access.
+
+Supported BlueXP services::
 BlueXP supports the following cloud services in locations that don't have internet access:
 +
 [cols=2*,options="header,autowidth"]
@@ -197,7 +201,6 @@ a| Supported in secret government regions only. Because there's no internet acce
 * Automated software upgrades
 * NetApp AutoSupport
 * AWS cost information for Cloud Volumes ONTAP resources
-* Capacity-based licensing
 
 | Cloud Backup | Supported in on-premises environments only. Only volume level backup and restore are supported. The following features are not supported: single file restore (SFR), K8s, Apps, VMs, and Indexed Catalog.
 
@@ -207,7 +210,9 @@ a| Supported in secret government regions only. Because there's no internet acce
 
 |===
 
-Licensing::
+Licensing options::
+Only BYOL is supported. For Cloud Volumes ONTAP, only by-node BYOL licensing is supported. Capacity-based licensing is not supported.
+
 The following licensing methods are available when you use BlueXP in a location that doesn't have internet access.
 +
 [cols=5*,options="header,autowidth"]
