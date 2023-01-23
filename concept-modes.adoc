@@ -15,18 +15,20 @@ summary: You can use BlueXP in environments that have full internet access, limi
 [.lead]
 You can use BlueXP in environments that have full internet access, limited internet access, and no internet access. How you set up and use BlueXP depends on your requirements.
 
+== Overview
+
 BlueXP offers the following deployment modes, which support varying levels of connectivity:
 
 Standard mode::
 The BlueXP Console is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-The BlueXP Connector is installed and accessed in a sovereign cloud region and has only outbound unidirectional connectivity to the BlueXP SaaS backend. This mode is typically used by state and local governments and regulated companies in specific regions. 
+The BlueXP Connector is installed and accessed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. This mode is typically used by state and local governments and regulated companies in specific regions. 
 
 Private mode::
-The BlueXP Connector is installed and accessed on-premises or in a cloud region with complete isolation from the internet. There is no connectivity to the BlueXP SaaS backend and no connectivity outside the cloud region or data center. You can use this mode in a restricted cloud region (like AWS C2S/SC2S or Azure IL6) or in an on-premises environment.
+The BlueXP Connector is installed and accessed on-premises or in a cloud region with complete isolation from the internet. There is no connectivity to the BlueXP SaaS backend and no connectivity outside the cloud region or data center. You can use this mode in a restricted cloud region (like AWS C2S/SC2S or Azure IL6), or in an on-premises environment.
 
-The following table provides a comparison of the connectivity that's required for these modes.
+The following table provides a comparison of these modes.
 
 [cols="h,d,d,d",options="header,autowidth"]
 |===
@@ -40,7 +42,7 @@ The following table provides a comparison of the connectivity that's required fo
 | Outbound only
 | No
 
-| Connectivity to a cloud provider
+| Connectivity to your cloud provider
 | Yes, via the public cloud
 | Yes, within the region
 | No, optional connectivity within the private region
@@ -65,18 +67,19 @@ The following table provides a comparison of the connectivity that's required fo
 | auth0 (SaaS)
 | Local
 
-| Available BlueXP services
+| Supported BlueXP services
 | All
 a| 
 * Cloud Backup
+* Cloud Data Sense
 * Cloud Volumes ONTAP
-* Data Sense
+
 a| 
 * Cloud Backup
+* Cloud Data Sense
 * Cloud Volumes ONTAP
-* Data Sense
 
-| Charging modes
+| Licensing options
 a|
 * PAYGO
 * BYOL by capacity
@@ -89,64 +92,6 @@ a|
 * BYOL by node
 
 |===
-
-[cols="h,d,d,d,d,d,d,d,d",options="header,autowidth"]
-|===
-|
-| Connectivity to NetApp SaaS
-| Connectivity to a cloud provider
-| Connector installation
-| Connector upgrades
-| UI and API access
-| Authentication
-| Available BlueXP services
-| Charging modes
-
-| Standard mode
-| Yes 
-| Yes, via the public cloud 
-| SaaS, marketplace, or manual
-| SaaS
-| SaaS or local
-| auth0 (SaaS)
-| All
-a|
-* PAYGO
-* BYOL by capacity
-* BYOL by node
-
-| Restricted mode
-| Outbound only
-| Yes, within the region 
-| Marketplace or manual
-| SaaS
-| Local
-| auth0 (SaaS)
-a| 
-* Cloud Backup
-* Cloud Volumes ONTAP
-* Data Sense
-a|
-* PAYGO
-* BYOL by capacity
-* BYOL by node 
-
-| Private mode
-| No
-| No, optional connectivity within the private region
-| Manual
-| Manual
-| Local
-| Local
-a| 
-* Cloud Backup
-* Cloud Volumes ONTAP
-* Data Sense
-a| 
-* BYOL by node
-
-|===
-
 To learn more about these modes, read through the following sections.
 
 == Standard mode
