@@ -23,14 +23,12 @@ Standard mode::
 BlueXP is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-The BlueXP Connector is installed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector.
-+
-This mode is typically used by state and local governments and regulated companies. 
+The BlueXP Connector is installed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector. This mode is typically used by state and local governments and regulated companies. 
 
 Private mode::
-The BlueXP Connector is installed on-premises or in a cloud region with complete isolation from the internet. There is no connectivity to the BlueXP SaaS backend and no connectivity outside the cloud region or data center. Users access BlueXP locally from the Connector. 
+The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]. 
 +
-This mode is available in restricted cloud regions (like AWS C2S/SC2S or Azure IL6) and in on-premises environments.
+There is no connectivity to the BlueXP SaaS backend and no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector. 
 
 The following table provides a comparison of these modes.
 
@@ -41,12 +39,12 @@ The following table provides a comparison of these modes.
 | Restricted mode
 | Private mode
 
-| Connection required to BlueXP SaaS
+| Connection required to BlueXP SaaS?
 | Yes
 | Outbound only
 | No
 
-| Connection required to your cloud provider
+| Connection required to your cloud provider?
 | Yes
 | Yes, within the region
 | No
@@ -86,10 +84,6 @@ To learn more about these modes, read through the following sections.
 
 == Standard mode
 
-The following image shows how BlueXP works when deployed with standard mode.
-
-image:concept-standard-mode.png[A conceptual image...]
-
 BlueXP works as follows when using standard mode.
 
 Outbound communication::
@@ -113,16 +107,13 @@ All BlueXP services are available to users.
 Supported licensing options::
 In standard mode, the licensing options available for each BlueXP service are supported. You'll need to review the documentation for each service to learn more about the available licensing options.
 
-How to get started::
-link:reference-checklist-cm.html[Getting started checklist for BlueXP]
+The following image shows a typical deployment when using BlueXP in standard mode.
+
+image:concept-standard-mode.png[A conceptual image...]
 
 == Restricted mode
 
-The following image shows how BlueXP works when deployed with restricted mode.
-
-image:concept-restricted-mode.png[A conceptual image...]
-
-BlueXP works as follows when deployed in restricted mode.
+BlueXP works as follows when using restricted mode.
 
 Outbound communication::
 Outbound, unidirectional connectivity is required from the Connector to the BlueXP SaaS backend to use data services, to enable automatic software upgrades, and to use auth0-based authentication. 
@@ -165,17 +156,13 @@ For Cloud Volumes ONTAP, only capacity-based licensing is supported.
 +
 For Cloud Volumes ONTAP, this includes both capacity-based licensing and node-based licensing.
 
-How to get started::
-* link:task-launching-aws-mktp.html[Create a Connector from the AWS Marketplace]
-* link:task-launching-azure-mktp.html[Create a Connector from the Azure Marketplace]
+The following image shows a typical deployment when using BlueXP in restricted mode.
+
+image:concept-restricted-mode.png[A conceptual image...]
 
 == Private mode
 
-The following image shows how BlueXP works when deployed with private mode.
-
-image:concept-private-mode.png[A conceptual image...]
-
-BlueXP works as follows when deployed in private mode.
+BlueXP works as follows in private mode.
 
 Outbound communication::
 None. All packages, dependencies, and essential components are packaged with the Connector and served from the local machine. No connectivity is required to your cloud provider's publicly available resources.
@@ -215,15 +202,14 @@ Only BYOL is supported with private mode.
 +
 For Cloud Volumes ONTAP, only node-based licensing is supported. Capacity-based licensing is not supported.
 
-How to get started::
-* Connector deployment
-** link:task-install-connector-onprem-no-internet.html[Install the Connector on-prem without internet access]
-** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html#install-and-set-up-cloud-manager[Install the Connector in the AWS C2S environment^]
-** SC-C2S
-** IL6
-* Cloud Volumes ONTAP deployment
-** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Get started with Cloud Volumes ONTAP in the AWS C2S environment^]
-** SC-C2S
-** IL6
-* Cloud Backup
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Deploy Cloud Data Sense on prem without internet access]
+The following image shows a typical deployment when using BlueXP in private mode.
+
+image:concept-private-mode.png[A conceptual image...]
+
+== How to get started
+
+Once you've decided which deployment mode works for your business needs, use the following links to get started with BlueXP.
+
+* link:reference-checklist-cm.html[Get started with Standard mode]
+* link:reference-checklist-cm.html[Get started with Restricted mode]
+* link:reference-checklist-cm.html[Get started with Private mode]
