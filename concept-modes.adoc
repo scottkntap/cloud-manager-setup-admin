@@ -84,7 +84,11 @@ To learn more about these modes, read through the following sections.
 
 == Standard mode
 
-BlueXP works as follows in standard mode.
+The following image shows a typical deployment when using BlueXP in standard mode.
+
+image:diagram-standard-mode.png[A conceptual image...]
+
+BlueXP works as follows in standard mode:
 
 Outbound communication::
 Connectivity is required from the Connector to the BlueXP SaaS backend, to your cloud provider's publicly available resources, and to other essential components for day-to-day operations.
@@ -107,13 +111,13 @@ All BlueXP services are available to users.
 Supported licensing options::
 In standard mode, the licensing options available for each BlueXP service are supported. You can review the documentation for each service to learn more about the available licensing options.
 
-The following image shows a typical deployment when using BlueXP in standard mode.
-
-image:diagram-standard-mode.png[A conceptual image...]
-
 == Restricted mode
 
-BlueXP works as follows in restricted mode.
+The following image shows a typical deployment when using BlueXP in restricted mode.
+
+image:diagram-restricted-mode.png[A conceptual image...]
+
+BlueXP works as follows in restricted mode:
 
 Outbound communication::
 Outbound, unidirectional connectivity is required from the Connector to the BlueXP SaaS backend to use data services, to enable automatic software upgrades, and to use auth0-based authentication. A connection is also required to cloud provider resources from within the region.
@@ -156,13 +160,17 @@ For Cloud Volumes ONTAP, only capacity-based licensing is supported.
 +
 For Cloud Volumes ONTAP, both capacity-based licensing and node-based licensing are supported.
 
-The following image shows a typical deployment when using BlueXP in restricted mode.
-
-image:diagram-restricted-mode.png[A conceptual image...]
-
 == Private mode
 
-BlueXP works as follows in private mode.
+The following image shows a typical _hybrid cloud_ deployment when using BlueXP in private mode.
+
+image:diagram-private-mode-cloud.png[A conceptual image...]
+
+Meanwhile, this second image shows a typical _on-premises deployment_ when using BlueXP in private mode.
+
+image:diagram-private-mode-onprem.png[A conceptual image...]
+
+BlueXP works as follows in private mode:
 
 Outbound communication::
 None. All packages, dependencies, and essential components are packaged with the Connector and served from the local machine. No connectivity is required to the BlueXP SaaS backend or to your cloud provider's publicly available resources.
@@ -207,14 +215,6 @@ Supported licensing options::
 Only BYOL is supported with private mode. 
 +
 For Cloud Volumes ONTAP BYOL, only node-based licensing is supported. Capacity-based licensing is not supported.
-
-The following image shows a typical hybrid cloud deployment when using BlueXP in private mode.
-
-image:diagram-private-mode-cloud.png[A conceptual image...]
-
-The following image shows a typical on-premises deployment when using BlueXP in private mode.
-
-image:diagram-private-mode-onprem.png[A conceptual image...]
 
 == How to get started
 
