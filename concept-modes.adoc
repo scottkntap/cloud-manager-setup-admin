@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-modes.html
 keywords: dark site, internet, onprem, no internet, supported deployments, govcloud, government access, environments, supported environments, deployment modes, modes, private mode, restricted mode, il6, sc2s, c2s, dark site
-summary: You can use BlueXP in environments that have full internet access, limited internet access, and no internet access. How you set up and use BlueXP depends on which environment you're using.
+summary: You can use BlueXP in environments that have full internet access, limited internet access, and no internet access. How you set up and use BlueXP depends on your requirements.
 ---
 
 = BlueXP deployment modes
@@ -23,10 +23,12 @@ Standard mode::
 BlueXP is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-The BlueXP Connector is installed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector. This mode is typically used by state and local governments and regulated companies. 
+The BlueXP Connector is installed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector. 
++
+This mode is typically used by state and local governments and regulated companies. 
 
 Private mode::
-The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]. There is no connectivity to the BlueXP SaaS backend and no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector. 
+The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector. 
 
 The following table provides a comparison of these modes.
 
@@ -107,7 +109,7 @@ In standard mode, the licensing options available for each BlueXP service are su
 
 The following image shows a typical deployment when using BlueXP in standard mode.
 
-image:concept-standard-mode.png[A conceptual image...]
+image:diagram-standard-mode.png[A conceptual image...]
 
 == Restricted mode
 
@@ -156,7 +158,7 @@ For Cloud Volumes ONTAP, both capacity-based licensing and node-based licensing 
 
 The following image shows a typical deployment when using BlueXP in restricted mode.
 
-image:concept-restricted-mode.png[A conceptual image...]
+image:diagram-restricted-mode.png[A conceptual image...]
 
 == Private mode
 
@@ -206,9 +208,13 @@ Only BYOL is supported with private mode.
 +
 For Cloud Volumes ONTAP BYOL, only node-based licensing is supported. Capacity-based licensing is not supported.
 
-The following image shows a typical deployment when using BlueXP in private mode.
+The following image shows a typical hybrid cloud deployment when using BlueXP in private mode.
 
-image:concept-private-mode.png[A conceptual image...]
+image:diagram-private-mode-cloud.png[A conceptual image...]
+
+The following image shows a typical on-premises deployment when using BlueXP in private mode.
+
+image:diagram-private-mode-onprem.png[A conceptual image...]
 
 == How to get started
 
