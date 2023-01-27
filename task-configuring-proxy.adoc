@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-configuring-proxy.html
 keywords: proxy, proxy server, proxy, internet, HTTP, http, https
-summary: If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use that HTTP proxy server. The proxy server can be in the cloud or in your network.
+summary: If your corporate policies require you to use a proxy server for all communication to the internet, then you need to configure your Connectors to use that proxy server. If you didn't configure a Connector to use a proxy server during installation, then you can configure the Connector to use that proxy server at any time. 
 ---
 
-= Configuring a Connector to use an HTTP proxy server
+= Configure a Connector to use an HTTP proxy server
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,9 @@ summary: If your corporate policies require you to use a proxy server for all HT
 :imagesdir: ./media/
 
 [.lead]
-If your corporate policies require you to use a proxy server for all HTTP communication to the internet, then you must configure your Connectors to use an HTTP proxy server. The proxy server can be in the cloud or in your network.
+If your corporate policies require you to use a proxy server for all communication to the internet, then you need to configure your Connectors to use that proxy server. If you didn't configure a Connector to use a proxy server during installation, then you can configure the Connector to use that proxy server at any time.
 
-NOTE: BlueXP doesn't support using an HTTPS proxy with the Connector.
+BlueXP supports configuring an HTTP proxy server from the user interface. The proxy server can be in the cloud or in your network.
 
 Configuring the Connector to use an HTTP proxy server provides outbound internet access if a public IP address or a NAT gateway isn't available. This proxy server provides only the Connector with an outbound connection. It doesn't provide any connectivity for Cloud Volumes ONTAP systems.
 
