@@ -73,7 +73,7 @@ The Connector requires outbound internet access to manage resources and processe
 | To manage resources in Azure Government regions.
 
 | 
-\shttps://management.azure.microsoft.scloud
+\https://management.azure.microsoft.scloud
 \https://login.microsoftonline.microsoft.scloud
 
 | To manage resources in the Azure IL6 region.
