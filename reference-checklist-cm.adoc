@@ -21,6 +21,26 @@ To log in to BlueXP, you can use your NetApp Support Site credentials or you can
 Network access from a web browser to several endpoints::
 The BlueXP user interface is accessible from a web browser. As you use the BlueXP user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 +
+// start tabbed area
+[role="tabbed-block"]
+=====
+.AWS
+--
+include::task-creating-connectors-aws.adoc[tag=endpoints]
+--
+
+.Azure
+--
+include::task-creating-connectors-azure.adoc[tag=endpoints]
+--
+
+.Google Cloud
+--
+include::task-creating-connectors-gcp.adoc[tag=endpoints]
+--
+=====
+// end tabbed area
+
 [cols=2*,options="header,autowidth"]
 |===
 | Endpoints

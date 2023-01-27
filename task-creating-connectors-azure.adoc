@@ -54,6 +54,7 @@ For example, if you install a Connector in your corporate network, then you must
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
 
+//tag::endpoints[]
 [cols=2*,options="header,autowidth"]
 |===
 | Endpoints
@@ -105,6 +106,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 | To upgrade the Connector and its Docker components.
 
 |===
+//end::endpoints[]
 
 === Proxy server
 
