@@ -140,7 +140,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 | To manage resources in Azure Government regions.
 
 | 
-\shttps://management.azure.microsoft.scloud
+shttps://management.azure.microsoft.scloud
 \https://login.microsoftonline.microsoft.scloud
 
 | To manage resources in the Azure IL6 region.
