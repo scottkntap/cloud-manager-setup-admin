@@ -26,21 +26,6 @@ The BlueXP user interface is accessible from a web browser. As you use the BlueX
 =====
 .AWS
 --
-include::task-creating-connectors-aws.adoc[tag=endpoints]
---
-
-.Azure
---
-include::task-creating-connectors-azure.adoc[tag=endpoints]
---
-
-.Google Cloud
---
-include::task-creating-connectors-gcp.adoc[tag=endpoints]
---
-=====
-// end tabbed area
-
 [cols=2*,options="header,autowidth"]
 |===
 | Endpoints
@@ -60,6 +45,32 @@ AWS services (amazonaws.com):
 
 | Required to deploy a Connector from BlueXP in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
 
+| \https://signin.b2c.netapp.com
+| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to BlueXP.
+
+|
+\https://netapp-cloud-account.auth0.com
+
+\https://cdn.auth0.com
+
+\https://services.cloud.netapp.com
+| Your web browser connects to these endpoints for centralized user authentication through BlueXP.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
+
+|===
+--
+
+.Azure
+--
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| \https://console.bluexp.netapp.com | Your web browser contacts this URL when using the SaaS UI.
+
 |
 \https://management.azure.com
 
@@ -78,7 +89,33 @@ AWS services (amazonaws.com):
 \https://login.microsoftonline.com
 | Required to deploy a Connector from BlueXP in Azure US Gov regions.
 
+| \https://signin.b2c.netapp.com
+| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to BlueXP.
+
 |
+\https://netapp-cloud-account.auth0.com
+
+\https://cdn.auth0.com
+
+\https://services.cloud.netapp.com
+| Your web browser connects to these endpoints for centralized user authentication through BlueXP.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
+
+|===
+--
+
+.Google Cloud
+--
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| \https://console.bluexp.netapp.com | Your web browser contacts this URL when using the SaaS UI.
+
+a|
 \https://www.googleapis.com
 
 | Required to deploy a Connector from BlueXP in Google Cloud.
@@ -97,17 +134,10 @@ AWS services (amazonaws.com):
 | \https://widget.intercom.io
 | For in-product chat that enables you to talk to NetApp cloud experts.
 
-| The Connector's IP address
-a| In most cases, you should work with BlueXP from the SaaS UI, but link:concept-connectors.html#the-local-user-interface[if you use the local UI], then you must enter the host's IP address from a web browser.
-
-Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:
-
-- A private IP works if you have a VPN and direct access to your virtual network
-- A public IP works in any networking scenario
-
-In either case, secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
-
 |===
+--
+=====
+// end tabbed area
 
 Outbound networking for a Connector::
 After logging in to BlueXP, a BlueXP Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables BlueXP to manage resources and processes within your public cloud environment. Note that a Connector is required for most, but not all services and features in BlueXP. link:concept-connectors.html[Learn more about Connectors and how they work].
@@ -116,74 +146,25 @@ After logging in to BlueXP, a BlueXP Account Admin will need to deploy a _Connec
 +
 The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
 +
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
+// start tabbed area
+[role="tabbed-block"]
+=====
+.AWS
+--
+include::task-creating-connectors-aws.adoc[tag=endpoints]
+--
 
-| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+.Azure
+--
+include::task-creating-connectors-azure.adoc[tag=endpoints]
+--
 
-a| 
-
-\https://*.api.bluexp.netapp.com
-
-\https://api.bluexp.netapp.com
-
-\https://*.cloudmanager.cloud.netapp.com
-
-\https://cloudmanager.cloud.netapp.com
-
-a| To provide SaaS features and services within BlueXP.
-
-NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
-
-| \https://cloudmanagerinfraprod.azurecr.io
-
-\https://*.blob.core.windows.net
-| To upgrade the Connector and its Docker components.
-
-| 
-\https://<region>.amazonaws.com
-
-| To manage resources in AWS.
-
-| 
-\https://management.azure.com
-\https://login.microsoftonline.com
-
-| To manage resources in Azure public regions.
-
-| 
-\https://management.usgovcloudapi.net
-\https://login.microsoftonline.us
-
-| To manage resources in Azure Government regions.
-
-| 
-shttps://management.azure.microsoft.scloud
-\https://login.microsoftonline.microsoft.scloud
-
-| To manage resources in the Azure IL6 region.
-
-| 
-\https://management.chinacloudapi.cn
-\https://login.chinacloudapi.cn
-
-| To manage resources in Azure China regions.
-
-| 
-\https://www.googleapis.com/compute/v1/
-\https://cloudresourcemanager.googleapis.com/v1/projects
-\https://www.googleapis.com/compute/beta
-\https://storage.googleapis.com/storage/v1
-\https://www.googleapis.com/storage/v1
-\https://iam.googleapis.com/v1
-\https://cloudkms.googleapis.com/v1
-\https://www.googleapis.com/deploymentmanager/v2/projects
-
-| To manage resources in Google Cloud.
-
-|===
+.Google Cloud
+--
+include::task-creating-connectors-gcp.adoc[tag=endpoints]
+--
+=====
+// end tabbed area
 
 * If you choose to manually install the Connector on your own Linux host (and not do so directly from the BlueXP interface), the installer for the Connector requires access to several endpoints during the installation process:
 +
