@@ -16,6 +16,26 @@ summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration f
 Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 5 February 2023
+
+=== Connector 3.9.26
+
+* BlueXP will now notify you if your Connector has been powered down for 14 days or longer.
++
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html[Learn about BlueXP notifications]
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#connectors-should-remain-running[Learn why Connectors should remain running]
+
+* The Connector is now supported in the following Azure regions:
++
+** China East 3
+** China North 3
+
+* In AWS China regions and in Azure China regions, BlueXP will now automatically update the Connector when a new version is available.
+
+* This release of the Connector includes Cloud Volumes ONTAP enhancements.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-february-2023[Learn about Cloud Volumes ONTAP enhancements^]
+
 == 1 January 2023
 
 === Connector 3.9.25
