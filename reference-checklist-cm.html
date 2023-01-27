@@ -1402,7 +1402,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-04 17:06:18 +0000">01/04/2023</time>
+    <time datetime="2023-01-27 18:28:17 +0000">01/27/2023</time>
     
   
 
@@ -1514,28 +1514,6 @@ https://services.cloud.netapp.com</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">https://widget.intercom.io</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For in-product chat that enables you to talk to NetApp cloud experts.</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Connector&#8217;s IP address</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>In most cases, you should work with BlueXP from the SaaS UI, but <a href="concept-connectors.html#the-local-user-interface">if you use the local UI</a>, then you must enter the host&#8217;s IP address from a web browser.</p>
-</div>
-<div class="paragraph">
-<p>Depending on the connectivity to your cloud provider, use the private IP or a public IP assigned to the host:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A private IP works if you have a VPN and direct access to your virtual network</p>
-</li>
-<li>
-<p>A public IP works in any networking scenario</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In either case, secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.</p>
-</div></div></td>
-</tr>
 </tbody>
 </table>
 </dd>
@@ -1561,6 +1539,41 @@ https://services.cloud.netapp.com</p></td>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://&lt;region&gt;.amazonaws.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To manage resources in AWS.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://management.azure.com<br>
+https://login.microsoftonline.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To manage resources in Azure public regions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://management.usgovcloudapi.net<br>
+https://login.microsoftonline.us</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To manage resources in Azure Government regions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://management.azure.microsoft.scloud<br>
+https://login.microsoftonline.microsoft.scloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To manage resources in the Azure IL6 region.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://management.chinacloudapi.cn<br>
+https://login.chinacloudapi.cn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To manage resources in Azure China regions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://www.googleapis.com/compute/v1/<br>
+https://cloudresourcemanager.googleapis.com/v1/projects<br>
+https://www.googleapis.com/compute/beta<br>
+https://storage.googleapis.com/storage/v1<br>
+https://www.googleapis.com/storage/v1<br>
+https://iam.googleapis.com/v1<br>
+https://cloudkms.googleapis.com/v1<br>
+https://www.googleapis.com/deploymentmanager/v2/projects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To manage resources in Google Cloud.</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>

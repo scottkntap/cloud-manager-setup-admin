@@ -1402,7 +1402,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-17 20:32:58 +0000">01/17/2023</time>
+    <time datetime="2023-01-27 17:43:55 +0000">01/27/2023</time>
     
   
 
@@ -1748,7 +1748,12 @@ includedPermissions:
 - storage.objects.get
 - storage.objects.list
 - monitoring.timeSeries.list
-- storage.buckets.getIamPolicy</code></pre>
+- storage.buckets.getIamPolicy
+- cloudkms.cryptoKeys.getIamPolicy
+- cloudkms.cryptoKeys.setIamPolicy
+- cloudkms.keyRings.get
+- cloudkms.keyRings.getIamPolicy
+- cloudkms.keyRings.setIamPolicy</code></pre>
 </div>
 </div>
 </li>
@@ -1979,6 +1984,17 @@ includedPermissions:
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://www.googleapis.com/compute/v1/<br>
+https://cloudresourcemanager.googleapis.com/v1/projects<br>
+https://www.googleapis.com/compute/beta<br>
+https://storage.googleapis.com/storage/v1<br>
+https://www.googleapis.com/storage/v1<br>
+https://iam.googleapis.com/v1<br>
+https://cloudkms.googleapis.com/v1<br>
+https://www.googleapis.com/deploymentmanager/v2/projects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To manage resources in Google Cloud.</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
