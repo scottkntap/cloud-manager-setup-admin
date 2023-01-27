@@ -120,6 +120,11 @@ includedPermissions:
 - storage.objects.list
 - monitoring.timeSeries.list
 - storage.buckets.getIamPolicy
+- cloudkms.cryptoKeys.getIamPolicy
+- cloudkms.cryptoKeys.setIamPolicy
+- cloudkms.keyRings.get
+- cloudkms.keyRings.getIamPolicy
+- cloudkms.keyRings.setIamPolicy
 
 == How Google Cloud permissions are used
 
@@ -354,4 +359,32 @@ includedPermissions:
 
 | To discover information about Google Cloud Storage buckets.
 
+| 
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.getIamPolicy
+- cloudkms.cryptoKeys.list
+- cloudkms.cryptoKeys.setIamPolicy
+- cloudkms.keyRings.get
+- cloudkms.keyRings.getIamPolicy
+- cloudkms.keyRings.list
+- cloudkms.keyRings.setIamPolicy
+
+| To select your own customer-managed keys in the Cloud Backup activation wizard instead of using the default Google-managed encryption keys.
+
 |===
+
+== Change log
+
+As permissions are added and removed, we'll note them in the sections below.
+
+=== 27 January, 2023
+
+The following permissions were added to the policy:
+
+* cloudkms.cryptoKeys.getIamPolicy
+* cloudkms.cryptoKeys.setIamPolicy
+* cloudkms.keyRings.get
+* cloudkms.keyRings.getIamPolicy
+* cloudkms.keyRings.setIamPolicy
+
+These permissions are required for Cloud Backup.
