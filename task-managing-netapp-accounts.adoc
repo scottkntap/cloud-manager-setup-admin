@@ -266,10 +266,13 @@ We don't recommend disabling the SaaS platform unless you need to in order to co
 
 The following services aren't available from BlueXP if you disable the SaaS platform:
 
-*	Cloud Data Sense
-*	Kubernetes
-*	Cloud Tiering
-*	Global File Cache
+* Cloud Backup
++
+Cloud Backup is supported in Government regions when the SaaS platform is disabled, but not in commercial regions when the SaaS platform is disabled
+* Cloud Data Sense
+* Kubernetes
+* Cloud Tiering
+* Global File Cache
 
 If you do disable the SaaS platform, you'll need to perform all tasks from link:task-managing-connectors.html#access-the-local-ui[the local user interface that is available on a Connector].
 
