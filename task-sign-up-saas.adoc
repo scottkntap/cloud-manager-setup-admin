@@ -1,0 +1,71 @@
+---
+sidebar: sidebar
+permalink: task-sign-up-saas.html
+keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account
+summary: When you get started with BlueXP, your first step is to sign up. You'll be given the option to create an account, but you can skip that step if you're being invited to an existing account.
+---
+
+= Sign up to BlueXP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/ 
+
+[.lead]
+When you get started with BlueXP, your first step is to sign up. You'll be given the option to create an account, but you can skip that step if you're being invited to an existing account.
+
+.A note about Government regions
+
+If you need to access BlueXP from a Government region or a site that doesn't have outbound internet access, then you need to create a Connector and log in to the BlueXP user interface that runs locally on the Connector. link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI on the Connector].
+
+.Login options
+
+BlueXP is accessible from your web browser through a SaaS-based user interface.
+
+You can log in to BlueXP using one of the following options:
+
+* Your existing NetApp Support Site (NSS) credentials
++
+When you use this option, your NetApp Support Site (NSS) credentials are not added to BlueXP in the Support Dashboard. link:task-adding-nss-accounts.html[Learn how to add your NSS credentials to the Support Dashboard to enable key workflows].
+
+* A NetApp cloud login by specifying your email address and a password
+
+Each time that you log in, you'll need to use the same option that you chose when you logged in for the first time.
+
+* If you registered by logging in with your NetApp Support Site credentials, then you need to use that log in option each time.
+* If you signed up by entering your email and password, then you need to enter those credentials each time that you log in.
+
+Both login options support federated connections. You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then click *sign-in options*.
+
+.Steps
+
+. Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP console^]
+
+. On the *Log in* page, select *Sign up*.
++
+TIP: If you're planning to use your existing NSS credentials, then you can skip the sign up page and enter your email address directly in the log in page. BlueXP will sign you up as part of this initial login.
+
+. On the *Sign up* page, choose one of the login options:
++
+* If you have an existing NetApp Support Site (NSS) account, select *Sign up with your NetApp Support Site credentials*.
+
+* If you don't have an NSS account and you haven't created NetApp cloud credentials, enter the required information to create a NetApp cloud login.
++
+Note that only English characters are allowed in the sign up form.
+
+. When prompted, review the End User License Agreement and accept the terms.
+
+. On the *Welcome* page, enter a name for your account.
++
+If your business already has an account and you want to join it, then you should skip this step and ask the owner to associate you with the account. After the owner adds you, you can log in and you'll have access to the account. link:task-manage-users.html[Learn how to add members to an existing account].
++
+An account is the top-level element in NetApp's identity platform. It enables you to add and manage users, roles, permissions, and working environments.
++
+image:screenshot-account-selection.png[A screenshot of the Welcome page that appears when you log in with a new account that doesn't belong to an account.]
+
+. Select *Create Account*.
+
+.Result
+
+You now have a BlueXP login and an account. In most cases, the next step is to create a Connector, which connects BlueXP's services to your hybrid cloud environment.
