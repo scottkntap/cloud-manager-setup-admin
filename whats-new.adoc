@@ -20,10 +20,9 @@ Learn what's new with BlueXP (formerly Cloud Manager) administration features: N
 
 === Connector 3.9.26
 
-* BlueXP will now notify you if your Connector has been powered down for 14 days or longer.
+* The Connector is now supported in cloud regions that have complete isolation from the internet. This enables you to use BlueXP to deploy Cloud Volumes ONTAP in cloud regions where no internet access is available.
 +
-** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html[Learn about BlueXP notifications]
-** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#connectors-should-remain-running[Learn why Connectors should remain running]
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Learn how to install the Connector in a location without internet access]
 
 * The Connector is now supported in the following Azure regions:
 +
@@ -31,6 +30,11 @@ Learn what's new with BlueXP (formerly Cloud Manager) administration features: N
 ** China North 3
 
 * In AWS China regions and in Azure China regions, BlueXP will now automatically update the Connector when a new version is available.
+
+* BlueXP will now notify you if your Connector has been powered down for 14 days or longer.
++
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html[Learn about BlueXP notifications]
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#connectors-should-remain-running[Learn why Connectors should remain running]
 
 * This release of the Connector includes Cloud Volumes ONTAP enhancements.
 +
