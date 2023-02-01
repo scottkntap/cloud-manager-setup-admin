@@ -20,7 +20,11 @@ Learn what's new with BlueXP (formerly Cloud Manager) administration features: N
 
 === Connector 3.9.26
 
-* The Connector is now supported in cloud regions that have complete isolation from the internet. This enables you to use BlueXP to deploy Cloud Volumes ONTAP in cloud regions where no internet access is available.
+* This release of the Connector includes Cloud Volumes ONTAP enhancements.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-february-2023[Learn about Cloud Volumes ONTAP enhancements^]
+
+* The Connector is now supported in cloud environments that have complete isolation from the internet. You can then use the BlueXP console that's running on the Connector to deploy Cloud Volumes ONTAP in the same location.
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Learn how to install the Connector in a location without internet access]
 
@@ -29,7 +33,18 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-o
 ** China East 3
 ** China North 3
 
++
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+
 * In AWS China regions and in Azure China regions, BlueXP will now automatically update the Connector when a new version is available.
+
+* When you subscribe to BlueXP from your cloud provider's marketplace, you now have the option to replace the existing subscription for one account with the new subscription.
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-aws-subscription.png["A screenshot that shows the subscription assignment for a BlueXP account."]
++
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription[Learn how to associate an AWS subscription]
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html#associating-an-azure-marketplace-subscription-to-credentials[Learn how to associate an Azure subscription]
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Learn how to associate a Google Cloud subscription]
 
 * BlueXP will now notify you if your Connector has been powered down for 14 days or longer.
 +
@@ -41,10 +56,6 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-o
 compute.instances.updateNetworkInterface
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[View Google Cloud permissions for the Connector].
-
-* This release of the Connector includes Cloud Volumes ONTAP enhancements.
-+
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-february-2023[Learn about Cloud Volumes ONTAP enhancements^]
 
 == 1 January 2023
 
