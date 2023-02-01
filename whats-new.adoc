@@ -36,6 +36,12 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-o
 ** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html[Learn about BlueXP notifications]
 ** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#connectors-should-remain-running[Learn why Connectors should remain running]
 
+* We updated the Connector policy for Google Cloud to include a permission that's required to create and manage storage VMs on Cloud Volumes ONTAP HA pairs:
++
+compute.instances.updateNetworkInterface
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[View Google Cloud permissions for the Connector].
+
 * This release of the Connector includes Cloud Volumes ONTAP enhancements.
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-february-2023[Learn about Cloud Volumes ONTAP enhancements^]
