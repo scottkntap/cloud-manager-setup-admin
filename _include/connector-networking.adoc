@@ -81,7 +81,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 === Proxy server
 
-If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
 
 * IP address
 * Credentials

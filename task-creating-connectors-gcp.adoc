@@ -47,7 +47,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
 
 [role="quick-margin-para"]
-You'll need a VPC and subnet with outbound internet access to specific endpoints. If an HTTP proxy is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
+You'll need a VPC and subnet with outbound internet access to specific endpoints. If a proxy server is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
 
 [role="quick-margin-para"]
 <<Set up networking,View networking requirements>>.
@@ -407,7 +407,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 === Proxy server
 
-If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
 
 * IP address
 * Credentials

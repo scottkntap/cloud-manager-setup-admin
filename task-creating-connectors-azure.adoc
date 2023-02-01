@@ -110,7 +110,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 === Proxy server
 
-If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
 
 * IP address
 * Credentials
@@ -562,7 +562,7 @@ BlueXP enables you to create a Connector in Azure directly from its user interfa
 
 * A VNet and subnet in your Azure region of choice.
 
-* Details about an HTTP proxy, if your organization requires a proxy for all outgoing internet traffic:
+* Details about a proxy server, if your organization requires a proxy for all outgoing internet traffic:
 
 ** IP address
 ** Credentials
