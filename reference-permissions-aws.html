@@ -287,15 +287,15 @@
         </li><li>
           <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/reference-permissions-aws.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
           <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/reference-permissions-aws.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
           <a href="https://docs.netapp.com/zh-tw/cloud-manager-setup-admin/reference-permissions-aws.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-setup-admin/reference-permissions-aws.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
           <a href="https://docs.netapp.com/fr-fr/cloud-manager-setup-admin/reference-permissions-aws.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
-        </li><li>
-          <a href="https://docs.netapp.com/de-de/cloud-manager-setup-admin/reference-permissions-aws.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -1402,7 +1402,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-23 16:32:45 +0000">11/23/2022</time>
+    <time datetime="2023-02-02 14:31:25 +0000">02/02/2023</time>
     
   
 
@@ -1500,11 +1500,8 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
-    "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "cvoServicePolicy",
-            "Effect": "Allow",
             "Action": [
                 "ec2:DescribeInstances",
                 "ec2:DescribeInstanceStatus",
@@ -1552,6 +1549,8 @@
                 "ec2:DeleteRoute",
                 "ec2:DeletePlacementGroup",
                 "ec2:DescribePlacementGroups",
+                "ec2:DescribeVolumesModifications",
+                "ec2:ModifyVolume",
                 "cloudformation:CreateStack",
                 "cloudformation:DescribeStacks",
                 "cloudformation:DescribeStackEvents",
@@ -1600,11 +1599,11 @@
                 "fsx:Describe*",
                 "fsx:List*"
             ],
-            "Resource": "*"
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "cvoServicePolicy"
         },
         {
-            "Sid": "backupPolicy",
-            "Effect": "Allow",
             "Action": [
                 "ec2:StartInstances",
                 "ec2:StopInstances",
@@ -1638,11 +1637,11 @@
                 "glue:BatchCreatePartition",
                 "glue:BatchDeletePartition"
             ],
-            "Resource": "*"
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "backupPolicy"
         },
         {
-            "Sid": "backupS3Policy",
-            "Effect": "Allow",
             "Action": [
                 "s3:GetBucketLocation",
                 "s3:ListAllMyBuckets",
@@ -1683,11 +1682,11 @@
             ],
             "Resource": [
                 "arn:aws:s3:::netapp-backup-*"
-            ]
+            ],
+            "Effect": "Allow",
+            "Sid": "backupS3Policy"
         },
         {
-            "Sid": "fabricPoolS3Policy",
-            "Effect": "Allow",
             "Action": [
                 "s3:CreateBucket",
                 "s3:GetLifecycleConfiguration",
@@ -1703,34 +1702,40 @@
             ],
             "Resource": [
                 "arn:aws:s3:::fabric-pool*"
-            ]
+            ],
+            "Effect": "Allow",
+            "Sid": "fabricPoolS3Policy"
         },
         {
-            "Sid": "fabricPoolPolicy",
-            "Effect": "Allow",
             "Action": [
                 "ec2:DescribeRegions"
             ],
-            "Resource": "*"
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "fabricPoolPolicy"
         },
         {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:TerminateInstances"
-            ],
             "Condition": {
                 "StringLike": {
                     "ec2:ResourceTag/netapp-adc-manager": "*"
                 }
             },
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:TerminateInstances"
+            ],
             "Resource": [
                 "arn:aws:ec2:*:*:instance/*"
-            ]
+            ],
+            "Effect": "Allow"
         },
         {
-            "Effect": "Allow",
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/WorkingEnvironment": "*"
+                }
+            },
             "Action": [
                 "ec2:StartInstances",
                 "ec2:TerminateInstances",
@@ -1739,41 +1744,37 @@
                 "ec2:StopInstances",
                 "ec2:DeleteVolume"
             ],
-            "Condition": {
-                "StringLike": {
-                    "ec2:ResourceTag/WorkingEnvironment": "*"
-                }
-            },
             "Resource": [
                 "arn:aws:ec2:*:*:instance/*"
-            ]
+            ],
+            "Effect": "Allow"
         },
         {
-            "Effect": "Allow",
             "Action": [
                 "ec2:AttachVolume",
                 "ec2:DetachVolume"
             ],
             "Resource": [
                 "arn:aws:ec2:*:*:volume/*"
-            ]
+            ],
+            "Effect": "Allow"
         },
         {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DeleteVolume"
-            ],
             "Condition": {
                 "StringLike": {
                     "ec2:ResourceTag/WorkingEnvironment": "*"
                 }
             },
+            "Action": [
+                "ec2:DeleteVolume"
+            ],
             "Resource": [
                 "arn:aws:ec2:*:*:volume/*"
-            ]
+            ],
+            "Effect": "Allow"
         }
     ]
-  }</code></pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1784,62 +1785,61 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "K8sServicePolicy",
-      "Effect": "Allow",
-      "Action": [
-          "ec2:DescribeRegions",
-          "eks:ListClusters",
-          "eks:DescribeCluster",
-          "iam:GetInstanceProfile"
-      ],
-      "Resource": "*"
-    },
-    {
-        "Sid": "GFCservicePolicy",
-        "Effect": "Allow",
-        "Action": [
-            "cloudformation:DescribeStacks",
-            "cloudwatch:GetMetricStatistics",
-            "cloudformation:ListStacks"
-        ],
-        "Resource": "*"
-    },
-    {
-        "Effect": "Allow",
-        "Action": [
-            "ec2:StartInstances",
-            "ec2:TerminateInstances",
-            "ec2:AttachVolume",
-            "ec2:DetachVolume"
-        ],
-        "Condition": {
-            "StringLike": {
-                "ec2:ResourceTag/GFCInstance": "*"
-            }
+    "Statement": [
+        {
+            "Action": [
+                "ec2:DescribeRegions",
+                "eks:ListClusters",
+                "eks:DescribeCluster",
+                "iam:GetInstanceProfile"
+            ],
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "K8sServicePolicy"
         },
-        "Resource": [
-            "arn:aws:ec2:*:*:instance/*"
-        ]
-    },
-    {
-        "Sid": "tagServicePolicy",
-        "Effect": "Allow",
-        "Action": [
-            "ec2:CreateTags",
-            "ec2:DeleteTags",
-            "ec2:DescribeTags",
-            "tag:getResources",
-            "tag:getTagKeys",
-            "tag:getTagValues",
-            "tag:TagResources",
-            "tag:UntagResources"
-        ],
-        "Resource": "*"
-    }
-  ]
+        {
+            "Action": [
+                "cloudformation:DescribeStacks",
+                "cloudwatch:GetMetricStatistics",
+                "cloudformation:ListStacks"
+            ],
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "GFCservicePolicy"
+        },
+        {
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/GFCInstance": "*"
+                }
+            },
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:TerminateInstances",
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "ec2:CreateTags",
+                "ec2:DeleteTags",
+                "ec2:DescribeTags",
+                "tag:getResources",
+                "tag:getTagKeys",
+                "tag:getTagValues",
+                "tag:TagResources",
+                "tag:UntagResources"
+            ],
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "tagServicePolicy"
+        }
+    ]
 }</code></pre>
 </div>
 </div>
