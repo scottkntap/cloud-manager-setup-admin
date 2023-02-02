@@ -207,7 +207,7 @@ image:screenshot_associate_subscription.png[A screenshot of the action menu for 
 
 . To associate the credentials with an existing subscription, select the subscription from the down-down list and click *Associate*.
 
-. To associate the credentials with a new subscription, click *Add Subscription* and follow the steps in the AWS Marketplace:
+. To associate the credentials with a new subscription, click *Add Subscription > Continue* and follow the steps in the AWS Marketplace:
 
 .. Click *Continue to Subscribe*.
 .. Click *Set up your account*.
