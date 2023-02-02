@@ -331,7 +331,7 @@ For all other accounts, you'll need to manually associate the subscription by re
 * Click *Save*.
 
 +
-image:screenshot-azure-subscription.png[]
+image:screenshot-azure-subscription.png[A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts.]
 
 //The following video starts from the context of the working environment wizard, but shows you the same workflow after you click *Add Subscription*:
 //+

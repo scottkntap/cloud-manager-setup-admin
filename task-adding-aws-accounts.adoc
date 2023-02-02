@@ -225,7 +225,7 @@ For all other accounts, you'll need to manually associate the subscription by re
 * Click *Save*.
 
 +
-image:screenshot-aws-subscription.png[]
+image:screenshot-aws-subscription.png[A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts.]
 //video::video_subscribing_aws.mp4[width=848, height=480]
 
 == Edit credentials

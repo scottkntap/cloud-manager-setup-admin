@@ -74,7 +74,7 @@ For all other accounts, you'll need to manually associate the subscription by re
 
 * Click *Save*.
 +
-image:screenshot-google-cloud-subscription.png[]
+image:screenshot-google-cloud-subscription.png[A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts.]
 +
 NOTE: If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on the BlueXP website^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 
