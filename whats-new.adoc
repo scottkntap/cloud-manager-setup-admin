@@ -28,6 +28,17 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Learn how to install the Connector in a location without internet access]
 
+* On the *Log in* page, you're now prompted to enter the email address associated with your login. BlueXP then prompts you to authenticate using the method associated with your login:
+
+** The password for your NetApp cloud credentials
+** Your federated identity credentials
+** Your NetApp Support Site credentials
+
++
+image:screenshot-login.png[A screenshot of the BlueXP login page where you're prompted to enter your email address.]
+
+* If you're new to BlueXP and you have existing NetApp Support Site (NSS) credentials, then you can skip the sign up page and enter your email address directly in the log in page. BlueXP will sign you up as part of this initial login.
+
 * When you subscribe to BlueXP from your cloud provider's marketplace, you now have the option to replace the existing subscription for one account with the new subscription.
 +
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-aws-subscription.png["A screenshot that shows the subscription assignment for a BlueXP account."]
