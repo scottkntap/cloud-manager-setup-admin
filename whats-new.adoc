@@ -28,16 +28,6 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Learn how to install the Connector in a location without internet access]
 
-* The Connector is now supported in the following Azure regions:
-+
-** China East 3
-** China North 3
-
-+
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
-
-* In AWS China regions and in Azure China regions, BlueXP will now automatically update the Connector when a new version is available.
-
 * When you subscribe to BlueXP from your cloud provider's marketplace, you now have the option to replace the existing subscription for one account with the new subscription.
 +
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-aws-subscription.png["A screenshot that shows the subscription assignment for a BlueXP account."]
