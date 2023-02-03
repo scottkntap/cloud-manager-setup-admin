@@ -19,19 +19,15 @@ link:task-sign-up-saas.html[Learn how to sign up to BlueXP and create an organiz
 
 If you're accessing BlueXP from a Government region or a site that doesn't have outbound internet access, then you need to log in to the BlueXP user interface that runs locally on the Connector. link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI on the Connector].
 
-.Login options
+.Log in options
 
 You can log in to BlueXP using one of the following options:
 
 * Your existing NetApp Support Site (NSS) credentials
 * A NetApp cloud login using your email address and a password
-
-Each time that you log in, you need to use the same option that you chose when you logged in for the first time.
-
-* If you registered by logging in with your NetApp Support Site credentials, then you need to use that log in option each time.
-* If you signed up by entering your email and password, then you need to enter those credentials each time that you log in.
-
-Both login options support federated connections. You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then click *sign-in options*.
+* A federated connection
++
+You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then click *sign-in options*.
 
 .Steps
 
