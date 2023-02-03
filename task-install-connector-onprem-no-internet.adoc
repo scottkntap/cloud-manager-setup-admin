@@ -13,15 +13,11 @@ summary: You can install the Connector in a location that has complete isolation
 :imagesdir: ./media/
 
 [.lead]
-You can install the Connector in a location that has complete isolation from the internet, either on-premises or in a cloud region. You can then use the BlueXP services that are supported in that environment.
+You can install the Connector in a location that has complete isolation from the internet, either on-premises or in a cloud region. You can then use the BlueXP services that are supported in that environment. This type of deployment enables BlueXP in private mode.
 
-In an on-premises environment without internet, you can use BlueXP to discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
+link:concept-modes.html[Learn what's supported when using BlueXP in private mode].
 
-Meanwhile, in a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems.
-
-These installation instructions are specifically for the use case described above. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
-
-== Verify host requirements
+== Set up your host
 
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 
@@ -48,7 +44,8 @@ The Red Hat Enterprise Linux system must be registered with Red Hat Subscription
 The Connector is supported on English-language versions of these operating systems.
 
 Hypervisor:: A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
-https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
++
+https://access.redhat.com/certified-hypervisors[Red Hat Customer Portal: Certified Guest Operating Systems^]
 
 Disk type:: An SSD is required
 
@@ -91,6 +88,12 @@ sudo /path/cloud-manager-connector-offline-<version>
 +
 Where <version> is the version of the Connector that you downloaded.
 
+== Set up the Connector
+
+Sign up or log in and then set up the Connector.
+
+.Steps
+
 . Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
 +
 You should see the following screen.
@@ -113,17 +116,47 @@ This user account runs locally on the system. There's no connection to the auth0
 
 .Result
 
-The Connector is now installed and you can start using the BlueXP features that are available in a dark site deployment.
+The Connector is now installed and you can start using the BlueXP features that are available in private mode.
 
-.What's next?
+When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].
 
-In an on-prem environment:
+== What's next?
+
+In an on-premises environment without internet, you can use BlueXP to discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
+
+Meanwhile, in a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems.
+
+Use the links below for help.
+
+=== On-prem environment
 
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicate data between on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Back up on-prem ONTAP volume data to StorageGRID using Cloud Backup^]
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Scan on-prem ONTAP volume data using Cloud Data Sense^]
 
-In a cloud environment, you can https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[deploy Cloud Volumes ONTAP^]
+=== cloud environment
 
-When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].
+Before you can deploy Cloud Volumes ONTAP, you'll need to add your cloud provider credentials so that the Connector has permissions to deploy and manage Cloud Volumes ONTAP.
+
+=== AWS
+
+. Grant permissions (assume role or AWS keys)
+
+. Add the credential to BlueXP
+
+. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[deploy Cloud Volumes ONTAP^]
+
+=== Azure
+
+. Grant Azure permissions using a service principal
+
+. Add the credentials to BlueXP
+
+. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[deploy Cloud Volumes ONTAP^]
+
+=== Google Cloud
+
+. Set up a service account that has the permissions that BlueXP needs to create and manage Cloud Volumes ONTAP systems in Google Cloud projects.
+
+. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[deploy Cloud Volumes ONTAP^]
