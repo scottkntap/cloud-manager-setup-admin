@@ -65,7 +65,7 @@ sidebar:
         - title: Get started with Private mode
           entries:
             - title: Getting started overview
-              url: /reference-checklist-restricted-mode.html
+              url: /reference-checklist-private-mode.html
             - title: Create a Connector
               url: /TBD.html
             - title: Sign up and create an account
