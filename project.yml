@@ -24,7 +24,7 @@ sidebar:
           url: /concept-modes.html
         - title: Get started with Standard mode
           entries:
-            - title: Getting started checklist
+            - title: Getting started overview
               url: /reference-checklist-cm.html
             - title: Sign up and create an account
               url: /TBD.html
@@ -46,8 +46,8 @@ sidebar:
                   url: /task-installing-linux.html
         - title: Get started with Restricted mode
           entries:
-            - title: Getting started checklist
-              url: /reference-checklist-cm.html
+            - title: Getting started overview
+              url: /reference-checklist-restricted-mode.html
             - title: Create a Connector
               entries:
                 - title: Connector overview
@@ -64,8 +64,8 @@ sidebar:
               url: /TBD.html
         - title: Get started with Private mode
           entries:
-            - title: Getting started checklist
-              url: /reference-checklist-cm.html
+            - title: Getting started overview
+              url: /reference-checklist-restricted-mode.html
             - title: Create a Connector
               url: /TBD.html
             - title: Sign up and create an account
