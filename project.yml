@@ -67,7 +67,7 @@ sidebar:
             - title: Getting started overview
               url: /reference-checklist-private-mode.html
             - title: Create a Connector
-              url: /TBD.html
+              url: /task-install-connector-onprem-no-internet.html
             - title: Sign up and create an account
               url: /TBD.html
         - title: Log in to BlueXP
