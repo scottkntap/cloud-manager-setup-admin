@@ -27,7 +27,7 @@ Learn what's new with BlueXP (formerly Cloud Manager) administration features: N
 ** Your NetApp Support Site credentials
 
 +
-https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-login.png[A screenshot of the BlueXP login page where you're prompted to enter your email address.]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-login.png[A screenshot of the BlueXP login page where you're prompted to enter your email address.]
 
 * If you're new to BlueXP and you have existing NetApp Support Site (NSS) credentials, then you can skip the sign up page and enter your email address directly in the log in page. BlueXP will sign you up as part of this initial login.
 
