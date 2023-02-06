@@ -67,6 +67,8 @@ includedPermissions:
 - compute.instances.start
 - compute.instances.stop
 - compute.instances.updateDisplayDevice
+- compute.instanceGroups.get
+- compute.addresses.get
 - compute.instances.updateNetworkInterface
 - compute.machineTypes.get
 - compute.networks.get
@@ -121,11 +123,6 @@ includedPermissions:
 - storage.objects.list
 - monitoring.timeSeries.list
 - storage.buckets.getIamPolicy
-- cloudkms.cryptoKeys.getIamPolicy
-- cloudkms.cryptoKeys.setIamPolicy
-- cloudkms.keyRings.get
-- cloudkms.keyRings.getIamPolicy
-- cloudkms.keyRings.setIamPolicy
 - cloudkms.cryptoKeys.getIamPolicy
 - cloudkms.cryptoKeys.setIamPolicy
 - cloudkms.keyRings.get
@@ -365,18 +362,6 @@ includedPermissions:
 - storage.buckets.getIamPolicy
 
 | To discover information about Google Cloud Storage buckets.
-
-| 
-- cloudkms.cryptoKeys.get
-- cloudkms.cryptoKeys.getIamPolicy
-- cloudkms.cryptoKeys.list
-- cloudkms.cryptoKeys.setIamPolicy
-- cloudkms.keyRings.get
-- cloudkms.keyRings.getIamPolicy
-- cloudkms.keyRings.list
-- cloudkms.keyRings.setIamPolicy
-
-| To select your own customer-managed keys in the Cloud Backup activation wizard instead of using the default Google-managed encryption keys.
 
 | 
 - cloudkms.cryptoKeys.get
