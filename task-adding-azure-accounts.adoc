@@ -308,11 +308,34 @@ You need to create a Connector before you can change BlueXP settings. link:conce
 +
 image:screenshot_azure_add_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
-. Select a subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
+. To associate the credentials with an existing subscription, select the subscription from the down-down list and click *Associate*.
+
+. To associate the credentials with a new subscription, click *Add Subscription > Continue* and follow the steps in the Azure Marketplace:
+
+.. If prompted, log in to your Azure account.
+.. Click *Create*.
+.. Fill out form and click *Subscribe*.
+.. Click *Notifications* and click the link in the notification to configure your account.
+.. Click *Configure Account*.
 +
-The following video starts from the context of the working environment wizard, but shows you the same workflow after you click *Add Subscription*:
+You'll be redirected to the BlueXP website.
+.. From the *Subscription Assignment* page:
 +
-video::video_subscribing_azure.mp4[width=848, height=480]
+* Select the NetApp accounts that you'd like to associate this subscription with.
+* In the *Replace existing subscription* field, choose whether you'd like to automatically replace the existing subscription for one account with this new subscription.
++
+BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn't ever associated with a subscription, then this new subscription won't be associated with those credentials.
++
+For all other accounts, you'll need to manually associate the subscription by repeating these steps.
+
+* Click *Save*.
+
++
+image:screenshot-azure-subscription.png[A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts.]
+
+//The following video starts from the context of the working environment wizard, but shows you the same workflow after you click *Add Subscription*:
+//+
+//video::video_subscribing_azure.mp4[width=848, height=480]
 
 === Editing credentials
 

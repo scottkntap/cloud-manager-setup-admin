@@ -130,7 +130,7 @@ image:screenshot-add-email-recipient.png[A screenshot showing how to add new ema
 
 You can remove notifications from the page if you no longer need to see them. You can dismiss all notifications at once, or you can dismiss individual notifications.
 
-To dismiss all notifications, in the Notification Center, click image:button_3_vert_dots.png[] and select *Dismiss All*.
+To dismiss all notifications, in the Notification Center, click image:button_3_vert_dots.png[an icon with three vertical dots] and select *Dismiss All*.
 image:screenshot_notification_menu.png[A screenshot showing the Notifications menu to select settings and dismiss all options.]
 
 To dismiss individual notifications, hover your cursor over the notification and click *Dismiss*.
