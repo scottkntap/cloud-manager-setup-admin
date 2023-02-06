@@ -23,6 +23,8 @@ sidebar:
           url: /concept-overview.html
         - title: Getting started checklist
           url: /reference-checklist-cm.html
+        - title: Sign up to BlueXP
+          url: /task-sign-up-saas.html
         - title: Log in to BlueXP
           url: /task-logging-in.html
         - title: Set up a NetApp account
