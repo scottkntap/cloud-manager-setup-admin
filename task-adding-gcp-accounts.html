@@ -374,6 +374,8 @@
 
 
 
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -883,6 +885,13 @@
         Getting started checklist
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Sign up to BlueXP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-sign-up-saas.html">
+        Sign up to BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Log in to BlueXP"
       data-li-level="2#" 
       class=" "
@@ -1372,7 +1381,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-18 15:13:15 +0000">01/18/2023</time>
+    <time datetime="2023-02-02 20:06:31 +0000">02/02/2023</time>
     
   
 
@@ -1443,7 +1452,7 @@ Before you complete the following steps, ensure that you have both Billing Admin
 </div>
 </li>
 <li>
-<p>Reivew the subscription steps and click <strong>Continue</strong>.</p>
+<p>Review the subscription steps and click <strong>Continue</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_gcp_sub_popup.png" alt="A screenshot of a subscription pop-up."></span></p>
 </div>
@@ -1488,12 +1497,25 @@ This step must be completed to link the Google Cloud subscription to your NetApp
 </div>
 </li>
 <li>
-<p>After you&#8217;re redirected to BlueXP, log in or sign up, and then click <strong>Done</strong> to proceed.</p>
+<p>From the <strong>Subscription Assignment</strong> page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the NetApp accounts that you&#8217;d like to associate this subscription with.</p>
+</li>
+<li>
+<p>In the <strong>Replace existing subscription</strong> field, choose whether you&#8217;d like to automatically replace the existing subscription for one account with this new subscription.</p>
 <div class="paragraph">
-<p>The Google Cloud subscription will be linked to all NetApp accounts that your user login is associated with. If you need to limit access to the new subscription, you can manage the NetApp accounts that are associated with the subscription from the Digital Wallet. <a href="task-manage-subscriptions.html#manage-your-subscriptions">Learn how to manage your subscriptions</a>.</p>
+<p>BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn&#8217;t ever associated with a subscription, then this new subscription won&#8217;t be associated with those credentials.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_gcp_sub_mapping.png" alt="A screenshot of mapping a GCP subscription to a NetApp account."></span></p>
+<p>For all other accounts, you&#8217;ll need to manually associate the subscription by repeating these steps.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-google-cloud-subscription.png" alt="A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts."></span></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1502,10 +1524,13 @@ This step must be completed to link the Google Cloud subscription to your NetApp
 <img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
 </td>
 <td class="content">
-If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to <a href="https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=" target="_blank" rel="noopener">the Cloud Volumes ONTAP page on the BlueXP website</a> instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
+If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to <a href="https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=" target="_blank" rel="noopener">the Cloud Volumes ONTAP page on the BlueXP website</a> instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 </td>
 </tr>
 </table>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li>
@@ -1532,8 +1557,8 @@ If someone from your organization has already subscribed to the NetApp BlueXP su
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_gcp_manage_orders.png" alt="A screenshot of the marketplace page post subscription."></span></p>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="ulist">
+<ul>
 <li>
 <p>If the order shows a green check mark and this is unexpected, somebody else from the organization using the same billing account might already be subscribed. If this is unexpected or you require the details of this subscription, contact your NetApp sales team.</p>
 <div class="paragraph">
@@ -1546,7 +1571,7 @@ If someone from your organization has already subscribed to the NetApp BlueXP su
 <p><span class="image"><img src="./media/screenshot_gcp_pending_marketplace.png" alt="A screenshot of a pending marketplace entitlement."></span></p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 </li>
 </ol>

@@ -376,6 +376,8 @@
 
 
 
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -883,6 +885,13 @@
         Getting started checklist
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Sign up to BlueXP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-sign-up-saas.html">
+        Sign up to BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Log in to BlueXP"
       data-li-level="2#" 
       class=" "
@@ -1372,7 +1381,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-04 17:07:34 +0000">01/04/2023</time>
+    <time datetime="2023-02-06 16:47:31 +0000">02/06/2023</time>
     
   
 
@@ -1404,6 +1413,87 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Learn what&#8217;s new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="5-february-2023">5 February 2023</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="connector-3-9-26">Connector 3.9.26</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>On the <strong>Log in</strong> page, you&#8217;re now prompted to enter the email address associated with your login. After you click <strong>Next</strong>, BlueXP then prompts you to authenticate using the authentication method associated with your login:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The password for your NetApp cloud credentials</p>
+</li>
+<li>
+<p>Your federated identity credentials</p>
+</li>
+<li>
+<p>Your NetApp Support Site credentials</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-login.png" alt="A screenshot of the BlueXP login page where you&#8217;re prompted to enter your email address."></span></p>
+</div>
+</li>
+<li>
+<p>If you&#8217;re new to BlueXP and you have existing NetApp Support Site (NSS) credentials, then you can skip the sign up page and enter your email address directly in the log in page. BlueXP will sign you up as part of this initial login.</p>
+</li>
+<li>
+<p>When you subscribe to BlueXP from your cloud provider&#8217;s marketplace, you now have the option to replace the existing subscription for one account with the new subscription.</p>
+<div class="paragraph">
+<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-aws-subscription.png" alt="A screenshot that shows the subscription assignment for a BlueXP account."></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription">Learn how to associate an AWS subscription</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html#associating-an-azure-marketplace-subscription-to-credentials">Learn how to associate an Azure subscription</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html">Learn how to associate a Google Cloud subscription</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>BlueXP will now notify you if your Connector has been powered down for 14 days or longer.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html">Learn about BlueXP notifications</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#connectors-should-remain-running">Learn why Connectors should remain running</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We updated the Connector policy for Google Cloud to include a permission that&#8217;s required to create and manage storage VMs on Cloud Volumes ONTAP HA pairs:</p>
+<div class="paragraph">
+<p>compute.instances.updateNetworkInterface</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html">View Google Cloud permissions for the Connector</a>.</p>
+</div>
+</li>
+<li>
+<p>This release of the Connector includes Cloud Volumes ONTAP enhancements.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-february-2023" target="_blank" rel="noopener">Learn about Cloud Volumes ONTAP enhancements</a></p>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

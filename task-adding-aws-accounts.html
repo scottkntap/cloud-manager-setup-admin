@@ -374,6 +374,8 @@
 
 
 
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -883,6 +885,13 @@
         Getting started checklist
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Sign up to BlueXP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-sign-up-saas.html">
+        Sign up to BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Log in to BlueXP"
       data-li-level="2#" 
       class=" "
@@ -1372,7 +1381,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-23 16:43:59 +0000">11/23/2022</time>
+    <time datetime="2023-02-02 20:06:31 +0000">02/02/2023</time>
     
   
 
@@ -1742,13 +1751,47 @@ If you deployed a Connector from BlueXP, BlueXP automatically added AWS credenti
 </div>
 </li>
 <li>
-<p>Select an existing subscription from the down-down list or click <strong>Add Subscription</strong> and follow the steps to create a new subscription.</p>
-<div class="videoblock">
-<div class="content">
-<video src="./media/video_subscribing_aws.mp4" width="848" height="480" controls>
-Your browser does not support the video tag.
-</video>
+<p>To associate the credentials with an existing subscription, select the subscription from the down-down list and click <strong>Associate</strong>.</p>
+</li>
+<li>
+<p>To associate the credentials with a new subscription, click <strong>Add Subscription &gt; Continue</strong> and follow the steps in the AWS Marketplace:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <strong>Continue to Subscribe</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Set up your account</strong>.</p>
+<div class="paragraph">
+<p>You&#8217;ll be redirected to the BlueXP website.</p>
 </div>
+</li>
+<li>
+<p>From the <strong>Subscription Assignment</strong> page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the NetApp accounts that you&#8217;d like to associate this subscription with.</p>
+</li>
+<li>
+<p>In the <strong>Replace existing subscription</strong> field, choose whether you&#8217;d like to automatically replace the existing subscription for one account with this new subscription.</p>
+<div class="paragraph">
+<p>BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn&#8217;t ever associated with a subscription, then this new subscription won&#8217;t be associated with those credentials.</p>
+</div>
+<div class="paragraph">
+<p>For all other accounts, you&#8217;ll need to manually associate the subscription by repeating these steps.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-aws-subscription.png" alt="A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts."></span></p>
 </div>
 </li>
 </ol>
