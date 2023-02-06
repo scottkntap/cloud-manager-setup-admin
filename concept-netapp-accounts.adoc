@@ -19,17 +19,17 @@ For example, multiple users can deploy and manage Cloud Volumes ONTAP systems in
 
 When you first access BlueXP, you're prompted to select or create a NetApp account:
 
-image:screenshot_account_selection.gif[A screenshot of the BlueXP setup wizard that prompts you for the NetApp account in which you want to create BlueXP.]
+image:screenshot-account-selection.png[A screenshot of the BlueXP setup wizard that prompts you for the NetApp account in which you want to create BlueXP.]
 
-BlueXP Account Admins can then modify the settings for this account by managing users (members), workspaces, Connectors, and subscriptions:
+BlueXP Account Admins can then modify the settings for this account by managing users (members), workspaces, and Connectors:
 
-image:screenshot_account_settings.gif["A screenshot that shows the Manage Account widget from which you can manage users, workspaces, and Connectors."]
+image:screenshot-account-settings.png["A screenshot that shows the Manage Account widget from which you can manage users, workspaces, and Connectors."]
 
 For step-by-step instructions, see link:task-setting-up-netapp-accounts.html[Setting up the NetApp account].
 
 == Account Settings
 
-The Manage Account widget in BlueXP enables Account Admins to manage a NetApp account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, Connectors, and subscriptions that are associated with the account.
+The Manage Account widget in BlueXP enables Account Admins to manage a NetApp account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, and Connectors that are associated with the account.
 
 == Overview
 
@@ -52,11 +52,11 @@ link:reference-user-roles.html[Learn more about these roles].
 
 In BlueXP, a workspace isolates any number of _working environments_ from other working environments. Workspace Admins can't access the working environments in a workspace unless the Account Admin associates the admin with that workspace.
 
-A working environment represents a storage system:
+A working environment represents a storage system. For example:
 
-* A single-node Cloud Volumes ONTAP system or an HA pair
-* An on-premises ONTAP cluster in your network
-* An ONTAP cluster in a NetApp Private Storage configuration
+* A Cloud Volumes ONTAP system
+* An on-premises ONTAP cluster
+* A Kubernetes cluster
 
 link:task-setting-up-netapp-accounts.html[Learn how to add a workspace].
 
@@ -64,23 +64,9 @@ link:task-setting-up-netapp-accounts.html[Learn how to add a workspace].
 
 A Connector enables BlueXP to manage resources and processes within your public cloud environment. The Connector runs on a virtual machine instance that you deploy in your cloud provider, or on an on-prem host that you configured.
 
-You can use a Connector with more than one NetApp cloud data service. For example, if you already have a Connector for BlueXP, you can select it when you set up the Cloud Tiering service.
+You can use a Connector with more than one NetApp cloud data service. For example, if you're using a Connector to manage Cloud Volumes ONTAP, you can use that same Connector with another service like Cloud Tiering.
 
 link:concept-connectors.html[Learn more about Connectors].
-
-== Subscriptions
-
-These are the NetApp subscriptions associated with the selected account.
-
-When you subscribe to BlueXP from a cloud provider's marketplace, you're redirected to the BlueXP website where you need to save your subscription and associate it with specific accounts.
-
-After you've subscribed, each subscription is available from the Manage Account widget. You'll only see the subscriptions that are associated with the account that you're currently viewing.
-
-You have the option to rename a subscription and to disassociate the subscription from one or more accounts.
-
-For example, let's say that you have two accounts and each is billed through separate subscriptions. You might disassociate a subscription from one of the accounts so the users in that account don't accidentally choose the wrong subscription when creating a Cloud Volume ONTAP working environment.
-
-link:task-managing-netapp-accounts.html#managing-subscriptions[Learn how to manage subscriptions].
 
 == Examples
 

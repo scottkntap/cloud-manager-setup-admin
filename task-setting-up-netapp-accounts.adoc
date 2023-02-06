@@ -122,4 +122,4 @@ Workspace Admins can now use those Connectors to create Cloud Volumes ONTAP syst
 
 == What's next?
 
-Now that you've set up your account, you can manage it any time by removing users, managing workspaces, Connectors, and subscriptions. link:task-managing-netapp-accounts.html[Learn how to manage your account].
+Now that you've set up your account, you can manage it any time by removing users, managing workspaces, and managing Connectors. link:task-managing-netapp-accounts.html[Learn how to manage your account].

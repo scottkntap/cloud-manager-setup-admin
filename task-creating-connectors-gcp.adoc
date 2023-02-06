@@ -36,6 +36,10 @@ Get started quickly by following these steps, or scroll down to the remaining se
 +
 <<Set up a service account for the Connector>>.
 
+* If you're deploying Cloud Volumes ONTAP across projects, ensure that the Connector has access to those projects.
++
+<<Set up permissions across projects>>.
+
 * If you're using a shared VPC, set up permissions in the service project and host project.
 +
 <<Set up shared VPC permissions>>.
@@ -71,7 +75,11 @@ Permissions are required for the following:
 
 * The user who will deploy the Connector VM
 * A service account that you need to attach to the Connector VM during deployment
-* Shared VPC permissions, if you are using a shared VPC to deploy resources into a service project
+
+Depending on your configuration, you might need to complete the following steps as well:
+
+* Set up permissions across projects
+* Set up permissions for a shared VPC
 
 === Set up permissions to deploy the Connector
 
@@ -256,6 +264,11 @@ includedPermissions:
 - storage.objects.list
 - monitoring.timeSeries.list
 - storage.buckets.getIamPolicy
+- cloudkms.cryptoKeys.getIamPolicy
+- cloudkms.cryptoKeys.setIamPolicy
+- cloudkms.keyRings.get
+- cloudkms.keyRings.getIamPolicy
+- cloudkms.keyRings.setIamPolicy
 
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^].
 
@@ -264,6 +277,24 @@ includedPermissions:
 .Result
 
 The service account for the Connector VM is set up.
+
+=== Set up permissions across projects
+
+If you plan to deploy Cloud Volumes ONTAP systems in different projects than the project where the Connector resides, then you'll need to provide the Connector's service account with access to those projects.
+
+For example, let's say the Connector is in project 1 and you want to create Cloud Volumes ONTAP systems in project 2. You'll need to grant access to the service account in project 2.
+
+.Steps
+
+. In the Google Cloud console, go to the IAM service and select the project where you want to create Cloud Volumes ONTAP systems.
+
+. On the *IAM* page, select *Grant Access* and provide the required details.
++
+* Enter the email of the Connector's service account.
+* Select the Connector's custom role.
+* Click *Save*.
+
+For more details, refer to https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single-role[Google Cloud documentation^]
 
 === Set up shared VPC permissions
 
@@ -320,7 +351,75 @@ Notes:
 
 == Set up networking
 
-include::_include/connector-networking.adoc[]
+Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+
+=== Connection to target networks
+
+A Connector requires a network connection to the type of working environment that you're creating and the services that you're planning to enable.
+
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.
+
+=== Outbound internet access
+
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
+
+//tag::endpoints[]
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| 
+\https://www.googleapis.com/compute/v1/
+\https://cloudresourcemanager.googleapis.com/v1/projects
+\https://www.googleapis.com/compute/beta
+\https://storage.googleapis.com/storage/v1
+\https://www.googleapis.com/storage/v1
+\https://iam.googleapis.com/v1
+\https://cloudkms.googleapis.com/v1
+\https://www.googleapis.com/deploymentmanager/v2/projects
+
+| To manage resources in Google Cloud.
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+//end::endpoints[]
+
+=== Proxy server
+
+If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+=== Security group
+
+There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
+
+=== IP address limitation
+
+There's a possible conflict with IP addresses in the 172 range. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html[Learn more about this limitation].
 
 == Enable Google Cloud APIs
 
