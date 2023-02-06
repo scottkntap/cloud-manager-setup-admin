@@ -5,7 +5,7 @@ keywords: networking overview, networking requirements, endpoints, urls, get sta
 summary: Use this checklist to understand what's needed to get up and running with BlueXP in a typical deployment where the Connector has outbound internet access.
 ---
 
-= Getting started overview for private mode
+= Prepare for private mode deployment
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,35 @@ summary: Use this checklist to understand what's needed to get up and running wi
 :imagesdir: ./media/
 
 [.lead]
+
+Look at the pre-flight for the Connector in the UI
+
+
 You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
+
+You'll need to ensure that you have the following:
+
+. A dedicated Linux host for the Connector software.
++
+<link:task-install-connector-onprem-no-internet.html#set-up-your-host[View Linux host requirements]>
+
+. Permissions to deploy and manage Cloud Volumes ONTAP.
++
+<too much detail to include the info here? it would be nice to send a single page to the cloud permissions guy... then when you go into BlueXP you just need to add the credentials... except for Google Cloud>
+
+Include an image that shows your environment when you're done?
+
+Need to say somewhere that the Connector must be installed in Google Cloud if you plan to create Cloud Volumes ONTAP
+
+== Overview
+
+
+
+== Permissions
+
+== Networking
+
+
 
 The information that follows provides a high-level summary of what's required with links to pages that provide step-by-step details.
 
@@ -60,10 +88,6 @@ a|
 
 |===
 
-=== Networking
-
-The network location where you deploy the Connector must have an outbound internet connection. The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
-
 ==== Outbound connections
 
 
@@ -72,7 +96,7 @@ The network location where you deploy the Connector must have an outbound intern
 
 There's no incoming traffic to the Connector, unless you initiate it.
 
-HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in rare circumstances. SSH (22) is only needed if you need to connect to the host for troubleshooting. Meanwhile, inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
+HTTP (80) and HTTPS (443) provide access to the local UI. SSH (22) is only needed if you need to connect to the host for troubleshooting.
 
 == A log in
 

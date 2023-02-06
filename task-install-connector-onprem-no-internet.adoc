@@ -122,22 +122,18 @@ When new versions of the Connector software are available, they'll be posted to 
 
 == What's next?
 
-In an on-premises environment without internet, you can use BlueXP to discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
+You next steps depend on whether you plan to manage storage on-premises or in the cloud:
 
-Meanwhile, in a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems.
-
-Use the links below for help.
-
-=== On-prem environment
+On-premises::
+In an on-premises environment, you can use BlueXP in private mode as follows:
 
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicate data between on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Back up on-prem ONTAP volume data to StorageGRID using Cloud Backup^]
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Scan on-prem ONTAP volume data using Cloud Data Sense^]
 
-=== cloud environment
-
-Before you can deploy Cloud Volumes ONTAP, you'll need to add your cloud provider credentials so that the Connector has permissions to deploy and manage Cloud Volumes ONTAP.
+Cloud environment::
+In a cloud environment, you can use BlueXP in private mode to deploy Cloud Volumes ONTAP systems. Before you can deploy Cloud Volumes ONTAP, you'll need to add your cloud provider credentials so that the Connector has permissions to deploy and manage Cloud Volumes ONTAP.
 
 === AWS
 
