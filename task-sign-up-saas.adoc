@@ -53,7 +53,7 @@ Note that only English characters are allowed in the sign up form.
 
 . On the *Welcome* page, enter a name for your account.
 +
-If your business already has an account and you want to join it, then you should skip this step and ask the owner to associate you with the account. After the owner adds you, you can log in and you'll have access to the account. link:task-manage-users.html[Learn how to add members to an existing account].
+If your business already has an account and you want to join it, then you should skip this step and ask the owner to associate you with the account. After the owner adds you, you can log in and you'll have access to the account. link:task-managing-netapp-accounts.html#adding-users[Learn how to add members to an existing account].
 +
 An account is the top-level element in NetApp's identity platform. It enables you to add and manage users, roles, permissions, and working environments.
 +
