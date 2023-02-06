@@ -39,7 +39,7 @@ image:screenshot_gcp_associate.gif[A screenshot of a Google Cloud project and su
 +
 NOTE: Before you complete the following steps, ensure that you have both Billing Admin privileges in your Google Cloud account as well as a BlueXP login.
 
-. Reivew the subscription steps and click *Continue*.
+. Review the subscription steps and click *Continue*.
 +
 image:screenshot_gcp_sub_popup.png[A screenshot of a subscription pop-up.]
 
@@ -63,13 +63,20 @@ image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop
 +
 NOTE: This step must be completed to link the Google Cloud subscription to your NetApp account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to BlueXP.
 
-. After you're redirected to BlueXP, log in or sign up, and then click *Done* to proceed.
+. From the *Subscription Assignment* page:
 +
-The Google Cloud subscription will be linked to all NetApp accounts that your user login is associated with. If you need to limit access to the new subscription, you can manage the NetApp accounts that are associated with the subscription from the Digital Wallet. link:task-manage-subscriptions.html#manage-your-subscriptions[Learn how to manage your subscriptions].
+* Select the NetApp accounts that you'd like to associate this subscription with.
+* In the *Replace existing subscription* field, choose whether you'd like to automatically replace the existing subscription for one account with this new subscription.
 +
-image:screenshot_gcp_sub_mapping.png[A screenshot of mapping a GCP subscription to a NetApp account.]
+BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn't ever associated with a subscription, then this new subscription won't be associated with those credentials.
 +
-NOTE: If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on the BlueXP website^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
+For all other accounts, you'll need to manually associate the subscription by repeating these steps.
+
+* Click *Save*.
++
+image:screenshot-google-cloud-subscription.png[A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts.]
++
+NOTE: If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on the BlueXP website^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 
 . Once this process is complete, navigate back to the Credentials page in BlueXP and select this new subscription.
 +
@@ -85,10 +92,10 @@ Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplac
 +
 image:screenshot_gcp_manage_orders.png[A screenshot of the marketplace page post subscription.]
 
-.. If the order shows a green check mark and this is unexpected, somebody else from the organization using the same billing account might already be subscribed. If this is unexpected or you require the details of this subscription, contact your NetApp sales team.
+* If the order shows a green check mark and this is unexpected, somebody else from the organization using the same billing account might already be subscribed. If this is unexpected or you require the details of this subscription, contact your NetApp sales team.
 +
 image:screenshot_gcp_green_marketplace.png[A screenshot of an accepted entitlement.]
 
-.. If the order shows a clock and *Pending* status, go back to the marketplace page and choose *Manage on Provider* to complete the process as documented above.
+* If the order shows a clock and *Pending* status, go back to the marketplace page and choose *Manage on Provider* to complete the process as documented above.
 +
 image:screenshot_gcp_pending_marketplace.png[A screenshot of a pending marketplace entitlement.]
