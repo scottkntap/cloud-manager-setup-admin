@@ -209,7 +209,8 @@ image:screenshot_associate_subscription.png[A screenshot of the action menu for 
 
 . To associate the credentials with a new subscription, click *Add Subscription > Continue* and follow the steps in the AWS Marketplace:
 
-.. Click *Continue to Subscribe*.
+.. Click *View purchase options*.
+.. Click *Subscribe*.
 .. Click *Set up your account*.
 +
 You'll be redirected to the BlueXP website.
@@ -223,10 +224,10 @@ BlueXP replaces the existing subscription for all credentials in the account wit
 For all other accounts, you'll need to manually associate the subscription by repeating these steps.
 
 * Click *Save*.
-
 +
-image:screenshot-aws-subscription.png[A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts.]
-//video::video_subscribing_aws.mp4[width=848, height=480]
+The following video shows the steps to subscribe from the Google Cloud Marketplace:
++
+video::video_subscribing_aws.mp4[width=848, height=480]
 
 == Edit credentials
 
