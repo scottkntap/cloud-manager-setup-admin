@@ -313,10 +313,9 @@ image:screenshot_azure_add_subscription.png[A screenshot of the action menu for 
 . To associate the credentials with a new subscription, click *Add Subscription > Continue* and follow the steps in the Azure Marketplace:
 
 .. If prompted, log in to your Azure account.
-.. Click *Create*.
-.. Fill out form and click *Subscribe*.
-.. Click *Notifications* and click the link in the notification to configure your account.
-.. Click *Configure Account*.
+.. Click *Subscribe*.
+.. Fill out the form and click *Subscribe*.
+.. After the subscription process is complete, click *Configure account now*.
 +
 You'll be redirected to the BlueXP website.
 .. From the *Subscription Assignment* page:
@@ -329,13 +328,10 @@ BlueXP replaces the existing subscription for all credentials in the account wit
 For all other accounts, you'll need to manually associate the subscription by repeating these steps.
 
 * Click *Save*.
-
 +
-image:screenshot-azure-subscription.png[A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts.]
-
-//The following video starts from the context of the working environment wizard, but shows you the same workflow after you click *Add Subscription*:
-//+
-//video::video_subscribing_azure.mp4[width=848, height=480]
+The following video shows the steps to subscribe from the Azure Marketplace:
++
+video::video_subscribing_azure.mp4[width=848, height=480]
 
 === Editing credentials
 
