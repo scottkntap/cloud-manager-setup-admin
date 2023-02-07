@@ -1381,7 +1381,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-02 20:06:31 +0000">02/02/2023</time>
+    <time datetime="2023-02-07 19:09:59 +0000">02/07/2023</time>
     
   
 
@@ -1428,16 +1428,13 @@
 </div>
 </li>
 <li>
-<p>Select a Google Cloud project and subscription from the down-down list.</p>
+<p>To associate the credentials with an existing subscription, select a Google Cloud project and subscription from the down-down list, and then click <strong>Associate</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_gcp_associate.gif" alt="A screenshot of a Google Cloud project and subscription selected for Google Cloud credentials."></span></p>
 </div>
 </li>
 <li>
-<p>Click <strong>Associate</strong>.</p>
-</li>
-<li>
-<p>If you don&#8217;t already have a subscription, click <strong>Add Subscription</strong> and follow the steps to create a new subscription below.</p>
+<p>If you don&#8217;t already have a subscription, click <strong>Add Subscription &gt; Continue</strong> and follow the steps in the Google Cloud Marketplace.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1450,13 +1447,8 @@ Before you complete the following steps, ensure that you have both Billing Admin
 </tr>
 </table>
 </div>
-</li>
-<li>
-<p>Review the subscription steps and click <strong>Continue</strong>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_gcp_sub_popup.png" alt="A screenshot of a subscription pop-up."></span></p>
-</div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>After you&#8217;re redirected to the <a href="https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager" target="_blank" rel="noopener">NetApp BlueXP page on the Google Cloud Marketplace</a>, ensure that the correct project is selected at the top navigation menu.</p>
 <div class="paragraph">
@@ -1468,9 +1460,6 @@ Before you complete the following steps, ensure that you have both Billing Admin
 </li>
 <li>
 <p>Select the appropriate billing account and agree to the terms and conditions.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_gcp_terms_and_conditions.png" alt="A screenshot of the GCP terms and conditions."></span></p>
-</div>
 </li>
 <li>
 <p>Click <strong>Subscribe</strong>.</p>
@@ -1479,10 +1468,16 @@ Before you complete the following steps, ensure that you have both Billing Admin
 </div>
 </li>
 <li>
-<p>On the pop-up dialog box, click <strong>Register with NetApp, Inc.</strong> to be redirected to the NetApp BlueXP website.</p>
+<p>On the pop-up dialog box, click <strong>Register with NetApp, Inc.</strong></p>
+<div class="paragraph">
+<p>This step must be completed to link the Google Cloud subscription to your NetApp account. The process of linking a subscription isn&#8217;t complete until you are redirected from this page and then sign in to BlueXP.</p>
+</div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_gcp_marketplace_register.png" alt="A screenshot of a registration pop-up."></span></p>
 </div>
+</li>
+<li>
+<p>Complete the steps on the <strong>Subscription Assignment</strong> page:</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1490,14 +1485,11 @@ Before you complete the following steps, ensure that you have both Billing Admin
 <img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
 </td>
 <td class="content">
-This step must be completed to link the Google Cloud subscription to your NetApp account. The process of linking a subscription isn&#8217;t complete until you are redirected from this page and then sign in to BlueXP.
+If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to <a href="https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=" target="_blank" rel="noopener">the Cloud Volumes ONTAP page on the BlueXP website</a> instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 </td>
 </tr>
 </table>
 </div>
-</li>
-<li>
-<p>From the <strong>Subscription Assignment</strong> page:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1515,19 +1507,14 @@ This step must be completed to link the Google Cloud subscription to your NetApp
 <li>
 <p>Click <strong>Save</strong>.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-google-cloud-subscription.png" alt="A screenshot of the Subscription Assignment page that enables you to associate this subscription with one or more accounts and choose to replace the existing subscription for one of those accounts."></span></p>
+<p>The following video shows the steps to subscribe from the Google Cloud Marketplace:</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to <a href="https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=" target="_blank" rel="noopener">the Cloud Volumes ONTAP page on the BlueXP website</a> instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
-</td>
-</tr>
-</table>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video-subscribing-google-cloud.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
 </div>
 </li>
 </ul>
@@ -1537,6 +1524,9 @@ If someone from your organization has already subscribed to the NetApp BlueXP su
 <p>Once this process is complete, navigate back to the Credentials page in BlueXP and select this new subscription.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_gcp_associate.gif" alt="A screenshot of the subscription assignment page."></span></p>
+</div>
+</li>
+</ol>
 </div>
 </li>
 </ol>
