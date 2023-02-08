@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-prepare-private-mode.html
+permalink: task-set-up-permissions-private-mode-azure.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
 summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
 
-= Prepare for private mode deployment
+= Set up Azure permissions
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,137 +13,7 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
-
-== Overview
-
-A Connector enables BlueXP to manage resources and processes within your public cloud environment. When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
-
-Before you install the Connector software, you need to ensure that you have the following:
-
-. A dedicated Linux host for the Connector.
-
-. Cloud permissions to deploy and manage Cloud Volumes ONTAP.
-
-== Set up a Linux host
-
-The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
-
-Dedicated host::
-The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
-
-Supported locations::
-You can install the Connector on-premises or in the cloud.
-
-Networking connections::
-The Connector must have a network connection to the location where you plan to deploy and manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
-+
-If you want to create a Cloud Volumes ONTAP system in Google Cloud, then the Connector must be running in Google Cloud as well.
-
-Ports:: There's no incoming traffic to the Connector, unless you initiate it.
-+
-HTTP (80) and HTTPS (443) provide access to the local UI. SSH (22) is only needed if you need to connect to the host for troubleshooting.
-
-CPU:: 4 cores or 4 vCPUs
-
-RAM:: 14 GB
-
-Supported operating systems::
-* CentOS 7.6
-* CentOS 7.7
-* CentOS 7.8
-* CentOS 7.9
-* Red Hat Enterprise Linux 7.6
-* Red Hat Enterprise Linux 7.7
-* Red Hat Enterprise Linux 7.8
-* Red Hat Enterprise Linux 7.9
-* Red Hat Enterprise Linux 8.6
-+
-The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
-+
-The Connector is supported on English-language versions of these operating systems.
-
-Hypervisor:: A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
-+
-https://access.redhat.com/certified-hypervisors[Red Hat Customer Portal: Certified Guest Operating Systems^]
-
-Disk type:: An SSD is required
-
-Disk space in /opt:: 100 GiB of space must be available
-
-Disk space in /var:: 20 GiB of space must be available
-
-Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
-
-== Set up cloud permissions
-
-If you plan to create and manage Cloud Volumes ONTAP systems, then your cloud IAM administrator will need to set up the permissions that BlueXP needs.
-
-To get started, select your cloud provider and follow the steps.
-
-=== Grant AWS permissions
-
-BlueXP requires permissions to manage resources and processes within your AWS account. How you provide the permissions depends on whether you want to provide BlueXP with the ARN of a role in a trusted account or AWS keys.
-
-// Start snippet: collapsible block (open on page load)
-.Learn more
-[%collapsible]
-
-*Choices*
-
-* <<Grant permissions by assuming an IAM role in another account>>
-* <<Grant permissions by providing AWS keys>>
-
-==== Grant permissions by assuming an IAM role in another account
-
-You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide BlueXP with the ARN of the IAM roles from the trusted accounts.
-
-.Steps
-
-. Go to the IAM console in the target account in which you want to provide the Connector with permissions.
-
-. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
-+
-Be sure to do the following:
-
-* Under *Trusted entity type*, select *AWS account*.
-* Select *Another AWS account* and enter the ID of the account where the Connector instance resides.
-* Create the required policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
-
-. Copy the Role ARN of the IAM role so that you can paste it in BlueXP later on.
-
-.Result
-
-The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
-
-==== Grant permissions by providing AWS keys
-
-If you want to provide BlueXP with AWS keys for an IAM user, then you need to grant the required permissions to that user. The BlueXP IAM policy defines the AWS actions and resources that BlueXP is allowed to use.
-
-.Steps
-
-. From the IAM console, create policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
-+
-https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
-
-. Attach the policies to an IAM role or an IAM user.
-+
-* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
-* https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies^]
-
-.Result
-
-The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
-=====
-// End collapsible block
-
-=== Grant Azure permissions
-
 BlueXP needs permissions to perform actions in Azure. You can grant the required permissions to an Azure account by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that BlueXP needs.
-
-// Start snippet: collapsible block (open on page load)
-.Learn more
-[%collapsible]
 
 .About this task
 
@@ -163,7 +33,7 @@ image:diagram_azure_authentication.png["Conceptual image that shows BlueXP obtai
 
 . <<Creating a client secret,Create a client secret>>.
 
-==== Creating an Azure Active Directory application
+== Creating an Azure Active Directory application
 
 Create an Azure Active Directory (AD) application and service principal that BlueXP can use for role-based access control.
 
@@ -192,7 +62,7 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 
 You've created the AD application and service principal.
 
-==== Assigning the application to a role
+== Assigning the application to a role
 
 You must bind the service principal to one or more Azure subscriptions and assign it the custom "BlueXP Operator" role so BlueXP has permissions in Azure.
 
@@ -262,7 +132,7 @@ The service principal now has the required Azure permissions to deploy the Conne
 +
 If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. BlueXP enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
 
-==== Adding Windows Azure Service Management API permissions
+== Adding Windows Azure Service Management API permissions
 
 The service principal must have "Windows Azure Service Management API" permissions.
 
@@ -281,7 +151,7 @@ image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal th
 image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
 
 [[ids]]
-==== Getting the application ID and directory ID
+== Getting the application ID and directory ID
 
 When you add the Azure account to BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. BlueXP uses the IDs to programmatically sign in.
 
@@ -293,7 +163,7 @@ When you add the Azure account to BlueXP, you need to provide the application (c
 +
 image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
 
-==== Creating a client secret
+== Creating a client secret
 
 You need to create a client secret and then provide BlueXP with the value of the secret so BlueXP can use it to authenticate with Azure AD.
 
@@ -316,25 +186,3 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 .Result
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
-=====
-// End collapsible block
-
-=== Grant Google Cloud permissions
-
-Set up a service account that has the permissions that BlueXP needs to create and manage Cloud Volumes ONTAP systems in Google Cloud projects.
-
-// Start snippet: collapsible block (open on page load)
-.Learn more
-[%collapsible]
-
-.Steps
-
-. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the link:reference-permissions-gcp.html[Connector policy for GCP].
-
-. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
-=====
-// End collapsible block
-
-== What's next?
-
-Now that you have prepared for deployment, the next step is to install the Connector.

@@ -64,12 +64,22 @@ sidebar:
               url: /TBD.html
         - title: Get started with Private mode
           entries:
-            - title: Prepare for private mode deployment
-              url: /task-prepare-private-mode.html
+            - title: Quick start
+              url: /task-quick-start-private-mode.html
             - title: Install the Connector
-              url: /task-install-connector-onprem-no-internet.html
-            - title: Sign up and create an account
-              url: /TBD.html
+              url: /task-install-private-mode.html
+            - title: Set up BlueXP
+              url: /task-set-up-private-mode.html
+            - title: Set up cloud permissions
+              entries:
+                - title: AWS permissions
+                  url: /task-set-up-permissions-private-mode-aws.html
+                - title: Azure permissions
+                  url: /task-set-up-permissions-private-mode-aws.html
+                - title: Google Cloud permissions
+                  url: /task-set-up-permissions-private-mode-aws.html
+            - title: Where to go next
+              url: /reference-whats-next-private-mode.html
         - title: Log in to BlueXP
           url: /task-logging-in.html
         - title: Where to go next

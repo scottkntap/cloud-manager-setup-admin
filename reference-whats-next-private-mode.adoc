@@ -1,0 +1,27 @@
+---
+sidebar: sidebar
+permalink: reference-whats-next-private-mode.html
+keywords: connector, dark site, install dark site, install connector no internet, install connector on prem
+summary: You can install the Connector in a location that has complete isolation from the internet, either on-premises or in a cloud region. You can then use the BlueXP services that are supported in that environment.
+---
+
+= Where to go next
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You next step depends on whether you plan to manage storage on-premises or in the cloud.
+
+On-premises::
+In an on-premises environment, you can use BlueXP in private mode as follows:
+
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover on-prem ONTAP clusters^]
+* https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicate data between on-prem ONTAP clusters^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Back up on-prem ONTAP volume data to StorageGRID using Cloud Backup^]
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Scan on-prem ONTAP volume data using Cloud Data Sense^]
+
+Cloud environment::
+In a cloud environment, you can use BlueXP in private mode to deploy Cloud Volumes ONTAP systems. Before you can deploy Cloud Volumes ONTAP, you'll need to add your cloud provider credentials so that the Connector has permissions to deploy and manage Cloud Volumes ONTAP.

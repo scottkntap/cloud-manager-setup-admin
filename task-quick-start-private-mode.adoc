@@ -1,0 +1,16 @@
+---
+sidebar: sidebar
+permalink: task-quick-start-private-mode.html
+keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
+summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
+---
+
+= Prepare for private mode deployment
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Quick start

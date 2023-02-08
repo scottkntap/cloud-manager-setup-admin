@@ -1,0 +1,99 @@
+---
+sidebar: sidebar
+permalink: task-install-mode.html
+keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
+summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
+---
+
+= Prepare for private mode deployment
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A Connector enables BlueXP to manage resources and processes within your public cloud environment. When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
+
+== Set up a Linux host
+
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
+
+Dedicated host::
+The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
+
+Supported locations::
+You can install the Connector on-premises or in the cloud.
+
+Networking connections::
+The Connector must have a network connection to the location where you plan to deploy and manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
++
+If you want to create a Cloud Volumes ONTAP system in Google Cloud, then the Connector must be running in Google Cloud as well.
+
+Ports:: There's no incoming traffic to the Connector, unless you initiate it.
++
+HTTP (80) and HTTPS (443) provide access to the local UI. SSH (22) is only needed if you need to connect to the host for troubleshooting.
+
+CPU:: 4 cores or 4 vCPUs
+
+RAM:: 14 GB
+
+Supported operating systems::
+* CentOS 7.6
+* CentOS 7.7
+* CentOS 7.8
+* CentOS 7.9
+* Red Hat Enterprise Linux 7.6
+* Red Hat Enterprise Linux 7.7
+* Red Hat Enterprise Linux 7.8
+* Red Hat Enterprise Linux 7.9
+* Red Hat Enterprise Linux 8.6
++
+The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
++
+The Connector is supported on English-language versions of these operating systems.
+
+Hypervisor:: A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
++
+https://access.redhat.com/certified-hypervisors[Red Hat Customer Portal: Certified Guest Operating Systems^]
+
+Disk type:: An SSD is required
+
+Disk space in /opt:: 100 GiB of space must be available
+
+Disk space in /var:: 20 GiB of space must be available
+
+Docker Engine:: Docker Engine version 19 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
+
+== Install the Connector
+
+After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
+
+.Required privileges
+
+Root privileges are required to install the Connector.
+
+.Steps
+
+. Verify that docker is enabled and running.
++
+[source,cli]
+sudo systemctl enable docker && sudo systemctl start docker
+
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^]
+
+. Copy the installer to the Linux host.
+
+. Assign permissions to run the script.
++
+[source,cli]
+chmod +x /path/cloud-manager-connector-offline-<version>
++
+Where <version> is the version of the Connector that you downloaded.
+
+. Run the installation script:
++
+[source,cli]
+sudo /path/cloud-manager-connector-offline-<version>
++
+Where <version> is the version of the Connector that you downloaded.
