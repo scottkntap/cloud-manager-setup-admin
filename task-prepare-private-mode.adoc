@@ -134,7 +134,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS
 .Result
 
 The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
-====
+=====
 // End collapsible block
 
 === Grant Azure permissions
@@ -316,7 +316,7 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 .Result
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
-====
+=====
 // End collapsible block
 
 === Grant Google Cloud permissions
@@ -332,7 +332,7 @@ Set up a service account that has the permissions that BlueXP needs to create an
 . https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the link:reference-permissions-gcp.html[Connector policy for GCP].
 
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
-====
+=====
 // End collapsible block
 
 == What's next?
