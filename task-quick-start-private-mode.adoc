@@ -5,7 +5,7 @@ keywords: networking overview, networking requirements, endpoints, urls, get sta
 summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
 
-= Prepare for private mode deployment
+= Quick start for private mode deployment
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,4 +13,4 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-Quick start
+This is a quick start.

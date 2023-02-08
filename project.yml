@@ -75,9 +75,9 @@ sidebar:
                 - title: AWS permissions
                   url: /task-set-up-permissions-private-mode-aws.html
                 - title: Azure permissions
-                  url: /task-set-up-permissions-private-mode-aws.html
+                  url: /task-set-up-permissions-private-mode-azure.html
                 - title: Google Cloud permissions
-                  url: /task-set-up-permissions-private-mode-aws.html
+                  url: /task-set-up-permissions-private-mode-google.html
             - title: Where to go next
               url: /reference-whats-next-private-mode.html
         - title: Log in to BlueXP
