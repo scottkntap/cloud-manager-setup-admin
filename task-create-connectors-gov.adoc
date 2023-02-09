@@ -17,8 +17,6 @@ Some kind of lead.
 
 If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector in a Government region from BlueXP's SaaS website.
 
-== Overview
-
 Use one of the following links to view instructions for creating a Connector:
 
 * link:task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region[Create a Connector from the AWS Marketplace]
@@ -148,18 +146,9 @@ image:screenshot_aws_iam_role.gif[A screenshot that shows fields on the Configur
 
 * *Review*: Review your selections and click *Launch*.
 
-+
+.Result
+
 AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
-
-. Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
-+
-https://_ipaddress_
-
-. After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
-+
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
-.. Enter a name for the system.
 --
 
 .Azure Gov Marketplace
@@ -180,8 +169,6 @@ Note the following as you configure the VM:
 * The Connector can perform optimally with either HDD or SSD disks.
 
 * Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
-+
-link:task-installing-linux.html[Review the VM requirements].
 
 * For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
 +
@@ -192,28 +179,10 @@ link:reference-ports-azure.html[Learn more about security group rules for the Co
 This setting is important because a managed identity allows the Connector virtual machine to identify itself to Azure Active Directory without providing any credentials. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[Learn more about managed identities for Azure resources^].
 
 . On the *Review + create* page, review your selections and click *Create* to start the deployment.
-+
-Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
-
-. Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
-+
-https://_ipaddress_
-
-. After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
-+
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
-.. Enter a name for the system.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account.
-
-If the Connector is in an Azure commercial region, open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
-
-If the Connector is in an Azure Government region, you can use BlueXP by opening your web browser and connecting to the IP address of the Connector instance: https://_ipaddress_
-
-Since the Connector was deployed in a Government region, it's not accessible from https://console.bluexp.netapp.com.
+Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
 --
 
 .Manual install
@@ -284,15 +253,13 @@ The Connector is now installed. At the end of the installation, the Connector se
 
 == Set up BlueXP
 
-Sign up or log in and then set up the Connector to work with your account.
+When you access the BlueXP console for the first time, you’ll be prompted to set up BlueXP.
 
 .Steps
 
-. Open a web browser and enter the following URL:
+. Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
 +
 https://_ipaddress_
-+
-_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
 
 . Sign up or log in.
 
@@ -304,4 +271,4 @@ link:concept-netapp-accounts.html[Learn about NetApp accounts].
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments.
+The Connector is now installed and set up with your NetApp account.
