@@ -70,11 +70,11 @@ sidebar:
               url: /task-install-private-mode.html
             - title: Set up cloud permissions
               entries:
-                - title: AWS permissions
+                - title: Provide AWS permissions
                   url: /task-set-up-aws-permissions-private.html
-                - title: Azure permissions
+                - title: Provide Azure permissions
                   url: /task-set-up-azure-permissions-private.html
-                - title: Google Cloud permissions
+                - title: Provide Google Cloud permissions
                   url: /task-set-up-google-permissions-private.html
             - title: Where to go next
               url: /reference-whats-next-private-mode.html

@@ -13,9 +13,9 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-A Connector enables BlueXP to manage resources and processes within your public cloud environment. When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
+To set up BlueXP in private mode, the first step is to deploy the Connector software either in the cloud or on your premises. When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector. There is no connection to the BlueXP SaaS website.
 
-== Set up a Linux host
+== Prepare a Linux host
 
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 
@@ -26,7 +26,7 @@ Supported locations::
 You can install the Connector on-premises or in the cloud.
 
 Networking connections::
-The Connector must have a network connection to the location where you plan to deploy and manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
+The Connector must have a network connection to the location where you plan to manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
 +
 If you want to create a Cloud Volumes ONTAP system in Google Cloud, then the Connector must be running in Google Cloud as well.
 
@@ -81,6 +81,8 @@ Root privileges are required to install the Connector.
 sudo systemctl enable docker && sudo systemctl start docker
 
 . Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^]
++
+Be sure to download the installer for restricted networks without internet access.
 
 . Copy the installer to the Linux host.
 
@@ -98,13 +100,17 @@ sudo /path/cloud-manager-connector-offline-<version>
 +
 Where <version> is the version of the Connector that you downloaded.
 
+.Result
+
+The Connector software is installed. You can now set up BlueXP.
+
 == Set up BlueXP
 
-Sign up or log in and then set up the Connector.
+When you access the BlueXP console for the first time, you'll be prompted to set up BlueXP.
 
 .Steps
 
-. Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
+. Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host where you installed the Connector.
 +
 You should see the following screen.
 +

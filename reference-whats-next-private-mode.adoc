@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: reference-whats-next-private-mode.html
-keywords: connector, dark site, install dark site, install connector no internet, install connector on prem
-summary: You can install the Connector in a location that has complete isolation from the internet, either on-premises or in a cloud region. You can then use the BlueXP services that are supported in that environment.
+keywords: private mode, what you can do
+summary: After you're up and running with BlueXP in private mode, your next step depends on whether you plan to manage storage in the cloud or on premises.
 ---
 
 = Where to go next
@@ -13,15 +13,19 @@ summary: You can install the Connector in a location that has complete isolation
 :imagesdir: ./media/
 
 [.lead]
-You next step depends on whether you plan to manage storage on-premises or in the cloud.
+After you're up and running with BlueXP in private mode, your next step depends on whether you plan to manage storage in the cloud or on premises.
 
-On-premises::
+Cloud environment::
+In a cloud environment, you can use BlueXP in private mode to deploy Cloud Volumes ONTAP systems.
+
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[Quick start for Cloud Volumes ONTAP in AWS^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[Quick start for Cloud Volumes ONTAP in Microsoft Azure^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[Quick start for Cloud Volumes ONTAP in Google Cloud^]
+
+On premises::
 In an on-premises environment, you can use BlueXP in private mode as follows:
 
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicate data between on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Back up on-prem ONTAP volume data to StorageGRID using Cloud Backup^]
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Scan on-prem ONTAP volume data using Cloud Data Sense^]
-
-Cloud environment::
-In a cloud environment, you can use BlueXP in private mode to deploy Cloud Volumes ONTAP systems. Before you can deploy Cloud Volumes ONTAP, you'll need to add your cloud provider credentials so that the Connector has permissions to deploy and manage Cloud Volumes ONTAP.

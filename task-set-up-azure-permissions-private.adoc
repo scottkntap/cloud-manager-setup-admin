@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-azure-permissions-private.html
-keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
+keywords: permissions, azure, azure permissions, service principal, private mode
+summary: BlueXP requires permissions to deploy Cloud Volumes ONTAP in an Azure account. You need to grant the required permissions by creating and setting up a service principal in Azure Active Directory and by providing BlueXP with the credentials for that service principal.
 ---
 
-= Set up Azure permissions
+= Provide Azure permissions
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,11 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-BlueXP needs permissions to perform actions in Azure. You can grant the required permissions to an Azure account by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that BlueXP needs.
+BlueXP requires permissions to deploy Cloud Volumes ONTAP in an Azure account. You need to grant the required permissions by creating and setting up a service principal in Azure Active Directory and by providing BlueXP with the credentials for that service principal.
 
-=== Grant Azure permissions using a service principal
+The contents of this page are specific to BlueXP when operating in private mode in the cloud. link:concept-modes.html[Learn more about supported deployment modes].
+
+== Set up a service principal in Azure
 
 The following image depicts how BlueXP obtains permissions to perform operations in Azure. A service principal object, which is tied to one or more Azure subscriptions, represents BlueXP in Azure Active Directory and is assigned to a custom role that allows the required permissions.
 
@@ -23,17 +25,17 @@ image:diagram_azure_authentication.png["Conceptual image that shows BlueXP obtai
 
 .Steps
 
-. <<Creating an Azure Active Directory application,Create an Azure Active Directory application>>.
+. <<Create an Azure Active Directory application>>.
 
-. <<Assigning the application to a role,Assign the application to a role>>.
+. <<Assign the application to a role>>.
 
-. <<Adding Windows Azure Service Management API permissions,Add Windows Azure Service Management API permissions>>.
+. <<Add Windows Azure Service Management API permissions>>.
 
-. <<Getting the application ID and directory ID,Get the application ID and directory ID>>.
+. <<Get the application ID and directory ID>>.
 
-. <<Creating a client secret,Create a client secret>>.
+. <<Create a client secret>>.
 
-== Creating an Azure Active Directory application
+=== Create an Azure Active Directory application
 
 Create an Azure Active Directory (AD) application and service principal that BlueXP can use for role-based access control.
 
@@ -62,7 +64,7 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 
 You've created the AD application and service principal.
 
-== Assigning the application to a role
+=== Assign the application to a role
 
 You must bind the service principal to one or more Azure subscriptions and assign it the custom "BlueXP Operator" role so BlueXP has permissions in Azure.
 
@@ -132,7 +134,7 @@ The service principal now has the required Azure permissions to deploy the Conne
 +
 If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. BlueXP enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
 
-== Adding Windows Azure Service Management API permissions
+=== Add Windows Azure Service Management API permissions
 
 The service principal must have "Windows Azure Service Management API" permissions.
 
@@ -163,7 +165,7 @@ When you add the Azure account to BlueXP, you need to provide the application (c
 +
 image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
 
-== Creating a client secret
+=== Create a client secret
 
 You need to create a client secret and then provide BlueXP with the value of the secret so BlueXP can use it to authenticate with Azure AD.
 

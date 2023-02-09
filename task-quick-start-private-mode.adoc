@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-quick-start-private-mode.html
-keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
+keywords: quick start, bluexp quick start, get started, get started with bluexp
+summary: Get started with BlueXP in private mode in a few steps.
 ---
 
-= Quick start for private mode deployment
+= Quick start for BlueXP in private mode
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,4 +13,26 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-This is a quick start.
+Get started with BlueXP in private mode in a few steps.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Deploy the Connector
+
+[role="quick-margin-list"]
+.. Prepare a dedicated Linux host that meets requirements for CPU, RAM, disk space, Docker Engine, and more. 
+
+.. Download the Connector software for restricted networks from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^] and install it on the Linux host that you prepared.
+
+.. Set up BlueXP by opening a web browser and entering the Linux host's IP address.
+
+[role="quick-margin-para"]
+link:task-install-private-mode.html[View step-by-step instructions].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up cloud permissions
+
+[role="quick-margin-para"]
+If you plan to deploy Cloud Volumes ONTAP in a location that has complete isolation from the internet, you'll need to set up cloud permissions.
+
+[role="quick-margin-list"]
+* link:task-set-up-aws-permissions-private.html[Set up AWS permissions]
+* link:task-set-up-azure-permissions-private.html[Set up Azure permissions]
+* link:task-set-up-google-permissions-private.html[Set up Google Cloud permissions]
