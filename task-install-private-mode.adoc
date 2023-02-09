@@ -5,7 +5,7 @@ keywords: networking overview, networking requirements, endpoints, urls, get sta
 summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
 
-= Prepare for private mode deployment
+= Deploy the Connector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -97,3 +97,35 @@ Where <version> is the version of the Connector that you downloaded.
 sudo /path/cloud-manager-connector-offline-<version>
 +
 Where <version> is the version of the Connector that you downloaded.
+
+== Set up BlueXP
+
+Sign up or log in and then set up the Connector.
+
+.Steps
+
+. Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
++
+You should see the following screen.
++
+image:screenshot-onprem-darksite-welcome.png[A screenshot of the Welcome page that appears after you enter the IP address of the Connector into your web browser.]
+
+. Click *Set Up New BlueXP* and follow the prompts to set up the system.
+
+* *System Details*: Enter a name for the Connector and your company name.
++
+image:screenshot-onprem-darksite-details.png[A screenshot of the System Details page that prompts you to enter the BlueXP name and Company name.]
+
+* *Create Admin User*: Create the admin user for the system.
++
+This user account runs locally on the system. There's no connection to the auth0 service available through BlueXP.
+
+* *Review*: Review the details, accept the license agreement, and then click *Set Up*.
+
+. Log in to BlueXP using the admin user that you just created.
+
+.Result
+
+The Connector is now installed and you can start using the BlueXP features that are available in private mode.
+
+When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].

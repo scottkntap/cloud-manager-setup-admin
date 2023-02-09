@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task-set-up-permissions-private-mode-google.html
+permalink: task-set-up-google-permissions-private.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
 summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
@@ -20,3 +20,7 @@ Set up a service account that has the permissions that BlueXP needs to create an
 . https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the link:reference-permissions-gcp.html[Connector policy for GCP].
 
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
+
+. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate this service account with the Connector VM^].
+
+. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the BlueXP role to that project^]. You'll need to repeat this step for each project.

@@ -1,0 +1,104 @@
+---
+sidebar: sidebar
+permalink: task-set-up-aws-permissions-private.html
+keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
+summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
+---
+
+= Set up AWS permissions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Add AWS credentials to a Connector so that it has the permissions needed to manage resources and processes within your public cloud environment. You can either provide the ARN of an IAM role in another account or provide AWS access keys.
+
+BlueXP requires permissions to manage resources and processes within your AWS account. How you provide the permissions depends on whether you want to provide BlueXP with the ARN of a role in a trusted account or AWS keys.
+
+== Grant permissions
+
+Before you add AWS credentials to a Connector, you need to provide the required permissions. The permissions enable BlueXP to manage resources and processes within that AWS account. How you provide the permissions depends on whether you want to provide BlueXP with the ARN of a role in a trusted account or AWS keys.
+
+NOTE: If you deployed a Connector from BlueXP, BlueXP automatically added AWS credentials for the account in which you deployed the Connector. This initial account is not added if you deployed the Connector from the AWS Marketplace or if you manually installed the Connector software on an existing system. link:concept-accounts-aws.html[Learn about AWS credentials and permissions].
+
+*Choices*
+
+* <<Grant permissions by assuming an IAM role in another account>>
+* <<Grant permissions by providing AWS keys>>
+
+=== Grant permissions by assuming an IAM role in another account
+
+You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide BlueXP with the ARN of the IAM roles from the trusted accounts.
+
+.Steps
+
+. Go to the IAM console in the target account in which you want to provide the Connector with permissions.
+
+. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
++
+Be sure to do the following:
+
+* Under *Trusted entity type*, select *AWS account*.
+* Select *Another AWS account* and enter the ID of the account where the Connector instance resides.
+* Create the required policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
+
+. Copy the Role ARN of the IAM role so that you can paste it in BlueXP later on.
+
+.Result
+
+The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
+
+=== Grant permissions by providing AWS keys
+
+If you want to provide BlueXP with AWS keys for an IAM user, then you need to grant the required permissions to that user. The BlueXP IAM policy defines the AWS actions and resources that BlueXP is allowed to use.
+
+.Steps
+
+. From the IAM console, create policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
+
+. Attach the policies to an IAM role or an IAM user.
++
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies^]
+
+.Result
+
+The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
+
+== Add the credentials to BlueXP
+
+After you provide an AWS account with the required permissions, you can add the credentials for that account to an existing Connector. This enables you to launch Cloud Volumes ONTAP systems in that account using the same Connector.
+
+.Before you get started
+
+If you just created these credentials in your cloud provider, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to BlueXP.
+
+.Steps
+
+. Ensure that the correct Connector is currently selected in BlueXP.
+
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+
+. Click *Add Credentials* and follow the steps in the wizard.
+
+.. *Credentials Location*: Select *Amazon Web Services > Connector*.
+
+.. *Define Credentials*: Provide the ARN (Amazon Resource Name) of a trusted IAM role, or enter an AWS access key and secret key.
+
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
++
+To pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or with an annual contract, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
+
+.. *Review*: Confirm the details about the new credentials and click *Add*.
+
+.Result
+
+You can now switch to a different set of credentials from the Details and Credentials page when creating a new working environment:
+
+image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]

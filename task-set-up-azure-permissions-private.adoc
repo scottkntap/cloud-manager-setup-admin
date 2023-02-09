@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task-set-up-permissions-private-mode-azure.html
+permalink: task-set-up-azure-permissions-private.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
 summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
@@ -15,7 +15,7 @@ summary: You should understand what's needed to get up and running with BlueXP i
 [.lead]
 BlueXP needs permissions to perform actions in Azure. You can grant the required permissions to an Azure account by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that BlueXP needs.
 
-.About this task
+=== Grant Azure permissions using a service principal
 
 The following image depicts how BlueXP obtains permissions to perform operations in Azure. A service principal object, which is tied to one or more Azure subscriptions, represents BlueXP in Azure Active Directory and is assigned to a custom role that allows the required permissions.
 
@@ -186,3 +186,43 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 .Result
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
+
+== Add the credentials to BlueXP
+
+After you provide an Azure account with the required permissions, you can add the credentials for that account to BlueXP. Completing this step enables you to launch Cloud Volumes ONTAP using different Azure credentials.
+
+.Before you get started
+
+If you just created these credentials in your cloud provider, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to BlueXP.
+
+.What you'll need
+
+You need to create a Connector before you can change BlueXP settings. link:concept-connectors.html#how-to-create-a-connector[Learn how].
+
+.Steps
+
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+
+. Click *Add Credentials* and follow the steps in the wizard.
+
+.. *Credentials Location*: Select *Microsoft Azure > Connector*.
+
+.. *Define Credentials*: Enter information about the Azure Active Directory service principal that grants the required permissions:
++
+* Application (client) ID: See <<Getting the application ID and directory ID>>.
+* Directory (tenant) ID: See <<Getting the application ID and directory ID>>.
+* Client Secret: See <<Creating a client secret>>.
+
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
++
+To pay for Cloud Volumes ONTAP at an hourly rate (PAYGO), these Azure credentials must be associated with a subscription from the Azure Marketplace.
+
+.. *Review*: Confirm the details about the new credentials and click *Add*.
+
+.Result
+
+You can now switch to different set of credentials from the Details and Credentials page https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html[when creating a new working environment^]
+
+image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between credentials after clicking Edit Credentials in the Details & Credentials page.]

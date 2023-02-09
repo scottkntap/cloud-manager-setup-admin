@@ -66,10 +66,8 @@ sidebar:
           entries:
             - title: Quick start
               url: /task-quick-start-private-mode.html
-            - title: Install the Connector
+            - title: Deploy the Connector
               url: /task-install-private-mode.html
-            - title: Set up BlueXP
-              url: /task-set-up-private-mode.html
             - title: Set up cloud permissions
               entries:
                 - title: AWS permissions
