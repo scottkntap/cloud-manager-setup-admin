@@ -13,7 +13,7 @@ summary: If you are operating in a Government region, you need to deploy a Conne
 :imagesdir: ./media/
 
 [.lead]
-
+Some kind of lead.
 
 If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector in a Government region from BlueXP's SaaS website.
 
@@ -273,11 +273,14 @@ Here's an example of the command using both optional parameters:
 
 +
 --cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
---
 
 .Result
 
 The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+--
+
+====
+// end tabbed area
 
 == Set up BlueXP
 
