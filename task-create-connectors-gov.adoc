@@ -19,12 +19,82 @@ To deploy the Connector in restricted mode, you need to deploy a Connector from 
 
 After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
 
-NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that's running in Google Cloud as well. You can't use a Connector that's running in AWS, Azure, or on-prem.
-
 // start tabbed area
 
 [role="tabbed-block"]
 ====
+
+.AWS Marketplace
+--
+
+.Before you get started
+
+The IAM user who creates the Connector must have AWS Marketplace permissions to subscribe and unsubscribe.
+
+.Steps
+
+. Set up permissions in AWS:
+
+.. From the IAM console, create the required policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
+
+.. Create an IAM role with the role type Amazon EC2 and attach the policies that you created in the previous step to the role.
+
+. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^] to deploy the Connector from an AMI:
+
+. On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
++
+image:screenshot-subscribe-aws.png[A screenshot that shows the Continue to Subscribe and Continue to Configuration buttons on the AWS Marketplace.]
+
+. Change any of the default options and click *Continue to Launch*.
+
+. Under *Choose Action*, select *Launch through EC2* and then click *Launch*.
++
+These steps describe how to launch the instance from the EC2 Console because the console enables you to attach an IAM role to the Connector instance. This isn't possible using the *Launch from Website* action.
+
+. Follow the prompts to configure and deploy the instance:
+
+* *Name and tags*: Enter a name and tags for the instance.
+
+* *Application and OS Image*: Skip this section. The Connector AMI is already selected.
+
+* *Instance type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
++
+link:task-installing-linux.html[Review the instance requirements].
+
+* *Key pair (login)*: Select the key pair that you want to use to securely connect to the instance.
+
+* *Network settings*: Edit the network settings as needed:
++
+** Choose the desired VPC and subnet.
+** Specify whether the instance should have a public IP address.
+** Specify firewall settings that enable the required connection methods for the Connector instance: SSH, HTTP, and HTTPS.
+
+* *Configure storage*: Keep the default storage options.
+
+* *Advanced details*: Under *IAM instance profile*, choose the IAM role that you created in step 1.
+
+* *Summary*: Review the summary and click *Launch instance*.
++
+AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
+
+. Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
++
+https://_ipaddress_
+
+. After you log in, set up the Connector:
+.. Specify the NetApp account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
+.. Enter a name for the system.
+
+. Open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
+
+.Result
+
+The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+
+If you have Amazon S3 buckets in the same AWS account where you created the Connector, you'll see an Amazon S3 working environment appear on the Canvas automatically. link:task-viewing-amazon-s3.html[Learn more about what you can do with this working environment].
+--
 
 .AWS Gov Marketplace
 --
@@ -73,7 +143,7 @@ image:screenshot_aws_iam_role.gif[A screenshot that shows fields on the Configur
 AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
 --
 
-.Azure Gov Marketplace
+.Azure Marketplace
 --
 .Steps
 
@@ -101,10 +171,10 @@ link:reference-ports-azure.html[Learn more about security group rules for the Co
 This setting is important because a managed identity allows the Connector virtual machine to identify itself to Azure Active Directory without providing any credentials. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[Learn more about managed identities for Azure resources^].
 
 . On the *Review + create* page, review your selections and click *Create* to start the deployment.
-
-.Result
-
++
 Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
+
+. Provide permissions.
 --
 
 .Manual install
@@ -164,18 +234,22 @@ Here's an example of the command using both optional parameters:
 
 +
 --cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
-
-.Result
-
++
 The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+. Provide permissions.
 --
 
 ====
 // end tabbed area
 
+== Provide permissions
+
+If needed, use this section to finish setting up permissions for manual installs and for Azure Marketplace deployments
+
 == Set up BlueXP
 
-When you access the BlueXP console for the first time, you’ll be prompted to set up BlueXP.
+When you access the BlueXP console for the first time, you'll be prompted to set up BlueXP.
 
 .Steps
 
