@@ -85,6 +85,8 @@ For example, a Connector is a key component in the health and operation of Cloud
 
 NOTE: If your Cloud Volumes ONTAP system has a node-based BYOL license, the system remains running after 14 days because the license is installed on the Cloud Volumes ONTAP system.
 
+BlueXP will notify you if your Connector has been powered down for 14 days or longer. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html[Learn about BlueXP notifications].
+
 == How to create a Connector
 
 A BlueXP Account Admin can create a Connector in a number of ways:

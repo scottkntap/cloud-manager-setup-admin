@@ -327,7 +327,7 @@ The Connector makes the following API requests for daily operations.
 
 === Cloud Volumes ONTAP
 
-The Connector makes the following API requests to deploy and manage Cloud Volumes ONTAP in AWS.
+The Connector makes the following API requests to deploy and manage Cloud Volumes ONTAP in Azure.
 
 [cols=5*,options="header"]
 |===

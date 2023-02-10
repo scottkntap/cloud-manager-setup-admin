@@ -67,6 +67,9 @@ includedPermissions:
 - compute.instances.start
 - compute.instances.stop
 - compute.instances.updateDisplayDevice
+- compute.instanceGroups.get
+- compute.addresses.get
+- compute.instances.updateNetworkInterface
 - compute.machineTypes.get
 - compute.networks.get
 - compute.networks.list
@@ -350,8 +353,9 @@ includedPermissions:
 |
 - compute.instanceGroups.get
 - compute.addresses.get
+- compute.instances.updateNetworkInterface
 
-| To create and manage storage VMs on HA pairs.
+| To create and manage storage VMs on Cloud Volumes ONTAP HA pairs.
 
 |
 - monitoring.timeSeries.list
@@ -376,6 +380,14 @@ includedPermissions:
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 6 February, 2023
+
+The following permission was added to this policy:
+
+* compute.instances.updateNetworkInterface
+
+This permission is required for Cloud Volumes ONTAP.
 
 === 27 January, 2023
 
