@@ -13,11 +13,7 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-You should understand what's needed before you deploy the BlueXP Connector in restricted mode so that you can prepare your environment.
-
-A Connector enables BlueXP to manage resources and processes within your public cloud environment. When you use BlueXP in restricted mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
-
-Before you deploy a Connector, you'll need to set up a host, networking, and permissions.
+You should understand what's needed before you deploy the BlueXP Connector in restricted mode so that you can prepare your environment. When you use BlueXP in restricted mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
 
 == Prepare a Linux host
 
@@ -119,12 +115,6 @@ The network location where you deploy the Connector must have an outbound intern
 | To manage resources in Azure Government regions.
 
 | 
-\https://management.azure.microsoft.scloud
-\https://login.microsoftonline.microsoft.scloud
-
-| To manage resources in the Azure IL6 region.
-
-| 
 \https://management.chinacloudapi.cn
 \https://login.chinacloudapi.cn
 
@@ -165,11 +155,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 |===
 
-If you choose to manually install the Connector on your own Linux host (and not do so directly from the BlueXP interface), the installer for the Connector requires access to several endpoints during the installation process.
-
-link:task-installing-linux.html[Review the list of endpoints].
-
-== Prepare network access from your web browser
+== Prepare networking for the BlueXP console
 
 In restricted mode, the BlueXP user interface is accessible from the Connector. As you use the BlueXP user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 
