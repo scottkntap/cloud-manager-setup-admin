@@ -1,0 +1,300 @@
+---
+sidebar: sidebar
+permalink: task-prepare-restricted-mode.html
+keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
+summary: You should understand what's needed to get up and running with BlueXP in restricted mode so that you can prepare your environment. The preparation involves preparing a Linux host for the Connector, preparing your networking, and setting up cloud permissions.
+---
+
+= Prepare for deployment
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You should understand what's needed to get up and running with BlueXP in restricted mode so that you can prepare your environment. The preparation involves preparing a Linux host for the Connector, preparing your networking, and setting up cloud permissions.
+
+A Connector enables BlueXP to manage resources and processes within your public cloud environment. When you use BlueXP in restricted mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
+
+Before you deploy a Connector, you'll need to set up a host, networking, and permissions.
+
+== Prepare a Linux host
+
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
+
+Dedicated host::
+The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
+
+Supported locations::
+In restricted mode, you can only install the Connector in the cloud.
+
+Networking::
+<<Refer to the section below,Prepare your networking>>.
+
+CPU:: 4 cores or 4 vCPUs
+
+RAM:: 14 GB
+
+AWS EC2 instance type::
+An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.
+
+Azure VM size::
+An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
+
+GCP machine type::
+An instance type that meets the CPU and RAM requirements above. We recommend n2-standard-4.
++
+The Connector is supported in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]
+
+Supported operating systems::
+* CentOS 7.6, 7.7, 7.8, and 7.9
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, and 8.6
++
+The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
++
+The Connector is supported on English-language versions of these operating systems.
+
+Hypervisor::
+A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
+https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
+
+Disk space in /opt:: 100 GiB of space must be available
+
+Disk space in /var:: 20 GiB of space must be available
+
+Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
+
+== Prepare your networking
+
+Ensure that networking connections are available from the Connector and from the host where you plan to access the BlueXP console via a web browser. 
+
+=== Networking for the Connector
+
+Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+
+==== Connections to target networks
+
+The Connector must have a network connection to the location where you plan to manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
+
+==== Ports
+
+There's no incoming traffic to the Connector, unless you initiate it.
+
+HTTP (80) and HTTPS (443) provide access to the BlueXP console. SSH (22) is only needed if you need to connect to the host for troubleshooting. Meanwhile, inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
+
+==== Outbound internet access for manual installs
+
+If you plan to manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
+
+* \https://support.netapp.com
+* \https://mysupport.netapp.com
+* \https://cloudmanager.cloud.netapp.com/tenancy
+* \https://stream.cloudmanager.cloud.netapp.com
+* \https://cloudmanagerinfraprod.azurecr.io
+* \https://production-artifacts.cloudmanager.cloud.netapp.com
+* \https://*.blob.core.windows.net
+
+The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+
+==== Outbound internet for day-to-day operations
+
+The network location where you deploy the Connector must have an outbound internet connection. The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| 
+\https://<region>.amazonaws.com
+
+| To manage resources in AWS.
+
+| 
+\https://management.azure.com
+\https://login.microsoftonline.com
+
+| To manage resources in Azure public regions.
+
+| 
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.us
+
+| To manage resources in Azure Government regions.
+
+| 
+\https://management.azure.microsoft.scloud
+\https://login.microsoftonline.microsoft.scloud
+
+| To manage resources in the Azure IL6 region.
+
+| 
+\https://management.chinacloudapi.cn
+\https://login.chinacloudapi.cn
+
+| To manage resources in Azure China regions.
+
+| 
+\https://www.googleapis.com/compute/v1/
+\https://cloudresourcemanager.googleapis.com/v1/projects
+\https://www.googleapis.com/compute/beta
+\https://storage.googleapis.com/storage/v1
+\https://www.googleapis.com/storage/v1
+\https://iam.googleapis.com/v1
+\https://cloudkms.googleapis.com/v1
+\https://www.googleapis.com/deploymentmanager/v2/projects
+
+| To manage resources in Google Cloud.
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+
+If you choose to manually install the Connector on your own Linux host (and not do so directly from the BlueXP interface), the installer for the Connector requires access to several endpoints during the installation process.
+
+link:task-installing-linux.html[Review the list of endpoints].
+
+=== Network access from your web browser
+
+In restricted mode, the BlueXP user interface is accessible from the Connector. As you use the BlueXP user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| \https://signin.b2c.netapp.com
+| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to BlueXP.
+
+|
+\https://netapp-cloud-account.auth0.com
+
+\https://cdn.auth0.com
+
+\https://services.cloud.netapp.com
+| Your web browser connects to these endpoints for centralized user authentication through BlueXP.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
+
+|===
+
+== Prepare cloud permissions
+
+BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network. 
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.AWS
+--
+.Steps
+
+. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+--
+
+.Azure
+--
+.Steps
+
+. Create a custom role:
+
+.. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
+
+.. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
++
+You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+
+.. Use the JSON file to create a custom role in Azure.
++
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
++
+* Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+* Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+* Use the Azure CLI to create the custom role:
++
+[source,azurecli]
+az role definition create --role-definition Connector_Policy.json
++
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
+
+. Assign the role to the Connector virtual machine for one or more subscriptions:
+
+.. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+
+.. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+
+.. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
++
+NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
+
+.. In the *Members* tab, complete the following steps:
+
+* Assign access to a *Managed identity*.
+
+* Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
+
+* Click *Select*.
+
+* Click *Next*.
+
+.. Click *Review + assign*.
+
+.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+
+.Result
+
+The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+
+If you have Azure Blob storage in the same Azure account where you created the Connector, you'll see an Azure Blob working environment appear on the Canvas automatically. link:task-viewing-azure-blob.html[Learn more about what you can do with this working environment].
+--
+
+.Google Cloud
+--
+Google Cloud
+
+.Steps
+
+. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in Google Cloud^] that includes the permissions defined in the link:reference-permissions-gcp.html[Connector policy for GCP].
+
+. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^].
+--
+
+====
+// end tabbed area

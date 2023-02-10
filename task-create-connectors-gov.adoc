@@ -13,85 +13,7 @@ summary: If you are operating in a Government region, you need to deploy a Conne
 :imagesdir: ./media/
 
 [.lead]
-Some kind of lead.
-
-If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector in a Government region from BlueXP's SaaS website.
-
-Use one of the following links to view instructions for creating a Connector:
-
-* link:task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region[Create a Connector from the AWS Marketplace]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Create a Connector and Cloud Volumes ONTAP in the AWS C2S environment^]
-* link:task-launching-azure-mktp.html[Create a Connector from the Azure Marketplace]
-* link:task-installing-linux.html[Install a Connector on your own Linux host]
-+
-For manual installations on your own Linux host, you must use the "online" installer to install the Connector on a host that has internet access. A separate "offline" installer is available for the Connector, but it's only supported with on-prem sites that don't have internet access. It's not supported with Government regions.
-
-After you deploy the Connector, you can access BlueXP by opening your web browser and connecting to the IP address of the Connector instance: https://_ipaddress_
-
-Since the Connector was deployed in a Government region, it's not accessible from https://console.bluexp.netapp.com.
-
-link:concept-connectors.html[Learn about other ways to deploy a Connector].
-
-== Verify host requirements
-
-The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
-
-A dedicated host is required::
-The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
-
-CPU:: 4 cores or 4 vCPUs
-
-RAM:: 14 GB
-
-AWS EC2 instance type::
-An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.
-
-Azure VM size::
-An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
-
-GCP machine type::
-An instance type that meets the CPU and RAM requirements above. We recommend n2-standard-4.
-+
-The Connector is supported in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]
-
-Supported operating systems::
-* CentOS 7.6
-* CentOS 7.7
-* CentOS 7.8
-* CentOS 7.9
-* Red Hat Enterprise Linux 7.6
-* Red Hat Enterprise Linux 7.7
-* Red Hat Enterprise Linux 7.8
-* Red Hat Enterprise Linux 7.9
-* Red Hat Enterprise Linux 8.6
-+
-The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
-+
-The Connector is supported on English-language versions of these operating systems.
-
-Hypervisor::
-A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
-https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
-
-Disk space in /opt:: 100 GiB of space must be available
-
-Disk space in /var:: 20 GiB of space must be available
-
-Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
-
-Outbound internet access::
-The installer for the Connector must access the following URLs during the installation process:
-+
-* \https://support.netapp.com
-* \https://mysupport.netapp.com
-* \https://cloudmanager.cloud.netapp.com/tenancy
-* \https://stream.cloudmanager.cloud.netapp.com
-* \https://cloudmanagerinfraprod.azurecr.io
-* \https://production-artifacts.cloudmanager.cloud.netapp.com
-* \https://*.blob.core.windows.net
-
-+
-The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+To deploy the Connector in restricted mode, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can then set up BlueXP by accessing the user interface that's running on the Connector.
 
 == Install the Connector
 
@@ -214,7 +136,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 
 . Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
-You should download the Connector installer that's meant for use in your network or in the cloud.
+You should download the "online" Connector installer that's meant for use in your network or in the cloud. A separate "offline" installer is available for the Connector, but it's only supported with private mode deployments.
 
 . Assign permissions to run the script.
 +

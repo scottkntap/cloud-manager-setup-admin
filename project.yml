@@ -46,21 +46,15 @@ sidebar:
                   url: /task-installing-linux.html
         - title: Get started with Restricted mode
           entries:
-            - title: Getting started overview
+            - title: Quick start
               url: /reference-checklist-restricted-mode.html
-            - title: Create a Connector
-              entries:
-                - title: Connector overview
-                  url: /concept-connector-standard-mode.html
-                - title: Create a Connector in a Government region
-                  url: /task-create-connectors-gov.html
-                - title: Create from the AWS Marketplace
-                  url: /task-launching-aws-mktp.html
-                - title: Create from the Azure Marketplace
-                  url: /task-launching-azure-mktp.html
-                - title: Manual installation
-                  url: /task-installing-linux.html
-            - title: Sign up and create an account
+            - title: Prepare for deployment
+              url: /task-prepare-restricted-mode.html
+            - title: Deploy the Connector
+              url: /task-create-connectors-gov.html
+            - title: Subscribe to BlueXP
+              url: /coming-soon.html
+            - title: Where to go next
               url: /TBD.html
         - title: Get started with Private mode
           entries:
