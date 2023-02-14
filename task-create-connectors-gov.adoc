@@ -13,11 +13,11 @@ summary: If you are operating in a Government region, you need to deploy a Conne
 :imagesdir: ./media/
 
 [.lead]
-To deploy the Connector in restricted mode, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can then set up BlueXP by accessing the user interface that's running on the Connector.
+To use BlueXP in restricted mode, you need to deploy a Connector and then set up BlueXP by accessing the user interface that's running on the Connector.
 
 == Install the Connector
 
-After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
+Install the Connector from your cloud provider's marketplace or by manually installing the software on your own Linux host.
 
 // start tabbed area
 
@@ -27,19 +27,21 @@ After you verify that you have a supported Linux host, you can obtain the Connec
 .AWS Marketplace
 --
 
-.Before you get started
+.What you'll need
 
-The IAM user who creates the Connector must have AWS Marketplace permissions to subscribe and unsubscribe.
+* A VPC and subnet that meets networking requirements.
++
+link:task-prepare-restricted-mode.html[Learn about networking requirements]
+* An IAM role with an attached policy that includes the required permissions for the Connector.
++
+link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
+* Permissions to subscribe and unsubscribe from the AWS Marketplace for your IAM user.
+
+* A key pair for the EC2 instance.
 
 .Steps
 
-. Set up permissions in AWS:
-
-.. From the IAM console, create the required policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
-
-.. Create an IAM role with the role type Amazon EC2 and attach the policies that you created in the previous step to the role.
-
-. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^] to deploy the Connector from an AMI:
+. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^]
 
 . On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
 +
@@ -59,7 +61,7 @@ These steps describe how to launch the instance from the EC2 Console because the
 
 * *Instance type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
 +
-link:task-installing-linux.html[Review the instance requirements].
+link:task-prepare-restricted-mode.html[Review the instance requirements].
 
 * *Key pair (login)*: Select the key pair that you want to use to securely connect to the instance.
 
@@ -71,42 +73,37 @@ link:task-installing-linux.html[Review the instance requirements].
 
 * *Configure storage*: Keep the default storage options.
 
-* *Advanced details*: Under *IAM instance profile*, choose the IAM role that you created in step 1.
+* *Advanced details*: Under *IAM instance profile*, choose the IAM role that includes the required permissions for the Connector.
++
+link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions].
 
 * *Summary*: Review the summary and click *Launch instance*.
-+
-AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
-
-. Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
-+
-https://_ipaddress_
-
-. After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
-+
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
-.. Enter a name for the system.
-
-. Open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
 
-If you have Amazon S3 buckets in the same AWS account where you created the Connector, you'll see an Amazon S3 working environment appear on the Canvas automatically. link:task-viewing-amazon-s3.html[Learn more about what you can do with this working environment].
+.What's next?
+Follow the next section to set up BlueXP.
 --
 
 .AWS Gov Marketplace
 --
 To deploy the Connector in an AWS Government region, you need to go to the EC2 service and select the BlueXP offering from the AWS Marketplace.
 
+.What you'll need
+
+* A VPC and subnet that meets networking requirements.
++
+link:task-prepare-restricted-mode.html[Learn about networking requirements]
+* An IAM role with an attached policy that includes the required permissions for the Connector.
++
+link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
+* Permissions to subscribe and unsubscribe from the AWS Marketplace for your IAM user.
+
+* A key pair for the EC2 instance.
+
 .Steps
-
-. Set up permissions in AWS:
-
-.. From the IAM console, create your own policy by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policy for the Connector].
-
-.. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
 . Go to the BlueXP offering in the AWS Marketplace.
 +
@@ -124,7 +121,7 @@ image:screenshot-gov-cloud-mktp.png[A screenshot that shows the BlueXP offering 
 
 * *Choose an Instance Type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
 +
-link:task-installing-linux.html[Review the instance requirements].
+link:task-prepare-restricted-mode.html[Review the instance requirements].
 
 * *Configure Instance Details*: Select a VPC and subnet, choose the IAM role that you created in step 1, enable termination protection (recommended), and choose any other configuration options that meet your requirements.
 +
@@ -141,10 +138,23 @@ image:screenshot_aws_iam_role.gif[A screenshot that shows fields on the Configur
 .Result
 
 AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
+
+.What's next?
+Follow the next section to set up BlueXP.
 --
 
 .Azure Marketplace
 --
+.What you'll need
+
+* A VNet and subnet that meets networking requirements.
++
+link:task-prepare-restricted-mode.html[Learn about networking requirements]
+
+* An Azure custom role that includes the required permissions for the Connector.
++
+link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
+
 .Steps
 
 . Go to the NetApp Connector VM page in the Azure Marketplace.
@@ -164,7 +174,7 @@ Note the following as you configure the VM:
 
 * For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
 +
-link:reference-ports-azure.html[Learn more about security group rules for the Connector].
+link:task-prepare-restricted-mode.html[Learn about networking requirements].
 
 * Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
 +
@@ -174,7 +184,33 @@ This setting is important because a managed identity allows the Connector virtua
 +
 Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
 
-. Provide permissions.
+. After the VM is running, go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions:
+
+.. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+
+.. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+
+.. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
++
+NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
+
+.. In the *Members* tab, complete the following steps:
+
+* Assign access to a *Managed identity*.
+
+* Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
+
+* Click *Select*.
+
+* Click *Next*.
+
+.. Click *Review + assign*.
+
+.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+
+.Result
+
+The Connector is now installed and has the permissions that it needs to manage resources and processes within your public cloud environment.
 --
 
 .Manual install
@@ -237,15 +273,47 @@ Here's an example of the command using both optional parameters:
 +
 The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
 
-. Provide permissions.
+. Provide permissions for manual installations:
++
+* AWS: 
++
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+
+* Azure
++
+Go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions:
+
+.. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+
+.. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+
+.. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
++
+NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
+
+.. In the *Members* tab, complete the following steps:
+
+* Assign access to a *Managed identity*.
+
+* Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
+
+* Click *Select*.
+
+* Click *Next*.
+
+.. Click *Review + assign*.
+
+.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+
+* Google Cloud
++
+.. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate the service account that you created with the Connector VM]
+
+.. If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You’ll need to repeat this step for each project.
 --
 
 ====
 // end tabbed area
-
-== Provide permissions
-
-If needed, use this section to finish setting up permissions for manual installs and for Azure Marketplace deployments
 
 == Set up BlueXP
 
@@ -260,6 +328,7 @@ https://_ipaddress_
 . Sign up or log in.
 
 . After you log in, set up BlueXP:
+
 .. Specify the NetApp account to associate with the Connector.
 +
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
@@ -267,4 +336,4 @@ link:concept-netapp-accounts.html[Learn about NetApp accounts].
 
 .Result
 
-The Connector is now installed and set up with your NetApp account.
+The Connector is now installed and set up with your NetApp account. All users need to access BlueXP using the IP address of the Connector instance.
