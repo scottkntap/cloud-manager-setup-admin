@@ -21,7 +21,7 @@ When you use BlueXP in restricted mode, you need to use the BlueXP user interfac
 
 You can deploy a Connector from the AWS Marketplace, from the Azure Marketplace, or by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
 
-== Understand host requirements
+== Review host requirements
 
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 
@@ -163,7 +163,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 |===
 
-== Prepare networking for the BlueXP console
+== Prepare networking for accessing the BlueXP console
 
 In restricted mode, the BlueXP user interface is accessible from the Connector. As you use the BlueXP user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 
@@ -196,6 +196,7 @@ BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONT
 
 [role="tabbed-block"]
 ====
+Create a policy and attach it to an IAM role.
 
 .AWS
 --
@@ -206,18 +207,19 @@ BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONT
 . Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
 .Result
-You now have an IAM role that you can associate with the EC2 instance for the Connector.
+
+You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
 --
 
 .Azure
 --
 .Steps
 
-. Create a custom role:
+Create a custom role with the required permissions.
 
-.. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
+. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
 
-.. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
+. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
 You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
 +
@@ -229,17 +231,17 @@ You should add the ID for each Azure subscription from which users will create C
 "/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
 "/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
 
-.. Use the JSON file to create a custom role in Azure.
+. Use the JSON file to create a custom role in Azure.
 +
 The following steps describe how to create the role by using Bash in Azure Cloud Shell.
 +
-* Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
 
-* Upload the JSON file.
+.. Upload the JSON file.
 +
 image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
 
-* Use the Azure CLI to create the custom role:
+.. Use the Azure CLI to create the custom role:
 +
 [source,azurecli]
 az role definition create --role-definition Connector_Policy.json
@@ -247,15 +249,23 @@ az role definition create --role-definition Connector_Policy.json
 You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 
 .Result
-You now have an Azure custom role that you can assign to the virtual machine for the Connector.
+
+You now have an Azure custom role that you can assign to the virtual machine after you deploy the Connector.
+--
 
 .Google Cloud
 --
+Create a role and apply it to a service account that you'll use for the Connector VM instance.
+
 .Steps
 
 . https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in Google Cloud^] that includes the permissions defined in the link:reference-permissions-gcp.html[Connector policy for Google Cloud].
 
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^]
+
+.Result
+
+You now have a service account that you can assign to the VM instance after you deploy the Connector.
 --
 
 ====

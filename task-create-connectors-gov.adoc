@@ -270,46 +270,79 @@ Here's an example of the command using both optional parameters:
 
 +
 --cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
-+
+
+.Result
+
 The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
 
-. Provide permissions for manual installations:
-+
-* AWS: 
-+
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+.What's next?
 
-* Azure
-+
-Go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions:
+If you want to use Cloud Volumes ONTAP, provide BlueXP with the permissions that you previously set up.
+--
 
-.. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+====
+// end tabbed area
 
-.. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+== Provide permissions
 
-.. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
+Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that BlueXP can deploy Cloud Volumes ONTAP in a virtual network.
+
+link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to prepare cloud permissions].
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.AWS
+--
+Attach an IAM role that you previously created to the Connector EC2 instance.
+
+These steps apply only if you manually installed the Connector in AWS. For AWS Marketplace deployments, you already associated the Connector instance with an IAM role that includes the required permissions.
+
+.Step
+
+. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+--
+
+.Azure
+--
+Go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions.
+
+.Steps
+
+. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+
+. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+
+. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
 +
 NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
 
-.. In the *Members* tab, complete the following steps:
+. In the *Members* tab, complete the following steps:
 
-* Assign access to a *Managed identity*.
+.. Assign access to a *Managed identity*.
 
-* Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
+.. Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
 
-* Click *Select*.
+.. Click *Select*.
 
-* Click *Next*.
+.. Click *Next*.
 
 .. Click *Review + assign*.
 
 .. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+--
 
-* Google Cloud
-+
-.. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate the service account that you created with the Connector VM]
+.Google Cloud
+--
+Associate the service account with the Connector VM.
 
-.. If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You’ll need to repeat this step for each project.
+.Steps
+
+. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate the service account that you created with the Connector VM]
+
+. If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
 --
 
 ====
