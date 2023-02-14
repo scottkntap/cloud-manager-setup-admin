@@ -84,12 +84,12 @@ link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions].
 AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
 
 .What's next?
-Follow the next section to set up BlueXP.
+
+Set up BlueXP.
 --
 
 .AWS Gov Marketplace
 --
-To deploy the Connector in an AWS Government region, you need to go to the EC2 service and select the BlueXP offering from the AWS Marketplace.
 
 .What you'll need
 
@@ -140,7 +140,8 @@ image:screenshot_aws_iam_role.gif[A screenshot that shows fields on the Configur
 AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
 
 .What's next?
-Follow the next section to set up BlueXP.
+
+Set up BlueXP.
 --
 
 .Azure Marketplace
@@ -181,36 +182,14 @@ link:task-prepare-restricted-mode.html[Learn about networking requirements].
 This setting is important because a managed identity allows the Connector virtual machine to identify itself to Azure Active Directory without providing any credentials. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[Learn more about managed identities for Azure resources^].
 
 . On the *Review + create* page, review your selections and click *Create* to start the deployment.
-+
-Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
-
-. After the VM is running, go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions:
-
-.. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
-
-.. Click *Access control (IAM)* > *Add* > *Add role assignment*.
-
-.. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
-+
-NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
-
-.. In the *Members* tab, complete the following steps:
-
-* Assign access to a *Managed identity*.
-
-* Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
-
-* Click *Select*.
-
-* Click *Next*.
-
-.. Click *Review + assign*.
-
-.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
 
 .Result
 
-The Connector is now installed and has the permissions that it needs to manage resources and processes within your public cloud environment.
+Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
+
+.What's next?
+
+Provide BlueXP with the permissions that you previously set up.
 --
 
 .Manual install
@@ -277,7 +256,7 @@ The Connector is now installed. At the end of the installation, the Connector se
 
 .What's next?
 
-If you want to use Cloud Volumes ONTAP, provide BlueXP with the permissions that you previously set up.
+Provide BlueXP with the permissions that you previously set up.
 --
 
 ====
@@ -285,7 +264,7 @@ If you want to use Cloud Volumes ONTAP, provide BlueXP with the permissions that
 
 == Provide permissions
 
-Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that BlueXP can deploy Cloud Volumes ONTAP in a virtual network.
+Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use Cloud Volumes ONTAP, Cloud Backup, and Cloud Data Sense from BlueXP.
 
 link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to prepare cloud permissions].
 
@@ -311,7 +290,7 @@ Go to the Azure portal and assign the Azure custom role to the Connector virtual
 
 .Steps
 
-. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+. From the Azure Portal, open the *Subscriptions* service and select your subscription.
 
 . Click *Access control (IAM)* > *Add* > *Add role assignment*.
 
@@ -358,7 +337,7 @@ When you access the BlueXP console for the first time, you'll be prompted to set
 +
 https://_ipaddress_
 
-. Sign up or log in.
+. Sign up or log in to BlueXP.
 
 . After you log in, set up BlueXP:
 
@@ -366,6 +345,15 @@ https://_ipaddress_
 +
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
+
+. If you deployed the Connector from the AWS Commercial Marketplace, from the Azure Commercial Marketplace, or by manually installing the software, then you need to disable the SaaS platform for your account:
+
+.. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
+
+.. In the Overview tab, toggle the option to disable use of the SaaS platform.
+
++
+Disabling the SaaS platform is required to enable restricted mode. If you deployed the Connector from the AWS Government Marketplace or the Azure Government Marketplace, then SaaS mode is already disabled.
 
 .Result
 

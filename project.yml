@@ -47,7 +47,7 @@ sidebar:
         - title: Get started with Restricted mode
           entries:
             - title: Quick start
-              url: /reference-checklist-restricted-mode.html
+              url: /task-quick-start-restricted-mode.html
             - title: Prepare for deployment
               url: /task-prepare-restricted-mode.html
             - title: Deploy the Connector
@@ -55,7 +55,7 @@ sidebar:
             - title: Subscribe to BlueXP
               url: /task-subscribe-restricted-mode.html
             - title: Where to go next
-              url: /TBD.html
+              url: /reference-whats-next-restricted-mode.html
         - title: Get started with Private mode
           entries:
             - title: Quick start

@@ -190,16 +190,17 @@ In restricted mode, the BlueXP user interface is accessible from the Connector. 
 
 == Prepare cloud permissions
 
-BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance.
+BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use Cloud Backup and Cloud Data Sense. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance.
 
 // start tabbed area
 
 [role="tabbed-block"]
 ====
-Create a policy and attach it to an IAM role.
 
 .AWS
 --
+Create a policy and attach it to an IAM role.
+
 .Steps
 
 . From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
@@ -213,9 +214,9 @@ You now have an IAM role that you can associate with the EC2 instance after you 
 
 .Azure
 --
-.Steps
-
 Create a custom role with the required permissions.
+
+.Steps
 
 . Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
 
