@@ -179,7 +179,7 @@ The second policy provides permissions for the following services:
                 "cloudformation:DescribeStacks",
                 "kms:List*",
                 "kms:Describe*",
-                "ec2:describeVpcEndpoints",
+                "ec2:DescribeVpcEndpoints",
                 "kms:ListAliases",
                 "athena:StartQueryExecution",
                 "athena:GetQueryResults",
@@ -741,7 +741,7 @@ The Connector makes the following API requests to manage backups in Amazon S3:
 * kms:List*
 * kms:Describe*
 * s3:GetObject
-* ec2:describeVpcEndpoints
+* ec2:DescribeVpcEndpoints
 * kms:ListAliases
 * s3:PutEncryptionConfiguration
 //end::backup-permissions[]
@@ -877,7 +877,8 @@ The Connector makes the following API requests to tier data to Amazon S3 when yo
 | s3:CreateBucket | Yes | No
 | s3:PutLifecycleConfiguration | Yes | No
 | s3:GetLifecycleConfiguration | Yes | Yes
-| ec2:DescribeRegions | Yes | Yes
+| ec2:DescribeRegions | Yes | No
+| ec2:DescribeVpcEndpoints | Yes | No
 
 |===
 //end::tiering-permissions[]
@@ -1064,7 +1065,7 @@ The Connector makes the following API requests to manage FSx for ONTAP:
 * ec2:DescribeTags
 * ec2:DescribeIamInstanceProfileAssociations
 * ec2:DescribeReservedInstancesOfferings
-* ec2:describeVpcEndpoints
+* ec2:DescribeVpcEndpoints
 * ec2:DescribeVpcs
 * ec2:DescribeVolumesModifications
 * ec2:DescribePlacementGroups
@@ -1091,3 +1092,13 @@ The Connector makes the following API requests to discover and manage Amazon EKS
 The Connector makes the following API request to discover Amazon S3 buckets:
 
 s3:GetEncryptionConfiguration
+
+== Change log
+
+As permissions are added and removed, we'll note them in the sections below.
+
+=== 14 February, 2023
+
+The following permission is now required for Cloud Tiering:
+
+ec2:DescribeVpcEndpoints
