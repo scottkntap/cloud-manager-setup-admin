@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task-prepare-restricted-mode.html
+permalink: task-prepare-connector-aws.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
 summary: You should understand what's needed to get up and running with BlueXP in restricted mode so that you can prepare your environment. The preparation involves preparing a Linux host for the Connector, preparing your networking, and setting up cloud permissions.
 ---
