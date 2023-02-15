@@ -24,26 +24,38 @@ sidebar:
           url: /concept-modes.html
         - title: Get started with Standard mode
           entries:
-            - title: Getting started overview
+            - title: Quick start
               url: /reference-checklist-cm.html
             - title: Sign up and create an account
               url: /TBD.html
-            - title: Create a Connector
+            - title: Create a Connector in AWS
               entries:
-                - title: Connector overview
+                - title: Prepare for deployment
                   url: /concept-connector-standard-mode.html
-                - title: Create a Connector in AWS
+                - title: Deploy the Connector
                   url: /task-creating-connectors-aws.html
-                - title: Create a Connector in Azure
-                  url: /task-creating-connectors-azure.html
-                - title: Create a Connector in Google Cloud
-                  url: /task-creating-connectors-gcp.html
-                - title: Create from the AWS Marketplace
-                  url: /task-launching-aws-mktp.html
-                - title: Create from the Azure Marketplace
-                  url: /task-launching-azure-mktp.html
-                - title: Manual installation
-                  url: /task-installing-linux.html
+            - title: Create a Connector in Azure
+              entries:
+                - title: Prepare for deployment
+                  url: /concept-connector-standard-mode.html
+                - title: Deploy the Connector
+                  url: /task-creating-connectors-aws.html
+            - title: Create a Connector in Google Cloud
+              entries:
+                - title: Prepare for deployment
+                  url: /concept-connector-standard-mode.html
+                - title: Deploy the Connector
+                  url: /task-creating-connectors-aws.html
+            - title: Create a Connector on prem
+              entries:
+                - title: Prepare for deployment
+                  url: /concept-connector-standard-mode.html
+                - title: Deploy the Connector
+                  url: /task-creating-connectors-aws.html
+            - title: Subscribe to BlueXP
+              url: /task-subscribe-restricted-mode.html
+            - title: Where to go next
+              url: /reference-whats-next.html
         - title: Get started with Restricted mode
           entries:
             - title: Quick start
@@ -68,8 +80,6 @@ sidebar:
               url: /reference-whats-next-private-mode.html
         - title: Log in to BlueXP
           url: /task-logging-in.html
-        - title: Where to go next
-          url: /reference-whats-next.html
     - title: Administer BlueXP
       entries:
         - title: NetApp accounts
