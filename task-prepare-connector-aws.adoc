@@ -5,7 +5,7 @@ keywords: networking overview, networking requirements, endpoints, urls, get sta
 summary: You should understand what's needed to get up and running with BlueXP in restricted mode so that you can prepare your environment. The preparation involves preparing a Linux host for the Connector, preparing your networking, and setting up cloud permissions.
 ---
 
-= Prepare to create a Connector in AWS
+= Create a Connector in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,7 +15,7 @@ summary: You should understand what's needed to get up and running with BlueXP i
 [.lead]
 You should understand what's needed to get started with BlueXP in restricted mode so that you can prepare your environment.
 
-== Understand your installation options
+== Installation options
 
 You can choose from the following options to create a Connector in AWS:
 
@@ -25,7 +25,7 @@ You can choose from the following options to create a Connector in AWS:
 
 The option that you choose impacts how you provide BlueXP with the required AWS permissions that it needs to authenticate and manage resources in AWS. 
 
-== Review host requirements for manual installations
+== Host requirements for manual install
 
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. You should review this information when choosing a manual installation.
 
@@ -72,7 +72,7 @@ Disk space in /var:: 20 GiB of space must be available
 
 Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
 
-== Prepare networking for the Connector
+== Set up networking
 
 Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
 
