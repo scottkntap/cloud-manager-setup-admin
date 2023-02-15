@@ -40,10 +40,10 @@ sidebar:
                   url: /task-creating-connectors-aws.html
                 - title: On premises
                   url: /task-creating-connectors-aws.html
-                - title: Subscribe to BlueXP
-                  url: /task-subscribe-restricted-mode.html
-                - title: Where to go next
-                  url: /reference-whats-next.html
+            - title: Subscribe to BlueXP
+              url: /task-subscribe-restricted-mode.html
+            - title: Where to go next
+              url: /reference-whats-next.html
         - title: Get started with Restricted mode
           entries:
             - title: Quick start
