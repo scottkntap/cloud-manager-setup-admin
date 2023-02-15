@@ -31,9 +31,9 @@ sidebar:
             - title: Create a Connector in AWS
               entries:
                 - title: Prepare for deployment
-                  url: /concept-connector-standard-mode.html
+                  url: /task-prepare-connector-aws.html
                 - title: Deploy the Connector
-                  url: /task-creating-connectors-aws.html
+                  url: /task-install-connector-aws.html
             - title: Create a Connector in Azure
               entries:
                 - title: Prepare for deployment

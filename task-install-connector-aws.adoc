@@ -1,0 +1,221 @@
+---
+sidebar: sidebar
+permalink: task-install-connector-aws.html
+keywords: government region, gov, govcloud, connector
+summary: If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by using the manual installation method. You can't deploy the Connector in a Government region from BlueXP's SaaS website.
+---
+
+= Deploy the Connector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+To use BlueXP in restricted mode, you need to deploy a Connector and then set up BlueXP by accessing the user interface that's running on the Connector.
+
+== Install the Connector
+
+Install the Connector from BlueXP, from your cloud provider's marketplace, or by manually installing the software on your own Linux host.
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.BlueXP
+--
+.Steps
+
+. If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
++
+image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
+
+. Choose *Amazon Web Services* as your cloud provider and click *Continue*.
+
+. On the *Deploying a Connector* page, review the details about what you'll need. You have two options:
+
+.. Click *Continue* to prepare for deployment by using the in-product guide. Each step in the in-product guide includes the information that's contained on this page of the documentation.
+
+.. Click *Skip to Deployment* if you already prepared by following the steps on this page.
+
+. Follow the steps in the wizard to create the Connector:
+
+* *Get Ready*: Review what you'll need.
+
+* *AWS Credentials*: Specify your AWS region and then choose an authentication method, which is either an IAM role that BlueXP can assume or an AWS access key and secret key.
++
+TIP: If you choose *Assume Role*, you can create the first set of credentials from the Connector deployment wizard. Any additional set of credentials must be created from the Credentials page. They will then be available from the wizard in a drop-down list. link:task-adding-aws-accounts.html[Learn how to add additional credentials].
+
+* *Details*: Provide details about the Connector.
++
+** Enter a name for the instance.
+** Add custom tags (metadata) to the instance.
+** Choose whether you want BlueXP to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-aws.html[the required permissions].
+** Choose whether you want to encrypt the Connector's EBS disks. You have the option to use the default encryption key or to use a custom key.
+
+* *Network*: Specify a VPC, subnet, and key pair for the instance, choose whether to enable a public IP address, and optionally specify a proxy configuration.
++
+Make sure that you have the correct key pair to use with the Connector. Without a key pair, you will not be able to access the Connector virtual machine.
+
+* *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
+
+* *Review*: Review your selections to verify that your set up is correct.
+
+. Click *Add*.
++
+The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
+
+.After you finish
+
+If you have Amazon S3 buckets in the same AWS account where you created the Connector, you'll see an Amazon S3 working environment appear on the Canvas automatically. link:task-viewing-amazon-s3.html[Learn more about what you can do with this working environment].
+--
+
+.AWS Marketplace
+--
+
+.What you'll need
+
+* A VPC and subnet that meets networking requirements.
++
+link:task-prepare-restricted-mode.html[Learn about networking requirements]
+* An IAM role with an attached policy that includes the required permissions for the Connector.
++
+link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
+* Permissions to subscribe and unsubscribe from the AWS Marketplace for your IAM user.
+
+* A key pair for the EC2 instance.
+
+.Steps
+
+. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^]
+
+. On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
++
+image:screenshot-subscribe-aws.png[A screenshot that shows the Continue to Subscribe and Continue to Configuration buttons on the AWS Marketplace.]
+
+. Change any of the default options and click *Continue to Launch*.
+
+. Under *Choose Action*, select *Launch through EC2* and then click *Launch*.
++
+These steps describe how to launch the instance from the EC2 Console because the console enables you to attach an IAM role to the Connector instance. This isn't possible using the *Launch from Website* action.
+
+. Follow the prompts to configure and deploy the instance:
+
+* *Name and tags*: Enter a name and tags for the instance.
+
+* *Application and OS Image*: Skip this section. The Connector AMI is already selected.
+
+* *Instance type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
++
+link:task-prepare-restricted-mode.html[Review the instance requirements].
+
+* *Key pair (login)*: Select the key pair that you want to use to securely connect to the instance.
+
+* *Network settings*: Edit the network settings as needed:
++
+** Choose the desired VPC and subnet.
+** Specify whether the instance should have a public IP address.
+** Specify firewall settings that enable the required connection methods for the Connector instance: SSH, HTTP, and HTTPS.
+
+* *Configure storage*: Keep the default storage options.
+
+* *Advanced details*: Under *IAM instance profile*, choose the IAM role that includes the required permissions for the Connector.
++
+link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions].
+
+* *Summary*: Review the summary and click *Launch instance*.
+
+.Result
+
+AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
+
+.What's next?
+
+Set up BlueXP.
+--
+
+.Manual install
+--
+.What you'll need
+
+* Root privileges to install the Connector.
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
++
+You have the option to configure a proxy server after installation but doing so requires restarting the Connector.
+
+* A CA-signed certificate, if the proxy server uses HTTPS.
+
+.About this task
+
+* The installation installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
++
+If you receive a message that installing the awscli failed, you can safely ignore the message. The Connector can operate successfully without the tools.
+
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, the Connector automatically updates itself if a new version is available.
+
+.Steps
+
+. Verify that docker is enabled and running.
++
+[source,cli]
+sudo systemctl enable docker && sudo systemctl start docker
+
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
++
+You should download the "online" Connector installer that's meant for use in your network or in the cloud. A separate "offline" installer is available for the Connector, but it's only supported with private mode deployments.
+
+. Assign permissions to run the script.
++
+[source,cli]
+chmod +x OnCommandCloudManager-V3.9.23
+
+. Run the installation script.
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.23 --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
++
+The --proxy and --cacert parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
++
+Here's an example of the command using both optional parameters:
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.23 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
++
+--proxy configures the Connector to use an HTTP or HTTPS proxy server using one of the following formats:
++
+* \http://address:port
+* \http://username:password@address:port
+* \https://address:port
+* \https://username:password@address:port
+
++
+--cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
+
+.Result
+
+The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+.What's next?
+
+Provide BlueXP with the permissions that you previously set up.
+--
+
+====
+// end tabbed area
+
+== Provide permissions
+
+Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use Cloud Volumes ONTAP, Cloud Backup, and Cloud Data Sense from BlueXP.
+
+link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to prepare cloud permissions].
+
+Attach an IAM role that you previously created to the Connector EC2 instance.
+
+These steps apply only if you manually installed the Connector in AWS. For AWS Marketplace deployments, you already associated the Connector instance with an IAM role that includes the required permissions.
+
+.Step
+
+. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
