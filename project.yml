@@ -33,13 +33,13 @@ sidebar:
             - title: Create a Connector
               entries:
                 - title: AWS
-                  url: /task-prepare-connector-aws.html
+                  url: /task-install-connector-aws.html
                 - title: Azure
-                  url: /task-creating-connectors-aws.html
+                  url: /task-install-connector-azure.html
                 - title: Google Cloud
-                  url: /task-creating-connectors-aws.html
+                  url: /task-install-connector-google.html
                 - title: On premises
-                  url: /task-creating-connectors-aws.html
+                  url: /task-install-connector-on-prem.html
             - title: Subscribe to BlueXP
               url: /task-subscribe-restricted-mode.html
             - title: Where to go next
