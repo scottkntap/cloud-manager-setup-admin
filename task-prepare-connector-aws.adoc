@@ -157,7 +157,7 @@ The option that you choose impacts how you provide BlueXP with the required AWS 
 
 // Start snippet: collapsible block (open on page load)
 .Permissions for BlueXP deployment
-[%collapsible%open]
+[%collapsible]
 ====
 BlueXP needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
 
@@ -309,7 +309,7 @@ The AWS user now has the permissions required to create the Connector from BlueX
 
 // Start snippet: collapsible block (open on page load)
 .Permissions for AWS Marketplace deployments
-[%collapsible%open]
+[%collapsible]
 ====
 Create a policy and attach it to an IAM role.
 
@@ -327,7 +327,7 @@ You now have an IAM role that you can associate with the EC2 instance after you 
 
 // Start snippet: collapsible block (open on page load)
 .Permissions for manual installations
-[%collapsible%open]
+[%collapsible]
 ====
 Create a policy and attach it to an IAM role.
 
