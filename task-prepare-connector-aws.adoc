@@ -149,81 +149,16 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 |===
 
-== Prepare networking for accessing the BlueXP console
-
-As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
-
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
-
-| \https://console.bluexp.netapp.com | Your web browser contacts this URL when using the SaaS UI.
-
-a|
-AWS services (amazonaws.com):
-
-* CloudFormation
-* Cognito
-* Elastic Compute Cloud (EC2)
-* Key Management Service (KMS)
-* Security Token Service (STS)
-* Simple Storage Service (S3)
-
-| Required to deploy a Connector from BlueXP in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
-
-|
-\https://management.azure.com
-
-\https://login.microsoftonline.com
-| Required to deploy a Connector from BlueXP in most Azure regions.
-
-|
-\https://management.microsoftazure.de
-
-\https://login.microsoftonline.de
-| Required to deploy a Connector from BlueXP in Azure Germany regions.
-
-|
-\https://management.usgovcloudapi.net
-
-\https://login.microsoftonline.com
-| Required to deploy a Connector from BlueXP in Azure US Gov regions.
-
-|
-\https://www.googleapis.com
-
-| Required to deploy a Connector from BlueXP in Google Cloud.
-
-| \https://signin.b2c.netapp.com
-| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to BlueXP.
-
-|
-\https://netapp-cloud-account.auth0.com
-
-\https://cdn.auth0.com
-
-\https://services.cloud.netapp.com
-| Your web browser connects to these endpoints for centralized user authentication through BlueXP.
-
-| \https://widget.intercom.io
-| For in-product chat that enables you to talk to NetApp cloud experts.
-
-|===
-
 == Prepare cloud permissions
 
 BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use Cloud Backup and Cloud Data Sense. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance after you install it.
 
 The option that you choose impacts how you provide BlueXP with the required AWS permissions that it needs to authenticate and manage resources in AWS. 
 
-// start tabbed area
-
-[role="tabbed-block"]
+// Start snippet: collapsible block (open on page load)
+.Permissions for BlueXP deployment
+[%collapsible%open]
 ====
-
-.BlueXP deployment
---
 BlueXP needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
 
 * Let BlueXP assume an IAM role that has the required permissions
@@ -367,37 +302,43 @@ When you create a Connector, you can provide an AWS access key and secret key fo
 .Result
 
 The AWS user now has the permissions required to create the Connector from BlueXP. You'll need to specify AWS access keys for this user when you're prompted by BlueXP.
---
-
-.Marketplace deployment
---
-Create a policy and attach it to an IAM role.
-
-.Steps
-
-. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
-
-. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
-
-.Result
-
-You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
---
-
-.Manual install
---
-Create a policy and attach it to an IAM role.
-
-.Steps
-
-. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
-
-. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
-
-.Result
-
-You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
---
-
 ====
-// end tabbed area
+// End snippet
+
+// start tabbed area
+
+// Start snippet: collapsible block (open on page load)
+.Permissions for AWS Marketplace deployments
+[%collapsible%open]
+====
+Create a policy and attach it to an IAM role.
+
+.Steps
+
+. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+
+.Result
+
+You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
+====
+// End snippet
+
+// Start snippet: collapsible block (open on page load)
+.Permissions for manual installations
+[%collapsible%open]
+====
+Create a policy and attach it to an IAM role.
+
+.Steps
+
+. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+
+.Result
+
+You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
+====
+// End snippet

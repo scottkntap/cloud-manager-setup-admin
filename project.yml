@@ -25,6 +25,8 @@ sidebar:
         - title: Get started with Standard mode
           entries:
             - title: Quick start
+              url: /task-quick-start-standard-mode.html
+            - title: Networking for console access
               url: /reference-checklist-cm.html
             - title: Sign up and create an account
               url: /TBD.html
