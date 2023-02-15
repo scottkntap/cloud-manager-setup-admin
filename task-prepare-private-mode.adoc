@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-prepare-restricted-mode.html
+permalink: task-prepare-private-mode.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: You should understand what's needed to get up and running with BlueXP in restricted mode so that you can prepare your environment. The preparation involves preparing a Linux host for the Connector, preparing your networking, and setting up cloud permissions.
+summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
 
-= Prepare for deployment in restricted mode
+= Deploy the Connector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,25 +13,33 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-You should understand what's needed to get started with BlueXP in restricted mode so that you can prepare your environment.
+To set up BlueXP in private mode, the first step is to deploy the Connector software either in the cloud or on your premises. When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector. There is no connection to the BlueXP SaaS website.
 
 == Understand your installation options
 
 When you use BlueXP in restricted mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
 
-You can deploy a Connector from the AWS Marketplace, from the Azure Marketplace, or by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
+You can deploy a Connector on-premises or in the cloud by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
+
+=== AWS C2S
+
+If you want to use BlueXP in the https://aws.amazon.com/federal/us-intelligence-community/[AWS Commercial Cloud Services (C2S) environment^] then you should follow separate instructions to get started in that environment. 
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Learn how to get started with Cloud Volumes ONTAP in the AWS C2S environment^]. 
+
+Those instructions include details about how to prepare your environment, install the Connector, and launch Cloud Volumes ONTAP.
 
 == Review host requirements
 
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 
-When you deploy the Connector from the AWS or Azure Marketplace, the image includes the required OS and software components. You simply need to choose an instance type that meets CPU and RAM requirements.
-
 Dedicated host::
 The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
 
 Supported locations::
-In restricted mode, you can only install the Connector in the cloud.
+In private mode, you can install the Connector on-premises or in the cloud.
++
+If you want to create a Cloud Volumes ONTAP system in Google Cloud, then the Connector must be running in Google Cloud--it can't be running on premises.
 
 Supported operating systems::
 * CentOS 7.6, 7.7, 7.8, and 7.9
@@ -82,115 +90,15 @@ There's no incoming traffic to the Connector, unless you initiate it.
 
 HTTP (80) and HTTPS (443) provide access to the BlueXP console. SSH (22) is only needed if you need to connect to the host for troubleshooting. Meanwhile, inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
 
-=== Outbound internet access for manual installs
+=== Outbound internet access
 
-If you plan to manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
-
-* \https://support.netapp.com
-* \https://mysupport.netapp.com
-* \https://cloudmanager.cloud.netapp.com/tenancy
-* \https://stream.cloudmanager.cloud.netapp.com
-* \https://cloudmanagerinfraprod.azurecr.io
-* \https://production-artifacts.cloudmanager.cloud.netapp.com
-* \https://*.blob.core.windows.net
-
-The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
-
-=== Outbound internet access for day-to-day operations
-
-The network location where you deploy the Connector must have an outbound internet connection. The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
-
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
-
-| 
-\https://<region>.amazonaws.com
-
-| To manage resources in AWS.
-
-| 
-\https://management.azure.com
-\https://login.microsoftonline.com
-
-| To manage resources in Azure public regions.
-
-| 
-\https://management.usgovcloudapi.net
-\https://login.microsoftonline.us
-
-| To manage resources in Azure Government regions.
-
-| 
-\https://management.chinacloudapi.cn
-\https://login.chinacloudapi.cn
-
-| To manage resources in Azure China regions.
-
-| 
-\https://www.googleapis.com/compute/v1/
-\https://cloudresourcemanager.googleapis.com/v1/projects
-\https://www.googleapis.com/compute/beta
-\https://storage.googleapis.com/storage/v1
-\https://www.googleapis.com/storage/v1
-\https://iam.googleapis.com/v1
-\https://cloudkms.googleapis.com/v1
-\https://www.googleapis.com/deploymentmanager/v2/projects
-
-| To manage resources in Google Cloud.
-
-| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-
-a| 
-
-\https://*.api.bluexp.netapp.com
-
-\https://api.bluexp.netapp.com
-
-\https://*.cloudmanager.cloud.netapp.com
-
-\https://cloudmanager.cloud.netapp.com
-
-a| To provide SaaS features and services within BlueXP.
-
-NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
-
-| \https://cloudmanagerinfraprod.azurecr.io
-
-\https://*.blob.core.windows.net
-| To upgrade the Connector and its Docker components.
-
-|===
-
-== Prepare networking for accessing the BlueXP console
-
-In restricted mode, the BlueXP user interface is accessible from the Connector. As you use the BlueXP user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
-
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
-
-| \https://signin.b2c.netapp.com
-| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to BlueXP.
-
-|
-\https://netapp-cloud-account.auth0.com
-
-\https://cdn.auth0.com
-
-\https://services.cloud.netapp.com
-| Your web browser connects to these endpoints for centralized user authentication through BlueXP.
-
-| \https://widget.intercom.io
-| For in-product chat that enables you to talk to NetApp cloud experts.
-
-|===
+When BlueXP is operating in private mode, there are no outbound connections from the Connector.
 
 == Prepare cloud permissions
 
-BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use Cloud Backup and Cloud Data Sense. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance after you install it.
+If you are planning to install BlueXP in your cloud provider and create Cloud Volumes ONTAP systems, then BlueXP requires permissions from your cloud provider. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance after you install it.
+
+If you are planning to install the Connector on premises, then cloud permissions aren't needed because there's no connection from BlueXP to a cloud provider.
 
 // start tabbed area
 
