@@ -1,0 +1,262 @@
+---
+sidebar: sidebar
+permalink: task-install-connector-on-prem.html
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+---
+
+= Create a Connector on premises
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Create a Connector on a host running in your corporate network so that BlueXP can...
+
+The contents of this page are specific to getting started with BlueXP in standard mode. link:concept-modes.html[Learn more about supported deployment modes].
+
+== A note about Cloud Volumes ONTAP management
+
+If you plan to use this Connector to manage Cloud Volumes ONTAP systems, then you should understand that a Connector running on premises can only manage Cloud Volumes ONTAP systems running in AWS or Azure. If you want to manage Cloud Volumes ONTAP systems in Google Cloud, then the Connector must be running in Google Cloud as well.
+
+== Set up networking
+
+Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+
+=== Connections to target networks
+
+A Connector requires a network connection to the type of working environment that you're creating and the services that you're planning to enable.
+
+For example, if you want to launch Cloud Volumes ONTAP in the cloud, then you must set up a VPN connection from your corporate network to the virtual network where you plan to launch Cloud Volumes ONTAP.
+
+=== Proxy server
+
+If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+=== Ports
+
+There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages.
+
+* HTTP (80) and HTTPS (443) provide access to the https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. 
+
+* SSH (22) is only needed if you need to connect to the host for troubleshooting. 
+
+* Inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
+
+=== IP address limitation
+
+There's a possible conflict with IP addresses in the 172 range. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html[Learn more about this limitation].
+
+=== Outbound internet access
+
+The network location where you deploy the Connector must have an outbound internet connection.
+
+==== Endpoints contacted during manual installation
+
+If you plan to manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
+
+* \https://support.netapp.com
+* \https://mysupport.netapp.com
+* \https://cloudmanager.cloud.netapp.com/tenancy
+* \https://stream.cloudmanager.cloud.netapp.com
+* \https://cloudmanagerinfraprod.azurecr.io
+* \https://production-artifacts.cloudmanager.cloud.netapp.com
+* \https://*.blob.core.windows.net
+
+The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+
+==== Endpoints contacted for day-to-day operations
+
+The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| 
+\https://<region>.amazonaws.com
+
+| To manage resources in AWS.
+
+| 
+\https://management.azure.com
+\https://login.microsoftonline.com
+
+| To manage resources in Azure public regions.
+
+| 
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.us
+
+| To manage resources in Azure Government regions.
+
+| 
+\https://management.chinacloudapi.cn
+\https://login.chinacloudapi.cn
+
+| To manage resources in Azure China regions.
+
+| 
+\https://www.googleapis.com/compute/v1/
+\https://cloudresourcemanager.googleapis.com/v1/projects
+\https://www.googleapis.com/compute/beta
+\https://storage.googleapis.com/storage/v1
+\https://www.googleapis.com/storage/v1
+\https://iam.googleapis.com/v1
+\https://cloudkms.googleapis.com/v1
+\https://www.googleapis.com/deploymentmanager/v2/projects
+
+| To manage resources in Google Cloud.
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+
+== Review host requirements
+
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
+
+Dedicated host::
+The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
+
+Supported operating systems::
+* CentOS 7.6, 7.7, 7.8, and 7.9
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, and 8.6
++
+The host must be registered with Red Hat Subscription Management. If it's not registered, the host can't access repositories to update required 3rd-party software during Connector installation.
++
+The Connector is supported on English-language versions of these operating systems.
+
+Hypervisor::
+A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux is required. https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
+
+CPU:: 4 cores or 4 vCPUs
+
+RAM:: 14 GB
+
+Disk space in /opt:: 100 GiB of space must be available
+
+Disk space in /var:: 20 GiB of space must be available
+
+Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
+
+== Set up cloud permissions
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.AWS
+--
+Content
+--
+
+.Azure
+--
+Content
+--
+
+.Google Cloud
+--
+???
+--
+
+====
+// end tabbed area
+
+== Install the Connector
+
+Install the Connector in Google Cloud directly from the BlueXP user interface, by using gcloud, or by installing the software on your own Linux host.
+
+.What you'll need
+
+* Root privileges to install the Connector.
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
++
+You have the option to configure a proxy server after installation but doing so requires restarting the Connector.
+
+* A CA-signed certificate, if the proxy server uses HTTPS.
+
+.About this task
+
+* The installation installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
++
+If you receive a message that installing the awscli failed, you can safely ignore the message. The Connector can operate successfully without the tools.
+
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, the Connector automatically updates itself if a new version is available.
+
+.Steps
+
+. Verify that docker is enabled and running.
++
+[source,cli]
+sudo systemctl enable docker && sudo systemctl start docker
+
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
++
+You should download the "online" Connector installer that's meant for use in your network or in the cloud. A separate "offline" installer is available for the Connector, but it's only supported with private mode deployments.
+
+. Assign permissions to run the script.
++
+[source,cli]
+chmod +x OnCommandCloudManager-V3.9.23
+
+. Run the installation script.
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.23 --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
++
+The --proxy and --cacert parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
++
+Here's an example of the command using both optional parameters:
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.23 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
++
+--proxy configures the Connector to use an HTTP or HTTPS proxy server using one of the following formats:
++
+* \http://address:port
+* \http://username:password@address:port
+* \https://address:port
+* \https://username:password@address:port
+
++
+--cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
+
+.Result
+
+The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+.What's next?
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+
+Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use BlueXP services.
