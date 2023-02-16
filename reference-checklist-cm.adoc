@@ -26,7 +26,6 @@ a|
 AWS services (amazonaws.com):
 
 * CloudFormation
-* CloudFormation
 * Cognito
 * Elastic Compute Cloud (EC2)
 * Key Management Service (KMS)
