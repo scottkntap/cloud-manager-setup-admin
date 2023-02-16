@@ -252,7 +252,7 @@ includedPermissions:
 
 The Google Cloud user now has the permissions required to create the Connector.
 
-=== Set up a service account for the Connector
+=== Set up permissions for the Connector
 
 A service account is required to provide the Connector with the permission that it needs to manage resources in Google Cloud. You'll associate this service account with the Connector VM when you create it.
 
@@ -367,8 +367,6 @@ includedPermissions:
 
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^].
 
-. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the BlueXP role to that project^]. You'll need to repeat this step for each project.
-
 .Result
 
 The service account for the Connector VM is set up.
@@ -393,7 +391,14 @@ For more details, refer to https://cloud.google.com/iam/docs/granting-changing-r
 
 === Set up shared VPC permissions
 
-If you are using a shared VPC to deploy resources into a service project, then the following permissions are required. This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
+If you are using a shared VPC to deploy resources into a service project, then you'll need to prepare your permissions. 
+
+// Start snippet: collapsible block (open on page load)
+.View shared VPC permissions
+[%collapsible]
+====
+
+This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
 
 [cols="10,10,10,20,20,30",width=100%,options="header"]
 |===
@@ -443,30 +448,6 @@ Notes:
 . firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let BlueXP create them for you. These permissions reside in the BlueXP account .yaml file. If you are deploying an HA pair using a shared VPC, these permissions will be used to create the firewall rules for VPC1, 2 and 3. For all other deployments, these permissions will also be used to create rules for VPC0.
 
 . For data tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project level. Currently if you assign serviceAccount.user at the project level, the permissions don't show when you query the service account with getIAMPolicy.
-
-// Start snippet: collapsible block (open on page load)
-.Prepare permissions for deployment from BlueXP
-[%collapsible]
-====
-
-====
-// End snippet
-
-// start tabbed area
-
-// Start snippet: collapsible block (open on page load)
-.Prepare permissions for deployment from the AWS Marketplace
-[%collapsible]
-====
-
-====
-// End snippet
-
-// Start snippet: collapsible block (open on page load)
-.Prepare permissions for manual installations
-[%collapsible]
-====
-
 ====
 // End snippet
 
@@ -476,7 +457,7 @@ Several APIs are required to deploy the Connector and Cloud Volumes ONTAP.
 
 .Step
 
-. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^].
+. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^]
 +
 * Cloud Deployment Manager V2 API
 * Cloud Logging API
