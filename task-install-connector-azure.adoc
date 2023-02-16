@@ -1,0 +1,739 @@
+---
+sidebar: sidebar
+permalink: task-install-connector-azure.html
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+---
+
+= Create a Connector in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Deploy a Connector in Microsoft Azure so that BlueXP can manage resources and processes within your public cloud environment.
+
+The contents of this page are specific to getting started with BlueXP in standard mode, in an Azure commercial region. link:concept-modes.html[Learn more about supported deployment modes].
+
+== Installation options
+
+You can choose from the following options to create a Connector in Azure:
+
+* Create the Connector directly from BlueXP (this is the standard option)
+* Create a Connector from the Azure Marketplace
+* Download and manually install the software on your own Linux host
+
+The installation option that you choose impacts how you prepare for installation. This includes how you provide BlueXP with the required permissions that it needs to authenticate and manage resources in Azure. Learn more by reading through the sections below.
+
+== A note about Azure regions
+
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link^]
+
+== Set up networking
+
+Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+
+=== Connections to target networks
+
+A Connector requires a network connection to the type of working environment that you're creating and the services that you're planning to enable.
+
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.
+
+=== Proxy server
+
+If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+=== Ports
+
+There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages.
+
+* HTTP (80) and HTTPS (443) provide access to the https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. 
+
+* SSH (22) is only needed if you need to connect to the host for troubleshooting. 
+
+* Inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
+
+=== IP address limitation
+
+There's a possible conflict with IP addresses in the 172 range. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html[Learn more about this limitation].
+
+=== Outbound internet access
+
+The network location where you deploy the Connector must have an outbound internet connection.
+
+==== Endpoints contacted during manual installation
+
+If you plan to manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
+
+* \https://support.netapp.com
+* \https://mysupport.netapp.com
+* \https://cloudmanager.cloud.netapp.com/tenancy
+* \https://stream.cloudmanager.cloud.netapp.com
+* \https://cloudmanagerinfraprod.azurecr.io
+* \https://production-artifacts.cloudmanager.cloud.netapp.com
+* \https://*.blob.core.windows.net
+
+The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+
+==== Endpoints contacted for day-to-day operations
+
+The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| 
+\https://management.azure.com
+\https://login.microsoftonline.com
+
+| To manage resources in Azure public regions.
+
+| 
+\https://management.chinacloudapi.cn
+\https://login.chinacloudapi.cn
+
+| To manage resources in Azure China regions.
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+
+== Review host requirements
+
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
+
+When you deploy the Connector from BlueXP, the image includes the required OS and software components.
+
+Dedicated host::
+The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
+
+Supported locations::
+In restricted mode, you can only install the Connector in the cloud.
+
+Supported operating systems::
+* CentOS 7.6, 7.7, 7.8, and 7.9
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, and 8.6
++
+The host must be registered with Red Hat Subscription Management. If it's not registered, the host can't access repositories to update required 3rd-party software during Connector installation.
++
+The Connector is supported on English-language versions of these operating systems.
+
+Hypervisor::
+A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux is required. https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
+
+CPU:: 4 cores or 4 vCPUs
+
+RAM:: 14 GB
+
+Azure VM size::
+An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
+
+Disk space in /opt:: 100 GiB of space must be available
+
+Disk space in /var:: 20 GiB of space must be available
+
+Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
+
+== Set up cloud permissions
+
+To deploy a Connector, you need to provide BlueXP with a login that has the required permissions to create the Connector VM in Azure. You have two options:
+
+. Sign in with your Microsoft account when prompted. This account must have specific Azure permissions. This is the default option.
++
+<<Create a Connector using your Azure account,Follow the steps below to get started>>.
+
+. Provide details about an Azure AD service principal. This service principal also requires specific permissions.
++
+<<Create a Connector using a service principal,Follow the steps below to get started>>.
+
+=== Set up permissions for your Azure account
+
+Before you can deploy a Connector from BlueXP, you need to ensure that your Azure account has the correct permissions.
+
+.Steps
+
+. Copy the required permissions for a new custom role in Azure and save them in a JSON file.
++
+NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When BlueXP creates the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
++
+[source,json]
+{
+    "Name": "Azure SetupAsService",
+    "Actions": [
+        "Microsoft.Compute/disks/delete",
+        "Microsoft.Compute/disks/read",
+        "Microsoft.Compute/disks/write",
+        "Microsoft.Compute/locations/operations/read",
+        "Microsoft.Compute/operations/read",
+        "Microsoft.Compute/virtualMachines/instanceView/read",
+        "Microsoft.Compute/virtualMachines/read",
+        "Microsoft.Compute/virtualMachines/write",
+        "Microsoft.Compute/virtualMachines/delete",
+        "Microsoft.Compute/virtualMachines/extensions/write",
+        "Microsoft.Compute/virtualMachines/extensions/read",
+        "Microsoft.Compute/availabilitySets/read",
+        "Microsoft.Network/locations/operationResults/read",
+        "Microsoft.Network/locations/operations/read",
+        "Microsoft.Network/networkInterfaces/join/action",
+        "Microsoft.Network/networkInterfaces/read",
+        "Microsoft.Network/networkInterfaces/write",
+        "Microsoft.Network/networkInterfaces/delete",
+        "Microsoft.Network/networkSecurityGroups/join/action",
+        "Microsoft.Network/networkSecurityGroups/read",
+        "Microsoft.Network/networkSecurityGroups/write",
+        "Microsoft.Network/virtualNetworks/checkIpAddressAvailability/read",
+        "Microsoft.Network/virtualNetworks/read",
+        "Microsoft.Network/virtualNetworks/subnets/join/action",
+        "Microsoft.Network/virtualNetworks/subnets/read",
+        "Microsoft.Network/virtualNetworks/subnets/virtualMachines/read",
+        "Microsoft.Network/virtualNetworks/virtualMachines/read",
+        "Microsoft.Network/publicIPAddresses/write",
+        "Microsoft.Network/publicIPAddresses/read",
+        "Microsoft.Network/publicIPAddresses/delete",
+        "Microsoft.Network/networkSecurityGroups/securityRules/read",
+        "Microsoft.Network/networkSecurityGroups/securityRules/write",
+        "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+        "Microsoft.Network/publicIPAddresses/join/action",
+        "Microsoft.Network/locations/virtualNetworkAvailableEndpointServices/read",
+        "Microsoft.Network/networkInterfaces/ipConfigurations/read",
+        "Microsoft.Resources/deployments/operations/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Resources/deployments/delete",
+        "Microsoft.Resources/deployments/cancel/action",
+        "Microsoft.Resources/deployments/validate/action",
+        "Microsoft.Resources/resources/read",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/delete",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/write",
+        "Microsoft.Authorization/roleDefinitions/write",
+        "Microsoft.Authorization/roleAssignments/write",
+        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",
+        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write",
+        "Microsoft.Network/networkSecurityGroups/delete",
+        "Microsoft.Storage/storageAccounts/delete",
+        "Microsoft.Storage/storageAccounts/write",
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/deployments/operationStatuses/read",
+        "Microsoft.Authorization/roleAssignments/read"
+    ],
+    "NotActions": [],
+    "AssignableScopes": [],
+    "Description": "Azure SetupAsService",
+    "IsCustom": "true"
+}
+
+. Modify the JSON by adding your Azure subscription ID to the assignable scope.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz"
+],
+
+. Use the JSON file to create a custom role in Azure.
++
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
+
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Enter the following Azure CLI command:
++
+[source,azurecli]
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+
++
+You should now have a custom role called _Azure SetupAsService_.
+
+. Assign the role to the user who will deploy the Connector from BlueXP:
+
+.. Open the *Subscriptions* service and select the user's subscription.
+
+.. Click *Access control (IAM)*.
+
+.. Click *Add* > *Add role assignment* and then add the permissions:
+
+* Select the *Azure SetupAsService* role and click *Next*.
++
+NOTE: Azure SetupAsService is the default name provided in the Connector deployment policy for Azure. If you chose a different name for the role, then select that name instead.
+
+* Keep *User, group, or service principal* selected.
+
+* Click *Select members*, choose your user account, and click *Select*.
+
+* Click *Next*.
+
+* Click *Review + assign*.
+
+.Result
+
+The Azure user now has the permissions required to deploy the Connector from BlueXP.
+
+=== Set up permissions using a service principal
+
+Rather than logging in with you Azure account, you also have the option to provide BlueXP with the credentials for an Azure service principal that has the required permissions.
+
+Create and set up a service principal in Azure Active Directory and obtain the Azure credentials that BlueXP needs.
+
+.Steps
+
+. <<Create an Azure Active Directory application>>.
+
+. <<Assign the application to a role>>.
+
+. <<Add Windows Azure Service Management API permissions>>.
+
+. <<Get the application ID and directory ID>>.
+
+. <<Create a client secret>>.
+
+==== Create an Azure Active Directory application
+
+Create an Azure Active Directory (AD) application and service principal that BlueXP can use to deploy the Connector.
+
+.Before you begin
+
+You must have the right permissions in Azure to create an Active Directory application and to assign the application to a role. For details, refer to https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/[Microsoft Azure Documentation: Required permissions^].
+
+.Steps
+. From the Azure portal, open the *Azure Active Directory* service.
++
+image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Azure.]
+
+. In the menu, click *App registrations*.
+
+. Click *New registration*.
+
+. Specify details about the application:
+
+* *Name*: Enter a name for the application.
+* *Account type*: Select an account type (any will work with BlueXP).
+* *Redirect URI*: You can leave this field blank.
+
+. Click *Register*.
+
+.Result
+
+You've created the AD application and service principal.
+
+==== Assign the application to a role
+
+You must bind the service principal to the Azure subscription in which you plan to deploy the Connector and assign it the custom "Azure SetupAsService" role.
+
+.Steps
+
+. Copy the required permissions for a new custom role in Azure and save them in a JSON file.
++
+NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When BlueXP creates the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
++
+[source,json]
+{
+    "Name": "Azure SetupAsService",
+    "Actions": [
+        "Microsoft.Compute/disks/delete",
+        "Microsoft.Compute/disks/read",
+        "Microsoft.Compute/disks/write",
+        "Microsoft.Compute/locations/operations/read",
+        "Microsoft.Compute/operations/read",
+        "Microsoft.Compute/virtualMachines/instanceView/read",
+        "Microsoft.Compute/virtualMachines/read",
+        "Microsoft.Compute/virtualMachines/write",
+        "Microsoft.Compute/virtualMachines/delete",
+        "Microsoft.Compute/virtualMachines/extensions/write",
+        "Microsoft.Compute/virtualMachines/extensions/read",
+        "Microsoft.Compute/availabilitySets/read",
+        "Microsoft.Network/locations/operationResults/read",
+        "Microsoft.Network/locations/operations/read",
+        "Microsoft.Network/networkInterfaces/join/action",
+        "Microsoft.Network/networkInterfaces/read",
+        "Microsoft.Network/networkInterfaces/write",
+        "Microsoft.Network/networkInterfaces/delete",
+        "Microsoft.Network/networkSecurityGroups/join/action",
+        "Microsoft.Network/networkSecurityGroups/read",
+        "Microsoft.Network/networkSecurityGroups/write",
+        "Microsoft.Network/virtualNetworks/checkIpAddressAvailability/read",
+        "Microsoft.Network/virtualNetworks/read",
+        "Microsoft.Network/virtualNetworks/subnets/join/action",
+        "Microsoft.Network/virtualNetworks/subnets/read",
+        "Microsoft.Network/virtualNetworks/subnets/virtualMachines/read",
+        "Microsoft.Network/virtualNetworks/virtualMachines/read",
+        "Microsoft.Network/publicIPAddresses/write",
+        "Microsoft.Network/publicIPAddresses/read",
+        "Microsoft.Network/publicIPAddresses/delete",
+        "Microsoft.Network/networkSecurityGroups/securityRules/read",
+        "Microsoft.Network/networkSecurityGroups/securityRules/write",
+        "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+        "Microsoft.Network/publicIPAddresses/join/action",
+        "Microsoft.Network/locations/virtualNetworkAvailableEndpointServices/read",
+        "Microsoft.Network/networkInterfaces/ipConfigurations/read",
+        "Microsoft.Resources/deployments/operations/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Resources/deployments/delete",
+        "Microsoft.Resources/deployments/cancel/action",
+        "Microsoft.Resources/deployments/validate/action",
+        "Microsoft.Resources/resources/read",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/delete",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/write",
+        "Microsoft.Authorization/roleDefinitions/write",
+        "Microsoft.Authorization/roleAssignments/write",
+        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",
+        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write",
+        "Microsoft.Network/networkSecurityGroups/delete",
+        "Microsoft.Storage/storageAccounts/delete",
+        "Microsoft.Storage/storageAccounts/write",
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/deployments/operationStatuses/read",
+        "Microsoft.Authorization/roleAssignments/read"
+    ],
+    "NotActions": [],
+    "AssignableScopes": [],
+    "Description": "Azure SetupAsService",
+    "IsCustom": "true"
+}
+
+. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+
+. Use the JSON file to create a custom role in Azure.
++
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
+
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Enter the following Azure CLI command:
++
+[source,azurecli]
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+
++
+You should now have a custom role called _Azure SetupAsService_.
+
+. Assign the application to the role:
+
+.. From the Azure portal, open the *Subscriptions* service.
+
+.. Select the subscription.
+
+.. Click *Access control (IAM) > Add > Add role assignment*.
+
+.. In the *Role* tab, select the *Azure SetupAsService* role and click *Next*.
+
+.. In the *Members* tab, complete the following steps:
+
+* Keep *User, group, or service principal* selected.
+* Click *Select members*.
++
+image:screenshot-azure-service-principal-role.png[A screenshot of the Azure portal that shows the Members tab when adding a role to an application.]
+* Search for the name of the application.
++
+Here's an example:
++
+image:screenshot_azure_service_principal_role.png[A screenshot of the Azure portal that shows the Add role assignment form in the Azure portal.]
+
+* Select the application and click *Select*.
+* Click *Next*.
+
+.. Click *Review + assign*.
++
+The service principal now has the required Azure permissions to deploy the Connector.
+
+==== Add Windows Azure Service Management API permissions
+
+The service principal must have "Windows Azure Service Management API" permissions.
+
+.Steps
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Click *API permissions > Add a permission*.
+
+. Under *Microsoft APIs*, select *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal that shows the Azure Service Management API permissions.]
+
+. Click *Access Azure Service Management as organization users* and then click *Add permissions*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
+
+[[ids]]
+==== Get the application ID and directory ID
+
+When you create the Connector from BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. BlueXP uses the IDs to programmatically sign in.
+
+.Steps
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Copy the *Application (client) ID* and the *Directory (tenant) ID*.
++
+image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
+
+==== Create a client secret
+
+You need to create a client secret and then provide BlueXP with the value of the secret so BlueXP can use it to authenticate with Azure AD.
+
+.Steps
+
+. Open the *Azure Active Directory* service.
+
+. Click *App registrations* and select your application.
+
+. Click *Certificates & secrets > New client secret*.
+
+. Provide a description of the secret and a duration.
+
+. Click *Add*.
+
+. Copy the value of the client secret.
++
+image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that shows a client secret for the Azure AD service principal.]
+
+.Result
+
+Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you create the Connector.
+
+== Install the Connector
+
+Install the Connector in Google Cloud directly from the BlueXP user interface, by using gcloud, or by installing the software on your own Linux host.
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.BlueXP
+--
+.What you'll need
+
+* An Azure subscription.
+
+* A VNet and subnet in your Azure region of choice.
+
+* Details about a proxy server, if your organization requires a proxy for all outgoing internet traffic:
+
+** IP address
+** Credentials
+** HTTPS certificate
+
+* If you don't want BlueXP to automatically create an Azure role for the Connector, then you'll need to create your own link:reference-permissions-azure.html[using the policy on this page].
++
+These permissions are for the Connector instance itself. It's a different set of permissions than what you previously set up to simply deploy the Connector.
+
+.Steps
+
+. If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
++
+image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
+
+. Choose *Microsoft Azure* as your cloud provider.
+
+. On the *Deploying a Connector* page:
+
+.. Under *Authentication*, select the authentication option that matches how you set up Azure permissions:
++
+* *Azure user account* to log in to your Microsoft account, which should have the required permissions.
++
+The form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
++
+TIP: If you're already logged in to an Azure account, then BlueXP will automatically use that account. If you have multiple accounts, then you might need to log out first to ensure that you're using the right account.
+
+* *Active Directory service principal* to enter information about the Azure Active Directory service principal that grants the required permissions:
++
+** Application (client) ID: See <<Get the application ID and directory ID>>.
+** Directory (tenant) ID: See <<Get the application ID and directory ID>>.
+** Client Secret: See <<Create a client secret>>.
+
+. Follow the steps in the wizard to create the Connector:
+
+* *VM Authentication*: Choose an Azure subscription, a location, a new resource group or an existing resource group, and then choose an authentication method.
+
+* *Details*: Enter a name for the instance, specify tags, and choose whether you want BlueXP to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-azure.html[the required permissions].
++
+Note that you can choose the subscriptions associated with this role. Each subscription that you choose provides the Connector with permissions to deploy Cloud Volumes ONTAP in those subscriptions.
+
+* *Network*: Choose a VNet and subnet, whether to enable a public IP address, and optionally specify a proxy configuration.
+
+* *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
+
+* *Review*: Review your selections to verify that your set up is correct.
+
+. Click *Add*.
++
+The virtual machine should be ready in about 7 minutes. You should stay on the page until the process is complete.
+
+.After you finish
+
+If you have Azure Blob storage in the same Azure account where you created the Connector, you'll see an Azure Blob working environment appear on the Canvas automatically. link:task-viewing-azure-blob.html[Learn more about what you can do with this working environment].
+--
+
+.Azure Marketplace
+--
+.Steps
+
+. Go to the NetApp Connector VM page in the Azure Marketplace.
++
+https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager[Azure Marketplace page for commercial regions^]
+
+. Click *Get it now* and then click *Continue*.
+
+. From the Azure portal, click *Create* and follow the steps to configure the virtual machine.
++
+Note the following as you configure the VM:
+
+* The Connector can perform optimally with either HDD or SSD disks.
+
+* Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
++
+link:task-installing-linux.html[Review the VM requirements].
+
+* For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
++
+link:reference-ports-azure.html[Learn more about security group rules for the Connector].
+
+* Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
++
+This setting is important because a managed identity allows the Connector virtual machine to identify itself to Azure Active Directory without providing any credentials. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[Learn more about managed identities for Azure resources^].
+
+. On the *Review + create* page, review your selections and click *Create* to start the deployment.
++
+Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
+
+. Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
++
+https://_ipaddress_
+
+. After you log in, set up the Connector:
+.. Specify the NetApp account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
+.. Enter a name for the system.
+
+.Result
+
+The Connector is now installed and set up with your NetApp account.
+
+If the Connector is in an Azure commercial region, open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
+
+If the Connector is in an Azure Government region, you can use BlueXP by opening your web browser and connecting to the IP address of the Connector instance: https://_ipaddress_
+
+Since the Connector was deployed in a Government region, it's not accessible from https://console.bluexp.netapp.com.
+--
+
+.Manual install
+--
+.What you'll need
+
+* Root privileges to install the Connector.
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
++
+You have the option to configure a proxy server after installation but doing so requires restarting the Connector.
+
+* A CA-signed certificate, if the proxy server uses HTTPS.
+
+.About this task
+
+* The installation installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
++
+If you receive a message that installing the awscli failed, you can safely ignore the message. The Connector can operate successfully without the tools.
+
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, the Connector automatically updates itself if a new version is available.
+
+.Steps
+
+. Verify that docker is enabled and running.
++
+[source,cli]
+sudo systemctl enable docker && sudo systemctl start docker
+
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
++
+You should download the "online" Connector installer that's meant for use in your network or in the cloud. A separate "offline" installer is available for the Connector, but it's only supported with private mode deployments.
+
+. Assign permissions to run the script.
++
+[source,cli]
+chmod +x OnCommandCloudManager-V3.9.23
+
+. Run the installation script.
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.23 --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
++
+The --proxy and --cacert parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
++
+Here's an example of the command using both optional parameters:
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.23 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
++
+--proxy configures the Connector to use an HTTP or HTTPS proxy server using one of the following formats:
++
+* \http://address:port
+* \http://username:password@address:port
+* \https://address:port
+* \https://username:password@address:port
+
++
+--cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
+
+.Result
+
+The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+.What's next?
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+
+Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use BlueXP services.
+
+====
+
+// end tabbed area

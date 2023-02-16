@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-checklist-cm.html
 keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: Use this checklist to understand what's needed to get up and running with BlueXP in a typical deployment where the Connector has outbound internet access.
+summary: As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 ---
 
 = Prepare networking for user access to BlueXP console
@@ -51,12 +51,6 @@ AWS services (amazonaws.com):
 | Required to deploy a Connector from BlueXP in Azure Germany regions.
 
 |
-\https://management.usgovcloudapi.net
-
-\https://login.microsoftonline.com
-| Required to deploy a Connector from BlueXP in Azure US Gov regions.
-
-|
 \https://www.googleapis.com
 
 | Required to deploy a Connector from BlueXP in Google Cloud.
@@ -74,125 +68,5 @@ AWS services (amazonaws.com):
 
 | \https://widget.intercom.io
 | For in-product chat that enables you to talk to NetApp cloud experts.
-
-|===
-
-Outbound networking for a Connector::
-After logging in to BlueXP, a BlueXP Account Admin will need to deploy a _Connector_ in a cloud provider or in your on-premises network. The Connector enables BlueXP to manage resources and processes within your public cloud environment. Note that a Connector is required for most, but not all services and features in BlueXP. link:concept-connectors.html[Learn more about Connectors and how they work].
-+
-* The network location where you deploy the Connector must have an outbound internet connection.
-+
-The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
-+
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
-
-| 
-\https://<region>.amazonaws.com
-
-| To manage resources in AWS.
-
-| 
-\https://management.azure.com
-\https://login.microsoftonline.com
-
-| To manage resources in Azure public regions.
-
-| 
-\https://management.usgovcloudapi.net
-\https://login.microsoftonline.us
-
-| To manage resources in Azure Government regions.
-
-| 
-\https://management.azure.microsoft.scloud
-\https://login.microsoftonline.microsoft.scloud
-
-| To manage resources in the Azure IL6 region.
-
-| 
-\https://management.chinacloudapi.cn
-\https://login.chinacloudapi.cn
-
-| To manage resources in Azure China regions.
-
-| 
-\https://www.googleapis.com/compute/v1/
-\https://cloudresourcemanager.googleapis.com/v1/projects
-\https://www.googleapis.com/compute/beta
-\https://storage.googleapis.com/storage/v1
-\https://www.googleapis.com/storage/v1
-\https://iam.googleapis.com/v1
-\https://cloudkms.googleapis.com/v1
-\https://www.googleapis.com/deploymentmanager/v2/projects
-
-| To manage resources in Google Cloud.
-
-| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-
-a| 
-
-\https://*.api.bluexp.netapp.com
-
-\https://api.bluexp.netapp.com
-
-\https://*.cloudmanager.cloud.netapp.com
-
-\https://cloudmanager.cloud.netapp.com
-
-a| To provide SaaS features and services within BlueXP.
-
-NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
-
-| \https://cloudmanagerinfraprod.azurecr.io
-
-\https://*.blob.core.windows.net
-| To upgrade the Connector and its Docker components.
-
-|===
-
-* If you choose to manually install the Connector on your own Linux host (and not do so directly from the BlueXP interface), the installer for the Connector requires access to several endpoints during the installation process:
-+
-link:task-installing-linux.html[Review the list of endpoints].
-
-* There's no incoming traffic to the Connector, unless you initiate it.
-+
-HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in rare circumstances. SSH (22) is only needed if you need to connect to the host for troubleshooting. Meanwhile, inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
-
-Cloud provider permissions::
-You need an account that has permissions to deploy the Connector in your cloud provider directly from BlueXP.
-+
-NOTE: There are alternate ways to create a Connector: you can create a Connector from the link:task-launching-aws-mktp.html[AWS Marketplace], the link:task-launching-azure-mktp.html[Azure Marketplace], or you can link:task-installing-linux.html[manually install the software].
-+
-[cols="15,55,30",options="header"]
-|===
-| Location
-| High-level steps
-| Detailed steps
-
-| AWS
-a|
-. Use a JSON file that includes the required permissions to create an IAM policy in AWS.
-. Attach the policy to an IAM role or IAM user.
-. When you create the Connector, provide BlueXP with the ARN of the IAM role or the AWS access key and secret key for the IAM user.
-| link:task-creating-connectors-aws.html[Click here to view detailed steps].
-
-| Azure
-a|
-. Use a JSON file that includes the required permissions to create a custom role in Azure.
-. Assign the role to the user who will create the Connector from BlueXP.
-. When you create the Connector, log in with the Microsoft account that has the required permissions (the login prompt that is owned and hosted by Microsoft).
-| link:task-creating-connectors-azure.html[Click here to view detailed steps].
-
-| Google Cloud
-a|
-. Use a YAML file that includes the required permissions to create a custom role in Google Cloud.
-. Attach that role to the user who will create the Connector from BlueXP.
-. If you plan to use Cloud Volumes ONTAP, set up a service account that has the required permissions.
-. Enable Google Cloud APIs.
-. When you create the Connector, log in with the Google account that has the required permissions (the login prompt is owned and hosted by Google).
-| link:task-creating-connectors-gcp.html[Click here to view detailed steps].
 
 |===

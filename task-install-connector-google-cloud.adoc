@@ -147,12 +147,6 @@ CPU:: 4 cores or 4 vCPUs
 
 RAM:: 14 GB
 
-AWS EC2 instance type::
-An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.
-
-Azure VM size::
-An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
-
 GCP machine type::
 An instance type that meets the CPU and RAM requirements above. We recommend n2-standard-4.
 +
