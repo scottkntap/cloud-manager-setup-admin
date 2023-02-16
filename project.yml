@@ -38,7 +38,7 @@ sidebar:
                 - title: Azure
                   url: /task-install-connector-azure.html
                 - title: Google Cloud
-                  url: /task-install-connector-google.html
+                  url: /task-install-connector-google-cloud.html
                 - title: On premises
                   url: /task-install-connector-on-prem.html
             - title: Subscribe to BlueXP
