@@ -164,7 +164,7 @@ You need to set up AWS permissions for BlueXP as follows:
 
 * If you want to deploy the Connector directly from BlueXP, you'll need to set up cloud permissions so that BlueXP can authenticate with AWS.
 
-* If you intend to deploy the Connector from the AWS Marketplace or by manually installing the Connector, then you'll need to set up an IAM role that you can associate with the Connector instance.
+* If you intend to deploy the Connector from the AWS Marketplace or by manually installing the Connector, then you'll need to set up an IAM role that you can associate with the Connector after you install it.
 
 // Start snippet: collapsible block (open on page load)
 .Prepare permissions for deployment from BlueXP
