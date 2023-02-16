@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-managing-netapp-accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, member, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
-summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
+summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, and Connectors.
 ---
 
 = Managing your NetApp account
@@ -13,7 +13,7 @@ summary: After you perform initial setup, you can administer your account settin
 :imagesdir: ./media/
 
 [.lead]
-link:task-setting-up-netapp-accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, Connectors, and subscriptions.
+link:task-setting-up-netapp-accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, and Connectors.
 
 link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
 
@@ -226,28 +226,6 @@ link:concept-netapp-accounts.html#users-workspaces-and-service-connectors[Learn 
 
 . Select the workspaces to associate with the Connector and click *Apply*.
 
-== Managing subscriptions
-
-After you subscribe from a cloud provider's marketplace, each subscription is available from the Account Settings widget. You have the option to rename a subscription and to disassociate the subscription from one or more accounts.
-
-For example, let's say that you have two accounts and each is billed through separate subscriptions. You might disassociate a subscription from one of the accounts so the users in that account don't accidentally choose the wrong subscription when creating a Cloud Volume ONTAP working environment.
-
-link:concept-netapp-accounts.html#subscriptions[Learn more about subscriptions].
-
-.Steps
-
-. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
-
-. Click *Subscriptions*.
-+
-You'll only see the subscriptions that are associated with the account that you're currently viewing.
-
-. Click the action menu in the row that corresponds to the subscription that you want to manage.
-+
-image:screenshot_subscription_menu.gif[A screenshot of the action menu for a subscription.]
-
-. Choose to rename the subscription or to manage the accounts that are associated with the subscription.
-
 == Changing your account name
 
 Change you account name at any time to change it to something meaningful for you.
@@ -288,10 +266,13 @@ We don't recommend disabling the SaaS platform unless you need to in order to co
 
 The following services aren't available from BlueXP if you disable the SaaS platform:
 
-*	Cloud Data Sense
-*	Kubernetes
-*	Cloud Tiering
-*	Global File Cache
+* Cloud Backup
++
+Cloud Backup is supported in Government regions when the SaaS platform is disabled, but not in commercial regions when the SaaS platform is disabled
+* Cloud Data Sense
+* Kubernetes
+* Cloud Tiering
+* Global File Cache
 
 If you do disable the SaaS platform, you'll need to perform all tasks from link:task-managing-connectors.html#access-the-local-ui[the local user interface that is available on a Connector].
 

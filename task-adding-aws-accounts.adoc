@@ -58,6 +58,8 @@ NOTE: If you deployed a Connector from BlueXP, BlueXP automatically added AWS cr
 
 You can set up a trust relationship between the source AWS account in which you deployed the Connector instance and other AWS accounts by using IAM roles. You would then provide BlueXP with the ARN of the IAM roles from the trusted accounts.
 
+If the Connector is installed on premises, you can't use this authentication method. You must use AWS keys.
+
 .Steps
 
 . Go to the IAM console in the target account in which you want to provide the Connector with permissions.
@@ -79,6 +81,8 @@ The account now has the required permissions. <<add-the-credentials,You can now 
 ==== Grant permissions by providing AWS keys
 
 If you want to provide BlueXP with AWS keys for an IAM user, then you need to grant the required permissions to that user. The BlueXP IAM policy defines the AWS actions and resources that BlueXP is allowed to use.
+
+You must use this authentication method if the Connector is installed on premises. You can't use an IAM role.
 
 .Steps
 
@@ -205,7 +209,27 @@ You need to create a Connector before you can change BlueXP settings. link:conce
 +
 image:screenshot_associate_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
-. Select an existing subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
+. To associate the credentials with an existing subscription, select the subscription from the down-down list and click *Associate*.
+
+. To associate the credentials with a new subscription, click *Add Subscription > Continue* and follow the steps in the AWS Marketplace:
+
+.. Click *View purchase options*.
+.. Click *Subscribe*.
+.. Click *Set up your account*.
++
+You'll be redirected to the BlueXP website.
+.. From the *Subscription Assignment* page:
++
+* Select the NetApp accounts that you'd like to associate this subscription with.
+* In the *Replace existing subscription* field, choose whether you'd like to automatically replace the existing subscription for one account with this new subscription.
++
+BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn't ever associated with a subscription, then this new subscription won't be associated with those credentials.
++
+For all other accounts, you'll need to manually associate the subscription by repeating these steps.
+
+* Click *Save*.
++
+The following video shows the steps to subscribe from the Google Cloud Marketplace:
 +
 video::video_subscribing_aws.mp4[width=848, height=480]
 

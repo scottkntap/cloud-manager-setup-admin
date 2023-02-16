@@ -35,7 +35,7 @@ To launch the Connector in AWS, BlueXP needs to authenticate with AWS by either 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
 
 [role="quick-margin-para"]
-You'll need a VPC and subnet with outbound internet access to specific endpoints. If an HTTP proxy is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
+You'll need a VPC and subnet with outbound internet access to specific endpoints. If a proxy server is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
 
 [role="quick-margin-para"]
 <<Set up networking,View networking requirements>>.
@@ -196,7 +196,68 @@ The AWS user now has the permissions required to create the Connector from BlueX
 
 == Set up networking
 
-include::_include/connector-networking.adoc[]
+Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+
+=== Connection to target networks
+
+A Connector requires a network connection to the type of working environment that you're creating and the services that you're planning to enable.
+
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.
+
+=== Outbound internet access
+
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
+
+//tag::endpoints[]
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| 
+\https://<region>.amazonaws.com
+
+| To manage resources in AWS.
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+//end::endpoints[]
+
+=== Proxy server
+
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+=== Security group
+
+There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
+
+=== IP address limitation
+
+There's a possible conflict with IP addresses in the 172 range. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html[Learn more about this limitation].
 
 == Create a Connector
 
@@ -231,7 +292,7 @@ TIP: If you choose *Assume Role*, you can create the first set of credentials fr
 ** Choose whether you want BlueXP to create a new role that has the required permissions, or if you want to select an existing role that you set up with link:reference-permissions-aws.html[the required permissions].
 ** Choose whether you want to encrypt the Connector's EBS disks. You have the option to use the default encryption key or to use a custom key.
 
-* *Network*: Specify a VPC, subnet, and key pair for the instance, choose whether to enable a public IP address, and optionally specify a proxy configuration.
+* *Network*: Specify a VPC, subnet, and key pair for the instance, choose whether to enable a public IP address, and optionally specify a proxy configuration (HTTP and HTTPS are supported).
 +
 Make sure that you have the correct key pair to use with the Connector. Without a key pair, you will not be able to access the Connector virtual machine.
 
