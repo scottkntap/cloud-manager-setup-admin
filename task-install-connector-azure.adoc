@@ -165,17 +165,23 @@ Docker Engine:: Docker Engine version 19.3.1 or later is required on the host be
 
 == Set up cloud permissions
 
-To deploy a Connector, you need to provide BlueXP with a login that has the required permissions to create the Connector VM in Azure. You have two options:
+How you set up Azure permissions depends on how you intend to install the Connector. Expand the section that matches your chosen installation option.
+
+// Start snippet: collapsible block (open on page load)
+.Prepare permissions for deployment from BlueXP
+[%collapsible]
+====
+To create a Connector from BlueXP, you need to provide BlueXP with a login that has the required permissions to create the Connector VM in Azure. You have two options:
 
 . Sign in with your Microsoft account when prompted. This account must have specific Azure permissions. This is the default option.
 +
-<<Create a Connector using your Azure account,Follow the steps below to get started>>.
+<<Set up permissions for an Azure account,Follow the steps below to get started>>.
 
 . Provide details about an Azure AD service principal. This service principal also requires specific permissions.
 +
-<<Create a Connector using a service principal,Follow the steps below to get started>>.
+<<Set up permissions using a service principal,Follow the steps below to get started>>.
 
-=== Set up permissions for your Azure account
+=== Set up permissions for an Azure account
 
 Before you can deploy a Connector from BlueXP, you need to ensure that your Azure account has the correct permissions.
 
@@ -538,6 +544,98 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 .Result
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you create the Connector.
+====
+// End snippet
+
+// Start snippet: collapsible block (open on page load)
+.Prepare permissions for deployment from the Azure Marketplace
+[%collapsible]
+====
+Create a custom role with the required permissions.
+
+.Steps
+
+. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
+
+. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
++
+You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+
+. Use the JSON file to create a custom role in Azure.
++
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
++
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Use the Azure CLI to create the custom role:
++
+[source,azurecli]
+az role definition create --role-definition Connector_Policy.json
++
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
+
+.Result
+
+You now have an Azure custom role that you can assign to the virtual machine after you deploy the Connector.
+====
+// End snippet
+
+// Start snippet: collapsible block (open on page load)
+.Prepare permissions for manual installation
+[%collapsible]
+====
+Create a custom role with the required permissions.
+
+.Steps
+
+. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
+
+. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
++
+You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+
+. Use the JSON file to create a custom role in Azure.
++
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
++
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Use the Azure CLI to create the custom role:
++
+[source,azurecli]
+az role definition create --role-definition Connector_Policy.json
++
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
+
+.Result
+
+You now have an Azure custom role that you can assign to the virtual machine after you deploy the Connector.
+====
+// End snippet
 
 == Install the Connector
 
