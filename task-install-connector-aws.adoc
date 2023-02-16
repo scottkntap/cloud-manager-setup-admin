@@ -27,17 +27,21 @@ You can choose from the following options to create a Connector in AWS:
 
 The installation option that you choose impacts how you prepare for installation. This includes how you provide BlueXP with the required permissions that it needs to authenticate and manage resources in AWS. Learn more by reading through the sections below.
 
-== Set up networking
+== Prepare for installation
+
+You should understand what's required to install a Connector in AWS so that you can prepare your environment.
+
+=== Set up networking
 
 Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
 
-=== Connections to target networks
+==== Connections to target networks
 
 A Connector requires a network connection to the type of working environment that you're creating and the services that you're planning to enable.
 
 For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.
 
-=== Proxy server
+==== Proxy server
 
 If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
 
@@ -45,7 +49,7 @@ If your organization requires deployment of an HTTP proxy for all outgoing inter
 * Credentials
 * HTTPS certificate
 
-=== Ports
+==== Ports
 
 There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages.
 
@@ -55,15 +59,15 @@ There's no incoming traffic to the Connector, unless you initiate it or if the C
 
 * Inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
 
-=== IP address limitation
+==== IP address limitation
 
 There's a possible conflict with IP addresses in the 172 range. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html[Learn more about this limitation].
 
-=== Outbound internet access
+==== Outbound internet access
 
 The network location where you deploy the Connector must have an outbound internet connection.
 
-==== Endpoints contacted during manual installation
+===== Endpoints contacted during manual installation
 
 If you plan to manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
 
@@ -77,7 +81,7 @@ If you plan to manually install the Connector on your own Linux host, the instal
 
 The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
 
-==== Endpoints contacted for day-to-day operations
+===== Endpoints contacted for day-to-day operations
 
 The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
 
@@ -114,7 +118,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 |===
 
-== Review host requirements
+=== Review host requirements
 
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
 
@@ -144,21 +148,13 @@ RAM:: 14 GB
 AWS EC2 instance type::
 An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.
 
-Azure VM size::
-An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
-
-GCP machine type::
-An instance type that meets the CPU and RAM requirements above. We recommend n2-standard-4.
-+
-The Connector is supported in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]
-
 Disk space in /opt:: 100 GiB of space must be available
 
 Disk space in /var:: 20 GiB of space must be available
 
 Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
 
-== Set up cloud permissions
+=== Set up cloud permissions
 
 You need to set up AWS permissions for BlueXP as follows:
 
