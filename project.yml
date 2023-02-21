@@ -45,6 +45,114 @@ sidebar:
               url: /task-subscribe-restricted-mode.html
             - title: Where to go next
               url: /reference-whats-next.html
+    - title: Get started2
+      entries:
+        - title: Learn about BlueXP
+          url: /concept-overview.html
+        - title: Supported deployment modes
+          url: /concept-modes.html
+        - title: Get started with Standard mode
+          entries:
+            - title: Quick start
+              url: /task-quick-start-standard-mode.html
+            - title: Networking for console access
+              url: /reference-checklist-cm.html
+            - title: Sign up and create an account
+              url: /TBD.html
+            - title: Create a Connector in AWS
+              entries:
+                - title: Prepare for installation
+                  url: /coming-soon.html
+                - title: Install the Connector
+                  url: /coming-soon.html
+            - title: Create a Connector in Azure
+              entries:
+                - title: Prepare for installation
+                  url: /task-prepare-connector-azure.html
+                - title: Install the Connector
+                  url: /task-install-connector-azure3.html
+            - title: Create a Connector in Google Cloud
+              entries:
+                - title: Prepare for installation
+                  url: /coming-soon.html
+                - title: Install the Connector
+                  url: /coming-soon.html
+            - title: Create a Connector on prem
+              entries:
+                - title: Prepare for installation
+                  url: /coming-soon.html
+                - title: Install the Connector
+                  url: /coming-soon.html
+            - title: Subscribe to BlueXP
+              url: /task-subscribe-restricted-mode.html
+            - title: Where to go next
+              url: /reference-whats-next.html
+    - title: Get started3
+      entries:
+        - title: Learn about BlueXP
+          url: /concept-overview.html
+        - title: Supported deployment modes
+          url: /concept-modes.html
+        - title: Get started with Standard mode
+          entries:
+            - title: Quick start
+              url: /task-quick-start-standard-mode.html
+            - title: Networking for console access
+              url: /reference-checklist-cm.html
+            - title: Sign up and create an account
+              url: /TBD.html
+            - title: Create a Connector in AWS
+              entries:
+                - title: Installation options
+                  url: /coming-soon.html
+                - title: Set up networking
+                  url: /coming-soon.html
+                - title: Review host requirements
+                  url: /coming-soon.html
+                - title: Set up cloud permissions
+                  url: /coming-soon.html
+                - title: Install the Connector
+                  url: /coming-soon.html
+            - title: Create a Connector in Azure
+              entries:
+                - title: Installation options
+                  url: /concept-install-options-azure.html
+                - title: Set up networking
+                  url: /task-set-up-networking-azure.html
+                - title: Review host requirements
+                  url: /reference-host-requirements-azure.html
+                - title: Set up cloud permissions
+                  url: /task-set-up-cloud-permissions-azure.html
+                - title: Install the Connector
+                  url: /task-install-connector-azure2.html
+            - title: Create a Connector in Google Cloud
+              entries:
+                - title: Installation options
+                  url: /coming-soon.html
+                - title: Set up networking
+                  url: /coming-soon.html
+                - title: Review host requirements
+                  url: /coming-soon.html
+                - title: Set up cloud permissions
+                  url: /coming-soon.html
+                - title: Install the Connector
+                  url: /coming-soon.html
+            - title: Create a Connector on prem
+              entries:
+                - title: Installation options
+                  url: /coming-soon.html
+                - title: Set up networking
+                  url: /coming-soon.html
+                - title: Review host requirements
+                  url: /coming-soon.html
+                - title: Set up cloud permissions
+                  url: /coming-soon.html
+                - title: Install the Connector
+                  url: /coming-soon.html
+            - title: Subscribe to BlueXP
+              url: /task-subscribe-restricted-mode.html
+            - title: Where to go next
+              url: /reference-whats-next.html
         - title: Get started with Restricted mode
           entries:
             - title: Quick start

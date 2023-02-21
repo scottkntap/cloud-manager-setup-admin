@@ -1,0 +1,116 @@
+---
+sidebar: sidebar
+permalink: task-set-up-networking-azure.html
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+---
+
+= Set up networking
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+
+== A note about Azure regions
+
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link^]
+
+== Connections to target networks
+
+A Connector requires a network connection to the type of working environment that you're creating and the services that you're planning to enable.
+
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.
+
+== Proxy server
+
+If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+== Ports
+
+There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages.
+
+* HTTP (80) and HTTPS (443) provide access to the https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. 
+
+* SSH (22) is only needed if you need to connect to the host for troubleshooting. 
+
+* Inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
+
+== IP address limitation
+
+There's a possible conflict with IP addresses in the 172 range. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html[Learn more about this limitation].
+
+== Outbound internet access
+
+The network location where you deploy the Connector must have an outbound internet connection.
+
+=== Endpoints contacted during manual installation
+
+If you plan to manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
+
+* \https://support.netapp.com
+* \https://mysupport.netapp.com
+* \https://cloudmanager.cloud.netapp.com/tenancy
+* \https://stream.cloudmanager.cloud.netapp.com
+* \https://cloudmanagerinfraprod.azurecr.io
+* \https://production-artifacts.cloudmanager.cloud.netapp.com
+* \https://*.blob.core.windows.net
+
+The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+
+=== Endpoints contacted for day-to-day operations
+
+The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| 
+\https://management.azure.com
+\https://login.microsoftonline.com
+
+| To manage resources in Azure public regions.
+
+| 
+\https://management.chinacloudapi.cn
+\https://login.chinacloudapi.cn
+
+| To manage resources in Azure China regions.
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+
+.What's next?
+
+Review host requirements.
