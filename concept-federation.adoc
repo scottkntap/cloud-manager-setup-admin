@@ -17,23 +17,28 @@ Identity federation enables single sign-on with BlueXP so that users can log in 
 
 == How identity federation works
 
-Setting up identity federation creates a trust connection between BlueXP's authentication service provider (auth0) and your own identity management provider. 
+Setting up identity federation creates a trust connection between BlueXP's authentication service provider (auth0) and your own identity management provider.
 
-When users log in to BlueXP using their email address, BlueXP identifies that the domain is part of a federation connection and then prompts users to enter credentials from your corporate directory. After your identity provider authenticates the user's identity, the user is logged in to BlueXP.
+The following image depicts how identity federation works:
+
+
+. A user enters their email address on the BlueXP login page.
+. BlueXP identifies that the email domain is part of a federated connection and sends the authentication request to the identity provider.
+. The user authenticates by using credentials from your corporate directory.
+. Your identity provider authenticates the user's identity and the user is logged in to BlueXP.
 
 Identity federation uses open standards, such as Security Assertion Markup Language 2.0 (SAML) and OpenID Connect (OIDC).
 
 == Supported identity providers
- 
- 
-BlueXP supports service provider initiated (SP-initiated) SSO only. The following identity providers are supported:
+
+BlueXP supports the following identity providers:
 
 * Active Directory Federation Services (ADFS)
 * Microsoft Azure Active Directory (AD)
 * Security Assertion Markup Language (SAML) identity providers
 * PingFederate
 
-Identity provider initiated (IdP-initiated) SSO is not supported.
+BlueXP supports service provider initiated (SP-initiated) SSO only. Identity provider initiated (IdP-initiated) SSO is not supported.
 
 == Overview of the set up process
 
