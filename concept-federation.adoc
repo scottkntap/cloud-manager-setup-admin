@@ -21,9 +21,10 @@ Setting up identity federation creates a trust connection between BlueXP's authe
 
 The following image depicts how identity federation works:
 
+image:diagram-identity-federation.png[A diagram that shows a user authenticating with BlueXP and a connection between BlueXP and an identity provider that authenticates the user.]
 
 . A user enters their email address on the BlueXP login page.
-. BlueXP identifies that the email domain is part of a federated connection and sends the authentication request to the identity provider.
+. BlueXP identifies that the email domain is part of a federated connection and sends the authentication request to the identity provider using the trusted connection.
 . The user authenticates by using credentials from your corporate directory.
 . Your identity provider authenticates the user's identity and the user is logged in to BlueXP.
 
