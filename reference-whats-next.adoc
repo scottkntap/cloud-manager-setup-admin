@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: reference-whats-next.html
-keywords: get started, create working environments, manage settings
-summary: Now that you've logged in and set up BlueXP, users can start creating and discovering working environments.
+keywords: standard mode, what you can do
+summary: Now that you've logged in and set up BlueXP in standard mode, users can create and discover working environments and use BlueXP data services.
 ---
 
 = Where to go next
@@ -13,15 +13,6 @@ summary: Now that you've logged in and set up BlueXP, users can start creating a
 :imagesdir: ./media/
 
 [.lead]
-Now that you've logged in and set up BlueXP, users can start creating and discovering working environments.
+Now that you've logged in and set up BlueXP in standard mode, users can create and discover working environments and use BlueXP data services.
 
-* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-quick-start.html[Azure NetApp Files^]
-* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html[Amazon FSx for ONTAP^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[Cloud Volumes ONTAP for AWS^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[Cloud Volumes ONTAP for Azure^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[Cloud Volumes ONTAP for Google Cloud^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-service-gcp/task-set-up-google-cloud.html[Cloud Volumes Service for Google Cloud^]
-* https://docs.netapp.com/us-en/cloud-manager-e-series/task-discover-e-series.html[E-Series systems^]
-* https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-quick-start.html[Kubernetes clusters^]
-* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[On-premises ONTAP clusters^]
-* https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html[StorageGRID systems^]
+Go to the https://docs.netapp.com/us-en/cloud-manager-family/[home page for the BlueXP documentation] to view the docs for all BlueXP storage and data services.

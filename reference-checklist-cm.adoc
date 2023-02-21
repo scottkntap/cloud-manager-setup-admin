@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference-checklist-cm.html
-keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
+keywords: networking, urls, endpoints, web browser, console
 summary: As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 ---
 
