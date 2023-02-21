@@ -17,12 +17,15 @@ Identity federation enables single sign-on with BlueXP so that users can log in 
 
 == How identity federation works
 
-Setting up identity federation creates a trust connection between BlueXP's authentication service provider (auth0) and your own identity management provider. When users log in to BlueXP using their email address, BlueXP identifies that the domain is part of a federation connection and then prompts users to enter credentials from your corporate directory. After your identity provider authenticates the user's identity, the user is logged in to BlueXP.
+Setting up identity federation creates a trust connection between BlueXP's authentication service provider (auth0) and your own identity management provider. 
+
+When users log in to BlueXP using their email address, BlueXP identifies that the domain is part of a federation connection and then prompts users to enter credentials from your corporate directory. After your identity provider authenticates the user's identity, the user is logged in to BlueXP.
 
 Identity federation uses open standards, such as Security Assertion Markup Language 2.0 (SAML) and OpenID Connect (OIDC).
 
 == Supported identity providers
-
+ 
+ 
 BlueXP supports service provider initiated (SP-initiated) SSO only. The following identity providers are supported:
 
 * Active Directory Federation Services (ADFS)
@@ -38,31 +41,29 @@ Before you set up a connection between BlueXP and your identity management provi
 
 === ADFS
 
-Setting up a federated connection between BlueXP and ADFS includes the following steps:
+At a high-level, setting up a federated connection between BlueXP and ADFS includes the following steps:
 
 . Configure your ADFS server to enable identity federation with our authentication provider (auth0)
 . Create a connection with auth0
 . Complete configuration on your identity server
-. Test the connection
-. Enable the connection
+. Test and enable the connection
 
 You'll need the following to get started:
 
 * An existing ADFS server
-* Permission to configure the ADFS server so that you can enable identity federation with our authentication and authorization service provider (auth0)
-* Your ADFS URL
+* Permission to configure the ADFS server so that you can enable identity federation with auth0
+* The URL for the ADFS server
 
 When you're ready to set up the federated connection, go to the https://services.cloud.netapp.com/federation-setup[Federation Setup page^] and complete the steps described on the page.
 
 === Microsoft Azure AD
 
-Setting up a federated connection between BlueXP and Microsoft Azure AD includes the following steps:
+At a high-level, setting up a federated connection between BlueXP and Microsoft Azure AD includes the following steps:
 
 . Create a new application in Azure Active Directory along with a client secret
 . Create a connection with auth0
 . Complete configuration on your identity server
-. Test the connection
-. Enable the connection
+. Test and enable the connection
 
 You need to ensure the following before you get started:
 
@@ -73,13 +74,12 @@ When you're ready to set up the federated connection, go to the https://services
 
 === SAML identity provider
 
-Setting up a federated connection between BlueXP and a SAML identity provider includes the following steps:
+At a high-level, setting up a federated connection between BlueXP and a SAML identity provider includes the following steps:
 
 . Create a new connection with your SAML identity provider
 . Create a connection with auth0
 . Complete configuration on your identity server
-. Test the connection
-. Enable the connection
+. Test and enable the connection
 
 You'll need the following to get started:
 
@@ -93,19 +93,18 @@ When you're ready to set up the federated connection, go to the https://services
 
 === PingFederate
 
-Setting up a federated connection between BlueXP and PingFederate includes the following steps:
+At a high-level, setting up a federated connection between BlueXP and PingFederate includes the following steps:
 
 . Create a new connection with your PingFederate server
 . Create a connection with auth0
 . Complete configuration on your identity server
-. Test the connection
-. Enable the connection
+. Test and enable the connection
 
 You'll need the following to get started:
 
 * An existing PingFederate server
 * The required access to configure a new connection with PingFederate
-* The PingFederate server URL
+* The URL for your PingFederate server
 * An X509 signing certificate (PEM or CER format)
 
 When you're ready to set up the federated connection, go to the https://services.cloud.netapp.com/federation-setup[Federation Setup page^] and complete the steps described on the page.
