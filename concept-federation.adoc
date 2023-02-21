@@ -41,7 +41,7 @@ BlueXP supports the following identity providers:
 
 BlueXP supports service provider initiated (SP-initiated) SSO only. Identity provider initiated (IdP-initiated) SSO is not supported.
 
-== Overview of the set up process
+== Overview of the setup process
 
 Before you set up a connection between BlueXP and your identity management provider, you should understand the steps that you'll need to take so that you can prepare accordingly.
 
