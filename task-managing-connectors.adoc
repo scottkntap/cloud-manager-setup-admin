@@ -5,7 +5,7 @@ keywords: managing connectors, uninstall connector, switch connectors, switch be
 summary: After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and more.
 ---
 
-= Managing existing Connectors
+= Manage existing Connectors
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -28,20 +28,6 @@ For example, let's say that you're working in a multi-cloud environment. You mig
 image:screenshot_connector_switch.gif[A screenshot that shows the Connector icon in the header and the Switch action.]
 +
 BlueXP refreshes and shows the Working Environments associated with the selected Connector.
-
-== Access the local UI
-
-While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. If you're accessing BlueXP from a Government region or a site that doesn't have outbound internet access, then you need to use the local user interface running on the Connector.
-
-.Steps
-
-. Open a web browser and enter the following URL:
-+
-https://_ipaddress_
-+
-_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
-
-. Enter your user name and password to log in.
 
 == Download or send an AutoSupport message
 

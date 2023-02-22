@@ -237,15 +237,20 @@ BlueXP supports the following storage and data services with private mode when t
 
 |===
 
+BlueXP feature limitations::
+In the Support Dashboard, adding a NetApp Support Site account and opening a case isn't supported because there is no outbound internet connection.
+
 Supported licensing options::
 Only BYOL is supported with private mode. 
 +
-For Cloud Volumes ONTAP BYOL, only node-based licensing is supported. Capacity-based licensing is not supported.
+For Cloud Volumes ONTAP BYOL, only node-based licensing is supported. Capacity-based licensing is not supported. Because an outbound internet connection isn't available, you will need to manually upload your Cloud Volumes ONTAP licensing file in the Digital Wallet.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#add-unassigned-licenses[Learn how to add licenses to the Digital Wallet^]
 
 == How to get started
 
 Once you've decided which deployment mode works best for your business needs, use the following links to get started with BlueXP.
 
-* link:reference-checklist-cm.html[Get started with Standard mode]
-* link:reference-checklist-cm.html[Get started with Restricted mode]
-* link:reference-checklist-cm.html[Get started with Private mode]
+* link:reference-checklist-cm.html[Get started with standard mode]
+* link:reference-checklist-cm.html[Get started with restricted mode]
+* link:reference-checklist-cm.html[Get started with private mode]

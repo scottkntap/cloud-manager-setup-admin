@@ -5,7 +5,7 @@ keywords: account settings, workspaces, Connector, account admin, workspace admi
 summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, and Connectors.
 ---
 
-= Managing your NetApp account
+= Manage your NetApp account
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,21 +13,21 @@ summary: After you perform initial setup, you can administer your account settin
 :imagesdir: ./media/
 
 [.lead]
-link:task-setting-up-netapp-accounts.html[After you perform initial setup], you can administer your account settings later by managing users, service accounts, workspaces, and Connectors.
+You can administer your account by managing users, service accounts, workspaces, and Connectors.
 
 link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
 
-== Managing your account with the Tenancy API
+== Manage your account with the Tenancy API
 
 If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the BlueXP API, which you use to create and manage Cloud Volumes ONTAP working environments.
 
 https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html[View endpoints for the Tenancy API^]
 
-== Creating and managing users
+== Create and manage users
 
 The user's in your account can access the manage the resources in your account's workspaces.
 
-=== Adding users
+=== Add users
 
 Associate users with your NetApp account so those users can create and manage working environments in BlueXP.
 
@@ -62,7 +62,7 @@ image:screenshot_associate_user.gif[A screenshot that shows how to associate a u
 
 The user should receive an email from NetApp BlueXP titled "Account Association." The email includes the information needed to access BlueXP.
 
-=== Removing users
+=== Remove users
 
 Disassociating a user makes it so they can no longer access the resources in a NetApp account.
 
@@ -82,7 +82,7 @@ image:screenshot_associate_user_workspace.png[A screenshot that shows the action
 
 The user can no longer access the resources in this NetApp account.
 
-=== Managing a Workspace Admin's workspaces
+=== Manage a Workspace Admin's workspaces
 
 You can associate and disassociate Workspace Admins with workspaces at any time. Associating the user enables them to create and view the working environments in that workspace.
 
@@ -104,7 +104,7 @@ image:screenshot_associate_user_workspace.png[A screenshot that shows the action
 
 The user can now access those workspaces from BlueXP, as long as the Connector was also associated with the workspaces.
 
-== Creating and managing service accounts
+== Create and manage service accounts
 
 A service account acts as a "user" that can make authorized API calls to BlueXP for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. And if you're using federation, you can create a token without generating a refresh token from the cloud.
 
@@ -112,7 +112,7 @@ You give permissions to a service account by assigning it a role, just like any 
 
 When you create the service account, BlueXP enables you to copy or download a client ID and client secret for the service account. This key pair is used for authentication with BlueXP.
 
-=== Creating a service account
+=== Create a service account
 
 Create as many service accounts as you need to manage the resources in your working environments.
 
@@ -138,13 +138,13 @@ The client secret is visible only once and is not stored anywhere by BlueXP. Cop
 
 . Click *Close*.
 
-=== Obtaining a bearer token for a service account
+=== Obtain a bearer token for a service account
 
 In order to make API calls to the https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html[Tenancy API^], you'll need to obtain a bearer token for a service account.
 
 https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_service_token.html[Learn how to create a service account token^]
 
-=== Copying the client ID
+=== Copy the client ID
 
 You can copy a service account's client ID at any time.
 
@@ -158,7 +158,7 @@ image:screenshot_service_account_actions.gif[A screenshot that shows the action 
 
 . The ID is copied to your clipboard.
 
-=== Recreating keys
+=== Recreate keys
 
 Recreating the key will delete the existing key for this service account and then create a new key. You won’t be able to use the previous key.
 
@@ -178,7 +178,7 @@ The client secret is visible only once and is not stored anywhere by BlueXP. Cop
 
 . Click *Close*.
 
-=== Deleting a service account
+=== Delete a service account
 
 Delete a service account if you no longer need to use it.
 
@@ -192,7 +192,7 @@ image:screenshot_service_account_actions.gif[A screenshot that shows the action 
 
 . Click *Delete* again to confirm.
 
-== Managing workspaces
+== Manage workspaces
 
 Manage your workspaces by creating, renaming, and deleting them. Note that you can't delete a workspace if it contains any resources. It must be empty.
 
@@ -208,7 +208,7 @@ Manage your workspaces by creating, renaming, and deleting them. Note that you c
 * Click *Rename* to rename the workspace.
 * Click *Delete* to delete the workspace.
 
-== Managing a Connector's workspaces
+== Manage a Connector's workspaces
 
 You need to associate the Connector with workspaces so Workspace Admins can access those workspaces from BlueXP.
 
@@ -226,7 +226,7 @@ link:concept-netapp-accounts.html#users-workspaces-and-service-connectors[Learn 
 
 . Select the workspaces to associate with the Connector and click *Apply*.
 
-== Changing your account name
+== Change your account name
 
 Change you account name at any time to change it to something meaningful for you.
 
@@ -238,7 +238,7 @@ Change you account name at any time to change it to something meaningful for you
 
 . Type a new account name and click *Save*.
 
-== Allowing private previews
+== Allow private previews
 
 Allow private previews in your account to get access to new NetApp cloud services that are made available as a preview in BlueXP.
 
@@ -250,7 +250,7 @@ Services in private preview are not guaranteed to behave as expected and might s
 
 . In the *Overview* tab, enable the *Allow Private Preview* setting.
 
-== Allowing third-party services
+== Allow third-party services
 
 Allow third-party services in your account to get access to third-party services that are available in BlueXP. Third-party services are cloud services similar to the services that NetApp offers, but they're managed and supported by third-party companies.
 
@@ -260,25 +260,17 @@ Allow third-party services in your account to get access to third-party services
 
 . In the *Overview* tab, enable the *Allow Third Party Services* setting.
 
-== Disabling the SaaS platform
+== Disable the SaaS platform
 
-We don't recommend disabling the SaaS platform unless you need to in order to comply with your company’s security policies. Disabling the SaaS platform limits your ability to use NetApp’s integrated cloud services.
-
-The following services aren't available from BlueXP if you disable the SaaS platform:
-
-* Cloud Backup
-+
-Cloud Backup is supported in Government regions when the SaaS platform is disabled, but not in commercial regions when the SaaS platform is disabled
-* Cloud Data Sense
-* Kubernetes
-* Cloud Tiering
-* Global File Cache
+You should disable the SaaS platform only if you want to use BlueXP in restricted mode. You might want to use restricted mode to comply with your company's security policies.
 
 If you do disable the SaaS platform, you'll need to perform all tasks from link:task-managing-connectors.html#access-the-local-ui[the local user interface that is available on a Connector].
 
-CAUTION: This is an irreversible action that will prevent you from using the BlueXP SaaS platform. You'll need to perform actions from the local Connector. You won't have the ability to use many of NetApp's integrated cloud services, and re-enabling the SaaS platform will require the help of NetApp support.
+CAUTION: This is an irreversible action that will prevent you from using the BlueXP SaaS platform. As a result, you'll need to perform actions from the local Connector and you won't have the ability to use many of BlueXP's services. Re-enabling the SaaS platform will require the help of NetApp support.
 
 .Steps
+
+. link:concept-modes.html[Understand about how BlueXP works in restricted mode].
 
 . From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
