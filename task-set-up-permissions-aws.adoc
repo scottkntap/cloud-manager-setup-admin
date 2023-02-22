@@ -1,0 +1,176 @@
+---
+sidebar: sidebar
+permalink: task-set-up-permissions-aws.html
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+---
+
+= Set up cloud permissions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You need to set up AWS permissions for BlueXP as follows:
+
+* If you want to deploy the Connector directly from BlueXP, you'll need to set up cloud permissions so that BlueXP can authenticate with AWS.
+
+* If you intend to deploy the Connector from the AWS Marketplace or by manually installing the Connector, then you'll need to set up an IAM role that you can associate with the Connector after you install it.
+
+== Prepare permissions for deployment from BlueXP
+
+BlueXP needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
+
+* Let BlueXP assume an IAM role that has the required permissions
+* Provide an AWS access key and secret key for an IAM user who has the required permissions
+
+With either option, you first need to start by creating an IAM policy that includes the required permissions. This policy contains only the permissions needed to launch the Connector instance in AWS from BlueXP. Don't use this policy for other situations.
+
+When BlueXP creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
+
+.Steps
+
+. Go to the AWS IAM console.
+
+. Click *Policies > Create policy*.
+
+. Click *JSON*.
+
+. Copy and paste the following policy:
++
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:PutRolePolicy",
+                "iam:CreateInstanceProfile",
+                "iam:DeleteRolePolicy",
+                "iam:AddRoleToInstanceProfile",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "iam:PassRole",
+                "ec2:DescribeInstanceStatus",
+                "ec2:RunInstances",
+                "ec2:ModifyInstanceAttribute",
+                "ec2:CreateSecurityGroup",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DescribeSecurityGroups",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeDhcpOptions",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeRegions",
+                "ec2:DescribeInstances",
+                "ec2:CreateTags",
+                "ec2:DescribeImages",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:ValidateTemplate",
+                "ec2:AssociateIamInstanceProfile",
+                "ec2:DescribeIamInstanceProfileAssociations",
+                "ec2:DisassociateIamInstanceProfile",
+                "iam:GetRole",
+                "iam:TagRole",
+                "iam:ListRoles",
+                "kms:ListAliases"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:TerminateInstances"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/OCCMInstance": "*"
+                }
+            },
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ]
+        }
+    ]
+}
+
+. Click *Next* and add tags, if needed.
+
+. Click *Next* and enter a name and description.
+
+. Click *Create policy*.
+
+. Either attach the policy to an IAM role that BlueXP can assume or to an IAM user so that you can provide BlueXP with access keys:
+
+* (Option 1) Set up an IAM role that BlueXP can assume:
++
+.. Go to the AWS IAM console in the target account.
+
+.. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
+
+.. Under *Trusted entity type*, select *AWS account*.
+
+.. Select *Another AWS account* and enter the ID of the BlueXP SaaS account: 952013314444
+
+.. Select the policy that you created in the previous section.
+
+.. After you create the role, copy the Role ARN so that you can paste it in BlueXP when you create the Connector.
+
+* (Option 2) Set up permissions for an IAM user so that you can provide BlueXP with access keys:
++
+.. From the AWS IAM console, click *Users* and then select the user name.
+
+.. Click *Add permissions > Attach existing policies directly*.
+
+.. Select the policy that you created.
+
+.. Click *Next* and then click *Add permissions*.
+
+.. Ensure that you have the access key and secret key for the IAM user.
+
+.Result
+
+You should now have an IAM role that has the required permissions or an IAM user that has the required permissions. You can provide information about the role or access keys when you're prompted by BlueXP.
+
+== Prepare permissions for deployment from the AWS Marketplace
+
+Create a policy and attach it to an IAM role.
+
+.Steps
+
+. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+
+.Result
+
+You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
+
+== Prepare permissions for manual installations
+
+Create a policy and attach it to an IAM role.
+
+.Steps
+
+. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+
+.Result
+
+You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.

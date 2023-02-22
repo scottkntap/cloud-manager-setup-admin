@@ -1,0 +1,292 @@
+---
+sidebar: sidebar
+permalink: task-set-up-permissions-google.html
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+---
+
+= Set up cloud permissions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Permissions are required for the following:
+
+* The user who will deploy the Connector VM
+* A service account that you need to attach to the Connector VM during deployment
+
+Depending on your configuration, you might need to complete the following steps as well:
+
+* Set up permissions across projects
+* Set up permissions for a shared VPC
+
+== Set up permissions to deploy the Connector
+
+Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions.
+
+.Steps
+
+. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a custom role^] that includes the following permissions:
++
+[source,yaml]
+title: Connector deployment policy
+description: Permissions for the user who deploys the Connector from BlueXP
+stage: GA
+includedPermissions:
+- compute.disks.create
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.get
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.networks.updatePolicy
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- resourcemanager.projects.get
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.list
+
+. Attach the custom role to the user who will deploy the Connector from BlueXP.
+
+.Result
+
+The Google Cloud user now has the permissions required to create the Connector.
+
+== Set up permissions for the Connector
+
+A service account is required to provide the Connector with the permission that it needs to manage resources in Google Cloud. You'll associate this service account with the Connector VM when you create it.
+
+The permissions for the service account are different than the permissions that you set up in the previous section.
+
+.Steps
+
+. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a custom role^] that includes the following permissions:
++
+[source,yaml]
+title: NetApp BlueXP
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list
+- monitoring.timeSeries.list
+- storage.buckets.getIamPolicy
+- cloudkms.cryptoKeys.getIamPolicy
+- cloudkms.cryptoKeys.setIamPolicy
+- cloudkms.keyRings.get
+- cloudkms.keyRings.getIamPolicy
+- cloudkms.keyRings.setIamPolicy
+
+. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^].
+
+.Result
+
+The service account for the Connector VM is set up.
+
+== Set up permissions across projects
+
+If you plan to deploy Cloud Volumes ONTAP systems in different projects than the project where the Connector resides, then you'll need to provide the Connector's service account with access to those projects.
+
+For example, let's say the Connector is in project 1 and you want to create Cloud Volumes ONTAP systems in project 2. You'll need to grant access to the service account in project 2.
+
+.Steps
+
+. In the Google Cloud console, go to the IAM service and select the project where you want to create Cloud Volumes ONTAP systems.
+
+. On the *IAM* page, select *Grant Access* and provide the required details.
++
+* Enter the email of the Connector's service account.
+* Select the Connector's custom role.
+* Click *Save*.
+
+For more details, refer to https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single-role[Google Cloud documentation^]
+
+== Set up shared VPC permissions
+
+If you are using a shared VPC to deploy resources into a service project, then you'll need to prepare your permissions. 
+
+This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
+
+[cols="10,10,10,20,20,30",width=100%,options="header"]
+|===
+
+| Identity
+| Creator
+| Hosted in
+| Service project permissions
+| Host project permissions
+| Purpose
+
+| Google account used to deploy the Connector | Custom | Service Project
+a| * link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector[The permissions found in this section above]
+a| * compute.networkUser
+| Deploying the Connector in the service project
+
+| Connector service account | Custom | Service project a|
+* link:task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector[The permissions found in this section above]
+a|
+* compute.networkUser
+* deploymentmanager.editor
+| Deploying and maintaining Cloud Volumes ONTAP and services in the service project
+
+| Cloud Volumes ONTAP service account | Custom | Service project a|
+* storage.admin
+* member: BlueXP service account as serviceAccount.user
+| N/A | (Optional) For data tiering and Cloud Backup
+
+| Google APIs service agent | Google Cloud | Service project a|
+* (Default) Editor
+a|
+* compute.networkUser
+| Interacts with Google Cloud APIs on behalf of deployment. Allows BlueXP to use the shared network.
+
+| Google Compute Engine default service account | Google Cloud | Service project a|
+* (Default) Editor
+a|
+* compute.networkUser
+| Deploys Google Cloud instances and compute infrastructure on behalf of deployment. Allows BlueXP to use the shared network.
+
+|===
+
+Notes:
+
+. deploymentmanager.editor is only required at the host project if you are not passing firewall rules to the deployment and are choosing to let BlueXP create them for you. BlueXP will create a deployment in the host project which contains the VPC0 firewall rule if no rule is specified.
+
+. firewall.create and firewall.delete are only required if you are not passing firewall rules to the deployment and are choosing to let BlueXP create them for you. These permissions reside in the BlueXP account .yaml file. If you are deploying an HA pair using a shared VPC, these permissions will be used to create the firewall rules for VPC1, 2 and 3. For all other deployments, these permissions will also be used to create rules for VPC0.
+
+. For data tiering, the tiering service account must have the serviceAccount.user role on the service account, not just at the project level. Currently if you assign serviceAccount.user at the project level, the permissions don't show when you query the service account with getIAMPolicy.

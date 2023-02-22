@@ -1,0 +1,50 @@
+---
+sidebar: sidebar
+permalink: reference-host-requirements-google.html
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+---
+
+= Review host requirements
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
+
+When you deploy the Connector from BlueXP, the image includes the required OS and software components.
+
+Dedicated host::
+The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
+
+Supported locations::
+In restricted mode, you can only install the Connector in the cloud.
+
+Supported operating systems::
+* CentOS 7.6, 7.7, 7.8, and 7.9
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, and 8.6
++
+The host must be registered with Red Hat Subscription Management. If it's not registered, the host can't access repositories to update required 3rd-party software during Connector installation.
++
+The Connector is supported on English-language versions of these operating systems.
+
+Hypervisor::
+A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux is required. https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
+
+CPU:: 4 cores or 4 vCPUs
+
+RAM:: 14 GB
+
+GCP machine type::
+An instance type that meets the CPU and RAM requirements above. We recommend n2-standard-4.
++
+The Connector is supported in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]
+
+Disk space in /opt:: 100 GiB of space must be available
+
+Disk space in /var:: 20 GiB of space must be available
+
+Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]

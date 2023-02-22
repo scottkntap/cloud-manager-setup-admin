@@ -34,15 +34,15 @@ sidebar:
             - title: Create a Connector in AWS
               entries:
                 - title: Installation options
-                  url: /coming-soon.html
+                  url: /concept-install-options-aws.html
                 - title: Set up networking
-                  url: /coming-soon.html
+                  url: /task-set-up-networking-aws.html
                 - title: Review host requirements
-                  url: /coming-soon.html
+                  url: /reference-host-requirements-aws.html
                 - title: Set up cloud permissions
-                  url: /coming-soon.html
+                  url: /task-set-up-permissions-aws.html
                 - title: Install the Connector
-                  url: /coming-soon.html
+                  url: /task-install-connector-azure.html
             - title: Create a Connector in Azure
               entries:
                 - title: Installation options
@@ -54,31 +54,29 @@ sidebar:
                 - title: Set up cloud permissions
                   url: /task-set-up-cloud-permissions-azure.html
                 - title: Install the Connector
-                  url: /task-install-connector-azure2.html
+                  url: /task-install-connector-azure.html
             - title: Create a Connector in Google Cloud
               entries:
                 - title: Installation options
-                  url: /coming-soon.html
+                  url: /concept-install-options-google.html
                 - title: Set up networking
-                  url: /coming-soon.html
+                  url: /task-set-up-networking-google-cloud.html
                 - title: Review host requirements
-                  url: /coming-soon.html
+                  url: /reference-host-requirements-google.html
                 - title: Set up cloud permissions
-                  url: /coming-soon.html
+                  url: /task-set-up-permissions-google.html
                 - title: Install the Connector
-                  url: /coming-soon.html
+                  url: /task-install-connector-google-cloud.html
             - title: Create a Connector on prem
               entries:
-                - title: Installation options
-                  url: /coming-soon.html
                 - title: Set up networking
-                  url: /coming-soon.html
+                  url: /task-set-up-networking-on-prem.html
                 - title: Review host requirements
-                  url: /coming-soon.html
+                  url: /reference-host-requirements-on-prem.html
                 - title: Set up cloud permissions
-                  url: /coming-soon.html
+                  url: /task-set-up-permissions-on-prem.html
                 - title: Install the Connector
-                  url: /coming-soon.html
+                  url: /task-install-connector-on-prem.html
             - title: Subscribe to BlueXP
               url: /task-subscribe-restricted-mode.html
             - title: Where to go next
