@@ -188,6 +188,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 You can now use the credentials when creating a new Connector.
 
+[[subscribe]]
 == Associate an AWS subscription
 
 After you add your AWS credentials to BlueXP, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or using an annual contract, and to use other NetApp cloud services.
