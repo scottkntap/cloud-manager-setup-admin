@@ -16,6 +16,30 @@ summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration f
 Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 5 March 2023
+
+=== Connector 3.9.27
+
+* Search is now available in the BlueXP console. At this time, you can use the search to find BlueXP services and features. 
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-search.png[A screenshot of the BlueXP search that is available at the top of the console.]
+
+* You can now discover VMware vCenter Servers in BlueXP.
++
+After you discover a VMware vCenter Server, you can open the working environment to view details about the datastores and virtual machines that are associated with the server.
++
+The only requirement is a Connector that has a connection to the VMware vCenter Server. 
++
+To get started, click *Add Working Environment > On-Premises > VMware vCenter Server*, enter the domain name or IP address for the server, and then enter the user name and password for the admin user.
+
+* You can view and manage active and resolved support cases directly from BlueXP. You can manage the cases associated with your NSS account and with your company.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-get-help.html#manage-your-support-cases[Learn how to manage your support cases].
+
+* The Connector is now supported on a host that's running Red Hat Enterprise Linux 7.9.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[View system requirements for the Connector].
+
 == 5 February 2023
 
 === Connector 3.9.26
