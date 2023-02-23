@@ -5,7 +5,7 @@ keywords: permissions, microsoft, azure, permissions, custom role, role, json, a
 summary: When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials and Marketplace subscription to use with that system. If you manage multiple Azure Marketplace subscriptions, you can assign each one of them to different Azure credentials from the Credentials page.
 ---
 
-= Managing Azure credentials and subscriptions for BlueXP
+= Manage Azure credentials and subscriptions for BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -287,6 +287,7 @@ image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting bet
 
 Manage the Azure credentials that you've already added to BlueXP by associating a Marketplace subscription, editing credentials, and deleting them.
 
+[[subscribe]]
 === Associating an Azure Marketplace subscription to credentials
 
 After you add your Azure credentials to BlueXP, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
