@@ -5,7 +5,7 @@ keywords: networking overview, networking requirements, endpoints, urls, get sta
 summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
 
-= Deploy the Connector
+= Prepare for deployment in private mode
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,9 +15,19 @@ summary: You should understand what's needed to get up and running with BlueXP i
 [.lead]
 To set up BlueXP in private mode, the first step is to deploy the Connector software either in the cloud or on your premises. When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector. There is no connection to the BlueXP SaaS website.
 
+== Understand how private mode works
+
+Before you get started, you should have an understanding of how BlueXP works in private mode. 
+
+For example, you should understand that you need to use the user interface and API that are available locally from the BlueXP Connector that you need to install. You can't access BlueXP from the SaaS website.
+
+In addition, not all BlueXP services are available.
+
+link:concept-modes.html[Learn how private mode works].
+
 == Understand your installation options
 
-When you use BlueXP in restricted mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
+When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector.
 
 You can deploy a Connector on-premises or in the cloud by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
 

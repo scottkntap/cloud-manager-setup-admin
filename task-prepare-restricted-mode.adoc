@@ -15,11 +15,21 @@ summary: You should understand what's needed to get up and running with BlueXP i
 [.lead]
 You should understand what's needed to get started with BlueXP in restricted mode so that you can prepare your environment.
 
+== Understand how restricted mode works
+
+Before you get started, you should have an understanding of how BlueXP works in restricted mode. 
+
+For example, you should understand that you need to use the user interface and API that are available locally from the BlueXP Connector that you need to install. You can't access BlueXP from the SaaS website.
+
+In addition, not all BlueXP services are available.
+
+link:concept-modes.html[Learn how restricted mode works].
+
 == Understand your installation options
 
-When you use BlueXP in restricted mode, you need to use the BlueXP user interface that's running on the Connector. You can't access BlueXP from the SaaS website.
+When you use BlueXP in restricted mode, you need to use the BlueXP instance that's running on the Connector.
 
-You can deploy a Connector from the AWS Marketplace, from the Azure Marketplace, or by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
+You can install a Connector from the AWS Marketplace, from the Azure Marketplace, or by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
 
 == Review host requirements
 
@@ -203,9 +213,23 @@ Create a policy and attach it to an IAM role.
 
 .Steps
 
-. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+. From the IAM console, create a policy:
 
-. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+.. Click *Policies > Create policy*.
+
+.. Select *JSON* and copy and paste the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+.. Finish the remaining steps to create the policy.
+
+. Back in the IAM console, create an IAM role:
+
+.. Click *Roles > Create role*.
+
+.. Select *AWS service > EC2*.
+
+.. Add permissions by attaching the policy that you created in the previous step.
+
+.. Finish the remaining steps to create the role.
 
 .Result
 
@@ -260,9 +284,33 @@ Create a role and apply it to a service account that you'll use for the Connecto
 
 .Steps
 
-. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in Google Cloud^] that includes the permissions defined in the link:reference-permissions-gcp.html[Connector policy for Google Cloud].
+. Create a custom role in Google Cloud:
 
-. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^]
+.. Create a YAML file that includes the permissions defined in the link:reference-permissions-gcp.html[Connector policy for Google Cloud].
+
+.. From Google Cloud, activate cloud shell.
+
+.. Upload the YAML file that includes the required permissions for the Connector.
+
+.. Create a custom role by using the `gcloud iam roles create` command.
++
+The following example creates a role named "connector" at the project level:
++
+gcloud iam roles create connector --project=myproject --file=connector.yaml
++
+https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Google Cloud docs: Creating and managing custom roles^]
+
+. Create a service account in Google Cloud:
+
+.. From the IAM & Admin service, click *Service Accounts > Create Service Account*.
+
+.. Enter service account details and click *Create and Continue*.
+
+.. Select the role that you just created.
+
+.. Finish the remaining steps to create the role.
++
+https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Google Cloud docs: Creating a service account^]
 
 .Result
 
