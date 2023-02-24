@@ -36,7 +36,7 @@ To get started, click *Add Working Environment > On-Premises > VMware vCenter Se
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-get-help.html#manage-your-support-cases[Learn how to manage your support cases].
 
-* The Connector is now supported on a host that's running Red Hat Enterprise Linux 7.9.
+* The Connector is now supported on a host that's running Red Hat Enterprise Linux 8.7.
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[View system requirements for the Connector].
 
