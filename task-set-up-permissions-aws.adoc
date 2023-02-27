@@ -13,23 +13,20 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Set up AWS permissions so that you can use BlueXP to manage your data and storage infrastructure.
+You need to set up AWS permissions for BlueXP as follows:
 
-Set up permissions based on the installation option that you're planning to use:
+* If you want to deploy the Connector directly from BlueXP, you'll need to set up cloud permissions so that BlueXP can authenticate with AWS.
 
-// start tabbed area
+* If you intend to deploy the Connector from the AWS Marketplace or by manually installing the Connector, then you'll need to set up an IAM role that you can associate with the Connector after you install it.
 
-[role="tabbed-block"]
-====
+== Prepare permissions to create the Connector from BlueXP
 
-.From BlueXP
---
 BlueXP needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
 
 * Let BlueXP assume an IAM role that has the required permissions
 * Provide an AWS access key and secret key for an IAM user who has the required permissions
 
-With either option, you first need to start by creating an IAM policy. This policy contains only the permissions needed to launch the Connector instance in AWS from BlueXP. Don't use this policy for other situations.
+With either option, you first need to start by creating an IAM policy that includes the required permissions. This policy contains only the permissions needed to launch the Connector instance in AWS from BlueXP. Don't use this policy for other situations.
 
 When BlueXP creates the Connector, it applies a new set of permissions to the Connector instance that enables the Connector to manage the resources in your public cloud environment.
 
@@ -149,11 +146,10 @@ When BlueXP creates the Connector, it applies a new set of permissions to the Co
 .Result
 
 You should now have an IAM role that has the required permissions or an IAM user that has the required permissions. When you create the Connector from BlueXP, you can provide information about the role or access keys.
---
 
-.From the AWS Marketplace
---
-In AWS, create an IAM policy and attach it to an IAM role. When you create the Connector from the AWS Marketplace, you'll be prompted to select that IAM role.
+== Set up permissions to create the Connector from the AWS Marketplace
+
+Create an IAM policy in AWS and attach it to an IAM role. When you create the Connector from the AWS Marketplace, you'll be prompted to select that IAM role.
 
 .Steps
 
@@ -177,12 +173,11 @@ In AWS, create an IAM policy and attach it to an IAM role. When you create the C
 
 .Result
 
-You now have an IAM role that you can associate with the EC2 instance when you create the Connector.
---
+You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
 
-.Manual install
---
-In AWS, create an IAM policy and attach it to an IAM role. You can associate this IAM role with the Connector instance after you install the software.
+== Set up permissions to provide after manual installation
+
+Create an IAM policy in AWS and attach it to an IAM role. You'll need to associate this IAM role with the Connector instance after you install the software.
 
 .Steps
 
@@ -207,6 +202,3 @@ In AWS, create an IAM policy and attach it to an IAM role. You can associate thi
 .Result
 
 You now have an IAM role that you can associate with the EC2 instance after you install the Connector.
-
-====
-// end tabbed area
