@@ -33,6 +33,8 @@ sidebar:
               url: /task-sign-up-saas.html
             - title: Create a Connector in AWS
               entries:
+                - title: Quick start
+                  url: /task-quick-start-connector-aws.html
                 - title: Installation options
                   url: /concept-install-options-aws.html
                 - title: Set up networking
@@ -45,6 +47,8 @@ sidebar:
                   url: /task-install-connector-aws.html
             - title: Create a Connector in Azure
               entries:
+                - title: Quick start
+                  url: /task-quick-start-connector-azure.html
                 - title: Installation options
                   url: /concept-install-options-azure.html
                 - title: Set up networking
@@ -57,6 +61,8 @@ sidebar:
                   url: /task-install-connector-azure.html
             - title: Create a Connector in Google Cloud
               entries:
+                - title: Quick start
+                  url: /task-quick-start-connector-google.html
                 - title: Installation options
                   url: /concept-install-options-google.html
                 - title: Set up networking
@@ -69,6 +75,8 @@ sidebar:
                   url: /task-install-connector-google-cloud.html
             - title: Create a Connector on prem
               entries:
+                - title: Quick start
+                  url: /task-quick-start-connector-on-prem.html
                 - title: Set up networking
                   url: /task-set-up-networking-on-prem.html
                 - title: Review host requirements
