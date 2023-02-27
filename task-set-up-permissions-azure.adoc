@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-set-up-cloud-permissions-azure.html
+permalink: task-set-up-permissions-azure.html
 keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
-= Set up cloud permissions
+= Set up Azure permissions
 :hardbreaks:
 :nofooter:
 :icons: font

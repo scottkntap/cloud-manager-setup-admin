@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
-= Set up cloud permissions
+= Set up Google Cloud permissions
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,23 +13,29 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Permissions are required for the following:
+Set up Google Cloud permissions so that you can use BlueXP to manage your data and storage infrastructure.
 
-* The user who will deploy the Connector VM
-* A service account that you need to attach to the Connector VM during deployment
+You'll need to set up permissions as follows:
+
+* If you are planning to create the Connector from BlueXP or by using gcloud, then you need to set up permissions for the Google Cloud user who will deploy the Connector VM.
+* You need to create a service account with the required permissions for the Connector. 
++
+You'll attach this service account to the Connector VM during deployment.
 
 Depending on your configuration, you might need to complete the following steps as well:
 
 * Set up permissions across projects
 * Set up permissions for a shared VPC
 
-== Set up permissions to deploy the Connector
+== Set up permissions to create the Connector from BlueXP or gcloud
 
-Before you can deploy a Connector, you need to ensure that your Google Cloud account has the correct permissions.
+Before you can deploy a Connector from BlueXP or by using gcloud, you need to ensure that your Google Cloud account has the correct permissions.
 
 .Steps
 
-. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a custom role^] that includes the following permissions:
+. Create a custom role in Google Cloud:
+
+.. Create a YAML file that includes the following permissions:
 +
 [source,yaml]
 title: Connector deployment policy
@@ -93,7 +99,21 @@ includedPermissions:
 - compute.instances.setServiceAccount
 - iam.serviceAccounts.list
 
-. Attach the custom role to the user who will deploy the Connector from BlueXP.
+.. From Google Cloud, activate cloud shell.
+
+.. Upload the YAML file that includes the required permissions.
+
+.. Create a custom role by using the `gcloud iam roles create` command.
++
+The following example creates a role named "connector" at the project level:
++
+gcloud iam roles create connector --project=myproject --file=connector-deployment.yaml
++
+https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Google Cloud docs: Creating and managing custom roles^]
+
+. Assign this custom role to the user who will deploy the Connector from BlueXP.
++
+https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single-role[Google Cloud docs: Grant a single role^]
 
 .Result
 
@@ -101,13 +121,15 @@ The Google Cloud user now has the permissions required to create the Connector.
 
 == Set up permissions for the Connector
 
-A service account is required to provide the Connector with the permission that it needs to manage resources in Google Cloud. You'll associate this service account with the Connector VM when you create it.
+A service account is required to provide the Connector with the permissions that it needs to manage resources in Google Cloud. You'll associate this service account with the Connector VM when you create it.
 
 The permissions for the service account are different than the permissions that you set up in the previous section.
 
 .Steps
 
-. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a custom role^] that includes the following permissions:
+. Create a custom role in Google Cloud:
+
+.. Create a YAML file that includes the following permissions:
 +
 [source,yaml]
 title: NetApp BlueXP
@@ -212,7 +234,29 @@ includedPermissions:
 - cloudkms.keyRings.getIamPolicy
 - cloudkms.keyRings.setIamPolicy
 
-. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a Google Cloud service account and apply the custom role that you just created^].
+.. From Google Cloud, activate cloud shell.
+
+.. Upload the YAML file that includes the required permissions.
+
+.. Create a custom role by using the `gcloud iam roles create` command.
++
+The following example creates a role named "connector" at the project level:
++
+gcloud iam roles create connector --project=myproject --file=connector.yaml
++
+https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Google Cloud docs: Creating and managing custom roles^]
+
+. Create a service account in Google Cloud:
+
+.. From the IAM & Admin service, click *Service Accounts > Create Service Account*.
+
+.. Enter service account details and click *Create and Continue*.
+
+.. Select the role that you just created.
+
+.. Finish the remaining steps to create the role.
++
+https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Google Cloud docs: Creating a service account^]
 
 .Result
 

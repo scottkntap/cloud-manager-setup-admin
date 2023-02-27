@@ -56,7 +56,7 @@ sidebar:
                 - title: Review host requirements
                   url: /reference-host-requirements-azure.html
                 - title: Set up cloud permissions
-                  url: /task-set-up-cloud-permissions-azure.html
+                  url: /task-set-up-permissions-azure.html
                 - title: Install the Connector
                   url: /task-install-connector-azure.html
             - title: Create a Connector in Google Cloud
