@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-quick-start-connector-google.html
 keywords: quick start, bluexp quick start, get started, get started with bluexp, standard mode, saas mode
-summary: Get started with BlueXP in standard mode in a few steps.
+summary: Creating a Connector in Google Cloud includes a few steps.
 ---
 
-= Quick start for BlueXP in standard mode
+= Quick start to create a Connector in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,35 +13,86 @@ summary: Get started with BlueXP in standard mode in a few steps.
 :imagesdir: ./media/
 
 [.lead]
-Get started with BlueXP in standard mode in a few steps.
+Creating a Connector in Google Cloud includes a few steps.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Sign up and create an account
-
-[role="quick-margin-para"]
-Go to the https://console.bluexp.netapp.com[BlueXP console^] and sign up. You'll be given the option to create an account, but you can skip that step if you're being invited to an existing account.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Understand your installation options
 
 [role="quick-margin-para"]
-link:task-sign-up-saas.html[Learn how to sign up and create an account].
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Create a Connector
+The standard way to create a Connector in Google Cloud is directly from BlueXP, but you can also create it using gloud, or by manually installing the software yourself.
 
 [role="quick-margin-para"]
-In most cases, a BlueXP Account Admin will need to deploy a Connector in your cloud or on-premises network. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
+link:concept-install-options-google.html[Learn more about your installation options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
 
 [role="quick-margin-para"]
-The standard way to create a Connector is directly from BlueXP.
+You'll need a VPC and subnet with outbound internet access to specific endpoints. If a proxy server is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
+
+[role="quick-margin-para"]
+link:task-set-up-networking-google.html[Learn more about AWS networking requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Review host requirements
+
+[role="quick-margin-para"]
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
+
+[role="quick-margin-para"]
+link:reference-host-requirements-google.html[Learn more about host requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up Google Cloud permissions
+
+[role="quick-margin-para"]
+Set up Google Cloud permissions for the installation option that you're planning to use:
 
 [role="quick-margin-list"]
-* link:concept-connectors.html[Learn more about when Connectors are required and how they work]
-* link:task-quick-start-connector-aws.html[Learn how to create a Connector in AWS]
-* link:task-quick-start-connector-azure.html[Learn how to create a Connector in Azure]
-* link:task-quick-start-connector-google.html[Learn how to create a Connector Google Cloud]
-* link:task-quick-start-connector-on-prem.html[Learn how to create a Connector on premises]
+* *From BlueXP*: Create a custom role and attach it to the user who will deploy the Connector and create another custom role and assign it to a service account.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Subscribe to BlueXP
+* *Using gcloud*: Create a custom role and attach it to the user who will deploy the Connector and create another custom role and assign it to a service account.
+
+* *Manual install*: Create a custom role so that you can associate it with the Connector VM instance after installation.
 
 [role="quick-margin-para"]
-Subscribe to BlueXP from your cloud provider's marketplace to pay for BlueXP services at an hourly rate (PAYGO) or through an annual contract.
+link:task-set-up-permissions-aws.html[Follow step-by-step instructions for each of these options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Install the Connector
 
 [role="quick-margin-para"]
-link:task-subscribe-standard-mode.html[Learn how to subscribe to BlueXP].
+Install the Connector using one of the available installation options:
+
+[role="quick-margin-list"]
+* *From BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
+
+* *Using gloud*: Use the gcloud compute instances create command.
+
+* *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
+
+[role="quick-margin-para"]
+link:task-install-connector-aws.html[Follow step-by-step instructions for each of these options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Install the Connector
+
+[role="quick-margin-para"]
+Install the Connector using one of the available installation options:
+
+// start tabbed area
+[role="tabbed-block"]
+====
+
+.BlueXP
+--
+Click the Connector drop-down, select *Add Connector* and follow the prompts.
+--
+
+--
+.gcloud
+--
+Use the gcloud compute instances create command.
+--
+
+.Manual install
+--
+Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
+--
+
+====
+// end tabbed area
