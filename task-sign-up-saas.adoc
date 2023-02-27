@@ -15,10 +15,6 @@ summary: When you get started with BlueXP, your first step is to sign up. You'll
 [.lead]
 When you get started with BlueXP, your first step is to sign up. You'll be given the option to create an account, but you can skip that step if you're being invited to an existing account.
 
-.A note about Government regions
-
-If you need to access BlueXP from a Government region or a site that doesn't have outbound internet access, then you need to create a Connector and log in to the BlueXP user interface that runs locally on the Connector. link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI on the Connector].
-
 .Sign up options
 
 BlueXP is accessible from your web browser through a SaaS-based user interface.

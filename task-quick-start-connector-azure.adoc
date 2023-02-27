@@ -1,0 +1,47 @@
+---
+sidebar: sidebar
+permalink: task-quick-start-connector-azure.html
+keywords: quick start, bluexp quick start, get started, get started with bluexp, standard mode, saas mode
+summary: Get started with BlueXP in standard mode in a few steps.
+---
+
+= Quick start for BlueXP in standard mode
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Get started with BlueXP in standard mode in a few steps.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Sign up and create an account
+
+[role="quick-margin-para"]
+Go to the https://console.bluexp.netapp.com[BlueXP console^] and sign up. You'll be given the option to create an account, but you can skip that step if you're being invited to an existing account.
+
+[role="quick-margin-para"]
+link:task-sign-up-saas.html[Learn how to sign up and create an account].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Create a Connector
+
+[role="quick-margin-para"]
+In most cases, a BlueXP Account Admin will need to deploy a Connector in your cloud or on-premises network. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
+
+[role="quick-margin-para"]
+The standard way to create a Connector is directly from BlueXP.
+
+[role="quick-margin-list"]
+* link:concept-connectors.html[Learn more about when Connectors are required and how they work]
+* link:task-quick-start-connector-aws.html[Learn how to create a Connector in AWS]
+* link:task-quick-start-connector-azure.html[Learn how to create a Connector in Azure]
+* link:task-quick-start-connector-google.html[Learn how to create a Connector Google Cloud]
+* link:task-quick-start-connector-on-prem.html[Learn how to create a Connector on premises]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Subscribe to BlueXP
+
+[role="quick-margin-para"]
+Subscribe to BlueXP from your cloud provider's marketplace to pay for BlueXP services at an hourly rate (PAYGO) or through an annual contract.
+
+[role="quick-margin-para"]
+link:task-subscribe-standard-mode.html[Learn how to subscribe to BlueXP].

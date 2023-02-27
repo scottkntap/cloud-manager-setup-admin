@@ -19,8 +19,13 @@ You need to set up AWS permissions for BlueXP as follows:
 
 * If you intend to deploy the Connector from the AWS Marketplace or by manually installing the Connector, then you'll need to set up an IAM role that you can associate with the Connector after you install it.
 
-== Prepare permissions for deployment from BlueXP
+// start tabbed area
 
+[role="tabbed-block"]
+====
+
+.BlueXP
+--
 BlueXP needs to authenticate with AWS before it can deploy the Connector instance in your VPC. You can choose one of these authentication methods:
 
 * Let BlueXP assume an IAM role that has the required permissions
@@ -146,22 +151,10 @@ When BlueXP creates the Connector, it applies a new set of permissions to the Co
 .Result
 
 You should now have an IAM role that has the required permissions or an IAM user that has the required permissions. You can provide information about the role or access keys when you're prompted by BlueXP.
+--
 
-== Prepare permissions for deployment from the AWS Marketplace
-
-Create a policy and attach it to an IAM role.
-
-.Steps
-
-. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
-
-. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
-
-.Result
-
-You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
-
-== Prepare permissions for manual installations
+.AWS Marketplace
+--
 
 Create a policy and attach it to an IAM role.
 
@@ -174,3 +167,21 @@ Create a policy and attach it to an IAM role.
 .Result
 
 You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
+--
+
+.Manual install
+--
+Create a policy and attach it to an IAM role.
+
+.Steps
+
+. From the IAM console, create your own policy by copying and pasting the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+
+.Result
+
+You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
+
+====
+// end tabbed area

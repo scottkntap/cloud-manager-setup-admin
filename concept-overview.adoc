@@ -58,7 +58,11 @@ BlueXP includes a SaaS-based interface that is integrated with the BlueXP websit
 
 BlueXP is accessible through a https://console.bluexp.netapp.com[SaaS-based user interface^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your NetApp accounts and Connectors.
 
-TIP: If you're operating in an environment where outbound internet access isn't available, you can install the Connector software in that environment and access the local user interface that's available on the Connector. link:concept-connectors.html[Learn more about Connectors].
+=== Restricted and private sites
+
+BlueXP is also supported in environments where you need to restrict some internet access or all internet access. In those environments, you access the BlueXP interface and APIs through the Connector software, rather than through the SaaS website.
+
+link:concept-modes.html[Learn about BlueXP deployment modes].
 
 === BlueXP website
 
@@ -71,6 +75,8 @@ When you log in to BlueXP for the first time, you're prompted to create a _NetAp
 === Connectors
 
 In most cases, a BlueXP Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
+
+In the case of restricted mode and private mode, the Connector also includes the interface that you use to interact with BlueXP.
 
 link:concept-connectors.html[Learn more about when Connectors are required and how they work].
 

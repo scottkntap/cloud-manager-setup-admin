@@ -17,7 +17,7 @@ In most cases, a BlueXP Account Admin will need to deploy a _Connector_ in your 
 
 == When a Connector is required
 
-A Connector is required for the following features and services in BlueXP:
+When you use BlueXP in standard mode through the SaaS website, a Connector is required for the following features and services in BlueXP:
 
 * Amazon FSx for ONTAP management features
 * Amazon S3 discovery
@@ -87,26 +87,15 @@ NOTE: If your Cloud Volumes ONTAP system has a node-based BYOL license, the syst
 
 BlueXP will notify you if your Connector has been powered down for 14 days or longer. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html[Learn about BlueXP notifications].
 
-== How to create a Connector
+== Connectors in restricted mode and private mode
 
-A BlueXP Account Admin can create a Connector in a number of ways:
+When you use BlueXP in restricted mode or private mode, you get started with BlueXP by installing the Connector and then accessing the user interface or API on the Connector.
 
-* Directly from BlueXP (recommended)
-** link:task-creating-connectors-aws.html[Create in AWS]
-** link:task-creating-connectors-azure.html[Create in Azure]
-** link:task-creating-connectors-gcp.html[Create in GCP]
-* By manually installing the software on your own Linux host
-** link:task-installing-linux.html[On a host that has internet access]
-** link:task-install-connector-onprem-no-internet.html[On an on-prem host that doesn't have internet access]
-* From your cloud provider's marketplace
-** link:task-launching-aws-mktp.html[AWS Marketplace]
-** link:task-launching-azure-mktp.html[Azure Marketplace]
-
-If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by manually installing the Connector software on an existing Linux host. You can't deploy the Connector in a Government region from BlueXP's SaaS website.
+link:concept-modes.html[Learn about BlueXP deployment modes].
 
 == Permissions
 
-Specific permissions are needed to create the Connector and another set of permissions are needed for the Connector instance itself.
+Specific permissions are needed to create the Connector directly from BlueXP and another set of permissions are needed for the Connector instance itself.
 
 === Permissions to create a Connector
 
@@ -170,13 +159,3 @@ Only the main Connector should be set to *Automatic Mode*. If you switch to anot
 When you create your first Connector, BlueXP automatically uses that Connector for each additional working environment that you create. Once you create an additional Connector, you'll need to switch between them to see the working environments that are specific to each Connector.
 
 link:task-managing-connectors.html[Learn how to switch between Connectors].
-
-== The local user interface
-
-While you should perform almost all tasks from the https://console.bluexp.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed if you install the Connector in an environment that doesn't have internet access (like a Government region), and for a few tasks that need to be performed from the Connector itself, instead of the SaaS interface:
-
-* link:task-configuring-proxy.html[Setting a proxy server]
-* Installing a patch (you'll typically work with NetApp personnel to install a patch)
-* Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
-
-link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI].
