@@ -25,9 +25,7 @@ In addition, not all BlueXP services are available.
 
 link:concept-modes.html[Learn how restricted mode works].
 
-== Understand your installation options
-
-When you use BlueXP in restricted mode, you need to use the BlueXP instance that's running on the Connector.
+== Understand Connector installation options
 
 You can install a Connector from the AWS Marketplace, from the Azure Marketplace, or by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
 
@@ -53,9 +51,6 @@ The Connector is supported on English-language versions of these operating syste
 
 Hypervisor::
 A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux is required. https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
-
-Networking::
-<<Prepare networking for the Connector,Refer to the section below>>.
 
 CPU:: 4 cores or 4 vCPUs
 
@@ -173,7 +168,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 |===
 
-== Prepare networking for accessing the BlueXP console
+== Prepare networking for user access to BlueXP console
 
 In restricted mode, the BlueXP user interface is accessible from the Connector. As you use the BlueXP user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 
@@ -200,7 +195,7 @@ In restricted mode, the BlueXP user interface is accessible from the Connector. 
 
 == Prepare cloud permissions
 
-BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use Cloud Backup and Cloud Data Sense. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance after you install it.
+BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use Cloud Backup and Cloud Data Sense. You need to set up permissions in your cloud provider and then associate those permissions with the Connector.
 
 // start tabbed area
 
@@ -209,11 +204,17 @@ BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONT
 
 .AWS
 --
-Create a policy and attach it to an IAM role.
+Create an IAM policy in AWS and attach it to an IAM role. 
+
+If you're creating the Connector from the AWS Marketplace, you'll be prompted to select that IAM role. 
+
+If you're manually installing the Connector, you'll need to manually attach the role to the EC2 instance.
 
 .Steps
 
-. From the IAM console, create a policy:
+. Log in to the AWS console and navigate to the IAM service.
+
+. Create a policy:
 
 .. Click *Policies > Create policy*.
 
@@ -221,19 +222,19 @@ Create a policy and attach it to an IAM role.
 
 .. Finish the remaining steps to create the policy.
 
-. Back in the IAM console, create an IAM role:
+. Create an IAM role:
 
 .. Click *Roles > Create role*.
 
 .. Select *AWS service > EC2*.
 
-.. Add permissions by attaching the policy that you created in the previous step.
+.. Add permissions by attaching the policy that you just created.
 
 .. Finish the remaining steps to create the role.
 
 .Result
 
-You now have an IAM role that you can associate with the EC2 instance after you deploy the Connector.
+You now have an IAM role for the Connector EC2 instance.
 --
 
 .Azure
@@ -270,12 +271,10 @@ image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell wh
 +
 [source,azurecli]
 az role definition create --role-definition Connector_Policy.json
-+
-You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 
 .Result
 
-You now have an Azure custom role that you can assign to the virtual machine after you deploy the Connector.
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 --
 
 .Google Cloud
@@ -296,6 +295,7 @@ Create a role and apply it to a service account that you'll use for the Connecto
 +
 The following example creates a role named "connector" at the project level:
 +
+[source,gcloud]
 gcloud iam roles create connector --project=myproject --file=connector.yaml
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Google Cloud docs: Creating and managing custom roles^]

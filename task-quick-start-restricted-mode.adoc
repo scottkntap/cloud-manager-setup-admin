@@ -5,7 +5,7 @@ keywords: quick start, bluexp quick start, get started, get started with bluexp,
 summary: Get started with BlueXP in restricted mode in a few steps.
 ---
 
-= Quick start for BlueXP in private mode
+= Quick start for BlueXP in restricted mode
 :hardbreaks:
 :nofooter:
 :icons: font

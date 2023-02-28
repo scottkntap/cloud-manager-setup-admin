@@ -16,7 +16,7 @@ summary: After you're up and running with BlueXP in private mode, your next step
 After you're up and running with BlueXP in private mode, your next step depends on whether you plan to manage storage in the cloud or on premises.
 
 Cloud environment::
-In a cloud environment, you can use BlueXP in private mode to deploy Cloud Volumes ONTAP systems.
+In a cloud environment, you can use BlueXP in private mode to deploy Cloud Volumes ONTAP systems:
 
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[Quick start for Cloud Volumes ONTAP in AWS^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[Quick start for Cloud Volumes ONTAP in Microsoft Azure^]

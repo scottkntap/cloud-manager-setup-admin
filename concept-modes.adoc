@@ -17,7 +17,7 @@ You can use BlueXP in environments that have full internet access, limited inter
 
 == Overview
 
-BlueXP offers the following deployment modes, which support environments with varying levels of connectivity:
+BlueXP offers the following deployment modes for an account. These modes support environments with varying levels of connectivity.
 
 Standard mode::
 BlueXP is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
@@ -28,7 +28,7 @@ The BlueXP Connector is installed in a sovereign cloud region and has outbound u
 This mode is typically used by state and local governments and regulated companies.
 
 Private mode::
-The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector. 
+The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector, not from the SaaS website. 
 
 The following table provides a comparison of these modes.
 
@@ -50,9 +50,9 @@ The following table provides a comparison of these modes.
 | No
 
 | Connector installation
-| SaaS, marketplace, or manual
-| Marketplace or manual
-| Manual
+| SaaS, marketplace, or manual install
+| Marketplace or manual install
+| Manual install
 
 | Connector upgrades
 | Automatic
@@ -65,14 +65,26 @@ The following table provides a comparison of these modes.
 | Local
 
 | Authentication
-| SaaS (auth0)
-| SaaS (auth0)
-| Local
+| Through SaaS using auth0, NSS login, or identity federation
+| Through SaaS using auth0 or identity federation
+| Local user authentication
 
 | Supported BlueXP services
 | All
-| Cloud Volumes ONTAP, on-prem ONTAP clusters, Cloud Backup, and Cloud Data Sense
-| Cloud Volumes ONTAP, on-prem ONTAP clusters, Cloud Backup, and Cloud Data Sense
+a| 
+* Cloud Backup
+* Cloud Data Sense
+* Cloud Volumes ONTAP
+* Digital Wallet
+* On-prem ONTAP clusters
+* Replication
+a|
+* Cloud Backup
+* Cloud Data Sense
+* Cloud Volumes ONTAP
+* Digital Wallet
+* On-prem ONTAP clusters
+* Replication
 
 | Licensing options
 | PAYGO and BYOL
@@ -94,7 +106,7 @@ Outbound communication::
 Connectivity is required from the Connector to the BlueXP SaaS backend, to your cloud provider's publicly available resources, and to other essential components for day-to-day operations.
 
 Connector installation::
-From a setup wizard in BlueXP or from your cloud provider's marketplace. An installer is also available to manually install the Connector on your own Linux host in your data center or in the cloud.
+From a setup wizard in BlueXP or from the AWS or Azure Marketplace. An installer is also available to manually install the Connector on your own Linux host in your data center or in the cloud.
 
 Connector upgrades::
 Automated software upgrades from BlueXP with monthly updates.
@@ -109,7 +121,7 @@ Supported BlueXP services::
 All BlueXP services are available to users.
 
 Supported licensing options::
-In standard mode, the licensing options available for each BlueXP service are supported. You can review the documentation for each service to learn more about the available licensing options.
+The supported licensing options depends on which BlueXP service you are using. Review the documentation for each service to learn more about the available licensing options.
 
 == Restricted mode
 
@@ -120,12 +132,15 @@ image:diagram-restricted-mode.png[A conceptual image...]
 BlueXP works as follows in restricted mode:
 
 Outbound communication::
-Outbound, unidirectional connectivity is required from the Connector to the BlueXP SaaS backend to use data services, to enable automatic software upgrades, to use auth0-based authentication, and to send metadata to for charging purposes (storage VM name, allocated capacity, and volume UUID, type, and IOPS).
+Outbound, unidirectional connectivity is required from the Connector to the BlueXP SaaS backend to use data services, to enable automatic software upgrades, to use auth0-based authentication, and to send metadata for charging purposes (storage VM name, allocated capacity, and volume UUID, type, and IOPS).
 +
 A connection is also required to cloud provider resources from within the region.
 
+Supported location for the Connector::
+In the cloud, in a government region or commercial region.
+
 Connector installation::
-From your cloud provider's marketplace or a manual installation on your own Linux host.
+From the AWS or Azure Marketplace, or a manual installation on your own Linux host.
 
 Connector upgrades::
 Automated software upgrades from BlueXP with monthly updates.
@@ -134,7 +149,7 @@ User interface and API access::
 From the Connector that's deployed in your cloud region.
 
 Authentication::
-Authentication is provided through BlueXP's cloud service using auth0. Identity federation is available.
+Authentication is provided through BlueXP's cloud service using auth0. Identity federation is also available.
 
 Supported BlueXP services::
 BlueXP supports the following storage and data services with restricted mode:
@@ -162,15 +177,15 @@ The following features are not supported: One Drive scanning and Azure Informati
 |===
 
 Supported licensing options::
-Only the following licensing options are supported with restricted mode:
+The following licensing options are supported with restricted mode:
 
 * PAYGO
 +
-For Cloud Volumes ONTAP, only capacity-based licensing is supported.
+For Cloud Volumes ONTAP, only capacity-based licensing is supported with PAYGO.
 
 * BYOL
 +
-For Cloud Volumes ONTAP, both capacity-based licensing and node-based licensing are supported.
+For Cloud Volumes ONTAP, both capacity-based licensing and node-based licensing are supported with BYOL.
 
 == Private mode
 
@@ -187,6 +202,9 @@ BlueXP works as follows in private mode:
 Outbound communication::
 None. All packages, dependencies, and essential components are packaged with the Connector and served from the local machine. No connectivity is required to the BlueXP SaaS backend or to your cloud provider's publicly available resources.
 
+Supported location for the Connector::
+In the cloud or on premises.
+
 Connector installation::
 Manual installation on your own Linux host.
 
@@ -194,7 +212,7 @@ Connector upgrades::
 Manual software upgrades at undefined intervals.
 
 User interface and API access::
-From the Connector that's deployed in your cloud region or on-premises.
+From the Connector that's deployed in your cloud region or on premises.
 
 Authentication::
 Local user management and access. Authentication is not provided through BlueXP's cloud service.
@@ -251,6 +269,6 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node
 
 Once you've decided which deployment mode works best for your business needs, use the following links to get started with BlueXP.
 
-* link:reference-checklist-cm.html[Get started with standard mode]
-* link:reference-checklist-cm.html[Get started with restricted mode]
-* link:reference-checklist-cm.html[Get started with private mode]
+* link:task-quick-start-standard-mode.html[Get started with standard mode]
+* link:task-quick-start-restricted-mode.html[Get started with restricted mode]
+* link:task-quick-start-private-mode.html[Get started with private mode]

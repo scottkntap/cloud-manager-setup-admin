@@ -52,7 +52,7 @@ Pricing for BlueXP depends on the services that you plan to use. https://bluexp.
 
 == How BlueXP works
 
-BlueXP includes a SaaS-based interface that is integrated with the BlueXP website, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
+BlueXP includes a SaaS-based interface that is integrated with the BlueXP website and Connectors that manage Cloud Volumes ONTAP and other cloud services.
 
 === Software-as-a-service
 

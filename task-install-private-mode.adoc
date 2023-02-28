@@ -5,7 +5,7 @@ keywords: networking overview, networking requirements, endpoints, urls, get sta
 summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
 
-= Deploy the Connector
+= Deploy the Connector in private mode
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,7 +17,7 @@ To set up BlueXP in private mode, you need to deploy a Connector and then set up
 
 == Install the Connector
 
-After you verify that you have a supported Linux host, you can obtain the Connector software and then install it.
+Download the product installer from the NetApp Support Site and then manually install the Connector on your own Linux host.
 
 If you want to use BlueXP in the https://aws.amazon.com/federal/us-intelligence-community/[AWS Commercial Cloud Services (C2S) environment^] then you should follow separate instructions to get started in that environment. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Learn how to get started with Cloud Volumes ONTAP in the AWS C2S environment^]
 
@@ -71,11 +71,17 @@ link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to pr
 --
 Attach an IAM role that you previously created to the Connector EC2 instance.
 
-These steps apply only if you manually installed the Connector in AWS. For AWS Marketplace deployments, you already associated the Connector instance with an IAM role that includes the required permissions.
+.Steps
 
-.Step
+. Go to the Amazon EC2 console.
 
-. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+. Select *Instances*.
+
+. Select the Connector instance.
+
+. Select *Actions > Security > Modify IAM role*.
+
+. Select the IAM role and click *Update IAM role*.
 --
 
 .Azure

@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-create-connectors-gov.html
 keywords: government region, gov, govcloud, connector
-summary: If you are operating in a Government region, you need to deploy a Connector from your cloud provider's marketplace or by using the manual installation method. You can't deploy the Connector in a Government region from BlueXP's SaaS website.
+summary: To use BlueXP in restricted mode, you need to deploy a Connector and then set up BlueXP by accessing the user interface that's running on the Connector.
 ---
 
-= Deploy the Connector
+= Deploy the Connector in restricted mode
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -34,7 +34,7 @@ Install the Connector from your cloud provider's marketplace or by manually inst
 link:task-prepare-restricted-mode.html[Learn about networking requirements]
 * An IAM role with an attached policy that includes the required permissions for the Connector.
 +
-link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
+link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to set up AWS permissions]
 * Permissions to subscribe and unsubscribe from the AWS Marketplace for your IAM user.
 
 * A key pair for the EC2 instance.
@@ -98,7 +98,7 @@ Set up BlueXP.
 link:task-prepare-restricted-mode.html[Learn about networking requirements]
 * An IAM role with an attached policy that includes the required permissions for the Connector.
 +
-link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
+link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to set up AWS permissions]
 * Permissions to subscribe and unsubscribe from the AWS Marketplace for your IAM user.
 
 * A key pair for the EC2 instance.
@@ -106,8 +106,6 @@ link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
 .Steps
 
 . Go to the BlueXP offering in the AWS Marketplace.
-+
-The IAM user must have AWS Marketplace permissions to subscribe and unsubscribe.
 
 .. Open the EC2 service and select *Launch instance*.
 .. Select *AWS Marketplace*.
@@ -154,7 +152,7 @@ link:task-prepare-restricted-mode.html[Learn about networking requirements]
 
 * An Azure custom role that includes the required permissions for the Connector.
 +
-link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
+link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to set up Azure permissions]
 
 .Steps
 
@@ -262,9 +260,11 @@ Provide BlueXP with the permissions that you previously set up.
 ====
 // end tabbed area
 
-== Provide permissions
+== Provide the Connector with permissions
 
-Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use Cloud Volumes ONTAP, Cloud Backup, and Cloud Data Sense from BlueXP.
+If you deployed the Connector from the Azure Marketplace or if you manually installed the Connector software, you need to provide the permissions that you previously set up so that you can use BlueXP services.
+
+These steps don't apply if you deployed the Connector from the AWS Marketplace because you chose the required IAM role during deployment. 
 
 link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to prepare cloud permissions].
 
@@ -279,9 +279,17 @@ Attach an IAM role that you previously created to the Connector EC2 instance.
 
 These steps apply only if you manually installed the Connector in AWS. For AWS Marketplace deployments, you already associated the Connector instance with an IAM role that includes the required permissions.
 
-.Step
+.Steps
 
-. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+. Go to the Amazon EC2 console.
+
+. Select *Instances*.
+
+. Select the Connector instance.
+
+. Select *Actions > Security > Modify IAM role*.
+
+. Select the IAM role and click *Update IAM role*.
 --
 
 .Azure

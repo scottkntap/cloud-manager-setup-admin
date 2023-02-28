@@ -13,7 +13,7 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-To set up BlueXP in private mode, the first step is to deploy the Connector software either in the cloud or on your premises. When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector. There is no connection to the BlueXP SaaS website.
+You should understand what's needed to get started with BlueXP in private mode so that you can prepare your environment.
 
 == Understand how private mode works
 
@@ -25,9 +25,7 @@ In addition, not all BlueXP services are available.
 
 link:concept-modes.html[Learn how private mode works].
 
-== Understand your installation options
-
-When you use BlueXP in private mode, you need to use the BlueXP user interface that's running on the Connector.
+== Understand Connector installation options
 
 You can deploy a Connector on-premises or in the cloud by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
 
@@ -35,7 +33,7 @@ You can deploy a Connector on-premises or in the cloud by manually installing th
 
 If you want to use BlueXP in the https://aws.amazon.com/federal/us-intelligence-community/[AWS Commercial Cloud Services (C2S) environment^] then you should follow separate instructions to get started in that environment. 
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Learn how to get started with Cloud Volumes ONTAP in the AWS C2S environment^]. 
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Learn how to get started with Cloud Volumes ONTAP in the AWS C2S environment^]
 
 Those instructions include details about how to prepare your environment, install the Connector, and launch Cloud Volumes ONTAP.
 
@@ -61,9 +59,6 @@ The Connector is supported on English-language versions of these operating syste
 
 Hypervisor::
 A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux is required. https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
-
-Networking::
-<<Prepare networking for the Connector,Refer to the section below>>.
 
 CPU:: 4 cores or 4 vCPUs
 
@@ -108,7 +103,7 @@ When BlueXP is operating in private mode, there are no outbound connections from
 
 If you are planning to install BlueXP in your cloud provider and create Cloud Volumes ONTAP systems, then BlueXP requires permissions from your cloud provider. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance after you install it.
 
-If you are planning to install the Connector on premises, then cloud permissions aren't needed because there's no connection from BlueXP to a cloud provider.
+If you are planning to install the Connector on premises, then you can skip this step. Cloud permissions aren't needed because there's no connection from the Connector to a cloud provider.
 
 // start tabbed area
 
@@ -117,11 +112,13 @@ If you are planning to install the Connector on premises, then cloud permissions
 
 .AWS
 --
-Create a policy and attach it to an IAM role.
+Create an IAM policy in AWS and attach it to an IAM role. You'll need to manually attach the role to the EC2 instance for the Connector.
 
 .Steps
 
-. From the IAM console, create a policy:
+. Log in to the AWS console and navigate to the IAM service.
+
+. Create a policy:
 
 .. Click *Policies > Create policy*.
 
@@ -129,13 +126,13 @@ Create a policy and attach it to an IAM role.
 
 .. Finish the remaining steps to create the policy.
 
-. Back in the IAM console, create an IAM role:
+. Create an IAM role:
 
 .. Click *Roles > Create role*.
 
 .. Select *AWS service > EC2*.
 
-.. Add permissions by attaching the policy that you created in the previous step.
+.. Add permissions by attaching the policy that you just created.
 
 .. Finish the remaining steps to create the role.
 
@@ -178,12 +175,10 @@ image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell wh
 +
 [source,azurecli]
 az role definition create --role-definition Connector_Policy.json
-+
-You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 
 .Result
 
-You now have an Azure custom role that you can assign to the virtual machine after you deploy the Connector.
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 --
 
 .Google Cloud
@@ -204,6 +199,7 @@ Create a role and apply it to a service account that you'll use for the Connecto
 +
 The following example creates a role named "connector" at the project level:
 +
+[source,gcloud]
 gcloud iam roles create connector --project=myproject --file=connector.yaml
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Google Cloud docs: Creating and managing custom roles^]
