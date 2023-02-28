@@ -22,7 +22,7 @@ Get started with BlueXP in private mode in a few steps.
 
 .. Set up networking that provides access to the target networks.
 
-.. Set up permissions in your cloud provider so that you can associate those permissions with the Connector instance after you deploy it.
+.. For cloud deployments, set up permissions in your cloud provider so that you can associate those permissions with the Connector instance after you deploy it.
 
 [role="quick-margin-para"]
 link:task-prepare-private-mode.html[Learn how to prepare for deployment].
@@ -32,7 +32,7 @@ link:task-prepare-private-mode.html[Learn how to prepare for deployment].
 [role="quick-margin-list"]
 .. Install the Connector by manually installing the software on your own Linux host.
 
-.. Provide BlueXP with the permissions that you previously set up.
+.. For cloud deployments, provide BlueXP with the permissions that you previously set up.
 
 .. Set up BlueXP by opening a web browser and entering the Linux host's IP address.
 
