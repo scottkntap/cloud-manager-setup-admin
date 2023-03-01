@@ -17,9 +17,7 @@ When you get started with BlueXP, your first step is to sign up. You'll be given
 
 .Sign up options
 
-BlueXP is accessible from your web browser through a SaaS-based user interface.
-
-You can sign up to BlueXP using one of the following options:
+BlueXP is accessible from your web browser through a SaaS-based user interface. You can sign up to BlueXP using one of the following options:
 
 * Your existing NetApp Support Site (NSS) credentials
 
