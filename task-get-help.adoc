@@ -23,7 +23,7 @@ Case management is available as a Preview. We plan to refine this experience and
 
 . Click *Case Management* and if you're prompted, add your NSS account to BlueXP.
 +
-By default, the page shows open cases related to the NSS account that is associated with your BlueXP user account. This is the NSS account that appears at the top of the *NSS management* page.
+The *Case management* page shows open cases related to the NSS account that is associated with your BlueXP user account. This is the same NSS account that appears at the top of the *NSS management* page.
 
 . Optionally modify the information that displays in the table:
 
