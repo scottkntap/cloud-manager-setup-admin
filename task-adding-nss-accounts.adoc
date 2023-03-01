@@ -17,7 +17,7 @@ Provide the credentials for your NetApp Support Site (NSS) accounts to register 
 
 == Overview
 
-BlueXP supports associating an NSS account with each BlueXP user and associating one or more NSS accounts with your BlueXP account.
+BlueXP supports associating one NSS account with each BlueXP user and associating one or more NSS accounts with your BlueXP account.
 
 === NSS credentials per BlueXP user
 
@@ -27,29 +27,29 @@ Your NSS credentials are required to access your Digital Advisor account and to 
 
 === NSS credentials for your BlueXP account
 
-Associating NetApp Support Site accounts with your BlueXP account is required to enable the following tasks:
+Associating NetApp Support Site accounts with your BlueXP account is required to enable the following tasks in BlueXP:
 
-* To register for support
+* Registering for support
 
-* To create support cases
+* Creating support cases
 
-* To deploy Cloud Volumes ONTAP when you bring your own license (BYOL)
+* Deploying Cloud Volumes ONTAP when you bring your own license (BYOL)
 +
 Providing your NSS account is required so that BlueXP can upload your license key and to enable the subscription for the term that you purchased. This includes automatic updates for term renewals.
 
-* To register pay-as-you-go Cloud Volumes ONTAP systems
+* Registering pay-as-you-go Cloud Volumes ONTAP systems
 +
 Providing your NSS account is required to activate support for your system and to gain access to NetApp technical support resources.
 
-* To upgrade Cloud Volumes ONTAP software to the latest release
+* Upgrading Cloud Volumes ONTAP software to the latest release
 
 These credentials are associated with your BlueXP account. Users who belong to the account can access these credentials from *Support > NSS Management*.
 
 <<Manage NSS credentials for your BlueXP account,Learn how to manage NSS credentials for your BlueXP account>>.
 
-== Manage NSS credentials per BlueXP user
+== Manage NSS credentials for your BlueXP login
 
-The NSS credentials associated with your BlueXP user enables access to Digital Advisor and case management capabilities.
+The NSS credentials associated with your BlueXP login enables access to Digital Advisor and case management capabilities.
 
 * When you access Digital Advisor in BlueXP, you're prompted to log in to Digital Advisor by entering your NSS credentials. After you enter your NSS credentials, you'll see this NSS account listed at the top of the NSS Management page. You can then manage those credentials as needed.
 
