@@ -34,7 +34,7 @@ link:task-set-up-networking-aws.html[Learn more about AWS networking requirement
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Review host requirements
 
 [role="quick-margin-para"]
-The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your host meets these requirements.
 
 [role="quick-margin-para"]
 link:reference-host-requirements-aws.html[Learn more about host requirements].
@@ -42,14 +42,14 @@ link:reference-host-requirements-aws.html[Learn more about host requirements].
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up AWS permissions
 
 [role="quick-margin-para"]
-Set up AWS permissions for the installation option that you're planning to use:
+Set up AWS permissions based on the installation option that you're planning to use:
 
 [role="quick-margin-list"]
-* *From BlueXP*: Create an IAM policy and attach it to an IAM role that BlueXP can assume or to an IAM user that you can provide access keys for. BlueXP authenticates with AWS and uses these permissions to create the Connector instance on your behalf.
+* *Installation from BlueXP*: Create an IAM policy and attach it to an IAM role that BlueXP can assume or to an IAM user that you can provide access keys for. BlueXP authenticates with AWS and uses these permissions to create the Connector instance on your behalf.
 
-* *From the AWS Marketplace*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector EC2 instance.
+* *Installation from the AWS Marketplace*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector instance during installation.
 
-* *Manual install*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector EC2 instance.
+* *Manual install*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector instance after installation.
 
 [role="quick-margin-para"]
 link:task-set-up-permissions-aws.html[Follow step-by-step instructions for each of these options].
@@ -60,38 +60,11 @@ link:task-set-up-permissions-aws.html[Follow step-by-step instructions for each 
 Install the Connector using one of the available installation options:
 
 [role="quick-margin-list"]
-* *From BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
+* *Installation from BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
 
-* *From the AWS Marketplace*: Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^] and follow the prompts to launch through EC2 so that you can attach an IAM role.
+* *Installation from the AWS Marketplace*: Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^] and follow the prompts to launch through EC2 so that you can attach an IAM role.
 
 * *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
 
 [role="quick-margin-para"]
 link:task-install-connector-aws.html[Follow step-by-step instructions for each of these options].
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Install the Connector
-
-[role="quick-margin-para"]
-Install the Connector using one of the available installation options:
-
-// start tabbed area
-[role="tabbed-block"]
-====
-
-.BlueXP
---
-Click the Connector drop-down, select *Add Connector* and follow the prompts.
---
-
-.AWS Marketplace
---
-Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^] and follow the prompts to launch through EC2 so that you can attach an IAM role
---
-
-.Manual install
---
-Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
---
-
-====
-// end tabbed area

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-creating-connectors-aws.html
 keywords: fsx for ontap, iam, user role, create connector in aws, launch connector in aws, deploy connector in aws, aws connector, connector aws, connector permissions
-summary: A BlueXP Account Admin needs to deploy a Connector before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
+summary: A BlueXP Account Admin needs to deploy a Connector before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your hybrid cloud environment.
 ---
 
 = Create a Connector in AWS from BlueXP
@@ -13,7 +13,7 @@ summary: A BlueXP Account Admin needs to deploy a Connector before you can use m
 :imagesdir: ./media/
 
 [.lead]
-A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
+A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your hybrid cloud environment.
 
 These steps describe how to create a Connector in an AWS commercial region directly from the BlueXP SaaS website. 
 

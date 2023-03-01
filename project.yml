@@ -41,7 +41,7 @@ sidebar:
                   url: /task-set-up-networking-aws.html
                 - title: Review host requirements
                   url: /reference-host-requirements-aws.html
-                - title: Set up cloud permissions
+                - title: Set up AWS permissions
                   url: /task-set-up-permissions-aws.html
                 - title: Install the Connector
                   url: /task-install-connector-aws.html
@@ -55,7 +55,7 @@ sidebar:
                   url: /task-set-up-networking-azure.html
                 - title: Review host requirements
                   url: /reference-host-requirements-azure.html
-                - title: Set up cloud permissions
+                - title: Set up Azure permissions
                   url: /task-set-up-permissions-azure.html
                 - title: Install the Connector
                   url: /task-install-connector-azure.html
@@ -69,7 +69,7 @@ sidebar:
                   url: /task-set-up-networking-google-cloud.html
                 - title: Review host requirements
                   url: /reference-host-requirements-google.html
-                - title: Set up cloud permissions
+                - title: Set up Google Cloud permissions
                   url: /task-set-up-permissions-google.html
                 - title: Install the Connector
                   url: /task-install-connector-google-cloud.html

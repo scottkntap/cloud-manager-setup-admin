@@ -74,7 +74,7 @@ When you log in to BlueXP for the first time, you're prompted to create a _NetAp
 
 === Connectors
 
-In most cases, a BlueXP Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
+In most cases, a BlueXP Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables BlueXP to manage resources and processes within your hybrid cloud environment.
 
 In the case of restricted mode and private mode, the Connector also includes the interface that you use to interact with BlueXP.
 

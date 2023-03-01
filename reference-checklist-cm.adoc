@@ -5,7 +5,7 @@ keywords: networking, urls, endpoints, web browser, console
 summary: As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 ---
 
-= Prepare networking for user access to BlueXP console
+= Prepare networking for user access to the BlueXP console
 :hardbreaks:
 :nofooter:
 :icons: font

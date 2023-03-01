@@ -13,7 +13,9 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-You can choose from the following options to create a Connector in AWS:
+There are a few different ways to create a Connector in Azure. Directly from BlueXP is the most common way.
+
+The following installation options are available:
 
 * Create the Connector directly from BlueXP (this is the standard option)
 * Create a Connector from the AWS Marketplace

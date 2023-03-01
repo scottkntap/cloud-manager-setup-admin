@@ -24,7 +24,7 @@ Install the Connector from BlueXP, from your cloud provider's marketplace, or by
 --
 .Steps
 
-. If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
+. Click the *Connector* drop-down and select *Add Connector*.
 +
 image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
 

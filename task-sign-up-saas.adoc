@@ -5,7 +5,7 @@ keywords: sign up, signing up, sign in, signing in, login with netapp, log in wi
 summary: When you get started with BlueXP, your first step is to sign up. You'll be given the option to create an account, but you can skip that step if you're being invited to an existing account.
 ---
 
-= Sign up to BlueXP
+= Sign up to BlueXP and create an account
 :hardbreaks:
 :nofooter:
 :icons: font

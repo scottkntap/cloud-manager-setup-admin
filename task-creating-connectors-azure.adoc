@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-creating-connectors-azure.html
 keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions, create custom role, create azure custom role, azure custom role
-summary: A BlueXP Account Admin needs to deploy a Connector before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
+summary: A BlueXP Account Admin needs to deploy a Connector before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your hybrid cloud environment.
 ---
 
 = Create a Connector in Azure from BlueXP
@@ -13,7 +13,7 @@ summary: A BlueXP Account Admin needs to deploy a Connector before you can use m
 :imagesdir: ./media/
 
 [.lead]
-A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your public cloud environment.
+A BlueXP Account Admin needs to deploy a _Connector_ before you can use most BlueXP features. The Connector enables BlueXP to manage resources and processes within your hybrid cloud environment.
 
 These steps describe how to create a Connector in an Azure commercial region directly from the BlueXP SaaS website. 
 
