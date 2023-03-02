@@ -50,7 +50,7 @@ For all other accounts, you'll need to manually associate the subscription by re
 
 * Click *Save*.
 +
-The following video shows the steps to subscribe from the Google Cloud Marketplace:
+The following video shows the steps to subscribe from the AWS Marketplace:
 +
 video::video_subscribing_aws.mp4[width=848, height=480]
 --

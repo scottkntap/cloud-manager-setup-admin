@@ -18,9 +18,9 @@ Set up Google Cloud permissions so that you can use BlueXP to manage your data a
 You'll need to set up permissions as follows:
 
 * If you are planning to create the Connector from BlueXP or by using gcloud, then you need to set up permissions for the Google Cloud user who will deploy the Connector VM.
-* You need to create a service account with the required permissions for the Connector. 
+* Set up permissions for the Connector by creating a role and granting the role to a service account.
 +
-You'll attach this service account to the Connector VM during deployment.
+You'll associate this service account with the Connector VM so that BlueXP has the required permissions. 
 
 Depending on your configuration, you might need to complete the following steps as well:
 
@@ -105,13 +105,13 @@ includedPermissions:
 
 .. Create a custom role by using the `gcloud iam roles create` command.
 +
-The following example creates a role named "connector" at the project level:
+The following example creates a role named "connectorDeployment" at the project level:
 +
-gcloud iam roles create connector --project=myproject --file=connector-deployment.yaml
+gcloud iam roles create connectorDeployment --project=myproject --file=connector-deployment.yaml
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Google Cloud docs: Creating and managing custom roles^]
 
-. Assign this custom role to the user who will deploy the Connector from BlueXP.
+. Assign this custom role to the user who will deploy the Connector from BlueXP or by using gcloud.
 +
 https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single-role[Google Cloud docs: Grant a single role^]
 
@@ -121,7 +121,7 @@ The Google Cloud user now has the permissions required to create the Connector.
 
 == Set up permissions for the Connector
 
-A service account is required to provide the Connector with the permissions that it needs to manage resources in Google Cloud. You'll associate this service account with the Connector VM when you create it.
+A service account is required to provide the Connector with the permissions that BlueXP needs to manage resources in Google Cloud. You'll associate this service account with the Connector VM when you create it.
 
 The permissions for the service account are different than the permissions that you set up in the previous section.
 
@@ -296,13 +296,13 @@ This table is for reference and your environment should reflect the permissions 
 | Host project permissions
 | Purpose
 
-| Google account used to deploy the Connector | Custom | Service Project
-a| * link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector[The permissions found in this section above]
-a| * compute.networkUser
+| Google account to deploy the Connector | Custom | Service Project
+a| link:task-set-up-permissions-google.html#set-up-permissions-to-create-the-connector-from-bluexp-or-gcloud[Connector deployment policy]
+a| compute.networkUser
 | Deploying the Connector in the service project
 
 | Connector service account | Custom | Service project a|
-* link:task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector[The permissions found in this section above]
+link:task-set-up-permissions-google.html#set-up-permissions-for-the-connector[NetApp BlueXP policy]
 a|
 * compute.networkUser
 * deploymentmanager.editor
@@ -314,15 +314,15 @@ a|
 | N/A | (Optional) For data tiering and Cloud Backup
 
 | Google APIs service agent | Google Cloud | Service project a|
-* (Default) Editor
+(Default) Editor
 a|
-* compute.networkUser
+compute.networkUser
 | Interacts with Google Cloud APIs on behalf of deployment. Allows BlueXP to use the shared network.
 
 | Google Compute Engine default service account | Google Cloud | Service project a|
-* (Default) Editor
+(Default) Editor
 a|
-* compute.networkUser
+compute.networkUser
 | Deploys Google Cloud instances and compute infrastructure on behalf of deployment. Allows BlueXP to use the shared network.
 
 |===

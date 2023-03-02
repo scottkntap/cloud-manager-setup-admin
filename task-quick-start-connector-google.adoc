@@ -45,11 +45,9 @@ link:reference-host-requirements-google.html[Learn more about host requirements]
 Set up Google Cloud permissions for the installation option that you're planning to use:
 
 [role="quick-margin-list"]
-* *Installation from BlueXP*: Create a custom role and attach it to the user who will deploy the Connector and create another custom role and assign it to a service account.
+* *Installation from BlueXP or gcloud*: Create a custom role and attach it to the user who will deploy the Connector. Create another custom role and assign it to a service account for the Connector VM instance.
 
-* *Installation using gcloud*: Create a custom role and attach it to the user who will deploy the Connector and create another custom role and assign it to a service account.
-
-* *Manual install*: Create a custom role so that you can associate it with the Connector VM instance after installation.
+* *Manual install*: Create a custom role and assign it to a service account for the Connector VM instance.
 
 [role="quick-margin-para"]
 link:task-set-up-permissions-google.html[Follow step-by-step instructions for each of these options].
@@ -62,7 +60,7 @@ Install the Connector using one of the available installation options:
 [role="quick-margin-list"]
 * *Installation from BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
 
-* *Installation using gloud*: Use the gcloud compute instances create command.
+* *Installation using gloud*: Use the `gcloud compute instances create` command.
 
 * *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
 

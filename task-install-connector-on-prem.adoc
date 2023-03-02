@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
-= Install the Connector
+= Install the Connector on premises
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Install the Connector in Google Cloud directly from the BlueXP user interface, by using gcloud, or by installing the software on your own Linux host.
+Install the Connector on premises and then log in and set it up to work with your BlueXP SaaS account.
 
 .What you'll need
 

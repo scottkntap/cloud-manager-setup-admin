@@ -18,10 +18,10 @@ Creating a Connector on your premises includes a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up networking
 
 [role="quick-margin-para"]
-You'll need a VPC and subnet with outbound internet access to specific endpoints. If a proxy server is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
+You'll need a network location that has outbound internet access to specific endpoints. If a proxy server is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
 
 [role="quick-margin-para"]
-link:task-set-up-networking-google.html[Learn more about AWS networking requirements].
+link:task-set-up-networking-on-prem.html[Learn more about networking requirements].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review host requirements
 
@@ -29,12 +29,12 @@ link:task-set-up-networking-google.html[Learn more about AWS networking requirem
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
 
 [role="quick-margin-para"]
-link:reference-host-requirements-google.html[Learn more about host requirements].
+link:reference-host-requirements-on-prem.html[Learn more about host requirements].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up cloud permissions
 
 [role="quick-margin-para"]
-Set up Google Cloud permissions for the installation option that you're planning to use:
+Set up permissions for your cloud provider so that you can use BlueXP to manage storage in the cloud:
 
 [role="quick-margin-list"]
 * *AWS*: Create an IAM policy and attach the policy to an IAM user. After installation, you need to provide BlueXP with access keys for that IAM user. 
@@ -44,9 +44,12 @@ Set up Google Cloud permissions for the installation option that you're planning
 * *Google Cloud*: ???
 
 [role="quick-margin-para"]
-link:task-set-up-permissions-aws.html[Follow step-by-step instructions for each of these options].
+link:task-set-up-permissions-on-prem.html[Follow step-by-step instructions for each of these options].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Install the Connector
 
 [role="quick-margin-para"]
 Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
+
+[role="quick-margin-para"]
+link:task-install-connector-on-prem.html[Follow step-by-step instructions].

@@ -13,7 +13,9 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-You can choose from the following options to create a Connector in Google Cloud:
+There are a few different ways to create a Connector in Azure. Directly from BlueXP is the most common way.
+
+The following options are available:
 
 * Create the Connector directly from BlueXP (this is the standard option)
 +
@@ -25,4 +27,4 @@ This action also launches a VM instance running Linux and the Connector software
 
 * Download and manually install the software on your own Linux host
 
-The installation option that you choose impacts how you prepare for installation. This includes how you provide BlueXP with the required permissions that it needs to authenticate and manage resources in Google Cloud. Learn more by reading through the sections below.
+The installation option that you choose impacts how you prepare for installation. This includes how you provide BlueXP with the required permissions that it needs to authenticate and manage resources in Google Cloud.
