@@ -11,11 +11,27 @@ summary: NetApp provides support for BlueXP in a variety of ways. Extensive free
 
 include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/_include/get-help.adoc[]
 
-== Manage your support cases
+== Manage your support cases (Preview)
 
 You can view and manage active and resolved support cases directly from BlueXP. You can manage the cases associated with your NSS account and with your company.
 
 Case management is available as a Preview. We plan to refine this experience and add enhancements in upcoming releases. Please send us feedback by using the in-product chat.
+
+Note the following:
+
+* The case management dashboard at the top of the page offers two views:
+
+** The view on the left shows the total cases opened in the past 3 months by the user NSS account you provided.
+** The view on the right shows the total cases opened in the past 3 months at your company level based on your user NSS account.
+
++
+The results in the table reflect the cases related to the view that you selected.
+
+* You can add or remove columns of interest and you can filter the contents of columns like Priority and Status. Other columns provide just sorting capabilities.
++
+View the steps below for more details.
+
+* At a per-case level, we offer the ability to update case notes or close a case that is not already in Closed or Pending Closed status. 
 
 .Steps
 
@@ -33,11 +49,11 @@ The *Case management* page shows open cases related to the NSS account that is a
 +
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-case-management-date-range.png["A screenshot of the option above the table on the Case management page that enables you to choose an exact date range or the last 7 days, 30 days, or 3 months."]
 
-* Filter the contents of the *Priority* or *Status* columns.
+* Filter the contents of the columns.
 +
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-case-management-filter.png[A screenshot of the filter option in the Status column that enables you to filter out cases that match a specific status such as Active or Closed.]
 
-* Change the columns that appear in the table by clicking image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-table-columns.png[The plus icon that appears in the table] and then choosing the columns that you'd like to appear.
+* Change the columns that appear in the table by clicking image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-table-columns.png[The plus icon that appears in the table] and then choosing the columns that you'd like to display.
 +
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-case-management-columns.png[A screenshot that shows the columns that you can show in the table.]
 
