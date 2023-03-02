@@ -140,7 +140,7 @@ To deploy the BlueXP Connector, BlueXP needs to authenticate with Azure. You can
 ====
 
 .Azure user account
-
+--
 Assign the custom role to the user who will deploy the Connector from BlueXP.
 
 .Steps
@@ -313,14 +313,12 @@ image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell wh
 +
 [source,azurecli]
 az role definition create --role-definition Connector_Policy.json
-+
-You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 
 .Result
 
-You now have an Azure custom role that you can assign to the virtual machine after you deploy the Connector.
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 
-== Set up permissions to provide after manual installation
+== Set up permissions to assign after manual installation
 
 If you manually install the Connector software on your own Linux host in Azure, you'll need to assign a custom role to the Azure VM.
 
@@ -354,13 +352,7 @@ image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell wh
 +
 [source,azurecli]
 az role definition create --role-definition Connector_Policy.json
-+
-You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
 
 .Result
 
-You now have an Azure custom role that you can assign to the virtual machine after you deploy the Connector.
-
-.What's next?
-
-Install the Connector.
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.

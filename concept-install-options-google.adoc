@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
-= Installation options
+= Connector installation options in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,6 +16,13 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 You can choose from the following options to create a Connector in Google Cloud:
 
 * Create the Connector directly from BlueXP (this is the standard option)
++
+This action launches a VM instance running Linux and the Connector software in a VPC of your choice.
+
+* Create the Connector using gcloud
++
+This action also launches a VM instance running Linux and the Connector software.
+
 * Download and manually install the software on your own Linux host
 
 The installation option that you choose impacts how you prepare for installation. This includes how you provide BlueXP with the required permissions that it needs to authenticate and manage resources in Google Cloud. Learn more by reading through the sections below.

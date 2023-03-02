@@ -15,7 +15,7 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 [.lead]
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
 
-When you deploy the Connector from BlueXP, the image includes the required OS and software components.
+When you deploy the Connector from BlueXP or from the Azure Marketplace, the image includes the required OS and software components.
 
 Dedicated host::
 The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
@@ -43,7 +43,3 @@ Disk space in /opt:: 100 GiB of space must be available
 Disk space in /var:: 20 GiB of space must be available
 
 Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
-
-.What's next?
-
-Set up cloud permissions.

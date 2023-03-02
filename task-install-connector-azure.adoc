@@ -58,9 +58,12 @@ TIP: If you're already logged in to an Azure account, then BlueXP will automatic
 
 * *Active Directory service principal* to enter information about the Azure Active Directory service principal that grants the required permissions:
 +
-** Application (client) ID: See <<Get the application ID and directory ID>>.
-** Directory (tenant) ID: See <<Get the application ID and directory ID>>.
-** Client Secret: See <<Create a client secret>>.
+** Application (client) ID
+** Directory (tenant) ID
+** Client Secret
+
++
+link:task-set-up-permissions-azure.html[Learn how to obtain these values for a service principal].
 
 . Follow the steps in the wizard to create the Connector:
 
@@ -103,7 +106,7 @@ Note the following as you configure the VM:
 
 * Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
 +
-link:task-installing-linux.html[Review the VM requirements].
+link:reference-host-requirements-azure[Review the VM requirements].
 
 * For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
 +
@@ -131,11 +134,7 @@ link:concept-netapp-accounts.html[Learn about NetApp accounts].
 
 The Connector is now installed and set up with your NetApp account.
 
-If the Connector is in an Azure commercial region, open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
-
-If the Connector is in an Azure Government region, you can use BlueXP by opening your web browser and connecting to the IP address of the Connector instance: https://_ipaddress_
-
-Since the Connector was deployed in a Government region, it's not accessible from https://console.bluexp.netapp.com.
+Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
 
 .Manual install

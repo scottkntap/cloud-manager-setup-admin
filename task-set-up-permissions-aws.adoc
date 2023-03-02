@@ -177,7 +177,7 @@ Create an IAM policy in AWS and attach it to an IAM role. When you create the Co
 
 You now have an IAM role that you can associate with the EC2 instance during deployment from the AWS Marketplace.
 
-== Set up permissions to provide after manual installation
+== Set up permissions to assign after manual installation
 
 Create an IAM policy in AWS and attach it to an IAM role. You'll need to associate this IAM role with the Connector instance after you install the software.
 

@@ -18,7 +18,7 @@ Creating a Connector in AWS includes a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Understand your installation options
 
 [role="quick-margin-para"]
-The standard way to create a Connector in AWS is directly from BlueXP, but you can also create it from the AWS Marketplace, or manually install the software yourself.
+The standard way to create a Connector in AWS is directly from BlueXP, but you can also create it from the AWS Marketplace, or you can manually install the software on a pre-existing Linux host.
 
 [role="quick-margin-para"]
 link:concept-install-options-aws.html[Learn more about your installation options].
@@ -29,7 +29,7 @@ link:concept-install-options-aws.html[Learn more about your installation options
 You'll need a VPC and subnet with outbound internet access to specific endpoints. If a proxy server is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
 
 [role="quick-margin-para"]
-link:task-set-up-networking-aws.html[Learn more about AWS networking requirements].
+link:task-set-up-networking-aws.html[Learn more about networking requirements].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Review host requirements
 
