@@ -21,13 +21,13 @@ BlueXP supports associating one NSS account with each BlueXP user and associatin
 
 === NSS credentials per BlueXP user
 
-Your NSS credentials are required to access your Digital Advisor account and to manage support cases. These credentials are associated directly with your BlueXP user account.
+Your individual NSS credentials are required to access your Digital Advisor account and to manage support cases through BlueXP. These credentials are only visible to the person logging in to BlueXP. The credentials can be removed and updated as needed.
 
 <<Manage NSS credentials per BlueXP user,Learn how to manage NSS credentials per BlueXP user>>.
 
 === NSS credentials for your BlueXP account
 
-Associating NetApp Support Site accounts with your BlueXP account is required to enable the following tasks in BlueXP:
+Associating NetApp Support Site credentials with your specific BlueXP account ID is required to enable the following tasks in BlueXP:
 
 * Registering for support
 
@@ -43,7 +43,7 @@ Providing your NSS account is required to activate support for your system and t
 
 * Upgrading Cloud Volumes ONTAP software to the latest release
 
-These credentials are associated with your BlueXP account. Users who belong to the account can access these credentials from *Support > NSS Management*.
+These credentials are associated with your specific BlueXP account ID. Users who belong to the BlueXP account can access these credentials from *Support > NSS Management*.
 
 <<Manage NSS credentials for your BlueXP account,Learn how to manage NSS credentials for your BlueXP account>>.
 
@@ -109,11 +109,21 @@ These actions enable BlueXP to use your NSS account for things like license down
 +
 Note the following:
 +
-* The account must be a customer-level account (not a guest or temp account).
+* The NSS account must be a customer-level account (not a guest or temp account). You can have multiple customer-level NSS accounts.
 
-* Upon successful login, NetApp will store the NSS user name. This is a system generated ID that maps to your email. On the *NSS Management* page, you can display your email from the image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png[An icon of three horizontal dots] menu.
+* There can be only one NSS account if that account is a partner-level account. If you try to add customer-level NSS accounts and a partner-level account exists, you'll get the following error message:
++
+"The NSS customer type is not allowed for this account as there are already NSS Users of different type."
++
+The same is true if you have pre-existing customer-level NSS accounts and try to add a partner-level account.
 
-* If you ever need to refresh your login credential tokens, there is also an *Update Credentials* option in the image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png[An icon of three horizontal dots] menu. Using this option prompts you to log in again.
+* Upon successful login, NetApp will store the NSS user name. 
++
+This is a system-generated ID that maps to your email. On the *NSS Management* page, you can display your email from the image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png[An icon of three horizontal dots] menu.
+
+* If you ever need to refresh your login credential tokens, there is also an *Update Credentials* option in the image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png[An icon of three horizontal dots] menu. 
++
+Using this option prompts you to log in again. Note that the token for these accounts expire after 90 days. A notification will be posted to alert you of this.
 
 .What's next?
 
