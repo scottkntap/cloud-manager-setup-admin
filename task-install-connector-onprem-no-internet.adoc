@@ -17,7 +17,7 @@ You can install the Connector in a location that has complete isolation from the
 
 In an on-premises environment without internet, you can use BlueXP to discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
 
-Meanwhile, in a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems.
+Meanwhile, in a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems. The cloud region can be a region for secure US agencies like AWS C2S/SC2S, Azure IL6, or any commercial region.
 
 These installation instructions are specifically for the use case described above. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
