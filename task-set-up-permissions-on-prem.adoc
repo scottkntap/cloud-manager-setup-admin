@@ -185,10 +185,5 @@ You now have a client secret that BlueXP can use it to authenticate with Azure A
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
 --
 
-.Google Cloud
---
-???
---
-
 ====
 // end tabbed area

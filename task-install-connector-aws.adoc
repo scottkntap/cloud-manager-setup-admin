@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
-= Install the Connector
+= Install the Connector in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Install the Connector from BlueXP, from your cloud provider's marketplace, or by manually installing the software on your own Linux host.
+Install the Connector in AWS from BlueXP, from your cloud provider's marketplace, or by manually installing the software on your own Linux host.
 
 // start tabbed area
 
@@ -22,6 +22,20 @@ Install the Connector from BlueXP, from your cloud provider's marketplace, or by
 
 .BlueXP
 --
+.What you'll need
+
+* An AWS authentication method: either an IAM role or access keys for an IAM user with the required permissions.
++
+link:task-set-up-permissions-aws.html[Learn how to set up AWS permissions]
+
+* A VPC and subnet that meets networking requirements.
++
+link:task-set-up-networking-aws.html[Learn about networking requirements]
+
+* A key pair for the EC2 instance.
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
+
 .Steps
 
 . Click the *Connector* drop-down and select *Add Connector*.
@@ -75,10 +89,12 @@ If you have Amazon S3 buckets in the same AWS account where you created the Conn
 
 * A VPC and subnet that meets networking requirements.
 +
-link:task-prepare-restricted-mode.html[Learn about networking requirements]
+link:task-set-up-networking-aws.html[Learn about networking requirements]
+
 * An IAM role with an attached policy that includes the required permissions for the Connector.
 +
-link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions]
+link:task-set-up-permissions-aws.html[Learn how to set up AWS permissions]
+
 * Permissions to subscribe and unsubscribe from the AWS Marketplace for your IAM user.
 
 * A key pair for the EC2 instance.
@@ -123,13 +139,24 @@ link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions].
 
 * *Summary*: Review the summary and click *Launch instance*.
 
-.Result
-
++
 AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
 
-.What's next?
+. Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
++
+https://_ipaddress_
 
-Set up BlueXP.
+. After you log in, set up the Connector:
+.. Specify the NetApp account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
+.. Enter a name for the system.
+
+.Result
+
+The Connector is now installed and set up with your NetApp account.
+
+Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
 
 .Manual install
@@ -196,9 +223,22 @@ The Connector is now installed. At the end of the installation, the Connector se
 
 .What's next?
 
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+Attach the IAM role that you previously created to the Connector EC2 instance. This step is required to provide the Connector with permissions so that you can use BlueXP services.
 
-Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use BlueXP services.
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[AWS documentation: Attach and IAM role to an instance^]
 
 ====
 // end tabbed area
+
+
+. Attach the IAM role that you previously created to the Connector EC2 instance:
+
+.. Go to the Amazon EC2 console.
+
+.. Select *Instances*.
+
+.. Select the Connector instance.
+
+.. Select *Actions > Security > Modify IAM role*.
+
+.. Select the IAM role and click *Update IAM role*.

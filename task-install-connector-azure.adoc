@@ -112,13 +112,21 @@ link:reference-host-requirements-azure[Review the VM requirements].
 +
 link:reference-ports-azure.html[Learn more about security group rules for the Connector].
 
-* Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
+* Under *Management*, enable *System assigned managed identity* for the Connector VM by selecting *On*.
 +
-This setting is important because a managed identity allows the Connector virtual machine to identify itself to Azure Active Directory without providing any credentials. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[Learn more about managed identities for Azure resources^].
+This setting is important because a managed identity allows the Connector virtual machine to identify itself to Azure Active Directory without providing any credentials. After you're done,you'll need to assign the custom role that you created to https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[Learn more about managed identities for Azure resources^].
 
 . On the *Review + create* page, review your selections and click *Create* to start the deployment.
 +
 Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
+
+. In the Azure portal, go to the *Access Control (IAM)* page for the Connector VM and click *Add > Add role assignment* to assign the custom role that you created for the Connector. 
++
+Be sure to assign the role to the system-assigned managed identity that you enabled for the Connector VM.
++
+This step is required to provide the Connector with permissions so that you can use BlueXP services.
++
+https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page[Microsoft Azure documentation: Assign Azure roles using the Azure portal^]
 
 . Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
 +
@@ -132,9 +140,11 @@ link:concept-netapp-accounts.html[Learn about NetApp accounts].
 
 .Result
 
-The Connector is now installed and set up with your NetApp account.
+The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your NetApp account.
 
-Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+.What's next?
+
+Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
 
 .Manual install
@@ -148,6 +158,10 @@ Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP consol
 You have the option to configure a proxy server after installation but doing so requires restarting the Connector.
 
 * A CA-signed certificate, if the proxy server uses HTTPS.
+
+* A managed identity enabled on the VM in Azure so that you can provide the required Azure permissions through a custom role.
++
+https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm[Microsoft Azure documentation: Configure managed identities for Azure resources on a VM using the Azure portal^]
 
 .About this task
 
@@ -195,15 +209,36 @@ Here's an example of the command using both optional parameters:
 +
 --cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
 
+. Wait for the installation to complete.
++
+At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+. In the Azure portal, go to the *Access Control (IAM)* page for the Connector VM and click *Add > Add role assignment* to assign the custom role that you created for the Connector. 
++
+Be sure to assign the role to the managed identity for the Connector VM.
++
+This step is required to provide the Connector with permissions so that you can use BlueXP services.
++
+https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page[Microsoft Azure documentation: Assign Azure roles using the Azure portal^]
+
+. Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
++
+https://_ipaddress_
+
+. After you log in, set up the Connector:
+.. Specify the NetApp account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
+.. Enter a name for the system.
+
 .Result
 
-The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your NetApp account.
 
 .What's next?
 
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
-
-Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use BlueXP services.
+Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+--
 
 ====
 

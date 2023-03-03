@@ -15,6 +15,12 @@ summary: Set up Azure permissions so that you can use BlueXP to manage your data
 [.lead]
 Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure.
 
+How you set up permissions depends on the installation option that you're planning to use.
+
+* If you want to deploy the Connector directly from BlueXP, you'll need to set up permissions that enable BlueXP to authenticate with Azure and deploy the VM. BlueXP automatically sets up permissions for the Connector VM during deployment.
+
+* If you want to deploy the Connector from the Azure Marketplace or by manually installing the Connector, then you'll need to set up a custom role to associate with the Connector VM.
+
 == Set up permissions to create the Connector from BlueXP
 
 To create a Connector from BlueXP, you need to provide BlueXP with a login that has the required permissions to create the Connector VM in Azure. You have two options:

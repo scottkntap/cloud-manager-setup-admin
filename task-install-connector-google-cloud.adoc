@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
-= Install the Connector
+= Install the Connector in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -23,12 +23,14 @@ Standard mode::
 BlueXP is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-The BlueXP Connector is installed in a sovereign cloud region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website. 
+The BlueXP Connector is installed in a government region, sovereign cloud region, or commercial region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website. 
 +
 This mode is typically used by state and local governments and regulated companies.
 
 Private mode::
-The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector, not from the SaaS website. 
+The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector, not from the SaaS website.
++
+The cloud region can be a commercial region or a region for secure US agencies like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^].
 
 The following table provides a comparison of these modes.
 
@@ -47,7 +49,7 @@ The following table provides a comparison of these modes.
 | Connection required to your cloud provider?
 | Yes
 | Yes, within the region
-| No
+| Yes, if using Cloud Volumes ONTAP
 
 | Connector installation
 | SaaS, marketplace, or manual install
@@ -137,7 +139,7 @@ Outbound, unidirectional connectivity is required from the Connector to the Blue
 A connection is also required to cloud provider resources from within the region.
 
 Supported location for the Connector::
-In the cloud, in a government region or commercial region.
+In the cloud, in a government region, sovereign region, or commercial region.
 
 Connector installation::
 From the AWS or Azure Marketplace, or a manual installation on your own Linux host.
@@ -159,20 +161,20 @@ BlueXP supports the following storage and data services with restricted mode:
 | Supported services
 | Notes
 
-| Cloud Backup | Supported in Government regions with restricted mode. Not supported in commercial regions with restricted mode. 
+| Cloud Backup | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode. 
 
 The following features are not supported: Applications, Virtual Machines, and Kubernetes
-| Cloud Data Sense | Supported in Government regions with restricted mode. Not supported in commercial regions with restricted mode.  
+| Cloud Data Sense | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode.  
 
 The following features are not supported: One Drive scanning and Azure Information Protection (AIP).
 
 | Cloud Volumes ONTAP | Full support
 
-| Digital Wallet | Full support
+| Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for restricted mode.
 
 | On-premises ONTAP clusters | Full support
 
-| Replication | Supported in Government regions with restricted mode. Not supported in commercial regions with restricted mode.
+| Replication | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode.
 
 |===
 
@@ -189,7 +191,15 @@ For Cloud Volumes ONTAP, both capacity-based licensing and node-based licensing 
 
 == Private mode
 
-The following image shows a typical _hybrid cloud_ deployment when using BlueXP in private mode.
+BlueXP supports the following private mode deployments:
+
+* On-premises environment only
+* Cloud region only
+* Connection between a cloud region and an on-premises environment
++
+With this option, you would install a Connector either in the cloud or on premises and ensure that there's a network connection between the two environments.
+
+The following image shows a typical _hybrid cloud_ deployment when using BlueXP in private mode. In this example, the Connector is installed in the cloud.
 
 image:diagram-private-mode-cloud.png[A conceptual image...]
 
@@ -200,7 +210,7 @@ image:diagram-private-mode-onprem.png[A conceptual image...]
 BlueXP works as follows in private mode:
 
 Outbound communication::
-None. All packages, dependencies, and essential components are packaged with the Connector and served from the local machine. No connectivity is required to the BlueXP SaaS backend or to your cloud provider's publicly available resources.
+All packages, dependencies, and essential components are packaged with the Connector and served from the local machine. No connectivity is required to the BlueXP SaaS backend. Connectivity to your cloud provider's publicly available resources is required only if you are deploying Cloud Volumes ONTAP.
 
 Supported location for the Connector::
 In the cloud or on premises.
@@ -227,7 +237,7 @@ BlueXP supports the following storage and data services with private mode when t
 
 | Cloud Volumes ONTAP | Because there's no internet access, the following features aren't available: automated software upgrades, AutoSupport, and AWS cost information.
 
-| Digital Wallet | Full support
+| Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for private mode.
 
 | On-premises ONTAP clusters | Full support
 
@@ -247,7 +257,7 @@ BlueXP supports the following storage and data services with private mode when t
 | Cloud Data Sense
 | The following outbound scanning features are not supported: S3, One Drive, and Azure Information Protection (AIP).
 
-| Digital Wallet | Full support
+| Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for private mode.
 
 | On-premises ONTAP clusters | Full support
 

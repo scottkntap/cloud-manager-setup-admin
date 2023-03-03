@@ -41,8 +41,6 @@ Set up permissions for your cloud provider so that you can use BlueXP to manage 
 
 * *Azure*: Set up a service principal in Azure Active Directory that includes the required permissions. After installation, you need to provide BlueXP with the credentials for the service principal.
 
-* *Google Cloud*: ???
-
 [role="quick-margin-para"]
 link:task-set-up-permissions-on-prem.html[Follow step-by-step instructions for each of these options].
 
