@@ -129,110 +129,7 @@ The permissions for the service account are different than the permissions that 
 
 . Create a custom role in Google Cloud:
 
-.. Create a YAML file that includes the following permissions:
-+
-[source,yaml]
-title: NetApp BlueXP
-description: Permissions for the service account associated with the Connector instance.
-stage: GA
-includedPermissions:
-- iam.serviceAccounts.actAs
-- compute.regionBackendServices.create
-- compute.regionBackendServices.get
-- compute.regionBackendServices.list
-- compute.networks.updatePolicy
-- compute.backendServices.create
-- compute.addresses.list
-- compute.disks.create
-- compute.disks.createSnapshot
-- compute.disks.delete
-- compute.disks.get
-- compute.disks.list
-- compute.disks.setLabels
-- compute.disks.use
-- compute.firewalls.create
-- compute.firewalls.delete
-- compute.firewalls.get
-- compute.firewalls.list
-- compute.globalOperations.get
-- compute.images.get
-- compute.images.getFromFamily
-- compute.images.list
-- compute.images.useReadOnly
-- compute.instances.addAccessConfig
-- compute.instances.attachDisk
-- compute.instances.create
-- compute.instances.delete
-- compute.instances.detachDisk
-- compute.instances.get
-- compute.instances.getSerialPortOutput
-- compute.instances.list
-- compute.instances.setDeletionProtection
-- compute.instances.setLabels
-- compute.instances.setMachineType
-- compute.instances.setMetadata
-- compute.instances.setTags
-- compute.instances.start
-- compute.instances.stop
-- compute.instances.updateDisplayDevice
-- compute.machineTypes.get
-- compute.networks.get
-- compute.networks.list
-- compute.projects.get
-- compute.regions.get
-- compute.regions.list
-- compute.snapshots.create
-- compute.snapshots.delete
-- compute.snapshots.get
-- compute.snapshots.list
-- compute.snapshots.setLabels
-- compute.subnetworks.get
-- compute.subnetworks.list
-- compute.subnetworks.use
-- compute.subnetworks.useExternalIp
-- compute.zoneOperations.get
-- compute.zones.get
-- compute.zones.list
-- compute.instances.setServiceAccount
-- deploymentmanager.compositeTypes.get
-- deploymentmanager.compositeTypes.list
-- deploymentmanager.deployments.create
-- deploymentmanager.deployments.delete
-- deploymentmanager.deployments.get
-- deploymentmanager.deployments.list
-- deploymentmanager.manifests.get
-- deploymentmanager.manifests.list
-- deploymentmanager.operations.get
-- deploymentmanager.operations.list
-- deploymentmanager.resources.get
-- deploymentmanager.resources.list
-- deploymentmanager.typeProviders.get
-- deploymentmanager.typeProviders.list
-- deploymentmanager.types.get
-- deploymentmanager.types.list
-- logging.logEntries.list
-- logging.privateLogEntries.list
-- resourcemanager.projects.get
-- storage.buckets.create
-- storage.buckets.delete
-- storage.buckets.get
-- storage.buckets.list
-- cloudkms.cryptoKeyVersions.useToEncrypt
-- cloudkms.cryptoKeys.get
-- cloudkms.cryptoKeys.list
-- cloudkms.keyRings.list
-- storage.buckets.update
-- iam.serviceAccounts.getIamPolicy
-- iam.serviceAccounts.list
-- storage.objects.get
-- storage.objects.list
-- monitoring.timeSeries.list
-- storage.buckets.getIamPolicy
-- cloudkms.cryptoKeys.getIamPolicy
-- cloudkms.cryptoKeys.setIamPolicy
-- cloudkms.keyRings.get
-- cloudkms.keyRings.getIamPolicy
-- cloudkms.keyRings.setIamPolicy
+.. Create a YAML file that includes the contents of the link:reference-permissions-gcp.html[service account permissions for the Connector].
 
 .. From Google Cloud, activate cloud shell.
 
@@ -286,7 +183,7 @@ If you are using a shared VPC to deploy resources into a service project, then y
 
 This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
 
-[cols="10,10,10,20,20,30",width=100%,options="header"]
+[options="header"]
 |===
 
 | Identity
@@ -302,7 +199,7 @@ a| compute.networkUser
 | Deploying the Connector in the service project
 
 | Connector service account | Custom | Service project a|
-link:task-set-up-permissions-google.html#set-up-permissions-for-the-connector[NetApp BlueXP policy]
+link:reference-permissions-gcp.html[Connector service account policy]
 a|
 * compute.networkUser
 * deploymentmanager.editor
