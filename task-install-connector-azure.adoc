@@ -83,9 +83,9 @@ Note that you can choose the subscriptions associated with this role. Each subsc
 +
 The virtual machine should be ready in about 7 minutes. You should stay on the page until the process is complete.
 
-.After you finish
+.Result
 
-If you have Azure Blob storage in the same Azure account where you created the Connector, you'll see an Azure Blob working environment appear on the Canvas automatically. link:task-viewing-azure-blob.html[Learn more about what you can do with this working environment].
+After the process is complete, the Connector is available for use from BlueXP.
 --
 
 .Azure Marketplace
@@ -217,7 +217,7 @@ At the end of the installation, the Connector service (occm) restarts twice if y
 +
 Be sure to assign the role to the managed identity for the Connector VM.
 +
-This step is required to provide the Connector with permissions so that you can use BlueXP services.
+This step is required to provide the Connector with the permissions needed to use most BlueXP services.
 +
 https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page[Microsoft Azure documentation: Assign Azure roles using the Azure portal^]
 

@@ -77,9 +77,9 @@ Make sure that you have the correct key pair to use with the Connector. Without 
 +
 The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
 
-.After you finish
+.Result
 
-If you have Amazon S3 buckets in the same AWS account where you created the Connector, you'll see an Amazon S3 working environment appear on the Canvas automatically. link:task-viewing-amazon-s3.html[Learn more about what you can do with this working environment].
+After the process is complete, the Connector is available for use from BlueXP.
 --
 
 .AWS Marketplace
@@ -217,28 +217,33 @@ Here's an example of the command using both optional parameters:
 +
 --cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
 
+. Wait for the installation to complete.
++
+At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+. In the AWS IAM console, attach the IAM role that you previously created to the Connector EC2 instance. 
++
+This step is required to provide the Connector with permissions so that you can use BlueXP services.
++
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[AWS documentation: Attach and IAM role to an instance^]
+
+. Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
++
+https://_ipaddress_
+
+. After you log in, set up the Connector:
+.. Specify the NetApp account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
+.. Enter a name for the system.
+
 .Result
 
-The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your NetApp account.
 
 .What's next?
 
-Attach the IAM role that you previously created to the Connector EC2 instance. This step is required to provide the Connector with permissions so that you can use BlueXP services.
-
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[AWS documentation: Attach and IAM role to an instance^]
+Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 
 ====
 // end tabbed area
-
-
-. Attach the IAM role that you previously created to the Connector EC2 instance:
-
-.. Go to the Amazon EC2 console.
-
-.. Select *Instances*.
-
-.. Select the Connector instance.
-
-.. Select *Actions > Security > Modify IAM role*.
-
-.. Select the IAM role and click *Update IAM role*.

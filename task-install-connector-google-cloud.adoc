@@ -22,6 +22,17 @@ Install the Connector in Google Cloud directly from the BlueXP user interface, b
 
 .BlueXP
 --
+.What you'll need
+
+* The required Google Cloud permissions to create the Connector and a service account for the Connector VM.
++
+link:task-set-up-permissions-google.html[Learn how to set up Google Cloud permissions]
+
+* A VPC and subnet that meets networking requirements.
++
+link:task-set-up-networking-google-cloud.html[Learn about networking requirements]
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
 
 .Steps
 
@@ -56,10 +67,23 @@ The form is owned and hosted by Google. Your credentials are not provided to Net
 . Click *Add*.
 +
 The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
+
+.Result
+
+After the process is complete, the Connector is available for use from BlueXP.
 --
 
 .gcloud
 --
+.What you'll need
+
+* The required Google Cloud permissions to create the Connector and a service account for the Connector VM.
++
+link:task-set-up-permissions-google.html[Learn how to set up Google Cloud permissions]
+
+* A VPC and subnet that meets networking requirements.
++
+link:task-set-up-networking-google-cloud.html[Learn about networking requirements]
 
 .Steps
 
@@ -134,6 +158,12 @@ https://_ipaddress_
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
 
 .. Enter a name for the system.
+
+.Result
+
+The Connector is now installed and set up with your NetApp account.
+
+Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
 
 .Manual install
@@ -194,17 +224,34 @@ Here's an example of the command using both optional parameters:
 +
 --cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
 
+. Wait for the installation to complete.
++
+At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+. Go to the Google Cloud portal and assign the service account to the Connector VM instance.
++
+This step is required to provide the Connector with the permissions needed to use most BlueXP services.
++
+https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Google Cloud documentation: Changing the service account and access scopes for an instance^]
+
+. Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
++
+https://_ipaddress_
+
+. After you log in, set up the Connector:
+.. Specify the NetApp account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
+.. Enter a name for the system.
+
 .Result
 
-The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your NetApp account.
 
 .What's next?
 
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
-
-Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use BlueXP services.
+Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 
 ====
 
 // end tabbed area
-
