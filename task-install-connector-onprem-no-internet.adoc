@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-install-connector-onprem-no-internet.html
 keywords: connector, dark site, install dark site, install connector no internet, install connector on prem
-summary: You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
+summary: You can install the Connector in a location that has complete isolation from the internet, either on-premises or in a cloud region. You can then use the BlueXP services that are supported in that environment.
 ---
 
-= Install the Connector on-prem without internet access
+= Install the Connector in a location with no internet access
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,11 @@ summary: You can install the Connector on an on-premises Linux host that doesn't
 :imagesdir: ./media/
 
 [.lead]
-You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
+You can install the Connector in a location that has complete isolation from the internet, either on-premises or in a cloud region. You can then use the BlueXP services that are supported in that environment.
+
+In an on-premises environment without internet, you can use BlueXP to discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.
+
+Meanwhile, in a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems. The cloud region can be a region for secure US agencies like AWS C2S/SC2S, Azure IL6, or any commercial region.
 
 These installation instructions are specifically for the use case described above. link:concept-connectors.html#how-to-create-a-connector[Learn about other ways to deploy a Connector].
 
@@ -69,12 +73,16 @@ sudo systemctl enable docker && sudo systemctl start docker
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x /path/cloud-manager-connector-offline-v3.9.23
+chmod +x /path/cloud-manager-connector-offline-<version>
++
+Where <version> is the version of the Connector that you downloaded.
 
 . Run the installation script:
 +
 [source,cli]
-sudo /path/cloud-manager-connector-offline-v3.9.23
+sudo /path/cloud-manager-connector-offline-<version>
++
+Where <version> is the version of the Connector that you downloaded.
 
 . Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host.
 +
@@ -102,9 +110,13 @@ The Connector is now installed and you can start using the BlueXP features that 
 
 .What's next?
 
+In an on-prem environment:
+
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicate data between on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Back up on-prem ONTAP volume data to StorageGRID using Cloud Backup^]
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Scan on-prem ONTAP volume data using Cloud Data Sense^]
+
+In a cloud environment, you can https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[deploy Cloud Volumes ONTAP^]
 
 When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].
