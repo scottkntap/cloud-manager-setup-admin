@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Install the Connector on-prem without internet access | NetApp Documentation</title>
+  <title>Install the Connector in a location with no internet access | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Install the Connector on-prem without internet access | NetApp Documentation" />
+  <meta property="og:title" content="Install the Connector in a location with no internet access | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html" />
-	<meta property="og:description" content="You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data be..." />
+	<meta property="og:description" content="You can install the Connector in a location that has complete isolation from the internet, either on-premises or in a cloud region. You can then use the Blue..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can install the Connector on an on-premises Linux host that doesn't have internet access. You can then discover on-prem ONTAP clusters, replicate data be...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can install the Connector in a location that has complete isolation from the internet, either on-premises or in a cloud region. You can then use the Blue...">
   <meta name="keywords" content=" connector, dark site, install dark site, install connector no internet, install connector on prem"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
 
@@ -166,7 +166,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Install the Connector on-prem without internet access](https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/task-install-connector-onprem-no-internet.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Install the Connector in a location with no internet access](https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/task-install-connector-onprem-no-internet.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1059,11 +1059,11 @@
         Install on your own host with internet
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Install on-prem without internet"
+      data-pdf-filename="Install on your own host without internet"
       data-li-level="4#" 
       class="  active "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html">
-        Install on-prem without internet
+        Install on your own host without internet
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Find the system ID for a Connector"
@@ -1382,14 +1382,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Install the Connector on-prem without internet access</h1>
+  <h1 class="n-doc__component-detail-heading">Install the Connector in a location with no internet access</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-12-01 19:00:43 +0000">12/01/2022</time>
+    <time datetime="2023-03-06 16:22:47 +0000">03/06/2023</time>
     
   
 
@@ -1418,7 +1418,26 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You can install the Connector on an on-premises Linux host that doesn&#8217;t have internet access. You can then discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense.</p>
+<p>You can install the Connector in a location that has complete isolation from the internet, either on premises or in a cloud region. You can then use the BlueXP services that are supported in that environment.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="on-premises-overview">On premises overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In an on-premises environment without internet, you can use BlueXP to discover on-prem ONTAP clusters, replicate data between them, back up volumes using Cloud Backup, and scan them with Cloud Data Sense. No other BlueXP services are supported in this type of deployment, except for the Digital Wallet.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-overview">Cloud overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems and to discover on-premises ONTAP clusters (if there&#8217;s a connection from your cloud environment to on your on-premises environment). No other BlueXP services are supported in this type of deployment, except for the Digital Wallet.</p>
+</div>
+<div class="paragraph">
+<p>The cloud region can be a region for secure US agencies like AWS C2S/SC2S, Azure IL6, or any commercial region.</p>
 </div>
 <div class="paragraph">
 <p>These installation instructions are specifically for the use case described above. <a href="concept-connectors.html#how-to-create-a-connector">Learn about other ways to deploy a Connector</a>.</p>
@@ -1450,31 +1469,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>CentOS 7.6</p>
+<p>CentOS 7.6, 7.7, 7.8, and 7.9</p>
 </li>
 <li>
-<p>CentOS 7.7</p>
-</li>
-<li>
-<p>CentOS 7.8</p>
-</li>
-<li>
-<p>CentOS 7.9</p>
-</li>
-<li>
-<p>Red Hat Enterprise Linux 7.6</p>
-</li>
-<li>
-<p>Red Hat Enterprise Linux 7.7</p>
-</li>
-<li>
-<p>Red Hat Enterprise Linux 7.8</p>
-</li>
-<li>
-<p>Red Hat Enterprise Linux 7.9</p>
-</li>
-<li>
-<p>Red Hat Enterprise Linux 8.6</p>
+<p>Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, 8.6, and 8.7</p>
 <div class="paragraph">
 <p>The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.</p>
 </div>
@@ -1532,7 +1530,7 @@
 </div>
 </li>
 <li>
-<p>Download the Connector software from the <a href="https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a></p>
+<p>Download the Connector installer for restricted networks without internet access from the <a href="https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a></p>
 </li>
 <li>
 <p>Copy the installer to the Linux host.</p>
@@ -1541,16 +1539,22 @@
 <p>Assign permissions to run the script.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">chmod +x /path/cloud-manager-connector-offline-v3.9.23</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">chmod +x /path/Cloud-Manager-Connector-offline-&lt;version&gt;</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Where &lt;version&gt; is the version of the Connector that you downloaded.</p>
 </div>
 </li>
 <li>
 <p>Run the installation script:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">sudo /path/cloud-manager-connector-offline-v3.9.23</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">sudo /path/Cloud-Manager-Connector-offline-&lt;version&gt;</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Where &lt;version&gt; is the version of the Connector that you downloaded.</p>
 </div>
 </li>
 <li>
@@ -1593,8 +1597,11 @@
 <div class="title">Result</div>
 <p>The Connector is now installed and you can start using the BlueXP features that are available in a dark site deployment.</p>
 </div>
-<div class="ulist">
+<div class="paragraph">
 <div class="title">What&#8217;s next?</div>
+<p>In an on-prem environment:</p>
+</div>
+<div class="ulist">
 <ul>
 <li>
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">Discover on-prem ONTAP clusters</a></p>
@@ -1609,6 +1616,9 @@
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html" target="_blank" rel="noopener">Scan on-prem ONTAP volume data using Cloud Data Sense</a></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>In a cloud environment, you can <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html" target="_blank" rel="noopener">deploy Cloud Volumes ONTAP</a></p>
 </div>
 <div class="paragraph">
 <p>When new versions of the Connector software are available, they&#8217;ll be posted to the NetApp Support Site. <a href="task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access">Learn how to upgrade the Connector</a>.</p>

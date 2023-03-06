@@ -1059,11 +1059,11 @@
         Install on your own host with internet
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Install on-prem without internet"
+      data-pdf-filename="Install on your own host without internet"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html">
-        Install on-prem without internet
+        Install on your own host without internet
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Find the system ID for a Connector"
@@ -1389,7 +1389,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-04 17:06:39 +0000">01/04/2023</time>
+    <time datetime="2023-01-30 16:12:10 +0000">01/30/2023</time>
     
   
 
@@ -1676,10 +1676,10 @@ service netapp-service-manager start</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="upgrade-the-connector-on-prem-without-internet-access">Upgrade the Connector on-prem without internet access</h2>
+<h2 id="upgrade-the-connector-in-a-location-without-internet-access">Upgrade the Connector in a location without internet access</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you <a href="task-install-connector-onprem-no-internet.html">installed the Connector on an on-premises host that doesn&#8217;t have internet access</a>, you can upgrade the Connector when a newer version is available from the NetApp Support Site.</p>
+<p>If you <a href="task-install-connector-onprem-no-internet.html">installed the Connector in a location where there&#8217;s no internet access</a>, you can upgrade the Connector when a newer version is available from the NetApp Support Site.</p>
 </div>
 <div class="paragraph">
 <p>The Connector needs to restart during the upgrade process so the user interface will be unavailable during the upgrade.</p>
@@ -1697,16 +1697,22 @@ service netapp-service-manager start</code></pre>
 <p>Assign permissions to run the script.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">chmod +x /path/cloud-manager-connector-offline-v3.9.14</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">chmod +x /path/cloud-manager-connector-offline-&lt;version&gt;</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Where &lt;version&gt; is the version of the Connector that you downloaded.</p>
 </div>
 </li>
 <li>
 <p>Run the installation script:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">sudo /path/cloud-manager-connector-offline-v3.9.14</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">sudo /path/cloud-manager-connector-offline-&lt;version&gt;</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Where &lt;version&gt; is the version of the Connector that you downloaded.</p>
 </div>
 </li>
 <li>

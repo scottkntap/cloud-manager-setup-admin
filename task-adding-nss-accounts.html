@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Add and manage NetApp Support Site accounts in BlueXP | NetApp Documentation</title>
+  <title>Manage NetApp Support Site accounts in BlueXP | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Add and manage NetApp Support Site accounts in BlueXP | NetApp Documentation" />
+  <meta property="og:title" content="Manage NetApp Support Site accounts in BlueXP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html" />
-	<meta property="og:description" content="Provide the credentials for your NetApp Support Site (NSS) accounts to enable key workflows for Cloud Volumes ONTAP and to enable predictive analytics and pr..." />
+	<meta property="og:description" content="Provide the credentials for your NetApp Support Site (NSS) accounts to register for support, enable key workflows for Cloud Volumes ONTAP, and more." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Provide the credentials for your NetApp Support Site (NSS) accounts to enable key workflows for Cloud Volumes ONTAP and to enable predictive analytics and pr...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Provide the credentials for your NetApp Support Site (NSS) accounts to register for support, enable key workflows for Cloud Volumes ONTAP, and more.">
   <meta name="keywords" content=" adding, creating, netapp support site account, nss, update account, update nss account, update nss credentials, delete nss account, remove nss account, change working environment, working environment nss"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
 
@@ -166,7 +166,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Add and manage NetApp Support Site accounts in BlueXP](https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/task-adding-nss-accounts.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Manage NetApp Support Site accounts in BlueXP](https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/task-adding-nss-accounts.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1059,11 +1059,11 @@
         Install on your own host with internet
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Install on-prem without internet"
+      data-pdf-filename="Install on your own host without internet"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html">
-        Install on-prem without internet
+        Install on your own host without internet
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Find the system ID for a Connector"
@@ -1382,14 +1382,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Add and manage NetApp Support Site accounts in BlueXP</h1>
+  <h1 class="n-doc__component-detail-heading">Manage NetApp Support Site accounts in BlueXP</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-11-01 14:46:01 +0000">11/01/2022</time>
+    <time datetime="2023-03-02 14:53:23 +0000">03/02/2023</time>
     
   
 
@@ -1418,40 +1418,71 @@
 <h2 id="overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Adding your NetApp Support Site account to BlueXP is required to enable the following tasks:</p>
+<p>BlueXP supports associating one NSS account with each BlueXP user and associating one or more NSS accounts with your BlueXP account.</p>
+</div>
+<div class="sect2">
+<h3 id="nss-credentials-per-bluexp-user">NSS credentials per BlueXP user</h3>
+<div class="paragraph">
+<p>Your individual NSS credentials are required to access your Digital Advisor account and to manage support cases through BlueXP. These credentials are only visible to the person logging in to BlueXP. The credentials can be removed and updated as needed.</p>
+</div>
+<div class="paragraph">
+<p><a href="#Manage NSS credentials per BlueXP user">Learn how to manage NSS credentials per BlueXP user</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nss-credentials-for-your-bluexp-account">NSS credentials for your BlueXP account</h3>
+<div class="paragraph">
+<p>Associating NetApp Support Site credentials with your specific BlueXP account ID is required to enable the following tasks in BlueXP:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>To register for support</p>
+<p>Registering for support</p>
 </li>
 <li>
-<p>To deploy Cloud Volumes ONTAP when you bring your own license (BYOL)</p>
+<p>Creating support cases</p>
+</li>
+<li>
+<p>Deploying Cloud Volumes ONTAP when you bring your own license (BYOL)</p>
 <div class="paragraph">
 <p>Providing your NSS account is required so that BlueXP can upload your license key and to enable the subscription for the term that you purchased. This includes automatic updates for term renewals.</p>
 </div>
 </li>
 <li>
-<p>To register pay-as-you-go Cloud Volumes ONTAP systems</p>
+<p>Registering pay-as-you-go Cloud Volumes ONTAP systems</p>
 <div class="paragraph">
 <p>Providing your NSS account is required to activate support for your system and to gain access to NetApp technical support resources.</p>
 </div>
 </li>
 <li>
-<p>To upgrade Cloud Volumes ONTAP software to the latest release</p>
+<p>Upgrading Cloud Volumes ONTAP software to the latest release</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll also need to enter your NSS credentials to use Digital Advisor (formerly Active IQ) from within BlueXP. These credentials are associated directly with your user account and are for use with Digital Advisor only. Review more details in the section that follows.</p>
+<p>These credentials are associated with your specific BlueXP account ID. Users who belong to the BlueXP account can access these credentials from <strong>Support &gt; NSS Management</strong>.</p>
+</div>
+<div class="paragraph">
+<p><a href="#manage-nss-credentials-for-your-bluexp-account">Learn how to manage NSS credentials for your BlueXP account</a>.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="manage-an-nss-account-associated-with-digital-advisor">Manage an NSS account associated with Digital Advisor</h2>
+<h2 id="manage-nss-credentials-for-your-bluexp-login">Manage NSS credentials for your BlueXP login</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>The NSS credentials associated with your BlueXP login enables access to Digital Advisor and case management capabilities.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
 <p>When you access Digital Advisor in BlueXP, you&#8217;re prompted to log in to Digital Advisor by entering your NSS credentials. After you enter your NSS credentials, you&#8217;ll see this NSS account listed at the top of the NSS Management page. You can then manage those credentials as needed.</p>
+</li>
+<li>
+<p>When you access <strong>Support &gt; Case Management</strong>, you&#8217;re prompted to enter your NSS credentials, if you haven&#8217;t already done so. This page shows you the support cases associated with your NSS account and with your company.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Note the following about this NSS account:</p>
@@ -1462,10 +1493,10 @@
 <p>The account is managed at the user level, which means it isn&#8217;t viewable by other users who log in.</p>
 </li>
 <li>
-<p>The account can&#8217;t be used with any other BlueXP feature: not with Cloud Volumes ONTAP creation, licensing, or support.</p>
+<p>The account can&#8217;t be used with any other BlueXP feature: not with Cloud Volumes ONTAP creation, licensing, or support case creation.</p>
 </li>
 <li>
-<p>There can be only one NSS account associated with Digital Advisor, per user.</p>
+<p>There can be only one NSS account associated with Digital Advisor and case management, per user.</p>
 </li>
 </ul>
 </div>
@@ -1486,13 +1517,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Associate NSS user</strong>: Add credentials for a NetApp Support Site account so that you can access Digital Advisor in BlueXP.</p>
+<p><strong>Associate NSS user</strong>: Add credentials for a NetApp Support Site account.</p>
 </li>
 <li>
 <p><strong>Update existing credentials</strong>: Update the credentials for your NetApp Support Site account.</p>
 </li>
 <li>
-<p><strong>Delete</strong>: Remove the account associated with Digital Advisor.</p>
+<p><strong>Delete</strong>: Remove the account associated with your BlueXP user account.</p>
 </li>
 </ul>
 </div>
@@ -1501,15 +1532,20 @@
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>BlueXP updates the NSS account associated with Digital Advisor.</p>
+<p>BlueXP updates your NSS credentials. The changes will be reflected when you access Digital Advisor or the Case Management page.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="add-an-nss-account">Add an NSS account</h2>
+<h2 id="manage-nss-credentials-for-your-bluexp-account">Manage NSS credentials for your BlueXP account</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Support Dashboard enables you to add and manage your NetApp Support Site accounts for use with BlueXP at the NetApp account level.</p>
+<p>Manage the NSS credentials associated with your BlueXP account so that you can register for support, create support cases, and enable key workflows for Cloud Volumes ONTAP.</p>
+</div>
+<div class="sect2">
+<h3 id="add-an-nss-account">Add an NSS account</h3>
+<div class="paragraph">
+<p>The Support Dashboard enables you to add and manage your NetApp Support Site accounts for use with BlueXP at the BlueXP account level.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1517,7 +1553,7 @@
 <p>If you have a customer-level account, you can add one or more NSS accounts.</p>
 </li>
 <li>
-<p>If you have a partner or reseller account, you can add one or more NSS accounts, but they can’t be added alongside customer-level accounts.</p>
+<p>If you have a partner or reseller account, you can add one or more NSS accounts, but they can&#8217;t be added alongside customer-level accounts.</p>
 </li>
 </ul>
 </div>
@@ -1550,13 +1586,28 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The account must be a customer-level account (not a guest or temp account).</p>
+<p>The NSS account must be a customer-level account (not a guest or temp account). You can have multiple customer-level NSS accounts.</p>
 </li>
 <li>
-<p>Upon successful login, NetApp will store the NSS user name. This is a system generated ID that maps to your email. On the <strong>NSS Management</strong> page, you can display your email from the <span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png" alt="An icon of three horizontal dots"></span> menu.</p>
+<p>There can be only one NSS account if that account is a partner-level account. If you try to add customer-level NSS accounts and a partner-level account exists, you&#8217;ll get the following error message:</p>
+<div class="paragraph">
+<p>"The NSS customer type is not allowed for this account as there are already NSS Users of different type."</p>
+</div>
+<div class="paragraph">
+<p>The same is true if you have pre-existing customer-level NSS accounts and try to add a partner-level account.</p>
+</div>
 </li>
 <li>
-<p>If you ever need to refresh your login credential tokens, there is also an <strong>Update Credentials</strong> option in the <span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png" alt="An icon of three horizontal dots"></span> menu. Using this option prompts you to log in again.</p>
+<p>Upon successful login, NetApp will store the NSS user name.</p>
+<div class="paragraph">
+<p>This is a system-generated ID that maps to your email. On the <strong>NSS Management</strong> page, you can display your email from the <span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png" alt="An icon of three horizontal dots"></span> menu.</p>
+</div>
+</li>
+<li>
+<p>If you ever need to refresh your login credential tokens, there is also an <strong>Update Credentials</strong> option in the <span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png" alt="An icon of three horizontal dots"></span> menu.</p>
+<div class="paragraph">
+<p>Using this option prompts you to log in again. Note that the token for these accounts expire after 90 days. A notification will be posted to alert you of this.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -1584,10 +1635,8 @@
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="update-an-nss-account-for-the-new-authentication-method">Update an NSS account for the new authentication method</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="update-an-nss-account-for-the-new-authentication-method">Update an NSS account for the new authentication method</h3>
 <div class="paragraph">
 <p>Starting in November 2021, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, BlueXP will prompt you to update the credentials for any existing accounts that you previously added.</p>
 </div>
@@ -1630,10 +1679,8 @@
 </ol>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="update-nss-credentials">Update NSS credentials</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="update-nss-credentials">Update NSS credentials</h3>
 <div class="paragraph">
 <p>You&#8217;ll need to update the credentials for your NSS accounts in BlueXP when either of the following happens:</p>
 </div>
@@ -1674,10 +1721,8 @@
 </ol>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="attach-a-working-environment-to-a-different-nss-account">Attach a working environment to a different NSS account</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="attach-a-working-environment-to-a-different-nss-account">Attach a working environment to a different NSS account</h3>
 <div class="paragraph">
 <p>If your organization has multiple NetApp Support Site accounts, you can change which account is associated with a Cloud Volumes ONTAP system.</p>
 </div>
@@ -1718,10 +1763,8 @@
 </ol>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="display-the-email-address-for-an-nss-account">Display the email address for an NSS account</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="display-the-email-address-for-an-nss-account">Display the email address for an NSS account</h3>
 <div class="paragraph">
 <p>Now that NetApp Support Site accounts use Microsoft Azure Active Directory for authentication services, the NSS user name that displays in BlueXP is typically an identifier generated by Azure AD. As a result, you might not immediately know the email address associated with that account. But BlueXP has an option to show you the associated email address.</p>
 </div>
@@ -1759,10 +1802,8 @@ When you go to the NSS Management page, BlueXP generates a token for each accoun
 <p>BlueXP displays the NetApp Support Site user name and the associated email address. You can use the copy button to copy the email address.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="remove-an-nss-account">Remove an NSS account</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="remove-an-nss-account">Remove an NSS account</h3>
 <div class="paragraph">
 <p>Delete any of the NSS accounts that you no longer want to use with BlueXP.</p>
 </div>
@@ -1788,6 +1829,7 @@ When you go to the NSS Management page, BlueXP generates a token for each accoun
 <p>Click <strong>Delete</strong> to confirm.</p>
 </li>
 </ol>
+</div>
 </div>
 </div>
 </div>
