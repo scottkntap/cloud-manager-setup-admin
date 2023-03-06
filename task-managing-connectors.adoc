@@ -158,9 +158,9 @@ Note that 32 is an example value. The value that you should use depends on your 
 
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].
 
-== Upgrade the Connector on-prem without internet access
+== Upgrade the Connector in a location without internet access
 
-If you link:task-install-connector-onprem-no-internet.html[installed the Connector on an on-premises host that doesn't have internet access], you can upgrade the Connector when a newer version is available from the NetApp Support Site.
+If you link:task-install-connector-onprem-no-internet.html[installed the Connector in a location where there's no internet access], you can upgrade the Connector when a newer version is available from the NetApp Support Site.
 
 The Connector needs to restart during the upgrade process so the user interface will be unavailable during the upgrade.
 
@@ -173,12 +173,16 @@ The Connector needs to restart during the upgrade process so the user interface 
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x /path/cloud-manager-connector-offline-v3.9.14
+chmod +x /path/cloud-manager-connector-offline-<version>
++
+Where <version> is the version of the Connector that you downloaded.
 
 . Run the installation script:
 +
 [source,cli]
-sudo /path/cloud-manager-connector-offline-v3.9.14
+sudo /path/cloud-manager-connector-offline-<version>
++
+Where <version> is the version of the Connector that you downloaded.
 
 . After the upgrade is complete, you can verify the Connector's version by going to *Help > Support > Connector*.
 
