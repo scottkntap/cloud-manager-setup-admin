@@ -16,18 +16,40 @@ summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration f
 Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
-== 13 February 2023
+== 5 March 2023
 
-The Connector is now supported in any cloud environment that has complete isolation from the internet. You can use the BlueXP console that's running on the Connector to deploy Cloud Volumes ONTAP.
+=== Connector 3.9.27
 
-Only node-based licensing (BYOL) is supported in these environments. Capacity-based licensing is not supported.
+* Search is now available in the BlueXP console. At this time, you can use the search to find BlueXP services and features. 
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-search.png[A screenshot of the BlueXP search that is available at the top of the console.]
 
+* You can now discover VMware vCenter Servers in BlueXP.
++
+After you discover a VMware vCenter Server, you can open the working environment to view details about the datastores and virtual machines that are associated with the server.
++
+The only requirement is a Connector that has a connection to the VMware vCenter Server. 
++
+To get started, click *Add Working Environment > On-Premises > VMware vCenter Server*, enter the domain name or IP address for the server, and then enter the user name and password for the admin user.
+
+* You can view and manage active and resolved support cases directly from BlueXP. You can manage the cases associated with your NSS account and with your company.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-get-help.html#manage-your-support-cases[Learn how to manage your support cases].
+
+* The Connector is now supported on a host that's running Red Hat Enterprise Linux 8.7.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[View system requirements for the Connector].
+
+* The Connector is now supported in any cloud environment that has complete isolation from the internet. You can then use the BlueXP console that's running on the Connector to deploy Cloud Volumes ONTAP in the same location.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Learn how to install the Connector in a location without internet access]
++
 To get started, manually install the Connector software, log in to the BlueXP console that's running on the Connector, add your BYOL license to the Digital Wallet, and then deploy Cloud Volumes ONTAP.
-
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Install the Connector in a location without internet access^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#access-the-local-ui[Access the BlueXP console on the Connector^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#manage-byol-licenses[Add an unassigned license^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-overview-cvo.html[Get started with Cloud Volumes ONTAP^]
++
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Install the Connector in a location without internet access^]
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#access-the-local-ui[Access the BlueXP console on the Connector^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#manage-byol-licenses[Add an unassigned license^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-overview-cvo.html[Get started with Cloud Volumes ONTAP^]
 
 == 5 February 2023
 
