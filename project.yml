@@ -5,6 +5,7 @@ settings:
     pdf_enabled: true
   prod:
     pdf_enabled: true
+    harmony_enabled: true
   rss_page: "whats-new.html"
 sidebar:
   entries:
@@ -48,6 +49,8 @@ sidebar:
           url: /reference-whats-next.html
     - title: Administer BlueXP
       entries:
+        - title: Identity federation
+          url: /concept-federation.html
         - title: NetApp accounts
           entries:
             - title: Manage your account
@@ -66,7 +69,7 @@ sidebar:
                   url: /task-launching-azure-mktp.html
                 - title: Install on your own host with internet
                   url: /task-installing-linux.html
-                - title: Install on-prem without internet
+                - title: Install on your own host without internet
                   url: /task-install-connector-onprem-no-internet.html
             - title: Find the system ID for a Connector
               url: /task-finding-system-id.html
@@ -182,3 +185,4 @@ homepage:
           url: https://cloud.netapp.com/blog/topic/cloud-manager
         - title: Cloud webinars
           url: https://cloud.netapp.com/events
+
