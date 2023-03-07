@@ -235,6 +235,10 @@ BlueXP supports the following storage and data services with private mode when t
 | Supported services
 | Notes
 
+| Cloud Backup | Supported in AWS and Azure commercial regions. 
+
+Not supported in Google Cloud or in https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^].
+
 | Cloud Volumes ONTAP | Because there's no internet access, the following features aren't available: automated software upgrades, AutoSupport, and AWS cost information.
 
 | Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for private mode.
