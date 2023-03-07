@@ -1389,7 +1389,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-01 15:22:05 +0000">02/01/2023</time>
+    <time datetime="2023-03-07 20:53:37 +0000">03/07/2023</time>
     
   
 
@@ -2091,7 +2091,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="12"><p class="tableblock">Create VMs, stop, start, delete, and obtain the status of the system</p></td>
+<td class="tableblock halign-left valign-top" rowspan="14"><p class="tableblock">Create and manage VMs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Compute/locations/operations/read</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
@@ -2164,6 +2164,18 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Compute/virtualMachines/delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Resources/deployments/delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enable deployment from a VHD</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Compute/images/read</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
@@ -2171,7 +2183,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Create and manage network interfaces in the target subnet</p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Create and manage network interfaces in the target subnet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/networkInterfaces/read</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
@@ -2190,7 +2202,13 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Create predefined network security groups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/networkInterfaces/delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Create and manage network security groups</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/networkSecurityGroups/read</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
@@ -2207,6 +2225,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/networkSecurityGroups/delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock">Get network information about regions, the target VNet and subnet, and add the VMs to VNets</p></td>
@@ -2478,7 +2502,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/loadBalancers/backendAddressPools/read</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
@@ -2574,7 +2598,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Required by Azure for some VM deployments, depending on the underlying physical hardware</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required for some VM deployments, depending on the underlying physical hardware</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Resources/deployments/operationStatuses/read</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
@@ -2629,7 +2653,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/applicationSecurityGroups/read</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action</p></td>
@@ -2647,7 +2671,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/applicationSecurityGroups/delete</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft.Network/networkSecurityGroups/securityRules/delete</p></td>
