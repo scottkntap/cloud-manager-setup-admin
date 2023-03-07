@@ -338,7 +338,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Used for daily operations?
 | Used for deletion?
 
-.12+| Create VMs, stop, start, delete, and obtain the status of the system
+.14+| Create and manage VMs
 | Microsoft.Compute/locations/operations/read | Yes | Yes | No
 | Microsoft.Compute/locations/vmSizes/read | Yes | Yes | No
 | Microsoft.Resources/subscriptions/locations/read | Yes | No | No
@@ -351,19 +351,23 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Compute/virtualMachines/deallocate/action | No | Yes | Yes
 | Microsoft.Compute/virtualMachines/vmSizes/read | No | Yes | No
 | Microsoft.Compute/virtualMachines/write | Yes | Yes | No
+| Microsoft.Compute/virtualMachines/delete | Yes | Yes | Yes
+| Microsoft.Resources/deployments/delete | Yes | No | No
 
 | Enable deployment from a VHD
 | Microsoft.Compute/images/read | Yes | No | No
 
-.3+| Create and manage network interfaces in the target subnet
+.4+| Create and manage network interfaces in the target subnet
 | Microsoft.Network/networkInterfaces/read | Yes | Yes | No
 | Microsoft.Network/networkInterfaces/write | Yes | Yes | No
 | Microsoft.Network/networkInterfaces/join/action | Yes | Yes | No
+| Microsoft.Network/networkInterfaces/delete | Yes | Yes | No
 
-.3+| Create predefined network security groups
+.4+| Create and manage network security groups
 | Microsoft.Network/networkSecurityGroups/read | Yes | Yes | No
 | Microsoft.Network/networkSecurityGroups/write | Yes | Yes | No
 | Microsoft.Network/networkSecurityGroups/join/action | Yes | No | No
+| Microsoft.Network/networkSecurityGroups/delete | No | Yes | Yes
 
 .8+| Get network information about regions, the target VNet and subnet, and add the VMs to VNets
 | Microsoft.Network/locations/operationResults/read | Yes | Yes | No
@@ -425,7 +429,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Network/loadBalancers/read | Yes | Yes | No
 | Microsoft.Network/loadBalancers/write | Yes | No | No
 | Microsoft.Network/loadBalancers/delete | No | Yes | Yes
-| Microsoft.Network/loadBalancers/backendAddressPools/read | Yes | Yes | No
+| Microsoft.Network/loadBalancers/backendAddressPools/read | Yes | No | No
 | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Yes | No | No
 | Microsoft.Network/loadBalancers/loadBalancingRules/read | Yes | No | No
 | Microsoft.Network/loadBalancers/probes/read | Yes | No | No
@@ -446,7 +450,7 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 | Microsoft.Network/privateDnsZones/read | Yes | Yes | No
 | Microsoft.Network/privateDnsZones/virtualNetworkLinks/read | Yes | Yes | No
 
-| Required by Azure for some VM deployments, depending on the underlying physical hardware
+| Required for some VM deployments, depending on the underlying physical hardware
 | Microsoft.Resources/deployments/operationStatuses/read | Yes | Yes | No
 
 .2+| Remove resources from a resource group in case of deployment failure or deletion
@@ -461,10 +465,10 @@ The Connector makes the following API requests to deploy and manage Cloud Volume
 
 .6+| Configure an application security group for an HA pair to isolate the HA interconnect and cluster network NICs
 | Microsoft.Network/applicationSecurityGroups/write | No | Yes | No
-| Microsoft.Network/applicationSecurityGroups/read | No | Yes | Yes
+| Microsoft.Network/applicationSecurityGroups/read | No | Yes | No
 | Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action | No | Yes | No
 | Microsoft.Network/networkSecurityGroups/securityRules/write | Yes | Yes | No
-| Microsoft.Network/applicationSecurityGroups/delete | No | Yes | No
+| Microsoft.Network/applicationSecurityGroups/delete | No | Yes | Yes
 | Microsoft.Network/networkSecurityGroups/securityRules/delete | No | Yes | Yes
 
 .3+| Read, write, and delete tags associated with Cloud Volumes ONTAP resources
