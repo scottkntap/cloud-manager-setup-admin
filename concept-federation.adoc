@@ -51,20 +51,20 @@ Before you set up a connection between BlueXP and your identity management provi
 
 At a high-level, setting up a federated connection between BlueXP and ADFS includes the following steps:
 
-[cols="10,20,60",width=100%,options="header"]
+[cols="10,15,75",width=100%,options="header"]
 |===
 
 | Step
 | Completed by
 | Description
 
-| 1 | AD admin a| Configure your ADFS server to enable identity federation with our authentication provider (auth0).
+| 1 | AD admin a| Configure the ADFS server to enable identity federation with our authentication provider (auth0).
 
-https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/adfs[View instructions for configuring your ADFS server with auth0^]
+https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/adfs[View instructions for configuring the ADFS server with auth0^]
 
 TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
 
-| 2 | BlueXP admin a| Create a connection from your ADFS server to BlueXP from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
+| 2 | BlueXP admin a| Create a connection from the ADFS server to BlueXP from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
 
 To complete this step, you need to obtain the following from your AD admin: the URL for the ADFS server or the federation metadata file.
 
@@ -78,7 +78,9 @@ After you create the connection using this information, the Federation Setup pag
 
 === Microsoft Azure AD
 
-[cols="10,20,60",width=100%,options="header"]
+At a high-level, setting up a federated connection between BlueXP and Azure AD includes the following steps:
+
+[cols="10,15,75",width=100%,options="header"]
 |===
 
 | Step
@@ -109,18 +111,18 @@ After you create the connection using this information, the Federation Setup pag
 
 === SAML identity provider
 
-[cols="10,20,60",width=100%,options="header"]
+At a high-level, setting up a federated connection between BlueXP and a SAML identity provider includes the following steps:
+
+[cols="10,15,75",width=100%,options="header"]
 |===
 
 | Step
 | Completed by
 | Description
 
-| 1 | AD admin a| Create a new connection with your SAML identity provider.
+| 1 | AD admin a| Create a new connection with the SAML identity provider.
 
-https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/azure-active-directory/v2[View instructions for registering the application with Azure AD^]
-
-The steps vary, depending on your SAML identity provider:
+View instructions for your SAML identity provider:
 
 * https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-adfs-saml-connections[ADFS^]
 * https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-okta-as-saml-identity-provider[Okta^]
@@ -134,7 +136,7 @@ If your identity provider doesn't appear in the list above, https://auth0.com/do
 
 TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
 
-| 2 | BlueXP admin a| Create a connection from your SAML identity provider to BlueXP from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
+| 2 | BlueXP admin a| Create a connection from the SAML identity provider to BlueXP from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
 
 To complete this step, you need to obtain the following from your AD admin about the identity provider: 
 
@@ -152,14 +154,16 @@ After you create the connection using this information, the Federation Setup pag
 
 === PingFederate
 
-[cols="10,20,60",width=100%,options="header"]
+At a high-level, setting up a federated connection between BlueXP and a PingFederate server includes the following steps:
+
+[cols="10,15,75",width=100%,options="header"]
 |===
 
 | Step
 | Completed by
 | Description
 
-| 1 | AD admin a| Create a new connection with your PingFederate server.
+| 1 | AD admin a| Create a new connection with the PingFederate server.
 
 https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/ping-federate[View instructions for creating a connection^]
 
