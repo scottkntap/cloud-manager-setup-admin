@@ -83,7 +83,7 @@ sidebar:
           url: /task-manage-subscriptions.html
         - title: Discovered cloud storage
           entries:
-            - title: View your Amazon S3 buckets
+            - title: Manage your Amazon S3 buckets
               url: /task-viewing-amazon-s3.html
             - title: View your Azure Blob accounts
               url: /task-viewing-azure-blob.html
