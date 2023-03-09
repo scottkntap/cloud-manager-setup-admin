@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-install-connector-on-prem.html
 keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
-summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+summary: Install the Connector on premises and then log in and set it up to work with your BlueXP SaaS account.
 ---
 
-= Install the Connector on premises
+= Install and set up the Connector on premises
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,6 +14,10 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 
 [.lead]
 Install the Connector on premises and then log in and set it up to work with your BlueXP SaaS account.
+
+== Install the Connector
+
+Download and install the Connector software on an existing Linux host on premises.
 
 .What you'll need
 
@@ -75,23 +79,73 @@ Here's an example of the command using both optional parameters:
 
 The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
 
-.What's next?
+== Set up the Connector
 
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role[Attach the IAM role that you previously created to the Connector EC2 instance].
+Sign up or log in and then set up the Connector to work with your account.
 
-Now that you've deployed the Connector, you need to provide the permissions that you previously set up so that you can use BlueXP services.
+.Steps
 
-=== Adding the credentials to BlueXP
+. Open a web browser and enter the following URL:
++
+https://_ipaddress_
++
+_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
 
-After you provide an Azure account with the required permissions, you can add the credentials for that account to BlueXP. Completing this step enables you to launch Cloud Volumes ONTAP using different Azure credentials.
+. Sign up or log in.
+
+. After you log in, set up BlueXP:
+.. Specify the NetApp account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about NetApp accounts].
+.. Enter a name for the system.
+
+.Result
+
+BlueXP is now set up with the Connector that you just installed. You can now go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+
+== Add your cloud credentials to the Connector
+
+Now that the Connector is installed and set up, you need to add your cloud credentials so that BlueXP has the required permissions to perform actions in AWS or Azure.
+
+TIP: Why not Google Cloud? When the Connector is installed on your premises, it can't manage your storage data in Google Cloud. The Connector must be installed in Google Cloud to manage any storage or data that resides there.
+
+[role="tabbed-block"]
+====
+
+.AWS
+--
+.Before you get started
+
+If you just created these credentials in AWS, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to BlueXP.
+
+.Steps
+
+. Ensure that the correct Connector is currently selected in BlueXP.
+
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+
+. Click *Add Credentials* and follow the steps in the wizard.
+
+.. *Credentials Location*: Select *Amazon Web Services > Connector*.
+
+.. *Define Credentials*: Enter an AWS access key and secret key.
+
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
+
+.. *Review*: Confirm the details about the new credentials and click *Add*.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
+
+.Azure
+--
 
 .Before you get started
 
-If you just created these credentials in your cloud provider, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to BlueXP.
-
-.What you'll need
-
-You need to create a Connector before you can change BlueXP settings. link:concept-connectors.html#how-to-create-a-connector[Learn how].
+If you just created these credentials in Azure, it might take a few minutes until they are available for use. Wait a few minutes before you add the credentials to BlueXP.
 
 .Steps
 
@@ -105,18 +159,18 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .. *Define Credentials*: Enter information about the Azure Active Directory service principal that grants the required permissions:
 +
-* Application (client) ID: See <<Getting the application ID and directory ID>>.
-* Directory (tenant) ID: See <<Getting the application ID and directory ID>>.
-* Client Secret: See <<Creating a client secret>>.
+* Application (client) ID
+* Directory (tenant) ID
+* Client Secret
 
 .. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
-+
-To pay for Cloud Volumes ONTAP at an hourly rate (PAYGO), these Azure credentials must be associated with a subscription from the Azure Marketplace.
 
 .. *Review*: Confirm the details about the new credentials and click *Add*.
 
 .Result
 
-You can now switch to different set of credentials from the Details and Credentials page https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html[when creating a new working environment^]
+BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.
+--
 
-image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between credentials after clicking Edit Credentials in the Details & Credentials page.]
+====
+// end tabbed area

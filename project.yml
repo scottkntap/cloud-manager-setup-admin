@@ -31,6 +31,8 @@ sidebar:
               url: /reference-checklist-cm.html
             - title: Sign up and create an account
               url: /task-sign-up-saas.html
+            - title: Log in to BlueXP
+              url: /task-logging-in.html
             - title: Create a Connector in AWS
               entries:
                 - title: Quick start
@@ -89,6 +91,76 @@ sidebar:
               url: /task-subscribe-standard-mode.html
             - title: Where to go next
               url: /reference-whats-next.html
+        - title: Get started with standard mode
+          entries:
+            - title: Quick start
+              url: /task-quick-start-standard-mode.html
+            - title: Networking for console access
+              url: /reference-checklist-cm.html
+            - title: Sign up and create an account
+              url: /task-sign-up-saas.html
+            - title: Log in to BlueXP
+              url: /task-logging-in.html
+            - title: Create a Connector
+              entries:
+                - title: AWS
+                  entries:
+                    - title: Quick start
+                      url: /task-quick-start-connector-aws.html
+                    - title: Installation options
+                      url: /concept-install-options-aws.html
+                    - title: Set up networking
+                      url: /task-set-up-networking-aws.html
+                    - title: Review host requirements
+                      url: /reference-host-requirements-aws.html
+                    - title: Set up AWS permissions
+                      url: /task-set-up-permissions-aws.html
+                    - title: Install the Connector
+                      url: /task-install-connector-aws.html
+                - title: Azure
+                  entries:
+                    - title: Quick start
+                      url: /task-quick-start-connector-azure.html
+                    - title: Installation options
+                      url: /concept-install-options-azure.html
+                    - title: Set up networking
+                      url: /task-set-up-networking-azure.html
+                    - title: Review host requirements
+                      url: /reference-host-requirements-azure.html
+                    - title: Set up Azure permissions
+                      url: /task-set-up-permissions-azure.html
+                    - title: Install the Connector
+                      url: /task-install-connector-azure.html
+                - title: Google Cloud
+                  entries:
+                    - title: Quick start
+                      url: /task-quick-start-connector-google.html
+                    - title: Installation options
+                      url: /concept-install-options-google.html
+                    - title: Set up networking
+                      url: /task-set-up-networking-google-cloud.html
+                    - title: Review host requirements
+                      url: /reference-host-requirements-google.html
+                    - title: Set up Google Cloud permissions
+                      url: /task-set-up-permissions-google.html
+                    - title: Install the Connector
+                      url: /task-install-connector-google-cloud.html
+                - title: On premises
+                  entries:
+                    - title: Quick start
+                      url: /task-quick-start-connector-on-prem.html
+                    - title: Set up networking
+                      url: /task-set-up-networking-on-prem.html
+                    - title: Review host requirements
+                      url: /reference-host-requirements-on-prem.html
+                    - title: Set up cloud permissions
+                      url: /task-set-up-permissions-on-prem.html
+                    - title: Install the Connector
+                      url: /task-install-connector-on-prem.html
+            - title: Subscribe to BlueXP
+              url: /task-subscribe-standard-mode.html
+            - title: Where to go next
+              url: /reference-whats-next.html
         - title: Get started with restricted mode
           entries:
             - title: Quick start
@@ -97,6 +169,8 @@ sidebar:
               url: /task-prepare-restricted-mode.html
             - title: Deploy the Connector
               url: /task-create-connectors-gov.html
+            - title: Log in to BlueXP
+              url: /task-logging-in-restricted-mode.html
             - title: Subscribe to BlueXP
               url: /task-subscribe-restricted-mode.html
             - title: Where to go next
@@ -109,10 +183,10 @@ sidebar:
               url: /task-prepare-private-mode.html
             - title: Deploy the Connector
               url: /task-install-private-mode.html
+            - title: Log in to BlueXP
+              url: /task-logging-in-private-mode.html
             - title: Where to go next
               url: /reference-whats-next-private-mode.html
-        - title: Log in to BlueXP
-          url: /task-logging-in.html
     - title: Administer BlueXP
       entries:
         - title: NetApp accounts

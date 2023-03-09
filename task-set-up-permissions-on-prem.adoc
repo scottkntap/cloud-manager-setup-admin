@@ -13,7 +13,9 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Content.
+If you want to use BlueXP services in AWS or Azure, then you need to set up permissions in your cloud provider so that you can add the credentials to the Connector after you install it.
+
+TIP: Why not Google Cloud? When the Connector is installed on your premises, it can't manage your storage data in Google Cloud. The Connector must be installed in Google Cloud to manage any storage or data that resides there.
 
 // start tabbed area
 
@@ -28,9 +30,17 @@ You must use this authentication method if the Connector is installed on premise
 
 .Steps
 
-. From the IAM console, create policies by copying and pasting the contents of link:reference-permissions-aws.html[the IAM policies for the Connector].
+. From the IAM console, create a policy:
+
+.. Click *Policies > Create policy*.
+
+.. Select *JSON* and copy and paste the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+.. Finish the remaining steps to create the policy.
 +
-https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
+Depending on the BlueXP services that you're planning to use, you might need to create a second policy.
++
+For standard regions, the permissions are spread across two policies. Two policies are required due to a maximum character size limit for managed policies in AWS. link:reference-permissions-aws.html[Learn more about IAM policies for the Connector].
 
 . Attach the policies to an IAM user.
 +
@@ -41,7 +51,9 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS
 
 .Result
 
-The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
+You should now have access keys for an IAM user who has the required permissions. After you install the Connector, you'll need to associate these credentials with the Connector from BlueXP.
+
+link:task-install-connector-on-prem.html[Learn how to install the Connector and associate the credentials].
 --
 
 .Azure
@@ -182,7 +194,9 @@ You now have a client secret that BlueXP can use it to authenticate with Azure A
 
 .Result
 
-Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
+Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. After you install the Connector, you'll need to associate these credentials with the Connector from BlueXP.
+
+link:task-install-connector-on-prem.html[Learn how to install the Connector and associate the credentials].
 --
 
 ====

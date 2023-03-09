@@ -5,7 +5,7 @@ keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud c
 summary: After you sign up to BlueXP, you can log in from your web browser through the SaaS-based user interface.
 ---
 
-= Log in to BlueXP
+= Log in to BlueXP (standard mode)
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -21,13 +21,13 @@ If you're accessing BlueXP from a Government region or a site that doesn't have 
 
 .Log in options
 
-You can log in to BlueXP using one of the following options:
+You can log in to the BlueXP SaaS website using one of the following options:
 
 * Your existing NetApp Support Site (NSS) credentials
 * A NetApp cloud login using your email address and a password
 * A federated connection
 +
-You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then click *sign-in options*.
+A federated connection enables single sign-on using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then click *sign-in options*.
 
 .Steps
 

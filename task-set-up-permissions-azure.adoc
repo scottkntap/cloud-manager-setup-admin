@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-permissions-azure.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manual install, connector installer
 summary: Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure.
 ---
 
@@ -285,48 +285,9 @@ Your service principal is now setup and you should have copied the application (
 ====
 // end tabbed area
 
-== Set up permissions to assign after Azure Marketplace deployment
+== Set up permissions to assign after Azure Marketplace deployment or manual installation
 
-If you deploy the Connector from the Azure Marketplace, you'll need to assign a custom role to the Azure VM.
-
-.Steps
-
-. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
-
-. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
-+
-You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
-+
-*Example*
-+
-[source,json]
-"AssignableScopes": [
-"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
-"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
-"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
-
-. Use the JSON file to create a custom role in Azure.
-+
-The following steps describe how to create the role by using Bash in Azure Cloud Shell.
-+
-.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
-
-.. Upload the JSON file.
-+
-image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
-
-.. Use the Azure CLI to create the custom role:
-+
-[source,azurecli]
-az role definition create --role-definition Connector_Policy.json
-
-.Result
-
-You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
-
-== Set up permissions to assign after manual installation
-
-If you manually install the Connector software on your own Linux host in Azure, you can provide permissions in the following ways:
+If you deploy the Connector from the Azure Marketplace or if you manually install the Connector software on your own Linux host, you can provide permissions in the following ways:
 
 * Option 1: Assign a custom role to the Azure VM using a system-assigned managed identity.
 * Option 2: Provide BlueXP with the credentials for an Azure service principal that has the required permissions.
@@ -340,7 +301,7 @@ If you manually install the Connector software on your own Linux host in Azure, 
 --
 .Steps
 
-. Enable a system-assigned managed identity on the VM where you're planning to install the Connector software so that you can provide the required Azure permissions through a custom role. 
+. If you're planning to manually installing the software on your own host, enable a system-assigned managed identity on the VM so that you can provide the required Azure permissions through a custom role. 
 +
 https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm[Microsoft Azure documentation: Configure managed identities for Azure resources on a VM using the Azure portal^]
 

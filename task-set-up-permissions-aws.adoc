@@ -151,7 +151,7 @@ You should now have an IAM role that has the required permissions or an IAM user
 
 == Set up permissions to create the Connector from the AWS Marketplace
 
-Create an IAM policy in AWS and attach it to an IAM role. When you create the Connector from the AWS Marketplace, you'll be prompted to select that IAM role.
+Create IAM policies in AWS and attach them to an IAM role. When you create the Connector from the AWS Marketplace, you'll be prompted to select that IAM role.
 
 .Steps
 
@@ -159,9 +159,13 @@ Create an IAM policy in AWS and attach it to an IAM role. When you create the Co
 
 .. Click *Policies > Create policy*.
 
-.. Select *JSON* and copy and paste the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+.. Select *JSON* and copy and paste the contents of the link:reference-permissions-aws.html[IAM policies for the Connector].
 
 .. Finish the remaining steps to create the policy.
++
+Depending on the BlueXP services that you're planning to use, you might need to create a second policy.
++
+For standard regions, the permissions are spread across two policies. Two policies are required due to a maximum character size limit for managed policies in AWS. link:reference-permissions-aws.html[Learn more about IAM policies for the Connector].
 
 . Back in the IAM console, create an IAM role:
 
@@ -169,7 +173,7 @@ Create an IAM policy in AWS and attach it to an IAM role. When you create the Co
 
 .. Select *AWS service > EC2*.
 
-.. Add permissions by attaching the policy that you created in the previous step.
+.. Add permissions by attaching the policies that you created in the previous step.
 
 .. Finish the remaining steps to create the role.
 
@@ -179,7 +183,20 @@ You now have an IAM role that you can associate with the EC2 instance during dep
 
 == Set up permissions to assign after manual installation
 
-Create an IAM policy in AWS and attach it to an IAM role. You'll need to associate this IAM role with the Connector instance after you install the software.
+Create IAM policies in AWS and attach them to an IAM role.
+
+If you manually install the Connector software on your own Linux host in AWS, you can provide permissions in the following ways:
+
+* Option 1: Create IAM policies and an IAM role that you can associate with the EC2 instance.
+* Option 2: Provide BlueXP with AWS access keys for an IAM user who has the required permissions.
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.IAM role
+--
 
 .Steps
 
@@ -190,6 +207,10 @@ Create an IAM policy in AWS and attach it to an IAM role. You'll need to associa
 .. Select *JSON* and copy and paste the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
 
 .. Finish the remaining steps to create the policy.
++
+Depending on the BlueXP services that you're planning to use, you might need to create a second policy.
++
+For standard regions, the permissions are spread across two policies. Two policies are required due to a maximum character size limit for managed policies in AWS. link:reference-permissions-aws.html[Learn more about IAM policies for the Connector].
 
 . Back in the IAM console, create an IAM role:
 
@@ -197,10 +218,42 @@ Create an IAM policy in AWS and attach it to an IAM role. You'll need to associa
 
 .. Select *AWS service > EC2*.
 
-.. Add permissions by attaching the policy that you created in the previous step.
+.. Add permissions by attaching the policies that you created in the previous step.
 
 .. Finish the remaining steps to create the role.
 
 .Result
 
 You now have an IAM role that you can associate with the EC2 instance after you install the Connector.
+--
+
+.AWS access keys
+--
+.Steps
+
+. From the IAM console, create a policy:
+
+.. Click *Policies > Create policy*.
+
+.. Select *JSON* and copy and paste the contents of the link:reference-permissions-aws.html[IAM policy for the Connector].
+
+.. Finish the remaining steps to create the policy.
++
+Depending on the BlueXP services that you're planning to use, you might need to create a second policy.
++
+For standard regions, the permissions are spread across two policies. Two policies are required due to a maximum character size limit for managed policies in AWS. link:reference-permissions-aws.html[Learn more about IAM policies for the Connector].
+
+. Attach the policies to an IAM user.
++
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies^]
+
+. Ensure that the user has access keys that you can add to BlueXP after you install the Connector.
+
+.Result
+
+The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
+--
+
+====
+// end tabbed area
