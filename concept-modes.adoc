@@ -172,7 +172,7 @@ The following features are not supported: One Drive scanning and Azure Informati
 
 | Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for restricted mode.
 
-| On-premises ONTAP clusters | Full support
+| On-premises ONTAP clusters | The Advanced view (System Manager) is not supported.
 
 | Replication | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode.
 

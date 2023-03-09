@@ -38,11 +38,6 @@ RAM:: 14 GB
 Azure VM size::
 An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
 
-Managed identity::
-If you're using your own Linux VM in Azure, a managed identity must be enabled on the VM so that you can provide the required Azure permissions through a custom role.
-+
-https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm[Microsoft Azure documentation: Configure managed identities for Azure resources on a VM using the Azure portal^]
-
 Disk space in /opt:: 100 GiB of space must be available
 
 Disk space in /var:: 20 GiB of space must be available
