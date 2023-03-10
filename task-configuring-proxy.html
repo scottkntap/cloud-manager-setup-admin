@@ -1389,7 +1389,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-01 16:28:07 +0000">02/01/2023</time>
+    <time datetime="2023-03-10 13:50:51 +0000">03/10/2023</time>
     
   
 
@@ -1498,7 +1498,13 @@ BlueXP doesn&#8217;t support passwords that include the @ character.
 <h2 id="enable-direct-api-traffic">Enable direct API traffic</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you configured a proxy server, you can send API calls directly to BlueXP without going through the proxy. This option is supported with Connectors that are running in AWS, in Azure, or in Google Cloud.</p>
+<p>If you configured a Connector to use a proxy server, you can enable direct API traffic on the Connector in order to send API calls directly to cloud provider services without going through the proxy. This option is supported with Connectors that are running in AWS, in Azure, or in Google Cloud.</p>
+</div>
+<div class="paragraph">
+<p>If you disabled the use of Azure Private Links with Cloud Volumes ONTAP and are using service endpoints instead, then you must enable direct API traffic. Otherwise, the traffic won&#8217;t be routed properly.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">Learn more about using an Azure Private Link or service endpoints with Cloud Volumes ONTAP</a></p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
