@@ -47,7 +47,7 @@ sidebar:
                       url: /reference-host-requirements-aws.html
                     - title: Set up AWS permissions
                       url: /task-set-up-permissions-aws.html
-                    - title: Install the Connector
+                    - title: Create the Connector
                       url: /task-install-connector-aws.html
                 - title: Azure
                   entries:
@@ -61,7 +61,7 @@ sidebar:
                       url: /reference-host-requirements-azure.html
                     - title: Set up Azure permissions
                       url: /task-set-up-permissions-azure.html
-                    - title: Install the Connector
+                    - title: Create the Connector
                       url: /task-install-connector-azure.html
                 - title: Google Cloud
                   entries:
@@ -75,7 +75,7 @@ sidebar:
                       url: /reference-host-requirements-google.html
                     - title: Set up Google Cloud permissions
                       url: /task-set-up-permissions-google.html
-                    - title: Install the Connector
+                    - title: Create the Connector
                       url: /task-install-connector-google-cloud.html
                 - title: On premises
                   entries:
@@ -87,7 +87,7 @@ sidebar:
                       url: /reference-host-requirements-on-prem.html
                     - title: Set up cloud permissions
                       url: /task-set-up-permissions-on-prem.html
-                    - title: Install the Connector
+                    - title: Create the Connector
                       url: /task-install-connector-on-prem.html
             - title: Subscribe to BlueXP
               url: /task-subscribe-standard-mode.html

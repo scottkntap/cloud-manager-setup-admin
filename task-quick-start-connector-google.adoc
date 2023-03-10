@@ -18,7 +18,7 @@ Creating a Connector in Google Cloud includes a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Understand your installation options
 
 [role="quick-margin-para"]
-The standard way to create a Connector in Google Cloud is directly from BlueXP, but you can also create it using gloud, or by manually installing the software on a pre-existing Linux host.
+The standard way to create a Connector in Google Cloud is directly from BlueXP, but you can also create it using gcloud, or by manually installing the software on a pre-existing Linux host.
 
 [role="quick-margin-para"]
 link:concept-install-options-google.html[Learn more about your installation options].
@@ -52,15 +52,15 @@ Set up Google Cloud permissions for the installation option that you're planning
 [role="quick-margin-para"]
 link:task-set-up-permissions-google.html[Follow step-by-step instructions for each of these options].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Install the Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create the Connector
 
 [role="quick-margin-para"]
-Install the Connector using one of the available installation options:
+Create the Connector using one of the available installation options:
 
 [role="quick-margin-list"]
-* *Installation from BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
+* *From BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
 
-* *Installation using gloud*: Use the `gcloud compute instances create` command.
+* *Using gloud*: Use the `gcloud compute instances create` command.
 
 * *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
 

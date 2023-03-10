@@ -45,24 +45,24 @@ link:reference-host-requirements-azure.html[Learn more about host requirements].
 Set up Azure permissions for the installation option that you're planning to use:
 
 [role="quick-margin-list"]
-* *Installation from BlueXP*: Create a custom role and then apply it to your Azure account or an Azure AD service principal. BlueXP authenticates with Azure and uses these permissions to create the Connector instance on your behalf.
+* *From BlueXP*: Create a custom role and then apply it to your Azure account or an Azure AD service principal. BlueXP authenticates with Azure and uses these permissions to create the Connector instance on your behalf.
 
-* *Installation from the Azure Marketplace*: Create a custom role so that you can associate it with the Connector VM instance after installation.
+* *From the Azure Marketplace*: Create a custom role so that you can associate it with the Connector VM instance after installation.
 
 * *Manual install*: Create a custom role so that you can associate it with the Connector VM instance after installation.
 
 [role="quick-margin-para"]
 link:task-set-up-permissions-azure.html[Follow step-by-step instructions for each of these options].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Install the Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create the Connector
 
 [role="quick-margin-para"]
-Install the Connector using one of the available installation options:
+Create the Connector using one of the available installation options:
 
 [role="quick-margin-list"]
-* *Installation from BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
+* *From BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
 
-* *Installation from the Azure Marketplace*: Go to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager[NetApp Connector VM page in the Azure Marketplace^] and follow the prompts to create the Connector VM.
+* *From the Azure Marketplace*: Go to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager[NetApp Connector VM page in the Azure Marketplace^] and follow the prompts to create the Connector VM.
 
 * *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
 

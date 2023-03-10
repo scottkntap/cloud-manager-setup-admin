@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: Install the Connector in AWS directly from the BlueXP user interface, from the AWS Marketplace, or by installing the software on your own Linux host.
 ---
 
-= Install and set up the Connector in AWS
+= Create the Connector in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Install the Connector in AWS directly from the BlueXP user interface, f
 :imagesdir: ./media/
 
 [.lead]
-Install the Connector in AWS directly from the BlueXP user interface, from the AWS Marketplace, or by installing the software on your own Linux host.
+Create the Connector in AWS directly from the BlueXP user interface, from the AWS Marketplace, or by installing the software on your own Linux host.
 
 // start tabbed area
 

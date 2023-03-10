@@ -108,7 +108,9 @@ Outbound communication::
 Connectivity is required from the Connector to the BlueXP SaaS backend, to your cloud provider's publicly available resources, and to other essential components for day-to-day operations.
 
 Connector installation::
-From a setup wizard in BlueXP or from the AWS or Azure Marketplace. An installer is also available to manually install the Connector on your own Linux host in your data center or in the cloud.
+From a setup wizard in BlueXP, from the AWS or Azure Marketplace, or using an installer to manually install the Connector on your own Linux host in your data center or in the cloud.
++
+With standard mode, you can install one or more Connectors in your account, depending on your requirements.
 
 Connector upgrades::
 Automated software upgrades from BlueXP with monthly updates.
@@ -143,6 +145,8 @@ In the cloud, in a government region, sovereign region, or commercial region.
 
 Connector installation::
 From the AWS or Azure Marketplace, or a manual installation on your own Linux host.
++
+With restricted mode, your account has just one Connector.
 
 Connector upgrades::
 Automated software upgrades from BlueXP with monthly updates.
@@ -217,6 +221,8 @@ In the cloud or on premises.
 
 Connector installation::
 Manual installation on your own Linux host.
++
+With private mode, your account has just one Connector.
 
 Connector upgrades::
 Manual software upgrades at undefined intervals.

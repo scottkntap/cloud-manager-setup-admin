@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
-= Install and set up the Connector in Azure
+= Create the Connector in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Install the Connector in Microsoft Azure and then set it up for use with BlueXP.
+Create the Connector in Microsoft Azure and then set it up for use with BlueXP.
 
 == Install the Connector
 
-Install the Connector directly from the BlueXP user interface, from the Azure Marketplace, or by installing the software on your own Linux host.
+Create the Connector directly from the BlueXP user interface, from the Azure Marketplace, or by installing the software on your own Linux host.
 
 // start tabbed area
 

@@ -339,7 +339,7 @@ https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-
 
 == Set up BlueXP
 
-When you access the BlueXP console for the first time, you'll be prompted to set up BlueXP.
+When you access the BlueXP console for the first time, you'll be prompted to choose an account to associate the Connector with and you'll need to enable restricted mode.
 
 .Steps
 
@@ -351,19 +351,17 @@ https://_ipaddress_
 
 . After you log in, set up BlueXP:
 
-.. Specify the NetApp account to associate with the Connector.
+.. Enter a name for the Connector.
+
+.. Enter a name for a new BlueXP account or select an existing account.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
-.. Enter a name for the system.
-
-. If you deployed the Connector from the AWS Commercial Marketplace, from the Azure Commercial Marketplace, or by manually installing the software, then you need to disable the SaaS platform for your account:
-
-.. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
-
-.. In the Overview tab, toggle the option to disable use of the SaaS platform.
-
+You can select an existing account if your log in is already associated with a BlueXP account.
 +
-Disabling the SaaS platform is required to enable restricted mode. If you deployed the Connector from the AWS Government Marketplace or the Azure Government Marketplace, then SaaS mode is already disabled.
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
+
+.. Expand the option to *Enable restricted mode on this account*.
+
+.. Click *Let's start*.
 
 .Result
 
