@@ -43,7 +43,7 @@ In restricted mode, you can only install the Connector in the cloud.
 
 Supported operating systems::
 * CentOS 7.6, 7.7, 7.8, and 7.9
-* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, and 8.6
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, 8.6, and 8.7
 +
 The host must be registered with Red Hat Subscription Management. If it's not registered, the host can't access repositories to update required 3rd-party software during Connector installation.
 +
@@ -81,7 +81,7 @@ Set up your networking so the Connector can manage resources and processes withi
 
 The Connector must have a network connection to the location where you plan to manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
 
-== Proxy server
+=== Proxy server
 
 If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
 
@@ -128,8 +128,6 @@ AWS services (amazonaws.com):
 * Simple Storage Service (S3)
 
 | To manage resources in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details^]
-
-| To manage resources in AWS.
 
 | 
 \https://management.azure.com
@@ -230,7 +228,7 @@ Create an IAM policy in AWS and attach it to an IAM role.
 
 If you're creating the Connector from the AWS Marketplace, you'll be prompted to select that IAM role. 
 
-If you're manually installing the Connector, you'll need to manually attach the role to the EC2 instance.
+If you're manually installing the Connector on your own Linux host, you'll need to manually attach the role to the EC2 instance.
 
 .Steps
 
@@ -336,7 +334,7 @@ https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_
 
 .Result
 
-You now have a service account that you can assign to the VM instance after you deploy the Connector.
+You now have a service account that you can assign to the Connector VM instance.
 --
 
 ====

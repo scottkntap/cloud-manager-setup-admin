@@ -15,7 +15,7 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 [.lead]
 If you want to use BlueXP services in AWS or Azure, then you need to set up permissions in your cloud provider so that you can add the credentials to the Connector after you install it.
 
-TIP: Why not Google Cloud? When the Connector is installed on your premises, it can't manage your storage data in Google Cloud. The Connector must be installed in Google Cloud to manage any storage or data that resides there.
+TIP: Why not Google Cloud? When the Connector is installed on your premises, it can't manage your resources in Google Cloud. The Connector must be installed in Google Cloud to manage any resources that resides there.
 
 // start tabbed area
 

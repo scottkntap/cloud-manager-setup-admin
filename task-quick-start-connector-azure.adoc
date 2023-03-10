@@ -45,9 +45,9 @@ link:reference-host-requirements-azure.html[Learn more about host requirements].
 Set up Azure permissions for the installation option that you're planning to use:
 
 [role="quick-margin-list"]
-* *From BlueXP*: Create a custom role and then apply it to your Azure account or an Azure AD service principal. BlueXP authenticates with Azure and uses these permissions to create the Connector instance on your behalf.
+* *Install from BlueXP*: Create a custom role and then apply it to your Azure account or an Azure AD service principal. BlueXP authenticates with Azure and uses these permissions to create the Connector instance on your behalf.
 
-* *From the Azure Marketplace*: Create a custom role so that you can associate it with the Connector VM instance after installation.
+* *Install from the Azure Marketplace*: Create a custom role so that you can associate it with the Connector VM instance after installation.
 
 * *Manual install*: Create a custom role so that you can associate it with the Connector VM instance after installation.
 

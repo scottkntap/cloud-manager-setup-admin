@@ -118,7 +118,9 @@ BlueXP is now set up with the Connector that you just installed. You can now go 
 
 Now that the Connector is installed and set up, you need to add your cloud credentials so that BlueXP has the required permissions to perform actions in AWS or Azure.
 
-TIP: Why not Google Cloud? When the Connector is installed on your premises, it can't manage your storage data in Google Cloud. The Connector must be installed in Google Cloud to manage any storage or data that resides there.
+TIP: Why not Google Cloud? When the Connector is installed on your premises, it can't manage your resources in Google Cloud. The Connector must be installed in Google Cloud to manage any resources that resides there.
+
+// start tabbed area
 
 [role="tabbed-block"]
 ====
@@ -150,6 +152,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 .Result
 
 BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
+--
 
 .Azure
 --
@@ -184,4 +187,5 @@ BlueXP now has the permissions that it needs to perform actions in Azure on your
 --
 
 ====
+
 // end tabbed area

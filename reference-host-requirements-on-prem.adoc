@@ -20,7 +20,7 @@ The Connector is not supported on a host that is shared with other applications.
 
 Supported operating systems::
 * CentOS 7.6, 7.7, 7.8, and 7.9
-* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, and 8.6
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, 8.6, and 8.7
 +
 The host must be registered with Red Hat Subscription Management. If it's not registered, the host can't access repositories to update required 3rd-party software during Connector installation.
 +

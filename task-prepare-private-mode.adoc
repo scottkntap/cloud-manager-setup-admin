@@ -51,7 +51,7 @@ If you want to create a Cloud Volumes ONTAP system in Google Cloud, then the Con
 
 Supported operating systems::
 * CentOS 7.6, 7.7, 7.8, and 7.9
-* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, and 8.6
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, 8.6, and 8.7
 +
 The host must be registered with Red Hat Subscription Management. If it's not registered, the host can't access repositories to update required 3rd-party software during Connector installation.
 +
@@ -89,6 +89,16 @@ Set up your networking so the Connector can manage resources and processes withi
 
 The Connector must have a network connection to the location where you plan to manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
 
+== Proxy server
+
+If your organization requires deployment of a proxy server for outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+With private mode, the only time that BlueXP sends outbound traffic is to your cloud provider in order to create a Cloud Volumes ONTAP system.
+
 === Ports
 
 There's no incoming traffic to the Connector, unless you initiate it.
@@ -101,9 +111,7 @@ When BlueXP is operating in private mode, there are no outbound connections from
 
 == Prepare cloud permissions
 
-If you are planning to install BlueXP in your cloud provider and create Cloud Volumes ONTAP systems, then BlueXP requires permissions from your cloud provider. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance after you install it.
-
-If you are planning to install the Connector on premises, then you can skip this step. Cloud permissions aren't needed because there's no connection from the Connector to a cloud provider.
+If you are planning to create Cloud Volumes ONTAP systems, then BlueXP requires permissions from your cloud provider. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance after you install it.
 
 // start tabbed area
 

@@ -45,11 +45,11 @@ link:reference-host-requirements-aws.html[Learn more about host requirements].
 Set up AWS permissions based on the installation option that you're planning to use:
 
 [role="quick-margin-list"]
-* *From BlueXP*: Create an IAM policy and attach it to an IAM role that BlueXP can assume or to an IAM user that you can provide access keys for. BlueXP authenticates with AWS and uses these permissions to create the Connector instance on your behalf.
+* *Install from BlueXP*: Create an IAM policy and attach it to an IAM role that BlueXP can assume or to an IAM user that you can provide access keys for. BlueXP authenticates with AWS and uses these permissions to create the Connector instance on your behalf.
 
-* *From the AWS Marketplace*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector instance during installation.
+* *Install from the AWS Marketplace*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector instance during installation.
 
-* *Manual install*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector instance after installation.
+* *Manual install*: Create an IAM policy and attach it to an IAM role. You'll need to associate this role with the EC2 instance where you install the Connector.
 
 [role="quick-margin-para"]
 link:task-set-up-permissions-aws.html[Follow step-by-step instructions for each of these options].

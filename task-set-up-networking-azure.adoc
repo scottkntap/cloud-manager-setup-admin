@@ -23,9 +23,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-pr
 
 == Connections to target networks
 
-A Connector requires a network connection to the type of working environment that you're creating and the services that you're planning to enable.
-
-For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.
+A Connector requires a network connection to the location where you're planning to create and manage working environments.
 
 == Proxy server
 

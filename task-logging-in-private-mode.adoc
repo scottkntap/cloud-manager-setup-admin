@@ -25,7 +25,7 @@ Private mode supports local user management and access. Authentication is not pr
 +
 https://_ipaddress_
 +
-_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host where you installed the Connector. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
+_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host where you installed the Connector. For example, you might need to enter a private IP address from a host that has a connection to the Connector host.
 
 . Enter your user name and password to log in.
 

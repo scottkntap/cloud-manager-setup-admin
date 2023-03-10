@@ -39,7 +39,7 @@ For example, if you install a Connector in your corporate network, then you must
 
 === Proxy server
 
-If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+If your organization requires a proxy server for all outgoing internet traffic, obtain the following information about your proxy server:
 
 * IP address
 * Credentials
@@ -135,7 +135,7 @@ In restricted mode, you can only install the Connector in the cloud.
 
 Supported operating systems::
 * CentOS 7.6, 7.7, 7.8, and 7.9
-* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, and 8.6
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, 8.6, and 8.7
 +
 The host must be registered with Red Hat Subscription Management. If it's not registered, the host can't access repositories to update required 3rd-party software during Connector installation.
 +

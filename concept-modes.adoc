@@ -17,7 +17,7 @@ You can use BlueXP in environments that have full internet access, limited inter
 
 == Overview
 
-BlueXP offers the following deployment modes for an account. These modes support environments with varying levels of connectivity. 
+BlueXP offers the following deployment modes for your account. These modes support environments with varying levels of connectivity. 
 
 Standard mode::
 BlueXP is accessible to users as a cloud service from a SaaS website. Depending on the BlueXP services that you're planning to use, a BlueXP admin creates one or more Connectors to manage resources and process within your hybrid cloud environment. 
