@@ -29,7 +29,7 @@ For example, if you install a Connector in your corporate network, then you must
 
 == Proxy server
 
-If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
 
 * IP address
 * Credentials
@@ -79,12 +79,16 @@ The Connector requires outbound internet access to contact the following endpoin
 | 
 \https://management.azure.com
 \https://login.microsoftonline.com
+\https://blob.core.windows.net
+\https://core.windows.net
 
 | To manage resources in Azure public regions.
 
 | 
 \https://management.chinacloudapi.cn
 \https://login.chinacloudapi.cn
+\https://blob.core.chinacloudapi.cn
+\https://core.chinacloudapi.cn
 
 | To manage resources in Azure China regions.
 

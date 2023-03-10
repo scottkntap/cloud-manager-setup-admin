@@ -169,7 +169,7 @@ Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP consol
 +
 You have the option to configure a proxy server after installation but doing so requires restarting the Connector.
 
-* A CA-signed certificate, if the proxy server uses HTTPS.
+* A CA-signed certificate, if the proxy server uses HTTPS or if the proxy is an intercepting proxy.
 
 .About this task
 
@@ -186,6 +186,14 @@ If you receive a message that installing the awscli failed, you can safely ignor
 [source,cli]
 sudo systemctl enable docker && sudo systemctl start docker
 
+. If the _http_proxy_ or _https_proxy_ system variables are set on the host, remove them:
++
+[source,cli]
+unset http_proxy
+unset https_proxy
++
+If you don't remove these system variables, the installation will fail.
+
 . Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
 You should download the "online" Connector installer that's meant for use in your network or in the cloud. A separate "offline" installer is available for the Connector, but it's only supported with private mode deployments.
@@ -193,19 +201,22 @@ You should download the "online" Connector installer that's meant for use in you
 . Assign permissions to run the script.
 +
 [source,cli]
-chmod +x OnCommandCloudManager-V3.9.23
+chmod +x OnCommandCloudManager-<version>
+
++
+Where <version> is the version of the Connector that you downloaded.
 
 . Run the installation script.
 +
 [source,cli]
- ./OnCommandCloudManager-V3.9.23 --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
+ ./OnCommandCloudManager-<version> --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
 +
 The --proxy and --cacert parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
 +
 Here's an example of the command using both optional parameters:
 +
 [source,cli]
- ./OnCommandCloudManager-V3.9.23 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+ ./OnCommandCloudManager-V3.9.26 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
 +
 --proxy configures the Connector to use an HTTP or HTTPS proxy server using one of the following formats:
 +
@@ -215,7 +226,7 @@ Here's an example of the command using both optional parameters:
 * \https://username:password@address:port
 
 +
---cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server.
+--cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server or if the proxy is an intercepting proxy.
 
 . Wait for the installation to complete.
 +

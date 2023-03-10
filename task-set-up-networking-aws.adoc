@@ -23,7 +23,7 @@ For example, if you install a Connector in your corporate network, then you must
 
 == Proxy server
 
-If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
 
 * IP address
 * Credentials
@@ -70,10 +70,16 @@ The Connector requires outbound internet access to contact the following endpoin
 | Endpoints
 | Purpose
 
-| 
-\https://<region>.amazonaws.com
+a|
+AWS services (amazonaws.com):
 
-| To manage resources in AWS.
+* CloudFormation
+* Elastic Compute Cloud (EC2)
+* Key Management Service (KMS)
+* Security Token Service (STS)
+* Simple Storage Service (S3)
+
+| To manage resources in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details^]
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
 

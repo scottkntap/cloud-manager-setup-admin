@@ -147,7 +147,11 @@ sidebar:
               url: /task-configuring-proxy.html
             - title: Default configuration
               url: /reference-connector-default-config.html
-        - title: Credentials
+        - title: Subscriptions
+          url: /task-manage-subscriptions.html
+        - title: NetApp Support Site accounts
+          url: /task-adding-nss-accounts.html
+        - title: Discovered cloud storage
           entries:
             - title: Manage your Amazon S3 buckets
               url: /task-viewing-amazon-s3.html
@@ -173,16 +177,6 @@ sidebar:
               url: /concept-accounts-gcp.html
             - title: Manage credentials and subscriptions
               url: /task-adding-gcp-accounts.html
-        - title: NetApp Support Site accounts
-          url: /task-adding-nss-accounts.html
-        - title: Discovered cloud storage
-          entries:
-            - title: View your Amazon S3 buckets
-              url: /task-viewing-amazon-s3.html
-            - title: View your Azure Blob accounts
-              url: /task-viewing-azure-blob.html
-            - title: View your Google Cloud Storage buckets
-              url: /task-viewing-gcp-storage.html
         - title: Discovery using My Opportunities
           url: /concept-my-opportunities.html
     - title: Reference

@@ -55,6 +55,7 @@ The second policy provides permissions for the following services:
 --
 [source,json]
 {
+    "Version": "2012-10-17",
     "Statement": [
         {
             "Action": [
@@ -336,6 +337,7 @@ The second policy provides permissions for the following services:
 --
 [source,json]
 {
+    "Version": "2012-10-17",
     "Statement": [
         {
             "Action": [

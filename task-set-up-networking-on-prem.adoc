@@ -23,7 +23,7 @@ For example, if you want to launch Cloud Volumes ONTAP in the cloud, then you mu
 
 == Proxy server
 
-If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
 
 * IP address
 * Credentials

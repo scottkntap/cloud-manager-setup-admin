@@ -81,6 +81,14 @@ Set up your networking so the Connector can manage resources and processes withi
 
 The Connector must have a network connection to the location where you plan to manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
 
+== Proxy server
+
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
 === Ports
 
 There's no incoming traffic to the Connector, unless you initiate it.
@@ -110,26 +118,40 @@ The network location where you deploy the Connector must have an outbound intern
 | Endpoints
 | Purpose
 
-| 
-\https://<region>.amazonaws.com
+a|
+AWS services (amazonaws.com):
+
+* CloudFormation
+* Elastic Compute Cloud (EC2)
+* Key Management Service (KMS)
+* Security Token Service (STS)
+* Simple Storage Service (S3)
+
+| To manage resources in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details^]
 
 | To manage resources in AWS.
 
 | 
 \https://management.azure.com
 \https://login.microsoftonline.com
+\https://blob.core.windows.net
+\https://core.windows.net
 
 | To manage resources in Azure public regions.
 
 | 
 \https://management.usgovcloudapi.net
 \https://login.microsoftonline.us
+\https://blob.core.usgovcloudapi.net
+\https://core.usgovcloudapi.net
 
 | To manage resources in Azure Government regions.
 
 | 
 \https://management.chinacloudapi.cn
 \https://login.chinacloudapi.cn
+\https://blob.core.chinacloudapi.cn
+\https://core.chinacloudapi.cn
 
 | To manage resources in Azure China regions.
 
