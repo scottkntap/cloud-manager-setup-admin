@@ -13,7 +13,7 @@ summary: BlueXP enables IT experts and cloud architects to centrally manage thei
 :imagesdir: ./media/
 
 [.lead]
-BlueXP (formerly Cloud Manager) enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
+BlueXP enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
 
 == Features
 
@@ -48,7 +48,7 @@ BlueXP enables you to manage cloud storage and use cloud services in Amazon Web 
 
 == Cost
 
-Pricing for BlueXP depends on the services that you plan to use. https://bluexp.netapp.com/pricing[Learn about BlueXP pricing^].
+Pricing for BlueXP depends on the services that you plan to use. https://bluexp.netapp.com/pricing[Learn about BlueXP pricing^]
 
 == How BlueXP works
 
@@ -60,7 +60,7 @@ BlueXP is accessible through a https://console.bluexp.netapp.com[SaaS-based user
 
 === Restricted and private sites
 
-BlueXP is also supported in environments where you need to restrict some internet access or all internet access. In those environments, you access the BlueXP interface and APIs through the Connector software, rather than through the SaaS website.
+BlueXP is also supported in environments where you need to restrict some or all internet access. In those environments, you access the BlueXP interface and API through the Connector software, rather than through the SaaS website.
 
 link:concept-modes.html[Learn about BlueXP deployment modes].
 

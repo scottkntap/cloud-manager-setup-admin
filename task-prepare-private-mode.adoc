@@ -27,7 +27,7 @@ link:concept-modes.html[Learn how private mode works].
 
 == Understand Connector installation options
 
-You can deploy a Connector on-premises or in the cloud by manually installing the Connector on your own Linux host that's running in AWS, Azure, or Google Cloud.
+You can install a Connector on-premises or in the cloud by manually installing the Connector on your own Linux host.
 
 === AWS C2S
 

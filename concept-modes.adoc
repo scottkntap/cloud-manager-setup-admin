@@ -17,10 +17,12 @@ You can use BlueXP in environments that have full internet access, limited inter
 
 == Overview
 
-BlueXP offers the following deployment modes for an account. These modes support environments with varying levels of connectivity.
+BlueXP offers the following deployment modes for an account. These modes support environments with varying levels of connectivity. 
 
 Standard mode::
-BlueXP is accessible to users as a cloud service (SaaS). This mode uses encrypted data transmission over the public internet.
+BlueXP is accessible to users as a cloud service from a SaaS website. Depending on the BlueXP services that you're planning to use, a BlueXP admin creates one or more Connectors to manage resources and process within your hybrid cloud environment. 
++
+This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
 The BlueXP Connector is installed in a government region, sovereign cloud region, or commercial region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website. 
@@ -30,7 +32,7 @@ This mode is typically used by state and local governments and regulated compani
 Private mode::
 The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector, not from the SaaS website.
 +
-The cloud region can be a commercial region or a region for secure US agencies like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^].
+The cloud region can be a commercial region or a region for secure US agencies like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]
 
 The following table provides a comparison of these modes.
 
@@ -243,7 +245,7 @@ BlueXP supports the following storage and data services with private mode when t
 
 | Cloud Backup | Supported in AWS and Azure commercial regions. 
 
-Not supported in Google Cloud or in https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^].
+Not supported in Google Cloud or in https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]
 
 | Cloud Volumes ONTAP | Because there's no internet access, the following features aren't available: automated software upgrades, AutoSupport, and AWS cost information.
 
