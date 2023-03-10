@@ -259,27 +259,3 @@ Allow third-party services in your account to get access to third-party services
 . From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . In the *Overview* tab, enable the *Allow Third Party Services* setting.
-
-== Disabling the SaaS platform
-
-We don't recommend disabling the SaaS platform unless you need to in order to comply with your company’s security policies. Disabling the SaaS platform limits your ability to use NetApp’s integrated cloud services.
-
-The following services aren't available from BlueXP if you disable the SaaS platform:
-
-* Cloud Backup
-+
-Cloud Backup is supported in Government regions when the SaaS platform is disabled, but not in commercial regions when the SaaS platform is disabled
-* Cloud Data Sense
-* Kubernetes
-* Cloud Tiering
-* Global File Cache
-
-If you do disable the SaaS platform, you'll need to perform all tasks from link:task-managing-connectors.html#access-the-local-ui[the local user interface that is available on a Connector].
-
-CAUTION: This is an irreversible action that will prevent you from using the BlueXP SaaS platform. You'll need to perform actions from the local Connector. You won't have the ability to use many of NetApp's integrated cloud services, and re-enabling the SaaS platform will require the help of NetApp support.
-
-.Steps
-
-. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
-
-. In the Overview tab, toggle the option to disable use of the SaaS platform.
