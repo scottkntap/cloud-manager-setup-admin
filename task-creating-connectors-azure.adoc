@@ -63,24 +63,32 @@ The Connector requires outbound internet access to manage resources and processe
 | 
 \https://management.azure.com
 \https://login.microsoftonline.com
+\https://blob.core.windows.net
+\https://core.windows.net
 
 | To manage resources in Azure public regions.
 
 | 
 \https://management.usgovcloudapi.net
 \https://login.microsoftonline.us
+\https://blob.core.usgovcloudapi.net
+\https://core.usgovcloudapi.net
 
 | To manage resources in Azure Government regions.
 
 | 
 \https://management.azure.microsoft.scloud
 \https://login.microsoftonline.microsoft.scloud
+\https://blob.core.microsoft.scloud
+\https://core.microsoft.scloud
 
 | To manage resources in the Azure IL6 region.
 
 | 
 \https://management.chinacloudapi.cn
 \https://login.chinacloudapi.cn
+\https://blob.core.chinacloudapi.cn
+\https://core.chinacloudapi.cn
 
 | To manage resources in Azure China regions.
 

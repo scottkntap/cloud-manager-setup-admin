@@ -259,19 +259,3 @@ Allow third-party services in your account to get access to third-party services
 . From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
 
 . In the *Overview* tab, enable the *Allow Third Party Services* setting.
-
-== Disable the SaaS platform
-
-You should disable the SaaS platform only if you want to use BlueXP in restricted mode. You might want to use restricted mode to comply with your company's security policies.
-
-If you do disable the SaaS platform, you'll need to perform all tasks from link:task-managing-connectors.html#access-the-local-ui[the local user interface that is available on a Connector].
-
-CAUTION: This is an irreversible action that will prevent you from using the BlueXP SaaS platform. As a result, you'll need to perform actions from the local Connector and you won't have the ability to use many of BlueXP's services. Re-enabling the SaaS platform will require the help of NetApp support.
-
-.Steps
-
-. link:concept-modes.html[Understand about how BlueXP works in restricted mode].
-
-. From the top of BlueXP, click the *Account* drop-down and click *Manage Account*.
-
-. In the Overview tab, toggle the option to disable use of the SaaS platform.

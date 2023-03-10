@@ -149,26 +149,30 @@ sidebar:
               url: /reference-connector-default-config.html
         - title: Credentials
           entries:
-            - title: AWS credentials
-              entries:
-                - title: Overview
-                  url: /concept-accounts-aws.html
-                - title: Manage credentials and subscriptions
-                  url: /task-adding-aws-accounts.html
-            - title: Azure credentials
-              entries:
-                - title: Overview
-                  url: /concept-accounts-azure.html
-                - title: Manage credentials and subscriptions
-                  url: /task-adding-azure-accounts.html
-            - title: Google Cloud credentials
-              entries:
-                - title: Overview
-                  url: /concept-accounts-gcp.html
-                - title: Manage credentials and subscriptions
-                  url: /task-adding-gcp-accounts.html
-        - title: Subscriptions
-          url: /task-manage-subscriptions.html
+            - title: Manage your Amazon S3 buckets
+              url: /task-viewing-amazon-s3.html
+            - title: View your Azure Blob accounts
+              url: /task-viewing-azure-blob.html
+            - title: View your Google Cloud Storage buckets
+              url: /task-viewing-gcp-storage.html
+        - title: AWS credentials
+          entries:
+            - title: Overview
+              url: /concept-accounts-aws.html
+            - title: Manage credentials and subscriptions
+              url: /task-adding-aws-accounts.html
+        - title: Azure credentials
+          entries:
+            - title: Overview
+              url: /concept-accounts-azure.html
+            - title: Manage credentials and subscriptions
+              url: /task-adding-azure-accounts.html
+        - title: Google Cloud credentials
+          entries:
+            - title: Overview
+              url: /concept-accounts-gcp.html
+            - title: Manage credentials and subscriptions
+              url: /task-adding-gcp-accounts.html
         - title: NetApp Support Site accounts
           url: /task-adding-nss-accounts.html
         - title: Discovered cloud storage

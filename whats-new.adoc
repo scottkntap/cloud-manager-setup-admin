@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more."
+summary: "Learn what's new with BlueXP administration features: NetApp accounts, Connectors, cloud provider credentials, and more."
 ---
 
 = What's new
@@ -13,9 +13,44 @@ summary: "Learn what's new with BlueXP (formerly Cloud Manager) administration f
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with BlueXP (formerly Cloud Manager) administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
+Learn what's new with BlueXP administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 5 March 2023
+
+=== Connector 3.9.27
+
+* Search is now available in the BlueXP console. At this time, you can use the search to find BlueXP services and features. 
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-search.png[A screenshot of the BlueXP search that is available at the top of the console.]
+
+* You can view and manage active and resolved support cases directly from BlueXP. You can manage the cases associated with your NSS account and with your company.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-get-help.html#manage-your-support-cases[Learn how to manage your support cases].
+
+* The Connector is now supported on a host that's running Red Hat Enterprise Linux 8.7.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[View system requirements for the Connector].
+
+* The Connector is now supported in any cloud environment that has complete isolation from the internet. You can then use the BlueXP console that's running on the Connector to deploy Cloud Volumes ONTAP in the same location and to discover on-premises ONTAP clusters (if you have a connection from your cloud environment to on your on-premises environment). No other BlueXP services are supported in this type of deployment, except for the Digital Wallet.
++
+The cloud region can be a region for secure US agencies like AWS C2S/SC2S, Azure IL6, or any commercial region.
++
+To get started, manually install the Connector software, log in to the BlueXP console that's running on the Connector, add your BYOL license to the Digital Wallet, and then deploy Cloud Volumes ONTAP.
++
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Install the Connector in a location without internet access^]
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#access-the-local-ui[Access the BlueXP console on the Connector^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#manage-byol-licenses[Add an unassigned license^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-overview-cvo.html[Get started with Cloud Volumes ONTAP^]
+
+* The Connector now enables you to add and manage Amazon S3 buckets from BlueXP. 
++
+https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html[See how to add new Amazon S3 buckets in your AWS account from BlueXP^].
+
+* This release of the Connector includes Cloud Volumes ONTAP enhancements.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-march-2023[Learn about Cloud Volumes ONTAP enhancements^]
+
 == 5 February 2023
 
 === Connector 3.9.26
@@ -61,6 +96,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5
 This release of the Connector includes Cloud Volumes ONTAP enhancements and bug fixes.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#1-january-2023[Learn about Cloud Volumes ONTAP enhancements^]
+//end::whats-new[]
 
 == 4 December 2022
 
@@ -75,7 +111,6 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#1
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#4-december-2022[Learn about Cloud Volumes ONTAP enhancements^]
 
 ** https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/whats-new.html#4-december-2022[Learn about ONTAP on-prem cluster enhancements^]
-//end::whats-new[]
 
 == 6 November 2022
 

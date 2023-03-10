@@ -29,15 +29,8 @@ CPU:: 4 cores or 4 vCPUs
 RAM:: 14 GB
 
 Supported operating systems::
-* CentOS 7.6
-* CentOS 7.7
-* CentOS 7.8
-* CentOS 7.9
-* Red Hat Enterprise Linux 7.6
-* Red Hat Enterprise Linux 7.7
-* Red Hat Enterprise Linux 7.8
-* Red Hat Enterprise Linux 7.9
-* Red Hat Enterprise Linux 8.6
+* CentOS 7.6, 7.7, 7.8, and 7.9
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, 8.6, and 8.7
 +
 The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
 +
@@ -70,7 +63,7 @@ Root privileges are required to install the Connector.
 [source,cli]
 sudo systemctl enable docker && sudo systemctl start docker
 
-. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^]
+. Download the Connector installer for restricted networks without internet access from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^]
 
 . Copy the installer to the Linux host.
 
@@ -80,10 +73,16 @@ sudo systemctl enable docker && sudo systemctl start docker
 chmod +x /path/cloud-manager-connector-offline-<version>
 +
 Where <version> is the version of the Connector that you downloaded.
+chmod +x /path/Cloud-Manager-Connector-offline-<version>
++
+Where <version> is the version of the Connector that you downloaded.
 
 . Run the installation script:
 +
 [source,cli]
+sudo /path/Cloud-Manager-Connector-offline-<version>
++
+Where <version> is the version of the Connector that you downloaded.
 sudo /path/cloud-manager-connector-offline-<version>
 +
 Where <version> is the version of the Connector that you downloaded.
@@ -126,6 +125,9 @@ You next steps depend on whether you plan to manage storage on-premises or in th
 
 On-premises::
 In an on-premises environment, you can use BlueXP in private mode as follows:
+.What's next?
+
+In an on-prem environment:
 
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover on-prem ONTAP clusters^]
 * https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicate data between on-prem ONTAP clusters^]
@@ -154,5 +156,3 @@ In a cloud environment, you can use BlueXP in private mode to deploy Cloud Volum
 === Google Cloud
 
 . Set up a service account that has the permissions that BlueXP needs to create and manage Cloud Volumes ONTAP systems in Google Cloud projects.
-
-. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[deploy Cloud Volumes ONTAP^]
