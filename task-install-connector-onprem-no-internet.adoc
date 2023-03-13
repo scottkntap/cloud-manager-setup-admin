@@ -21,7 +21,7 @@ In an on-premises environment without internet, you can use BlueXP to discover o
 
 == Cloud overview
 
-In a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems and to discover on-premises ONTAP clusters (if there's a connection from your cloud environment to on your on-premises environment). No other BlueXP services are supported in this type of deployment, except for the Digital Wallet.
+In a cloud region without internet, you can use BlueXP to deploy Cloud Volumes ONTAP systems and to discover on-premises ONTAP clusters (if there's a connection from your cloud environment to on your on-premises environment). You can also use Cloud Backup to back up Cloud Volumes ONTAP volumes in AWS and Azure commercial regions (Backup is not supported in AWS and Azure secret regions at this time). No other BlueXP services are supported in this type of deployment, except for the Digital Wallet.
 
 The cloud region can be a region for secure US agencies like AWS C2S/SC2S, Azure IL6, or any commercial region.
 
