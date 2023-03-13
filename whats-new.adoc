@@ -32,7 +32,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-get-help.html#manag
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[View system requirements for the Connector].
 
-* The Connector is now supported in any cloud environment that has complete isolation from the internet. You can then use the BlueXP console that's running on the Connector to deploy Cloud Volumes ONTAP in the same location and to discover on-premises ONTAP clusters (if you have a connection from your cloud environment to on your on-premises environment). No other BlueXP services are supported in this type of deployment, except for the Digital Wallet.
+* The Connector is now supported in any cloud environment that has complete isolation from the internet. You can then use the BlueXP console that's running on the Connector to deploy Cloud Volumes ONTAP in the same location and to discover on-premises ONTAP clusters (if you have a connection from your cloud environment to on your on-premises environment). You can also use Cloud Backup to back up Cloud Volumes ONTAP volumes in AWS and Azure commercial regions. No other BlueXP services are supported in this type of deployment, except for the Digital Wallet.
 +
 The cloud region can be a region for secure US agencies like AWS C2S/SC2S, Azure IL6, or any commercial region.
 +
