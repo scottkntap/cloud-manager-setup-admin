@@ -1389,7 +1389,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-10 19:14:57 +0000">02/10/2023</time>
+    <time datetime="2023-03-13 17:38:24 +0000">03/13/2023</time>
     
   
 
@@ -1509,6 +1509,35 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="connectors-must-be-operational-at-all-times">Connectors must be operational at all times</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connectors are a fundamental part of the NetApp BlueXP service architecture. It is your responsibility to ensure that relevant Connectors are up, operational, and accessible at all times. While the service is designed to overcome short outages of Connector availability, you must take immediate action when required to remedy infrastructure failures.</p>
+</div>
+<div class="paragraph">
+<p>This documentation is governed by the EULA. If the product is not operated in accordance with the documentation, the functionality and operation of the product, as well as your rights under the EULA, may be adversely impacted.</p>
+</div>
+<div class="sect2">
+<h3 id="how-connector-availability-affects-cloud-volumes-ontap">How Connector availability affects Cloud Volumes ONTAP</h3>
+<div class="paragraph">
+<p>A Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems and capacity-based BYOL systems shut down after losing communication with a Connector for longer than 14 days. This happens because the Connector refreshes licensing on the system each day.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If your Cloud Volumes ONTAP system has a node-based BYOL license, the system remains running after 14 days because the license is installed on the Cloud Volumes ONTAP system.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="supported-locations">Supported locations</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1544,32 +1573,6 @@
 <div class="paragraph">
 <p>If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector that&#8217;s running in Google Cloud as well. You can&#8217;t use a Connector that&#8217;s running in AWS, Azure, or on-prem.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="connectors-should-remain-running">Connectors should remain running</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A Connector should remain running at all times. It&#8217;s important for the continued health and operation of the services that you enable.</p>
-</div>
-<div class="paragraph">
-<p>For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems and capacity-based BYOL systems shut down after losing communication with a Connector for longer than 14 days. This happens because the Connector refreshes licensing on the system each day.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If your Cloud Volumes ONTAP system has a node-based BYOL license, the system remains running after 14 days because the license is installed on the Cloud Volumes ONTAP system.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>BlueXP will notify you if your Connector has been powered down for 14 days or longer. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html">Learn about BlueXP notifications</a>.</p>
 </div>
 </div>
 </div>
