@@ -89,7 +89,73 @@ Set up your networking so the Connector can manage resources and processes withi
 
 The Connector must have a network connection to the location where you plan to manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
 
-== Proxy server
+=== Endpoints for day-to-day operations
+
+The Connector contacts the following endpoints to deploy and manage Cloud Volumes ONTAP in your public cloud environment.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+a|
+AWS services (amazonaws.com):
+
+* CloudFormation
+* Elastic Compute Cloud (EC2)
+* Key Management Service (KMS)
+* Security Token Service (STS)
+* Simple Storage Service (S3)
+
+| To manage resources in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details^]
+
+| 
+\https://management.azure.com
+\https://login.microsoftonline.com
+\https://blob.core.windows.net
+\https://core.windows.net
+
+| To manage resources in Azure public regions.
+
+| 
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.us
+\https://blob.core.usgovcloudapi.net
+\https://core.usgovcloudapi.net
+
+| To manage resources in Azure Government regions.
+
+| 
+\shttps://management.azure.microsoft.scloud
+\https://login.microsoftonline.microsoft.scloud
+\https://blob.core.microsoft.scloud
+\https://core.microsoft.scloud
+
+| To manage resources in the Azure IL6 region.
+
+| 
+\https://management.chinacloudapi.cn
+\https://login.chinacloudapi.cn
+\https://blob.core.chinacloudapi.cn
+\https://core.chinacloudapi.cn
+
+| To manage resources in Azure China regions.
+
+| 
+\https://www.googleapis.com/compute/v1/
+\https://cloudresourcemanager.googleapis.com/v1/projects
+\https://www.googleapis.com/compute/beta
+\https://storage.googleapis.com/storage/v1
+\https://www.googleapis.com/storage/v1
+\https://iam.googleapis.com/v1
+\https://cloudkms.googleapis.com/v1
+\https://www.googleapis.com/deploymentmanager/v2/projects
+
+| To manage resources in Google Cloud.
+
+|===
+
+=== Proxy server
 
 If your organization requires deployment of a proxy server for outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
 
@@ -104,10 +170,6 @@ With private mode, the only time that BlueXP sends outbound traffic is to your c
 There's no incoming traffic to the Connector, unless you initiate it.
 
 HTTP (80) and HTTPS (443) provide access to the BlueXP console. SSH (22) is only needed if you need to connect to the host for troubleshooting. Meanwhile, inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
-
-=== Outbound internet access
-
-When BlueXP is operating in private mode, there are no outbound connections from the Connector.
 
 == Prepare cloud permissions
 
