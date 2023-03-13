@@ -75,6 +75,8 @@ sidebar:
                       url: /reference-host-requirements-google.html
                     - title: Set up Google Cloud permissions
                       url: /task-set-up-permissions-google.html
+                    - title: Enable Google Cloud APIs
+                      url: /task-enable-apis-google.html
                     - title: Create the Connector
                       url: /task-install-connector-google-cloud.html
                 - title: On premises

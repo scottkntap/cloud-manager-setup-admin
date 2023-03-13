@@ -25,9 +25,9 @@ In addition, not all BlueXP services are available.
 
 link:concept-modes.html[Learn how private mode works].
 
-== Understand Connector installation options
+== Review installation options
 
-You can install a Connector on-premises or in the cloud by manually installing the Connector on your own Linux host.
+In private mode, you can install the Connector on premises or in the cloud by manually installing the Connector on your own Linux host.
 
 === AWS C2S
 
@@ -293,3 +293,17 @@ You now have a service account that you can assign to the VM instance after you 
 
 ====
 // end tabbed area
+
+== Enable Google Cloud APIs
+
+Several APIs are required to deploy Cloud Volumes ONTAP in Google Cloud.
+
+.Step
+
+. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^].
++
+* Cloud Deployment Manager V2 API
+* Cloud Logging API
+* Cloud Resource Manager API
+* Compute Engine API
+* Identity and Access Management (IAM) API
