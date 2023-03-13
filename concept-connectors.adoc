@@ -59,6 +59,18 @@ While a Connector isn't required for direct discovery of an on-premises ONTAP cl
 +
 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn more about discovery and management options for on-prem ONTAP clusters^]
 
+== Connectors must be operational at all times
+
+Connectors are a fundamental part of the NetApp BlueXP service architecture. It is your responsibility to ensure that relevant Connectors are up, operational, and accessible at all times. While the service is designed to overcome short outages of Connector availability, you must take immediate action when required to remedy infrastructure failures.
+
+This documentation is governed by the EULA. If the product is not operated in accordance with the documentation, the functionality and operation of the product, as well as your rights under the EULA, may be adversely impacted.
+
+=== How Connector availability affects Cloud Volumes ONTAP
+
+A Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems and capacity-based BYOL systems shut down after losing communication with a Connector for longer than 14 days. This happens because the Connector refreshes licensing on the system each day.
+
+NOTE: If your Cloud Volumes ONTAP system has a node-based BYOL license, the system remains running after 14 days because the license is installed on the Cloud Volumes ONTAP system.
+
 == Supported locations
 
 A Connector is supported in the following locations:
@@ -80,16 +92,6 @@ If you want to use BlueXP services with Google Cloud, then you must use a Connec
 To use BlueXP in restricted mode or private mode, you get started with BlueXP by installing the Connector and then accessing the user interface or API that's running locally on the Connector.
 
 link:concept-modes.html[Learn about BlueXP deployment modes].
-
-== Connectors should remain running
-
-A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
-
-For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems and capacity-based BYOL systems shut down after losing communication with a Connector for longer than 14 days. This happens because the Connector refreshes licensing on the system each day.
-
-NOTE: If your Cloud Volumes ONTAP system has a node-based BYOL license, the system remains running after 14 days because the license is installed on the Cloud Volumes ONTAP system.
-
-BlueXP will notify you if your Connector has been powered down for 14 days or longer. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html[Learn about BlueXP notifications].
 
 == How to create a Connector
 
