@@ -145,13 +145,11 @@ https://_ipaddress_
 link:concept-netapp-accounts.html[Learn about NetApp accounts].
 .. Enter a name for the system.
 
-.Result
-
-The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your NetApp account.
+The Connector is now installed and is set up with your NetApp account.
 
 .What's next?
 
-Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+Add permissions to the Connector.
 --
 
 .Manual install
@@ -243,20 +241,20 @@ link:concept-netapp-accounts.html[Learn about NetApp accounts].
 
 .Result
 
-The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your NetApp account.
+The Connector is now installed and is set up with your NetApp account.
 
 .What's next?
 
-Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+Add permissions to the Connector.
 --
 
 ====
 
 // end tabbed area
 
-== Set up permissions for the Connector
+== Add permissions to the Connector
 
-If you installed the Connector from the Azure Marketplace or by manually installing the software, then you'll need to set up permissions for the Connector.
+If you installed the Connector from the Azure Marketplace or by manually installing the software, then you'll need to add permissions to the Connector.
 
 These steps don't apply if you deployed the Connector directly from BlueXP because BlueXP assigns the required permissions during deployment. 
 
@@ -277,9 +275,19 @@ This step is required to provide the Connector with permissions so that you can 
 +
 https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page[Microsoft Azure documentation: Assign Azure roles using the Azure portal^]
 
+.Result
+BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.
+
+.What's next?
+
+Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+--
+
 .Service principal
 --
 .Steps
+
+. Go to the https://console.bluexp.netapp.com[BlueXP console^] and log in.
 
 . In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 +

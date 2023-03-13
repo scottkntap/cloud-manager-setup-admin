@@ -13,13 +13,18 @@ summary: Set up Azure permissions so that you can use BlueXP to manage your data
 :imagesdir: ./media/
 
 [.lead]
-Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure.
+Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure in Azure.
 
 How you set up permissions depends on the installation option that you're planning to use.
 
-* If you want to deploy the Connector directly from BlueXP, you'll need to set up permissions that enable BlueXP to authenticate with Azure and deploy the VM. BlueXP automatically sets up permissions for the Connector VM during deployment.
+Create the Connector directly from BlueXP::
+You need to set up permissions that enable BlueXP to authenticate with Azure and deploy the VM. BlueXP automatically sets up permissions for the Connector VM during deployment.
 
-* If you want to deploy the Connector from the Azure Marketplace or by manually installing the Connector, then you'll need to set up a custom role to associate with the Connector VM.
+Create the Connector from the AWS Marketplace::
+You need to set up a custom role to associate with the Connector VM.
+
+Manually install the software on your own Linux host::
+You need to set up a custom role to associate with the Connector VM.
 
 == Set up permissions to create the Connector from BlueXP
 
@@ -220,7 +225,8 @@ You've created the AD application and service principal.
 .. Click *Select members*.
 +
 image:screenshot-azure-service-principal-role.png[A screenshot of the Azure portal that shows the Members tab when adding a role to an application.]
-* Search for the name of the application.
+
+.. Search for the name of the application.
 +
 Here's an example:
 +
@@ -301,7 +307,7 @@ If you deploy the Connector from the Azure Marketplace or if you manually instal
 --
 .Steps
 
-. If you're planning to manually installing the software on your own host, enable a system-assigned managed identity on the VM so that you can provide the required Azure permissions through a custom role. 
+. If you're planning to manually install the software on your own host, enable a system-assigned managed identity on the VM so that you can provide the required Azure permissions through a custom role. 
 +
 https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm[Microsoft Azure documentation: Configure managed identities for Azure resources on a VM using the Azure portal^]
 
@@ -383,7 +389,8 @@ You've created the AD application and service principal.
 .. Click *Select members*.
 +
 image:screenshot-azure-service-principal-role.png[A screenshot of the Azure portal that shows the Members tab when adding a role to an application.]
-* Search for the name of the application.
+
+.. Search for the name of the application.
 +
 Here's an example:
 +

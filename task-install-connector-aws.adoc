@@ -121,7 +121,7 @@ These steps describe how to launch the instance from the EC2 Console because the
 
 * *Instance type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
 +
-link:task-prepare-restricted-mode.html[Review the instance requirements].
+link:reference-host-requirements-aws.html[Review the instance requirements].
 
 * *Key pair (login)*: Select the key pair that you want to use to securely connect to the instance.
 
@@ -135,7 +135,7 @@ link:task-prepare-restricted-mode.html[Review the instance requirements].
 
 * *Advanced details*: Under *IAM instance profile*, choose the IAM role that includes the required permissions for the Connector.
 +
-link:task-prepare-restricted-mode.html[Learn how to set up AWS permissions].
+link:task-set-up-permissions-aws.html[Learn how to set up AWS permissions].
 
 * *Summary*: Review the summary and click *Launch instance*.
 
