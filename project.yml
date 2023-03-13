@@ -121,12 +121,10 @@ sidebar:
               url: /reference-whats-next-private-mode.html
     - title: Administer BlueXP
       entries:
-        - title: NetApp accounts
+        - title: BlueXP accounts
           entries:
-            - title: Learn about NetApp accounts
+            - title: Learn about BlueXP accounts
               url: /concept-netapp-accounts.html
-            - title: Set up workspaces and users
-              url: /task-setting-up-netapp-accounts.html
             - title: Manage your account
               url: /task-managing-netapp-accounts.html
             - title: Monitor operations in your account
@@ -177,8 +175,6 @@ sidebar:
               url: /concept-accounts-gcp.html
             - title: Manage credentials and subscriptions
               url: /task-adding-gcp-accounts.html
-        - title: Discovery using My Opportunities
-          url: /concept-my-opportunities.html
     - title: Reference
       entries:
         - title: Permissions
@@ -233,13 +229,13 @@ homepage:
           url: concept-connectors.html
         - title: Manage Connectors
           url: task-managing-connectors.html
-    - title: NetApp accounts
+    - title: BlueXP accounts
       links:
-        - title: Learn about NetApp accounts
+        - title: Learn about BlueXP accounts
           url: concept-netapp-accounts.html
         - title: Set up workspaces and users
           url: task-setting-up-netapp-accounts.html
-        - title: Manage your NetApp account
+        - title: Manage your BlueXP account
           url: task-managing-netapp-accounts.html
     - title: Cloud provider accounts
       links:

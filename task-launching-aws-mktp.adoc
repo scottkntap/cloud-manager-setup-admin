@@ -76,16 +76,16 @@ AWS launches the software with the specified settings. The Connector instance an
 https://_ipaddress_
 
 . After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
 
 . Open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+The Connector is now installed and set up with your BlueXP account. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
 
 If you have Amazon S3 buckets in the same AWS account where you created the Connector, you'll see an Amazon S3 working environment appear on the Canvas automatically. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html[Learn more about what you can do with this working environment].
 
@@ -139,14 +139,14 @@ AWS launches the software with the specified settings. The Connector instance an
 https://_ipaddress_
 
 . After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account.
+The Connector is now installed and set up with your BlueXP account.
 
 Any time that you want to use BlueXP, open your web browser and connect to the IP address of the Connector instance: https://_ipaddress_
 

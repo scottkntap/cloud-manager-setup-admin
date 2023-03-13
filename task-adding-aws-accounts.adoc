@@ -13,7 +13,7 @@ summary: Add and manage AWS credentials so that BlueXP has the permissions that 
 :imagesdir: ./media/
 
 [.lead]
-Add and manage AWS credentials so that BlueXP has the permissions that it needs to deploy and manage cloud resources in your AWS accounts. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
+Add and manage AWS credentials so that BlueXP has the permissions that it needs to deploy and manage cloud resources in your AWS accounts. If you manage multiple AWS Marketplace subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
 
 == Overview
 
@@ -188,6 +188,10 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 You can now use the credentials when creating a new Connector.
 
+== Add credentials to BlueXP for Amazon FSx for ONTAP
+
+For details, refer to the https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html[BlueXP documentation for Amazon FSx for ONTAP^]
+
 [[subscribe]]
 == Associate an AWS subscription
 
@@ -221,7 +225,7 @@ image:screenshot_associate_subscription.png[A screenshot of the action menu for 
 You'll be redirected to the BlueXP website.
 .. From the *Subscription Assignment* page:
 +
-* Select the NetApp accounts that you'd like to associate this subscription with.
+* Select the BlueXP accounts that you'd like to associate this subscription with.
 * In the *Replace existing subscription* field, choose whether you'd like to automatically replace the existing subscription for one account with this new subscription.
 +
 BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn't ever associated with a subscription, then this new subscription won't be associated with those credentials.
@@ -248,7 +252,7 @@ TIP: You can't edit the credentials for an instance profile that is associated w
 
 . Make the required changes and then click *Apply*.
 
-== Deleting credentials
+== Delete credentials
 
 If you no longer need a set of credentials, you can delete them from BlueXP. You can only delete credentials that aren't associated with a working environment.
 

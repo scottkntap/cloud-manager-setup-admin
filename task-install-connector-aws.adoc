@@ -147,14 +147,14 @@ AWS launches the software with the specified settings. The Connector instance an
 https://_ipaddress_
 
 . After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account.
+The Connector is now installed and set up with your BlueXP account.
 
 Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
@@ -243,14 +243,14 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.htm
 https://_ipaddress_
 
 . After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
 
 .Result
 
-The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your NetApp account.
+The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your BlueXP account.
 
 .What's next?
 

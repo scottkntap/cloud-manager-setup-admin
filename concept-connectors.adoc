@@ -59,12 +59,6 @@ While a Connector isn't required for direct discovery of an on-premises ONTAP cl
 +
 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn more about discovery and management options for on-prem ONTAP clusters^]
 
-== Connectors with restricted mode and private mode
-
-To use BlueXP in restricted mode or private mode, you get started with BlueXP by installing the Connector and then accessing the user interface or API that's running locally on the Connector.
-
-link:concept-modes.html[Learn about BlueXP deployment modes].
-
 == Supported locations
 
 A Connector is supported in the following locations:
@@ -81,7 +75,11 @@ If you want to use BlueXP services with Google Cloud, then you must use a Connec
 
 * On your premises
 
-NOTE: asdfas
+== Restricted mode and private mode
+
+To use BlueXP in restricted mode or private mode, you get started with BlueXP by installing the Connector and then accessing the user interface or API that's running locally on the Connector.
+
+link:concept-modes.html[Learn about BlueXP deployment modes].
 
 == Connectors should remain running
 
@@ -145,7 +143,7 @@ Here are a few examples:
 
 * You're using a multi-cloud environment (AWS and Azure), so you have one Connector in AWS and another in Azure. Each manages the Cloud Volumes ONTAP systems running in those environments.
 
-* A service provider might use one NetApp account to provide services for their customers, while using another account to provide disaster recovery for one of their business units. Each account would have separate Connectors.
+* A service provider might use one BlueXP account to provide services for their customers, while using another account to provide disaster recovery for one of their business units. Each account would have separate Connectors.
 
 === When to switch between Connectors
 

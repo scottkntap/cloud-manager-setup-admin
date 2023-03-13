@@ -13,7 +13,7 @@ summary: BlueXP enables you to choose the AWS credentials to use when deploying 
 :imagesdir: ./media/
 
 [.lead]
-BlueXP enables you to choose the AWS credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
+You should understand how BlueXP uses AWS credentials and permissions so that you can manage credentials for one or more AWS accounts.
 
 == Initial AWS credentials
 
@@ -27,9 +27,16 @@ BlueXP selects these AWS credentials by default when you create a new working en
 
 image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
 
+You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
+
 == Additional AWS credentials
 
-There are two ways to add additional AWS credentials.
+There are two ways to add additional AWS credentials:
+
+* You can add AWS credentials to an existing Connector
+* You can add AWS credentials directly to BlueXP
+
+Review the sections below for more details.
 
 === Add AWS credentials to an existing Connector
 
@@ -49,11 +56,11 @@ Adding new AWS credentials to BlueXP provides the permissions needed to create a
 
 == What about Marketplace deployments and on-prem deployments?
 
-The sections above describe the recommended deployment method for the Connector, which is from BlueXP. You can also deploy a Connector in AWS from the link:task-launching-aws-mktp.html[AWS Marketplace] and you can link:task-installing-linux.html[install the Connector on-premises].
+The sections above describe the recommended deployment method for the Connector, which is from BlueXP. You can also deploy a Connector in AWS from the AWS Marketplace and you can manually install the Connector software on your own Linux host.
 
 If you use the Marketplace, permissions are provided in the same way. You just need to manually create and set up the IAM role, and then provide permissions for any additional accounts.
 
-For on-premises deployments, you can't set up an IAM role for the BlueXP system, but you can provide permissions just like you would for additional AWS accounts.
+For on-premises deployments, you can't set up an IAM role for the BlueXP system, but you can provide permissions using AWS access keys.
 
 == How can I securely rotate my AWS credentials?
 

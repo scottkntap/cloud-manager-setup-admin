@@ -5,7 +5,7 @@ keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp mar
 summary: You can manage the credentials that are associated with the Connector VM instance.
 ---
 
-= Managing Google Cloud credentials and subscriptions for BlueXP
+= Manage Google Cloud credentials and subscriptions for BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,11 +15,9 @@ summary: You can manage the credentials that are associated with the Connector V
 [.lead]
 You can manage the credentials that are associated with the Connector VM instance.
 
-== Associating a Marketplace subscription with Google Cloud credentials
+== Associate a Marketplace subscription with Google Cloud credentials
 
-When you deploy a Connector in Google Cloud, BlueXP creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that BlueXP uses to deploy Cloud Volumes ONTAP.
-
-At any time, you can change the Marketplace subscription that's associated with these credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+When you deploy a Connector in Google Cloud, BlueXP creates a default set of credentials that are associated with the Connector VM instance. At any time, you can change the Marketplace subscription that's associated with these credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 
 .Steps
 
@@ -51,7 +49,7 @@ This step sends your transfer request to NetApp.
 
 .. On the pop-up dialog box, click *Register with NetApp, Inc.*
 +
-This step must be completed to link the Google Cloud subscription to your NetApp account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to BlueXP.
+This step must be completed to link the Google Cloud subscription to your BlueXP account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to BlueXP.
 +
 image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop-up.]
  
@@ -59,7 +57,7 @@ image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop
 +
 NOTE: If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on the BlueXP website^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 +
-* Select the NetApp accounts that you'd like to associate this subscription with.
+* Select the BlueXP accounts that you'd like to associate this subscription with.
 * In the *Replace existing subscription* field, choose whether you'd like to automatically replace the existing subscription for one account with this new subscription.
 +
 BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn't ever associated with a subscription, then this new subscription won't be associated with those credentials.
@@ -76,9 +74,9 @@ video::video-subscribing-google-cloud.mp4[width=848, height=480]
 +
 image:screenshot_gcp_associate.gif[A screenshot of the subscription assignment page.]
 
-== Troubleshooting the Marketplace subscription process
+== Troubleshoot the Marketplace subscription process
 
-Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to the BlueXP website. If this happens, use the following steps to complete the subscription process.
+Sometimes subscribing to BlueXP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to the BlueXP website. If this happens, use the following steps to complete the subscription process.
 
 .Steps
 

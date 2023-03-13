@@ -5,7 +5,7 @@ keywords: blob storage, blob working environment, azure blob storage accounts, a
 summary: After you install a Connector in Azure, BlueXP can automatically discover information about the Azure storage accounts that reside in the Azure Subscriptions where the Connector is installed. An Azure Blob working environment is added to the Canvas so you can view this information.
 ---
 
-= Viewing your Azure Blob accounts
+= View your Azure Blob accounts
 :hardbreaks:
 :nofooter:
 :icons: font

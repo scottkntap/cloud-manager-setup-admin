@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: "Learn what's new with BlueXP administration features: NetApp accounts, Connectors, cloud provider credentials, and more."
+summary: "Learn what's new with BlueXP administration features: BlueXP accounts, Connectors, cloud provider credentials, and more."
 ---
 
 = What's new
@@ -13,7 +13,7 @@ summary: "Learn what's new with BlueXP administration features: NetApp accounts,
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with BlueXP administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
+Learn what's new with BlueXP administration features: BlueXP accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
 == 5 March 2023

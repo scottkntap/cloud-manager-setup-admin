@@ -140,12 +140,12 @@ https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignmen
 https://_ipaddress_
 
 . After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
 
-The Connector is now installed and is set up with your NetApp account.
+The Connector is now installed and is set up with your BlueXP account.
 
 .What's next?
 
@@ -234,14 +234,14 @@ At the end of the installation, the Connector service (occm) restarts twice if y
 https://_ipaddress_
 
 . After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
 
 .Result
 
-The Connector is now installed and is set up with your NetApp account.
+The Connector is now installed and is set up with your BlueXP account.
 
 .What's next?
 

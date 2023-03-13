@@ -173,14 +173,14 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 .. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the BlueXP role to that project^]. You'll need to repeat this step for each project.
 
 . After you log in, set up BlueXP:
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments.
+The Connector is now installed and set up with your BlueXP account. BlueXP will automatically use this Connector when you create new working environments.
 
 .After you finish
 

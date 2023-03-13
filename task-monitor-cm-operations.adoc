@@ -88,7 +88,7 @@ For example, if you want to see only "Error" and "Warning" notifications for Blu
 
 === Setting email notification settings
 
-You can send specific types of notifications by email so you can be informed of important system activity even when you're not logged into BlueXP. Emails can be sent to any users who are part of your NetApp Account, or to any other recipients who need to be aware of certain types of system activity.
+You can send specific types of notifications by email so you can be informed of important system activity even when you're not logged into BlueXP. Emails can be sent to any users who are part of your BlueXP account, or to any other recipients who need to be aware of certain types of system activity.
 
 [NOTE]
 ====
@@ -116,7 +116,7 @@ image:screenshot-change-notifications.png[A screenshot showing how to change not
 
 === Adding additional email recipients
 
-The users who appear in the _Account Users_ tab are populated automatically from the users in your NetApp Account (from the link:task-managing-netapp-accounts.html#creating-and-managing-users[Manage Account page]). You can add email addresses in the _Additional Recipients_ tab for other people, or groups, who do not have access to BlueXP, but who need to be notified about certain types of alerts and notifications.
+The users who appear in the _Account Users_ tab are populated automatically from the users in your BlueXP account (from the link:task-managing-netapp-accounts.html#creating-and-managing-users[Manage Account page]). You can add email addresses in the _Additional Recipients_ tab for other people, or groups, who do not have access to BlueXP, but who need to be notified about certain types of alerts and notifications.
 
 .Steps
 

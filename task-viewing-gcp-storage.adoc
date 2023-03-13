@@ -5,7 +5,7 @@ keywords: google cloud storage buckets, google cloud storage, google cloud stora
 summary: After you install a Connector in Google Cloud, BlueXP can automatically discover information about the Google Cloud buckets that reside in the Google account where the Connector is installed. A Google Cloud Storage working environment is added to the Canvas so you can view this information.
 ---
 
-= Viewing your Google Cloud Storage buckets
+= View your Google Cloud Storage buckets
 :hardbreaks:
 :nofooter:
 :icons: font

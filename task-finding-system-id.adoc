@@ -5,7 +5,7 @@ keywords: system id, id, BlueXP system id, connector system id
 summary: To help you get started, your NetApp representative might ask you for the system ID for a Connector. The ID is typically used for licensing and troubleshooting purposes.
 ---
 
-= Finding the system ID for a Connector
+= Find the system ID for a Connector
 :hardbreaks:
 :nofooter:
 :icons: font

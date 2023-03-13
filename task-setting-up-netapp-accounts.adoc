@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-setting-up-netapp-accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
-summary: When you log in to BlueXP for the first time, you're prompted to create a NetApp account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
+summary: When you log in to BlueXP for the first time, you're prompted to create a BlueXP account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
 ---
 
-= Set up workspaces and users in your NetApp account
+= Set up workspaces and users in your BlueXP account
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: When you log in to BlueXP for the first time, you're prompted to create
 :imagesdir: ./media/
 
 [.lead]
-When you log in to BlueXP for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
+When you log in to BlueXP for the first time, you're prompted to create a _BlueXP account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
-link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
+link:concept-netapp-accounts.html[Learn more about how BlueXP accounts work].
 
-Set up your NetApp account so users can access BlueXP and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
+Set up your BlueXP account so users can access BlueXP and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
 
 == Add workspaces
 
@@ -45,7 +45,7 @@ If a Workspace Admin needs access to this workspace, then you'll need to associa
 
 == Add users
 
-Associate users with your NetApp account so those users can create and manage working environments in BlueXP.
+Associate users with your BlueXP account so those users can create and manage working environments in BlueXP.
 
 .Steps
 

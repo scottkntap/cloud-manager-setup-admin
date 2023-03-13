@@ -13,19 +13,17 @@ summary: A service account provides BlueXP with permissions to deploy and manage
 :imagesdir: ./media/
 
 [.lead]
-A service account provides BlueXP with permissions to deploy and manage Cloud Volumes ONTAP systems that are in the same project as the Connector, or in different projects.
+You should understand how BlueXP uses Google Cloud credentials and permissions so that you can manage credentials for one or more Google Cloud projects.
 
 == Project and permissions for BlueXP
 
-Before you can deploy Cloud Volumes ONTAP in Google Cloud, you must first deploy a Connector in a Google Cloud project. The Connector can't be running on your premises, or in a different cloud provider.
+Before you can use BlueXP to manage resources in your Google Cloud project, you must first deploy a Connector. The Connector can't be running on your premises, or in a different cloud provider.
 
 Two sets of permissions must be in place before you deploy a Connector directly from BlueXP:
 
 . You need to deploy a Connector using a Google account that has permissions to launch the Connector VM instance from BlueXP.
 
 . When deploying the Connector, you are prompted to select a https://cloud.google.com/iam/docs/service-accounts[service account^] for the VM instance. BlueXP gets permissions from the service account to create and manage Cloud Volumes ONTAP systems on your behalf. Permissions are provided by attaching a custom role to the service account.
-
-We have set up two YAML files that include the required permissions for the user and the service account. link:task-creating-connectors-gcp.html[Learn how to use the YAML files to set up permissions].
 
 The following image depicts the permission requirements described in numbers 1 and 2 above:
 

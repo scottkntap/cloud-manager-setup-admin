@@ -552,9 +552,9 @@ https://_ipaddress_
 
 . After you log in, set up the Connector:
 
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 
 .. Enter a name for the system.
 --
@@ -565,7 +565,7 @@ link:concept-netapp-accounts.html[Learn about NetApp accounts].
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
+The Connector is now installed and set up with your BlueXP account. BlueXP will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task-managing-connectors.html[switch between them].
 
 If you have Google Cloud Storage buckets in the same Google Cloud account where you created the Connector, you'll see a Google Cloud Storage working environment appear on the Canvas automatically. link:task-viewing-gcp-storage.html[Learn more about what you can do with this working environment].
 

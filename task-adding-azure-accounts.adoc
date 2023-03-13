@@ -13,7 +13,11 @@ summary: When you create a Cloud Volumes ONTAP system, you need to select the Az
 :imagesdir: ./media/
 
 [.lead]
-When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials to use with that system. You also need to choose a Marketplace subscription, if you're using pay-as-you-go licensing. Follow the steps on this page if you need to use multiple Azure credentials or multiple Azure Marketplace subscriptions for Cloud Volumes ONTAP.
+Add and manage Azure credentials so that BlueXP has the permissions that it needs to deploy and manage cloud resources in your Azure subscriptions. If you manage multiple Azure Marketplace subscriptions, you can assign each one of them to different Azure credentials from the Credentials page.
+
+Follow the steps on this page if you need to use multiple Azure credentials or multiple Azure Marketplace subscriptions for Cloud Volumes ONTAP.
+
+== Overview
 
 There are two ways to add additional Azure subscriptions and credentials in BlueXP.
 
@@ -21,7 +25,7 @@ There are two ways to add additional Azure subscriptions and credentials in Blue
 
 . If you want to deploy Cloud Volumes ONTAP using different Azure credentials, grant Azure permissions using a service principal and add its credentials to BlueXP.
 
-== Associating additional Azure subscriptions with a managed identity
+== Associate additional Azure subscriptions with a managed identity
 
 BlueXP enables you to choose the Azure credentials and Azure subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the managed identity profile unless you associate the https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] with those subscriptions.
 
@@ -59,7 +63,7 @@ When you create a new working environment, you should now have the ability to se
 
 image:screenshot_accounts_switch_azure_subscription.gif[A screenshot that shows the ability to select multiple Azure subscriptions when selecting a Microsoft Azure Provider Account.]
 
-== Adding additional Azure credentials to BlueXP
+== Add additional Azure credentials to BlueXP
 
 When you deploy a Connector from BlueXP, BlueXP enables a system-assigned managed identity on the virtual machine that has the required permissions. BlueXP selects these Azure credentials by default when you create a new working environment for Cloud Volumes ONTAP.
 
@@ -67,7 +71,7 @@ TIP: An initial set of credentials isn't added if you manually installed the Con
 
 If you want to deploy Cloud Volumes ONTAP using _different_ Azure credentials, then you must grant the required permissions by creating and setting up a service principal in Azure Active Directory for each Azure account. You can then add the new credentials to BlueXP.
 
-=== Granting Azure permissions using a service principal
+=== Grant Azure permissions using a service principal
 
 BlueXP needs permissions to perform actions in Azure. You can grant the required permissions to an Azure account by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that BlueXP needs.
 
@@ -79,17 +83,17 @@ image:diagram_azure_authentication.png["Conceptual image that shows BlueXP obtai
 
 .Steps
 
-. <<Creating an Azure Active Directory application,Create an Azure Active Directory application>>.
+. <<Create an Azure Active Directory application>>.
 
-. <<Assigning the application to a role,Assign the application to a role>>.
+. <<Assign the application to a role>>.
 
-. <<Adding Windows Azure Service Management API permissions,Add Windows Azure Service Management API permissions>>.
+. <<Add Windows Azure Service Management API permissions>>.
 
-. <<Getting the application ID and directory ID,Get the application ID and directory ID>>.
+. <<Get the application ID and directory ID>>.
 
-. <<Creating a client secret,Create a client secret>>.
+. <<Create a client secret>>.
 
-==== Creating an Azure Active Directory application
+==== Create an Azure Active Directory application
 
 Create an Azure Active Directory (AD) application and service principal that BlueXP can use for role-based access control.
 
@@ -118,7 +122,7 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 
 You've created the AD application and service principal.
 
-==== Assigning the application to a role
+==== Assign the application to a role
 
 You must bind the service principal to one or more Azure subscriptions and assign it the custom "BlueXP Operator" role so BlueXP has permissions in Azure.
 
@@ -188,7 +192,7 @@ The service principal now has the required Azure permissions to deploy the Conne
 +
 If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. BlueXP enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
 
-==== Adding Windows Azure Service Management API permissions
+==== Add Windows Azure Service Management API permissions
 
 The service principal must have "Windows Azure Service Management API" permissions.
 
@@ -207,7 +211,7 @@ image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal th
 image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
 
 [[ids]]
-==== Getting the application ID and directory ID
+==== Get the application ID and directory ID
 
 When you add the Azure account to BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. BlueXP uses the IDs to programmatically sign in.
 
@@ -219,7 +223,7 @@ When you add the Azure account to BlueXP, you need to provide the application (c
 +
 image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
 
-==== Creating a client secret
+==== Create a client secret
 
 You need to create a client secret and then provide BlueXP with the value of the secret so BlueXP can use it to authenticate with Azure AD.
 
@@ -243,7 +247,7 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
 
-=== Adding the credentials to BlueXP
+=== Add the credentials to BlueXP
 
 After you provide an Azure account with the required permissions, you can add the credentials for that account to BlueXP. Completing this step enables you to launch Cloud Volumes ONTAP using different Azure credentials.
 
@@ -288,7 +292,7 @@ image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting bet
 Manage the Azure credentials that you've already added to BlueXP by associating a Marketplace subscription, editing credentials, and deleting them.
 
 [[subscribe]]
-=== Associating an Azure Marketplace subscription to credentials
+=== Associate an Azure Marketplace subscription to credentials
 
 After you add your Azure credentials to BlueXP, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 
@@ -321,7 +325,7 @@ image:screenshot_azure_add_subscription.png[A screenshot of the action menu for 
 You'll be redirected to the BlueXP website.
 .. From the *Subscription Assignment* page:
 +
-* Select the NetApp accounts that you'd like to associate this subscription with.
+* Select the BlueXP accounts that you'd like to associate this subscription with.
 * In the *Replace existing subscription* field, choose whether you'd like to automatically replace the existing subscription for one account with this new subscription.
 +
 BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn't ever associated with a subscription, then this new subscription won't be associated with those credentials.
@@ -334,7 +338,7 @@ The following video shows the steps to subscribe from the Azure Marketplace:
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
 
-=== Editing credentials
+=== Edit credentials
 
 Edit your Azure credentials in BlueXP by modifying the details about your Azure service credentials. For example, you might need to update the client secret if a new secret was created for the service principal application.
 
@@ -346,7 +350,7 @@ Edit your Azure credentials in BlueXP by modifying the details about your Azure 
 
 . Make the required changes and then click *Apply*.
 
-=== Deleting credentials
+=== Delete credentials
 
 If you no longer need a set of credentials, you can delete them from BlueXP. You can only delete credentials that aren't associated with a working environment.
 

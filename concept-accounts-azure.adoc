@@ -13,7 +13,7 @@ summary: BlueXP enables you to choose the Azure credentials to use when deployin
 :imagesdir: ./media/
 
 [.lead]
-BlueXP enables you to choose the Azure credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial Azure credentials, or you can add additional credentials.
+You should understand how BlueXP uses Azure credentials and permissions so that you can manage credentials for one or more Azure subscriptions.
 
 == Initial Azure credentials
 
@@ -27,27 +27,28 @@ BlueXP selects these Azure credentials by default when you create a new working 
 
 image:screenshot_accounts_select_azure.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
 
+You can deploy all of your Cloud Volumes ONTAP systems using the initial Azure credentials, or you can add additional credentials.
+
 == Additional Azure subscriptions for a managed identity
 
-The managed identity is associated with the subscription in which you launched the Connector. If you want to select a different Azure subscription, then you need to link:task-adding-azure-accounts.html#associating-additional-azure-subscriptions-with-a-managed-identity[associate the managed identity with those subscriptions].
+The system-assigned managed identity assigned to the Connector VM is associated with the subscription in which you launched the Connector. If you want to select a different Azure subscription, then you need to link:task-adding-azure-accounts.html#associating-additional-azure-subscriptions-with-a-managed-identity[associate the managed identity with those subscriptions].
 
 == Additional Azure credentials
 
-If you want to deploy Cloud Volumes ONTAP using different Azure credentials, then you must grant the required permissions by link:task-adding-azure-accounts.html[creating and setting up a service principal in Azure Active Directory] for each Azure account. The following image shows two additional accounts, each set up with a service principal and custom role that provides permissions:
+If you want to use different Azure credentials with BlueXP, then you must grant the required permissions by link:task-adding-azure-accounts.html[creating and setting up a service principal in Azure Active Directory] for each Azure account. The following image shows two additional accounts, each set up with a service principal and custom role that provides permissions:
 
 image:diagram_permissions_multiple_azure.png["A conceptual image that shows the initial Azure account, which receives permissions through a custom role and managed identity, and two additional accounts that receive permissions through a custom role and service principal."]
 
 You would then link:task-adding-azure-accounts.html#adding-azure-accounts-to-cloud-manager[add the account credentials to BlueXP] by providing details about the AD service principal.
 
-After you add another set of credentials, you can switch to them when creating a new working environment:
+For example, you can switch between credentials when creating a new Cloud Volumes ONTAP working environment:
 
 image:screenshot_accounts_switch_azure.gif["A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page."]
 
-.What about Marketplace deployments and on-prem deployments?
-****
-The sections above describe the recommended deployment method for the Connector, which is from BlueXP. You can also deploy a Connector in Azure from the link:task-launching-azure-mktp.html[Azure Marketplace], and you can link:task-installing-linux.html[install the Connector on-premises].
+== What about Marketplace deployments and on-prem deployments?
 
-If you use the Marketplace, permissions are provided in the same way. You just need to manually create and set up the managed identity for the Connector, and then provide permissions for any additional accounts.
+The sections above describe the recommended deployment method for the Connector, which is from BlueXP. You can also deploy a Connector in Azure from the Azure Marketplace, and you can install the Connector software on your own Linux host.
 
-For on-premises deployments, you can't set up a managed identity for the Connector, but you can provide permissions just like you would for additional accounts by using a service principal.
-****
+If you use the Marketplace, you can provide permissions by assigning a custom role to the Connector VM and to a system-assigned managed identity, or you can use Azure AD service principal.
+
+For on-premises deployments, you can't set up a managed identity for the Connector, but you can provide permissions by using a service principal.

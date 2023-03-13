@@ -376,4 +376,4 @@ link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 
 .Result
 
-The Connector is now installed and set up with your NetApp account. All users need to access BlueXP using the IP address of the Connector instance.
+The Connector is now installed and set up with your BlueXP account. All users need to access BlueXP using the IP address of the Connector instance.

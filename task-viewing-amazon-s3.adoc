@@ -5,7 +5,7 @@ keywords: s3 buckets, s3 storage, s3 working environment, amazon s3 buckets, ama
 summary: After you install a Connector in AWS, BlueXP can automatically discover information about the Amazon S3 buckets that reside in the AWS account where the Connector is installed. An Amazon S3 working environment is added to the Canvas so you can view this information.
 ---
 
-= Managing your Amazon S3 buckets
+= Manage your Amazon S3 buckets
 :hardbreaks:
 :nofooter:
 :icons: font

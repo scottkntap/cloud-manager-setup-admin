@@ -23,6 +23,11 @@ If you create a Connector in a standard AWS region directly from BlueXP, BlueXP 
 
 If you deploy the Connector from the AWS Marketplace or if you manually install the Connector on a Linux host, then you'll need to set up the policies yourself.
 
+* link:task-set-up-permissions-aws.html[Set up permissions for Connector installation in AWS (standard mode)]
+* link:task-set-up-permissions-on-prem.html[Set up permissions for Connector installation on premises (standard mode)]
+* link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Set up permissions for restricted mode]
+* https://review.docs.netapp.com/us-en/cloud-manager-setup-admin_feb-2022-modes/task-prepare-private-mode.html#prepare-cloud-permissions[Set up permissions for private mode]
+
 You also need to ensure that the policies are up to date as new permissions are added in subsequent releases.
 
 Select your region to view the required policies:

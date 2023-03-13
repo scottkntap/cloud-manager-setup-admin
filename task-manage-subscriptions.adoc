@@ -67,4 +67,4 @@ For example, let's say that you have two accounts and each is billed through sep
 +
 image:screenshot-subscription-menu.png[A screenshot of the action menu for a subscription.]
 
-. Choose to rename the subscription or to manage the NetApp accounts that are associated with the subscription.
+. Choose to rename the subscription or to manage the BlueXP accounts that are associated with the subscription.

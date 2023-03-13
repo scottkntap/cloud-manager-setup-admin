@@ -19,7 +19,7 @@ TIP: You can also download and install the Connector software on an existing Lin
 
 == Creating a Connector in Azure
 
-Deploy the Connector in Azure using the image in the Azure Marketplace and then log in to the Connector to specify your NetApp account.
+Deploy the Connector in Azure using the image in the Azure Marketplace and then log in to the Connector to specify your BlueXP account.
 
 .Steps
 
@@ -57,14 +57,14 @@ Azure deploys the virtual machine with the specified settings. The virtual machi
 https://_ipaddress_
 
 . After you log in, set up the Connector:
-.. Specify the NetApp account to associate with the Connector.
+.. Specify the BlueXP account to associate with the Connector.
 +
-link:concept-netapp-accounts.html[Learn about NetApp accounts].
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
 
 .Result
 
-The Connector is now installed and set up with your NetApp account.
+The Connector is now installed and set up with your BlueXP account.
 
 If the Connector is in an Azure commercial region, open a web browser and go to https://console.bluexp.netapp.com to start using the Connector with BlueXP.
 

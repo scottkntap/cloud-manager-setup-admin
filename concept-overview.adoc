@@ -56,7 +56,7 @@ BlueXP includes a SaaS-based interface that is integrated with the BlueXP websit
 
 === Software-as-a-service
 
-BlueXP is accessible through a https://console.bluexp.netapp.com[SaaS-based user interface^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your NetApp accounts and Connectors.
+BlueXP is accessible through a https://console.bluexp.netapp.com[SaaS-based user interface^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your BlueXP accounts and Connectors.
 
 === Restricted and private sites
 
@@ -68,9 +68,9 @@ link:concept-modes.html[Learn about BlueXP deployment modes].
 
 https://cloud.netapp.com[The BlueXP website^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^]. With centralized user authentication, you can use the same set of credentials to access BlueXP and other cloud services like Cloud Insights.
 
-=== NetApp account
+=== BlueXP account
 
-When you log in to BlueXP for the first time, you're prompted to create a _NetApp account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
+When you log in to BlueXP for the first time, you're prompted to create a _BlueXP account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
 === Connectors
 

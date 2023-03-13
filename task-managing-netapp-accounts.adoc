@@ -5,7 +5,7 @@ keywords: account settings, workspaces, Connector, account admin, workspace admi
 summary: After you perform initial setup, you can administer your account settings later by managing users, service accounts, workspaces, and Connectors.
 ---
 
-= Manage your NetApp account
+= Manage your BlueXP account
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,7 +15,7 @@ summary: After you perform initial setup, you can administer your account settin
 [.lead]
 You can administer your account by managing users, service accounts, workspaces, and Connectors.
 
-link:concept-netapp-accounts.html[Learn more about how NetApp accounts work].
+link:concept-netapp-accounts.html[Learn more about how BlueXP accounts work].
 
 == Manage your account with the Tenancy API
 
@@ -29,7 +29,7 @@ The user's in your account can access the manage the resources in your account's
 
 === Add users
 
-Associate users with your NetApp account so those users can create and manage working environments in BlueXP.
+Associate users with your BlueXP account so those users can create and manage working environments in BlueXP.
 
 .Steps
 
@@ -64,7 +64,7 @@ The user should receive an email from NetApp BlueXP titled "Account Association.
 
 === Remove users
 
-Disassociating a user makes it so they can no longer access the resources in a NetApp account.
+Disassociating a user makes it so they can no longer access the resources in a BlueXP account.
 
 .Steps
 
@@ -80,7 +80,7 @@ image:screenshot_associate_user_workspace.png[A screenshot that shows the action
 
 .Result
 
-The user can no longer access the resources in this NetApp account.
+The user can no longer access the resources in this BlueXP account.
 
 === Manage a Workspace Admin's workspaces
 
