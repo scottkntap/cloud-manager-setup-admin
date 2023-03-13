@@ -19,10 +19,16 @@ sidebar:
           url: /reference-limitations.html
     - title: Get started
       entries:
-        - title: Learn about BlueXP
-          url: /concept-overview.html
-        - title: Supported deployment modes
-          url: /concept-modes.html
+        - title: Learn the basics
+          entries: 
+            - title: BlueXP overview
+              url: /concept-overview.html
+            - title: Accounts
+              url: /concept-netapp-accounts.html
+            - title: Connectors
+              url: /concept-connectors.html
+            - title: Deployment modes
+              url: /concept-modes.html
         - title: Get started with standard mode
           entries:
             - title: Quick start
@@ -125,8 +131,6 @@ sidebar:
       entries:
         - title: BlueXP accounts
           entries:
-            - title: Learn about BlueXP accounts
-              url: /concept-netapp-accounts.html
             - title: Manage your account
               url: /task-managing-netapp-accounts.html
             - title: Monitor operations in your account
@@ -135,8 +139,6 @@ sidebar:
               url: /reference-user-roles.html
         - title: Connectors
           entries:
-            - title: Learn about Connectors
-              url: /concept-connectors.html
             - title: Find the system ID for a Connector
               url: /task-finding-system-id.html
             - title: Manage existing Connectors
