@@ -25,13 +25,13 @@ BlueXP Account Admins can then modify the settings for this account by managing 
 
 image:screenshot-account-settings.png["A screenshot that shows the Manage Account widget from which you can manage users, workspaces, and Connectors."]
 
-== Account Settings
+link:task-managing-netapp-accounts.html[Learn how to manage your BlueXP account].
 
-The Manage Account widget in BlueXP enables Account Admins to manage an account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, and Connectors that are associated with the account.
+== Deployment modes
 
-== Overview
+BlueXP offers the following deployment modes for your account: standard mode, restricted mode, and private mode. These modes support environments with varying levels of connectivity.
 
-The Overview page shows the Account Name and the Account ID. You may need to provide your Account ID when registering some services. This page also includes some BlueXP configuration options.
+link:concept-modes.html[Learn more about BlueXP deployment modes].
 
 == Members
 

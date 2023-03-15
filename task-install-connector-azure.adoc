@@ -124,17 +124,6 @@ This setting is important because a managed identity allows the Connector virtua
 +
 Azure deploys the virtual machine with the specified settings. The virtual machine and Connector software should be running in approximately five minutes.
 
-. Set up permissions for the Connector VM:
-
-.. In the Azure portal, go to the *Access Control (IAM)* page for the Connector VM.
-.. Click *Add > Add role assignment* to assign the custom role that you created for the Connector. 
-+
-Be sure to assign the role to the system-assigned managed identity that you enabled for the Connector VM.
-+
-This step is required to provide the Connector with permissions so that you can use BlueXP services.
-+
-https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page[Microsoft Azure documentation: Assign Azure roles using the Azure portal^]
-
 . Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
 +
 https://_ipaddress_
@@ -258,9 +247,11 @@ Add permissions to the Connector.
 
 == Add permissions to the Connector
 
-If you installed the Connector from the Azure Marketplace, you need to assign the custom role that you created to the Connector VM in Azure.
+After you create the Connector from the Azure Marketplace or by manually installing the software, you need to provide the Connector with the permissions that you previously set up:
 
-If you manually installed the Connector software, then you need to provide BlueXP with details about the Azure AD service principal that you created.
+* For Azure Marketplace deployments, you need to assign the custom role to the Connector VM in Azure.
+
+* For manual installations, you need to provide BlueXP with details about the Azure AD service principal.
 
 These steps don't apply if you deployed the Connector directly from BlueXP because BlueXP assigns the required permissions during deployment. 
 

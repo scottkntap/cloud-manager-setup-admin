@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
-= Set up cloud permissions
+= Set up cloud permissions for on-prem deployments
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-If you want to use BlueXP services in AWS or Azure, then you need to set up permissions in your cloud provider so that you can add the credentials to the Connector after you install it.
+If you want to use BlueXP services in AWS or Azure with an on-prem Connector, then you need to set up permissions in your cloud provider so that you can add the credentials to the Connector after you install it.
 
 TIP: Why not Google Cloud? When the Connector is installed on your premises, it can't manage your resources in Google Cloud. The Connector must be installed in Google Cloud to manage any resources that resides there.
 
