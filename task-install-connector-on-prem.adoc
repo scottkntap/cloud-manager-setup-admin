@@ -106,9 +106,11 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 
 . After you log in, set up BlueXP:
 .. Specify the BlueXP account to associate with the Connector.
-+
-link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 .. Enter a name for the system.
+.. Under *Are you running in a secured environment?* keep restricted mode disabled.
++
+You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode from the SaaS website. (In addition, restricted mode isn't supported when the Connector is installed on premises.)
+.. Click *Let's start*.
 
 .Result
 

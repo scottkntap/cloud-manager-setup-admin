@@ -255,6 +255,7 @@ https://_ipaddress_
 .. Under *Are you running in a secured environment?* keep restricted mode disabled.
 +
 You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode from the SaaS website. You should enable restricted mode only if you have a secure environment and want to disconnect this account from BlueXP backend services. If that's the case, link:task-quick-start-restricted-mode.html[follow steps to get started with BlueXP in restricted mode].
+.. Click *Let's start*.
 
 .Result
 
