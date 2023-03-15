@@ -254,7 +254,9 @@ Add permissions to the Connector.
 
 == Add permissions to the Connector
 
-If you installed the Connector from the Azure Marketplace or by manually installing the software, then you'll need to add permissions to the Connector.
+If you installed the Connector from the Azure Marketplace, you need to assign the custom role that you created to the Connector VM in Azure.
+
+If you manually installed the Connector software, then you need to provide BlueXP with details about the Azure AD service principal that you created.
 
 These steps don't apply if you deployed the Connector directly from BlueXP because BlueXP assigns the required permissions during deployment. 
 
@@ -263,17 +265,31 @@ These steps don't apply if you deployed the Connector directly from BlueXP becau
 
 .Custom role
 --
+Go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions.
+
 .Steps
 
-. In the Azure portal, go to the *Access Control (IAM)* page for the Connector VM.
+. From the Azure Portal, open the *Subscriptions* service and select your subscription.
 
-. Click *Add > Add role assignment* to assign the custom role that you created for the Connector. 
+. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+
+. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
 +
-Be sure to assign the role to the system-assigned managed identity that you enabled for the Connector VM.
-+
-This step is required to provide the Connector with permissions so that you can use BlueXP services.
-+
-https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal#step-2-open-the-add-role-assignment-page[Microsoft Azure documentation: Assign Azure roles using the Azure portal^]
+NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
+
+. In the *Members* tab, complete the following steps:
+
+.. Assign access to a *Managed identity*.
+
+.. Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
+
+.. Click *Select*.
+
+.. Click *Next*.
+
+.. Click *Review + assign*.
+
+.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
 
 .Result
 BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.

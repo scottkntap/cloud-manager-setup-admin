@@ -24,7 +24,7 @@ Create the Connector from the AWS Marketplace::
 You need to set up an IAM role that you can associate with the Connector instance.
 
 Manually install the software on your own Linux host::
-You need to set up an IAM role that you can associate with the Connector instance.
+You need to create IAM policies and attach them to an IAM role or to an IAM user.
 
 == Set up permissions to create the Connector from BlueXP
 

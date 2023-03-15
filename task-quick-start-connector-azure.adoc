@@ -47,9 +47,9 @@ Set up Azure permissions for the installation option that you're planning to use
 [role="quick-margin-list"]
 * *Install from BlueXP*: Create a custom role and then apply it to your Azure account or an Azure AD service principal. BlueXP authenticates with Azure and uses these permissions to create the Connector instance on your behalf.
 
-* *Install from the Azure Marketplace*: Create a custom role so that you can associate it with the Connector VM instance after installation.
+* *Install from the Azure Marketplace*: Create a custom role that you can associate with the Connector VM instance (after installation) or with an Azure AD service principal.
 
-* *Manual install*: Create a custom role so that you can associate it with the Connector VM instance after installation.
+* *Manual install*: Create a custom role that you can associate with the Connector VM instance or with an Azure AD service principal.
 
 [role="quick-margin-para"]
 link:task-set-up-permissions-azure.html[Follow step-by-step instructions for each of these options].
