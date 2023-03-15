@@ -20,12 +20,12 @@ You can use BlueXP in environments that have full internet access, limited inter
 BlueXP offers the following deployment modes for your account. These modes support environments with varying levels of connectivity. 
 
 Standard mode::
-BlueXP is accessible to users as a cloud service from a SaaS website. Depending on the BlueXP services that you're planning to use, a BlueXP admin creates one or more Connectors to manage resources and process within your hybrid cloud environment. 
+BlueXP is accessible to users as a cloud service from the SaaS website. Depending on the BlueXP services that you're planning to use, a BlueXP admin creates one or more Connectors to manage resources and process within your hybrid cloud environment. 
 +
 This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-The BlueXP Connector is installed in a government region, sovereign cloud region, or commercial region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website. 
+The BlueXP Connector is installed in the cloud: in a government region, sovereign cloud region, or commercial region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website. 
 +
 This mode is typically used by state and local governments and regulated companies.
 

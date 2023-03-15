@@ -24,7 +24,7 @@ Install the Connector from your cloud provider's marketplace or by manually inst
 [role="tabbed-block"]
 ====
 
-.AWS Marketplace
+.AWS Commercial Marketplace
 --
 
 .What you'll need
@@ -360,17 +360,19 @@ https://_ipaddress_
 
 . Sign up or log in to BlueXP.
 
-. After you log in, set up BlueXP:
+. After you're logged in, set up BlueXP:
 
 .. Enter a name for the Connector.
 
 .. Enter a name for a new BlueXP account or select an existing account.
 +
 You can select an existing account if your log in is already associated with a BlueXP account.
-+
-link:concept-netapp-accounts.html[Learn about BlueXP accounts].
 
-.. Expand the option to *Enable restricted mode on this account*.
+.. Select *Are you running in a secured environment?*
+
+.. Select *Enable restricted mode on this account*.
++
+If you deployed the Connector in a Government region, the checkbox is already enabled and can't be changed. This is because restricted mode is the only mode supported in Government regions.
 
 .. Click *Let's start*.
 
