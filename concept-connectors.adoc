@@ -15,8 +15,6 @@ summary: In most cases, you will need to deploy a Connector in your cloud or on-
 [.lead]
 You don't need a Connector to get started with BlueXP, but you'll need to create a Connector to unlock all BlueXP features and services.
 
-In most cases, a BlueXP Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector is a crucial component for the day-to-day use of BlueXP. It enables BlueXP to manage the resources and processes within your public cloud environment.
-
 == Overview
 
 A Connector is NetApp software running in your cloud network or on-premises network. It executes the actions that BlueXP needs to perform in order to manage your data infrastructure. The Connector constantly polls the BlueXP SaaS layer for any actions that it needs to take.
@@ -25,7 +23,7 @@ A Connector is NetApp software running in your cloud network or on-premises netw
 
 A Connector isn't required to get started with BlueXP. You can use several features and services within BlueXP without ever creating a Connector.
 
-You can use the following services without a Connector:
+You can use the following BlueXP features and services without a Connector:
 
 * Amazon FSx for NetApp ONTAP working environment creation
 +
@@ -71,13 +69,13 @@ When you use BlueXP in standard mode through the SaaS website, a Connector is re
 * On-premises ONTAP cluster integration with BlueXP data services
 * StorageGRID
 
-== Connectors must always be operational
+== Connectors must be operational
 
 Connectors are a fundamental part of the NetApp BlueXP service architecture. It is your responsibility to ensure that relevant Connectors are up, operational, and accessible at all times. While the service is designed to overcome short outages of Connector availability, you must take immediate action when required to remedy infrastructure failures.
 
 This documentation is governed by the EULA. If the product is not operated in accordance with the documentation, the functionality and operation of the product, as well as your rights under the EULA, may be adversely impacted.
 
-=== Connector availability for Cloud Volumes ONTAP
+=== Licensing for Cloud Volumes ONTAP
 
 A Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems and capacity-based BYOL systems shut down after losing communication with a Connector for longer than 14 days. This happens because the Connector refreshes licensing on the system each day.
 
@@ -162,7 +160,7 @@ When you create your first Connector, BlueXP automatically uses that Connector f
 
 link:task-managing-connectors.html[Learn how to switch between Connectors].
 
-=== Multiple Connectors with the same working environment
+=== Disaster recovery
 
 You can manage a working environment with multiple Connectors at the same time for disaster recovery purposes. If one Connector goes down, you can switch to the other Connector to immediately manage the working environment.
 
