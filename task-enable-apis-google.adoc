@@ -17,10 +17,12 @@ Several APIs are required to deploy the Connector and Cloud Volumes ONTAP in Goo
 
 .Step
 
-. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^]
+. Enable the following Google Cloud APIs in your project:
 +
 * Cloud Deployment Manager V2 API
 * Cloud Logging API
 * Cloud Resource Manager API
 * Compute Engine API
 * Identity and Access Management (IAM) API
+
+https://cloud.google.com/apis/docs/getting-started#enabling_apis[Google Cloud documentation: Enabling APIs^]
