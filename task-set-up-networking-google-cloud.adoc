@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-networking-google-cloud.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manual install, connector installer
 summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
 ---
 
@@ -13,7 +13,11 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+Set up your networking so the Connector can manage resources and processes within your hybrid cloud environment.
+
+== VPC and subnet 
+
+When you create the Connector, you need to specify the VPC and subnet where the Connector should reside.
 
 == Connections to target networks
 

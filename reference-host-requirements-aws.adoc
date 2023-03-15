@@ -38,6 +38,9 @@ RAM:: 14 GB
 AWS EC2 instance type::
 An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.
 
+Key pair::
+When you create the Connector from BlueXP or from the AWS Marketplace, you'll need to select an EC2 key pair to use with the instance.
+
 Disk space in /opt:: 100 GiB of space must be available
 
 Disk space in /var:: 20 GiB of space must be available

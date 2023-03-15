@@ -18,7 +18,13 @@ Creating a Connector on your premises includes a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up networking
 
 [role="quick-margin-para"]
-You'll need a network location that has outbound internet access to specific endpoints. If a proxy server is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
+Prepare the following for the Connector:
+
+[role="quick-margin-list"]
+* A network location where you plan to install the Connector
+* A network connection to the networks where you're planning to create and manage working environments
+* Outbound internet access to specific endpoints for day-to-day operations
+* The IP address, credentials, and HTTPS certificate of a proxy server, if a proxy server is required for outbound internet
 
 [role="quick-margin-para"]
 link:task-set-up-networking-on-prem.html[Learn more about networking requirements].
@@ -26,10 +32,16 @@ link:task-set-up-networking-on-prem.html[Learn more about networking requirement
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Review host requirements
 
 [role="quick-margin-para"]
-The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
+The Connector software must run on a host that meets specific requirements. The key requirements are as follows:
+
+[role="quick-margin-list"]
+* A dedicated host running CentOS or Red Hat Enterprise Linux
+* 4 CPUs
+* 14 GB of RAM
+* Docker Engine
 
 [role="quick-margin-para"]
-link:reference-host-requirements-on-prem.html[Learn more about host requirements].
+link:reference-host-requirements-on-prem.html[Learn more about these host requirements].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up cloud permissions
 

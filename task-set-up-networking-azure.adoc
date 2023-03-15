@@ -13,9 +13,13 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+Set up your networking so the Connector can manage resources and processes within your hybrid cloud environment.
 
-== A note about Azure regions
+== VNet and subnet 
+
+When you create the Connector, you need to specify the VNet and subnet where the Connector should reside.
+
+== Azure region
 
 The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts.
 

@@ -13,7 +13,7 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you'll need to ensure that the following requirements are met.
+Set up your networking so the Connector can manage resources and processes within your hybrid cloud environment.
 
 == Connections to target networks
 

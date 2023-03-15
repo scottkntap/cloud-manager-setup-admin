@@ -26,7 +26,13 @@ link:concept-install-options-azure.html[Learn more about your installation optio
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
 
 [role="quick-margin-para"]
-You'll need a VNet and subnet with outbound internet access to specific endpoints. If a proxy server is required for outbound internet, then you'll need the IP address, credentials, and HTTPS certificate.
+Prepare the following for the Connector:
+
+[role="quick-margin-list"]
+* A VNet and subnet
+* A network connection to the networks where you're planning to create and manage working environments
+* Outbound internet access to specific endpoints for day-to-day operations
+* The IP address, credentials, and HTTPS certificate of a proxy server, if a proxy server is required for outbound internet
 
 [role="quick-margin-para"]
 link:task-set-up-networking-azure.html[Learn more about networking requirements].
@@ -34,10 +40,19 @@ link:task-set-up-networking-azure.html[Learn more about networking requirements]
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Review host requirements
 
 [role="quick-margin-para"]
-The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your hosts meets these requirements.
+The Connector software must run on a host that meets specific requirements. If you plan to manually install the Connector software on your own Linux host, then you should ensure that your hosts meets these requirements. If you're creating the Connector from BlueXP or from the Azure Marketplace, then these requirements are taken care of for you because the software is deployed from an image.
 
 [role="quick-margin-para"]
-link:reference-host-requirements-azure.html[Learn more about host requirements].
+The key requirements are as follows:
+
+[role="quick-margin-list"]
+* A dedicated host running CentOS or Red Hat Enterprise Linux
+* 4 CPUs
+* 14 GB of RAM
+* Docker Engine
+
+[role="quick-margin-para"]
+link:reference-host-requirements-azure.html[Learn more about these host requirements].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up Azure permissions
 
