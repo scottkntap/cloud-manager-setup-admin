@@ -1389,7 +1389,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-30 16:12:10 +0000">01/30/2023</time>
+    <time datetime="2023-03-16 15:40:43 +0000">03/16/2023</time>
     
   
 
@@ -1561,14 +1561,41 @@
 <p>Access the CLI shell on the Connector host.</p>
 </li>
 <li>
-<p>Run the following commands with elevated privileges:</p>
+<p>Identify whether the following directory exists on the host:</p>
+<div class="paragraph">
+<p>/opt/application/netapp/service-manager-2</p>
+</div>
+<div class="paragraph">
+<p>Connectors created after late 2022 should include this directory.</p>
+</div>
+</li>
+<li>
+<p>Depending on whether that directory exists or not, run commands to update the OS:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the directory exists, run the following commands with elevated privileges:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-cli" data-lang="cli">sudo -s
 service netapp-service-manager stop
-yum -y update –-security
+yum -y update --security
 service netapp-service-manager start</code></pre>
 </div>
+</div>
+</li>
+<li>
+<p>If the directory <em>does not</em> exist, run the following commands with elevated privileges:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">sudo -s
+service service-manager stop
+yum -y update --security
+service service-manager start</code></pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ol>
