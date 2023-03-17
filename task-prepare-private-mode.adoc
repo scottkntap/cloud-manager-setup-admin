@@ -178,7 +178,7 @@ If you install the Connector in AWS, you can choose from two options:
 
 Azure permissions::
 If you install the Connector on premises, you must provide Azure permissions using an Azure AD service principal.
-
++
 If you install the Connector in Azure, you can choose from two options:
 
 * Attach an IAM role to the Connector instance
@@ -439,6 +439,9 @@ https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_
 
 You now have a service account that you can assign to the Connector VM instance.
 --
+
+====
+// end tabbed area
 
 == Prepare cloud permissions
 
@@ -701,6 +704,9 @@ https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_
 You now have a service account that you can assign to the Connector VM instance.
 --
 
+====
+// end tabbed area
+
 === Prepare cloud permissions when the Connector is installed on premises
 
 On-prem is only AWS keys or a service principal.
@@ -842,6 +848,9 @@ You now have a client secret that BlueXP can use it to authenticate with Azure A
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
 --
+
+====
+// end tabbed area
 
 == Enable Google Cloud APIs
 

@@ -482,7 +482,9 @@ You now have a service account that you can assign to the Connector VM instance.
 
 BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use Cloud Backup and Cloud Data Sense. You need to set up permissions in your cloud provider and then associate those permissions with the Connector.
 
-=== Prepare AWS permissions (list both options)
+=== Prepare AWS permissions
+
+AWS content
 
 // start tabbed area
 
@@ -553,7 +555,7 @@ The account now has the required permissions. <<add-the-credentials,You can now 
 ====
 // end tabbed area
 
-=== Prepare Azure permissions (list both options)
+=== Prepare Azure permissions
 
 You have two options:
 
