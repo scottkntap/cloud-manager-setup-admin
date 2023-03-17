@@ -17,13 +17,13 @@ Set up Azure permissions so that you can use BlueXP to manage your data and stor
 
 How you set up permissions depends on the installation option that you're planning to use.
 
-Create the Connector directly from BlueXP::
+If you create the Connector directly from BlueXP::
 You need to set up permissions that enable BlueXP to authenticate with Azure and deploy the VM. BlueXP automatically sets up permissions for the Connector VM during deployment.
 
-Create the Connector from the AWS Marketplace::
+If you create the Connector from the AWS Marketplace::
 You need to set up a custom role to associate with the Connector VM.
 
-Manually install the software on your own Linux host::
+If you manually install the software on your own Linux host::
 You need to set up a custom role to associate with the Connector VM.
 
 == Set up permissions to create the Connector from BlueXP

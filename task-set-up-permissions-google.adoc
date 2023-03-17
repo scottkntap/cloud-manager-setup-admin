@@ -15,9 +15,10 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 [.lead]
 Set up Google Cloud permissions so that you can use BlueXP to manage your data and storage infrastructure in Google Cloud
 
-You'll need to set up permissions as follows:
+You need to set up Google Cloud permissions as follows:
 
 * If you are planning to create the Connector from BlueXP or by using gcloud, then you need to set up permissions for the Google Cloud user who will deploy the Connector VM.
+
 * Set up permissions for the Connector by creating a role and granting the role to a service account.
 +
 You'll associate this service account with the Connector VM so that BlueXP has the required permissions. 
@@ -121,9 +122,7 @@ The Google Cloud user now has the permissions required to create the Connector.
 
 == Set up permissions for the Connector
 
-A service account is required to provide the Connector with the permissions that BlueXP needs to manage resources in Google Cloud. You'll associate this service account with the Connector VM when you create it.
-
-The permissions for the service account are different than the permissions that you set up in the previous section.
+A service account is required to provide the Connector with the permissions that BlueXP needs to manage resources in Google Cloud. You need to associate this service account with the Connector VM.
 
 .Steps
 

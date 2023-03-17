@@ -373,6 +373,8 @@ You can select an existing account if your log in is already associated with a B
 .. Select *Enable restricted mode on this account*.
 +
 If you deployed the Connector in a Government region, the checkbox is already enabled and can't be changed. This is because restricted mode is the only mode supported in Government regions.
++
+image:screenshot-restricted-mode.png["A screenshot that shows the welcome page where you need to enter a Connector name, account name, and can enable restricted mode on this account."]
 
 .. Click *Let's start*.
 
