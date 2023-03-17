@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Firewall rules in Google Cloud | NetApp Documentation</title>
+  <title>Using identity federation with BlueXP | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Firewall rules in Google Cloud | NetApp Documentation" />
+  <meta property="og:title" content="Using identity federation with BlueXP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-gcp.html" />
-	<meta property="og:description" content="The Google Cloud firewall rules for the Connector requires both inbound and outbound rules." />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-federation.html" />
+	<meta property="og:description" content="Identity federation enables single sign-on with BlueXP so that users can log in using credentials from your corporate identity. You should understand how Blu..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="The Google Cloud firewall rules for the Connector requires both inbound and outbound rules.">
-  <meta name="keywords" content=" ports, firewall rules, http, https, inbound, outbound"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Identity federation enables single sign-on with BlueXP so that users can log in using credentials from your corporate identity. You should understand how Blu...">
+  <meta name="keywords" content=" identity federation, federation, federated identity, set up identity federation, set up federated connection, federated connection"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-setup-admin/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -166,7 +166,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Firewall rules in Google Cloud](https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-gcp.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-ports-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Using identity federation with BlueXP](https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-federation.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/concept-federation.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -286,21 +286,21 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-gcp.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-federation.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/reference-ports-gcp.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/concept-federation.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/reference-ports-gcp.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/concept-federation.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/reference-ports-gcp.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/concept-federation.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/cloud-manager-setup-admin/reference-ports-gcp.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-setup-admin/concept-federation.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/de-de/cloud-manager-setup-admin/reference-ports-gcp.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-setup-admin/concept-federation.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/es-es/cloud-manager-setup-admin/reference-ports-gcp.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+          <a href="https://docs.netapp.com/es-es/cloud-manager-setup-admin/concept-federation.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/fr-fr/cloud-manager-setup-admin/reference-ports-gcp.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+          <a href="https://docs.netapp.com/fr-fr/cloud-manager-setup-admin/concept-federation.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -468,6 +468,8 @@
             Administer BlueXP
           </a>
           
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
 
 
 
@@ -753,8 +755,6 @@
 
 
 
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
 
 
 
@@ -994,7 +994,7 @@
       data-pdf-exists="true" 
       data-pdf-filename="Identity federation"
       data-li-level="2#" 
-      class=" "
+      class="  active "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-federation.html">
         Identity federation
       </a></li><li 
@@ -1301,7 +1301,7 @@
       data-pdf-exists="true" 
       data-pdf-filename="Firewall rules in Google Cloud"
       data-li-level="3#" 
-      class="  active "
+      class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-ports-gcp.html">
         Firewall rules in Google Cloud
       </a></li><li 
@@ -1391,14 +1391,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Firewall rules in Google Cloud</h1>
+  <h1 class="n-doc__component-detail-heading">Using identity federation with BlueXP</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-02-23 20:36:52 +0000">02/23/2023</time>
+    <time datetime="2023-03-17 20:19:26 +0000">03/17/2023</time>
     
   
 
@@ -1419,147 +1419,420 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The Google Cloud firewall rules for the Connector requires both inbound and outbound rules.</p>
+<p>Identity federation enables single sign-on with BlueXP so that users can log in using credentials from your corporate identity. You should understand how BlueXP supports identity federation before you set up a connection with your identity provider.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="inbound-rules">Inbound rules</h2>
+<h2 id="how-identity-federation-works">How identity federation works</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Setting up identity federation creates a trust connection between BlueXP&#8217;s authentication service provider (auth0) and your own identity management provider.</p>
+</div>
+<div class="paragraph">
+<p>The following image depicts how identity federation works with BlueXP:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram-identity-federation.png" alt="A diagram that shows a user authenticating with BlueXP and a connection between BlueXP and an identity provider that authenticates the user."></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A user enters their email address on the BlueXP login page.</p>
+</li>
+<li>
+<p>BlueXP identifies that the email domain is part of a federated connection and sends the authentication request to the identity provider using the trusted connection.</p>
+<div class="paragraph">
+<p>When you set up a federated connection, BlueXP always uses that federated connection for authentication.</p>
+</div>
+</li>
+<li>
+<p>The user authenticates by using credentials from your corporate directory.</p>
+</li>
+<li>
+<p>Your identity provider authenticates the user&#8217;s identity and the user is logged in to BlueXP.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Identity federation uses open standards, such as Security Assertion Markup Language 2.0 (SAML) and OpenID Connect (OIDC).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="supported-identity-providers">Supported identity providers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>BlueXP supports the following identity providers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Security Assertion Markup Language (SAML) identity providers</p>
+</li>
+<li>
+<p>Microsoft Azure Active Directory (AD)</p>
+</li>
+<li>
+<p>Active Directory Federation Services (ADFS)</p>
+</li>
+<li>
+<p>PingFederate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>BlueXP supports service provider initiated (SP-initiated) SSO only. Identity provider initiated (IdP-initiated) SSO is not supported.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview-of-the-setup-process">Overview of the setup process</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you set up a connection between BlueXP and your identity management provider, you should understand the steps that you&#8217;ll need to take so that you can prepare accordingly.</p>
+</div>
+<div class="sect2">
+<h3 id="saml-identity-provider">SAML identity provider</h3>
+<div class="paragraph">
+<p>At a high-level, setting up a federated connection between BlueXP and a SAML identity provider includes the following steps:</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 80%;">
+<col style="width: 15%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">Step</th>
+<th class="tableblock halign-left valign-top">Completed by</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides SSH access to the Connector host</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTP access from client web browsers to the local user interface</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3128</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. <a href="#Proxy server for AutoSupport messages">Learn more about the Connector&#8217;s proxy server</a>.</p></td>
-</tr>
-</tbody>
-</table>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD admin</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Configure your SAML identity provider according to the guidelines in the auth0 documentation.</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="outbound-rules">Outbound rules</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>The predefined firewall rules for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.</p>
+<p>View instructions for your SAML identity provider:</p>
 </div>
-<div class="sect2">
-<h3 id="basic-outbound-rules">Basic outbound rules</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-adfs-saml-connections" target="_blank" rel="noopener">ADFS</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-okta-as-saml-identity-provider" target="_blank" rel="noopener">Okta</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-onelogin-as-saml-identity-provider" target="_blank" rel="noopener">OneLogin</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-pingfederate-as-saml-identity-provider" target="_blank" rel="noopener">PingFederate</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-salesforce-as-saml-identity-provider" target="_blank" rel="noopener">SalesForce</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-siteminder-as-saml-identity-provider" target="_blank" rel="noopener">SiteMinder</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-ssocircle-as-saml-identity-provider" target="_blank" rel="noopener">SSOCircle</a></p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>The predefined firewall rules for the Connector includes the following outbound rules.</p>
+<p>If your identity provider doesn&#8217;t appear in the list above, <a href="https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider" target="_blank" rel="noopener">follow these generic instructions</a></p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 70%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All UDP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="advanced-outbound-rules">Advanced outbound rules</h3>
-<div class="paragraph">
-<p>If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.</p>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/cloud-manager-setup-admin/images/note.svg" alt="Note">
+<img src="/us-en/cloud-manager-setup-admin/images/tip.svg" alt="Tip">
 </td>
 <td class="content">
-The source IP address is the Connector host.
+Do <em>not</em> complete the steps that describe how to create a connection with auth0. You&#8217;ll create that connection in the next step.
 </td>
 </tr>
 </table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP admin</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Go to the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a> and create the connection with BlueXP.</p>
 </div>
-<table class="tableblock frame-all grid-all fit-content">
+<div class="paragraph">
+<p>To complete this step, you need to obtain the following from your AD admin about the identity provider:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sign in URL</p>
+</li>
+<li>
+<p>An X509 signing certificate (PEM or CER format)</p>
+</li>
+<li>
+<p>Sign out URL (optional)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After you create the connection using this information, the Federation Setup page lists the parameters that you can send to your AD admin to complete the configuration in the next step.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Complete the configuration on the identity provider using the parameters shown on the Federation Setup page after finishing step 2.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test and enable the connection from the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a><br>
+<br>
+Note that the page refreshes between testing the connection and enabling the connection.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="microsoft-azure-ad">Microsoft Azure AD</h3>
+<div class="paragraph">
+<p>At a high-level, setting up a federated connection between BlueXP and Azure AD includes the following steps:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col>
-<col>
-<col>
-<col>
-<col>
+<col style="width: 10%;">
+<col style="width: 15%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Service</th>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Destination</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">Step</th>
+<th class="tableblock halign-left valign-top">Completed by</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API calls and AutoSupport</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Outbound internet and ONTAP cluster management LIF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API calls to GCP and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD admin</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create a new application in Azure Active Directory along with a client secret.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/azure-active-directory/v2" target="_blank" rel="noopener">View instructions for registering the application with Azure AD</a></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-setup-admin/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+Do <em>not</em> complete the steps that describe how to create a connection with auth0. You&#8217;ll create that connection in the next step.
+</td>
+</tr>
+</table>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API calls</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8080</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Sense</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Probe to Data Sense instance during deployment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP admin</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Go to the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a> and create the connection with BlueXP.</p>
+</div>
+<div class="paragraph">
+<p>To complete this step, you need to obtain the following from your AD admin:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Client ID</p>
+</li>
+<li>
+<p>Client secret value</p>
+</li>
+<li>
+<p>Microsoft Azure AD domain</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After you create the connection using this information, the Federation Setup page lists the parameters that you can send to your AD admin to complete the configuration in the next step.</p>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used for DNS resolve by BlueXP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Complete the configuration in Azure AD using the parameters shown on the Federation Setup page after finishing step 2.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test and enable the connection from the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a><br>
+<br>
+Note that the page refreshes between testing the connection and enabling the connection.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="adfs">ADFS</h3>
+<div class="paragraph">
+<p>At a high-level, setting up a federated connection between BlueXP and ADFS includes the following steps:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 15%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Step</th>
+<th class="tableblock halign-left valign-top">Completed by</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD admin</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Configure the ADFS server to enable identity federation with BlueXP.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/adfs" target="_blank" rel="noopener">View instructions for configuring the ADFS server with auth0</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP admin</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Go to the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a> and create the connection with BlueXP.</p>
+</div>
+<div class="paragraph">
+<p>To complete this step, you need to obtain the following from your AD admin: the URL for the ADFS server or the federation metadata file.</p>
+</div>
+<div class="paragraph">
+<p>After you create the connection using this information, the Federation Setup page lists the parameters that you can send to your AD admin to complete the configuration in the next step.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Complete the configuration on the ADFS server using the parameters shown on the Federation Setup page after finishing step 2.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test and enable the connection from the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a><br>
+<br>
+Note that the page refreshes between testing the connection and enabling the connection.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="pingfederate">PingFederate</h3>
+<div class="paragraph">
+<p>At a high-level, setting up a federated connection between BlueXP and a PingFederate server includes the following steps:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 15%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Step</th>
+<th class="tableblock halign-left valign-top">Completed by</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD admin</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Configure your PingFederate server according to the guidelines in the auth0 documentation.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/ping-federate" target="_blank" rel="noopener">View instructions for creating a connection</a></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-setup-admin/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+Do <em>not</em> complete the steps that describe how to create a connection with auth0. You&#8217;ll create that connection in the next step.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP admin</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Go to the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a> and create the connection with BlueXP.</p>
+</div>
+<div class="paragraph">
+<p>To complete this step, you need to obtain the following from your AD admin:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The URL for the PingFederate server</p>
+</li>
+<li>
+<p>An X509 signing certificate (PEM or CER format)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After you create the connection using this information, the Federation Setup page lists the parameters that you can send to your AD admin to complete the configuration in the next step.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Complete the configuration on the PingFederate server using the parameters shown on the Federation Setup page after finishing step 2.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test and enable the connection from the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a><br>
+<br>
+Note that the page refreshes between testing the connection and enabling the connection.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="update-a-federated-connection">Update a federated connection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After the BlueXP admin enables a connection, the admin can update the connection at any time from the <a href="https://services.cloud.netapp.com/federation-setup" target="_blank" rel="noopener">NetApp Federation Setup page</a></p>
+</div>
+<div class="paragraph">
+<p>For example, you might need to update the connection by uploading a new certificate.</p>
+</div>
+<div class="paragraph">
+<p>The BlueXP admin who created the connection is the only authorized user who can update the connection. If you&#8217;d like to add additional admins, you can contact us through the in-product chat.</p>
 </div>
 </div>
 </div>
