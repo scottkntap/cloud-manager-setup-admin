@@ -36,9 +36,9 @@ Identity federation uses open standards, such as Security Assertion Markup Langu
 
 BlueXP supports the following identity providers:
 
-* Active Directory Federation Services (ADFS)
-* Microsoft Azure Active Directory (AD)
 * Security Assertion Markup Language (SAML) identity providers
+* Microsoft Azure Active Directory (AD)
+* Active Directory Federation Services (ADFS)
 * PingFederate
 
 BlueXP supports service provider initiated (SP-initiated) SSO only. Identity provider initiated (IdP-initiated) SSO is not supported.
@@ -47,9 +47,9 @@ BlueXP supports service provider initiated (SP-initiated) SSO only. Identity pro
 
 Before you set up a connection between BlueXP and your identity management provider, you should understand the steps that you'll need to take so that you can prepare accordingly.
 
-=== ADFS
+=== SAML identity provider
 
-At a high-level, setting up a federated connection between BlueXP and ADFS includes the following steps:
+At a high-level, setting up a federated connection between BlueXP and a SAML identity provider includes the following steps:
 
 [cols="10,15,75",width=100%,options="header"]
 |===
@@ -58,21 +58,38 @@ At a high-level, setting up a federated connection between BlueXP and ADFS inclu
 | Completed by
 | Description
 
-| 1 | AD admin a| Configure the ADFS server to enable identity federation with our authentication provider (auth0).
 
-https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/adfs[View instructions for configuring the ADFS server with auth0^]
+| 1 | AD admin a| Configure your SAML identity provider according to the guidelines in the auth0 documentation.
+
+View instructions for your SAML identity provider:
+
+* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-adfs-saml-connections[ADFS^]
+* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-okta-as-saml-identity-provider[Okta^]
+* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-onelogin-as-saml-identity-provider[OneLogin^]
+* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-pingfederate-as-saml-identity-provider[PingFederate^]
+* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-salesforce-as-saml-identity-provider[SalesForce^]
+* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-siteminder-as-saml-identity-provider[SiteMinder^]
+* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-ssocircle-as-saml-identity-provider[SSOCircle^]
+
+If your identity provider doesn't appear in the list above, https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider[follow these generic instructions^]
 
 TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
 
-| 2 | BlueXP admin a| Create a connection from the ADFS server to BlueXP from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
+| 2 | BlueXP admin a| Go to the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^] and create the connection with BlueXP.
 
-To complete this step, you need to obtain the following from your AD admin: the URL for the ADFS server or the federation metadata file.
+To complete this step, you need to obtain the following from your AD admin about the identity provider: 
+
+* Sign in URL
+* An X509 signing certificate (PEM or CER format)
+* Sign out URL (optional)
 
 After you create the connection using this information, the Federation Setup page lists the parameters that you can send to your AD admin to complete the configuration in the next step.
 
-| 3 | AD admin | Complete the configuration on the ADFS server using the parameters shown on the Federation Setup page after finishing step 2.
+| 3 | AD admin | Complete the configuration on the identity provider using the parameters shown on the Federation Setup page after finishing step 2.
 
 | 4 | BlueXP admin | Test and enable the connection from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
+
+Note that the page refreshes between testing the connection and enabling the connection.
 
 |===
 
@@ -93,12 +110,12 @@ https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-provi
 
 TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
 
-| 2 | BlueXP admin a| Create a connection from Azure AD to BlueXP from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
+| 2 | BlueXP admin a| Go to the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^] and create the connection with BlueXP.
 
 To complete this step, you need to obtain the following from your AD admin: 
 
 * Client ID
-* Client secret
+* Client secret value
 * Microsoft Azure AD domain
 
 After you create the connection using this information, the Federation Setup page lists the parameters that you can send to your AD admin to complete the configuration in the next step.
@@ -107,11 +124,13 @@ After you create the connection using this information, the Federation Setup pag
 
 | 4 | BlueXP admin | Test and enable the connection from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
 
+Note that the page refreshes between testing the connection and enabling the connection.
+
 |===
 
-=== SAML identity provider
+=== ADFS
 
-At a high-level, setting up a federated connection between BlueXP and a SAML identity provider includes the following steps:
+At a high-level, setting up a federated connection between BlueXP and ADFS includes the following steps:
 
 [cols="10,15,75",width=100%,options="header"]
 |===
@@ -120,35 +139,21 @@ At a high-level, setting up a federated connection between BlueXP and a SAML ide
 | Completed by
 | Description
 
-| 1 | AD admin a| Create a new connection with the SAML identity provider.
+| 1 | AD admin a| Configure the ADFS server to enable identity federation with BlueXP.
 
-View instructions for your SAML identity provider:
+https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/adfs[View instructions for configuring the ADFS server with auth0^]
 
-* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-adfs-saml-connections[ADFS^]
-* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-okta-as-saml-identity-provider[Okta^]
-* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-onelogin-as-saml-identity-provider[OneLogin^]
-* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-pingfederate-as-saml-identity-provider[PingFederate^]
-* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-salesforce-as-saml-identity-provider[SalesForce^]
-* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-siteminder-as-saml-identity-provider[SiteMinder^]
-* https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider/configure-ssocircle-as-saml-identity-provider[SSOCircle^]
+| 2 | BlueXP admin a| Go to the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^] and create the connection with BlueXP.
 
-If your identity provider doesn't appear in the list above, https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider[follow these generic instructions^]
-
-TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
-
-| 2 | BlueXP admin a| Create a connection from the SAML identity provider to BlueXP from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
-
-To complete this step, you need to obtain the following from your AD admin about the identity provider: 
-
-* Sign in URL
-* An X509 signing certificate (PEM or CER format)
-* Sign out URL (optional)
+To complete this step, you need to obtain the following from your AD admin: the URL for the ADFS server or the federation metadata file.
 
 After you create the connection using this information, the Federation Setup page lists the parameters that you can send to your AD admin to complete the configuration in the next step.
 
-| 3 | AD admin | Complete the configuration on the identity provider using the parameters shown on the Federation Setup page after finishing step 2.
+| 3 | AD admin | Complete the configuration on the ADFS server using the parameters shown on the Federation Setup page after finishing step 2.
 
 | 4 | BlueXP admin | Test and enable the connection from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
+
+Note that the page refreshes between testing the connection and enabling the connection.
 
 |===
 
@@ -163,13 +168,13 @@ At a high-level, setting up a federated connection between BlueXP and a PingFede
 | Completed by
 | Description
 
-| 1 | AD admin a| Create a new connection with the PingFederate server.
+| 1 | AD admin a| Configure your PingFederate server according to the guidelines in the auth0 documentation.
 
 https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/ping-federate[View instructions for creating a connection^]
 
 TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
 
-| 2 | BlueXP admin a| Create a connection from the PingFederate server to BlueXP from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
+| 2 | BlueXP admin a| Go to the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^] and create the connection with BlueXP.
 
 To complete this step, you need to obtain the following from your AD admin: 
 
@@ -182,6 +187,8 @@ After you create the connection using this information, the Federation Setup pag
 
 | 4 | BlueXP admin | Test and enable the connection from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^]
 
+Note that the page refreshes between testing the connection and enabling the connection.
+
 |===
 
 == Update a federated connection
@@ -190,4 +197,4 @@ After the BlueXP admin enables a connection, the admin can update the connection
 
 For example, you might need to update the connection by uploading a new certificate.
 
-The BlueXP admin who created the connection is the only authorized user who can update the connection.
+The BlueXP admin who created the connection is the only authorized user who can update the connection. If you'd like to add additional admins, you can contact us through the in-product chat.
