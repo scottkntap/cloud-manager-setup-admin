@@ -218,6 +218,8 @@ In restricted mode, the BlueXP user interface is accessible from the Connector. 
 
 BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use Cloud Backup and Cloud Data Sense. You need to set up permissions in your cloud provider and then associate those permissions with the Connector.
 
+To view the required steps, select the authentication option that you'd like to use for your cloud provider. 
+
 // start tabbed area
 
 [role="tabbed-block"]
@@ -435,7 +437,7 @@ You now have a client secret that BlueXP can use it to authenticate with Azure A
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
 --
 
-.Google Cloud
+.Google Cloud service account
 --
 Create a role and apply it to a service account that you'll use for the Connector VM instance.
 

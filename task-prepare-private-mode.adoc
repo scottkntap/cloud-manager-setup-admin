@@ -166,26 +166,9 @@ HTTP (80) and HTTPS (443) provide access to the BlueXP console. SSH (22) is only
 
 If you are planning to create Cloud Volumes ONTAP systems, then BlueXP requires permissions from your cloud provider. You need to set up permissions in your cloud provider and then associate those permission with the Connector instance after you install it.
 
-How you provide permissions depends on where you're installing the Connector:
+To view the required steps, select the authentication option that you'd like to use for your cloud provider. 
 
-AWS permissions::
-If you install the Connector on premises, you must provide AWS permissions using IAM access keys.
-+
-If you install the Connector in AWS, you can choose from two options:
-
-* Attach an IAM role to the Connector instance
-* Provide AWS access keys for an IAM user
-
-Azure permissions::
-If you install the Connector on premises, you must provide Azure permissions using an Azure AD service principal.
-+
-If you install the Connector in Azure, you can choose from two options:
-
-* Attach an IAM role to the Connector instance
-* Provide AWS access keys for an IAM user
-
-Google Cloud permissions::
-In order to create Cloud Volumes ONTAP systems in Google Cloud, then the Connector must be in Google Cloud as well. You can provide permissions to the Connector VM through a service account. 
+If you're going to install the Connector on premises, then you must provide permissions using AWS access keys or an Azure service principal. The other options are not supported.
 
 // start tabbed area
 
