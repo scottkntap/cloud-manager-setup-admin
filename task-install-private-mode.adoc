@@ -56,79 +56,6 @@ Where <version> is the version of the Connector that you downloaded.
 
 The Connector software is installed. You can now set up BlueXP.
 
-== Provide cloud permissions
-
-If you want to create Cloud Volumes ONTAP systems, you'll need to provide BlueXP with the cloud permissions that you previously set up.
-
-link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to prepare cloud permissions].
-
-// start tabbed area
-
-[role="tabbed-block"]
-====
-
-.AWS
---
-Attach the IAM role that you previously created to the Connector EC2 instance.
-
-.Steps
-
-. Go to the Amazon EC2 console.
-
-. Select *Instances*.
-
-. Select the Connector instance.
-
-. Select *Actions > Security > Modify IAM role*.
-
-. Select the IAM role and click *Update IAM role*.
---
-
-.Azure
---
-Go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions.
-
-.Steps
-
-. From the Azure Portal, open the *Subscriptions* service and select your subscription.
-
-. Click *Access control (IAM)* > *Add* > *Add role assignment*.
-
-. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
-+
-NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
-
-. In the *Members* tab, complete the following steps:
-
-.. Assign access to a *Managed identity*.
-
-.. Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
-
-.. Click *Select*.
-
-.. Click *Next*.
-
-.. Click *Review + assign*.
-
-.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
---
-
-.Google Cloud
---
-Associate the service account with the Connector VM.
-
-.Steps
-
-. Go to the Google Cloud portal and assign the service account to the Connector VM instance.
-+
-https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Google Cloud documentation: Changing the service account and access scopes for an instance^]
-
-. If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
---
-
-====
-// end tabbed area
-
 == Set up BlueXP
 
 When you access the BlueXP console for the first time, you'll be prompted to set up BlueXP.
@@ -157,6 +84,137 @@ This user account runs locally on the system. There's no connection to the auth0
 
 .Result
 
-The Connector is now installed and you can start using the BlueXP features that are available in private mode.
+The Connector is now installed and set up.
 
 When new versions of the Connector software are available, they'll be posted to the NetApp Support Site. link:task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access[Learn how to upgrade the Connector].
+
+.What's next?
+
+Provide BlueXP with the permissions that you previously set up.
+
+== Provide cloud permissions
+
+If you want to create Cloud Volumes ONTAP working environments, you'll need to provide BlueXP with the cloud permissions that you previously set up.
+
+link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to prepare cloud permissions].
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.AWS IAM role
+--
+Attach the IAM role that you previously created to the Connector EC2 instance.
+
+.Steps
+
+. Go to the Amazon EC2 console.
+
+. Select *Instances*.
+
+. Select the Connector instance.
+
+. Select *Actions > Security > Modify IAM role*.
+
+. Select the IAM role and click *Update IAM role*.
+--
+
+.AWS keys
+--
+.Steps
+
+. Ensure that the correct Connector is currently selected in BlueXP.
+
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+
+. Click *Add Credentials* and follow the steps in the wizard.
+
+.. *Credentials Location*: Select *Amazon Web Services > Connector*.
+
+.. *Define Credentials*: Enter an AWS access key and secret key.
+
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
+
+.. *Review*: Confirm the details about the new credentials and click *Add*.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
+--
+
+.Azure role
+--
+Go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions.
+
+.Steps
+
+. From the Azure Portal, open the *Subscriptions* service and select your subscription.
+
+. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+
+. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
++
+NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
+
+. In the *Members* tab, complete the following steps:
+
+.. Assign access to a *Managed identity*.
+
+.. Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
+
+.. Click *Select*.
+
+.. Click *Next*.
+
+.. Click *Review + assign*.
+
+.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+--
+
+.Azure service principal
+--
+.Steps
+
+. Go to the https://console.bluexp.netapp.com[BlueXP console^] and log in.
+
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+
+. Click *Add Credentials* and follow the steps in the wizard.
+
+.. *Credentials Location*: Select *Microsoft Azure > Connector*.
+
+.. *Define Credentials*: Enter information about the Azure Active Directory service principal that grants the required permissions:
++
+* Application (client) ID
+* Directory (tenant) ID
+* Client Secret
+
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
+
+.. *Review*: Confirm the details about the new credentials and click *Add*.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.
+--
+
+.Google Cloud service account
+--
+Associate the service account with the Connector VM.
+
+.Steps
+
+. Go to the Google Cloud portal and assign the service account to the Connector VM instance.
++
+https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Google Cloud documentation: Changing the service account and access scopes for an instance^]
+
+. If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
+--
+
+====
+// end tabbed area
