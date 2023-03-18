@@ -23,7 +23,7 @@ BlueXP is accessible from your web browser through a SaaS-based user interface. 
 
 * A NetApp cloud login by specifying your email address and a password
 
-Both options support a federated connection, which enables single sign-on using credentials from your corporate directory (federated identity). After you sign up, you can set up a federated connection from the https://cloud.netapp.com/help-center[BlueXP Help Center^] by selecting *Cloud Central sign-in options*.
+Both options support a federated connection, which enables single sign-on using credentials from your corporate directory (federated identity). You can set up a federation connection after you sign up. link:concept-federation.html[Learn how to use identity federation with BlueXP].
 
 .Steps
 

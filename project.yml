@@ -129,6 +129,8 @@ sidebar:
               url: /reference-whats-next-private-mode.html
     - title: Administer BlueXP
       entries:
+        - title: Identity federation
+          url: /concept-federation.html
         - title: BlueXP accounts
           entries:
             - title: Manage your account
