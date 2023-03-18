@@ -81,13 +81,29 @@ Update the operating system on the Connector to ensure that it's patched with th
 
 . Access the CLI shell on the Connector host.
 
-. Run the following commands with elevated privileges:
+. Identify whether the following directory exists on the host:
++
+/opt/application/netapp/service-manager-2
++
+Connectors created after late 2022 should include this directory.
+
+. Depending on whether that directory exists or not, run commands to update the OS:
+
+* If the directory exists, run the following commands with elevated privileges:
 +
 [source,cli]
 sudo -s
 service netapp-service-manager stop
-yum -y update –-security
+yum -y update --security
 service netapp-service-manager start
+
+* If the directory _does not_ exist, run the following commands with elevated privileges:
++
+[source,cli]
+sudo -s
+service service-manager stop
+yum -y update --security
+service service-manager start
 
 == Upgrade the Connector in a location without internet access
 
