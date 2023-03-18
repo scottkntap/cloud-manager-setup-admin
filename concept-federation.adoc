@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-federation.html
 keywords: identity federation, federation, federated identity, set up identity federation, set up federated connection, federated connection
-summary: Identity federation enables single sign-on with BlueXP so that users can log in using credentials from your corporate identity. You should understand how BlueXP supports identity federation before you set up a connection with your identity provider.
+summary: Identity federation enables single sign-on with BlueXP so that users can log in using credentials from your corporate identity. To get started, learn how identity federation works with BlueXP and then review an overview of the setup process.
 ---
 
 = Using identity federation with BlueXP
@@ -13,7 +13,7 @@ summary: Identity federation enables single sign-on with BlueXP so that users ca
 :imagesdir: ./media/
 
 [.lead]
-Identity federation enables single sign-on with BlueXP so that users can log in using credentials from your corporate identity. You should understand how BlueXP supports identity federation before you set up a connection with your identity provider.
+_Identity federation_ enables single sign-on with BlueXP so that users can log in using credentials from your corporate identity. To get started, learn how identity federation works with BlueXP and then review an overview of the setup process.
 
 == How identity federation works
 
@@ -59,7 +59,7 @@ At a high-level, setting up a federated connection between BlueXP and a SAML ide
 | Description
 
 
-| 1 | AD admin a| Configure your SAML identity provider according to the guidelines in the auth0 documentation.
+| 1 | Active Directory (AD) admin a| Configure your SAML identity provider according to the guidelines in the auth0 documentation.
 
 View instructions for your SAML identity provider:
 
@@ -191,7 +191,7 @@ Note that the page refreshes between testing the connection and enabling the con
 
 |===
 
-== Update a federated connection
+== Updating a federated connection
 
 After the BlueXP admin enables a connection, the admin can update the connection at any time from the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^] 
 
