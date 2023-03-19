@@ -13,10 +13,6 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Create the Connector in Google Cloud and then set it up for use with BlueXP.
-
-== Install the Connector
-
 Create the Connector directly from the BlueXP user interface, by using gcloud, or by installing the software on your own Linux host.
 
 // start tabbed area
@@ -267,21 +263,3 @@ Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the 
 ====
 
 // end tabbed area
-
-== Provide permissions to BlueXP
-
-After you manually install the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
-
-These steps don't apply if you deployed the Connector directly from BlueXP or by using gcloud.
-
-.Steps
-
-. Go to the Google Cloud portal and assign the service account to the Connector VM instance.
-+
-https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Google Cloud documentation: Changing the service account and access scopes for an instance^]
-
-. If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
-
-.Result
-
-BlueXP now has the permissions that it needs to perform actions in Google Cloud on your behalf.

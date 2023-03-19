@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: task-provide-permissions-google-cloud.html
+keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+---
+
+= Provide Google Cloud permissions to BlueXP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you manually install the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+
+These steps don't apply if you deployed the Connector directly from BlueXP or by using gcloud.
+
+.Steps
+
+. Go to the Google Cloud portal and assign the service account to the Connector VM instance.
++
+https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Google Cloud documentation: Changing the service account and access scopes for an instance^]
+
+. If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in Google Cloud on your behalf.

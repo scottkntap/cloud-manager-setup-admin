@@ -5,7 +5,7 @@ keywords: aws networking, networking, connector networking, ports, proxy server,
 summary: After you manually install the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
 ---
 
-= Provide permissions to BlueXP
+= Provide AWS permissions to BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font

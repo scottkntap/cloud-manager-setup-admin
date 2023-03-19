@@ -71,6 +71,8 @@ sidebar:
                       url: /task-set-up-permissions-azure.html
                     - title: Create the Connector
                       url: /task-install-connector-azure.html
+                    - title: Provide permissions to BlueXP
+                      url: /task-provide-permissions-azure.html
                 - title: Google Cloud
                   entries:
                     - title: Quick start
@@ -87,6 +89,8 @@ sidebar:
                       url: /task-enable-apis-google.html
                     - title: Create the Connector
                       url: /task-install-connector-google-cloud.html
+                    - title: Provide permissions to BlueXP
+                      url: /task-provide-permissions-google-cloud.html
                 - title: On premises
                   entries:
                     - title: Quick start
@@ -99,6 +103,8 @@ sidebar:
                       url: /task-set-up-permissions-on-prem.html
                     - title: Create the Connector
                       url: /task-install-connector-on-prem.html
+                    - title: Provide permissions to BlueXP
+                      url: /task-provide-permissions-on-prem.html
             - title: Subscribe to BlueXP
               url: /task-subscribe-standard-mode.html
             - title: Where to go next
