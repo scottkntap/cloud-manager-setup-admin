@@ -13,7 +13,7 @@ summary: Creating a Connector on your premises includes a few steps.
 :imagesdir: ./media/
 
 [.lead]
-Creating a Connector on your premises includes a few steps.
+Create a Connector on your premises by setting up networking, preparing a host, preparing cloud permissions, and more.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up networking
 
@@ -66,3 +66,11 @@ Download the Connector software from the https://mysupport.netapp.com/site/produ
 
 [role="quick-margin-para"]
 link:task-install-connector-on-prem.html[Follow step-by-step instructions].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Provide BlueXP with permissions
+
+[role="quick-margin-para"]
+After you install and set up the Connector, you need to add your cloud credentials so that BlueXP has the required permissions to perform actions in AWS or Azure.
+
+[role="quick-margin-para"]
+link:task-provide-permissions-on-prem.html[Follow step-by-step instructions].
