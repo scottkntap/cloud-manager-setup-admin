@@ -67,7 +67,7 @@ Set up AWS permissions based on the installation option that you're planning to 
 * *Manual install*: Create an IAM policy and attach it to an IAM role or to an IAM user. You'll either associate the role with the Connector instance or provide BlueXP with an access key for the IAM user.
 
 [role="quick-margin-para"]
-link:task-set-up-permissions-aws.html[Follow step-by-step instructions for each of these options].
+link:task-set-up-permissions-aws.html[Follow step-by-step instructions].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create the Connector
 
@@ -82,4 +82,12 @@ Create the Connector using one of the available installation options:
 * *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
 
 [role="quick-margin-para"]
-link:task-install-connector-aws.html[Follow step-by-step instructions for each of these options].
+link:task-install-connector-aws.html[Follow step-by-step instructions].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Provide BlueXP with permissions
+
+[role="quick-margin-para"]
+If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+
+[role="quick-margin-para"]
+link:task-provide-permissions-aws.html[Follow step-by-step instructions].

@@ -55,6 +55,8 @@ sidebar:
                       url: /task-set-up-permissions-aws.html
                     - title: Create the Connector
                       url: /task-install-connector-aws.html
+                    - title: Provide permissions to BlueXP
+                      url: /task-provide-permissions-aws.html
                 - title: Azure
                   entries:
                     - title: Quick start
