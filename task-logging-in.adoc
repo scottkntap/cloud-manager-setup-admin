@@ -15,8 +15,6 @@ summary: After you sign up to BlueXP, you can log in from your web browser throu
 [.lead]
 After you sign up to BlueXP, you can log in from your web browser through the SaaS-based user interface. 
 
-link:task-sign-up-saas.html[Learn how to sign up to BlueXP and create an organization].
-
 .Log in options
 
 You can log in to the BlueXP SaaS website using one of the following options:

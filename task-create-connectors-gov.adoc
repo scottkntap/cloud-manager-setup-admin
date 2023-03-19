@@ -13,7 +13,7 @@ summary: To use BlueXP in restricted mode, you need to deploy a Connector and th
 :imagesdir: ./media/
 
 [.lead]
-To use BlueXP in restricted mode, you need to install the Connector and then set up BlueXP by accessing the user interface that's running on the Connector.
+To use BlueXP in restricted mode, you need to install the Connector, set up BlueXP by accessing the user interface that's running on the Connector, and then provide cloud permissions.
 
 == Install the Connector
 
@@ -309,7 +309,7 @@ The Connector is now installed and set up with your BlueXP account. All users ne
 
 Provide BlueXP with the permissions that you previously set up.
 
-== Provide the Connector with permissions
+== Provide permissions to BlueXP
 
 If you deployed the Connector from the Azure Marketplace or if you manually installed the Connector software, you need to provide the permissions that you previously set up so that you can use BlueXP services.
 
@@ -343,6 +343,8 @@ These steps apply only if you manually installed the Connector in AWS. For AWS M
 
 .AWS keys
 --
+Provide BlueXP with the AWS access key for an IAM user that has the required permissions.
+
 .Steps
 
 . Ensure that the correct Connector is currently selected in BlueXP.
@@ -397,6 +399,8 @@ NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you 
 
 .Azure service principal
 --
+Provide BlueXP with the credentials for the Azure service principal that you previously setup.
+
 .Steps
 
 . Go to the https://console.bluexp.netapp.com[BlueXP console^] and log in.

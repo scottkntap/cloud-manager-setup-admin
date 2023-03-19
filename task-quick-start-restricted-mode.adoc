@@ -32,9 +32,9 @@ link:task-prepare-restricted-mode.html[Learn how to prepare for deployment].
 [role="quick-margin-list"]
 .. Install the Connector from your cloud provider's marketplace or by manually installing the software on your own Linux host.
 
-.. Provide BlueXP with the permissions that you previously set up.
-
 .. Set up BlueXP by opening a web browser and entering the Linux host's IP address.
+
+.. Provide BlueXP with the permissions that you previously set up.
 
 [role="quick-margin-para"]
 link:task-create-connectors-gov.html[Learn how to deploy the Connector].

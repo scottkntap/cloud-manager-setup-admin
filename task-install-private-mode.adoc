@@ -13,7 +13,7 @@ summary: You should understand what's needed to get up and running with BlueXP i
 :imagesdir: ./media/
 
 [.lead]
-To set up BlueXP in private mode, you need to install the Connector, provide cloud permissions, and then set up BlueXP by accessing the user interface that's running on the Connector.
+To set up BlueXP in private mode, you need to install the Connector, set up BlueXP by accessing the user interface that's running on the Connector, and then provide cloud permissions.
 
 == Install the Connector
 
@@ -92,7 +92,7 @@ When new versions of the Connector software are available, they'll be posted to 
 
 Provide BlueXP with the permissions that you previously set up.
 
-== Provide cloud permissions
+== Provide permissions to BlueXP
 
 If you want to create Cloud Volumes ONTAP working environments, you'll need to provide BlueXP with the cloud permissions that you previously set up.
 
@@ -122,6 +122,8 @@ Attach the IAM role that you previously created to the Connector EC2 instance.
 
 .AWS keys
 --
+Provide BlueXP with the AWS access key for an IAM user that has the required permissions.
+
 .Steps
 
 . Ensure that the correct Connector is currently selected in BlueXP.
@@ -176,6 +178,8 @@ NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you 
 
 .Azure service principal
 --
+Provide BlueXP with the credentials for the Azure service principal that you previously setup.
+
 .Steps
 
 . Go to the https://console.bluexp.netapp.com[BlueXP console^] and log in.

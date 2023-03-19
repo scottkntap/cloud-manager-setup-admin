@@ -177,7 +177,7 @@ If you're going to install the Connector on premises, then you must provide perm
 
 .AWS IAM role
 --
-Create an IAM policy in AWS and attach it to an IAM role. You’ll need to manually attach the role to the EC2 instance for the Connector.
+Use an IAM role to provide the Connector with permissions. You'll need to manually attach the role to the EC2 instance for the Connector.
 
 .Steps
 
@@ -208,6 +208,10 @@ You now have an IAM role for the Connector EC2 instance.
 
 .AWS keys
 --
+Set up permissions and an access key for an IAM user. You'll need to provide BlueXP with the AWS access key after you install the Connector and set up BlueXP.
+
+.Steps
+
 . From the IAM console, create a policy:
 
 .. Click *Policies > Create policy*.
@@ -234,7 +238,7 @@ The account now has the required permissions. <<add-the-credentials,You can now 
 
 .Azure role
 --
-Create a custom role with the required permissions.
+Create an Azure custom role with the required permissions. You'll assign this role to the Connector VM.
 
 .Steps
 
@@ -278,7 +282,7 @@ You should now have a custom role called BlueXP Operator that you can assign to 
 
 .Azure service principal
 --
-Create and set up a service principal in Azure Active Directory and obtain the Azure credentials that BlueXP needs.
+Create and set up a service principal in Azure Active Directory and obtain the Azure credentials that BlueXP needs. You'll need to provide BlueXP with these credentials after you install the Connector and set up BlueXP.
 
 .Create an Azure Active Directory application for role-based access control
 

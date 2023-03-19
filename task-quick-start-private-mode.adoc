@@ -32,9 +32,9 @@ link:task-prepare-private-mode.html[Learn how to prepare for deployment].
 [role="quick-margin-list"]
 .. Install the Connector software on your own Linux host.
 
-.. For cloud deployments, provide BlueXP with the permissions that you previously set up.
-
 .. Set up BlueXP by opening a web browser and entering the Linux host's IP address.
+
+.. For cloud deployments, provide BlueXP with the permissions that you previously set up.
 
 [role="quick-margin-para"]
 link:task-install-private-mode.html[Learn how to deploy the Connector].

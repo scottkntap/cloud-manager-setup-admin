@@ -191,7 +191,7 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 
 == Prepare networking for user access to BlueXP console
 
-In restricted mode, the BlueXP user interface is accessible from the Connector. As you use the BlueXP user interface, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
+In restricted mode, the BlueXP user interface is accessible from the Connector. As you use the BlueXP user interface, it contacts a few endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -227,11 +227,11 @@ To view the required steps, select the authentication option that you'd like to 
 
 .AWS IAM role
 --
-Create an IAM policy in AWS and attach it to an IAM role. 
+Use an IAM role to provide the Connector with permissions.
 
-If you're creating the Connector from the AWS Marketplace, you'll be prompted to select that IAM role. 
+If you're creating the Connector from the AWS Marketplace, you'll be prompted to select that IAM role when you launch the EC2 instance. 
 
-If you're manually installing the Connector on your own Linux host, you'll need to manually attach the role to the EC2 instance.
+If you're manually installing the Connector on your own Linux host, you'll need to attach the role to the EC2 instance.
 
 .Steps
 
@@ -260,8 +260,12 @@ If you're manually installing the Connector on your own Linux host, you'll need 
 You now have an IAM role for the Connector EC2 instance.
 --
 
-.AWS keys
+.AWS access key
 --
+Set up permissions and an access key for an IAM user. You'll need to provide BlueXP with the AWS access key after you install the Connector and set up BlueXP.
+
+.Steps
+
 . From the IAM console, create a policy:
 
 .. Click *Policies > Create policy*.
@@ -288,7 +292,7 @@ The account now has the required permissions. <<add-the-credentials,You can now 
 
 .Azure role
 --
-Create a custom role with the required permissions.
+Create an Azure custom role with the required permissions. You'll assign this role to the Connector VM.
 
 .Steps
 
@@ -332,7 +336,7 @@ You should now have a custom role called BlueXP Operator that you can assign to 
 
 .Azure service principal
 --
-Create and set up a service principal in Azure Active Directory and obtain the Azure credentials that BlueXP needs.
+Create and set up a service principal in Azure Active Directory and obtain the Azure credentials that BlueXP needs. You'll need to provide BlueXP with these credentials after you install the Connector and set up BlueXP.
 
 .Create an Azure Active Directory application for role-based access control
 
