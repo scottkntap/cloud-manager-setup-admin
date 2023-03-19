@@ -49,7 +49,7 @@ The network location where you deploy the Connector must have an outbound intern
 
 === Endpoints contacted during manual installation
 
-If you plan to manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
+When you manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
 
 * \https://support.netapp.com
 * \https://mysupport.netapp.com

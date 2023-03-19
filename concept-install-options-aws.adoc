@@ -27,4 +27,4 @@ This action also launches an EC2 instance running Linux and the Connector softwa
 
 * Download and manually install the software on your own Linux host
 
-The installation option that you choose impacts how you prepare for installation. This includes how you provide BlueXP with the required permissions that it needs to authenticate and manage resources in AWS. Learn more by reading through the sections below.
+The installation option that you choose impacts how you prepare for installation. This includes how you provide BlueXP with the required permissions that it needs to authenticate and manage resources in AWS.

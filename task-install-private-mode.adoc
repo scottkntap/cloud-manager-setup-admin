@@ -120,7 +120,7 @@ Attach the IAM role that you previously created to the Connector EC2 instance.
 . Select the IAM role and click *Update IAM role*.
 --
 
-.AWS keys
+AWS access key
 --
 Provide BlueXP with the AWS access key for an IAM user that has the required permissions.
 

@@ -341,7 +341,7 @@ These steps apply only if you manually installed the Connector in AWS. For AWS M
 . Select the IAM role and click *Update IAM role*.
 --
 
-.AWS keys
+AWS access key
 --
 Provide BlueXP with the AWS access key for an IAM user that has the required permissions.
 

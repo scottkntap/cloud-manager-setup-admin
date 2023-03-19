@@ -245,9 +245,9 @@ Add permissions to the Connector.
 
 // end tabbed area
 
-== Add permissions to the Connector
+== Provide permissions to BlueXP
 
-After you create the Connector from the Azure Marketplace or by manually installing the software, you need to provide the Connector with the permissions that you previously set up:
+After you create the Connector from the Azure Marketplace or by manually installing the software, you need to provide BlueXP with the permissions that you previously set up:
 
 * For Azure Marketplace deployments, you can either assign the custom role to the Connector VM in Azure or provide BlueXP with details about the Azure AD service principal that you set up.
 

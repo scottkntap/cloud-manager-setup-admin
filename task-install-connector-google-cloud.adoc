@@ -13,7 +13,11 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Create the Connector in Google Cloud directly from the BlueXP user interface, by using gcloud, or by installing the software on your own Linux host.
+Create the Connector in Google Cloud and then set it up for use with BlueXP.
+
+== Install the Connector
+
+Create the Connector directly from the BlueXP user interface, by using gcloud, or by installing the software on your own Linux host.
 
 // start tabbed area
 
@@ -264,9 +268,9 @@ Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the 
 
 // end tabbed area
 
-== Add permissions to the Connector
+== Provide permissions to BlueXP
 
-After you manually install the Connector software on your own Linux host, you need to provide the Connector with the permissions that you previously set up.
+After you manually install the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
 
 These steps don't apply if you deployed the Connector directly from BlueXP or by using gcloud.
 

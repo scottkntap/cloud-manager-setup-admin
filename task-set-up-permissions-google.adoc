@@ -13,7 +13,7 @@ summary: Deploy a Connector in AWS so that BlueXP can manage resources and proce
 :imagesdir: ./media/
 
 [.lead]
-Set up Google Cloud permissions so that you can use BlueXP to manage your data and storage infrastructure in Google Cloud
+Set up Google Cloud permissions so that you can use BlueXP to manage your data and storage infrastructure in Google Cloud.
 
 You need to set up Google Cloud permissions as follows:
 

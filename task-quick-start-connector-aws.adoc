@@ -40,7 +40,7 @@ link:task-set-up-networking-aws.html[Learn more about networking requirements].
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Review host requirements
 
 [role="quick-margin-para"]
-The Connector software must run on a host that meets specific requirements. If you plan to manually install the Connector software on your own Linux host, then you should ensure that your hosts meets these requirements. If you're creating the Connector from BlueXP or from the AWS Marketplace, then these requirements are taken care of for you because the software is deployed from an image.
+The Connector software must run on a host that meets specific requirements. If you plan to manually install the Connector software on your own Linux host, then you should ensure that your host meets these requirements. If you're creating the Connector from BlueXP or from the AWS Marketplace, then these requirements are taken care of for you because the software is deployed from an image.
 
 [role="quick-margin-para"]
 The key requirements are as follows:
@@ -64,7 +64,7 @@ Set up AWS permissions based on the installation option that you're planning to 
 
 * *Install from the AWS Marketplace*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector instance during installation.
 
-* *Manual install*: Create an IAM policy and attach it to an IAM role. You'll need to associate this role with the EC2 instance where you install the Connector.
+* *Manual install*: Create an IAM policy and attach it to an IAM role or to an IAM user. You'll either associate the role with the Connector instance or provide BlueXP with an access key for the IAM user.
 
 [role="quick-margin-para"]
 link:task-set-up-permissions-aws.html[Follow step-by-step instructions for each of these options].

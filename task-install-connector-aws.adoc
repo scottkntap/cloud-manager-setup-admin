@@ -13,7 +13,11 @@ summary: Install the Connector in AWS directly from the BlueXP user interface, f
 :imagesdir: ./media/
 
 [.lead]
-Create the Connector in AWS directly from the BlueXP user interface, from the AWS Marketplace, or by installing the software on your own Linux host.
+Create the Connector in AWS and then set it up for use with BlueXP.
+
+== Install the Connector
+
+Create the Connector directly from the BlueXP user interface, from the AWS Marketplace, or by installing the software on your own Linux host.
 
 // start tabbed area
 
@@ -257,9 +261,9 @@ Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the 
 ====
 // end tabbed area
 
-== Add permissions to the Connector
+== Provide permissions to BlueXP
 
-After you manually install the Connector software on your own Linux host, you need to provide the Connector with the permissions that you previously set up.
+After you manually install the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
 
 These steps don't apply if you deployed the Connector directly from BlueXP or from the AWS Marketplace because the required permissions were provided during deployment.
 
@@ -289,8 +293,10 @@ Attach the IAM role that you previously created to the Connector EC2 instance.
 BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
 --
 
-.AWS access keys
+.AWS access key
 --
+Provide BlueXP with the AWS access key for an IAM user that has the required permissions.
+
 .Steps
 
 . Ensure that the correct Connector is currently selected in BlueXP.

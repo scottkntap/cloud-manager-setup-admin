@@ -116,7 +116,7 @@ You should keep restricted mode disabled because these steps describe how to use
 
 BlueXP is now set up with the Connector that you just installed. You can now go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 
-== Add your cloud credentials to the Connector
+== Provide permissions to BlueXP
 
 Now that the Connector is installed and set up, you need to add your cloud credentials so that BlueXP has the required permissions to perform actions in AWS or Azure.
 
