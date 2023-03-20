@@ -25,12 +25,12 @@ BlueXP is accessible to users as a cloud service from the SaaS website. Dependin
 This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-The BlueXP Connector is installed in the cloud: in a government region, sovereign cloud region, or commercial region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website. 
+A BlueXP Connector is installed in the cloud: in a government region, sovereign cloud region, or commercial region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website.
 +
 This mode is typically used by state and local governments and regulated companies.
 
 Private mode::
-The BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector, not from the SaaS website.
+A BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector, not from the SaaS website.
 +
 The cloud region can be a commercial region or a region for secure US agencies like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]
 
@@ -82,6 +82,8 @@ a|
 * Digital Wallet
 * On-prem ONTAP clusters
 * Replication
+
+Cloud Backup, Cloud Data Sense, and Replication are supported in Government regions only. They are not supported in commercial regions or in sovereign regions with restricted mode.
 a|
 * Cloud Backup
 * Cloud Data Sense
@@ -147,8 +149,6 @@ In the cloud, in a government region, sovereign region, or commercial region.
 
 Connector installation::
 From the AWS or Azure Marketplace, or a manual installation on your own Linux host.
-+
-With restricted mode, your account has just one Connector.
 
 Connector upgrades::
 Automated software upgrades from BlueXP with monthly updates.
@@ -197,7 +197,7 @@ For Cloud Volumes ONTAP, both capacity-based licensing and node-based licensing 
 
 == Private mode
 
-In private mode, you can install the Connector either on premises or in the cloud and then use BlueXP to manage data across your hybrid cloud.
+In private mode, you can install a Connector either on premises or in the cloud and then use BlueXP to manage data across your hybrid cloud.
 
 The following image shows a typical _hybrid cloud_ deployment when using BlueXP in private mode. In this example, the Connector is installed in the cloud.
 
@@ -217,8 +217,6 @@ In the cloud or on premises.
 
 Connector installation::
 Manual installation on your own Linux host.
-+
-With private mode, your account has just one Connector.
 
 Connector upgrades::
 Manual software upgrades at undefined intervals.
