@@ -62,10 +62,10 @@ The following table provides a comparison of these modes.
 | Marketplace or manual install
 | Manual install
 
-| Connector software upgrades
-| Automatic
-| Automatic
-| Manual
+| Connector upgrades
+| Automatic upgrade of NetApp Connector software
+| Automatic upgrade of NetApp Connector software
+| Manual upgrade required
 
 | UI and API access
 | SaaS or local
