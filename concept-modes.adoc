@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-modes.html
 keywords: dark site, internet, onprem, no internet, supported deployments, govcloud, government access, environments, supported environments, deployment modes, modes, private mode, restricted mode, il6, sc2s, c2s, dark site
-summary: BlueXP deployment modes enable you to use BlueXP in a way that meets your business requirements for data security and privacy. While using BlueXP in standard mode from the SaaS website should work for many customers, restricted mode and private mode offer different functionality in terms of installation process, deployment location, authentication methods, available data and storage services, and charging methods.
+summary: BlueXP deployment modes enable you to use BlueXP in a way that meets your business requirements for data security and privacy. While using BlueXP in standard mode from the SaaS website should work for many customers, restricted mode and private mode limit the communication between the BlueXP Connector and the BlueXP SaaS backend. Each mode offers different functionality in terms of installation process, deployment location, authentication methods, available data and storage services, and charging methods.
 ---
 
 = BlueXP deployment modes
@@ -13,7 +13,9 @@ summary: BlueXP deployment modes enable you to use BlueXP in a way that meets yo
 :imagesdir: ./media/
 
 [.lead]
-BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. While using BlueXP in _standard mode_ from the SaaS website should work for many customers, _restricted mode_ and _private mode_ offer different functionality in terms of installation process, deployment location, authentication methods, available data and storage services, and charging methods.
+BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. Using BlueXP in _standard mode_ provides full connectivity from the BlueXP Connector to the SaaS backend, while _restricted mode_ and _private mode_ limit the communication between the Connector and the SaaS backend. Each mode offers different functionality in terms of installation process, deployment location, authentication method, available data and storage services, and charging methods.
+
+While BlueXP can restrict the flow of traffic, communication, and data in restricted mode and private mode, it's your responsibility to ensure that your environment (on premises and in the cloud) is in compliance with the required regulations. 
 
 == Overview
 
@@ -25,9 +27,11 @@ BlueXP is accessible to users as a cloud service from the SaaS website. Dependin
 This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-A BlueXP Connector is installed in the cloud: in a government region, sovereign cloud region, or commercial region and has outbound unidirectional connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website.
+A BlueXP Connector is installed in the cloud: in a government region, sovereign cloud region, or commercial region and has outbound connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website.
 +
 This mode is typically used by state and local governments and regulated companies.
++
+<<Restricted mode, Learn more about outbound connectivity to the SaaS backend>>.
 
 Private mode::
 A BlueXP Connector is installed in a location that has complete isolation from the internet, either on-premises or in a cloud region. There is no connectivity outside the data center or cloud region. Users access BlueXP locally from the Connector, not from the SaaS website.
@@ -58,7 +62,7 @@ The following table provides a comparison of these modes.
 | Marketplace or manual install
 | Manual install
 
-| Connector upgrades
+| Connector software upgrades
 | Automatic
 | Automatic
 | Manual
@@ -117,7 +121,7 @@ From a setup wizard in BlueXP, from the AWS or Azure Marketplace, or using an in
 With standard mode, you can install one or more Connectors in your account, depending on your requirements.
 
 Connector upgrades::
-Automated software upgrades from BlueXP with monthly updates.
+Automated upgrades of the Connector software from BlueXP with monthly updates.
 
 User interface and API access::
 From the SaaS website or locally from the Connector, if needed.
@@ -140,7 +144,9 @@ image:diagram-restricted-mode.png[A conceptual image...]
 BlueXP works as follows in restricted mode:
 
 Outbound communication::
-Outbound, unidirectional connectivity is required from the Connector to the BlueXP SaaS backend to use data services, to enable automatic software upgrades, to use auth0-based authentication, and to send metadata for charging purposes (storage VM name, allocated capacity, and volume UUID, type, and IOPS).
+Outbound connectivity is required from the Connector to the BlueXP SaaS backend to use BlueXP data services, to enable automatic software upgrades of the Connector, to use auth0-based authentication, and to send metadata for charging purposes (storage VM name, allocated capacity, and volume UUID, type, and IOPS). 
++
+The BlueXP SaaS backend does not initiate communication to the Connector. All communication is initiated by the Connector, which can pull or push data from or to the SaaS backend as required.
 +
 A connection is also required to cloud provider resources from within the region.
 
@@ -151,7 +157,7 @@ Connector installation::
 From the AWS or Azure Marketplace, or a manual installation on your own Linux host.
 
 Connector upgrades::
-Automated software upgrades from BlueXP with monthly updates.
+Automated upgrades of the Connector software from BlueXP with monthly updates.
 
 User interface and API access::
 From the Connector that's deployed in your cloud region.
@@ -219,7 +225,7 @@ Connector installation::
 Manual installation on your own Linux host.
 
 Connector upgrades::
-Manual software upgrades at undefined intervals.
+Manual upgrades of the Connector software at undefined intervals.
 
 User interface and API access::
 From the Connector that's deployed in your cloud region or on premises.
