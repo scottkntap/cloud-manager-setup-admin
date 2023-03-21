@@ -15,7 +15,7 @@ summary: BlueXP deployment modes enable you to use BlueXP in a way that meets yo
 [.lead]
 BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. Using BlueXP in _standard mode_ provides full connectivity from the BlueXP Connector to the SaaS backend, while _restricted mode_ and _private mode_ limit the communication between the Connector and the SaaS backend. Each mode offers different functionality in terms of installation process, deployment location, authentication method, available data and storage services, and charging methods.
 
-While BlueXP can restrict the flow of traffic, communication, and data in restricted mode and private mode, it's your responsibility to ensure that your environment (on premises and in the cloud) is in compliance with the required regulations. 
+While BlueXP restricts the flow of traffic, communication, and data in restricted mode and private mode, it's your responsibility to ensure that your environment (on premises and in the cloud) is in compliance with the required regulations. 
 
 == Overview
 
@@ -40,7 +40,7 @@ The cloud region can be a commercial region or a region for secure US agencies l
 
 The following table provides a comparison of these modes.
 
-[cols="h,d,d,d",options="header,autowidth"]
+[cols="h,d,d,d",options="header",cols="16,28,28,28"]
 |===
 |
 | Standard mode
