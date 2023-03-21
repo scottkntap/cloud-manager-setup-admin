@@ -40,7 +40,7 @@ The cloud region can be a commercial region or a region for secure US agencies l
 
 The following table provides a comparison of these modes.
 
-[cols="h,d,d,d",options="header",cols="16,28,28,28"]
+[options="header",cols="16h,28,28,28"]
 |===
 |
 | Standard mode
