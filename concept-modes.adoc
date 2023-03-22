@@ -97,8 +97,8 @@ a|
 * Replication
 
 | Licensing options
-| PAYGO and BYOL
-| PAYGO and BYOL
+| Marketplace subscriptions and BYOL
+| Marketplace subscriptions and BYOL
 | BYOL
 
 |===
@@ -177,9 +177,13 @@ BlueXP supports the following storage and data services with restricted mode:
 
 The following features are not supported: Applications, Virtual Machines, and Kubernetes
 
-| Cloud Data Sense | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode.  
+| Cloud Data Sense a| Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode. 
 
-The following features are not supported: One Drive scanning and Azure Information Protection (AIP).
+The following limitations apply:
+
+* OneDrive accounts, SharePoint accounts, and Google Drive accounts can’t be scanned.
+
+* Microsoft Azure Information Protection (AIP) label functionality can’t be integrated.
 
 | Cloud Volumes ONTAP | Full support
 
@@ -194,9 +198,12 @@ The following features are not supported: One Drive scanning and Azure Informati
 Supported licensing options::
 The following licensing options are supported with restricted mode:
 
-* PAYGO
+* Marketplace subscriptions (hourly and annual contracts)
 +
-For Cloud Volumes ONTAP, only capacity-based licensing is supported with PAYGO.
+Note the following:
++
+** For Cloud Volumes ONTAP, only capacity-based licensing is supported.
+** In Azure, annual contracts are not supported with government regions.
 
 * BYOL
 +
@@ -263,10 +270,19 @@ BlueXP supports the following storage and data services with private mode when t
 | Notes
 
 | Cloud Backup 
-| The following features are not supported: Applications, Virtual Machines, Kubernetes, single file restore, and automatic backups of Indexed Catalog files.
+| Only back up and restore of on-prem ONTAP volumes to StorageGRID systems is supported.
+
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Learn how to back up on-prem ONTAP data to StorageGRID^]
 
 | Cloud Data Sense
-| Features that require outbound internet access are not supported. For example, managing Microsoft Azure Information Protection (AIP) labels. https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html#limitations[Learn more about Cloud Data Sense limitations^]
+a| 
+* The only supported data sources are the ones that you can discover locally.
++
+https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html#supported-data-sources[View the sources that you can discover locally^]
+
+* Features that require outbound internet access are not supported.
++ 
+https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html#limitations[View the feature limitations^]
 
 | Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for private mode.
 
