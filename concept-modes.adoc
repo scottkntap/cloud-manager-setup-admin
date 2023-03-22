@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-modes.html
 keywords: dark site, internet, onprem, no internet, supported deployments, govcloud, government access, environments, supported environments, deployment modes, modes, private mode, restricted mode, il6, sc2s, c2s, dark site
-summary: BlueXP deployment modes enable you to use BlueXP in a way that meets your business requirements for data security and privacy. While using BlueXP in standard mode from the SaaS website should work for many customers, restricted mode and private mode limit the communication between the BlueXP Connector and the BlueXP SaaS backend. Each mode offers different functionality in terms of installation process, deployment location, authentication methods, available data and storage services, and charging methods.
+summary: BlueXP deployment modes enable you to use BlueXP in a way that meets your business requirements for data security and privacy. While using BlueXP in standard mode from the SaaS website should work for many customers, restricted mode and private mode limit communication between the BlueXP Connector and the BlueXP SaaS backend. Each mode offers different functionality in terms of installation process, deployment location, authentication methods, available data and storage services, and charging methods.
 ---
 
 = BlueXP deployment modes
@@ -13,7 +13,7 @@ summary: BlueXP deployment modes enable you to use BlueXP in a way that meets yo
 :imagesdir: ./media/
 
 [.lead]
-BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. Using BlueXP in _standard mode_ provides full connectivity from the BlueXP Connector to the SaaS backend, while _restricted mode_ and _private mode_ limit the communication between the Connector and the SaaS backend. Each mode offers different functionality in terms of installation process, deployment location, authentication method, available data and storage services, and charging methods.
+BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. Using BlueXP in _standard mode_ provides full connectivity from the BlueXP Connector to the SaaS backend, while _restricted mode_ and _private mode_ limit communication between the Connector and the SaaS backend. Each mode offers different functionality in terms of installation process, deployment location, authentication method, available data and storage services, and charging methods.
 
 While BlueXP restricts the flow of traffic, communication, and data in restricted mode and private mode, it's your responsibility to ensure that your environment (on premises and in the cloud) is in compliance with the required regulations. 
 
@@ -176,6 +176,7 @@ BlueXP supports the following storage and data services with restricted mode:
 | Cloud Backup | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode. 
 
 The following features are not supported: Applications, Virtual Machines, and Kubernetes
+
 | Cloud Data Sense | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode.  
 
 The following features are not supported: One Drive scanning and Azure Information Protection (AIP).
@@ -265,7 +266,7 @@ BlueXP supports the following storage and data services with private mode when t
 | The following features are not supported: Applications, Virtual Machines, Kubernetes, single file restore, and automatic backups of Indexed Catalog files.
 
 | Cloud Data Sense
-| The following outbound scanning features are not supported: S3, One Drive, and Azure Information Protection (AIP).
+| Features that require outbound internet access are not supported. For example, managing Microsoft Azure Information Protection (AIP) labels. https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html#limitations[Learn more about Cloud Data Sense limitations^]
 
 | Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for private mode.
 
