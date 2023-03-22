@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-netapp-accounts.html
-keywords: accounts, workspaces, Connector, users, BlueXP website, admin, Account Admin, Workspace Admin, account settings, workspaces, users, members, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces
+keywords: accounts, workspaces, Connector, users, BlueXP website, admin, Account Admin, Workspace Admin, account settings, workspaces, users, members, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces, bluexp account, netapp account
 summary: A BlueXP account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within BlueXP.
 ---
 

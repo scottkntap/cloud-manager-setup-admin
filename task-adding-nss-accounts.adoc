@@ -131,7 +131,7 @@ Users can now select the account when creating new Cloud Volumes ONTAP systems, 
 
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html[Launching Cloud Volumes ONTAP in GCP^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html[Registering pay-as-you-go systems^]
 
 === Update an NSS account for the new authentication method

@@ -5,7 +5,7 @@ keywords: subscribe, subscription, marketplace subscription, paygo, contract, an
 summary: Subscribe to BlueXP from your cloud provider's marketplace to pay for BlueXP services at an hourly rate or through an annual contract.
 ---
 
-= Subscribe to BlueXP
+= Subscribe to BlueXP (standard mode)
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -111,7 +111,7 @@ NOTE: Before you complete the following steps, ensure that you have both Billing
 
 .. After you're redirected to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp BlueXP page on the Google Cloud Marketplace^], ensure that the correct project is selected at the top navigation menu.
 +
-image:screenshot_gcp_cvo_marketplace.png[A screenshot of the GCP CVO marketplace page.]
+image:screenshot_gcp_cvo_marketplace.png[A screenshot of the Cloud Volumes ONTAP marketplace page in Google Cloud.]
 
 .. Click *Subscribe*.
 

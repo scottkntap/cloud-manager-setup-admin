@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-permissions-google.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
-summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+keywords: set up permissions, set up gcp permissions, set up google cloud permissions, google permissions, gcp permissions, service account, create service account, gcp service account, google service account
+summary: Set up Google Cloud permissions so that you can use BlueXP to manage your data and storage infrastructure in Google Cloud.
 ---
 
 = Set up Google Cloud permissions

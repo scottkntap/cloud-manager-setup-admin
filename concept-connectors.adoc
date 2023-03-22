@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept-connectors.html
-keywords: concept, connectors, learn about connectors, service connectors, what are connectors, what is a connector, what's a connector, days, 14 days
-summary: In most cases, you will need to deploy a Connector in your cloud or on-premises network. The Connector is a crucial component for the day-to-day use of BlueXP. It enables BlueXP to manage the resources and processes within your public cloud environment.
+keywords: concept, connectors, learn about connectors, what are connectors, what is a connector, what's a connector, days, 14 days, when is a connector required, connector supported locations, restricted mode, private mode, dark site, permissions, multiple connectors, disaster recovery
+summary: You don't need a Connector to get started with BlueXP, but you'll need to create a Connector to unlock all BlueXP features and services.
 ---
 
 = Learn about Connectors

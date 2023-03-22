@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-permissions-aws.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manual install, connector installer
-summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+keywords: aws permissions, set up permissions, set up aws permissions, permissions, iam role, iam policy, json, policy, role, credentials
+summary: Set up AWS permissions so that you can use BlueXP to manage your data and storage infrastructure in AWS. How you set up permissions depends on the installation option that you're planning to use.
 ---
 
 = Set up AWS permissions

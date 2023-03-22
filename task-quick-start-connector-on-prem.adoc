@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-quick-start-connector-on-prem.html
-keywords: quick start, bluexp quick start, get started, get started with bluexp, standard mode, saas mode
-summary: Creating a Connector on your premises includes a few steps.
+keywords: quick start, connector quick start, on prem quick start
+summary: Create a Connector on your premises by setting up networking, preparing a host, preparing cloud permissions, and more.
 ---
 
 = Quick start to create a Connector on premises

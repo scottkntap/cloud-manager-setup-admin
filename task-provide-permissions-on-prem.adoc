@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-provide-permissions-on-prem.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
-summary: Install the Connector on premises and then log in and set it up to work with your BlueXP SaaS account.
+keywords: permissins, on prem permissions, aws permissions, azure permissions, credentials, aws credentials, azure credentials
+summary: After you install and set up the Connector, you need to add your cloud credentials so that BlueXP has the required permissions to perform actions in AWS or Azure.
 ---
 
-= Provide permissions to BlueXP
+= Provide permissions to BlueXP for on-prem installs
 :hardbreaks:
 :nofooter:
 :icons: font

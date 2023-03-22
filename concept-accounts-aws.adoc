@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept-accounts-aws.html
-keywords: cloud provider accounts, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, json
-summary: BlueXP enables you to choose the AWS credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
+keywords: cloud provider accounts, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials
+summary: You should understand how BlueXP uses AWS credentials and permissions so that you can manage credentials for one or more AWS accounts.
 ---
 
 = AWS credentials and permissions

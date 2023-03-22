@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-accounts-azure.html
 keywords: cloud provider accounts, azure, azure accounts, service principal, multiple accounts, permissions, policy, policies, subscriptions, credentials
-summary: BlueXP enables you to choose the Azure credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial Azure credentials, or you can add additional credentials.
+summary: You should understand how BlueXP uses Azure credentials and permissions so that you can manage credentials for one or more Azure subscriptions.
 ---
 
 = Azure credentials and permissions

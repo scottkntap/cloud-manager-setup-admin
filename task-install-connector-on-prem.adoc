@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-install-connector-on-prem.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+keywords: install connector, on prem connector installation, on prem connector, install connector on prem, manual install
 summary: Install the Connector on premises and then log in and set it up to work with your BlueXP SaaS account.
 ---
 

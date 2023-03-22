@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-quick-start-connector-azure.html
-keywords: quick start, bluexp quick start, get started, get started with bluexp, standard mode, saas mode
-summary: Creating a Connector in Azure includes a few steps.
+keywords: quick start, connector quick start, azure quick start
+summary: Create a Connector in Azure by choosing an installation option, setting up networking, preparing permissions, and more.
 ---
 
 = Quick start to create a Connector in Azure

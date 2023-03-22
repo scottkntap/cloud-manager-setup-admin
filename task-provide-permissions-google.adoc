@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: task-provide-permissions-google-cloud.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
-summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+permalink: task-provide-permissions-google.html
+keywords: google cloud permissions, permissions, gcp permissions, service account, gcp service account
+summary: If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
 ---
 
 = Provide Google Cloud permissions to BlueXP

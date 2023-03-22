@@ -80,7 +80,7 @@ sidebar:
                     - title: Installation options
                       url: /concept-install-options-google.html
                     - title: Set up networking
-                      url: /task-set-up-networking-google-cloud.html
+                      url: /task-set-up-networking-google.html
                     - title: Review host requirements
                       url: /reference-host-requirements-google.html
                     - title: Set up Google Cloud permissions
@@ -88,9 +88,9 @@ sidebar:
                     - title: Enable Google Cloud APIs
                       url: /task-enable-apis-google.html
                     - title: Create the Connector
-                      url: /task-install-connector-google-cloud.html
+                      url: /task-install-connector-google.html
                     - title: Provide permissions to BlueXP
-                      url: /task-provide-permissions-google-cloud.html
+                      url: /task-provide-permissions-google.html
                 - title: On premises
                   entries:
                     - title: Quick start
@@ -116,9 +116,9 @@ sidebar:
             - title: Prepare for deployment
               url: /task-prepare-restricted-mode.html
             - title: Deploy the Connector
-              url: /task-create-connectors-gov.html
+              url: /task-install-restricted-mode.html
             - title: Log in to BlueXP
-              url: /task-logging-in-restricted-mode.html
+              url: /task-log-in-restricted-mode.html
             - title: Subscribe to BlueXP
               url: /task-subscribe-restricted-mode.html
             - title: Where to go next
@@ -132,7 +132,7 @@ sidebar:
             - title: Deploy the Connector
               url: /task-install-private-mode.html
             - title: Log in to BlueXP
-              url: /task-logging-in-private-mode.html
+              url: /task-log-in-private-mode.html
             - title: Where to go next
               url: /reference-whats-next-private-mode.html
     - title: Administer BlueXP

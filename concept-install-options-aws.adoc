@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept-install-options-aws.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
-summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+keywords: install connector aws, aws install connector, connector aws, aws connector, installation options, aws marketplace, manual install
+summary: There are a few different ways to create a Connector in AWS. Directly from BlueXP is the most common way.
 ---
 
 = Connector installation options in AWS

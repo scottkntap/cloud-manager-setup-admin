@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-adding-gcp-accounts.html
 keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp marketplace, subscribe, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys
-summary: You can manage the credentials that are associated with the Connector VM instance.
+summary: You can manage the Google Cloud credentials that are associated with the Connector VM instance.
 ---
 
 = Manage Google Cloud credentials and subscriptions for BlueXP
@@ -13,7 +13,7 @@ summary: You can manage the credentials that are associated with the Connector V
 :imagesdir: ./media/
 
 [.lead]
-You can manage the credentials that are associated with the Connector VM instance.
+You can manage the Google Cloud credentials that are associated with the Connector VM instance.
 
 == Associate a Marketplace subscription with Google Cloud credentials
 
@@ -37,7 +37,7 @@ NOTE: Before you complete the following steps, ensure that you have both Billing
 
 .. After you're redirected to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp BlueXP page on the Google Cloud Marketplace^], ensure that the correct project is selected at the top navigation menu.
 +
-image:screenshot_gcp_cvo_marketplace.png[A screenshot of the GCP CVO marketplace page.]
+image:screenshot_gcp_cvo_marketplace.png[A screenshot of the Cloud Volumes ONTAP marketplace page in Google Cloud.]
 
 .. Click *Subscribe*.
 

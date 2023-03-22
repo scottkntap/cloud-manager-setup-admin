@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: task-create-connectors-gov.html
-keywords: government region, gov, govcloud, connector
+permalink: task-install-restricted-mode.html
+keywords: government region, gov, govcloud, connector, sovereign cloud
 summary: To use BlueXP in restricted mode, you need to deploy a Connector and then set up BlueXP by accessing the user interface that's running on the Connector.
 ---
 

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-provide-permissions-aws.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manual install, connector installer
-summary: After you manually install the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+keywords: aws permissions, set up aws permissions, iam role, json policy, bluexp policy, aws marketplace, aws access key, access key, iam policy, permissions
+summary: If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
 ---
 
 = Provide AWS permissions to BlueXP

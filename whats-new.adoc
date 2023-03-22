@@ -377,7 +377,7 @@ We redesigned the *Add Connector* wizard to add new options and to make it easie
 
 * link:task-creating-connectors-aws.html[Create a Connector in AWS]
 * link:task-creating-connectors-azure.html[Create a Connector in Azure]
-* link:task-creating-connectors-gcp.html[Create a Connector in GCP]
+* link:task-creating-connectors-gcp.html[Create a Connector in Google Cloud]
 
 === NSS account management from Support Dashboard
 

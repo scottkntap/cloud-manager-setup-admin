@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: task-install-connector-google-cloud.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
-summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+permalink: task-install-connector-google.html
+keywords: install connector, google cloud connector installation, google cloud connector, install connector in google cloud, bluexp, gcloud, manual install, create connector, gcp installation, gcp connector
+summary: Create the Connector directly from the BlueXP user interface, by using gcloud, or by installing the software on your own Linux host.
 ---
 
 = Create the Connector in Google Cloud
@@ -30,7 +30,7 @@ link:task-set-up-permissions-google.html[Learn how to set up Google Cloud permis
 
 * A VPC and subnet that meets networking requirements.
 +
-link:task-set-up-networking-google-cloud.html[Learn about networking requirements]
+link:task-set-up-networking-google.html[Learn about networking requirements]
 
 * Details about a proxy server, if a proxy is required for internet access from the Connector.
 
@@ -83,7 +83,7 @@ link:task-set-up-permissions-google.html[Learn how to set up Google Cloud permis
 
 * A VPC and subnet that meets networking requirements.
 +
-link:task-set-up-networking-google-cloud.html[Learn about networking requirements]
+link:task-set-up-networking-google.html[Learn about networking requirements]
 
 .Steps
 

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-permissions-azure.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manual install, connector installer
-summary: Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure.
+keywords: azure permissions, set up permissions, setup permissions, permissions, custom role, azure custom role, service principal, azure ad service principal, json
+summary: Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure in Azure. How you set up permissions depends on the installation option that you're planning to use.
 ---
 
 = Set up Azure permissions

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-quick-start-standard-mode.html
-keywords: quick start, bluexp quick start, get started, get started with bluexp, standard mode, saas mode
+keywords: quick start, standard mode quick start
 summary: Get started with BlueXP in standard mode in a few steps.
 ---
 

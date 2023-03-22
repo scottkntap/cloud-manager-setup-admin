@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-quick-start-connector-aws.html
-keywords: quick start, bluexp quick start, get started, get started with bluexp, standard mode, saas mode
-summary: Creating a Connector in AWS includes a few steps.
+keywords: quick start, connector quick start, aws quick start
+summary: Create a Connector in AWS by choosing an installation option, setting up networking, preparing permissions, and more.
 ---
 
 = Quick start to create a Connector in AWS

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference-connector-default-config.html
-keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux
+keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux, connector configuration, connector installation folder, connector folder, connector log
 summary: You might want to learn more about the Connector before you deploy it, or if you need to troubleshoot any issues.
 ---
 

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-install-private-mode.html
-keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
+keywords: install dark site, deploy dark site, install private mode, deploy private mode, install connector dark site, connector dark site, dark site, private mode, no internet
+summary: To set up BlueXP in private mode, you need to install the Connector, set up BlueXP by accessing the user interface that's running on the Connector, and then provide cloud permissions.
 ---
 
 = Deploy the Connector in private mode

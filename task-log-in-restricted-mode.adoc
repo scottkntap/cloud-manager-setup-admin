@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: task-logging-in-restricted-mode.html
-keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp, sign up, create account
+permalink: task-log-in-restricted-mode.html
+keywords: logging in, log in, sign in, signing in, restricted mode, restricted mode log in, local log in, connector log in, log in connector
 summary: When you use BlueXP in restricted mode, you'll need to log in to the BlueXP console from the user interface that runs locally on the Connector.
 ---
 
@@ -22,7 +22,7 @@ BlueXP supports logging in with one of the following options when your account i
 * A NetApp cloud login using your email address and a password
 * A federated connection
 +
-A federated connection enables single sign-on using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then click *sign-in options*.
+You can use single sign-on to log in using credentials from your corporate directory (federated identity). link:concept-federation.html[Learn how to use identity federation with BlueXP].
 
 .Steps
 

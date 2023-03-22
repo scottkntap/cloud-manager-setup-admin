@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-install-connector-aws.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
+keywords: install connector, aws connector installation, aws connector, install connector in aws, bluexp, aws marketplace, manual install, create connector
 summary: Install the Connector in AWS directly from the BlueXP user interface, from the AWS Marketplace, or by installing the software on your own Linux host.
 ---
 

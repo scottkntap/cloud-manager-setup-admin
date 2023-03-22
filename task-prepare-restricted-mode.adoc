@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-prepare-restricted-mode.html
-keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
-summary: You should understand what's needed to get up and running with BlueXP in restricted mode so that you can prepare your environment. The preparation involves preparing a Linux host for the Connector, preparing your networking, and setting up cloud permissions.
+keywords: restricted mode requirements, requirements, install options, restricted mode networking, dark site, restricted mode permissions, permissions for restricted mode, networking for restricted mode
+summary: You should understand what's needed to get started with BlueXP in restricted mode so that you can prepare your environment.
 ---
 
 = Prepare for deployment in restricted mode
@@ -63,7 +63,7 @@ An instance type that meets the CPU and RAM requirements above. We recommend t3.
 Azure VM size::
 An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
 
-GCP machine type::
+Google Cloud machine type::
 An instance type that meets the CPU and RAM requirements above. We recommend n2-standard-4.
 +
 The Connector is supported in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]

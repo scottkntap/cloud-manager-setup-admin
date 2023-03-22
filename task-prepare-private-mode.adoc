@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-prepare-private-mode.html
-keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment
+keywords: private mode requirements, requirements, install options, private mode networking, dark site, private mode permissions, permissions for private mode, networking for private mode
 summary: You should understand what's needed to get up and running with BlueXP in private mode so that you can prepare your environment.
 ---
 
@@ -61,7 +61,7 @@ An instance type that meets the CPU and RAM requirements above. We recommend t3.
 Azure VM size::
 An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
 
-GCP machine type::
+Google Cloud machine type::
 An instance type that meets the CPU and RAM requirements above. We recommend n2-standard-4.
 +
 The Connector is supported in Google Cloud on a VM instance with an OS that supports https://cloud.google.com/compute/shielded-vm/docs/shielded-vm[Shielded VM features^]

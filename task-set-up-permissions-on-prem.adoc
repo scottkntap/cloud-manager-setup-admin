@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-permissions-on-prem.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
-summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+keywords: set up permissions, cloud permissions, aws permissions, azure permissions, on prem permissions, connector permissions
+summary: If you want to use BlueXP services in AWS or Azure with an on-prem Connector, then you need to set up permissions in your cloud provider so that you can add the credentials to the Connector after you install it.
 ---
 
 = Set up cloud permissions for on-prem deployments

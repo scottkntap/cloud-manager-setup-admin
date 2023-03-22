@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: reference-host-requirements-aws.html
-keywords: aws networking, networking, connector networking, ports, proxy server, outbound internet, endpoints, urls, permissions, cloud permission, aws permissions, iam role, keys, aws keys, aws marketplace, marketplace install, manuall install, connector installer
-summary: Deploy a Connector in AWS so that BlueXP can manage resources and processes within your public cloud environment.
+keywords: cpu requirements, ram requirements, aws requirements, aws host requirements, connector host requirements, ec2 instance type
+summary: The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on. If you plan to manually install the Connector, you should ensure that your host meets these requirements.
 ---
 
-= Review host requirements
+= Review Connector host requirements for AWS installs
 :hardbreaks:
 :nofooter:
 :icons: font

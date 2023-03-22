@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: reference-checklist-cm.html
+permalink: reference-networking-saas-console.html
 keywords: networking, urls, endpoints, web browser, console
-summary: As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
+summary: As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to several endpoints.
 ---
 
 = Prepare networking for user access to the BlueXP console
@@ -13,7 +13,7 @@ summary: As you use the BlueXP user interface from the SaaS website, it contacts
 :imagesdir: ./media/
 
 [.lead]
-As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to the following endpoints.
+As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to several endpoints.
 
 [cols=2*,options="header,autowidth"]
 |===
