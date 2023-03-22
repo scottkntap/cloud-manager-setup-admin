@@ -1,8 +1,0 @@
----
-sidebar: sidebar
-permalink: task-launching-azure-mktp.html
-keywords: install, installation, installing, marketplace, azure, deploy, virtual machine, permissions, deploy connector in azure, install connector in azure
-summary: For an Azure commercial region, it's best to create a Connector directly from BlueXP, but you can launch a Connector from the Azure Marketplace, if you prefer. For Azure Government regions, you can't deploy the Connector in a Government region from the BlueXP SaaS website, so the next best option is to do so from the Azure Marketplace.
----
-
-task-install-connector-azure.html
