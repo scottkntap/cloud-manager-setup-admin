@@ -107,7 +107,7 @@ sidebar:
                       url: /task-provide-permissions-on-prem.html
             - title: Subscribe to BlueXP
               url: /task-subscribe-standard-mode.html
-            - title: Where to go next
+            - title: What you can do next
               url: /reference-whats-next.html
         - title: Get started with restricted mode
           entries:
@@ -121,7 +121,7 @@ sidebar:
               url: /task-log-in-restricted-mode.html
             - title: Subscribe to BlueXP
               url: /task-subscribe-restricted-mode.html
-            - title: Where to go next
+            - title: What you can do next
               url: /reference-whats-next-restricted-mode.html
         - title: Get started with private mode
           entries:
@@ -133,7 +133,7 @@ sidebar:
               url: /task-install-private-mode.html
             - title: Log in to BlueXP
               url: /task-log-in-private-mode.html
-            - title: Where to go next
+            - title: What you can do next
               url: /reference-whats-next-private-mode.html
     - title: Administer BlueXP
       entries:

@@ -5,7 +5,7 @@ keywords: standard mode, what you can do
 summary: Now that you've logged in and set up BlueXP in standard mode, users can create and discover working environments and use BlueXP services.
 ---
 
-= Where to go next
+= What you can do next (standard mode)
 :hardbreaks:
 :nofooter:
 :icons: font

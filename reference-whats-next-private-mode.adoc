@@ -5,7 +5,7 @@ keywords: private mode, what you can do
 summary: After you're up and running with BlueXP in private mode, your next step depends on whether you plan to manage storage in the cloud or on premises.
 ---
 
-= Where to go next
+= What you can do next (private mode)
 :hardbreaks:
 :nofooter:
 :icons: font
