@@ -274,7 +274,6 @@ The Connector makes the following API requests when you use Cloud Data Sense.
 | Microsoft.Storage/storageAccounts/listkeys/action | Yes | No
 | Microsoft.Storage/storageAccounts/read | Yes | Yes
 | Microsoft.Storage/storageAccounts/write | Yes | No
-| Microsoft.Storage/storageAccounts/delete | No | Yes
 | Microsoft.Storage/storageAccounts/blobServices/containers/read | Yes | Yes
 | Microsoft.Network/networkInterfaces/read | Yes | Yes
 | Microsoft.Network/networkInterfaces/write | Yes | No
@@ -513,6 +512,12 @@ The Connector makes the following API requests to discover and manage clusters r
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 23 March, 2023
+
+The "Microsoft.Storage/storageAccounts/delete" permission is no longer needed for Cloud Data Sense.
+
+This permission is still required for Cloud Volumes ONTAP.
 
 === 5 January, 2023
 
