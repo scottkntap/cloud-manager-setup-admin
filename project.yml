@@ -231,7 +231,7 @@ homepage:
       links:
         - title: Learn about BlueXP
           url: concept-overview.html
-        - title: Supported deployment modes
+        - title: Learn about deployment modes
           url: concept-modes.html
         - title: Get started with standard mode
           url: /task-quick-start-standard-mode.html
@@ -245,6 +245,12 @@ homepage:
           url: concept-connectors.html
         - title: Manage Connectors
           url: task-managing-connectors.html
+        - title: AWS permissions
+          url: reference-permissions-aws.html
+        - title: Azure permissions
+          url: reference-permissions-azure.html
+        - title: Google Cloud permissions
+          url: reference-permissions-gcp.html
     - title: BlueXP accounts
       links:
         - title: Learn about BlueXP accounts
