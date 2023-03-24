@@ -16,6 +16,20 @@ summary: "Learn what's new with BlueXP administration features: BlueXP accounts,
 Learn what's new with BlueXP administration features: BlueXP accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 27 March 2023
+
+=== Deployment modes
+
+BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. When you get started with BlueXP and set up your account, you can choose from three modes:
+
+* Standard mode
+* Restricted mode
+* Private mode
+
+link:concept-modes.html[Learn more about these deployment modes].
+
+NOTE: The introduction of restricted mode replaces the option to enable or disable the SaaS platform. You can enable restricted mode at the time of account creation. It can't be enabled or disabled later.
+
 == 5 March 2023
 
 === Connector 3.9.27
@@ -88,6 +102,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gc
 * This release of the Connector includes Cloud Volumes ONTAP enhancements.
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-february-2023[Learn about Cloud Volumes ONTAP enhancements^]
+//end::whats-new[]
 
 == 1 January 2023
 
@@ -96,7 +111,6 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5
 This release of the Connector includes Cloud Volumes ONTAP enhancements and bug fixes.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#1-january-2023[Learn about Cloud Volumes ONTAP enhancements^]
-//end::whats-new[]
 
 == 4 December 2022
 
