@@ -135,6 +135,11 @@ All BlueXP services are available to users.
 Supported licensing options::
 The supported licensing options depends on which BlueXP service you are using. Review the documentation for each service to learn more about the available licensing options.
 
+How to use standard mode::
+Standard mode is available from the BlueXP SaaS website. Go to the https://console.bluexp.netapp.com[BlueXP console^] and sign up.
++
+link:task-quick-start-standard-mode.html[Learn how to get started with standard mode].
+
 == Restricted mode
 
 The following image shows a typical deployment when using BlueXP in restricted mode.
@@ -208,6 +213,15 @@ Note the following:
 * BYOL
 +
 For Cloud Volumes ONTAP, both capacity-based licensing and node-based licensing are supported with BYOL.
+
+How to use restricted mode::
+You need to enable restricted mode when you set up BlueXP from a Connector that you installed from your cloud provider's marketplace or by using the installer from the NetApp Support Site. 
++
+When you log in to BlueXP for the first time from the Connector, you'll be prompted to create an account, at which point you can enable restricted mode on the account.
++
+Note that you can't change the restricted mode setting after BlueXP creates the account. You can't enable restricted mode later and you can't disable it later. It must be set at time of account creation.
++
+link:task-quick-start-restricted-mode.html[Learn how to get started with restricted mode].
 
 == Private mode
 
@@ -302,10 +316,7 @@ For Cloud Volumes ONTAP BYOL, only node-based licensing is supported. Capacity-b
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#add-unassigned-licenses[Learn how to add licenses to the Digital Wallet^]
 
-== How to get started
-
-Once you've decided which deployment mode works best for your business needs, use the following links to get started with BlueXP.
-
-* link:task-quick-start-standard-mode.html[Get started with standard mode]
-* link:task-quick-start-restricted-mode.html[Get started with restricted mode]
-* link:task-quick-start-private-mode.html[Get started with private mode]
+How to use private mode::
+Private mode is available by downloading the "offline" installer from the NetApp Support Site.
++
+link:task-quick-start-private-mode.html[Learn how to get started with private mode].

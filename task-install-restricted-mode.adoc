@@ -295,6 +295,8 @@ You can select an existing account if your log in is already associated with a B
 
 .. Select *Enable restricted mode on this account*.
 +
+Note that you can't change this setting after BlueXP creates the account. You can't enable restricted mode later and you can't disable it later.
++
 If you deployed the Connector in a Government region, the checkbox is already enabled and can't be changed. This is because restricted mode is the only mode supported in Government regions.
 +
 image:screenshot-restricted-mode.png["A screenshot that shows the welcome page where you need to enter a Connector name, account name, and can enable restricted mode on this account."]
