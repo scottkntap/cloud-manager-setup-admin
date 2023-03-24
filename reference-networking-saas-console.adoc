@@ -13,7 +13,7 @@ summary: As you use the BlueXP user interface from the SaaS website, it contacts
 :imagesdir: ./media/
 
 [.lead]
-As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to several endpoints.
+As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to these endpoints.
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -73,3 +73,10 @@ AWS services (amazonaws.com):
 | For in-product chat that enables you to talk to NetApp cloud experts.
 
 |===
+
+.Related links
+
+* link:task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations[Endpoints that the Connector contacts in AWS]
+* link:task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations[Endpoints that the Connector contacts in Azure]
+* link:task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations[Endpoints that the Connector contacts in Google Cloud]
+* link:task-set-up-networking-on-prem.html#endpoints-contacted-during-manual-installation[Endpoints contacted during manual installation of the Connector]

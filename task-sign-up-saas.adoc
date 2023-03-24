@@ -13,11 +13,11 @@ summary: When you get started with BlueXP, your first step is to sign up using y
 :imagesdir: ./media/ 
 
 [.lead]
-When you get started with BlueXP, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
+BlueXP is accessible from your web browser through a SaaS-based user interface. When you get started with BlueXP, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
 
 .Sign up options
 
-BlueXP is accessible from your web browser through a SaaS-based user interface. You can sign up to BlueXP using one of the following options:
+You can sign up to BlueXP using one of the following options:
 
 * Your existing NetApp Support Site (NSS) credentials
 

@@ -21,7 +21,7 @@ Get started with BlueXP in standard mode in a few steps.
 Go to the https://console.bluexp.netapp.com[BlueXP console^] and sign up. You'll be given the option to create an account, but you can skip that step if you're being invited to an existing account.
 
 [role="quick-margin-para"]
-At this point, you're logged in and can start using several BlueXP services like Digital Advisor, Amazon FSx for ONTAP, Azure NetApp Files, and more.
+At this point, you're logged in and can start using several BlueXP services like Digital Advisor, Amazon FSx for ONTAP, Azure NetApp Files, and more. link:concept-connectors.html[Learn what you can do without a Connector].
 
 [role="quick-margin-para"]
 link:task-sign-up-saas.html[Learn how to sign up and create an account].

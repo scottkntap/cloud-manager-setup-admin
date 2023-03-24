@@ -40,7 +40,7 @@ Attach the IAM role that you previously created to the Connector EC2 instance.
 
 .Result
 
-BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf. Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
 
 .AWS access key
@@ -67,7 +67,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .Result
 
-BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf. Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
 
 ====

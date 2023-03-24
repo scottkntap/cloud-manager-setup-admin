@@ -13,11 +13,9 @@ summary: A BlueXP account provides multi-tenancy and enables you to organize use
 :imagesdir: ./media/
 
 [.lead]
-A _BlueXP account_ provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within BlueXP.
+A _BlueXP account_ provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within BlueXP. For example, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called _workspaces_. These workspaces are invisible to other users, unless they are shared.
 
-For example, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called _workspaces_. These workspaces are invisible to other users, unless they are shared.
-
-When you first access BlueXP, you're prompted to select or create an account:
+When you first access BlueXP, you're prompted to select or create an account. For example, you'll see the following screen if you don't have an account yet:
 
 image:screenshot-account-selection.png[A screenshot of the BlueXP setup wizard that prompts you for the BlueXP account in which you want to create BlueXP.]
 
@@ -29,7 +27,7 @@ link:task-managing-netapp-accounts.html[Learn how to manage your BlueXP account]
 
 == Deployment modes
 
-BlueXP offers the following deployment modes for your account: standard mode, restricted mode, and private mode. These modes support environments with varying levels of connectivity.
+BlueXP offers the following deployment modes for your account: standard mode, restricted mode, and private mode. These modes support environments that have distinct requirements for data security and privacy.
 
 link:concept-modes.html[Learn more about BlueXP deployment modes].
 
@@ -62,7 +60,7 @@ link:task-setting-up-netapp-accounts.html[Learn how to add a workspace].
 
 A Connector enables BlueXP to manage resources and processes within your public cloud environment. The Connector runs on a virtual machine instance that you deploy in your cloud provider, or on an on-prem host that you configured.
 
-You can use a Connector with more than one NetApp cloud data service. For example, if you're using a Connector to manage Cloud Volumes ONTAP, you can use that same Connector with another service like Cloud Tiering.
+You can use a Connector with more than one BlueXP service. For example, if you're using a Connector to manage Cloud Volumes ONTAP, you can use that same Connector with another service like Cloud Tiering.
 
 link:concept-connectors.html[Learn more about Connectors].
 
@@ -72,13 +70,13 @@ The following examples depict how you might set up your accounts.
 
 NOTE: In both example images that follow, the Connector and the Cloud Volumes ONTAP systems don't actually reside _in_ the BlueXP account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
-=== Example 1
+=== Multiple workspaces
 
 The following example shows an account that uses two workspaces to create isolated environments. The first workspace is for a production environment and the second is for a dev environment.
 
 image:diagram_cloud_central_accounts_one.png[A diagram that shows a single BlueXP account that contains two workspaces. Each workspace is associated with the same Connector and each has their own Workspace Admin.]
 
-=== Example 2
+=== Multiple accounts
 
 Here's another example that shows the highest level of multi-tenancy by using two separate BlueXP accounts. For example, a service provider might use BlueXP in one account to provide services for their customers, while using another account to provide disaster recovery for one of their business units.
 

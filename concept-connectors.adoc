@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-connectors.html
 keywords: concept, connectors, learn about connectors, what are connectors, what is a connector, what's a connector, days, 14 days, when is a connector required, connector supported locations, restricted mode, private mode, dark site, permissions, multiple connectors, disaster recovery
-summary: You don't need a Connector to get started with BlueXP, but you'll need to create a Connector to unlock all BlueXP features and services.
+summary: A Connector is NetApp software running in your cloud network or on-premises network. It executes the actions that BlueXP needs to perform in order to manage your data infrastructure. The Connector constantly polls the BlueXP SaaS layer for any actions that it needs to take. You don't need a Connector to get started with BlueXP, but you'll need to create a Connector to unlock all BlueXP features and services.
 ---
 
 = Learn about Connectors
@@ -13,11 +13,7 @@ summary: You don't need a Connector to get started with BlueXP, but you'll need 
 :imagesdir: ./media/
 
 [.lead]
-You don't need a Connector to get started with BlueXP, but you'll need to create a Connector to unlock all BlueXP features and services.
-
-== Overview
-
-A Connector is NetApp software running in your cloud network or on-premises network. It executes the actions that BlueXP needs to perform in order to manage your data infrastructure. The Connector constantly polls the BlueXP SaaS layer for any actions that it needs to take.
+A _Connector_ is NetApp software running in your cloud network or on-premises network. It executes the actions that BlueXP needs to perform in order to manage your data infrastructure. The Connector constantly polls the BlueXP SaaS layer for any actions that it needs to take. You don't need a Connector to get started with BlueXP, but you'll need to create a Connector to unlock all BlueXP features and services.
 
 == What you can do without a Connector
 
@@ -33,9 +29,9 @@ While a Connector isn't required to create a working environment, it is required
 +
 While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Data Sense to scan Azure NetApp Files data.
 
-* Cloud Volumes Service for Google Cloud
-
 * Cloud Sync
+
+* Cloud Volumes Service for Google Cloud
 
 * Digital Advisor
 
@@ -71,11 +67,11 @@ When you use BlueXP in standard mode through the SaaS website, a Connector is re
 
 == Connectors must be operational at all times
 
-Connectors are a fundamental part of the NetApp BlueXP service architecture. It is your responsibility to ensure that relevant Connectors are up, operational, and accessible at all times. While the service is designed to overcome short outages of Connector availability, you must take immediate action when required to remedy infrastructure failures.
+Connectors are a fundamental part of the BlueXP service architecture. It's your responsibility to ensure that relevant Connectors are up, operational, and accessible at all times. While the service is designed to overcome short outages of Connector availability, you must take immediate action when required to remedy infrastructure failures.
 
 This documentation is governed by the EULA. If the product is not operated in accordance with the documentation, the functionality and operation of the product, as well as your rights under the EULA, may be adversely impacted.
 
-=== Affect on Cloud Volumes ONTAP
+=== Impact on Cloud Volumes ONTAP
 
 A Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems and capacity-based BYOL systems shut down after losing communication with a Connector for longer than 14 days. This happens because the Connector refreshes licensing on the system each day.
 
@@ -107,7 +103,7 @@ link:concept-modes.html[Learn about BlueXP deployment modes].
 
 A BlueXP Account Admin can create a Connector directly from BlueXP, from your cloud provider's marketplace, or by manually installing the software on your own Linux host. How you get started depends on whether you're using BlueXP in standard mode, restricted mode, or private mode.
 
-* link:concept-modes.html[Learn about BlueXP deployment modes].
+* link:concept-modes.html[Learn about BlueXP deployment modes]
 * link:task-quick-start-standard-mode.html[Quick start for BlueXP in standard mode]
 * link:task-quick-start-restricted-mode.html[Quick start for BlueXP in restricted mode]
 * link:task-quick-start-private-mode.html[Quick start for BlueXP in private mode]
@@ -150,7 +146,7 @@ In some cases, you might only need one Connector, but you might find yourself ne
 
 Here are a few examples:
 
-* You're using a multi-cloud environment (AWS and Azure), so you have one Connector in AWS and another in Azure. Each manages the Cloud Volumes ONTAP systems running in those environments.
+* You have a multi-cloud environment (AWS and Azure) and you prefer to have one Connector in AWS and another in Azure. Each manages the Cloud Volumes ONTAP systems running in those environments.
 
 * A service provider might use one BlueXP account to provide services for their customers, while using another account to provide disaster recovery for one of their business units. Each account would have separate Connectors.
 
@@ -166,7 +162,7 @@ You can manage a working environment with multiple Connectors at the same time f
 
 To set up this configuration:
 
-. link:task-managing-connectors.html[Switch to another Connector]
+. link:task-managing-connectors.html[Switch to another Connector].
 . Discover the existing working environment.
 +
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html[Add existing Cloud Volumes ONTAP systems to BlueXP^]

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-overview.html
 keywords: overview, concepts, features, use case, cloud manager, bluexp, how bluexp works, supported cloud providers, cloud providers, hyperscalers
-summary: BlueXP enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
+summary: NetApp BlueXP provides your organization with a single control plane for building, protecting, and governing a unified data estate across all of your on-premises and cloud deployments. Use a complete spectrum of data service capabilities across your hybrid multicloud with common operational frameworks, including resource discovery and deployment, observability, protection, governance, mobility, and resource management and optimization.
 ---
 
 = Learn about BlueXP
@@ -13,32 +13,48 @@ summary: BlueXP enables IT experts and cloud architects to centrally manage thei
 :imagesdir: ./media/
 
 [.lead]
-BlueXP enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp's cloud solutions.
+NetApp BlueXP provides your organization with a single control plane for building, protecting, and governing a unified data estate across all of your on-premises and cloud deployments. Use a complete spectrum of data service capabilities across your hybrid multicloud with common operational frameworks, including resource discovery and deployment, observability, protection, governance, mobility, and resource management and optimization.
 
 == Features
 
-BlueXP is an enterprise-class, SaaS-based management platform that keeps you in control of your data no matter where it is.
+The BlueXP platform provides four main pillars of data management: storage, mobility, protection, and analysis and control.
+
+Storage:: 
+Discover, deploy, and manage storage, whether it's in AWS, Azure, Google Cloud, or on premises.
 
 * Set up and use https://cloud.netapp.com/ontap-cloud[Cloud Volumes ONTAP^] for efficient, multi-protocol data management across clouds.
+
 * Set up and use cloud file-storage services:
 +
 ** https://bluexp.netapp.com/azure-netapp-files[Azure NetApp Files^]
 ** https://bluexp.netapp.com/fsx-for-ontap[Amazon FSx for ONTAP^]
 ** https://bluexp.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
-* Discover and manage https://bluexp.netapp.com/netapp-on-premises[on-premises storage^]
+
+* Discover and manage https://bluexp.netapp.com/netapp-on-premises[on-premises storage^]:
 ** E-Series systems
 ** ONTAP clusters
 ** StorageGRID systems
-* Use BlueXP's services for data mobility, data protection, and data analysis and control:
-** https://bluexp.netapp.com/cloud-backup[Cloud Backup^]
-** https://bluexp.netapp.com/netapp-cloud-data-sense[Cloud Data Sense^]
+
+Mobility::
+Move data where it's needed by syncing, copying, tiering, and caching data.
+
 ** https://bluexp.netapp.com/cloud-sync-service[Cloud Sync^]
 ** https://bluexp.netapp.com/cloud-tiering[Cloud Tiering^]
-** https://bluexp.netapp.com/digital-advisor[Digital Advisor^]
 ** https://bluexp.netapp.com/global-file-cache[Global File Cache^]
-** https://bluexp.netapp.com/k8s[Kubernetes^]
-** https://bluexp.netapp.com/ransomware-protection[Ransomware Protection^]
+
+Protection::
+Use automated protection mechanisms to protect data against data loss, unplanned outages, ransomware, and other cyber threats.
+
+** https://bluexp.netapp.com/cloud-backup[Cloud Backup^]
 ** https://bluexp.netapp.com/replication[Replication^]
+** https://bluexp.netapp.com/ransomware-protection[Ransomware Protection^]
+** https://bluexp.netapp.com/k8s[Kubernetes^]
+
+Analysis and control::
+Use tools to monitor, map, and optimize your data storage and infrastructure.
+
+** https://bluexp.netapp.com/netapp-cloud-data-sense[Cloud Data Sense^]
+** https://bluexp.netapp.com/digital-advisor[Digital Advisor^]
 
 https://cloud.netapp.com/cloud-manager[Learn more about BlueXP^]
 
@@ -70,11 +86,11 @@ You don't need a Connector to get started with BlueXP, but you'll need to create
 
 link:concept-connectors.html[Learn more about Connectors].
 
-=== Restricted and private sites
+=== Restricted mode and private mode 
 
-BlueXP is also supported in environments where you need to restrict some or all internet access. In those environments, you access the BlueXP interface and API through the Connector software, rather than through the SaaS website.
+BlueXP is also supported in environments where you need to restrict connectivity to the BlueXP SaaS control plane. In those environments, you access the BlueXP control plane through the Connector software that's running in your cloud or on-premises network.
 
-link:concept-modes.html[Learn about BlueXP deployment modes].
+link:concept-modes.html[Learn more about BlueXP deployment modes].
 
 == SOC 2 Type 2 certification
 
