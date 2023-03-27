@@ -77,33 +77,50 @@ The following table provides a comparison of these modes.
 | Through SaaS using auth0 or identity federation
 | Local user authentication
 
-| Supported BlueXP services
-| All
-a|
-* Amazon FSx for ONTAP
-* Azure NetApp Files
-* Cloud Backup
-* Cloud Data Sense
-* Cloud Volumes ONTAP
-* Digital Wallet
-* On-prem ONTAP clusters
-* Replication
-
-Cloud Backup, Cloud Data Sense, and Replication are supported in Government regions only. They are not supported in commercial regions or in sovereign regions with restricted mode.
-a|
-* Cloud Backup
-* Cloud Data Sense
-* Cloud Volumes ONTAP
-* Digital Wallet
-* On-prem ONTAP clusters
-* Replication
-
 | Licensing options
 | Marketplace subscriptions and BYOL
 | Marketplace subscriptions and BYOL
 | BYOL
 
 |===
+
+Here's another comparison that shows which BlueXP services and features are supported with restricted mode and private mode.
+
+[options="header",cols="33h,33,33"]
+|===
+
+| BlueXP service or feature
+| Restricted mode
+| Private mode
+
+| Amazon FSx for ONTAP | Yes | No 
+| AppTemplate | No | No 
+| Azure NetApp Files | Yes | No 
+| Cloud Backup | Yes | Yes 
+| Cloud Data Sense | Yes | Yes
+| Cloud Sync | No | No 
+| Cloud Tiering | No | No 
+| Cloud Volumes ONTAP | Yes | Yes 
+| Cloud Volumes Service for Google Cloud | No | No 
+| Compute | ? | ?
+| Digital Advisor | No | No 
+| Digital Wallet | Yes* | Yes 
+| E-Series | No | No 
+| Global File Cache | No | No 
+| Kubernetes clusters | ? | ? 
+| On-prem ONTAP clusters | Yes | Yes
+| Ransomware Protection | No | No
+| Replication | Yes | Yes 
+| StorageGRID | No | No 
+| Credentials | Yes | Yes 
+| NSS accounts | Yes | No 
+| Notifications | Yes | No 
+| Timeline | Yes | Yes
+
+|===
+
+Cloud Backup, Cloud Data Sense, and Replication are supported in Government regions only. They are not supported in commercial regions or in sovereign regions with restricted mode.
+
 To learn more about these modes, read through the following sections.
 
 == Standard mode
@@ -279,7 +296,7 @@ Not supported in Google Cloud or in https://aws.amazon.com/federal/us-intelligen
 
 | Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for private mode.
 
-| On-premises ONTAP clusters | Full support
+| On-premises ONTAP clusters | Requires connectivity from the cloud (where the Connector is installed) to the on-premises environment.
 
 |===
 
