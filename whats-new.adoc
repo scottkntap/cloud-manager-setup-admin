@@ -16,6 +16,44 @@ summary: "Learn what's new with BlueXP administration features: NetApp accounts,
 Learn what's new with BlueXP administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 2 April 2023
+
+=== Connector 3.9.28
+
+* Email notifications are now supported with the Digital Wallet. 
++
+If you configure your notification settings, you can receive email notifications when your BYOL licenses are about to expire (a "Warning" notification) or if they have already expired (an "Error" notification).
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html[Learn how to set up email notifications].
+
+* The Connector is now supported in the Google Cloud Turin region.
++
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+
+* You can now discover VMware vCenter Servers in BlueXP.
++
+After you discover a VMware vCenter Server, you can open the working environment to view details about the datastores and virtual machines that are associated with the server.
++
+The only requirements are a Connector that has a connection to a VMware vCenter Server running version 7.0 or later. 
++
+To get started, click *Add Working Environment > On-Premises > VMware vCenter Server*, enter the domain name or IP address for the server, and then enter the user name and password for the admin user.
+
+* You can now manage the user credentials that are associated with your BlueXP login: ONTAP credentials and NetApp Support Site (NSS) credentials.
++
+When you go to *Settings > Credentials*, you can view the credentials, update the credentials, and delete them. For example, if you change the password for these credentials, then you'll need to update the password in BlueXP.
++
+link:task-manage-user-credentials.html[Learn how to manager user credentials].
+
+* You can now upload attachments when you create a support cases or when you update the case notes for an existing support case.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-get-help.html#manage-your-support-cases[Learn how to create and manage support cases].
+
+* This release of the Connector also includes Cloud Volumes ONTAP enhancements and on-prem ONTAP cluster enhancements.
++
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#4-december-2022[Learn about Cloud Volumes ONTAP enhancements^]
+
+** https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/whats-new.html#4-december-2022[Learn about ONTAP on-prem cluster enhancements^]
+
 == 5 March 2023
 
 === Connector 3.9.27
@@ -88,6 +126,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gc
 * This release of the Connector includes Cloud Volumes ONTAP enhancements.
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-february-2023[Learn about Cloud Volumes ONTAP enhancements^]
+//end::whats-new[]
 
 == 1 January 2023
 
@@ -96,7 +135,6 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5
 This release of the Connector includes Cloud Volumes ONTAP enhancements and bug fixes.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#1-january-2023[Learn about Cloud Volumes ONTAP enhancements^]
-//end::whats-new[]
 
 == 4 December 2022
 
