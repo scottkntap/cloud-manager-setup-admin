@@ -90,7 +90,7 @@ To learn more about these modes, read through the following sections.
 
 The following image shows a typical deployment when using BlueXP in standard mode.
 
-image:diagram-standard-mode.png[A conceptual image...]
+image:diagram-standard-mode.png["A conceptual image that shows the public internet where the user interface, API, SaaS backend, and auth0 authentication are available, a virtual network in the cloud where a Connector is running and managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in standard mode:
 
@@ -128,7 +128,7 @@ link:task-quick-start-standard-mode.html[Learn how to get started with standard 
 
 The following image shows a typical deployment when using BlueXP in restricted mode.
 
-image:diagram-restricted-mode.png[A conceptual image...]
+image:diagram-restricted-mode.png["A conceptual image that shows the public internet where the SaaS backend and auth0 authentication are available, a virtual network in the cloud where a Connector is running and providing access to the user interface and API, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in restricted mode:
 
@@ -217,11 +217,11 @@ In private mode, you can install a Connector either on premises or in the cloud 
 
 The following image shows a _hybrid cloud_ deployment where the Connector is installed in the cloud and manages both Cloud Volumes ONTAP and an on-premises ONTAP cluster.
 
-image:diagram-private-mode-cloud.png[A conceptual image...]
+image:diagram-private-mode-cloud.png["A conceptual image that shows a virtual network in the cloud where a Connector is running and providing access to the user interface and API, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 Meanwhile, the second image shows an _on-premises deployment_ where the Connector manages an on-premises ONTAP cluster and provides access to supported BlueXP data services.
 
-image:diagram-private-mode-onprem.png[A conceptual image...]
+image:diagram-private-mode-onprem.png["A conceptual image that shows an on-premises data center where a Connector is running and providing access to the user interface, API, BlueXP data services, and is managing an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in private mode:
 
