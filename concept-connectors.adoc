@@ -134,6 +134,12 @@ We typically update the Connector software each month to introduce new features 
 
 The Connector automatically updates its software to the latest version, as long as it has outbound internet access to obtain the software update. If you're using BlueXP in private mode, then you'll need to manually upgrade the Connector.
 
+== Operating system maintenance
+
+Maintaining the operating system on the Connector host is your responsibility. For example, you should apply security updates to the operating system on the Connector host by following your company's standard procedures for operating system distribution.
+
+Note that you don't need to stop any services on the Connector host when running an OS update.
+
 == Multiple working environments
 
 A Connector can manage multiple working environments in BlueXP. The maximum number of working environments that a single Connector should manage varies. It depends on the type of working environments, the number of volumes, the amount of capacity being managed, and the number of users.
