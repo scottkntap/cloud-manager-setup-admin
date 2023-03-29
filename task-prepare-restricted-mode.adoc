@@ -90,6 +90,16 @@ If your organization requires deployment of a proxy server for all outgoing inte
 * Credentials
 * HTTPS certificate
 
+=== Public IP address in Azure
+
+If you want to use a public IP address with the Connector VM in Azure, the IP address must use a Basic SKU to ensure that BlueXP uses this public IP address.
+
+image:screenshot-azure-sku.png[A screenshot of the create new IP address in Azure that enables you to choose Basic under in the SKU field.]
+
+If you use a Standard SKU IP address instead, then BlueXP uses the _private_ IP address of the Connector, instead of the public IP. If the machine that you're using to access the BlueXP Console doesn't have access to that private IP address, then actions from the BlueXP Console will fail.
+
+https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses#sku[Azure documentation: Public IP SKU^]
+
 === Ports
 
 There's no incoming traffic to the Connector, unless you initiate it.

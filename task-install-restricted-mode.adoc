@@ -167,15 +167,23 @@ link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Learn how to se
 +
 Note the following as you configure the VM:
 
-* The Connector can perform optimally with either HDD or SSD disks.
+* *VM size*: Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
 
-* Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
+* *Disks*: The Connector can perform optimally with either HDD or SSD disks.
 
-* For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
+* *Public IP*: If you want to use a public IP address with the Connector VM, the IP address must use a Basic SKU to ensure that BlueXP uses this public IP address.
++
+image:screenshot-azure-sku.png[A screenshot of the create new IP address in Azure that enables you to choose Basic under in the SKU field.]
++
+If you use a Standard SKU IP address instead, then BlueXP uses the _private_ IP address of the Connector, instead of the public IP. If the machine that you're using to access the BlueXP Console doesn't have access to that private IP address, then actions from the BlueXP Console will fail.
++
+https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses#sku[Azure documentation: Public IP SKU^]
+
+* *Network security group*: The Connector requires inbound connections using SSH, HTTP, and HTTPS.
 +
 link:task-prepare-restricted-mode.html[Learn about networking requirements].
 
-* Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
+* *Identity*: Under *Management*, select *Enable system assigned managed identity*.
 +
 This setting is important because a managed identity allows the Connector virtual machine to identify itself to Azure Active Directory without providing any credentials. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[Learn more about managed identities for Azure resources^].
 
