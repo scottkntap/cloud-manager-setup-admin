@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-overview.html
 keywords: overview, concepts, features, use case, cloud manager, bluexp, how bluexp works, supported cloud providers, cloud providers, hyperscalers
-summary: NetApp BlueXP provides your organization with a single control plane for building, protecting, and governing a unified data estate across all of your on-premises and cloud deployments. Use a complete spectrum of data service capabilities across your hybrid multicloud with common operational frameworks, including resource discovery and deployment, observability, protection, governance, mobility, and resource management and optimization.
+summary: NetApp BlueXP provides your organization with a single control plane that helps you build, protect, and govern data across your on-premises and cloud environments. The BlueXP SaaS platform includes storage and data services that provide storage management, data mobility, data protection, and data analysis and control. Management capabilities are provided through a web-based console and APIs.
 ---
 
 = Learn about BlueXP
@@ -13,7 +13,7 @@ summary: NetApp BlueXP provides your organization with a single control plane fo
 :imagesdir: ./media/
 
 [.lead]
-NetApp BlueXP provides your organization with a single control plane for building, protecting, and governing a unified data estate across all of your on-premises and cloud deployments. Use a complete spectrum of data service capabilities across your hybrid multicloud with common operational frameworks, including resource discovery and deployment, observability, protection, governance, mobility, and resource management and optimization.
+NetApp BlueXP provides your organization with a single control plane that helps you build, protect, and govern data across your on-premises and cloud environments. The BlueXP SaaS platform includes storage and data services that provide storage management, data mobility, data protection, and data analysis and control. Management capabilities are provided through a web-based console and APIs.
 
 == Features
 
