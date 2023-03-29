@@ -275,6 +275,8 @@ Set up BlueXP.
 
 When you access the BlueXP console for the first time, you'll be prompted to choose an account to associate the Connector with and you'll need to enable restricted mode.
 
+NOTE: If you already have an account and you want to create another one, then you need to use the Tenancy API. link:task-create-account.html[Learn how to create an additional BlueXP account].
+
 .Steps
 
 . Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
