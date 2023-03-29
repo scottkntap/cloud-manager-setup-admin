@@ -13,7 +13,13 @@ summary: After you create one or more Connectors, you can manage them by switchi
 :imagesdir: ./media/
 
 [.lead]
-After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and more.
+After you create one or more Connectors, you can manage them by switching between Connectors, upgrading the software, and more.
+
+== Operating system maintenance
+
+Maintaining the operating system on the Connector host is your responsibility. For example, you should apply security updates to the operating system on the Connector host by following your company's standard procedures for operating system distribution.
+
+Note that you don't need to stop any services on the Connector host when running an OS update.
 
 == Switch between Connectors
 
@@ -35,17 +41,16 @@ If you're having problems, NetApp personnel might ask you to send an AutoSupport
 
 .Steps
 
-. Connect to the Connector local UI, as described in the section above.
-
 . In the upper right of the BlueXP console, click the Help icon, and select *Support*.
 +
 image:screenshot-help-support.png[A screenshot of the Help menu where Support is the first option listed]
 
-. Click *Connector*.
+. Click *BlueXP Connector*.
 
 . Depending on how you need to send the information to NetApp support, choose one of the following options:
 
 .. Select the option to download the AutoSupport message to your local machine. You can then send it to NetApp Support using a preferred method.
+
 .. Click *Send AutoSupport* to directly send the message to NetApp Support.
 
 +
@@ -55,59 +60,24 @@ image:screenshot-connector-autosupport.png[A screenshot of the Support Dashboard
 
 If you need to connect to the Linux VM that the Connector runs on, you can do so by using the connectivity options available from your cloud provider.
 
-=== AWS
-
+AWS::
 When you created the Connector instance in AWS, you provided an AWS access key and secret key. You can use this key pair to SSH to the instance.
-
++
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html[AWS Docs: Connect to your Linux instance^]
 
-=== Azure
-
+Azure::
 When you created the Connector VM in Azure, you chose to authenticate with a password or SSH public key. Use the authentication method that you chose to connect to the VM.
-
++
 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys#ssh-into-your-vm[Azure Docs: SSH into your VM^]
 
-=== Google Cloud
-
+Google Cloud::
 You can't specify an authentication method when you create a Connector in Google Cloud. However, you can connect to the Linux VM instance using the Google Cloud Console or Google Cloud CLI (gcloud).
-
++
 https://cloud.google.com/compute/docs/instances/connecting-to-instance[Google Cloud Docs: Connect to Linux VMs^]
 
-== Apply security updates
+== Upgrade the Connector when using private mode
 
-Update the operating system on the Connector to ensure that it's patched with the latest security updates.
-
-.Steps
-
-. Access the CLI shell on the Connector host.
-
-. Identify whether the following directory exists on the host:
-+
-/opt/application/netapp/service-manager-2
-+
-Connectors created after late 2022 should include this directory.
-
-. Depending on whether that directory exists or not, run commands to update the OS:
-
-* If the directory exists, run the following commands with elevated privileges:
-+
-[source,cli]
-sudo -s
-service netapp-service-manager stop
-yum -y update --security
-service netapp-service-manager start
-
-* If the directory _does not_ exist, run the following commands with elevated privileges:
-+
-[source,cli]
-sudo -s
-service service-manager stop
-yum -y update --security
-service service-manager start
-
-== Upgrade the Connector in a location without internet access
-
-If you link:task-install-connector-onprem-no-internet.html[installed the Connector in a location where there's no internet access], you can upgrade the Connector when a newer version is available from the NetApp Support Site.
+If you are using BlueXP in private mode, you can upgrade the Connector when a newer version is available from the NetApp Support Site.
 
 The Connector needs to restart during the upgrade process so the user interface will be unavailable during the upgrade.
 

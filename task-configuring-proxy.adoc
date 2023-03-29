@@ -25,19 +25,9 @@ If Cloud Volumes ONTAP systems don't have an outbound internet connection to sen
 
 When you configure a Connector to use a proxy server, that Connector and the Cloud Volumes ONTAP systems that it manages (including any HA mediators), all use the proxy server.
 
-Note that this operation restarts the Connector. Ensure that the Connector isn’t performing any operations before you proceed.
+Note that this operation restarts the Connector. Ensure that the Connector isn't performing any operations before you proceed.
 
 .Steps
-
-. link:task-logging-in.html[Log in to the BlueXP SaaS interface^] from a machine that has a network connection to the Connector instance.
-+
-If the Connector doesn't have a public IP address, you'll need a VPN connection or you'll need to connect from a jump host that's in the same network as the Connector.
-
-. Click the *Connector* drop-down and then click *Go to local UI* for a specific Connector.
-+
-image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector icon in the header and the Go to local UI action.]
-+
-The BlueXP interface running on the Connector loads in a new browser tab.
 
 . In the upper right of the BlueXP console, click the Settings icon, and select *Connector Settings*.
 +
