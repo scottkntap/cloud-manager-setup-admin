@@ -145,6 +145,8 @@ sidebar:
               url: /task-managing-netapp-accounts.html
             - title: Monitor operations in your account
               url: /task-monitor-cm-operations.html
+            - title: Create another account
+              url: /task-create-account.html
             - title: User roles
               url: /reference-user-roles.html
         - title: Connectors
