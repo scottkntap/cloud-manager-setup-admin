@@ -77,6 +77,11 @@ The following table provides a comparison of these modes.
 | Through SaaS using auth0 or identity federation
 | Local user authentication
 
+| Storage and data services
+| All are supported
+| Many are supported
+| Several are supported
+
 | Licensing options
 | Marketplace subscriptions and BYOL
 | Marketplace subscriptions and BYOL
@@ -84,7 +89,7 @@ The following table provides a comparison of these modes.
 
 |===
 
-To learn more about these modes, read through the following sections.
+Read through the following sections to learn more about these modes, including which BlueXP features and services are supported.
 
 == Standard mode
 
@@ -338,7 +343,7 @@ Note that some services might be supported with limitations. For more details ab
 | Digital Wallet | Yes | Yes 
 | E-Series | No | No 
 | Global File Cache | No | No
-| Google Cloud Storage |  | 
+| Google Cloud Storage | ? | ?
 | Kubernetes clusters | ? | ? 
 | On-prem ONTAP clusters | Yes | Yes
 | Ransomware Protection | No | No
