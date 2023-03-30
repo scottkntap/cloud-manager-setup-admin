@@ -67,7 +67,7 @@ The following table provides a comparison of these modes.
 | Automatic upgrades of NetApp Connector software
 | Manual upgrade required
 
-| UI and API access
+| UI access
 | From the SaaS website
 | Locally from the Connector VM
 | Locally from the Connector VM
@@ -95,7 +95,7 @@ Read through the following sections to learn more about these modes, including w
 
 The following image shows a typical deployment when using BlueXP in standard mode.
 
-image:diagram-standard-mode.png["A conceptual image that shows the public internet where the user interface, API, SaaS backend, and auth0 authentication are available, a virtual network in the cloud where a Connector is running and managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
+image:diagram-standard-mode.png["A conceptual image that shows the public internet where the user interface, SaaS backend, and auth0 authentication are available, a virtual network in the cloud where a Connector is running and managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in standard mode:
 
@@ -112,7 +112,7 @@ From a setup wizard in BlueXP, from the AWS or Azure Marketplace, or using an in
 Connector upgrades::
 Automated upgrades of the Connector software from BlueXP with monthly updates.
 
-User interface and API access::
+User interface access::
 From the SaaS website.
 
 Authentication::
@@ -133,7 +133,7 @@ link:task-quick-start-standard-mode.html[Learn how to get started with standard 
 
 The following image shows a typical deployment when using BlueXP in restricted mode.
 
-image:diagram-restricted-mode.png["A conceptual image that shows the public internet where the SaaS backend and auth0 authentication are available, a virtual network in the cloud where a Connector is running and providing access to the user interface and API, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
+image:diagram-restricted-mode.png["A conceptual image that shows the public internet where the SaaS backend and auth0 authentication are available, a virtual network in the cloud where a Connector is running and providing access to the user interface, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in restricted mode:
 
@@ -153,7 +153,7 @@ From the AWS or Azure Marketplace, or a manual installation on your own Linux ho
 Connector upgrades::
 Automated upgrades of the Connector software from BlueXP with monthly updates.
 
-User interface and API access::
+User interface access::
 From the Connector that's deployed in your cloud region.
 
 Authentication::
@@ -225,11 +225,11 @@ In private mode, you can install a Connector either on premises or in the cloud 
 
 The following image shows a _hybrid cloud_ deployment where the Connector is installed in the cloud and manages both Cloud Volumes ONTAP and an on-premises ONTAP cluster.
 
-image:diagram-private-mode-cloud.png["A conceptual image that shows a virtual network in the cloud where a Connector is running and providing access to the user interface and API, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
+image:diagram-private-mode-cloud.png["A conceptual image that shows a virtual network in the cloud where a Connector is running and providing access to the user interface, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 Meanwhile, the second image shows an _on-premises deployment_ where the Connector manages an on-premises ONTAP cluster and provides access to supported BlueXP data services.
 
-image:diagram-private-mode-onprem.png["A conceptual image that shows an on-premises data center where a Connector is running and providing access to the user interface, API, BlueXP data services, and is managing an AFF cluster in an on-premises data center."]
+image:diagram-private-mode-onprem.png["A conceptual image that shows an on-premises data center where a Connector is running and providing access to the user interface, BlueXP data services, and is managing an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in private mode:
 
@@ -245,7 +245,7 @@ Manual installation on your own Linux host in the cloud or on premises.
 Connector upgrades::
 Manual upgrades of the Connector software at undefined intervals.
 
-User interface and API access::
+User interface access::
 From the Connector that's deployed in your cloud region or on premises.
 
 Authentication::
