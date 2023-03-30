@@ -351,6 +351,10 @@ These steps apply only if you manually installed the Connector in AWS. For AWS M
 . Select *Actions > Security > Modify IAM role*.
 
 . Select the IAM role and click *Update IAM role*.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
 --
 
 .AWS access key
@@ -407,6 +411,10 @@ NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you 
 .. Click *Review + assign*.
 
 .. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.
 --
 
 .Azure service principal
@@ -451,6 +459,10 @@ Associate the service account with the Connector VM.
 https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Google Cloud documentation: Changing the service account and access scopes for an instance^]
 
 . If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in Google Cloud on your behalf.
 --
 
 ====

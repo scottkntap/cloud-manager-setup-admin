@@ -109,14 +109,6 @@ AWS services (amazonaws.com):
 | To manage resources in Azure public regions.
 
 | 
-\https://management.usgovcloudapi.net
-\https://login.microsoftonline.us
-\https://blob.core.usgovcloudapi.net
-\https://core.usgovcloudapi.net
-
-| To manage resources in Azure Government regions.
-
-| 
 \https://management.azure.microsoft.scloud
 \https://login.microsoftonline.microsoft.scloud
 \https://blob.core.microsoft.scloud
@@ -243,7 +235,7 @@ For standard regions, the permissions are spread across two policies. Two polici
 
 .Result
 
-The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
+The account now has the required permissions.
 --
 
 .Azure role

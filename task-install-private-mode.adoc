@@ -118,6 +118,10 @@ Attach the IAM role that you previously created to the Connector EC2 instance.
 . Select *Actions > Security > Modify IAM role*.
 
 . Select the IAM role and click *Update IAM role*.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
 --
 
 .AWS access key
@@ -125,8 +129,6 @@ Attach the IAM role that you previously created to the Connector EC2 instance.
 Provide BlueXP with the AWS access key for an IAM user that has the required permissions.
 
 .Steps
-
-. Ensure that the correct Connector is currently selected in BlueXP.
 
 . In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 +
@@ -174,6 +176,10 @@ NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you 
 .. Click *Review + assign*.
 
 .. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.
 --
 
 .Azure service principal
@@ -181,8 +187,6 @@ NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you 
 Provide BlueXP with the credentials for the Azure service principal that you previously setup.
 
 .Steps
-
-. Go to the https://console.bluexp.netapp.com[BlueXP console^] and log in.
 
 . In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 +
@@ -218,6 +222,10 @@ Associate the service account with the Connector VM.
 https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Google Cloud documentation: Changing the service account and access scopes for an instance^]
 
 . If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in Google Cloud on your behalf.
 --
 
 ====

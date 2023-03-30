@@ -65,6 +65,13 @@ The host might try to update operating system packages during installation. The 
 
 The Connector requires outbound internet access to contact the following endpoints in order to manage resources and processes within your public cloud environment.
 
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.AWS
+--
 [cols=2*,options="header,autowidth"]
 |===
 | Endpoints
@@ -75,6 +82,40 @@ The Connector requires outbound internet access to contact the following endpoin
 
 | To manage resources in AWS.
 
+| \https://support.netapp.com 
+
+| To obtain licensing information and to send AutoSupport messages to NetApp support.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+--
+
+.Azure
+--
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
 | 
 \https://management.azure.com
 \https://login.microsoftonline.com
@@ -82,16 +123,41 @@ The Connector requires outbound internet access to contact the following endpoin
 | To manage resources in Azure public regions.
 
 | 
-\https://management.usgovcloudapi.net
-\https://login.microsoftonline.us
-
-| To manage resources in Azure Government regions.
-
-| 
 \https://management.chinacloudapi.cn
 \https://login.chinacloudapi.cn
 
 | To manage resources in Azure China regions.
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+--
+
+.Google Cloud
+--
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
 
 | 
 \https://www.googleapis.com/compute/v1/
@@ -127,6 +193,11 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 | To upgrade the Connector and its Docker components.
 
 |===
+--
+
+====
+
+// end tabbed area
 
 .Related link
 
