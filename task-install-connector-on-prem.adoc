@@ -114,4 +114,8 @@ You should keep restricted mode disabled because these steps describe how to use
 
 .Result
 
-BlueXP is now set up with the Connector that you just installed. You can now go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+BlueXP is now set up with the Connector that you just installed.
+
+.What's next?
+
+link:task-provide-permissions-on-prem.html[Provide BlueXP with the permissions that you previously setup].

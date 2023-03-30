@@ -253,11 +253,11 @@ You should keep restricted mode disabled because these steps describe how to use
 
 .Result
 
-The Connector is now installed, has the required permissions that BlueXP needs, and is set up with your BlueXP account.
+The Connector is now installed and is set up with your BlueXP account.
 
 .What's next?
 
-Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+link:task-provide-permissions-google.html[Provide BlueXP with the permissions that you previously setup].
 --
 
 ====

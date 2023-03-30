@@ -15,6 +15,8 @@ summary: If you manually installed the Connector software on your own Linux host
 [.lead]
 If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
 
+link:task-set-up-permissions-google.html[Learn how to set up these permissions].
+
 These steps don't apply if you deployed the Connector directly from BlueXP or by using gcloud.
 
 .Steps

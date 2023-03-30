@@ -30,8 +30,6 @@ If you just created these credentials in AWS, it might take a few minutes until 
 
 .Steps
 
-. Ensure that the correct Connector is currently selected in BlueXP.
-
 . In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
@@ -48,7 +46,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .Result
 
-BlueXP now has the permissions that it needs to perform actions in AWS on your behalf.
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf. You can now go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
 
 .Azure
@@ -80,7 +78,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .Result
 
-BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.
+BlueXP now has the permissions that it needs to perform actions in Azure on your behalf. You can now go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
 --
 
 ====

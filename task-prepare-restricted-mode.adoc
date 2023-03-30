@@ -19,7 +19,7 @@ You should understand what's needed to get started with BlueXP in restricted mod
 
 Before you get started, you should have an understanding of how BlueXP works in restricted mode. 
 
-For example, you should understand that you need to use the user interface and API that are available locally from the BlueXP Connector that you need to install. You can't access BlueXP from the SaaS website.
+For example, you should understand that you need to use the user interface that is available locally from the BlueXP Connector that you need to install. You can't access BlueXP from the SaaS website.
 
 In addition, not all BlueXP services are available.
 
@@ -226,7 +226,7 @@ In restricted mode, the BlueXP user interface is accessible from the Connector. 
 
 == Prepare cloud permissions
 
-BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use Cloud Backup and Cloud Data Sense. You need to set up permissions in your cloud provider and then associate those permissions with the Connector.
+BlueXP requires permissions from your cloud provider to deploy Cloud Volumes ONTAP in a virtual network and to use BlueXP data services. You need to set up permissions in your cloud provider and then associate those permissions with the Connector.
 
 To view the required steps, select the authentication option that you'd like to use for your cloud provider. 
 
@@ -297,7 +297,7 @@ For standard regions, the permissions are spread across two policies. Two polici
 
 .Result
 
-The account now has the required permissions. <<add-the-credentials,You can now add the credentials to a Connector>>.
+The account now has the required permissions.
 --
 
 .Azure role
@@ -500,7 +500,7 @@ Several APIs are required to deploy Cloud Volumes ONTAP in Google Cloud.
 
 .Step
 
-. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^].
+. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^]
 +
 * Cloud Deployment Manager V2 API
 * Cloud Logging API

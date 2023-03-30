@@ -136,7 +136,7 @@ The Connector is now installed and is set up with your BlueXP account.
 
 .What's next?
 
-Add permissions to the Connector.
+link:task-provide-permissions-azure.html[Provide BlueXP with the permissions that you previously setup].
 --
 
 .Manual install
@@ -234,7 +234,7 @@ The Connector is now installed and is set up with your BlueXP account.
 
 .What's next?
 
-Add permissions to the Connector.
+link:task-provide-permissions-azure.html[Provide BlueXP with the permissions that you previously setup].
 --
 
 ====

@@ -21,7 +21,7 @@ NOTE: If you want to use BlueXP in the https://aws.amazon.com/federal/us-intelli
 
 Before you get started, you should have an understanding of how BlueXP works in private mode. 
 
-For example, you should understand that you need to use the user interface and API that are available locally from the BlueXP Connector that you need to install. You can't access BlueXP from the SaaS website.
+For example, you should understand that you need to use the user interface that is available locally from the BlueXP Connector that you need to install. You can't access BlueXP from the SaaS website.
 
 In addition, not all BlueXP services are available.
 
@@ -216,7 +216,7 @@ Use an IAM role to provide the Connector with permissions. You'll need to manual
 You now have an IAM role for the Connector EC2 instance.
 --
 
-AWS access key
+.AWS access key
 --
 Set up permissions and an access key for an IAM user. You'll need to provide BlueXP with the AWS access key after you install the Connector and set up BlueXP.
 
@@ -446,7 +446,7 @@ Several APIs are required to deploy Cloud Volumes ONTAP in Google Cloud.
 
 .Step
 
-. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^].
+. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^]
 +
 * Cloud Deployment Manager V2 API
 * Cloud Logging API

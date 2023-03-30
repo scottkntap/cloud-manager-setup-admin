@@ -195,7 +195,7 @@ Azure deploys the virtual machine with the specified settings. The virtual machi
 
 .What's next?
 
-Provide BlueXP with the permissions that you previously set up.
+Set up BlueXP.
 --
 
 .Manual install
@@ -353,7 +353,7 @@ These steps apply only if you manually installed the Connector in AWS. For AWS M
 . Select the IAM role and click *Update IAM role*.
 --
 
-AWS access key
+.AWS access key
 --
 Provide BlueXP with the AWS access key for an IAM user that has the required permissions.
 

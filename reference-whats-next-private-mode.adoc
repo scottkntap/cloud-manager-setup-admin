@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-whats-next-private-mode.html
 keywords: private mode, what you can do
-summary: After you're up and running with BlueXP in private mode, your next step depends on whether you plan to manage storage in the cloud or on premises.
+summary: After you get up and running with BlueXP in private mode, you can start using the BlueXP services that are supported with private mode.
 ---
 
 = What you can do next (private mode)
@@ -13,19 +13,12 @@ summary: After you're up and running with BlueXP in private mode, your next step
 :imagesdir: ./media/
 
 [.lead]
-After you're up and running with BlueXP in private mode, your next step depends on whether you plan to manage storage in the cloud or on premises.
+After you get up and running with BlueXP in private mode, you can start using the BlueXP services that are supported with private mode.
 
-Cloud environment::
-In a cloud environment, you can use BlueXP in private mode to deploy Cloud Volumes ONTAP systems:
+For help, refer to the following documentation:
 
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[Quick start for Cloud Volumes ONTAP in AWS^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[Quick start for Cloud Volumes ONTAP in Microsoft Azure^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[Quick start for Cloud Volumes ONTAP in Google Cloud^]
-
-On premises::
-In an on-premises environment, you can use BlueXP in private mode as follows:
-
-* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Discover on-prem ONTAP clusters^]
-* https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicate data between on-prem ONTAP clusters^]
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Back up on-prem ONTAP volume data to StorageGRID using Cloud Backup^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[Create Cloud Volumes ONTAP systems^]
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/index.html[Discover on-premises ONTAP clusters^]
+* https://docs.netapp.com/us-en/cloud-manager-replication/index.html[Replicate data^]
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Scan on-prem ONTAP volume data using Cloud Data Sense^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Back up on-prem ONTAP volume data to StorageGRID using Cloud Backup^]

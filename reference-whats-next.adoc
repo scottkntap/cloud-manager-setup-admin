@@ -13,6 +13,6 @@ summary: Now that you've logged in and set up BlueXP in standard mode, users can
 :imagesdir: ./media/
 
 [.lead]
-Now that you've logged in and set up BlueXP in standard mode, users can create and discover working environments and use BlueXP services.
+Now that you've logged in and set up BlueXP in standard mode, users can create and discover working environments and use BlueXP data services.
 
-Go to the https://docs.netapp.com/us-en/cloud-manager-family/[home page for the BlueXP documentation^] to view the docs for all BlueXP services.
+For help, go to the https://docs.netapp.com/us-en/cloud-manager-family/[home page for the BlueXP documentation^] to view the docs for all BlueXP services.

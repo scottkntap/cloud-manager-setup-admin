@@ -15,11 +15,19 @@ summary: Set up Azure permissions so that you can use BlueXP to manage your data
 [.lead]
 Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure in Azure. How you set up permissions depends on the installation option that you're planning to use.
 
+You can choose from the following installation options:
+
 * *Install from BlueXP*: Set up permissions that enable BlueXP to authenticate with Azure and deploy the VM. BlueXP automatically sets up permissions for the Connector VM during deployment.
++
+<<Set up permissions to create the Connector from BlueXP,View step-by-step instructions>>.
 
-* *Install from the Azure Marketplace*: Set up an Azure custom role to associate with the Connector VM.
+* *Install from the Azure Marketplace*: Set up an Azure custom role to associate with the Connector VM or with an Azure AD service principal.
++
+<<Set up permissions to assign after Azure Marketplace deployment or manual installation,View step-by-step instructions>>.
 
-* *Manual install*: Set up an Azure custom role to associate with the Connector VM.
+* *Manual install*: Set up an Azure custom role to associate with the Connector VM or with an Azure AD service principal.
++
+<<Set up permissions to assign after Azure Marketplace deployment or manual installation,View step-by-step instructions>>.
 
 == Set up permissions to create the Connector from BlueXP
 
@@ -280,7 +288,7 @@ You now have a client secret that BlueXP can use it to authenticate with Azure A
 
 .Result
 
-Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
+Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you create the Connector.
 --
 
 ====
@@ -338,6 +346,8 @@ az role definition create --role-definition Connector_Policy.json
 .Result
 
 You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
+
+link:task-provide-permissions-azure.html[Learn how to provide these permissions to BlueXP].
 --
 
 .Service principal
@@ -445,6 +455,8 @@ You now have a client secret that BlueXP can use it to authenticate with Azure A
 .Result
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
+
+link:task-provide-permissions-azure.html[Learn how to provide these permissions to BlueXP].
 --
 
 ====

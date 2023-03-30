@@ -53,7 +53,7 @@ For standard regions, the permissions are spread across two policies. Two polici
 
 You should now have access keys for an IAM user who has the required permissions. After you install the Connector, you'll need to associate these credentials with the Connector from BlueXP.
 
-link:task-install-connector-on-prem.html[Learn how to install the Connector and associate the credentials].
+link:task-provide-permissions-on-prem.html[Learn how to provide these permissions to BlueXP].
 --
 
 .Azure
@@ -196,7 +196,7 @@ You now have a client secret that BlueXP can use it to authenticate with Azure A
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. After you install the Connector, you'll need to associate these credentials with the Connector from BlueXP.
 
-link:task-install-connector-on-prem.html[Learn how to install the Connector and associate the credentials].
+link:task-provide-permissions-on-prem.html[Learn how to provide these permissions to BlueXP].
 --
 
 ====
