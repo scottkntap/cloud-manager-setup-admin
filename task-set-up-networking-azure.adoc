@@ -29,28 +29,6 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-pr
 
 A Connector requires a network connection to the location where you're planning to create and manage working environments.
 
-== Proxy server
-
-If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
-
-* IP address
-* Credentials
-* HTTPS certificate
-
-== Ports
-
-There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages.
-
-* HTTP (80) and HTTPS (443) provide access to the https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. 
-
-* SSH (22) is only needed if you need to connect to the host for troubleshooting. 
-
-* Inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
-
-== IP address limitation
-
-There's a possible conflict with IP addresses in the 172 range. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html[Learn more about this limitation].
-
 == Outbound internet access
 
 The network location where you deploy the Connector must have an outbound internet connection.
@@ -120,3 +98,25 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 .Related link
 
 link:reference-networking-saas-console.html[Prepare networking for user access to the BlueXP console]
+
+== Proxy server
+
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+== Ports
+
+There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages.
+
+* HTTP (80) and HTTPS (443) provide access to the https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. 
+
+* SSH (22) is only needed if you need to connect to the host for troubleshooting. 
+
+* Inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
+
+== IP address limitation
+
+There's a possible conflict with IP addresses in the 172 range. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html[Learn more about this limitation].

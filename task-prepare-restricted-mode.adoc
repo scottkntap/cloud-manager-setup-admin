@@ -82,30 +82,6 @@ Set up your networking so the Connector can manage resources and processes withi
 
 The Connector must have a network connection to the location where you plan to manage storage. For example, the VPC or VNet where you plan to deploy Cloud Volumes ONTAP, or the data center where your on-premises ONTAP clusters reside.
 
-=== Proxy server
-
-If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
-
-* IP address
-* Credentials
-* HTTPS certificate
-
-=== Public IP address in Azure
-
-If you want to use a public IP address with the Connector VM in Azure, the IP address must use a Basic SKU to ensure that BlueXP uses this public IP address.
-
-image:screenshot-azure-sku.png[A screenshot of the create new IP address in Azure that enables you to choose Basic under in the SKU field.]
-
-If you use a Standard SKU IP address instead, then BlueXP uses the _private_ IP address of the Connector, instead of the public IP. If the machine that you're using to access the BlueXP Console doesn't have access to that private IP address, then actions from the BlueXP Console will fail.
-
-https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses#sku[Azure documentation: Public IP SKU^]
-
-=== Ports
-
-There's no incoming traffic to the Connector, unless you initiate it.
-
-HTTP (80) and HTTPS (443) provide access to the BlueXP console. SSH (22) is only needed if you need to connect to the host for troubleshooting. Meanwhile, inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
-
 === Outbound internet access for manual installs
 
 If you plan to manually install the Connector on your own Linux host, the installer for the Connector requires access to the following URLs during the installation process:
@@ -198,6 +174,30 @@ NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but 
 | To upgrade the Connector and its Docker components.
 
 |===
+
+=== Proxy server
+
+If your organization requires deployment of a proxy server for all outgoing internet traffic, obtain the following information about your HTTP or HTTPS proxy:
+
+* IP address
+* Credentials
+* HTTPS certificate
+
+=== Public IP address in Azure
+
+If you want to use a public IP address with the Connector VM in Azure, the IP address must use a Basic SKU to ensure that BlueXP uses this public IP address.
+
+image:screenshot-azure-sku.png[A screenshot of the create new IP address in Azure that enables you to choose Basic under in the SKU field.]
+
+If you use a Standard SKU IP address instead, then BlueXP uses the _private_ IP address of the Connector, instead of the public IP. If the machine that you're using to access the BlueXP Console doesn't have access to that private IP address, then actions from the BlueXP Console will fail.
+
+https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses#sku[Azure documentation: Public IP SKU^]
+
+=== Ports
+
+There's no incoming traffic to the Connector, unless you initiate it.
+
+HTTP (80) and HTTPS (443) provide access to the BlueXP console. SSH (22) is only needed if you need to connect to the host for troubleshooting. Meanwhile, inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn't available.
 
 == Prepare networking for user access to BlueXP console
 
