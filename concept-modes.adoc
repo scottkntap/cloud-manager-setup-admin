@@ -13,7 +13,7 @@ summary: BlueXP deployment modes enable you to use BlueXP in a way that meets yo
 :imagesdir: ./media/
 
 [.lead]
-BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. When using BlueXP in _standard mode_, the control plane is the BlueXP service and you typically deploy a Connector in your environment, which connects to your data infrastructure and cloud accounts. With _restricted mode_ and _private mode_, we include some backend functionality in the Connector, which limits communication between the Connector and the SaaS backend.
+BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. When using BlueXP in _standard mode_, the control plane is the BlueXP service and you typically deploy a Connector in your environment, which connects to your data infrastructure and cloud accounts. With _restricted mode_ and _private mode_, we include some backend functionality with the Connector, which limits communication between the Connector and the SaaS backend.
 
 While BlueXP inhibits the flow of traffic, communication, and data when using restricted mode or private mode, it's your responsibility to ensure that your environment (on premises and in the cloud) is in compliance with the required regulations.
 
@@ -34,9 +34,9 @@ This mode is typically used by state and local governments and regulated compani
 <<Restricted mode, Learn more about outbound connectivity to the SaaS backend>>.
 
 Private mode::
-A BlueXP Connector is installed on premises or in the cloud (in a sovereign cloud region or commercial region) and has no connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website.
+A BlueXP Connector is installed on premises or in the cloud (in a secure region, sovereign cloud region, or commercial region) and has _no_ connectivity to the BlueXP SaaS backend. Users access BlueXP locally from the Connector, not from the SaaS website.
 +
-The cloud region can be a commercial region or a region for secure US agencies like https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S/SC2S^] or https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]
+A secure region includes https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S and SC2S^] and https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]
 
 The following table provides a comparison of these modes.
 
@@ -240,7 +240,7 @@ Supported location for the Connector::
 In the cloud or on premises.
 
 Connector installation::
-Manual installation on your own Linux host.
+Manual installation on your own Linux host in the cloud or on premises.
 
 Connector upgrades::
 Manual upgrades of the Connector software at undefined intervals.
