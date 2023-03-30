@@ -68,9 +68,8 @@ NOTE: The source IP address is the Connector host.
 | Purpose
 
 | API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
-.3+| API calls | TCP | 3000 | ONTAP HA mediator | Communication with the ONTAP HA mediator
+.2+| API calls | TCP | 3000 | ONTAP HA mediator | Communication with the ONTAP HA mediator
 | TCP | 8080 | Data Sense | Probe to Data Sense instance during deployment
-| TCP | 8088 | Backup to S3 | API calls to Backup to S3
 | DNS | UDP	| 53 | DNS | Used for DNS resolve by BlueXP
 
 |===
