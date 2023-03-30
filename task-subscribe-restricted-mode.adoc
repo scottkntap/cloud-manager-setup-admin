@@ -15,8 +15,6 @@ summary: Subscribe to BlueXP from your cloud provider's marketplace to pay for B
 [.lead]
 Subscribe to BlueXP from your cloud provider's marketplace to pay for BlueXP services at an hourly rate (PAYGO) or through an annual contract.
 
-NOTE: In Azure, annual contracts are not supported with government regions.
-
 // start tabbed area
 
 [role="tabbed-block"]
@@ -59,6 +57,9 @@ video::video_subscribing_aws.mp4[width=848, height=480]
 
 .Azure
 --
+
+NOTE: In Azure, annual contracts are not supported with government regions.
+
 .Steps
 
 . In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.

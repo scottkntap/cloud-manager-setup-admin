@@ -294,7 +294,7 @@ Manage the Azure credentials that you've already added to BlueXP by associating 
 [[subscribe]]
 === Associate an Azure Marketplace subscription to credentials
 
-After you add your Azure credentials to BlueXP, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+After you add your Azure credentials to BlueXP, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other BlueXP services.
 
 There are two scenarios in which you might associate an Azure Marketplace subscription after you've already added the credentials to BlueXP:
 

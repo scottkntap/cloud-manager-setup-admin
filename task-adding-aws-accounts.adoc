@@ -195,7 +195,7 @@ For details, refer to the https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/
 [[subscribe]]
 == Associate an AWS subscription
 
-After you add your AWS credentials to BlueXP, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or using an annual contract, and to use other NetApp cloud services.
+After you add your AWS credentials to BlueXP, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or using an annual contract, and to use other BlueXP services.
 
 There are two scenarios in which you might associate an AWS Marketplace subscription after you've already added the credentials to BlueXP:
 

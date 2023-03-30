@@ -168,7 +168,7 @@ You also need to ensure that the role is up to date as new permissions are added
 
 == How Azure permissions are used
 
-The following sections describe how the permissions are used for each NetApp cloud service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.
+The following sections describe how the permissions are used for each BlueXP service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.
 
 === AppTemplate tags
 

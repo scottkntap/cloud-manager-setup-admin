@@ -23,7 +23,7 @@ You can use the following BlueXP features and services without a Connector:
 
 * Amazon FSx for NetApp ONTAP working environment creation
 +
-While a Connector isn't required to create a working environment, it is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with NetApp cloud services, such as Data Sense and Cloud Sync.
+While a Connector isn't required to create a working environment, it is required to create and manage volumes, replicate data, and integrate FSx for ONTAP with BlueXP services, such as Data Sense and Cloud Sync.
 
 * Azure NetApp Files
 +

@@ -697,7 +697,7 @@ The second policy provides permissions for the following services:
 
 == How the AWS permissions are used
 
-The following sections describe how the permissions are used for each NetApp cloud service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.
+The following sections describe how the permissions are used for each BlueXP service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.
 
 === AppTemplate tags
 
