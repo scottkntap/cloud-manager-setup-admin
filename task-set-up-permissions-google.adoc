@@ -182,7 +182,7 @@ If you are using a shared VPC to deploy resources into a service project, then y
 
 This table is for reference and your environment should reflect the permissions table when IAM configuration is complete.
 
-[options="header"]
+[cols="10,10,10,20,20,30",options="header"]
 |===
 
 | Identity
