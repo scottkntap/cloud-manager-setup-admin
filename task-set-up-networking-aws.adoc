@@ -100,7 +100,7 @@ If your organization requires deployment of a proxy server for all outgoing inte
 
 There's no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages.
 
-* HTTP (80) and HTTPS (443) provide access to the https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. 
+* HTTP (80) and HTTPS (443) provide access to the local UI, which you'll use in rare circumstances. 
 
 * SSH (22) is only needed if you need to connect to the host for troubleshooting. 
 

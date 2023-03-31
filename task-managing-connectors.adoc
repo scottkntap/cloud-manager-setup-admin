@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-managing-connectors.html
-keywords: managing connectors, uninstall connector, switch connectors, switch between connectors, go to local UI, local interface, local connector, local cloud manager
+keywords: managing connectors, uninstall connector, switch connectors, switch between connectors, local interface, local connector, local cloud manager
 summary: After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and more.
 ---
 
