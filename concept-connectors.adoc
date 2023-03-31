@@ -136,11 +136,15 @@ The Connector automatically updates its software to the latest version, as long 
 
 link:task-managing-connectors.html[Learn how to manually upgrade the Connector software]
 
-== Operating system maintenance
+== Operating system and VM maintenance
 
 Maintaining the operating system on the Connector host is your responsibility. For example, you should apply security updates to the operating system on the Connector host by following your company's standard procedures for operating system distribution.
 
 Note that you don't need to stop any services on the Connector host when running an OS update.
+
+If you need to stop and then start the Connector VM, you should do so from your cloud provider's console or by using the standard procedures for on-premises management.
+
+<<Connectors must be operational at all times,Be aware that the Connector must be operational at all times>>.
 
 == Multiple working environments
 
