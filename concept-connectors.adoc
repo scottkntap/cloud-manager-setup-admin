@@ -95,7 +95,7 @@ If you want to use BlueXP services with Google Cloud, then you must use a Connec
 
 == Restricted mode and private mode
 
-To use BlueXP in restricted mode or private mode, you get started with BlueXP by installing the Connector and then accessing the user interface or API that's running locally on the Connector.
+To use BlueXP in restricted mode or private mode, you get started with BlueXP by installing the Connector and then accessing the user interface that's running locally on the Connector.
 
 link:concept-modes.html[Learn about BlueXP deployment modes].
 
@@ -133,6 +133,8 @@ To view the exact permissions that the Connector needs, refer to the following p
 We typically update the Connector software each month to introduce new features and to provide stability improvements. While most of the services and features in the BlueXP platform are offered through SaaS-based software, a few features and functionalities are dependent on the version of the Connector. That includes Cloud Volumes ONTAP management, on-prem ONTAP cluster management, settings, and help.
 
 The Connector automatically updates its software to the latest version, as long as it has outbound internet access to obtain the software update. If you're using BlueXP in private mode, then you'll need to manually upgrade the Connector.
+
+link:task-managing-connectors.html[Learn how to manually upgrade the Connector software]
 
 == Operating system maintenance
 

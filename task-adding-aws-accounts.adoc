@@ -39,9 +39,11 @@ With the first two options, BlueXP uses the AWS Security Token Service to obtain
 
 If you provide BlueXP with AWS access keys, you should rotate the keys by updating them in BlueXP at a regular interval. This is a completely manual process.
 
-== Add credentials to a Connector
+== Add additional credentials to a Connector
 
-Add AWS credentials to a Connector so that it has the permissions needed to manage resources and processes within your public cloud environment. You can either provide the ARN of an IAM role in another account or provide AWS access keys.
+Add additional AWS credentials to a Connector so that it has the permissions needed to manage resources and processes within your public cloud environment. You can either provide the ARN of an IAM role in another account or provide AWS access keys.
+
+If you're just getting started with BlueXP, link:concept-accounts-aws.html[Learn how BlueXP uses AWS credentials and permissions].
 
 === Grant permissions
 
@@ -64,7 +66,7 @@ If the Connector is installed on premises, you can't use this authentication met
 
 . Go to the IAM console in the target account in which you want to provide the Connector with permissions.
 
-. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
+. Under Access Management, select *Roles > Create Role* and follow the steps to create the role.
 +
 Be sure to do the following:
 
@@ -111,11 +113,11 @@ If you just created these credentials in your cloud provider, it might take a fe
 
 . Ensure that the correct Connector is currently selected in BlueXP.
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
-. Click *Add Credentials* and follow the steps in the wizard.
+. Select *Add Credentials* and follow the steps in the wizard.
 
 .. *Credentials Location*: Select *Amazon Web Services > Connector*.
 
@@ -125,13 +127,13 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 +
 To pay for Cloud Volumes ONTAP at an hourly rate (PAYGO) or with an annual contract, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
 
-.. *Review*: Confirm the details about the new credentials and click *Add*.
+.. *Review*: Confirm the details about the new credentials and select *Add*.
 
 .Result
 
 You can now switch to a different set of credentials from the Details and Credentials page when creating a new working environment:
 
-image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+image:screenshot_accounts_switch_aws.png[A screenshot that shows selecting between cloud provider accounts after selecting Switch Account in the Details & Credentials page.]
 
 == Add credentials to BlueXP for creating a Connector
 
@@ -145,7 +147,7 @@ Set up an IAM role that enables the BlueXP SaaS to assume the role.
 
 . Go to the IAM console in the target account.
 
-. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
+. Under Access Management, select *Roles > Create Role* and follow the steps to create the role.
 +
 Be sure to do the following:
 
@@ -154,7 +156,7 @@ Be sure to do the following:
 * Create a policy that includes the permissions required to create a Connector.
 +
 ** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html[View the permissions needed for FSx for ONTAP^]
-** link:task-creating-connectors-aws.html#create-an-iam-policy[View the Connector deployment policy]
+** link:task-set-up-permissions-aws.html[View the Connector deployment policy]
 
 . Copy the Role ARN of the IAM role so that you can paste it in BlueXP in the next step.
 
@@ -172,17 +174,17 @@ If you just created the IAM role, it might take a few minutes until they are ava
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
-. Click *Add Credentials* and follow the steps in the wizard.
+. Select *Add Credentials* and follow the steps in the wizard.
 
 .. *Credentials Location*: Select *Amazon Web Services > BlueXP*.
 
 .. *Define Credentials*: Provide the ARN (Amazon Resource Name) of the IAM role.
 
-.. *Review*: Confirm the details about the new credentials and click *Add*.
+.. *Review*: Confirm the details about the new credentials and select *Add*.
 
 .Result
 
@@ -208,19 +210,19 @@ You need to create a Connector before you can change BlueXP settings. link:conce
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 
-. Click the action menu for a set of credentials and then select *Associate Subscription*.
+. Select the action menu for a set of credentials and then select *Associate Subscription*.
 +
 image:screenshot_associate_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
-. To associate the credentials with an existing subscription, select the subscription from the down-down list and click *Associate*.
+. To associate the credentials with an existing subscription, select the subscription from the down-down list and select *Associate*.
 
-. To associate the credentials with a new subscription, click *Add Subscription > Continue* and follow the steps in the AWS Marketplace:
+. To associate the credentials with a new subscription, select *Add Subscription > Continue* and follow the steps in the AWS Marketplace:
 
-.. Click *View purchase options*.
-.. Click *Subscribe*.
-.. Click *Set up your account*.
+.. Select *View purchase options*.
+.. Select *Subscribe*.
+.. Select *Set up your account*.
 +
 You'll be redirected to the BlueXP website.
 .. From the *Subscription Assignment* page:
@@ -232,7 +234,7 @@ BlueXP replaces the existing subscription for all credentials in the account wit
 +
 For all other accounts, you'll need to manually associate the subscription by repeating these steps.
 
-* Click *Save*.
+* Select *Save*.
 +
 The following video shows the steps to subscribe from the Google Cloud Marketplace:
 +
@@ -246,11 +248,11 @@ TIP: You can't edit the credentials for an instance profile that is associated w
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 
-. Click the action menu for a set of credentials and then select *Edit Credentials*.
+. Select the action menu for a set of credentials and then select *Edit Credentials*.
 
-. Make the required changes and then click *Apply*.
+. Make the required changes and then select *Apply*.
 
 == Delete credentials
 
@@ -260,8 +262,8 @@ TIP: You can't delete the credentials for an instance profile that is associated
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 
-. Click the action menu for a set of credentials and then select *Delete Credentials*.
+. Select the action menu for a set of credentials and then select *Delete Credentials*.
 
-. Click *Delete* to confirm.
+. Select *Delete* to confirm.

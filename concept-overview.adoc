@@ -22,7 +22,7 @@ The BlueXP platform provides four main pillars of data management: storage, mobi
 Storage:: 
 Discover, deploy, and manage storage, whether it's in AWS, Azure, Google Cloud, or on premises.
 
-* Set up and use https://cloud.netapp.com/ontap-cloud[Cloud Volumes ONTAP^] for efficient, multi-protocol data management across clouds.
+* Set up and use https://bluexp.netapp.com/ontap-cloud[Cloud Volumes ONTAP^] for efficient, multi-protocol data management across clouds.
 
 * Set up and use cloud file-storage services:
 +
@@ -56,7 +56,7 @@ Use tools to monitor, map, and optimize your data storage and infrastructure.
 ** https://bluexp.netapp.com/netapp-cloud-data-sense[Cloud Data Sense^]
 ** https://bluexp.netapp.com/digital-advisor[Digital Advisor^]
 
-https://cloud.netapp.com/cloud-manager[Learn more about BlueXP^]
+https://bluexp.netapp.com/[Learn more about how you can use BlueXP to help your organization^]
 
 == Supported cloud providers
 
@@ -88,7 +88,7 @@ link:concept-connectors.html[Learn more about Connectors].
 
 === Restricted mode and private mode 
 
-BlueXP is also supported in environments where you need to restrict connectivity to the BlueXP SaaS control plane. In those environments, you access the BlueXP control plane through the Connector software that's running in your cloud or on-premises network.
+BlueXP is also supported in environments that have security and connectivity restrictions. You can use _restricted mode_ or _private mode_ to limit outbound connectivity to the BlueXP SaaS backend.
 
 link:concept-modes.html[Learn more about BlueXP deployment modes].
 

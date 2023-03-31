@@ -16,7 +16,7 @@ summary: "Learn what's new with BlueXP administration features: BlueXP accounts,
 Learn what's new with BlueXP administration features: BlueXP accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
-== 27 March 2023
+== 31 March 2023
 
 === Deployment modes
 
@@ -212,7 +212,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 * The Connector is now supported in the Azure West US 3 region.
 
 +
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements.
 +
@@ -234,7 +234,7 @@ NOTE: Existing logins that use an email address and password need to keep using 
 
 * The Connector is now supported in the Azure Brazil Southeast region.
 +
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements and on-prem ONTAP cluster enhancements.
 +
@@ -260,7 +260,7 @@ We updated the Connector to introduce bug fixes. The most notable fix is to an i
 ** Santiago (southamerica-west1)
 
 +
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
 
 * When you select the Google Cloud service account to use with the Connector, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
 +

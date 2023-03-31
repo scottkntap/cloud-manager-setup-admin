@@ -25,7 +25,7 @@ Install a certificate signed by a CA for secure access.
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *HTTPS Setup*.
+. In the upper right of the BlueXP console, select the Settings icon, and select *HTTPS Setup*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
@@ -37,7 +37,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 | Description
 | Generate a CSR
 a|
-.. Enter the host name or DNS of the Connector host (its Common Name), and then click *Generate CSR*.
+.. Enter the host name or DNS of the Connector host (its Common Name), and then select *Generate CSR*.
 +
 BlueXP displays a certificate signing request.
 
@@ -45,13 +45,13 @@ BlueXP displays a certificate signing request.
 +
 The certificate must use the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format.
 
-.. Upload the certificate file and then click *Install*.
+.. Upload the certificate file and then select *Install*.
 
 | Install your own CA-signed certificate
 a|
 .. Select *Install CA-signed certificate*.
 
-.. Load both the certificate file and the private key and then click *Install*.
+.. Load both the certificate file and the private key and then select *Install*.
 +
 The certificate must use the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format.
 |===
@@ -68,11 +68,11 @@ You should renew the BlueXP HTTPS certificate before it expires to ensure secure
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *HTTPS Setup*.
+. In the upper right of the BlueXP console, select the Settings icon, and select *HTTPS Setup*.
 +
 Details about the BlueXP certificate displays, including the expiration date.
 
-. Click *Change Certificate* and follow the steps to generate a CSR or install your own CA-signed certificate.
+. Select *Change Certificate* and follow the steps to generate a CSR or install your own CA-signed certificate.
 
 .Result
 

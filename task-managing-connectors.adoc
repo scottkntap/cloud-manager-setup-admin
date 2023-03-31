@@ -29,10 +29,12 @@ For example, let's say that you're working in a multi-cloud environment. You mig
 
 .Step
 
-. Click the *Connector* drop-down, select another Connector, and then click *Switch*.
+. Select the *Connector* drop-down, select another Connector, and then select *Switch*.
 +
 image:screenshot_connector_switch.gif[A screenshot that shows the Connector icon in the header and the Switch action.]
-+
+
+.Result
+
 BlueXP refreshes and shows the Working Environments associated with the selected Connector.
 
 == Download or send an AutoSupport message
@@ -41,20 +43,20 @@ If you're having problems, NetApp personnel might ask you to send an AutoSupport
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
+. In the upper right of the BlueXP console, select the Help icon, and select *Support*.
 +
 image:screenshot-help-support.png[A screenshot of the Help menu where Support is the first option listed]
 
-. Click *BlueXP Connector*.
+. Select *BlueXP Connector*.
 
 . Depending on how you need to send the information to NetApp support, choose one of the following options:
 
 .. Select the option to download the AutoSupport message to your local machine. You can then send it to NetApp Support using a preferred method.
 
-.. Click *Send AutoSupport* to directly send the message to NetApp Support.
+.. Select *Send AutoSupport* to directly send the message to NetApp Support.
 
 +
-image:screenshot-connector-autosupport.png[A screenshot of the Support Dashboard showing where users can click to download and send AutoSupport messages.]
+image:screenshot-connector-autosupport.png[A screenshot of the Support Dashboard showing where users can select to download and send AutoSupport messages.]
 
 == Connect to the Linux VM
 
@@ -123,9 +125,9 @@ system configuration backup settings modify -destination ""
 
 .. Go to BlueXP and open the working environment.
 
-.. Click the menu and select *Advanced > Configuration Backups*.
+.. Select the menu and select *Advanced > Configuration Backups*.
 
-.. Click *Set Backup Target*.
+.. Select *Set Backup Target*.
 
 == Edit a Connector's URIs
 
@@ -133,13 +135,13 @@ Add and remove the URIs for a Connector.
 
 .Steps
 
-. Click the *Connector* drop-down from the BlueXP header.
+. Select the *Connector* drop-down from the BlueXP header.
 
-. Click *Manage Connectors*.
+. Select *Manage Connectors*.
 
-. Click the action menu for a Connector and click *Edit URIs*.
+. Select the action menu for a Connector and select *Edit URIs*.
 
-. Add and remove URIs and then click *Apply*.
+. Add and remove URIs and then select *Apply*.
 
 == Fix download failures when using a Google Cloud NAT gateway
 
@@ -148,17 +150,17 @@ The Connector automatically downloads software updates for Cloud Volumes ONTAP. 
 .Step
 
 .	Submit a PUT request to /occm/config with the following JSON as body:
-
++
 [source.json]
 {
   "maxDownloadSessions": 32
 }
-
++
 The value for _maxDownloadSessions_ can be 1 or any integer greater than 1. If the value is 1, then the downloaded image will not be divided.
-
++
 Note that 32 is an example value. The value that you should use depends on your NAT configuration and the number of sessions that you can have simultaneously.
 
-https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].
+https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^]
 
 == Remove Connectors from BlueXP
 
@@ -167,19 +169,19 @@ If a Connector is inactive, you can remove it from the list of Connectors in Blu
 Note the following about removing a Connector:
 
 * This action doesn't delete the virtual machine.
-* This action can't be reverted--once you remove a Connector from BlueXP, you can't add it back
+* This action can't be reverted--once you remove a Connector from BlueXP, you can't add it back.
 
 .Steps
 
-. Click the *Connector* drop-down from the BlueXP header.
+. Select the *Connector* drop-down from the BlueXP header.
 
-. Click *Manage Connectors*.
+. Select *Manage Connectors*.
 
-. Click the action menu for an inactive Connector and click *Remove Connector*.
+. Select the action menu for an inactive Connector and select *Remove Connector*.
 +
 image:screenshot_connector_remove.gif[A screenshot of the Connector widget where you can remove an inactive Connector.]
 
-. Enter the name of the Connector to confirm and then click Remove.
+. Enter the name of the Connector to confirm and then select *Remove*.
 
 .Result
 
@@ -197,7 +199,8 @@ The online Connector includes an uninstallation script that you can use to unins
 
 . From the Linux host, run the uninstallation script:
 +
-*/opt/application/netapp/service-manager-2/uninstall.sh [silent]*
+[source,cli]
+/opt/application/netapp/service-manager-2/uninstall.sh [silent]
 +
 _silent_ runs the script without prompting you for confirmation.
 

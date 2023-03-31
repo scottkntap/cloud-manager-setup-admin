@@ -17,7 +17,7 @@ You should understand how BlueXP uses Azure credentials and permissions so that 
 
 == Initial Azure credentials
 
-When you deploy a Connector from BlueXP, you need to use an Azure account or service principal that has permissions to deploy the Connector virtual machine. The required permissions are listed in the link:task-creating-connectors-azure.html[Connector deployment policy for Azure].
+When you deploy a Connector from BlueXP, you need to use an Azure account or service principal that has permissions to deploy the Connector virtual machine. The required permissions are listed in the link:task-set-up-permissions-azure.html[Connector deployment policy for Azure].
 
 When BlueXP deploys the Connector virtual machine in Azure, it enables a https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[system-assigned managed identity^] on virtual machine, creates a custom role, and assigns it to the virtual machine. The role provides BlueXP with the permissions required to manage resources and processes within that Azure subscription. link:reference-permissions-azure.html[Review how BlueXP uses the permissions].
 
@@ -52,3 +52,11 @@ The sections above describe the recommended deployment method for the Connector,
 If you use the Marketplace, you can provide permissions by assigning a custom role to the Connector VM and to a system-assigned managed identity, or you can use Azure AD service principal.
 
 For on-premises deployments, you can't set up a managed identity for the Connector, but you can provide permissions by using a service principal.
+
+To learn how to set up permissions, refer to the following pages:
+
+* Standard mode
+** link:task-set-up-permissions-azure.html[Set up Azure permissions]
+** link:task-set-up-permissions-on-prem.html[Set up cloud permissions for on-prem deployments]
+* link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Set up cloud permissions for restricted mode]
+* link:task-prepare-private-mode.html#prepare-cloud-permissions[Set up cloud permissions for private mode]

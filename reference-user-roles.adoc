@@ -58,8 +58,6 @@ The Compliance Viewer role is for read-only Cloud Data Sense access.
 
 | Install an HTTPS certificate | Yes |	No | No | No
 
-| Use the SnapCenter Service | Yes | Yes | No | Yes
-
 |===
 
 .Related links

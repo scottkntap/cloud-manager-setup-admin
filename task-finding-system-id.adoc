@@ -17,9 +17,9 @@ To help you get started, your NetApp representative might ask you for the system
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Help icon.
+. In the upper right of the BlueXP console, select the Help icon.
 
-. Click *Support > Connector*.
+. Select *Support > Connector*.
 +
 The system ID appears at the top.
 +

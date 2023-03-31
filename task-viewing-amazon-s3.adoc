@@ -19,5 +19,5 @@ image:screenshot-amazon-s3-we.png[A screenshot of an Amazon S3 working environme
 
 You can view details about your S3 buckets, including the region, access policy, account, total and used capacity, and more. These buckets can be used as destinations for Cloud Backup, Cloud Tiering, or Cloud Sync operations. Additionally, you can use Cloud Data Sense to scan these buckets.
 
-A newly added feature now enables you to create and edit S3 buckets. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html[Go here to see how you can view, create, and manage your S3 buckets using BlueXP.]
+A newly added feature now enables you to create and edit S3 buckets. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html[Go here to see how you can view, create, and manage your S3 buckets using BlueXP^]
 

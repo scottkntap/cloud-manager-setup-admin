@@ -27,7 +27,7 @@ link:task-managing-netapp-accounts.html[Learn how to manage your BlueXP account]
 
 == Deployment modes
 
-BlueXP offers the following deployment modes for your account: standard mode, restricted mode, and private mode. These modes support environments that have distinct requirements for data security and privacy.
+BlueXP offers the following deployment modes for your account: standard mode, restricted mode, and private mode. These modes support environments that have varying levels of security and connectivity restrictions.
 
 link:concept-modes.html[Learn more about BlueXP deployment modes].
 
@@ -40,13 +40,12 @@ When you associate a user, you assign them a role:
 * _Account Admin_: Can perform any action in BlueXP.
 * _Workspace Admin_: Can create and manage resources in the assigned workspace.
 * _Compliance Viewer_: Can only view Cloud Data Sense compliance information and generate reports for systems that they have permission to access.
-* _SnapCenter Admin_: Can use the SnapCenter Service to create application consistent backups and restore data using those backups. _This service is currently in Beta._
 
 link:reference-user-roles.html[Learn more about these roles].
 
 == Workspaces
 
-In BlueXP, a workspace isolates any number of _working environments_ from other working environments. Workspace Admins can't access the working environments in a workspace unless the Account Admin associates the admin with that workspace.
+In BlueXP, a workspace isolates any number of _working environments_ from other users in the account. Workspace Admins can't access the working environments in a workspace unless the Account Admin associates the admin with that workspace.
 
 A working environment represents a storage system. For example:
 
@@ -58,7 +57,7 @@ link:task-setting-up-netapp-accounts.html[Learn how to add a workspace].
 
 == Connectors
 
-A Connector enables BlueXP to manage resources and processes within your public cloud environment. The Connector runs on a virtual machine instance that you deploy in your cloud provider, or on an on-prem host that you configured.
+A Connector executes the actions that BlueXP needs to perform in order to manage your data infrastructure. The Connector runs on a virtual machine instance that you deploy in your cloud provider or on an on-premises host that you configured.
 
 You can use a Connector with more than one BlueXP service. For example, if you're using a Connector to manage Cloud Volumes ONTAP, you can use that same Connector with another service like Cloud Tiering.
 

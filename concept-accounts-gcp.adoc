@@ -29,6 +29,12 @@ The following image depicts the permission requirements described in numbers 1 a
 
 image:diagram_permissions_gcp.png[A conceptual image depicting the permissions requirements for google and service accounts to deploy Cloud Volumes ONTAP.]
 
+To learn how to set up permissions, refer to the following pages:
+
+* link:task-set-up-permissions-google.html[Set up Google Cloud permissions for standard mode]
+* link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Set up cloud permissions for restricted mode]
+* link:task-prepare-private-mode.html#prepare-cloud-permissions[Set up cloud permissions for private mode]
+
 == Project for Cloud Volumes ONTAP
 
 Cloud Volumes ONTAP can reside in the same project as the Connector, or in a different project. To deploy Cloud Volumes ONTAP in a different project, you need to first add the Connector service account and role to that project.

@@ -28,7 +28,7 @@ If you want to enable restricted mode, you need to include the following in the 
 
 NOTE: You can't change the restricted mode setting after BlueXP creates the account. You can't enable restricted mode later and you can't disable it later. It must be set at time of account creation.
 
-https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/post-tenancy-account-.html[Learn more about this API call^]
+https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/post-tenancy-account-.html[Learn how to use this API call^]
 
 .Related links
 

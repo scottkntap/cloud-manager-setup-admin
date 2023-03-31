@@ -19,7 +19,7 @@ You can see details about your Google Cloud Storage buckets, including the locat
 
 .Steps
 
-. link:task-creating-connectors-gcp.html[Install a Connector] in the Google account where you want to view your Google Cloud Storage buckets.
+. Install a Connector in the Google account where you want to view your Google Cloud Storage buckets.
 
 . From the navigation menu, select *Storage > Canvas*.
 +
@@ -27,14 +27,14 @@ You should automatically see a Google Cloud Storage working environment shortly 
 +
 image:screenshot-gcp-cloud-storage-we.png[A screenshot of a Google Cloud Storage working environment.]
 
-. Click the working environment and select an action from the right pane.
+. Select the working environment and select an action from the right pane.
 +
 image:screenshot-gcp-cloud-storage-actions.png["A screenshot that shows the actions pane after you select a Google Cloud Storage working environment. The pane shows the total number of buckets and an action for using the Sync service."]
 
-. Click *Sync data* to synchronize data to or from Google Cloud Storage buckets.
+. Select *Sync data* to synchronize data to or from Google Cloud Storage buckets.
 +
-For more details, see https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html[the overview for the Cloud Sync service^].
+For more details, see https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html[the overview for the Cloud Sync service^]
 +
-. Click *Enter Working Environment* to view details about the buckets in your Google account.
+. Select *Enter Working Environment* to view details about the buckets in your Google account.
 +
 image:screenshot-gcp-cloud-storage-details.png[A screenshot that shows the details of a Google Cloud Storage working environment: the total number of buckets, capacity, and locations, and then a table that shows details about each bucket.]
