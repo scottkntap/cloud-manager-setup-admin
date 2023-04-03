@@ -22,19 +22,19 @@ While BlueXP inhibits the flow of traffic, communication, and data when using re
 BlueXP offers the following deployment modes for your account. Each mode differs in terms of outbound connectivity requirements, deployment location, installation process, authentication method, available data and storage services, and charging methods.
 
 Standard mode::
-BlueXP is accessible to users as a cloud service from the SaaS website. Depending on the BlueXP services that you're planning to use, a BlueXP admin creates one or more Connectors to manage data within your hybrid cloud environment. 
+BlueXP is accessible to users as a cloud service from the web-based console. Depending on the BlueXP services that you're planning to use, a BlueXP admin creates one or more Connectors to manage data within your hybrid cloud environment. 
 +
 This mode uses encrypted data transmission over the public internet.
 
 Restricted mode::
-A BlueXP Connector is installed in the cloud (in a government region, sovereign cloud region, or commercial region) and has limited outbound connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the Connector, not from the SaaS website.
+A BlueXP Connector is installed in the cloud (in a government region, sovereign cloud region, or commercial region) and has limited outbound connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the web-based console that's available from the Connector, not from the SaaS layer.
 +
 This mode is typically used by state and local governments and regulated companies.
 +
 <<Restricted mode, Learn more about outbound connectivity to the SaaS layer>>.
 
 Private mode::
-A BlueXP Connector is installed on premises or in the cloud (in a secure region, sovereign cloud region, or commercial region) and has _no_ connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the Connector, not from the SaaS website.
+A BlueXP Connector is installed on premises or in the cloud (in a secure region, sovereign cloud region, or commercial region) and has _no_ connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the web-based console that's available from the Connector, not from the SaaS layer.
 +
 A secure region includes https://aws.amazon.com/federal/us-intelligence-community/[AWS C2S and SC2S^] and https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6[Azure IL6^]
 
@@ -47,7 +47,7 @@ The following table provides a comparison of these modes.
 | Restricted mode
 | Private mode
 
-| Connection required to BlueXP SaaS?
+| Connection required to BlueXP SaaS layer?
 | Yes
 | Outbound only
 | No
@@ -68,7 +68,7 @@ The following table provides a comparison of these modes.
 | Manual upgrade required
 
 | UI access
-| From the SaaS website
+| From the BlueXP SaaS layer
 | Locally from the Connector VM
 | Locally from the Connector VM
 
@@ -95,7 +95,7 @@ Read through the following sections to learn more about these modes, including w
 
 The following image is an example of a standard mode deployment.
 
-image:diagram-standard-mode.png["A conceptual image that shows the public internet where the user interface, SaaS layer, and auth0 authentication are available, a virtual network in the cloud where a Connector is running and managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
+image:diagram-standard-mode.png["A conceptual image that shows the public internet where the web-based console, SaaS layer, and auth0 authentication are available, a virtual network in the cloud where a Connector is running and managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in standard mode:
 
@@ -116,7 +116,7 @@ Connector upgrades::
 Automated upgrades of the Connector software are available from BlueXP with monthly updates.
 
 User interface access::
-The user interface is accessible from the SaaS website.
+The user interface is accessible from the web-based console that's provided through the SaaS layer.
 
 Authentication::
 Authentication is provided through BlueXP's cloud service using auth0 or through NetApp Support Site (NSS) logins. Identity federation is available.
@@ -128,7 +128,7 @@ Supported licensing options::
 Marketplace subscriptions and BYOL are supported with standard mode; however, the supported licensing options depends on which BlueXP service you are using. Review the documentation for each service to learn more about the available licensing options.
 
 How to get started with standard mode::
-Standard mode is available from the BlueXP SaaS website. Go to the https://console.bluexp.netapp.com[BlueXP console^] and sign up.
+Go to the https://console.bluexp.netapp.com[BlueXP web-based console^] and sign up.
 +
 link:task-quick-start-standard-mode.html[Learn how to get started with standard mode].
 
@@ -136,7 +136,7 @@ link:task-quick-start-standard-mode.html[Learn how to get started with standard 
 
 The following image is an example of a restricted mode deployment.
 
-image:diagram-restricted-mode.png["A conceptual image that shows the public internet where the SaaS layer and auth0 authentication are available, a virtual network in the cloud where a Connector is running and providing access to the user interface, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
+image:diagram-restricted-mode.png["A conceptual image that shows the public internet where the SaaS layer and auth0 authentication are available, a virtual network in the cloud where a Connector is running and providing access to the web-based console, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in restricted mode:
 
@@ -228,11 +228,11 @@ In private mode, you can install a Connector either on premises or in the cloud 
 
 The following image shows an example of a private mode deployment where the Connector is installed in the cloud and manages both Cloud Volumes ONTAP and an on-premises ONTAP cluster.
 
-image:diagram-private-mode-cloud.png["A conceptual image that shows a virtual network in the cloud where a Connector is running and providing access to the user interface, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
+image:diagram-private-mode-cloud.png["A conceptual image that shows a virtual network in the cloud where a Connector is running and providing access to the web-based console, and is managing Cloud Volumes ONTAP and an AFF cluster in an on-premises data center."]
 
 Meanwhile, the second image shows an example of a private mode deployment where the Connector is installed on premises, manages an on-premises ONTAP cluster, and provides access to supported BlueXP data services.
 
-image:diagram-private-mode-onprem.png["A conceptual image that shows an on-premises data center where a Connector is running and providing access to the user interface, BlueXP data services, and is managing an AFF cluster in an on-premises data center."]
+image:diagram-private-mode-onprem.png["A conceptual image that shows an on-premises data center where a Connector is running and providing access to the web-based console, BlueXP data services, and is managing an AFF cluster in an on-premises data center."]
 
 BlueXP works as follows in private mode:
 

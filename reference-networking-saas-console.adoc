@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-networking-saas-console.html
 keywords: networking, urls, endpoints, web browser, console
-summary: As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to several endpoints.
+summary: As you use the BlueXP web-based console that's provided through the SaaS layer, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to these endpoints.
 ---
 
 = Prepare networking for user access to the BlueXP console
@@ -13,14 +13,14 @@ summary: As you use the BlueXP user interface from the SaaS website, it contacts
 :imagesdir: ./media/
 
 [.lead]
-As you use the BlueXP user interface from the SaaS website, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to these endpoints.
+As you use the BlueXP web-based console that's provided through the SaaS layer, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to these endpoints.
 
 [cols=2*,options="header,autowidth"]
 |===
 | Endpoints
 | Purpose
 
-| \https://console.bluexp.netapp.com | Your web browser contacts this URL when using the SaaS UI.
+| \https://console.bluexp.netapp.com | Your web browser contacts this URL when using the web-based console.
 
 a|
 AWS services (amazonaws.com):

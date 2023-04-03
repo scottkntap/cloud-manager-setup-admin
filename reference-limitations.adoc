@@ -37,7 +37,7 @@ For enhanced security, you have the option to link:task-installing-https-cert.ht
 
 === Blank page when loading the local UI
 
-If you load the local user interface for a Connector, the UI might fail to display sometimes, and you just get a blank page.
+If you load the web-based console that's running on a Connector, the interface might fail to display sometimes, and you just get a blank page.
 
 This issue is related to a caching problem. The workaround is to use an incognito or private web browser session.
 

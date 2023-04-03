@@ -19,7 +19,7 @@ You should understand what's needed to get started with BlueXP in restricted mod
 
 Before you get started, you should have an understanding of how BlueXP works in restricted mode. 
 
-For example, you should understand that you need to use the user interface that is available locally from the BlueXP Connector that you need to install. You can't access BlueXP from the SaaS website.
+For example, you should understand that you need to use the browser-based interface that is available locally from the BlueXP Connector that you need to install. You can't access BlueXP from the web-based console that's provided through the SaaS layer.
 
 In addition, not all BlueXP services are available.
 

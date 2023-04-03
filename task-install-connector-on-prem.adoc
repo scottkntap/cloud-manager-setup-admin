@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-install-connector-on-prem.html
 keywords: install connector, on prem connector installation, on prem connector, install connector on prem, manual install
-summary: Install the Connector on premises and then log in and set it up to work with your BlueXP SaaS account.
+summary: Install the Connector on premises and then log in and set it up to work with your BlueXP account.
 ---
 
 = Install and set up the Connector on premises
@@ -13,7 +13,7 @@ summary: Install the Connector on premises and then log in and set it up to work
 :imagesdir: ./media/
 
 [.lead]
-Install the Connector on premises and then log in and set it up to work with your BlueXP SaaS account.
+Install the Connector on premises and then log in and set it up to work with your BlueXP account.
 
 == Install the Connector
 
@@ -109,7 +109,7 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 .. Enter a name for the system.
 .. Under *Are you running in a secured environment?* keep restricted mode disabled.
 +
-You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode from the SaaS website. (In addition, restricted mode isn't supported when the Connector is installed on premises.)
+You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode. (In addition, restricted mode isn't supported when the Connector is installed on premises.)
 .. Click *Let's start*.
 
 .Result

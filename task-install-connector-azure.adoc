@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-install-connector-azure.html
 keywords: install connector, azure connector installation, azure connector, install connector in azure, bluexp, azure marketplace, manual install, create connector
-summary: Create the Connector directly from the BlueXP user interface, from the Azure Marketplace, or by installing the software on your own Linux host.
+summary: Create the Connector directly from the BlueXP web-based console, from the Azure Marketplace, or by installing the software on your own Linux host.
 ---
 
 = Create the Connector in Azure
@@ -13,7 +13,7 @@ summary: Create the Connector directly from the BlueXP user interface, from the 
 :imagesdir: ./media/
 
 [.lead]
-Create the Connector directly from the BlueXP user interface, from the Azure Marketplace, or by installing the software on your own Linux host.
+Create the Connector directly from the BlueXP web-based console, from the Azure Marketplace, or by installing the software on your own Linux host.
 
 // start tabbed area
 
@@ -129,7 +129,7 @@ https://_ipaddress_
 .. Enter a name for the system.
 .. Under *Are you running in a secured environment?* keep restricted mode disabled.
 +
-You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode from the SaaS website. You should enable restricted mode only if you have a secure environment and want to disconnect this account from BlueXP backend services. If that's the case, link:task-quick-start-restricted-mode.html[follow steps to get started with BlueXP in restricted mode].
+You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode. You should enable restricted mode only if you have a secure environment and want to disconnect this account from BlueXP backend services. If that's the case, link:task-quick-start-restricted-mode.html[follow steps to get started with BlueXP in restricted mode].
 .. Click *Let's start*.
 
 The Connector is now installed and is set up with your BlueXP account.
@@ -225,7 +225,7 @@ https://_ipaddress_
 .. Enter a name for the system.
 .. Under *Are you running in a secured environment?* keep restricted mode disabled.
 +
-You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode from the SaaS website. You should enable restricted mode only if you have a secure environment and want to disconnect this account from BlueXP backend services. If that's the case, link:task-quick-start-restricted-mode.html[follow steps to get started with BlueXP in restricted mode].
+You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode. You should enable restricted mode only if you have a secure environment and want to disconnect this account from BlueXP backend services. If that's the case, link:task-quick-start-restricted-mode.html[follow steps to get started with BlueXP in restricted mode].
 .. Click *Let's start*.
 
 .Result

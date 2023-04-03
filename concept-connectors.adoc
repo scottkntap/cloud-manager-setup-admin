@@ -49,7 +49,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 == When a Connector is required
 
-When you use BlueXP in standard mode through the SaaS website, a Connector is required for the following features and services in BlueXP:
+When you use BlueXP in standard mode, a Connector is required for the following features and services in BlueXP:
 
 * Amazon FSx for ONTAP management features
 * Amazon S3 discovery

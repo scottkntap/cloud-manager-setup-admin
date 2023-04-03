@@ -85,7 +85,7 @@ https://cloud.google.com/compute/docs/instances/connecting-to-instance[Google Cl
 
 If you are using BlueXP in private mode, you can upgrade the Connector when a newer version is available from the NetApp Support Site.
 
-The Connector needs to restart during the upgrade process so the user interface will be unavailable during the upgrade.
+The Connector needs to restart during the upgrade process so the web-based console will be unavailable during the upgrade.
 
 NOTE: On hosts that have internet access, the Connector automatically updates its software to the latest version, as long as it has outbound internet access to obtain the software update.
 

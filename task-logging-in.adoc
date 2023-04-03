@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-logging-in.html
 keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp, sign up, create account
-summary: After you sign up to BlueXP, you can log in from your web browser through the SaaS-based user interface.
+summary: After you sign up to BlueXP, you can log in from your web browser through the web-based console. 
 ---
 
 = Log in to BlueXP (standard mode)
@@ -13,11 +13,11 @@ summary: After you sign up to BlueXP, you can log in from your web browser throu
 :imagesdir: ./media/
 
 [.lead]
-After you sign up to BlueXP, you can log in from your web browser through the SaaS-based user interface. 
+After you sign up to BlueXP, you can log in from the web-based console. 
 
 .Log in options
 
-You can log in to the BlueXP SaaS website using one of the following options:
+You can log in to the BlueXP web-based console using one of the following options:
 
 * Your existing NetApp Support Site (NSS) credentials
 * A NetApp cloud login using your email address and a password

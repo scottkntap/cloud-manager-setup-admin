@@ -68,11 +68,11 @@ Pricing for BlueXP depends on the services that you plan to use. https://bluexp.
 
 == How BlueXP works
 
-BlueXP includes a SaaS-based interface that is integrated with the BlueXP website and Connectors that manage Cloud Volumes ONTAP and other cloud services.
+BlueXP includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
 
 === Software-as-a-service
 
-BlueXP is accessible through a https://console.bluexp.netapp.com[SaaS-based user interface^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your BlueXP accounts and Connectors.
+BlueXP is accessible through a https://console.bluexp.netapp.com[web-based console^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your BlueXP accounts and Connectors.
 
 === BlueXP account
 
@@ -88,7 +88,7 @@ link:concept-connectors.html[Learn more about Connectors].
 
 === Restricted mode and private mode 
 
-BlueXP is also supported in environments that have security and connectivity restrictions. You can use _restricted mode_ or _private mode_ to limit outbound connectivity to the BlueXP SaaS backend.
+BlueXP is also supported in environments that have security and connectivity restrictions. You can use _restricted mode_ or _private mode_ to limit outbound connectivity to the BlueXP SaaS layer.
 
 link:concept-modes.html[Learn more about BlueXP deployment modes].
 
