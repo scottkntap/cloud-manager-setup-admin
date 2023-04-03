@@ -42,7 +42,7 @@ To get started, select *Add Working Environment*, select *Amazon Web Services* o
 +
 When you go to *Settings > Credentials*, you can view the credentials, update the credentials, and delete them. For example, if you change the password for these credentials, then you'll need to update the password in BlueXP.
 +
-link:task-manage-user-credentials.html[Learn how to manager user credentials].
+link:task-manage-user-credentials.html[Learn how to manage user credentials].
 
 * You can now upload attachments when you create a support case or when you update the case notes for an existing support case.
 +
