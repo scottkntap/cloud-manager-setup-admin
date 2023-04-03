@@ -161,28 +161,30 @@ sidebar:
               url: /task-configuring-proxy.html
             - title: Default configuration
               url: /reference-connector-default-config.html
-        - title: Cloud provider credentials
+        - title: Credentials
           entries:
-            - title: AWS
+            - title: Manage AWS credentials
               entries:
                 - title: Overview
                   url: /concept-accounts-aws.html
                 - title: Manage credentials and subscriptions
                   url: /task-adding-aws-accounts.html
-            - title: Azure
+            - title: Manage Azure credentials
               entries:
                 - title: Overview
                   url: /concept-accounts-azure.html
                 - title: Manage credentials and subscriptions
                   url: /task-adding-azure-accounts.html
-            - title: Google Cloud
+            - title: Manage Google Cloud credentials
               entries:
                 - title: Overview
                   url: /concept-accounts-gcp.html
                 - title: Manage credentials and subscriptions
                   url: /task-adding-gcp-accounts.html
-        - title: NetApp Support Site accounts
-          url: /task-adding-nss-accounts.html
+            - title: Manage NSS credentials associated with a BlueXP account
+              url: /task-adding-nss-accounts.html
+            - title: Manage credentials associated with your BlueXP login
+              url: /task-manage-user-credentials.html
         - title: Subscriptions
           url: /task-manage-subscriptions.html
         - title: Discovered cloud storage

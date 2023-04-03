@@ -23,7 +23,7 @@ When you deploy a Connector in Google Cloud, BlueXP creates a default set of cre
 
 . In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 
-. Select the action menu for a set of credentials and then select *Associate Subscription*.
+. On the *Account credentials* page, select the action menu for a set of credentials and then select *Associate Subscription*.
 +
 image:screenshot_gcp_add_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 

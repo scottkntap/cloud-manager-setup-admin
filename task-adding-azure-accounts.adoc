@@ -265,7 +265,7 @@ You need to create a Connector before you can change BlueXP settings. link:conce
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
-. Select *Add Credentials* and follow the steps in the wizard.
+. On the *Account credentials* page, select *Add Credentials* and follow the steps in the wizard.
 
 .. *Credentials Location*: Select *Microsoft Azure > Connector*.
 
@@ -309,7 +309,7 @@ You need to create a Connector before you can change BlueXP settings. link:conce
 
 . In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 
-. Select the action menu for a set of credentials and then select *Associate Subscription*.
+. On the *Account credentials* page, select the action menu for a set of credentials and then select *Associate Subscription*.
 +
 image:screenshot_azure_add_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
@@ -346,7 +346,7 @@ Edit your Azure credentials in BlueXP by modifying the details about your Azure 
 
 . In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 
-. Select the action menu for a set of credentials and then select *Edit Credentials*.
+. On the *Account credentials* page, select the action menu for a set of credentials and then select *Edit Credentials*.
 
 . Make the required changes and then select *Apply*.
 
@@ -358,6 +358,6 @@ If you no longer need a set of credentials, you can delete them from BlueXP. You
 
 . In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 
-. Select the action menu for a set of credentials and then select *Delete Credentials*.
+. On the *Account credentials* page, select the action menu for a set of credentials and then select *Delete Credentials*.
 
 . Select *Delete* to confirm.

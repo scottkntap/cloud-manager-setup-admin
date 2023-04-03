@@ -59,7 +59,7 @@ At a high-level, setting up a federated connection between BlueXP and a SAML ide
 | Description
 
 
-| 1 | Active Directory (AD) admin a| Configure your SAML identity provider according to the guidelines in the auth0 documentation.
+| 1 | Active Directory (AD) admin a| Configure your SAML identity provider to enable identity federation with BlueXP.
 
 View instructions for your SAML identity provider:
 
@@ -73,7 +73,7 @@ View instructions for your SAML identity provider:
 
 If your identity provider doesn't appear in the list above, https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/configure-auth0-saml-service-provider[follow these generic instructions^]
 
-TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
+TIP: Do _not_ complete the steps that describe how to create a connection in auth0. You'll create that connection in the next step.
 
 | 2 | BlueXP admin a| Go to the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^] and create the connection with BlueXP.
 
@@ -104,11 +104,11 @@ At a high-level, setting up a federated connection between BlueXP and Azure AD i
 | Completed by
 | Description
 
-| 1 | AD admin a| Create a new application in Azure Active Directory along with a client secret.
+| 1 | AD admin a| Configure Azure Active Directory to enable identity federation with BlueXP.
 
 https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/azure-active-directory/v2[View instructions for registering the application with Azure AD^]
 
-TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
+TIP: Do _not_ complete the steps that describe how to create a connection in auth0. You'll create that connection in the next step.
 
 | 2 | BlueXP admin a| Go to the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^] and create the connection with BlueXP.
 
@@ -168,11 +168,11 @@ At a high-level, setting up a federated connection between BlueXP and a PingFede
 | Completed by
 | Description
 
-| 1 | AD admin a| Configure your PingFederate server according to the guidelines in the auth0 documentation.
+| 1 | AD admin a| Configure your PingFederate server to enable identity federation with BlueXP.
 
 https://auth0.com/docs/authenticate/identity-providers/enterprise-identity-providers/ping-federate[View instructions for creating a connection^]
 
-TIP: Do _not_ complete the steps that describe how to create a connection with auth0. You'll create that connection in the next step.
+TIP: Do _not_ complete the steps that describe how to create a connection in auth0. You'll create that connection in the next step.
 
 | 2 | BlueXP admin a| Go to the https://services.cloud.netapp.com/federation-setup[NetApp Federation Setup page^] and create the connection with BlueXP.
 
@@ -197,4 +197,4 @@ After the BlueXP admin enables a connection, the admin can update the connection
 
 For example, you might need to update the connection by uploading a new certificate.
 
-The BlueXP admin who created the connection is the only authorized user who can update the connection. If you'd like to add additional admins, you can contact us through the in-product chat.
+The BlueXP admin who created the connection is the only authorized user who can update the connection. If you'd like to add additional admins, contact NetApp Support.
