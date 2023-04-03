@@ -32,11 +32,11 @@ https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supp
 
 * You can now discover VMware vCenter Servers in BlueXP.
 +
-After you discover a VMware vCenter Server, you can open the working environment to view details about the datastores and virtual machines that are associated with the server.
+After you discover a VMware vCenter Server that's running in AWS or on your premises, you can open the working environment to view details about the datastores and virtual machines that are associated with the server.
 +
-The only requirement is a Connector that has a connection to a VMware vCenter Server running version 7.0 or later. 
+The only requirement is a Connector that has a connection to a VMware vCenter Server that is running version 7.0 or later. 
 +
-To get started, click *Add Working Environment > On-Premises > VMware vCenter Server*, enter the domain name or IP address for the server, and then enter the user name and password for the admin user.
+To get started, select *Add Working Environment*, select *Amazon Web Services* or *On-Premises*, and then select *VMware vCenter Server*. Enter the domain name or IP address for the server, and then enter the user name and password for the admin user.
 
 * You can now manage the user credentials that are associated with your BlueXP login: ONTAP credentials and NetApp Support Site (NSS) credentials.
 +
