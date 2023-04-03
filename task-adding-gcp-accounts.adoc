@@ -25,7 +25,7 @@ At any time, you can change the Marketplace subscription that's associated with 
 
 . In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
 
-. Click the action menu for a set of credentials and then select *Associate Subscription*.
+. On the *Account credentials* page, click the action menu for a set of credentials and then select *Associate Subscription*.
 +
 image:screenshot_gcp_add_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
