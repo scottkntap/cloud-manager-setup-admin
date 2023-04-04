@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-adding-gcp-accounts.html
 keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp marketplace, subscribe, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys
-summary: You can manage the credentials that are associated with the Connector VM instance.
+summary: You can manage the Google Cloud credentials that are associated with the Connector VM instance.
 ---
 
-= Managing Google Cloud credentials and subscriptions for BlueXP
+= Manage Google Cloud credentials and subscriptions for BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,45 +13,43 @@ summary: You can manage the credentials that are associated with the Connector V
 :imagesdir: ./media/
 
 [.lead]
-You can manage the credentials that are associated with the Connector VM instance.
+You can manage the Google Cloud credentials that are associated with the Connector VM instance.
 
-== Associating a Marketplace subscription with Google Cloud credentials
+== Associate a Marketplace subscription with Google Cloud credentials
 
-When you deploy a Connector in Google Cloud, BlueXP creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that BlueXP uses to deploy Cloud Volumes ONTAP.
-
-At any time, you can change the Marketplace subscription that's associated with these credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+When you deploy a Connector in Google Cloud, BlueXP creates a default set of credentials that are associated with the Connector VM instance. At any time, you can change the Marketplace subscription that's associated with these credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other BlueXP services.
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
+. In the upper right of the BlueXP console, select the Settings icon, and select *Credentials*.
 
-. On the *Account credentials* page, click the action menu for a set of credentials and then select *Associate Subscription*.
+. On the *Account credentials* page, select the action menu for a set of credentials and then select *Associate Subscription*.
 +
 image:screenshot_gcp_add_subscription.png[A screenshot of the action menu for a set of existing credentials.]
 
-. To associate the credentials with an existing subscription, select a Google Cloud project and subscription from the down-down list, and then click *Associate*.
+. To associate the credentials with an existing subscription, select a Google Cloud project and subscription from the down-down list, and then select *Associate*.
 +
 image:screenshot_gcp_associate.gif[A screenshot of a Google Cloud project and subscription selected for Google Cloud credentials.]
 
-. If you don't already have a subscription, click *Add Subscription > Continue* and follow the steps in the Google Cloud Marketplace.
+. If you don't already have a subscription, select *Add Subscription > Continue* and follow the steps in the Google Cloud Marketplace.
 +
 NOTE: Before you complete the following steps, ensure that you have both Billing Admin privileges in your Google Cloud account as well as a BlueXP login.
 
 .. After you're redirected to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp BlueXP page on the Google Cloud Marketplace^], ensure that the correct project is selected at the top navigation menu.
 +
-image:screenshot_gcp_cvo_marketplace.png[A screenshot of the GCP CVO marketplace page.]
+image:screenshot_gcp_cvo_marketplace.png[A screenshot of the Cloud Volumes ONTAP marketplace page in Google Cloud.]
 
-.. Click *Subscribe*.
+.. Select *Subscribe*.
 
 .. Select the appropriate billing account and agree to the terms and conditions.
 
-.. Click *Subscribe*.
+.. Select *Subscribe*.
 +
 This step sends your transfer request to NetApp.
 
-.. On the pop-up dialog box, click *Register with NetApp, Inc.*
+.. On the pop-up dialog box, select *Register with NetApp, Inc.*
 +
-This step must be completed to link the Google Cloud subscription to your NetApp account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to BlueXP.
+This step must be completed to link the Google Cloud subscription to your BlueXP account. The process of linking a subscription isn't complete until you are redirected from this page and then sign in to BlueXP.
 +
 image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop-up.]
  
@@ -59,14 +57,14 @@ image:screenshot_gcp_marketplace_register.png[A screenshot of a registration pop
 +
 NOTE: If someone from your organization has already subscribed to the NetApp BlueXP subscription from your billing account, then you will be redirected to https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=[the Cloud Volumes ONTAP page on the BlueXP website^] instead. If this is unexpected, contact your NetApp sales team. Google enables only one subscription per Google billing account.
 +
-* Select the NetApp accounts that you'd like to associate this subscription with.
+* Select the BlueXP accounts that you'd like to associate this subscription with.
 * In the *Replace existing subscription* field, choose whether you'd like to automatically replace the existing subscription for one account with this new subscription.
 +
 BlueXP replaces the existing subscription for all credentials in the account with this new subscription. If a set of credentials wasn't ever associated with a subscription, then this new subscription won't be associated with those credentials.
 +
 For all other accounts, you'll need to manually associate the subscription by repeating these steps.
 
-* Click *Save*.
+* Select *Save*.
 +
 The following video shows the steps to subscribe from the Google Cloud Marketplace:
 +
@@ -76,13 +74,13 @@ video::video-subscribing-google-cloud.mp4[width=848, height=480]
 +
 image:screenshot_gcp_associate.gif[A screenshot of the subscription assignment page.]
 
-== Troubleshooting the Marketplace subscription process
+== Troubleshoot the Marketplace subscription process
 
-Sometimes subscribing to Cloud Volumes ONTAP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to the BlueXP website. If this happens, use the following steps to complete the subscription process.
+Sometimes subscribing to BlueXP through the Google Cloud Marketplace can become fragmented due to incorrect permissions or accidentally not following the redirection to the BlueXP website. If this happens, use the following steps to complete the subscription process.
 
 .Steps
 
-. Navigate to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp BlueXP page on the Google Cloud Marketplace^] to check on the state of the order. If the page states *Manage on Provider*, scroll down and click *Manage Orders*.
+. Navigate to the https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager[NetApp BlueXP page on the Google Cloud Marketplace^] to check on the state of the order. If the page states *Manage on Provider*, scroll down and select *Manage Orders*.
 +
 image:screenshot_gcp_manage_orders.png[A screenshot of the marketplace page post subscription.]
 

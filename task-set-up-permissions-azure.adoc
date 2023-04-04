@@ -1,0 +1,463 @@
+---
+sidebar: sidebar
+permalink: task-set-up-permissions-azure.html
+keywords: azure permissions, set up permissions, setup permissions, permissions, custom role, azure custom role, service principal, azure ad service principal, json
+summary: Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure in Azure. How you set up permissions depends on the installation option that you're planning to use.
+---
+
+= Set up Azure permissions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Set up Azure permissions so that you can use BlueXP to manage your data and storage infrastructure in Azure. How you set up permissions depends on the installation option that you're planning to use.
+
+You can choose from the following installation options:
+
+* *Install from BlueXP*: Set up permissions that enable BlueXP to authenticate with Azure and deploy the VM. BlueXP automatically sets up permissions for the Connector VM during deployment.
++
+<<Set up permissions to create the Connector from BlueXP,View step-by-step instructions>>.
+
+* *Install from the Azure Marketplace*: Set up an Azure custom role to associate with the Connector VM or with an Azure AD service principal.
++
+<<Set up permissions to assign after Azure Marketplace deployment or manual installation,View step-by-step instructions>>.
+
+* *Manual install*: Set up an Azure custom role to associate with the Connector VM or with an Azure AD service principal.
++
+<<Set up permissions to assign after Azure Marketplace deployment or manual installation,View step-by-step instructions>>.
+
+== Set up permissions to create the Connector from BlueXP
+
+To create a Connector from BlueXP, you need to provide BlueXP with a login that has the required permissions to create the Connector VM in Azure. You have two options:
+
+. Sign in with your Microsoft account when prompted. This account must have specific Azure permissions. This is the default option.
+
+. Provide details about an Azure AD service principal. This service principal also requires specific permissions.
+
+With both options, the first step is create a custom role.
+
+=== Create a custom role
+
+Create a custom role that you can assign to your Azure account or to a service principal.
+
+.Steps
+
+. Copy the required permissions for a new custom role in Azure and save them in a JSON file.
++
+NOTE: This policy contains only the permissions needed to launch the Connector VM in Azure from BlueXP. Don't use this policy for other situations. When BlueXP creates the Connector, it applies a new set of permissions to the Connector VM that enables the Connector to manage the resources in your public cloud environment.
++
+[source,json]
+{
+    "Name": "Azure SetupAsService",
+    "Actions": [
+        "Microsoft.Compute/disks/delete",
+        "Microsoft.Compute/disks/read",
+        "Microsoft.Compute/disks/write",
+        "Microsoft.Compute/locations/operations/read",
+        "Microsoft.Compute/operations/read",
+        "Microsoft.Compute/virtualMachines/instanceView/read",
+        "Microsoft.Compute/virtualMachines/read",
+        "Microsoft.Compute/virtualMachines/write",
+        "Microsoft.Compute/virtualMachines/delete",
+        "Microsoft.Compute/virtualMachines/extensions/write",
+        "Microsoft.Compute/virtualMachines/extensions/read",
+        "Microsoft.Compute/availabilitySets/read",
+        "Microsoft.Network/locations/operationResults/read",
+        "Microsoft.Network/locations/operations/read",
+        "Microsoft.Network/networkInterfaces/join/action",
+        "Microsoft.Network/networkInterfaces/read",
+        "Microsoft.Network/networkInterfaces/write",
+        "Microsoft.Network/networkInterfaces/delete",
+        "Microsoft.Network/networkSecurityGroups/join/action",
+        "Microsoft.Network/networkSecurityGroups/read",
+        "Microsoft.Network/networkSecurityGroups/write",
+        "Microsoft.Network/virtualNetworks/checkIpAddressAvailability/read",
+        "Microsoft.Network/virtualNetworks/read",
+        "Microsoft.Network/virtualNetworks/subnets/join/action",
+        "Microsoft.Network/virtualNetworks/subnets/read",
+        "Microsoft.Network/virtualNetworks/subnets/virtualMachines/read",
+        "Microsoft.Network/virtualNetworks/virtualMachines/read",
+        "Microsoft.Network/publicIPAddresses/write",
+        "Microsoft.Network/publicIPAddresses/read",
+        "Microsoft.Network/publicIPAddresses/delete",
+        "Microsoft.Network/networkSecurityGroups/securityRules/read",
+        "Microsoft.Network/networkSecurityGroups/securityRules/write",
+        "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+        "Microsoft.Network/publicIPAddresses/join/action",
+        "Microsoft.Network/locations/virtualNetworkAvailableEndpointServices/read",
+        "Microsoft.Network/networkInterfaces/ipConfigurations/read",
+        "Microsoft.Resources/deployments/operations/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Resources/deployments/delete",
+        "Microsoft.Resources/deployments/cancel/action",
+        "Microsoft.Resources/deployments/validate/action",
+        "Microsoft.Resources/resources/read",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/delete",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/write",
+        "Microsoft.Authorization/roleDefinitions/write",
+        "Microsoft.Authorization/roleAssignments/write",
+        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",
+        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write",
+        "Microsoft.Network/networkSecurityGroups/delete",
+        "Microsoft.Storage/storageAccounts/delete",
+        "Microsoft.Storage/storageAccounts/write",
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/deployments/operationStatuses/read",
+        "Microsoft.Authorization/roleAssignments/read"
+    ],
+    "NotActions": [],
+    "AssignableScopes": [],
+    "Description": "Azure SetupAsService",
+    "IsCustom": "true"
+}
+
+. Modify the JSON by adding your Azure subscription ID to the assignable scope.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz"
+],
+
+. Use the JSON file to create a custom role in Azure.
++
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
+
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Enter the following Azure CLI command:
++
+[source,azurecli]
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+
++
+You should now have a custom role called _Azure SetupAsService_. You can now apply this custom role to your user account or to a service principal.
+
+=== Set up an authentication method
+
+To deploy the BlueXP Connector, BlueXP needs to authenticate with Azure. You can choose between two Azure authentication methods.
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.Azure user account
+--
+Assign the custom role to the user who will deploy the Connector from BlueXP.
+
+.Steps
+
+. In the Azure portal, open the *Subscriptions* service and select the user's subscription.
+
+. Click *Access control (IAM)*.
+
+. Click *Add* > *Add role assignment* and then add the permissions:
+
+.. Select the *Azure SetupAsService* role and click *Next*.
++
+NOTE: Azure SetupAsService is the default name provided in the Connector deployment policy for Azure. If you chose a different name for the role, then select that name instead.
+
+.. Keep *User, group, or service principal* selected.
+
+.. Click *Select members*, choose your user account, and click *Select*.
+
+.. Click *Next*.
+
+.. Click *Review + assign*.
+
+.Result
+
+The Azure user now has the permissions required to deploy the Connector from BlueXP.
+--
+
+.Service principal
+--
+Rather than logging in with your Azure account, you can provide BlueXP with the credentials for an Azure service principal that has the required permissions.
+
+Create and set up a service principal in Azure Active Directory and obtain the Azure credentials that BlueXP needs.
+
+.Create an Azure Active Directory application for role-based access control
+
+. Ensure that you have permissions in Azure to create an Active Directory application and to assign the application to a role. 
++
+For details, refer to https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/[Microsoft Azure Documentation: Required permissions^].
+
+. From the Azure portal, open the *Azure Active Directory* service.
++
+image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Azure.]
+
+. In the menu, click *App registrations*.
+
+. Click *New registration*.
+
+. Specify details about the application:
+
+* *Name*: Enter a name for the application.
+* *Account type*: Select an account type (any will work with BlueXP).
+* *Redirect URI*: You can leave this field blank.
+
+. Click *Register*.
++
+You've created the AD application and service principal.
+
+.Assign the custom role to the application
+
+. From the Azure portal, open the *Subscriptions* service.
+
+. Select the subscription.
+
+. Click *Access control (IAM) > Add > Add role assignment*.
+
+. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
+
+. In the *Members* tab, complete the following steps:
+
+.. Keep *User, group, or service principal* selected.
+.. Click *Select members*.
++
+image:screenshot-azure-service-principal-role.png[A screenshot of the Azure portal that shows the Members tab when adding a role to an application.]
+
+.. Search for the name of the application.
++
+Here's an example:
++
+image:screenshot_azure_service_principal_role.png[A screenshot of the Azure portal that shows the Add role assignment form in the Azure portal.]
+
+.. Select the application and click *Select*.
+.. Click *Next*.
+
+. Click *Review + assign*.
++
+The service principal now has the required Azure permissions to deploy the Connector.
++
+If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. BlueXP enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
+
+.Add Windows Azure Service Management API permissions
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Click *API permissions > Add a permission*.
+
+. Under *Microsoft APIs*, select *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal that shows the Azure Service Management API permissions.]
+
+. Click *Access Azure Service Management as organization users* and then click *Add permissions*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
+
+.Get the application ID and directory ID for the application
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Copy the *Application (client) ID* and the *Directory (tenant) ID*.
++
+image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
++
+When you add the Azure account to BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. BlueXP uses the IDs to programmatically sign in.
+
+.Create a client secret
+
+. Open the *Azure Active Directory* service.
+
+. Click *App registrations* and select your application.
+
+. Click *Certificates & secrets > New client secret*.
+
+. Provide a description of the secret and a duration.
+
+. Click *Add*.
+
+. Copy the value of the client secret.
++
+image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that shows a client secret for the Azure AD service principal.]
++
+You now have a client secret that BlueXP can use it to authenticate with Azure AD.
+
+.Result
+
+Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you create the Connector.
+--
+
+====
+// end tabbed area
+
+== Set up permissions to assign after Azure Marketplace deployment or manual installation
+
+If you deploy the Connector from the Azure Marketplace or if you manually install the Connector software on your own Linux host, you can provide permissions in the following ways:
+
+* Option 1: Assign a custom role to the Azure VM using a system-assigned managed identity.
+* Option 2: Provide BlueXP with the credentials for an Azure service principal that has the required permissions.
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.Custom role
+--
+.Steps
+
+. If you're planning to manually install the software on your own host, enable a system-assigned managed identity on the VM so that you can provide the required Azure permissions through a custom role. 
++
+https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm[Microsoft Azure documentation: Configure managed identities for Azure resources on a VM using the Azure portal^]
+
+. Copy the contents of the link:reference-permissions-azure.html[custom role permissions for the Connector] and save them in a JSON file.
+
+. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
++
+You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+
+. Use the JSON file to create a custom role in Azure.
++
+The following steps describe how to create the role by using Bash in Azure Cloud Shell.
++
+.. Start https://docs.microsoft.com/en-us/azure/cloud-shell/overview[Azure Cloud Shell^] and choose the Bash environment.
+
+.. Upload the JSON file.
++
+image:screenshot_azure_shell_upload.png[A screenshot of the Azure Cloud Shell where you can choose the option to upload a file.]
+
+.. Use the Azure CLI to create the custom role:
++
+[source,azurecli]
+az role definition create --role-definition Connector_Policy.json
+
+.Result
+
+You should now have a custom role called BlueXP Operator that you can assign to the Connector virtual machine.
+
+link:task-provide-permissions-azure.html[Learn how to provide these permissions to BlueXP].
+--
+
+.Service principal
+--
+Create and set up a service principal in Azure Active Directory and obtain the Azure credentials that BlueXP needs.
+
+.Create an Azure Active Directory application for role-based access control
+
+. Ensure that you have permissions in Azure to create an Active Directory application and to assign the application to a role. 
++
+For details, refer to https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/[Microsoft Azure Documentation: Required permissions^].
+
+. From the Azure portal, open the *Azure Active Directory* service.
++
+image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Azure.]
+
+. In the menu, click *App registrations*.
+
+. Click *New registration*.
+
+. Specify details about the application:
+
+* *Name*: Enter a name for the application.
+* *Account type*: Select an account type (any will work with BlueXP).
+* *Redirect URI*: You can leave this field blank.
+
+. Click *Register*.
++
+You've created the AD application and service principal.
+
+.Assign the custom role to the application
+
+. From the Azure portal, open the *Subscriptions* service.
+
+. Select the subscription.
+
+. Click *Access control (IAM) > Add > Add role assignment*.
+
+. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
+
+. In the *Members* tab, complete the following steps:
+
+.. Keep *User, group, or service principal* selected.
+.. Click *Select members*.
++
+image:screenshot-azure-service-principal-role.png[A screenshot of the Azure portal that shows the Members tab when adding a role to an application.]
+
+.. Search for the name of the application.
++
+Here's an example:
++
+image:screenshot_azure_service_principal_role.png[A screenshot of the Azure portal that shows the Add role assignment form in the Azure portal.]
+
+.. Select the application and click *Select*.
+.. Click *Next*.
+
+. Click *Review + assign*.
++
+The service principal now has the required Azure permissions to deploy the Connector.
++
+If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. BlueXP enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
+
+.Add Windows Azure Service Management API permissions
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Click *API permissions > Add a permission*.
+
+. Under *Microsoft APIs*, select *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal that shows the Azure Service Management API permissions.]
+
+. Click *Access Azure Service Management as organization users* and then click *Add permissions*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
+
+.Get the application ID and directory ID for the application
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Copy the *Application (client) ID* and the *Directory (tenant) ID*.
++
+image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
++
+When you add the Azure account to BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. BlueXP uses the IDs to programmatically sign in.
+
+.Create a client secret
+
+. Open the *Azure Active Directory* service.
+
+. Click *App registrations* and select your application.
+
+. Click *Certificates & secrets > New client secret*.
+
+. Provide a description of the secret and a duration.
+
+. Click *Add*.
+
+. Copy the value of the client secret.
++
+image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that shows a client secret for the Azure AD service principal.]
++
+You now have a client secret that BlueXP can use it to authenticate with Azure AD.
+
+.Result
+
+Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in BlueXP when you add an Azure account.
+
+link:task-provide-permissions-azure.html[Learn how to provide these permissions to BlueXP].
+--
+
+====
+// end tabbed area

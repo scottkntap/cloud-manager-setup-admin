@@ -15,7 +15,7 @@ summary: The Connector uses the following inbound ports when installed manually 
 [.lead]
 The Connector uses the following _inbound_ ports when installed manually on an on-premises Linux host.
 
-These inbound rules apply to both deployment models for the on-prem Connector: installed with internet access or without internet access.
+These inbound rules apply to all BlueXP deployment models.
 
 [cols="10,10,80",width=100%,options="header"]
 |===

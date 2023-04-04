@@ -23,14 +23,14 @@ In order to use the features and services in BlueXP, you'll need to provide perm
 | Description
 | Link
 
-| Connector deployment
+| Connector deployment from BlueXP
 | The user who creates a Connector from BlueXP needs specific permissions to deploy the instance in AWS.
-| link:task-creating-connectors-aws.html[Create a Connector in AWS from BlueXP]
+| link:task-set-up-permissions-aws.html[Set up AWS permissions]
 
 | Connector operation
 | When BlueXP launches the Connector, it attaches a policy to the instance that provides the permissions required to manage resources and processes in your AWS account.
 
-You need to set up the policy yourself if you link:task-launching-aws-mktp.html[launch a Connector from the marketplace] or if you link:task-adding-aws-accounts.html#add-credentials-to-a-connector[add more AWS credentials to a Connector].
+You need to set up the policy yourself if you launch a Connector from the marketplace, manually install the Connector, or if you link:task-adding-aws-accounts.html#add-credentials-to-a-connector[add more AWS credentials to a Connector].
 
 You also need to ensure that the policy is up to date as new permissions are added in subsequent releases.
 | link:reference-permissions-aws.html[AWS permissions for the Connector]
@@ -49,14 +49,14 @@ You also need to ensure that the policy is up to date as new permissions are add
 | Description
 | Link
 
-| Connector deployment
+| Connector deployment from BlueXP
 | When you deploy a Connector from BlueXP, you need to use an Azure account or service principal that has permissions to deploy the Connector VM in Azure.
-| link:task-creating-connectors-azure.html[Create a Connector in Azure from BlueXP]
+| link:task-set-up-permissions-azure.html[Set up Azure permissions]
 
 | Connector operation
 a| When BlueXP deploys the Connector VM in Azure, it creates a custom role that provides the permissions required to manage resources and processes within that Azure subscription.
 
-You need to set up the custom role yourself if you link:task-launching-azure-mktp.html[launch a Connector from the marketplace] or if you link:task-adding-azure-accounts.html#adding-additional-azure-credentials-to-cloud-manager[add more Azure credentials to a Connector].
+You need to set up the custom role yourself if you launch a Connector from the marketplace, manually install the Connector, or if you link:task-adding-azure-accounts.html#adding-additional-azure-credentials-to-cloud-manager[add more Azure credentials to a Connector].
 
 You also need to ensure that the policy is up to date as new permissions are added in subsequent releases.
 a| link:reference-permissions-azure.html[Azure permissions for the Connector]
@@ -72,11 +72,11 @@ a| link:reference-permissions-azure.html[Azure permissions for the Connector]
 | Link
 
 | Connector deployment | The Google Cloud user who deploys a Connector from BlueXP needs specific permissions to deploy the Connector in Google Cloud.
-| link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector[Set up permissions to deploy the Connector]
+| link:task-set-up-permissions-google.html#set-up-permissions-to-create-the-connector-from-bluexp-or-gcloud[Set up permissions to deploy the Connector]
 
 | Connector operation | The service account for the Connector VM instance must have specific permissions for day-to-day operations. You need to associate the service account with the Connector when you deploy it from BlueXP.
 
 You also need to ensure that the policy is up to date as new permissions are added in subsequent releases.
-| link:task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector[Set up a service account for the Connector]
+| link:reference-permissions-gcp.html[Google Cloud permissions for the Connector]
 
 |===

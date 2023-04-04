@@ -19,7 +19,11 @@ BlueXP requires permissions to perform actions in Google Cloud. These permission
 
 The custom role shown below provides the permissions that a Connector needs to manage resources and processes within your Google Cloud network.
 
-You'll need to apply this custom role to a service account that gets attached to the Connector VM. link:task-creating-connectors-gcp.html[View step-by-step instructions].
+You'll need to apply this custom role to a service account that gets attached to the Connector VM.
+
+* link:task-set-up-permissions-google.html[Set up permissions for standard mode]
+* link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Set up permissions for restricted mode]
+* https://review.docs.netapp.com/us-en/cloud-manager-setup-admin_feb-2022-modes/task-prepare-private-mode.html#prepare-cloud-permissions[Set up permissions for private mode]
 
 You also need to ensure that the role is up to date as new permissions are added in subsequent releases.
 

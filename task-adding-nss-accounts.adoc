@@ -47,13 +47,13 @@ The Support Dashboard enables you to add and manage your NetApp Support Site acc
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
+. In the upper right of the BlueXP console, select the Help icon, and select *Support*.
 +
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-help-support.png[A screenshot of the Help menu where Support is the first option listed]
 
-. Click *NSS Management > Add NSS Account*.
+. Select *NSS Management > Add NSS Account*.
 
-. When you're prompted, click *Continue* to be redirected to a Microsoft login page.
+. When you're prompted, select *Continue* to be redirected to a Microsoft login page.
 +
 NetApp uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing.
 
@@ -85,7 +85,7 @@ Users can now select the account when creating new Cloud Volumes ONTAP systems, 
 
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure^]
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html[Launching Cloud Volumes ONTAP in GCP^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html[Registering pay-as-you-go systems^]
 
 == Update an NSS account for the new authentication method
@@ -94,17 +94,17 @@ Starting in November 2021, NetApp now uses Microsoft Azure Active Directory as t
 
 .Steps
 
-. If you haven't already done so, https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[create a Microsoft Azure Active Directory B2C account that will be linked to your current NetApp account^].
+. If you haven't already done so, https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[create a Microsoft Azure Active Directory B2C account that will be linked to your current BlueXP account^].
 
-. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
+. In the upper right of the BlueXP console, select the Help icon, and select *Support*.
 
-. Click *NSS Management*.
+. Select *NSS Management*.
 
-. For the NSS account that you want to update, click *Update Account*.
+. For the NSS account that you want to update, select *Update Account*.
 +
 image:screenshot-nss-update-account.png[A screenshot that shows the Update Account option]
 
-. When you're prompted, click *Continue* to be redirected to a Microsoft login page.
+. When you're prompted, select *Continue* to be redirected to a Microsoft login page.
 +
 NetApp uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing.
 
@@ -114,7 +114,7 @@ After the process is complete, the account that you updated should now be listed
 
 . If existing Cloud Volumes ONTAP working environments are attached to the older version of the account, follow the steps below to <<Attach a working environment to a different NSS account,attach those working environments to a different NSS account>>.
 
-. Go to the older version of the NSS account, click image:icon-action.png["An icon that is three side-by-side dots"] and then select *Delete*.
+. Go to the older version of the NSS account, select image:icon-action.png["An icon that is three side-by-side dots"] and then select *Delete*.
 
 == Update NSS credentials
 
@@ -125,15 +125,15 @@ You'll need to update the credentials for your NSS accounts in BlueXP when eithe
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
+. In the upper right of the BlueXP console, select the Help icon, and select *Support*.
 
-. Click *NSS Management*.
+. Select *NSS Management*.
 
-. For the NSS account that you want to update, click image:icon-action.png["An icon that is three side-by-side dots"] and then select *Update Credentials*.
+. For the NSS account that you want to update, select image:icon-action.png["An icon that is three side-by-side dots"] and then select *Update Credentials*.
 +
 image:screenshot-nss-update-credentials.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to choose the Delete option.]
 
-. When you're prompted, click *Continue* to be redirected to a Microsoft login page.
+. When you're prompted, select *Continue* to be redirected to a Microsoft login page.
 +
 NetApp uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing.
 
@@ -143,25 +143,25 @@ NetApp uses Microsoft Azure Active Directory as the identity provider for authen
 
 If your organization has multiple NetApp Support Site accounts, you can change which account is associated with a Cloud Volumes ONTAP system.
 
-This feature is only supported with NSS accounts that are configured to use Microsoft Azure AD adopted by NetApp for identity management. Before you can use this feature, you need click *Add NSS Account* or *Update Account*.
+This feature is only supported with NSS accounts that are configured to use Microsoft Azure AD adopted by NetApp for identity management. Before you can use this feature, you need select *Add NSS Account* or *Update Account*.
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
+. In the upper right of the BlueXP console, select the Help icon, and select *Support*.
 
-. Click *NSS Management*.
+. Select *NSS Management*.
 
 . Complete the following steps to change the NSS account:
 
 .. Expand the row for the NetApp Support Site account that the working environment is currently associated with.
 
-.. For the working environment that you want to change the association for, click image:icon-action.png["An icon that is three side-by-side dots"]
+.. For the working environment that you want to change the association for, select image:icon-action.png["An icon that is three side-by-side dots"]
 
 .. Select *Change to a different NSS account*.
 +
 image:screenshot-nss-change-account.png[A screenshot that shows the action menu for a working environment that is associated with a NetApp Support Site account.]
 
-.. Select the account and then click *Save*.
+.. Select the account and then select *Save*.
 
 == Display the email address for an NSS account
 
@@ -171,11 +171,11 @@ TIP: When you go to the NSS Management page, BlueXP generates a token for each a
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
+. In the upper right of the BlueXP console, select the Help icon, and select *Support*.
 
-. Click *NSS Management*.
+. Select *NSS Management*.
 
-. For the NSS account that you want to update, click image:icon-action.png["An icon that is three side-by-side dots"] and then select *Display Email Address*.
+. For the NSS account that you want to update, select image:icon-action.png["An icon that is three side-by-side dots"] and then select *Display Email Address*.
 +
 image:screenshot-nss-display-email.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to display the email address.]
 
@@ -191,12 +191,12 @@ Note that you can't delete an account that is currently associated with a Cloud 
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Help icon, and select *Support*.
+. In the upper right of the BlueXP console, select the Help icon, and select *Support*.
 
-. Click *NSS Management*.
+. Select *NSS Management*.
 
-. For the NSS account that you want to delete, click image:icon-action.png["An icon that is three side-by-side dots"] and then select *Delete*.
+. For the NSS account that you want to delete, select image:icon-action.png["An icon that is three side-by-side dots"] and then select *Delete*.
 +
 image:screenshot-nss-delete.png[A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to choose the Delete option.]
 
-. Click *Delete* to confirm.
+. Select *Delete* to confirm.

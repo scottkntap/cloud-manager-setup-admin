@@ -5,7 +5,7 @@ keywords: s3 buckets, s3 storage, s3 working environment, amazon s3 buckets, ama
 summary: After you install a Connector in AWS, BlueXP can automatically discover information about the Amazon S3 buckets that reside in the AWS account where the Connector is installed. An Amazon S3 working environment is added to the Canvas so you can view this information.
 ---
 
-= Managing your Amazon S3 buckets
+= Manage your Amazon S3 buckets
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -19,5 +19,5 @@ image:screenshot-amazon-s3-we.png[A screenshot of an Amazon S3 working environme
 
 You can view details about your S3 buckets, including the region, access policy, account, total and used capacity, and more. These buckets can be used as destinations for Cloud Backup, Cloud Tiering, or Cloud Sync operations. Additionally, you can use Cloud Data Sense to scan these buckets.
 
-A newly added feature now enables you to create and edit S3 buckets. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html[Go here to see how you can view, create, and manage your S3 buckets using BlueXP.]
+A newly added feature now enables you to create and edit S3 buckets. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html[Go here to see how you can view, create, and manage your S3 buckets using BlueXP^]
 

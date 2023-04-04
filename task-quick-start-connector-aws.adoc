@@ -1,0 +1,93 @@
+---
+sidebar: sidebar
+permalink: task-quick-start-connector-aws.html
+keywords: quick start, connector quick start, aws quick start
+summary: Create a Connector in AWS by choosing an installation option, setting up networking, preparing permissions, and more.
+---
+
+= Quick start to create a Connector in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Create a Connector in AWS by choosing an installation option, setting up networking, preparing permissions, and more.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Understand your installation options
+
+[role="quick-margin-para"]
+The standard way to create a Connector in AWS is directly from BlueXP, but you can also create it from the AWS Marketplace, or you can manually install the software on a pre-existing Linux host.
+
+[role="quick-margin-para"]
+link:concept-install-options-aws.html[Learn more about your installation options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
+
+[role="quick-margin-para"]
+Prepare the following for the Connector:
+
+[role="quick-margin-list"]
+* A VPC and subnet
+* A network connection to the networks where you're planning to create and manage working environments
+* Outbound internet access to specific endpoints for day-to-day operations
+* The IP address, credentials, and HTTPS certificate of a proxy server, if a proxy server is required for outbound internet
+
+[role="quick-margin-para"]
+link:task-set-up-networking-aws.html[Learn more about networking requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Review host requirements
+
+[role="quick-margin-para"]
+The Connector software must run on a host that meets specific requirements. If you plan to manually install the Connector software on your own Linux host, then you should ensure that your host meets these requirements. If you're creating the Connector from BlueXP or from the AWS Marketplace, then these requirements are taken care of for you because the software is deployed from an image.
+
+[role="quick-margin-para"]
+The key requirements are as follows:
+
+[role="quick-margin-list"]
+* A dedicated host running CentOS or Red Hat Enterprise Linux
+* 4 CPUs
+* 14 GB of RAM
+* Docker Engine
+
+[role="quick-margin-para"]
+link:reference-host-requirements-aws.html[Learn more about these host requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up AWS permissions
+
+[role="quick-margin-para"]
+Set up AWS permissions based on the installation option that you're planning to use:
+
+[role="quick-margin-list"]
+* *Install from BlueXP*: Create an IAM policy and attach it to an IAM role that BlueXP can assume or to an IAM user that you can provide access keys for. BlueXP authenticates with AWS and uses these permissions to create the Connector instance on your behalf.
+
+* *Install from the AWS Marketplace*: Create an IAM policy and attach it to an IAM role. You'll associate this role with the Connector instance during installation.
+
+* *Manual install*: Create an IAM policy and attach it to an IAM role or to an IAM user. You'll either associate the role with the Connector instance or provide BlueXP with an access key for the IAM user.
+
+[role="quick-margin-para"]
+link:task-set-up-permissions-aws.html[Follow step-by-step instructions].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create the Connector
+
+[role="quick-margin-para"]
+Create the Connector using one of the available installation options:
+
+[role="quick-margin-list"]
+* *From BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
+
+* *From the AWS Marketplace*: Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[BlueXP page on the AWS Marketplace^] and follow the prompts to launch through EC2 so that you can attach an IAM role.
+
+* *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
+
+[role="quick-margin-para"]
+link:task-install-connector-aws.html[Follow step-by-step instructions].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Provide BlueXP with permissions
+
+[role="quick-margin-para"]
+If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+
+[role="quick-margin-para"]
+link:task-provide-permissions-aws.html[Follow step-by-step instructions].

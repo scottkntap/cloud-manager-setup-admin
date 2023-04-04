@@ -19,58 +19,138 @@ sidebar:
           url: /reference-limitations.html
     - title: Get started
       entries:
-        - title: Learn about BlueXP
-          url: /concept-overview.html
-        - title: Getting started checklist
-          url: /reference-checklist-cm.html
-        - title: Sign up to BlueXP
-          url: /task-sign-up-saas.html
-        - title: Log in to BlueXP
-          url: /task-logging-in.html
-        - title: Set up a NetApp account
-          entries:
-            - title: Learn about NetApp accounts
+        - title: Learn the basics
+          entries: 
+            - title: BlueXP overview
+              url: /concept-overview.html
+            - title: Accounts
               url: /concept-netapp-accounts.html
-            - title: Set up workspaces and users
-              url: /task-setting-up-netapp-accounts.html
-        - title: Set up a Connector
-          entries:
-            - title: Learn about Connectors
+            - title: Connectors
               url: /concept-connectors.html
-            - title: Create a Connector in AWS
-              url: /task-creating-connectors-aws.html
-            - title: Create a Connector in Azure
-              url: /task-creating-connectors-azure.html
-            - title: Create a Connector in Google Cloud
-              url: /task-creating-connectors-gcp.html
-            - title: Create a Connector in a Government region
-              url: /task-create-connectors-gov.html
-        - title: Where to go next
-          url: /reference-whats-next.html
+            - title: Deployment modes
+              url: /concept-modes.html
+        - title: Get started with standard mode
+          entries:
+            - title: Quick start
+              url: /task-quick-start-standard-mode.html
+            - title: Networking for console access
+              url: /reference-networking-saas-console.html
+            - title: Sign up to BlueXP
+              url: /task-sign-up-saas.html
+            - title: Log in to BlueXP
+              url: /task-logging-in.html
+            - title: Create a Connector
+              entries:
+                - title: AWS
+                  entries:
+                    - title: Quick start
+                      url: /task-quick-start-connector-aws.html
+                    - title: Installation options
+                      url: /concept-install-options-aws.html
+                    - title: Set up networking
+                      url: /task-set-up-networking-aws.html
+                    - title: Review host requirements
+                      url: /reference-host-requirements-aws.html
+                    - title: Set up AWS permissions
+                      url: /task-set-up-permissions-aws.html
+                    - title: Create the Connector
+                      url: /task-install-connector-aws.html
+                    - title: Provide permissions to BlueXP
+                      url: /task-provide-permissions-aws.html
+                - title: Azure
+                  entries:
+                    - title: Quick start
+                      url: /task-quick-start-connector-azure.html
+                    - title: Installation options
+                      url: /concept-install-options-azure.html
+                    - title: Set up networking
+                      url: /task-set-up-networking-azure.html
+                    - title: Review host requirements
+                      url: /reference-host-requirements-azure.html
+                    - title: Set up Azure permissions
+                      url: /task-set-up-permissions-azure.html
+                    - title: Create the Connector
+                      url: /task-install-connector-azure.html
+                    - title: Provide permissions to BlueXP
+                      url: /task-provide-permissions-azure.html
+                - title: Google Cloud
+                  entries:
+                    - title: Quick start
+                      url: /task-quick-start-connector-google.html
+                    - title: Installation options
+                      url: /concept-install-options-google.html
+                    - title: Set up networking
+                      url: /task-set-up-networking-google.html
+                    - title: Review host requirements
+                      url: /reference-host-requirements-google.html
+                    - title: Set up Google Cloud permissions
+                      url: /task-set-up-permissions-google.html
+                    - title: Enable Google Cloud APIs
+                      url: /task-enable-apis-google.html
+                    - title: Create the Connector
+                      url: /task-install-connector-google.html
+                    - title: Provide permissions to BlueXP
+                      url: /task-provide-permissions-google.html
+                - title: On premises
+                  entries:
+                    - title: Quick start
+                      url: /task-quick-start-connector-on-prem.html
+                    - title: Set up networking
+                      url: /task-set-up-networking-on-prem.html
+                    - title: Review host requirements
+                      url: /reference-host-requirements-on-prem.html
+                    - title: Set up cloud permissions
+                      url: /task-set-up-permissions-on-prem.html
+                    - title: Create the Connector
+                      url: /task-install-connector-on-prem.html
+                    - title: Provide permissions to BlueXP
+                      url: /task-provide-permissions-on-prem.html
+            - title: Subscribe to BlueXP
+              url: /task-subscribe-standard-mode.html
+            - title: What you can do next
+              url: /reference-whats-next.html
+        - title: Get started with restricted mode
+          entries:
+            - title: Quick start
+              url: /task-quick-start-restricted-mode.html
+            - title: Prepare for deployment
+              url: /task-prepare-restricted-mode.html
+            - title: Deploy the Connector
+              url: /task-install-restricted-mode.html
+            - title: Log in to BlueXP
+              url: /task-log-in-restricted-mode.html
+            - title: Subscribe to BlueXP
+              url: /task-subscribe-restricted-mode.html
+            - title: What you can do next
+              url: /reference-whats-next-restricted-mode.html
+        - title: Get started with private mode
+          entries:
+            - title: Quick start
+              url: /task-quick-start-private-mode.html
+            - title: Prepare for deployment
+              url: /task-prepare-private-mode.html
+            - title: Deploy the Connector
+              url: /task-install-private-mode.html
+            - title: Log in to BlueXP
+              url: /task-log-in-private-mode.html
+            - title: What you can do next
+              url: /reference-whats-next-private-mode.html
     - title: Administer BlueXP
       entries:
         - title: Identity federation
           url: /concept-federation.html
-        - title: NetApp accounts
+        - title: BlueXP accounts
           entries:
             - title: Manage your account
               url: /task-managing-netapp-accounts.html
             - title: Monitor operations in your account
               url: /task-monitor-cm-operations.html
+            - title: Create another account
+              url: /task-create-account.html
             - title: User roles
               url: /reference-user-roles.html
         - title: Connectors
           entries:
-            - title: Advanced deployment
-              entries:
-                - title: Create from the AWS Marketplace
-                  url: /task-launching-aws-mktp.html
-                - title: Create from the Azure Marketplace
-                  url: /task-launching-azure-mktp.html
-                - title: Install on your own host with internet
-                  url: /task-installing-linux.html
-                - title: Install on your own host without internet
-                  url: /task-install-connector-onprem-no-internet.html
             - title: Find the system ID for a Connector
               url: /task-finding-system-id.html
             - title: Manage existing Connectors
@@ -115,8 +195,6 @@ sidebar:
               url: /task-viewing-azure-blob.html
             - title: View your Google Cloud Storage buckets
               url: /task-viewing-gcp-storage.html
-        - title: Discovery using My Opportunities
-          url: /concept-my-opportunities.html
     - title: Reference
       entries:
         - title: Permissions
@@ -157,21 +235,33 @@ homepage:
       links:
         - title: Learn about BlueXP
           url: concept-overview.html
-        - title: Getting started checklist
-          url: reference-checklist-cm.html
+        - title: Learn about deployment modes
+          url: concept-modes.html
+        - title: Get started with standard mode
+          url: /task-quick-start-standard-mode.html
+        - title: Get started with restricted mode
+          url: /task-quick-start-restricted-mode.html
+        - title: Get started with private mode
+          url: /task-quick-start-private-mode.html
     - title: Connectors
       links:
         - title: Learn about Connectors
           url: concept-connectors.html
         - title: Manage Connectors
           url: task-managing-connectors.html
-    - title: NetApp accounts
+        - title: AWS permissions
+          url: reference-permissions-aws.html
+        - title: Azure permissions
+          url: reference-permissions-azure.html
+        - title: Google Cloud permissions
+          url: reference-permissions-gcp.html
+    - title: BlueXP accounts
       links:
-        - title: Learn about NetApp accounts
+        - title: Learn about BlueXP accounts
           url: concept-netapp-accounts.html
         - title: Set up workspaces and users
           url: task-setting-up-netapp-accounts.html
-        - title: Manage your NetApp account
+        - title: Manage your BlueXP account
           url: task-managing-netapp-accounts.html
     - title: Cloud provider accounts
       links:
@@ -186,7 +276,7 @@ homepage:
         - title: NetApp Community
           url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
         - title: BlueXP blog
-          url: https://cloud.netapp.com/blog/topic/cloud-manager
+          url: https://bluexp.netapp.com/blog
         - title: Cloud webinars
-          url: https://cloud.netapp.com/events
+          url: https://bluexp.netapp.com/events
 

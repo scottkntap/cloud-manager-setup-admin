@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference-connector-default-config.html
-keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux
+keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux, connector configuration, connector installation folder, connector folder, connector log
 summary: You might want to learn more about the Connector before you deploy it, or if you need to troubleshoot any issues.
 ---
 
@@ -87,7 +87,7 @@ The Connector uses the following ports on the Linux host:
 
 == Default configuration without internet access
 
-The following configuration applies if you manually installed the Connector on an on-premises Linux host that doesn't have internet access. link:task-install-connector-onprem-no-internet.html[Learn more about this installation option].
+The following configuration applies if you manually installed the Connector on an on-premises Linux host that doesn't have internet access. link:task-quick-start-private-mode.html[Learn more about this installation option].
 
 * The Connector installation folder resides in the following location:
 +

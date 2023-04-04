@@ -33,7 +33,7 @@ You'll only see the subscriptions that are associated with the account that you'
 +
 image:screenshot-subscriptions-expand.png[A screenshot of the Subscriptions tab in the Digital Wallet where you can select the arrow at the end of a row to expand it.]
 
-* Click image:icon-column-selector.png[the plus icon at the end of the table header] to choose which columns appear in the table. 
+* Select image:icon-column-selector.png[the plus icon at the end of the table header] to choose which columns appear in the table. 
 +
 Note that the Term and Auto Renew columns don't appear by default. The Auto Renew column displays renewal information for Azure contracts only.
 
@@ -63,8 +63,8 @@ For example, let's say that you have two accounts and each is billed through sep
 
 . Select *Subscriptions*.
 
-. Click the action menu in the row that corresponds to the subscription that you want to manage.
+. Select the action menu in the row that corresponds to the subscription that you want to manage.
 +
 image:screenshot-subscription-menu.png[A screenshot of the action menu for a subscription.]
 
-. Choose to rename the subscription or to manage the NetApp accounts that are associated with the subscription.
+. Choose to rename the subscription or to manage the BlueXP accounts that are associated with the subscription.

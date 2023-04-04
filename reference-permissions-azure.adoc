@@ -23,6 +23,11 @@ When you create a Connector directly from BlueXP, BlueXP automatically applies t
 
 If you deploy the Connector from the Azure Marketplace or if you manually install the Connector on a Linux host, then you'll need to set up the custom role yourself.
 
+* link:task-set-up-permissions-azure.html[Set up permissions for Connector installation in Azure (standard mode)]
+* link:task-set-up-permissions-on-prem.html[Set up permissions for Connector installation on premises (standard mode)]
+* link:task-prepare-restricted-mode.html#prepare-cloud-permissions[Set up permissions for restricted mode]
+* https://review.docs.netapp.com/us-en/cloud-manager-setup-admin_feb-2022-modes/task-prepare-private-mode.html#prepare-cloud-permissions[Set up permissions for private mode]
+
 You also need to ensure that the role is up to date as new permissions are added in subsequent releases.
 
 [source,json]
@@ -163,7 +168,7 @@ You also need to ensure that the role is up to date as new permissions are added
 
 == How Azure permissions are used
 
-The following sections describe how the permissions are used for each NetApp cloud service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.
+The following sections describe how the permissions are used for each BlueXP service. This information can be helpful if your corporate policies dictate that permissions are only provided as needed.
 
 === AppTemplate tags
 

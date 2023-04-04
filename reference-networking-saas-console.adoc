@@ -1,0 +1,82 @@
+---
+sidebar: sidebar
+permalink: reference-networking-saas-console.html
+keywords: networking, urls, endpoints, web browser, console
+summary: As you use the BlueXP web-based console that's provided through the SaaS layer, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to these endpoints.
+---
+
+= Prepare networking for user access to the BlueXP console
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+As you use the BlueXP web-based console that's provided through the SaaS layer, it contacts several endpoints to complete data management tasks. The machine running the web browser must have connections to these endpoints.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| \https://console.bluexp.netapp.com | Your web browser contacts this URL when using the web-based console.
+
+a|
+AWS services (amazonaws.com):
+
+* CloudFormation
+* Elastic Compute Cloud (EC2)
+* Key Management Service (KMS)
+* Security Token Service (STS)
+* Simple Storage Service (S3)
+
+| Required to deploy a Connector from BlueXP in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
+
+|
+\https://management.azure.com
+
+\https://login.microsoftonline.com
+
+| Required to deploy a Connector from BlueXP in most Azure regions.
+
+|
+\https://management.microsoftazure.de
+
+\https://login.microsoftonline.de
+| Required to deploy a Connector from BlueXP in Azure Germany regions.
+
+|
+\https://management.usgovcloudapi.net
+
+\https://login.microsoftonline.com
+
+| Required to deploy a Connector from BlueXP in Azure US Gov regions.
+
+|
+\https://www.googleapis.com
+
+| Required to deploy a Connector from BlueXP in Google Cloud.
+
+| \https://signin.b2c.netapp.com
+| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to BlueXP.
+
+|
+\https://netapp-cloud-account.auth0.com
+
+\https://cdn.auth0.com
+
+\https://services.cloud.netapp.com
+| Your web browser connects to these endpoints for centralized user authentication through BlueXP.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
+
+|===
+
+.Related links
+
+* link:task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations[Endpoints that the Connector contacts in AWS]
+* link:task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations[Endpoints that the Connector contacts in Azure]
+* link:task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations[Endpoints that the Connector contacts in Google Cloud]
+* link:task-set-up-networking-on-prem.html#endpoints-contacted-during-manual-installation[Endpoints contacted during manual installation of the Connector]
