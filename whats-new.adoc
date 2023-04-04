@@ -20,7 +20,7 @@ Learn what's new with BlueXP administration features: BlueXP accounts, Connector
 
 === Deployment modes
 
-BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business requirements for data security and privacy. When you get started with BlueXP and set up your account, you can choose from three modes:
+BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business and security requirements. You can choose from three modes:
 
 * Standard mode
 * Restricted mode
