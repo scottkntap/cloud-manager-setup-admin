@@ -73,8 +73,8 @@ The following table provides a comparison of these modes.
 | Locally from the Connector VM
 
 | API endpoint
-| \https://cloudmanager.cloud.netapp.com
-| \https://cloudmanager.cloud.netapp.com
+| The BlueXP SaaS layer
+| The BlueXP SaaS layer
 | The Connector
 
 | Authentication
@@ -125,7 +125,6 @@ The user interface is accessible from the web-based console that's provided thro
 
 API endpoint::
 API calls are made to the following endpoint:
-+
 \https://cloudmanager.cloud.netapp.com
 
 Authentication::
@@ -171,7 +170,6 @@ The user interface is accessible from the Connector that's deployed in your clou
 
 API endpoint::
 API calls are made to the following endpoint:
-+
 \https://cloudmanager.cloud.netapp.com
 
 Authentication::
@@ -205,7 +203,7 @@ The following limitations apply:
 
 | Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for restricted mode.
 
-| On-premises ONTAP clusters | Discovery with a Connector and discovery without a Connector (direct discovery) are supported. 
+| On-premises ONTAP clusters | Discovery with a Connector and discovery without a Connector (direct discovery) are both supported. 
 
 When you discover an on-prem cluster with a Connector, the Advanced view (System Manager) is not supported.
 
