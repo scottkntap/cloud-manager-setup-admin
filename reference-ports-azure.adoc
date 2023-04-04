@@ -27,7 +27,7 @@ The Azure security group for the Connector requires both inbound and outbound ru
 | SSH | 22 | Provides SSH access to the Connector host
 | HTTP | 80 | Provides HTTP access from client web browsers to the local user interface
 | HTTPS | 443 | Provides HTTPS access from client web browsers to the local user interface, and connections from the Cloud Data Sense instance
-| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. link:task-set-up-networking-azure.html[Learn how the Connector is used as a proxy for AutoSupport messages].
+| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deployment. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html[Learn how the Connector is used as a proxy for AutoSupport messages^]
 | TCP | 9060, 9061 | Provides the ability to enable and use Cloud Data Sense and Cloud Backup in Government regions.
 
 |===
