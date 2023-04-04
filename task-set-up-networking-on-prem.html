@@ -1938,7 +1938,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-04-04 13:07:49 +0000">04/04/2023</time>
+    <time datetime="2023-04-04 17:33:09 +0000">04/04/2023</time>
     
   
 
@@ -2164,7 +2164,7 @@ https://*.blob.core.windows.net</p></td>
 <p>SSH (22) is only needed if you need to connect to the host for troubleshooting.</p>
 </li>
 <li>
-<p>Inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn&#8217;t available.</p>
+<p>Inbound connections over port 3128 are required if you deploy Cloud Volumes ONTAP systems in a subnet where an outbound internet connection isn&#8217;t available. If Cloud Volumes ONTAP systems don&#8217;t have an outbound internet connection to send AutoSupport messages, BlueXP automatically configures those Cloud Volumes ONTAP systems to use a proxy server that&#8217;s included with the Connector. The only requirement is to ensure that the Connector&#8217;s security group allows inbound connections over port 3128. You&#8217;ll need to open this port after you deploy the Connector.</p>
 </li>
 </ul>
 </div>
