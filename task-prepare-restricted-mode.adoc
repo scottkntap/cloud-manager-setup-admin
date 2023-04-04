@@ -110,6 +110,7 @@ AWS services (amazonaws.com):
 
 * CloudFormation
 * Elastic Compute Cloud (EC2)
+* Identity and Access Management (IAM)
 * Key Management Service (KMS)
 * Security Token Service (STS)
 * Simple Storage Service (S3)
