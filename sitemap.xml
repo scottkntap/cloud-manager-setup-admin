@@ -15,28 +15,28 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html</loc>
       
-      <lastmod>2022-11-01T14:46:01+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html</loc>
       
-      <lastmod>2022-11-01T14:46:01+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-gcp.html</loc>
       
-      <lastmod>2022-10-31T16:40:10+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html</loc>
       
-      <lastmod>2023-03-13T17:38:24+00:00</lastmod>
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
       
     </url>
   
@@ -48,30 +48,51 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-my-opportunities.html</loc>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-install-options-aws.html</loc>
       
-      <lastmod>2022-10-31T16:40:10+00:00</lastmod>
+      <lastmod>2023-03-24T20:23:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-install-options-azure.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-install-options-google.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html</loc>
+      
+      <lastmod>2023-04-04T13:45:18+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html</loc>
       
-      <lastmod>2023-01-27T21:11:44+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-overview.html</loc>
       
-      <lastmod>2023-03-01T00:23:08+00:00</lastmod>
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/</loc>
       
-      <lastmod>2022-11-01T14:02:12+00:00</lastmod>
+      <lastmod>2023-03-29T19:21:08+00:00</lastmod>
       
     </url>
   
@@ -85,224 +106,350 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html</loc>
       
-      <lastmod>2023-03-07T20:53:11+00:00</lastmod>
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-connector-default-config.html</loc>
       
-      <lastmod>2023-02-06T15:37:19+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-host-requirements-aws.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-host-requirements-azure.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-host-requirements-google.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-host-requirements-on-prem.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html</loc>
       
-      <lastmod>2022-12-15T17:59:41+00:00</lastmod>
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-saas-console.html</loc>
+      
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html</loc>
       
-      <lastmod>2023-03-23T13:26:06+00:00</lastmod>
+      <lastmod>2023-04-03T22:21:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html</loc>
       
-      <lastmod>2023-03-23T13:25:33+00:00</lastmod>
+      <lastmod>2023-03-30T20:03:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html</loc>
       
-      <lastmod>2023-02-06T16:55:34+00:00</lastmod>
+      <lastmod>2023-03-13T15:33:44+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html</loc>
       
-      <lastmod>2022-10-31T16:40:10+00:00</lastmod>
+      <lastmod>2023-03-13T15:33:44+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html</loc>
       
-      <lastmod>2023-02-23T20:36:52+00:00</lastmod>
+      <lastmod>2023-03-30T20:14:50+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html</loc>
       
-      <lastmod>2023-02-23T20:36:52+00:00</lastmod>
+      <lastmod>2023-03-30T20:03:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-gcp.html</loc>
       
-      <lastmod>2023-02-23T20:36:52+00:00</lastmod>
+      <lastmod>2023-03-30T20:03:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-on-prem.html</loc>
       
-      <lastmod>2022-09-16T17:21:16+00:00</lastmod>
+      <lastmod>2023-03-30T20:03:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-user-roles.html</loc>
       
-      <lastmod>2022-10-31T16:40:10+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-whats-next-private-mode.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-whats-next-restricted-mode.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-whats-next.html</loc>
       
-      <lastmod>2022-12-15T18:00:06+00:00</lastmod>
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin//search.html</loc>
       
-      <lastmod>2023-04-04T08:36:24+00:00</lastmod>
+      <lastmod>2023-04-04T14:08:15+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html</loc>
       
-      <lastmod>2023-03-31T17:12:07+00:00</lastmod>
+      <lastmod>2023-04-03T22:21:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html</loc>
       
-      <lastmod>2023-03-31T17:12:07+00:00</lastmod>
+      <lastmod>2023-04-03T22:21:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html</loc>
       
-      <lastmod>2023-03-31T17:12:07+00:00</lastmod>
+      <lastmod>2023-04-03T22:21:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html</loc>
       
-      <lastmod>2023-03-31T17:29:06+00:00</lastmod>
+      <lastmod>2023-04-03T22:21:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html</loc>
       
-      <lastmod>2023-03-10T13:50:51+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-create-account.html</loc>
+      
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-create-connectors-gov.html</loc>
       
-      <lastmod>2022-11-30T15:13:25+00:00</lastmod>
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html</loc>
       
-      <lastmod>2023-03-23T13:26:06+00:00</lastmod>
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html</loc>
+      
+      <lastmod>2023-04-04T13:07:49+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html</loc>
       
-      <lastmod>2023-03-07T20:53:11+00:00</lastmod>
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html</loc>
       
-      <lastmod>2023-02-16T22:52:10+00:00</lastmod>
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-enable-apis-google.html</loc>
+      
+      <lastmod>2023-03-15T18:37:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-finding-system-id.html</loc>
       
-      <lastmod>2022-10-31T16:40:10+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-get-help.html</loc>
       
-      <lastmod>2022-10-31T16:40:10+00:00</lastmod>
+      <lastmod>2023-03-09T19:45:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-aws.html</loc>
+      
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-azure.html</loc>
+      
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-google.html</loc>
+      
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-on-prem.html</loc>
+      
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html</loc>
       
-      <lastmod>2023-03-13T15:10:23+00:00</lastmod>
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-private-mode.html</loc>
+      
+      <lastmod>2023-03-30T19:04:40+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html</loc>
+      
+      <lastmod>2023-03-30T19:04:40+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-https-cert.html</loc>
       
-      <lastmod>2022-11-01T14:46:01+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html</loc>
       
-      <lastmod>2023-02-23T18:01:15+00:00</lastmod>
+      <lastmod>2023-03-22T17:12:11+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html</loc>
       
-      <lastmod>2022-12-14T19:50:46+00:00</lastmod>
+      <lastmod>2023-03-22T17:12:11+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html</loc>
       
-      <lastmod>2023-01-09T18:21:00+00:00</lastmod>
+      <lastmod>2023-03-22T17:12:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-log-in-private-mode.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-log-in-restricted-mode.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html</loc>
       
-      <lastmod>2023-03-21T17:25:14+00:00</lastmod>
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-manage-subscriptions.html</loc>
       
-      <lastmod>2022-11-02T22:21:49+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
@@ -316,35 +463,196 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html</loc>
       
-      <lastmod>2023-03-16T15:40:43+00:00</lastmod>
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html</loc>
       
-      <lastmod>2023-03-10T13:51:11+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html</loc>
       
-      <lastmod>2023-03-31T16:50:15+00:00</lastmod>
+      <lastmod>2023-04-03T22:21:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-prepare-private-mode.html</loc>
+      
+      <lastmod>2023-04-04T13:07:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-prepare-restricted-mode.html</loc>
+      
+      <lastmod>2023-04-04T13:07:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-provide-permissions-aws.html</loc>
+      
+      <lastmod>2023-03-30T20:03:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-provide-permissions-azure.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-provide-permissions-google.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-provide-permissions-on-prem.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-standard-mode.html</loc>
+      
+      <lastmod>2023-03-24T20:23:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html</loc>
+      
+      <lastmod>2023-04-04T13:07:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html</loc>
+      
+      <lastmod>2023-03-31T16:45:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html</loc>
+      
+      <lastmod>2023-03-31T16:45:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-on-prem.html</loc>
+      
+      <lastmod>2023-04-04T13:07:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-permissions-aws.html</loc>
+      
+      <lastmod>2023-03-24T20:23:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-permissions-azure.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-permissions-google.html</loc>
+      
+      <lastmod>2023-03-30T19:04:55+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-permissions-on-prem.html</loc>
+      
+      <lastmod>2023-03-30T18:21:39+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html</loc>
       
-      <lastmod>2023-01-27T21:11:44+00:00</lastmod>
+      <lastmod>2023-03-22T17:12:11+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-sign-up-saas.html</loc>
       
-      <lastmod>2023-03-21T17:25:37+00:00</lastmod>
+      <lastmod>2023-04-03T17:36:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-subscribe-restricted-mode.html</loc>
+      
+      <lastmod>2023-03-30T20:03:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-subscribe-standard-mode.html</loc>
+      
+      <lastmod>2023-03-22T17:04:43+00:00</lastmod>
       
     </url>
   
@@ -358,28 +666,28 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-viewing-amazon-s3.html</loc>
       
-      <lastmod>2023-03-08T20:04:30+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-viewing-azure-blob.html</loc>
       
-      <lastmod>2022-10-31T20:17:02+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-viewing-gcp-storage.html</loc>
       
-      <lastmod>2022-10-31T20:17:02+00:00</lastmod>
+      <lastmod>2023-03-31T14:31:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-setup-admin/whats-new.html</loc>
       
-      <lastmod>2023-04-03T14:05:39+00:00</lastmod>
+      <lastmod>2023-04-04T13:31:13+00:00</lastmod>
       
     </url>
   

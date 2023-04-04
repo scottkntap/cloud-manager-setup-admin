@@ -9,14 +9,14 @@
   <meta property="og:title" content="Manage Azure credentials and subscriptions for BlueXP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html" />
-	<meta property="og:description" content="When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials and Marketplace subscription to use with that system. If you manage mu..." />
+	<meta property="og:description" content="Add and manage Azure credentials so that BlueXP has the permissions that it needs to deploy and manage cloud resources in your Azure subscriptions. If you ma..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-setup-admin/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials and Marketplace subscription to use with that system. If you manage mu...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Add and manage Azure credentials so that BlueXP has the permissions that it needs to deploy and manage cloud resources in your Azure subscriptions. If you ma...">
   <meta name="keywords" content=" permissions, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed identity, iam, operator, role, virtual machine, create custom role, create azure custom role, azure custom role"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
 
@@ -386,14 +386,6 @@
           </a>
           
 
-
-
-
-
-
-
-
-
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -402,13 +394,17 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Set_up_a_NetApp_account.pdf" 
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Learn_the_basics.pdf" 
             
           >
             <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
-            Set up a NetApp account
+            Learn the basics
           </a>
           
+
+
+
+
 
 
 
@@ -429,13 +425,57 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Set_up_a_Connector.pdf" 
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Get_started_with_standard_mode.pdf" 
             
           >
             <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
-            Set up a Connector
+            Get started with standard mode
           </a>
           
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Create_a_Connector.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Create a Connector
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/AWS.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            AWS
+          </a>
+          
+
+
+
+
 
 
 
@@ -453,6 +493,201 @@
   
 
 
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Azure.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Azure
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Google_Cloud.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Google Cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/On_premises.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            On premises
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Get_started_with_restricted_mode.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Get started with restricted mode
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Get_started_with_private_mode.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
+            Get started with private mode
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
 
 
         </li>
@@ -489,13 +724,15 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/NetApp_accounts.pdf" 
+              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/BlueXP_accounts.pdf" 
             
           >
             <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
-            NetApp accounts
+            BlueXP accounts
           </a>
           
+
+
 
 
 
@@ -525,37 +762,6 @@
             Connectors
           </a>
           
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/cloud-manager-setup-admin/pdfs/sidebar/Advanced_deployment.pdf" 
-            
-          >
-            <img src="/us-en/cloud-manager-setup-admin/images/pdf.png" alt="" width="16" height="16"/>
-            Advanced deployment
-          </a>
-          
-
-
-
-
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
 
 
 
@@ -712,8 +918,6 @@
     
 
   
-
-
 
 
         </li>
@@ -916,107 +1120,429 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Learn about BlueXP"
-      data-li-level="2#" 
+      data-pdf-filename="Learn the basics"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Learn the basics</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="BlueXP overview"
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-overview.html">
-        Learn about BlueXP
+        BlueXP overview
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Getting started checklist"
-      data-li-level="2#" 
+      data-pdf-filename="Accounts"
+      data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-checklist-cm.html">
-        Getting started checklist
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html">
+        Accounts
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Connectors"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-connectors.html">
+        Connectors
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Deployment modes"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-modes.html">
+        Deployment modes
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started with standard mode"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Get started with standard mode</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-quick-start-standard-mode.html">
+        Quick start
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Networking for console access"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-networking-saas-console.html">
+        Networking for console access
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Sign up to BlueXP"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-sign-up-saas.html">
         Sign up to BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Log in to BlueXP"
-      data-li-level="2#" 
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-logging-in.html">
         Log in to BlueXP
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Set up a NetApp account"
-      data-li-level="2" 
+      data-pdf-filename="Create a Connector"
+      data-li-level="3" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Set up a NetApp account</div>
+        <div class="na-navbar-padding"> Create a Connector</div>
       </a>
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Learn about NetApp accounts"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html">
-        Learn about NetApp accounts
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Set up workspaces and users"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html">
-        Set up workspaces and users
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Set up a Connector"
-      data-li-level="2" 
+      data-pdf-filename="AWS"
+      data-li-level="4" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Set up a Connector</div>
+        <div class="na-navbar-padding"> AWS</div>
       </a>
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Learn about Connectors"
-      data-li-level="3#" 
+      data-pdf-filename="Quick start"
+      data-li-level="5#" 
       class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-connectors.html">
-        Learn about Connectors
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html">
+        Quick start
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Create a Connector in AWS"
-      data-li-level="3#" 
+      data-pdf-filename="Installation options"
+      data-li-level="5#" 
       class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html">
-        Create a Connector in AWS
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-install-options-aws.html">
+        Installation options
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Create a Connector in Azure"
-      data-li-level="3#" 
+      data-pdf-filename="Set up networking"
+      data-li-level="5#" 
       class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html">
-        Create a Connector in Azure
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html">
+        Set up networking
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Create a Connector in Google Cloud"
-      data-li-level="3#" 
+      data-pdf-filename="Review host requirements"
+      data-li-level="5#" 
       class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html">
-        Create a Connector in Google Cloud
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-host-requirements-aws.html">
+        Review host requirements
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Create a Connector in a Government region"
-      data-li-level="3#" 
+      data-pdf-filename="Set up AWS permissions"
+      data-li-level="5#" 
       class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-create-connectors-gov.html">
-        Create a Connector in a Government region
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-set-up-permissions-aws.html">
+        Set up AWS permissions
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create the Connector"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-aws.html">
+        Create the Connector
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Provide permissions to BlueXP"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-provide-permissions-aws.html">
+        Provide permissions to BlueXP
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Where to go next"
-      data-li-level="2#" 
+      data-pdf-filename="Azure"
+      data-li-level="4" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Azure</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html">
+        Quick start
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installation options"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-install-options-azure.html">
+        Installation options
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up networking"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html">
+        Set up networking
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Review host requirements"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-host-requirements-azure.html">
+        Review host requirements
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up Azure permissions"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-set-up-permissions-azure.html">
+        Set up Azure permissions
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create the Connector"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-azure.html">
+        Create the Connector
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Provide permissions to BlueXP"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-provide-permissions-azure.html">
+        Provide permissions to BlueXP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Google Cloud"
+      data-li-level="4" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Google Cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html">
+        Quick start
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installation options"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-install-options-google.html">
+        Installation options
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up networking"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html">
+        Set up networking
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Review host requirements"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-host-requirements-google.html">
+        Review host requirements
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up Google Cloud permissions"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-set-up-permissions-google.html">
+        Set up Google Cloud permissions
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Enable Google Cloud APIs"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-enable-apis-google.html">
+        Enable Google Cloud APIs
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create the Connector"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-google.html">
+        Create the Connector
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Provide permissions to BlueXP"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-provide-permissions-google.html">
+        Provide permissions to BlueXP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="On premises"
+      data-li-level="4" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> On premises</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html">
+        Quick start
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up networking"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-set-up-networking-on-prem.html">
+        Set up networking
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Review host requirements"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-host-requirements-on-prem.html">
+        Review host requirements
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up cloud permissions"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-set-up-permissions-on-prem.html">
+        Set up cloud permissions
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create the Connector"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-on-prem.html">
+        Create the Connector
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Provide permissions to BlueXP"
+      data-li-level="5#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-provide-permissions-on-prem.html">
+        Provide permissions to BlueXP
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Subscribe to BlueXP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-subscribe-standard-mode.html">
+        Subscribe to BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="What you can do next"
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-whats-next.html">
-        Where to go next
+        What you can do next
       </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started with restricted mode"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Get started with restricted mode</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html">
+        Quick start
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Prepare for deployment"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-prepare-restricted-mode.html">
+        Prepare for deployment
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Deploy the Connector"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html">
+        Deploy the Connector
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Log in to BlueXP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-log-in-restricted-mode.html">
+        Log in to BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Subscribe to BlueXP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-subscribe-restricted-mode.html">
+        Subscribe to BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="What you can do next"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-whats-next-restricted-mode.html">
+        What you can do next
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started with private mode"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Get started with private mode</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html">
+        Quick start
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Prepare for deployment"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-prepare-private-mode.html">
+        Prepare for deployment
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Deploy the Connector"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-private-mode.html">
+        Deploy the Connector
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Log in to BlueXP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-log-in-private-mode.html">
+        Log in to BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="What you can do next"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/reference-whats-next-private-mode.html">
+        What you can do next
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Administer BlueXP"
       data-li-level="1" 
@@ -1034,11 +1560,11 @@
         Identity federation
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="NetApp accounts"
+      data-pdf-filename="BlueXP accounts"
       data-li-level="2" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> NetApp accounts</div>
+        <div class="na-navbar-padding"> BlueXP accounts</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1057,6 +1583,13 @@
         Monitor operations in your account
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Create another account"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-create-account.html">
+        Create another account
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="User roles"
       data-li-level="3#" 
       class=" "
@@ -1072,43 +1605,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Advanced deployment"
-      data-li-level="3" 
-      class="subfolders "
-    ><a href="#">
-        <div class="na-navbar-padding"> Advanced deployment</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Create from the AWS Marketplace"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html">
-        Create from the AWS Marketplace
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Create from the Azure Marketplace"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html">
-        Create from the Azure Marketplace
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Install on your own host with internet"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-installing-linux.html">
-        Install on your own host with internet
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Install on your own host without internet"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html">
-        Install on your own host without internet
-      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Find the system ID for a Connector"
       data-li-level="3#" 
@@ -1272,14 +1768,7 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/task-viewing-gcp-storage.html">
         View your Google Cloud Storage buckets
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Discovery using My Opportunities"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloud-manager-setup-admin/concept-my-opportunities.html">
-        Discovery using My Opportunities
-      </a></li></ul></li><li 
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Reference"
       data-li-level="1" 
@@ -1449,7 +1938,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-03-31 17:12:07 +0000">03/31/2023</time>
+    <time datetime="2023-04-03 22:21:28 +0000">04/03/2023</time>
     
   
 
@@ -1470,8 +1959,16 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials to use with that system. You also need to choose a Marketplace subscription, if you&#8217;re using pay-as-you-go licensing. Follow the steps on this page if you need to use multiple Azure credentials or multiple Azure Marketplace subscriptions for Cloud Volumes ONTAP.</p>
+<p>Add and manage Azure credentials so that BlueXP has the permissions that it needs to deploy and manage cloud resources in your Azure subscriptions. If you manage multiple Azure Marketplace subscriptions, you can assign each one of them to different Azure credentials from the Credentials page.</p>
 </div>
+<div class="paragraph">
+<p>Follow the steps on this page if you need to use multiple Azure credentials or multiple Azure Marketplace subscriptions for Cloud Volumes ONTAP.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview">Overview</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>There are two ways to add additional Azure subscriptions and credentials in BlueXP.</p>
 </div>
@@ -1488,7 +1985,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="associating-additional-azure-subscriptions-with-a-managed-identity">Associating additional Azure subscriptions with a managed identity</h2>
+<h2 id="associate-additional-azure-subscriptions-with-a-managed-identity">Associate additional Azure subscriptions with a managed identity</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>BlueXP enables you to choose the Azure credentials and Azure subscription in which you want to deploy Cloud Volumes ONTAP. You can&#8217;t select a different Azure subscription for the managed identity profile unless you associate the <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview" target="_blank" rel="noopener">managed identity</a> with those subscriptions.</p>
@@ -1507,11 +2004,11 @@
 <p>Open the <strong>Subscriptions</strong> service and then select the subscription in which you want to deploy Cloud Volumes ONTAP.</p>
 </li>
 <li>
-<p>Click <strong>Access control (IAM)</strong>.</p>
+<p>Select <strong>Access control (IAM)</strong>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Click <strong>Add</strong> &gt; <strong>Add role assignment</strong> and then add the permissions:</p>
+<p>Select <strong>Add</strong> &gt; <strong>Add role assignment</strong> and then add the permissions:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1539,7 +2036,7 @@ BlueXP Operator is the default name provided in the Connector policy. If you cho
 <p>Select the Connector virtual machine.</p>
 </li>
 <li>
-<p>Click <strong>Save</strong>.</p>
+<p>Select <strong>Save</strong>.</p>
 </li>
 </ul>
 </div>
@@ -1562,7 +2059,7 @@ BlueXP Operator is the default name provided in the Connector policy. If you cho
 </div>
 </div>
 <div class="sect1">
-<h2 id="adding-additional-azure-credentials-to-bluexp">Adding additional Azure credentials to BlueXP</h2>
+<h2 id="add-additional-azure-credentials-to-bluexp">Add additional Azure credentials to BlueXP</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you deploy a Connector from BlueXP, BlueXP enables a system-assigned managed identity on the virtual machine that has the required permissions. BlueXP selects these Azure credentials by default when you create a new working environment for Cloud Volumes ONTAP.</p>
@@ -1583,7 +2080,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <p>If you want to deploy Cloud Volumes ONTAP using <em>different</em> Azure credentials, then you must grant the required permissions by creating and setting up a service principal in Azure Active Directory for each Azure account. You can then add the new credentials to BlueXP.</p>
 </div>
 <div class="sect2">
-<h3 id="granting-azure-permissions-using-a-service-principal">Granting Azure permissions using a service principal</h3>
+<h3 id="grant-azure-permissions-using-a-service-principal">Grant Azure permissions using a service principal</h3>
 <div class="paragraph">
 <p>BlueXP needs permissions to perform actions in Azure. You can grant the required permissions to an Azure account by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that BlueXP needs.</p>
 </div>
@@ -1598,24 +2095,24 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p><a href="#creating-an-azure-active-directory-application">Create an Azure Active Directory application</a>.</p>
+<p><a href="#create-an-azure-active-directory-application">Create an Azure Active Directory application</a>.</p>
 </li>
 <li>
-<p><a href="#assigning-the-application-to-a-role">Assign the application to a role</a>.</p>
+<p><a href="#assign-the-application-to-a-role">Assign the application to a role</a>.</p>
 </li>
 <li>
-<p><a href="#adding-windows-azure-service-management-api-permissions">Add Windows Azure Service Management API permissions</a>.</p>
+<p><a href="#add-windows-azure-service-management-api-permissions">Add Windows Azure Service Management API permissions</a>.</p>
 </li>
 <li>
 <p><a href="#ids">Get the application ID and directory ID</a>.</p>
 </li>
 <li>
-<p><a href="#creating-a-client-secret">Create a client secret</a>.</p>
+<p><a href="#create-a-client-secret">Create a client secret</a>.</p>
 </li>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="creating-an-azure-active-directory-application">Creating an Azure Active Directory application</h4>
+<h4 id="create-an-azure-active-directory-application">Create an Azure Active Directory application</h4>
 <div class="paragraph">
 <p>Create an Azure Active Directory (AD) application and service principal that BlueXP can use for role-based access control.</p>
 </div>
@@ -1633,10 +2130,10 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </li>
 <li>
-<p>In the menu, click <strong>App registrations</strong>.</p>
+<p>In the menu, select <strong>App registrations</strong>.</p>
 </li>
 <li>
-<p>Click <strong>New registration</strong>.</p>
+<p>Select <strong>New registration</strong>.</p>
 </li>
 <li>
 <p>Specify details about the application:</p>
@@ -1655,7 +2152,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </li>
 <li>
-<p>Click <strong>Register</strong>.</p>
+<p>Select <strong>Register</strong>.</p>
 </li>
 </ol>
 </div>
@@ -1665,7 +2162,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </div>
 <div class="sect3">
-<h4 id="assigning-the-application-to-a-role">Assigning the application to a role</h4>
+<h4 id="assign-the-application-to-a-role">Assign the application to a role</h4>
 <div class="paragraph">
 <p>You must bind the service principal to one or more Azure subscriptions and assign it the custom "BlueXP Operator" role so BlueXP has permissions in Azure.</p>
 </div>
@@ -1740,10 +2237,10 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <p>Select the subscription.</p>
 </li>
 <li>
-<p>Click <strong>Access control (IAM) &gt; Add &gt; Add role assignment</strong>.</p>
+<p>Select <strong>Access control (IAM) &gt; Add &gt; Add role assignment</strong>.</p>
 </li>
 <li>
-<p>In the <strong>Role</strong> tab, select the <strong>BlueXP Operator</strong> role and click <strong>Next</strong>.</p>
+<p>In the <strong>Role</strong> tab, select the <strong>BlueXP Operator</strong> role and select <strong>Next</strong>.</p>
 </li>
 <li>
 <p>In the <strong>Members</strong> tab, complete the following steps:</p>
@@ -1753,7 +2250,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <p>Keep <strong>User, group, or service principal</strong> selected.</p>
 </li>
 <li>
-<p>Click <strong>Select members</strong>.</p>
+<p>Select <strong>Select members</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot-azure-service-principal-role.png" alt="A screenshot of the Azure portal that shows the Members tab when adding a role to an application."></span></p>
 </div>
@@ -1768,16 +2265,16 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </li>
 <li>
-<p>Select the application and click <strong>Select</strong>.</p>
+<p>Select the application and select <strong>Select</strong>.</p>
 </li>
 <li>
-<p>Click <strong>Next</strong>.</p>
+<p>Select <strong>Next</strong>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Click <strong>Review + assign</strong>.</p>
+<p>Select <strong>Review + assign</strong>.</p>
 <div class="paragraph">
 <p>The service principal now has the required Azure permissions to deploy the Connector.</p>
 </div>
@@ -1792,7 +2289,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-windows-azure-service-management-api-permissions">Adding Windows Azure Service Management API permissions</h4>
+<h4 id="add-windows-azure-service-management-api-permissions">Add Windows Azure Service Management API permissions</h4>
 <div class="paragraph">
 <p>The service principal must have "Windows Azure Service Management API" permissions.</p>
 </div>
@@ -1800,10 +2297,10 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>In the <strong>Azure Active Directory</strong> service, click <strong>App registrations</strong> and select the application.</p>
+<p>In the <strong>Azure Active Directory</strong> service, select <strong>App registrations</strong> and select the application.</p>
 </li>
 <li>
-<p>Click <strong>API permissions &gt; Add a permission</strong>.</p>
+<p>Select <strong>API permissions &gt; Add a permission</strong>.</p>
 </li>
 <li>
 <p>Under <strong>Microsoft APIs</strong>, select <strong>Azure Service Management</strong>.</p>
@@ -1812,7 +2309,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </li>
 <li>
-<p>Click <strong>Access Azure Service Management as organization users</strong> and then click <strong>Add permissions</strong>.</p>
+<p>Select <strong>Access Azure Service Management as organization users</strong> and then select <strong>Add permissions</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_azure_service_mgmt_apis_add.gif" alt="A screenshot of the Azure portal that shows adding the Azure Service Management APIs."></span></p>
 </div>
@@ -1821,7 +2318,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </div>
 <div class="sect3">
-<h4 id="ids">Getting the application ID and directory ID</h4>
+<h4 id="ids">Get the application ID and directory ID</h4>
 <div class="paragraph">
 <p>When you add the Azure account to BlueXP, you need to provide the application (client) ID and the directory (tenant) ID for the application. BlueXP uses the IDs to programmatically sign in.</p>
 </div>
@@ -1829,7 +2326,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>In the <strong>Azure Active Directory</strong> service, click <strong>App registrations</strong> and select the application.</p>
+<p>In the <strong>Azure Active Directory</strong> service, select <strong>App registrations</strong> and select the application.</p>
 </li>
 <li>
 <p>Copy the <strong>Application (client) ID</strong> and the <strong>Directory (tenant) ID</strong>.</p>
@@ -1841,7 +2338,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </div>
 <div class="sect3">
-<h4 id="creating-a-client-secret">Creating a client secret</h4>
+<h4 id="create-a-client-secret">Create a client secret</h4>
 <div class="paragraph">
 <p>You need to create a client secret and then provide BlueXP with the value of the secret so BlueXP can use it to authenticate with Azure AD.</p>
 </div>
@@ -1852,16 +2349,16 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <p>Open the <strong>Azure Active Directory</strong> service.</p>
 </li>
 <li>
-<p>Click <strong>App registrations</strong> and select your application.</p>
+<p>Select <strong>App registrations</strong> and select your application.</p>
 </li>
 <li>
-<p>Click <strong>Certificates &amp; secrets &gt; New client secret</strong>.</p>
+<p>Select <strong>Certificates &amp; secrets &gt; New client secret</strong>.</p>
 </li>
 <li>
 <p>Provide a description of the secret and a duration.</p>
 </li>
 <li>
-<p>Click <strong>Add</strong>.</p>
+<p>Select <strong>Add</strong>.</p>
 </li>
 <li>
 <p>Copy the value of the client secret.</p>
@@ -1878,7 +2375,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-the-credentials-to-bluexp">Adding the credentials to BlueXP</h3>
+<h3 id="add-the-credentials-to-bluexp">Add the credentials to BlueXP</h3>
 <div class="paragraph">
 <p>After you provide an Azure account with the required permissions, you can add the credentials for that account to BlueXP. Completing this step enables you to launch Cloud Volumes ONTAP using different Azure credentials.</p>
 </div>
@@ -1894,13 +2391,13 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>In the upper right of the BlueXP console, click the Settings icon, and select <strong>Credentials</strong>.</p>
+<p>In the upper right of the BlueXP console, select the Settings icon, and select <strong>Credentials</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_settings_icon.gif" alt="A screenshot that shows the Settings icon in the upper right of the BlueXP console."></span></p>
 </div>
 </li>
 <li>
-<p>On the <strong>Account credentials</strong> page, click <strong>Add Credentials</strong> and follow the steps in the wizard.</p>
+<p>On the <strong>Account credentials</strong> page, select <strong>Add Credentials</strong> and follow the steps in the wizard.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1911,13 +2408,13 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <div class="ulist">
 <ul>
 <li>
-<p>Application (client) ID: See <a href="#ids">Getting the application ID and directory ID</a>.</p>
+<p>Application (client) ID: See <a href="#ids">Get the application ID and directory ID</a>.</p>
 </li>
 <li>
-<p>Directory (tenant) ID: See <a href="#ids">Getting the application ID and directory ID</a>.</p>
+<p>Directory (tenant) ID: See <a href="#ids">Get the application ID and directory ID</a>.</p>
 </li>
 <li>
-<p>Client Secret: See <a href="#creating-a-client-secret">Creating a client secret</a>.</p>
+<p>Client Secret: See <a href="#create-a-client-secret">Create a client secret</a>.</p>
 </li>
 </ul>
 </div>
@@ -1929,7 +2426,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </li>
 <li>
-<p><strong>Review</strong>: Confirm the details about the new credentials and click <strong>Add</strong>.</p>
+<p><strong>Review</strong>: Confirm the details about the new credentials and select <strong>Add</strong>.</p>
 </li>
 </ol>
 </div>
@@ -1941,7 +2438,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <p>You can now switch to different set of credentials from the Details and Credentials page <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html" target="_blank" rel="noopener">when creating a new working environment</a></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_accounts_switch_azure.gif" alt="A screenshot that shows selecting between credentials after clicking Edit Credentials in the Details &amp; Credentials page."></span></p>
+<p><span class="image"><img src="./media/screenshot_accounts_switch_azure.gif" alt="A screenshot that shows selecting between credentials after selecting Edit Credentials in the Details &amp; Credentials page."></span></p>
 </div>
 </div>
 </div>
@@ -1953,9 +2450,9 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <p>Manage the Azure credentials that you&#8217;ve already added to BlueXP by associating a Marketplace subscription, editing credentials, and deleting them.</p>
 </div>
 <div class="sect2">
-<h3 id="subscribe">Associating an Azure Marketplace subscription to credentials</h3>
+<h3 id="subscribe">Associate an Azure Marketplace subscription to credentials</h3>
 <div class="paragraph">
-<p>After you add your Azure credentials to BlueXP, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.</p>
+<p>After you add your Azure credentials to BlueXP, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other BlueXP services.</p>
 </div>
 <div class="paragraph">
 <p>There are two scenarios in which you might associate an Azure Marketplace subscription after you&#8217;ve already added the credentials to BlueXP:</p>
@@ -1978,32 +2475,32 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>In the upper right of the BlueXP console, click the Settings icon, and select <strong>Credentials</strong>.</p>
+<p>In the upper right of the BlueXP console, select the Settings icon, and select <strong>Credentials</strong>.</p>
 </li>
 <li>
-<p>On the <strong>Account credentials</strong> page, click the action menu for a set of credentials and then select <strong>Associate Subscription</strong>.</p>
+<p>On the <strong>Account credentials</strong> page, select the action menu for a set of credentials and then select <strong>Associate Subscription</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_azure_add_subscription.png" alt="A screenshot of the action menu for a set of existing credentials."></span></p>
 </div>
 </li>
 <li>
-<p>To associate the credentials with an existing subscription, select the subscription from the down-down list and click <strong>Associate</strong>.</p>
+<p>To associate the credentials with an existing subscription, select the subscription from the down-down list and select <strong>Associate</strong>.</p>
 </li>
 <li>
-<p>To associate the credentials with a new subscription, click <strong>Add Subscription &gt; Continue</strong> and follow the steps in the Azure Marketplace:</p>
+<p>To associate the credentials with a new subscription, select <strong>Add Subscription &gt; Continue</strong> and follow the steps in the Azure Marketplace:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
 <p>If prompted, log in to your Azure account.</p>
 </li>
 <li>
-<p>Click <strong>Subscribe</strong>.</p>
+<p>Select <strong>Subscribe</strong>.</p>
 </li>
 <li>
-<p>Fill out the form and click <strong>Subscribe</strong>.</p>
+<p>Fill out the form and select <strong>Subscribe</strong>.</p>
 </li>
 <li>
-<p>After the subscription process is complete, click <strong>Configure account now</strong>.</p>
+<p>After the subscription process is complete, select <strong>Configure account now</strong>.</p>
 <div class="paragraph">
 <p>You&#8217;ll be redirected to the BlueXP website.</p>
 </div>
@@ -2013,7 +2510,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 <div class="ulist">
 <ul>
 <li>
-<p>Select the NetApp accounts that you&#8217;d like to associate this subscription with.</p>
+<p>Select the BlueXP accounts that you&#8217;d like to associate this subscription with.</p>
 </li>
 <li>
 <p>In the <strong>Replace existing subscription</strong> field, choose whether you&#8217;d like to automatically replace the existing subscription for one account with this new subscription.</p>
@@ -2025,7 +2522,7 @@ An initial set of credentials isn&#8217;t added if you manually installed the Co
 </div>
 </li>
 <li>
-<p>Click <strong>Save</strong>.</p>
+<p>Select <strong>Save</strong>.</p>
 <div class="paragraph">
 <p>The following video shows the steps to subscribe from the Azure Marketplace:</p>
 </div>
@@ -2047,7 +2544,7 @@ Your browser does not support the video tag.
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-credentials">Editing credentials</h3>
+<h3 id="edit-credentials">Edit credentials</h3>
 <div class="paragraph">
 <p>Edit your Azure credentials in BlueXP by modifying the details about your Azure service credentials. For example, you might need to update the client secret if a new secret was created for the service principal application.</p>
 </div>
@@ -2055,19 +2552,19 @@ Your browser does not support the video tag.
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>In the upper right of the BlueXP console, click the Settings icon, and select <strong>Credentials</strong>.</p>
+<p>In the upper right of the BlueXP console, select the Settings icon, and select <strong>Credentials</strong>.</p>
 </li>
 <li>
-<p>On the <strong>Account credentials</strong> page, click the action menu for a set of credentials and then select <strong>Edit Credentials</strong>.</p>
+<p>On the <strong>Account credentials</strong> page, select the action menu for a set of credentials and then select <strong>Edit Credentials</strong>.</p>
 </li>
 <li>
-<p>Make the required changes and then click <strong>Apply</strong>.</p>
+<p>Make the required changes and then select <strong>Apply</strong>.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-credentials">Deleting credentials</h3>
+<h3 id="delete-credentials">Delete credentials</h3>
 <div class="paragraph">
 <p>If you no longer need a set of credentials, you can delete them from BlueXP. You can only delete credentials that aren&#8217;t associated with a working environment.</p>
 </div>
@@ -2075,13 +2572,13 @@ Your browser does not support the video tag.
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>In the upper right of the BlueXP console, click the Settings icon, and select <strong>Credentials</strong>.</p>
+<p>In the upper right of the BlueXP console, select the Settings icon, and select <strong>Credentials</strong>.</p>
 </li>
 <li>
-<p>On the <strong>Account credentials</strong> page, click the action menu for a set of credentials and then select <strong>Delete Credentials</strong>.</p>
+<p>On the <strong>Account credentials</strong> page, select the action menu for a set of credentials and then select <strong>Delete Credentials</strong>.</p>
 </li>
 <li>
-<p>Click <strong>Delete</strong> to confirm.</p>
+<p>Select <strong>Delete</strong> to confirm.</p>
 </li>
 </ol>
 </div>
