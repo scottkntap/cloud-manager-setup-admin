@@ -58,8 +58,8 @@ The following table provides a comparison of these modes.
 | Yes, within the region (if using Cloud Volumes ONTAP)
 
 | Connector installation
-| SaaS, marketplace, or manual install
-| Marketplace or manual install
+| From BlueXP, cloud marketplace, or manual install
+| Cloud marketplace or manual install
 | Manual install
 
 | Connector upgrades
@@ -174,7 +174,7 @@ BlueXP supports the following storage and data services with restricted mode:
 
 | Azure NetApp Files | Full support
 
-| Cloud Backup | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode. 
+| Cloud Backup | Supported in Government regions and commercial regions with restricted mode. Not supported in sovereign regions with restricted mode. 
 
 The following features are not supported: Applications, Virtual Machines, and Kubernetes.
 
@@ -190,7 +190,9 @@ The following limitations apply:
 
 | Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for restricted mode.
 
-| On-premises ONTAP clusters | The Advanced view (System Manager) is not supported.
+| On-premises ONTAP clusters | Discovery with a Connector and discovery without a Connector (direct discovery) are supported. 
+
+When you discover an on-prem cluster with a Connector, the Advanced view (System Manager) is not supported.
 
 | Replication | Supported in Government regions with restricted mode. Not supported in commercial regions or in sovereign regions with restricted mode.
 
@@ -272,6 +274,8 @@ Not supported in Google Cloud or in https://aws.amazon.com/federal/us-intelligen
 
 | On-premises ONTAP clusters | Requires connectivity from the cloud (where the Connector is installed) to the on-premises environment.
 
+Discovery without a Connector (direct discovery) is not supported. 
+
 |===
 
 Supported BlueXP services in on-prem deployments::
@@ -299,7 +303,7 @@ https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-da
 
 | Digital Wallet | You can use the Digital Wallet with the supported licensing options listed below for private mode.
 
-| On-premises ONTAP clusters | Full support
+| On-premises ONTAP clusters | Discovery without a Connector (direct discovery) is not supported. 
 
 | Replication | Full support
 
@@ -330,8 +334,10 @@ Note that some services might be supported with limitations. For more details ab
 | Restricted mode
 | Private mode
 
-| Amazon FSx for ONTAP | Yes | No 
+| Amazon FSx for ONTAP | Yes | No
+| Amazon S3 | No | No
 | AppTemplate | No | No
+| Azure Blob | No | No
 | Azure NetApp Files | Yes | No 
 | Cloud Backup | Yes | Yes 
 | Cloud Data Sense | Yes | Yes
@@ -341,11 +347,14 @@ Note that some services might be supported with limitations. For more details ab
 | Cloud Volumes Service for Google Cloud | No | No
 | Compute | No | No
 | Digital Advisor | No | No 
-| Digital Wallet | Yes | Yes 
-| E-Series | No | No 
+| Digital Wallet | Yes | Yes
+| E-Series | No | No
+| Economic efficiency | No | No
 | Global File Cache | No | No
+| Google Cloud Storage | No | No
 | Kubernetes clusters | No | No
 | On-prem ONTAP clusters | Yes | Yes
+| Operational resiliency | No | No
 | Ransomware Protection | No | No
 | Replication | Yes | Yes 
 | StorageGRID | No | No 
