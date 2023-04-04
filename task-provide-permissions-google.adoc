@@ -1,0 +1,32 @@
+---
+sidebar: sidebar
+permalink: task-provide-permissions-google.html
+keywords: google cloud permissions, permissions, gcp permissions, service account, gcp service account
+summary: If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+---
+
+= Provide Google Cloud permissions to BlueXP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+
+link:task-set-up-permissions-google.html[Learn how to set up these permissions].
+
+These steps don't apply if you deployed the Connector directly from BlueXP or by using gcloud.
+
+.Steps
+
+. Go to the Google Cloud portal and assign the service account to the Connector VM instance.
++
+https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Google Cloud documentation: Changing the service account and access scopes for an instance^]
+
+. If you want to deploy Cloud Volumes ONTAP in other projects, grant access by adding the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in Google Cloud on your behalf.

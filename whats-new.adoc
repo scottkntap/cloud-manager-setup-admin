@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: "Learn what's new with BlueXP administration features: NetApp accounts, Connectors, cloud provider credentials, and more."
+summary: "Learn what's new with BlueXP administration features: BlueXP accounts, Connectors, cloud provider credentials, and more."
 ---
 
 = What's new
@@ -13,9 +13,23 @@ summary: "Learn what's new with BlueXP administration features: NetApp accounts,
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with BlueXP administration features: NetApp accounts, Connectors, cloud provider credentials, and more.
+Learn what's new with BlueXP administration features: BlueXP accounts, Connectors, cloud provider credentials, and more.
 
 //tag::whats-new[]
+== 4 April 2023
+
+=== Deployment modes
+
+BlueXP _deployment modes_ enable you to use BlueXP in a way that meets your business and security requirements. You can choose from three modes:
+
+* Standard mode
+* Restricted mode
+* Private mode
+
+link:concept-modes.html[Learn more about these deployment modes].
+
+NOTE: The introduction of restricted mode replaces the option to enable or disable the SaaS platform. You can enable restricted mode at the time of account creation. It can't be enabled or disabled later.
+
 == 3 April 2023
 
 === Connector 3.9.28
@@ -88,6 +102,7 @@ https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html[See how 
 * This release of the Connector includes Cloud Volumes ONTAP enhancements.
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-march-2023[Learn about Cloud Volumes ONTAP enhancements^]
+//end::whats-new[]
 
 == 5 February 2023
 
@@ -126,7 +141,6 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gc
 * This release of the Connector includes Cloud Volumes ONTAP enhancements.
 +
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#5-february-2023[Learn about Cloud Volumes ONTAP enhancements^]
-//end::whats-new[]
 
 == 1 January 2023
 
@@ -236,7 +250,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 * The Connector is now supported in the Azure West US 3 region.
 
 +
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements.
 +
@@ -258,7 +272,7 @@ NOTE: Existing logins that use an email address and password need to keep using 
 
 * The Connector is now supported in the Azure Brazil Southeast region.
 +
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
 
 * This release of the Connector also includes Cloud Volumes ONTAP enhancements and on-prem ONTAP cluster enhancements.
 +
@@ -284,7 +298,7 @@ We updated the Connector to introduce bug fixes. The most notable fix is to an i
 ** Santiago (southamerica-west1)
 
 +
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^]
 
 * When you select the Google Cloud service account to use with the Connector, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
 +
@@ -415,7 +429,7 @@ We redesigned the *Add Connector* wizard to add new options and to make it easie
 
 * link:task-creating-connectors-aws.html[Create a Connector in AWS]
 * link:task-creating-connectors-azure.html[Create a Connector in Azure]
-* link:task-creating-connectors-gcp.html[Create a Connector in GCP]
+* link:task-creating-connectors-gcp.html[Create a Connector in Google Cloud]
 
 === NSS account management from Support Dashboard
 

@@ -1,0 +1,91 @@
+---
+sidebar: sidebar
+permalink: task-provide-permissions-azure.html
+keywords: azure permissions, connector permissions, custom role, azure custom role, service principal, how to provide azure permissions, set up azure permissions, provide azure permissions, permissions
+summary: If you created the Connector from the Azure Marketplace or manually installed the software, you need to provide BlueXP with the permissions that you previously set up.
+---
+
+= Provide Azure permissions to BlueXP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you created the Connector from the Azure Marketplace or manually installed the software, you need to provide BlueXP with the permissions that you previously set up.
+
+link:task-set-up-permissions-azure.html[Learn how to set up these permissions].
+
+These steps don't apply if you deployed the Connector directly from BlueXP because BlueXP assigns the required permissions during deployment. 
+
+[role="tabbed-block"]
+====
+
+.Custom role
+--
+Go to the Azure portal and assign the Azure custom role to the Connector virtual machine for one or more subscriptions.
+
+.Steps
+
+. From the Azure Portal, open the *Subscriptions* service and select your subscription.
+
+. Click *Access control (IAM)* > *Add* > *Add role assignment*.
+
+. In the *Role* tab, select the *BlueXP Operator* role and click *Next*.
++
+NOTE: BlueXP Operator is the default name provided in the BlueXP policy. If you chose a different name for the role, then select that name instead.
+
+. In the *Members* tab, complete the following steps:
+
+.. Assign access to a *Managed identity*.
+
+.. Click *Select members*, select the subscription in which the Connector virtual machine was created, choose *Virtual machine*, and then select the Connector virtual machine.
+
+.. Click *Select*.
+
+.. Click *Next*.
+
+.. Click *Review + assign*.
+
+.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, switch to that subscription and then repeat these steps.
+
+.Result
+BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.
+
+.What's next?
+
+Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+--
+
+.Service principal
+--
+.Steps
+
+. Go to the https://console.bluexp.netapp.com[BlueXP console^] and log in.
+
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+
+. Click *Add Credentials* and follow the steps in the wizard.
+
+.. *Credentials Location*: Select *Microsoft Azure > Connector*.
+
+.. *Define Credentials*: Enter information about the Azure Active Directory service principal that grants the required permissions:
++
+* Application (client) ID
+* Directory (tenant) ID
+* Client Secret
+
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
+
+.. *Review*: Confirm the details about the new credentials and click *Add*.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in Azure on your behalf.
+--
+
+====
+// end tabbed area

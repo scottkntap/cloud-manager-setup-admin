@@ -1,0 +1,121 @@
+---
+sidebar: sidebar
+permalink: task-install-connector-on-prem.html
+keywords: install connector, on prem connector installation, on prem connector, install connector on prem, manual install
+summary: Install the Connector on premises and then log in and set it up to work with your BlueXP account.
+---
+
+= Install and set up the Connector on premises
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Install the Connector on premises and then log in and set it up to work with your BlueXP account.
+
+== Install the Connector
+
+Download and install the Connector software on an existing Linux host on premises.
+
+.What you'll need
+
+* Root privileges to install the Connector.
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
++
+You have the option to configure a proxy server after installation but doing so requires restarting the Connector.
+
+* A CA-signed certificate, if the proxy server uses HTTPS or if the proxy is an intercepting proxy.
+
+.About this task
+
+* The installation installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
++
+If you receive a message that installing the awscli failed, you can safely ignore the message. The Connector can operate successfully without the tools.
+
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, the Connector automatically updates itself if a new version is available.
+
+.Steps
+
+. Verify that docker is enabled and running.
++
+[source,cli]
+sudo systemctl enable docker && sudo systemctl start docker
+
+. If the _http_proxy_ or _https_proxy_ system variables are set on the host, remove them:
++
+[source,cli]
+unset http_proxy
+unset https_proxy
++
+If you don't remove these system variables, the installation will fail.
+
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
++
+You should download the "online" Connector installer that's meant for use in your network or in the cloud. A separate "offline" installer is available for the Connector, but it's only supported with private mode deployments.
+
+. Assign permissions to run the script.
++
+[source,cli]
+chmod +x OnCommandCloudManager-<version>
+
++
+Where <version> is the version of the Connector that you downloaded.
+
+. Run the installation script.
++
+[source,cli]
+ ./OnCommandCloudManager-<version> --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
++
+The --proxy and --cacert parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
++
+Here's an example of the command using both optional parameters:
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.26 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
++
+--proxy configures the Connector to use an HTTP or HTTPS proxy server using one of the following formats:
++
+* \http://address:port
+* \http://username:password@address:port
+* \https://address:port
+* \https://username:password@address:port
+
++
+--cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server or if the proxy is an intercepting proxy.
+
+.Result
+
+The Connector is now installed. At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+== Set up the Connector
+
+Sign up or log in and then set up the Connector to work with your account.
+
+.Steps
+
+. Open a web browser and enter the following URL:
++
+https://_ipaddress_
++
+_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
+
+. Sign up or log in.
+
+. After you log in, set up BlueXP:
+.. Specify the BlueXP account to associate with the Connector.
+.. Enter a name for the system.
+.. Under *Are you running in a secured environment?* keep restricted mode disabled.
++
+You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode. (In addition, restricted mode isn't supported when the Connector is installed on premises.)
+.. Click *Let's start*.
+
+.Result
+
+BlueXP is now set up with the Connector that you just installed.
+
+.What's next?
+
+link:task-provide-permissions-on-prem.html[Provide BlueXP with the permissions that you previously setup].

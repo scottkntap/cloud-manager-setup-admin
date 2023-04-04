@@ -1,0 +1,76 @@
+---
+sidebar: sidebar
+permalink: task-provide-permissions-aws.html
+keywords: aws permissions, set up aws permissions, iam role, json policy, bluexp policy, aws marketplace, aws access key, access key, iam policy, permissions
+summary: If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+---
+
+= Provide AWS permissions to BlueXP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+
+link:task-set-up-permissions-aws.html[Learn how to set up these permissions].
+
+These steps don't apply if you deployed the Connector directly from BlueXP or from the AWS Marketplace because the required permissions were provided during deployment.
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.IAM role
+--
+Attach the IAM role that you previously created to the Connector EC2 instance.
+
+.Steps
+
+. Go to the Amazon EC2 console.
+
+. Select *Instances*.
+
+. Select the Connector instance.
+
+. Select *Actions > Security > Modify IAM role*.
+
+. Select the IAM role and click *Update IAM role*.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf. Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+--
+
+.AWS access key
+--
+Provide BlueXP with the AWS access key for an IAM user that has the required permissions.
+
+.Steps
+
+. Ensure that the correct Connector is currently selected in BlueXP.
+
+. In the upper right of the BlueXP console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+
+. Click *Add Credentials* and follow the steps in the wizard.
+
+.. *Credentials Location*: Select *Amazon Web Services > Connector*.
+
+.. *Define Credentials*: Enter an AWS access key and secret key.
+
+.. *Marketplace Subscription*: Associate a Marketplace subscription with these credentials by subscribing now or by selecting an existing subscription.
+
+.. *Review*: Confirm the details about the new credentials and click *Add*.
+
+.Result
+
+BlueXP now has the permissions that it needs to perform actions in AWS on your behalf. Go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+--
+
+====
+// end tabbed area

@@ -1,0 +1,103 @@
+---
+sidebar: sidebar
+permalink: task-quick-start-connector-google.html
+keywords: quick start, connector quick start, google cloud quick start, gcp quick start
+summary: Create a Connector in Google Cloud by choosing an installation option, setting up networking, preparing permissions, and more.
+---
+
+= Quick start to create a Connector in Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Create a Connector in Google Cloud by choosing an installation option, setting up networking, preparing permissions, and more.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Understand your installation options
+
+[role="quick-margin-para"]
+The standard way to create a Connector in Google Cloud is directly from BlueXP, but you can also create it using gcloud, or by manually installing the software on a pre-existing Linux host.
+
+[role="quick-margin-para"]
+link:concept-install-options-google.html[Learn more about your installation options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
+
+[role="quick-margin-para"]
+Prepare the following for the Connector:
+
+[role="quick-margin-list"]
+* A VPC and subnet
+* A network connection to the networks where you're planning to create and manage working environments
+* Outbound internet access to specific endpoints for day-to-day operations
+* The IP address, credentials, and HTTPS certificate of a proxy server, if a proxy server is required for outbound internet
+
+[role="quick-margin-para"]
+link:task-set-up-networking-google.html[Learn more about networking requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Review host requirements
+
+[role="quick-margin-para"]
+The Connector software must run on a host that meets specific requirements. If you plan to manually install the Connector software on your own Linux host, then you should ensure that your host meets these requirements. If you're creating the Connector from BlueXP or by using gcloud, then these requirements are taken care of for you because the software is deployed from an image.
+
+[role="quick-margin-para"]
+The key requirements are as follows:
+
+[role="quick-margin-list"]
+* A dedicated host running CentOS or Red Hat Enterprise Linux
+* 4 CPUs
+* 14 GB of RAM
+* Docker Engine
+
+[role="quick-margin-para"]
+link:reference-host-requirements-google.html[Learn more about these host requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up Google Cloud permissions
+
+[role="quick-margin-para"]
+Set up Google Cloud permissions for the installation option that you're planning to use:
+
+[role="quick-margin-list"]
+* *Installation from BlueXP or gcloud*: Create a custom role and attach it to the user who will deploy the Connector. Create another custom role and assign it to a service account for the Connector VM instance.
+
+* *Manual install*: Create a custom role and assign it to a service account for the Connector VM instance.
+
+[role="quick-margin-para"]
+link:task-set-up-permissions-google.html[Follow step-by-step instructions for each of these options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Enable Google Cloud APIs
+
+[role="quick-margin-para"]
+Several APIs are required to deploy the Connector and Cloud Volumes ONTAP in Google Cloud.
+
+[role="quick-margin-list"]
+* Cloud Deployment Manager V2 API
+* Cloud Logging API
+* Cloud Resource Manager API
+* Compute Engine API
+* Identity and Access Management (IAM) API
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Create the Connector
+
+[role="quick-margin-para"]
+Create the Connector using one of the available installation options:
+
+[role="quick-margin-list"]
+* *From BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
+
+* *Using gloud*: Use the `gcloud compute instances create` command.
+
+* *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
+
+[role="quick-margin-para"]
+link:task-install-connector-google.html[Follow step-by-step instructions for each of these options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Provide BlueXP with permissions
+
+[role="quick-margin-para"]
+If you manually installed the Connector software on your own Linux host, you need to provide BlueXP with the permissions that you previously set up.
+
+[role="quick-margin-para"]
+link:task-provide-permissions-google.html[Follow step-by-step instructions].

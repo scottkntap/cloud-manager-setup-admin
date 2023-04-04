@@ -5,7 +5,7 @@ keywords: blob storage, blob working environment, azure blob storage accounts, a
 summary: After you install a Connector in Azure, BlueXP can automatically discover information about the Azure storage accounts that reside in the Azure Subscriptions where the Connector is installed. An Azure Blob working environment is added to the Canvas so you can view this information.
 ---
 
-= Viewing your Azure Blob accounts
+= View your Azure Blob accounts
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -19,7 +19,7 @@ You can see details about your Azure storage accounts, including the location, r
 
 .Steps
 
-. link:task-creating-connectors-azure.html[Install a Connector] in the Azure account where you want to view your Azure storage accounts.
+. Install a Connector in the Azure account where you want to view your Azure storage accounts.
 
 . From the navigation menu, select *Storage > Canvas*.
 +
@@ -27,14 +27,14 @@ You should automatically see an Azure Blob working environment shortly after.
 +
 image:screenshot-azure-blob-we.png[A screenshot of an Azure Blob working environment.]
 
-. Click the working environment and select an action from the right pane.
+. Select the working environment and select an action from the right pane.
 +
 image:screenshot-azure-actions.png["A screenshot that shows the actions pane after you select an Azure Blob working environment. The pane shows the total number of storage accounts and an action for using the Sync service."]
 
-. Click *Sync data* to synchronize data to or from Azure Blob storage.
+. Select *Sync data* to synchronize data to or from Azure Blob storage.
 +
-For more details, see https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html[the overview for the Cloud Sync service^].
+For more details, see https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html[the overview for the Cloud Sync service^]
 +
-. Click *Enter Working Environment* to view details about the Azure storage accounts in your Azure Blobs.
+. Select *Enter Working Environment* to view details about the Azure storage accounts in your Azure Blobs.
 +
 image:screenshot-azure-blob-details.png["A screenshot that shows the details of an Azure Blob working environment: the total number of storage accounts, total number of locations, resource groups, total and used capacity, and more."]

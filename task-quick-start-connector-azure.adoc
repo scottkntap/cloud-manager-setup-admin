@@ -1,0 +1,93 @@
+---
+sidebar: sidebar
+permalink: task-quick-start-connector-azure.html
+keywords: quick start, connector quick start, azure quick start
+summary: Create a Connector in Azure by choosing an installation option, setting up networking, preparing permissions, and more.
+---
+
+= Quick start to create a Connector in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Create a Connector in Azure by choosing an installation option, setting up networking, preparing permissions, and more.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Understand your installation options
+
+[role="quick-margin-para"]
+The standard way to create a Connector in Azure is directly from BlueXP, but you can also create it from the Azure Marketplace, or you can manually install the software on a pre-existing Linux host.
+
+[role="quick-margin-para"]
+link:concept-install-options-azure.html[Learn more about your installation options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up networking
+
+[role="quick-margin-para"]
+Prepare the following for the Connector:
+
+[role="quick-margin-list"]
+* A VNet and subnet
+* A network connection to the networks where you're planning to create and manage working environments
+* Outbound internet access to specific endpoints for day-to-day operations
+* The IP address, credentials, and HTTPS certificate of a proxy server, if a proxy server is required for outbound internet
+
+[role="quick-margin-para"]
+link:task-set-up-networking-azure.html[Learn more about networking requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Review host requirements
+
+[role="quick-margin-para"]
+The Connector software must run on a host that meets specific requirements. If you plan to manually install the Connector software on your own Linux host, then you should ensure that your host meets these requirements. If you're creating the Connector from BlueXP or from the Azure Marketplace, then these requirements are taken care of for you because the software is deployed from an image.
+
+[role="quick-margin-para"]
+The key requirements are as follows:
+
+[role="quick-margin-list"]
+* A dedicated host running CentOS or Red Hat Enterprise Linux
+* 4 CPUs
+* 14 GB of RAM
+* Docker Engine
+
+[role="quick-margin-para"]
+link:reference-host-requirements-azure.html[Learn more about these host requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up Azure permissions
+
+[role="quick-margin-para"]
+Set up Azure permissions for the installation option that you're planning to use:
+
+[role="quick-margin-list"]
+* *Install from BlueXP*: Create a custom role and then apply it to your Azure account or an Azure AD service principal. BlueXP authenticates with Azure and uses these permissions to create the Connector instance on your behalf.
+
+* *Install from the Azure Marketplace*: Create a custom role that you can associate with the Connector VM instance or with an Azure AD service principal.
+
+* *Manual install*: Create a custom role that you can associate with the Connector VM instance or with an Azure AD service principal.
+
+[role="quick-margin-para"]
+link:task-set-up-permissions-azure.html[Follow step-by-step instructions for each of these options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create the Connector
+
+[role="quick-margin-para"]
+Create the Connector using one of the available installation options:
+
+[role="quick-margin-list"]
+* *From BlueXP*: Click the Connector drop-down, select *Add Connector* and follow the prompts.
+
+* *From the Azure Marketplace*: Go to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager[NetApp Connector VM page in the Azure Marketplace^] and follow the prompts to create the Connector VM.
+
+* *Manual install*: Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site] and run the installation script.
+
+[role="quick-margin-para"]
+link:task-install-connector-azure.html[Follow step-by-step instructions for each of these options].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Provide BlueXP with permissions
+
+[role="quick-margin-para"]
+If you created the Connector from the Azure Marketplace or manually installed the software, you need to provide BlueXP with the permissions that you previously set up.
+
+[role="quick-margin-para"]
+link:task-provide-permissions-azure.html[Follow step-by-step instructions].

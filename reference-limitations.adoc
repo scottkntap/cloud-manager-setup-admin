@@ -37,7 +37,7 @@ For enhanced security, you have the option to link:task-installing-https-cert.ht
 
 === Blank page when loading the local UI
 
-If you load the local user interface for a Connector, the UI might fail to display sometimes, and you just get a blank page.
+If you load the web-based console that's running on a Connector, the interface might fail to display sometimes, and you just get a blank page.
 
 This issue is related to a caching problem. The workaround is to use an incognito or private web browser session.
 
@@ -48,15 +48,3 @@ The Connector isn't supported on a VM that is shared with other applications. Th
 === 3rd-party agents and extensions
 
 3rd-party agents or VM extensions are not supported on the Connector VM.
-
-== SaaS limitations
-
-=== SaaS platform is disabled for Government regions
-
-If you deploy a Connector in an AWS GovCloud region, an Azure Gov region, or an Azure DoD region, access to BlueXP is available only through a Connector's host IP address. Access to the SaaS platform is disabled for the entire account.
-
-This means that only privileged users who can access the end-user internal VPC/VNet can use BlueXP's UI or API.
-
-Note that the only services supported in these regions are Cloud Volumes ONTAP, Cloud Backup, Cloud Data Sense, and Replication. No other NetApp services are supported in Government regions.
-
-link:task-managing-connectors.html#access-the-local-ui[Learn how to access the local UI on the Connector].

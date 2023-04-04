@@ -46,7 +46,7 @@ The Compliance Viewer role is for read-only Cloud Data Sense access.
 
 | Create Connectors | Yes | No | No | No
 
-| Manage NetApp accounts |	Yes |	No | No | No
+| Manage BlueXP accounts |	Yes |	No | No | No
 
 | Manage credentials | Yes | No | No | No
 
@@ -58,11 +58,9 @@ The Compliance Viewer role is for read-only Cloud Data Sense access.
 
 | Install an HTTPS certificate | Yes |	No | No | No
 
-| Use the SnapCenter Service | Yes | Yes | No | Yes
-
 |===
 
 .Related links
 
-* link:task-setting-up-netapp-accounts.html[Setting up workspaces and users in the NetApp account]
-* link:task-managing-netapp-accounts.html[Managing workspaces and users in the NetApp account]
+* link:task-setting-up-netapp-accounts.html[Setting up workspaces and users in the BlueXP account]
+* link:task-managing-netapp-accounts.html[Managing workspaces and users in the BlueXP account]

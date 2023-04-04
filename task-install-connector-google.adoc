@@ -1,0 +1,265 @@
+---
+sidebar: sidebar
+permalink: task-install-connector-google.html
+keywords: install connector, google cloud connector installation, google cloud connector, install connector in google cloud, bluexp, gcloud, manual install, create connector, gcp installation, gcp connector
+summary: Create the Connector directly from the BlueXP web-based console, by using gcloud, or by installing the software on your own Linux host.
+---
+
+= Create the Connector in Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Create the Connector directly from the BlueXP web-based console, by using gcloud, or by installing the software on your own Linux host.
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.BlueXP
+--
+.What you'll need
+
+* The required Google Cloud permissions to create the Connector and a service account for the Connector VM.
++
+link:task-set-up-permissions-google.html[Learn how to set up Google Cloud permissions]
+
+* A VPC and subnet that meets networking requirements.
++
+link:task-set-up-networking-google.html[Learn about networking requirements]
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
+
+.Steps
+
+. Click the *Connector* drop-down and select *Add Connector*.
++
+image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
+
+. Choose *Google Cloud Platform* as your cloud provider.
+
+. On the *Deploying a Connector* page, review the details about what you'll need. You have two options:
+
+.. Click *Continue* to prepare for deployment by using the in-product guide. Each step in the in-product guide includes the information that's contained on this page of the documentation.
+
+.. Click *Skip to Deployment* if you already prepared by following the steps on this page.
+
+. Follow the steps in the wizard to create the Connector:
+
+* If you're prompted, log in to your Google account, which should have the required permissions to create the virtual machine instance.
++
+The form is owned and hosted by Google. Your credentials are not provided to NetApp.
+
+* *Details*: Enter a name for the virtual machine instance, specify tags, select a project, and then select the service account that has the required permissions (refer to the section above for details).
+
+* *Location*: Specify a region, zone, VPC, and subnet for the instance.
+
+* *Network*: Choose whether to enable a public IP address and optionally specify a proxy configuration.
+
+* *Firewall Policy*: Choose whether to create a new firewall policy or whether to select an existing firewall policy that allows inbound HTTP, HTTPS, and SSH access.
+
+* *Review*: Review your selections to verify that your set up is correct.
+
+. Click *Add*.
++
+The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
+
+.Result
+
+After the process is complete, the Connector is available for use from BlueXP.
+--
+
+.gcloud
+--
+.What you'll need
+
+* The required Google Cloud permissions to create the Connector and a service account for the Connector VM.
++
+link:task-set-up-permissions-google.html[Learn how to set up Google Cloud permissions]
+
+* A VPC and subnet that meets networking requirements.
++
+link:task-set-up-networking-google.html[Learn about networking requirements]
+
+.Steps
+
+. Log in to the gcloud SDK using your preferred methodology.
++
+In our examples, we'll use a local shell with the gcloud SDK installed, but you could use the native Google Cloud Shell in the Google Cloud console.
++
+For more information about the Google Cloud SDK, visit the link:https://cloud.google.com/sdk[Google Cloud SDK documentation page^].
+
+. Verify that you are logged in as a user who has the required permissions that are defined in the section above:
++
+[source,bash]
+gcloud auth list
+
++
+The output should show the following where the * user account is the desired user account to be logged in as:
++
+----
+Credentialed Accounts
+ACTIVE  ACCOUNT
+     some_user_account@domain.com
+*    desired_user_account@domain.com
+To set the active account, run:
+ $ gcloud config set account `ACCOUNT`
+Updates are available for some Cloud SDK components. To install them,
+please run:
+$ gcloud components update
+----
+
+. Run the `gcloud compute instances create` command:
++
+[source,bash]
+gcloud compute instances create <instance-name>
+  --machine-type=n2-standard-4
+  --image-project=netapp-cloudmanager
+  --image-family=cloudmanager
+  --scopes=cloud-platform
+  --project=<project>
+  --service-account=<service-account>
+  --zone=<zone>
+  --no-address
+  --tags <network-tag>
+  --network <network-path>
+  --subnet <subnet-path>
+  --boot-disk-kms-key <kms-key-path>
+
++
+instance-name:: The desired instance name for the VM instance.
+project:: (Optional) The project where you want to deploy the VM.
+service-account:: The service account specified in the output from step 2.
+zone:: The zone where you want to deploy the VM
+no-address:: (Optional) No external IP address is used (you need a cloud NAT or proxy to route traffic to the public internet)
+network-tag:: (Optional) Add network tagging to link a firewall rule using tags to the Connector instance
+network-path:: (Optional) Add the name of the network to deploy the Connector into (for a Shared VPC, you need the full path)
+subnet-path:: (Optional) Add the name of the subnet to deploy the Connector into (for a Shared VPC, you need the full path)
+kms-key-path:: (Optional) Add a KMS key to encrypt the Connector's disks (IAM permissions also need to be applied)
+
++
+For more information about these flags, visit the link:https://cloud.google.com/sdk/gcloud/reference/compute/instances/create[Google Cloud compute SDK documentation^].
+
++
+Running the command deploys the Connector using the NetApp golden image. The Connector instance and software should be running in approximately five minutes.
+
+. Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
++
+https://_ipaddress_
+
+. After you log in, set up the Connector:
+
+.. Specify the BlueXP account to associate with the Connector.
++
+link:concept-netapp-accounts.html[Learn about BlueXP accounts].
+
+.. Enter a name for the system.
+
+.Result
+
+The Connector is now installed and set up with your BlueXP account.
+
+Open a web browser and go to the https://console.bluexp.netapp.com[BlueXP console^] to start using the Connector with BlueXP.
+--
+
+.Manual install
+--
+.What you'll need
+
+* Root privileges to install the Connector.
+
+* Details about a proxy server, if a proxy is required for internet access from the Connector.
++
+You have the option to configure a proxy server after installation but doing so requires restarting the Connector.
+
+* A CA-signed certificate, if the proxy server uses HTTPS or if the proxy is an intercepting proxy.
+
+.About this task
+
+* The installation installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
++
+If you receive a message that installing the awscli failed, you can safely ignore the message. The Connector can operate successfully without the tools.
+
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, the Connector automatically updates itself if a new version is available.
+
+.Steps
+
+. Verify that docker is enabled and running.
++
+[source,cli]
+sudo systemctl enable docker && sudo systemctl start docker
+
+. If the _http_proxy_ or _https_proxy_ system variables are set on the host, remove them:
++
+[source,cli]
+unset http_proxy
+unset https_proxy
++
+If you don't remove these system variables, the installation will fail.
+
+. Download the Connector software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
++
+You should download the "online" Connector installer that's meant for use in your network or in the cloud. A separate "offline" installer is available for the Connector, but it's only supported with private mode deployments.
+
+. Assign permissions to run the script.
++
+[source,cli]
+chmod +x OnCommandCloudManager-<version>
+
++
+Where <version> is the version of the Connector that you downloaded.
+
+. Run the installation script.
++
+[source,cli]
+ ./OnCommandCloudManager-<version> --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
++
+The --proxy and --cacert parameters are optional. If you have a proxy server, you will need to enter the parameter(s) as shown. The installer doesn't prompt you to provide information about a proxy.
++
+Here's an example of the command using both optional parameters:
++
+[source,cli]
+ ./OnCommandCloudManager-V3.9.26 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
++
+--proxy configures the Connector to use an HTTP or HTTPS proxy server using one of the following formats:
++
+* \http://address:port
+* \http://username:password@address:port
+* \https://address:port
+* \https://username:password@address:port
+
++
+--cacert specifies a CA-signed certificate to use for HTTPS access between the Connector and the proxy server. This parameter is required only if you specify an HTTPS proxy server or if the proxy is an intercepting proxy.
+
+. Wait for the installation to complete.
++
+At the end of the installation, the Connector service (occm) restarts twice if you specified a proxy server.
+
+. Open a web browser from a host that has a connection to the Connector virtual machine and enter the following URL:
++
+https://_ipaddress_
+
+. After you log in, set up the Connector:
+.. Specify the BlueXP account to associate with the Connector.
+.. Enter a name for the system.
+.. Under *Are you running in a secured environment?* keep restricted mode disabled.
++
+You should keep restricted mode disabled because these steps describe how to use BlueXP in standard mode. You should enable restricted mode only if you have a secure environment and want to disconnect this account from BlueXP backend services. If that's the case, link:task-quick-start-restricted-mode.html[follow steps to get started with BlueXP in restricted mode].
+.. Click *Let's start*.
+
+.Result
+
+The Connector is now installed and is set up with your BlueXP account.
+
+.What's next?
+
+link:task-provide-permissions-google.html[Provide BlueXP with the permissions that you previously setup].
+--
+
+====
+
+// end tabbed area

@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: reference-whats-next-private-mode.html
+keywords: private mode, what you can do
+summary: After you get up and running with BlueXP in private mode, you can start using the BlueXP services that are supported with private mode.
+---
+
+= What you can do next (private mode)
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you get up and running with BlueXP in private mode, you can start using the BlueXP services that are supported with private mode.
+
+For help, refer to the following documentation:
+
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[Create Cloud Volumes ONTAP systems^]
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/index.html[Discover on-premises ONTAP clusters^]
+* https://docs.netapp.com/us-en/cloud-manager-replication/index.html[Replicate data^]
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html[Scan on-prem ONTAP volume data using Cloud Data Sense^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html[Back up on-prem ONTAP volume data to StorageGRID using Cloud Backup^]

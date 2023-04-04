@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: reference-host-requirements-on-prem.html
+keywords: cpu requirements, ram requirements, on prem requirements, on prem host requirements, connector host requirements
+summary: The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
+---
+
+= Review Connector host requirements for on-prem installs
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
+
+Dedicated host::
+The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
+
+Supported operating systems::
+* CentOS 7.6, 7.7, 7.8, and 7.9
+* Red Hat Enterprise Linux 7.6, 7.7, 7.8, 7.9, 8.6, and 8.7
++
+The host must be registered with Red Hat Subscription Management. If it's not registered, the host can't access repositories to update required 3rd-party software during Connector installation.
++
+The Connector is supported on English-language versions of these operating systems.
+
+Hypervisor::
+A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux is required. https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
+
+CPU:: 4 cores or 4 vCPUs
+
+RAM:: 14 GB
+
+Disk space in /opt:: 100 GiB of space must be available
+
+Disk space in /var:: 20 GiB of space must be available
+
+Docker Engine:: Docker Engine version 19.3.1 or later is required on the host before you install the Connector. https://docs.docker.com/engine/install/[View installation instructions^]
