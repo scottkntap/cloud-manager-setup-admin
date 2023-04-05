@@ -255,25 +255,25 @@ homepage:
       links:
         - title: Learn about Connectors
           url: concept-connectors.html
-        - title: Create in AWS (standard mode)
-          url: task-install-connector-aws.html
-        - title: Create in Azure (standard mode)
-          url: task-install-connector-azure.html
-        - title: Create in Google Cloud (standard mode)
-          url: task-install-connector-google.html
-        - title: Create on premises (standard mode)
-          url: task-install-connector-on-prem.html
+        - title: Create a Connector in AWS (standard mode)
+          url: task-quick-start-connector-aws.html
+        - title: Create a Connector in Azure (standard mode)
+          url: task-quick-start-connector-azure.html
+        - title: Create a Connector in Google Cloud (standard mode)
+          url: task-quick-start-connector-google.html
+        - title: Create a Connector on premises (standard mode)
+          url: task-quick-start-connector-on-prem.html
         - title: Manage Connectors
           url: task-managing-connectors.html
     - title: Permissions
       links:
-        - title: Summary
+        - title: Permissions summary
           url: reference-permissions.html
-        - title: AWS permissions
+        - title: AWS permissions for the Connector
           url: reference-permissions-aws.html
-        - title: Azure permissions
+        - title: Azure permissions for the Connector
           url: reference-permissions-azure.html
-        - title: Google Cloud permissions
+        - title: Google Cloud permissions for the Connector
           url: reference-permissions-gcp.html      
     - title: Credentials
       links:
