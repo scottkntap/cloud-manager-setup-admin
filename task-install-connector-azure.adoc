@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-install-connector-azure.html
 keywords: install connector, azure connector installation, azure connector, install connector in azure, bluexp, azure marketplace, manual install, create connector
-summary: Create the Connector directly from the BlueXP web-based console, from the Azure Marketplace, or by installing the software on your own Linux host.
+summary: Create a Connector directly from the BlueXP web-based console, from the Azure Marketplace, or by installing the software on your own Linux host.
 ---
 
-= Create the Connector in Azure
+= Create a Connector in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Create the Connector directly from the BlueXP web-based console, from t
 :imagesdir: ./media/
 
 [.lead]
-Create the Connector directly from the BlueXP web-based console, from the Azure Marketplace, or by installing the software on your own Linux host.
+Create a Connector directly from the BlueXP web-based console, from the Azure Marketplace, or by installing the software on your own Linux host.
 
 // start tabbed area
 
