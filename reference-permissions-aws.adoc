@@ -20,9 +20,7 @@ When BlueXP launches the Connector instance in AWS, it attaches a policy to the 
 The IAM policies available below provide the permissions that a Connector needs to manage resources and processes within your public cloud environment based on your AWS region.
 
 If needed, you can restrict the IAM policies by using the IAM `Condition` element. https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html[AWS documentation: Condition element^]
-If needed, you can restrict the IAM policies by using the IAM `Condition` element. https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html[AWS documentation: Condition element^]
 
-Note the following:
 Note the following:
 
 * If you create a Connector in a standard AWS region directly from BlueXP, BlueXP automatically applies policies to the Connector. You don't need to do anything in this case.
