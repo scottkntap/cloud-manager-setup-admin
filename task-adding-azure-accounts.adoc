@@ -37,29 +37,52 @@ A managed identity is link:concept-accounts-azure.html[the initial Azure account
 
 . Log in to the Azure portal.
 
-. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP.
+. Open the *Subscriptions* service and select the subscription where the current BlueXP Operator role was created.
+
+. Select *Access control (IAM)* blade and choose the *Roles* tab.
+
+.. Search for the *BlueXP Operator* role or the custom role name you provided when creating the BlueXP Operator role.
+
+.. Right-click the role name and select *Edit*.
+
+.. Select the *Assignable scopes tab > Add assignable scopes*.
+
+.. Choose the *Subscription* type from the menu box and select the Azure subscription where you want to deploy the new CVO Working Environment.
+
+.. Choose the destination subscription and click the *Select* button.
+
+.. View the new subscription in the main window and click *Review + Update > Update*.  Click *OK* to confirm the changes.
+
+. Return to the *Subscriptions* service in the Azure portal and select the new subscription where you want to deploy Cloud Volumes ONTAP.
 
 . Select *Access control (IAM)*.
 
-.. Select *Add* > *Add role assignment* and then add the permissions:
-
-* Select the *BlueXP Operator* role.
+.. Select *Add > Add role assignment* and search for the *BlueXP Operator* role.
 +
 NOTE: BlueXP Operator is the default name provided in the Connector policy. If you chose a different name for the role, then select that name instead.
 
-* Assign access to a *Virtual Machine*.
+* Select the role name and click *Next*.
 
-* Select the subscription in which the Connector virtual machine was created.
+* Choose the radion button to Assign access to *Managed identity*.
 
-* Select the Connector virtual machine.
+* Click *+Select members*.
 
-* Select *Save*.
+* Select the subscription where the Connector virtual machine was created.
+
+* Under *Managed identity* select *Virtual machine*.
+
+* Select your connector virtual machine.
+
+* Click the *Select button > Review + assign >
+Review + assign*.
 
 . Repeat these steps for additional subscriptions.
 
 .Result
 
 When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions for the managed identity profile.
+
+NOTE: It may take several minutes for the changes to propagate and become available in BlueXP.
 
 image:screenshot_accounts_switch_azure_subscription.gif[A screenshot that shows the ability to select multiple Azure subscriptions when selecting a Microsoft Azure Provider Account.]
 
